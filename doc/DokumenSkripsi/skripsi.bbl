@@ -1,0 +1,19 @@
+\begin{thebibliography}{99}
+
+\bibitem{fahda:16:backtracking}
+Fahda, A. (2015) Kenken puzzle solver using backtracking algorithm.
+\newblock Makalah IF2211 Strategi Algoritma - Semester II Tahun 2014/2015,
+  Program Studi Teknik Informatika, Sekolah Teknik Elektro dan Informatika,
+  Institut Teknologi Bandung.
+\newblock
+  \url{http://informatika.stei.itb.ac.id/~rinaldi.munir/Stmik/2014-2015/Makalah2015/Makalah_IF221_Strategi_Algoritma_2015_016.pdf}.
+
+\bibitem{johanna:12:hybrid}
+Johanna, O., Lukas, S., dan Saputra, K. V.~I. (2012) Solving and modeling
+  ken-ken puzzle by using hybrid genetics algorithm.
+\newblock {\em 1st International Conference on Engineering and Technology
+  Development (ICETD 2012)},  Bandar Lampung, Lampung, Indonesia,  20-21 Juni,
+  pp. 98--102. Faculty of Engineering and Faculty of Computer Science, Bandar
+  Lampung University.
+
+\end{thebibliography}

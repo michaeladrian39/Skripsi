@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: skripsi.aux
+A level-1 auxiliary file: Bab/bab1.aux
+A level-1 auxiliary file: Bab/bab2.aux
+A level-1 auxiliary file: Bab/bab3.aux
+A level-1 auxiliary file: Bab/bab4.aux
+A level-1 auxiliary file: Bab/bab5.aux
+A level-1 auxiliary file: Bab/bab6.aux
+A level-1 auxiliary file: Bab/bab7.aux
+A level-1 auxiliary file: Bab/bab8.aux
+A level-1 auxiliary file: Bab/bab9.aux
+The style file: compj.bst
+A level-1 auxiliary file: Lampiran/lampA.aux
+A level-1 auxiliary file: Lampiran/lampB.aux
+A level-1 auxiliary file: Lampiran/lampC.aux
+A level-1 auxiliary file: Lampiran/lampD.aux
+A level-1 auxiliary file: Lampiran/lampE.aux
+A level-1 auxiliary file: Lampiran/lampF.aux
+A level-1 auxiliary file: Lampiran/lampG.aux
+A level-1 auxiliary file: Lampiran/lampH.aux
+A level-1 auxiliary file: Lampiran/lampI.aux
+Database file #1: referensi.bib
+You've used 2 entries,
+            1957 wiz_defined-function locations,
+            562 strings with 5558 characters,
+and the built_in function-call counts, 488 in all, are:
+= -- 46
+> -- 13
+< -- 1
++ -- 4
+- -- 4
+* -- 32
+:= -- 75
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 2
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 27
+empty$ -- 54
+format.name$ -- 4
+if$ -- 119
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 1
+newline$ -- 12
+num.names$ -- 2
+pop$ -- 6
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 12
+stack$ -- 0
+substring$ -- 23
+swap$ -- 9
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 4
+width$ -- 0
+write$ -- 26
