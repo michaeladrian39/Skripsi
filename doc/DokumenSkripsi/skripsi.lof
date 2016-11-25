@@ -3,7 +3,7 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Contoh permainan teka-teki Calcudoku dengan penjelasan tentang elemen-elemen dari teka-teki ini ~\cite {johanna:12:hybrid}}}{2}{figure.caption.5}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Contoh permainan teka-teki Calcudoku dengan ukuran \textit {grid} 4 x 4 yang belum diselesaikan. ~\cite {fahda:16:backtracking}}}{6}{figure.caption.6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar 2.1. ~\cite {fahda:16:backtracking}}}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref {fig:backtracking1} ~\cite {fahda:16:backtracking}}}{7}{figure.caption.7}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Ilustrasi \textit {state space tree} yang digunakan dalam algoritma \textit {backtracking} ~\cite {fahda:16:backtracking}}}{9}{figure.caption.8}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Contoh permainan teka-teki Calcudoku dengan ukuran \textit {grid} 3 x 3 ~\cite {fahda:16:backtracking}}}{10}{figure.caption.9}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Ilustrasi \textit {state} 3, 4, dan 5 pada sebuah \textit {grid} teka-teki Calcudoku ~\cite {fahda:16:backtracking}}}{11}{figure.caption.10}
@@ -19,3 +19,12 @@
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Contoh proses kawin silang antara dua kromosom ~\cite {johanna:12:hybrid}}}{18}{figure.caption.20}
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Contoh proses mutasi ~\cite {johanna:12:hybrid}}}{18}{figure.caption.21}
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Alur penyelesaian permainan teka-teki Calcudoku dengan menggunakan algoritma \textit {hybrid genetic} ~\cite {johanna:12:hybrid}}}{19}{figure.caption.22}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Contoh permainan teka-teki Calcudoku dengan ukuran \textit {grid} 4 x 4 yang belum diselesaikan, seperti yang digambarkan pada Gambar~\ref {fig:backtracking1}. ~\cite {fahda:16:backtracking}}}{21}{figure.caption.23}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {State} 4}}{22}{figure.caption.24}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {State} 11}}{22}{figure.caption.25}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \textit {State} 12}}{23}{figure.caption.26}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {State} 17}}{23}{figure.caption.27}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {State} 18}}{24}{figure.caption.28}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces \textit {State} 19}}{24}{figure.caption.29}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces \textit {State} 23}}{25}{figure.caption.30}

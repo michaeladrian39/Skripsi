@@ -17,5 +17,7 @@
 \contentsline {subsection}{\numberline {2.3.1}Algoritma \textit {Rule Based}}{14}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Algoritma Genetik}{15}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Algoritma \textit {Hybrid Genetic}}{16}{subsection.2.3.3}
-\contentsline {chapter}{Daftar Referensi}{21}{chapter*.23}
+\contentsline {chapter}{\numberline {3}Analisis}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}Algoritma \textit {Backtracking}}{21}{section.3.1}
+\contentsline {chapter}{Daftar Referensi}{27}{chapter*.31}
 \renewcommand {\cftchappresnum }{\bf \scshape }
