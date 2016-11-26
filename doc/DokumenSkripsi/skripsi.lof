@@ -53,3 +53,5 @@
 \contentsline {figure}{\numberline {3.31}{\ignorespaces \textit {State} 92}}{33}{figure.caption.53}
 \contentsline {figure}{\numberline {3.32}{\ignorespaces \textit {State} 93}}{33}{figure.caption.54}
 \contentsline {figure}{\numberline {3.33}{\ignorespaces \textit {State space tree} yang dikembangkan dalam proses menyelesaikan teka-teki Calcudoku yang digambarkan pada Gambar~\ref {fig:analisisbt1}}}{34}{figure.caption.55}
+\contentsline {figure}{\numberline {3.34}{\ignorespaces Contoh permainan teka-teki Calcudoku dengan ukuran \textit {grid} 6 x 6 yang belum diselesaikan, seperti yang digambarkan pada Gambar~\ref {fig:hybrid1}. \cite {johanna:12:hybrid}}}{35}{figure.caption.56}
+\contentsline {figure}{\numberline {3.35}{\ignorespaces Permainan teka-teki Calcudoku setelah diselesaikan dengan algoritma \textit {rule based}}}{36}{figure.caption.57}

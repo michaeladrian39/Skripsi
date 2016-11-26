@@ -403,3 +403,28 @@ Algoritma ini mencapai solusinya pada state 93, seperti pada \textit{state space
 \end{figure}
 \end{landscape}
 
+\section{Algoritma \textit{Hybrid Genetic}}
+\label{sec:analisishg}
+
+Untuk mengilustrasikan cara kerja algoritma \textit{hybrid genetic}, akan digunakan permainan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:analisishg1} sebagai contoh.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Puzzle}
+\caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 6 x 6 yang belum diselesaikan, seperti yang digambarkan pada Gambar~\ref{fig:hybrid1}. \cite{johanna:12:hybrid}]{Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 6 x 6 yang belum diselesaikan, seperti yang digambarkan pada Gambar~\ref{fig:hybrid1}. \cite{johanna:12:hybrid}}
+\label{fig:analisishg1}
+\end{figure}
+
+Algoritma \textit{hybrid genetic} dimulai dengan mencoba menyelesaikan permainan teka-teki Calcudoku dengan algoritma \textit{rule based}. Sel pada baris ke-4 dan kolom ke-6 adalah bagian dari sebuah \textit{cage} yang berukuran hanya 1 sel, dan oleh karena itu, angka tujuan dari sel tersebut adalah angka tujuan dari \textit{cage} tersebut. Dalam kasus ini, angka tujuan tersebut adalah 1. Maka, sel tersebut dapat langsung diisi dengan angka 1, seperti dapat dilihat pada Gambar~\ref{fig:analisishg2}. Sayangnya, algoritma \textit{rule based} tidak bisa mengisi sel-sel lainnya berdasarkan aturan-aturan yang telah didefinisikan setelah beberapa kali percobaan, sehingga algoritma \textit{hybrid genetic} akan mencoba menyelesaikan teka-teki Calcudoku dengan algoritma genetik.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/PuzzleAfterRuleBased}
+\caption[Permainan teka-teki Calcudoku setelah diselesaikan dengan algoritma \textit{rule based}]{Permainan teka-teki Calcudoku setelah diselesaikan dengan algoritma \textit{rule based}}
+\label{fig:analisishg2}
+\end{figure}
+
+Dalam contoh ini, parameter-parameter untuk algoritma genetik yang akan digunakan untuk teka-teki Calcudoku ini adalah sebagai berikut:
+
