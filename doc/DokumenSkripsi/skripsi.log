@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.22)  25 NOV 2016 23:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.22)  26 NOV 2016 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -633,6 +633,10 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lcg/lcg.sty
 Package: lcg 2013/08/09 v1.3 generating random numbers
 \f@rst=\count164
@@ -644,12 +648,12 @@ Smallest possible random number: 1
 Largest possible random number: 2147483647
 The pseudo random numbers will be stored in the LaTeX counter `rand'
 )
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 68.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 69.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Package hyperref Info: Option `unicode' set `true' on input line 275.
-Package hyperref Info: Option `colorlinks' set `true' on input line 275.
+Package hyperref Info: Option `unicode' set `true' on input line 276.
+Package hyperref Info: Option `colorlinks' set `true' on input line 276.
 
 \@input{data.aux}
 \openout2 = `data.aux'.
@@ -1160,22 +1164,22 @@ File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
 (./Lampiran/lampI.aux))
 \openout1 = `skripsi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 285.
-LaTeX Font Info:    ... okay on input line 285.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 285.
-LaTeX Font Info:    ... okay on input line 285.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 285.
-LaTeX Font Info:    ... okay on input line 285.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 285.
-LaTeX Font Info:    ... okay on input line 285.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 285.
-LaTeX Font Info:    ... okay on input line 285.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 285.
-LaTeX Font Info:    ... okay on input line 285.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 285.
-LaTeX Font Info:    ... okay on input line 285.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 285.
-LaTeX Font Info:    ... okay on input line 285.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1242,7 +1246,7 @@ e
 ))
 \c@lstlisting=\count278
 \AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring ON on input line 285.
+Package hyperref Info: Link coloring ON on input line 286.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1252,9 +1256,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count279
 )
-LaTeX Info: Redefining \ref on input line 285.
-LaTeX Info: Redefining \pageref on input line 285.
-LaTeX Info: Redefining \nameref on input line 285.
+LaTeX Info: Redefining \ref on input line 286.
+LaTeX Info: Redefining \pageref on input line 286.
+LaTeX Info: Redefining \nameref on input line 286.
 
 (./skripsi.out) (./skripsi.out)
 \@outlinefile=\write5
@@ -1276,7 +1280,7 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.13}).
 File: Gambar/logo-unpar.png Graphic file (type png)
 
 <use Gambar/logo-unpar.png>
-Package pdftex.def Info: Gambar/logo-unpar.png used on input line 475.
+Package pdftex.def Info: Gambar/logo-unpar.png used on input line 476.
 (pdftex.def)             Requested size: 144.23631pt x 142.4296pt.
  [1
 
@@ -1291,49 +1295,49 @@ r/logo-unpar.png>] [2
 File: Gambar/logo-unpar.png Graphic file (type png)
 
 <use Gambar/logo-unpar.png>
-Package pdftex.def Info: Gambar/logo-unpar.png used on input line 475.
+Package pdftex.def Info: Gambar/logo-unpar.png used on input line 476.
 (pdftex.def)             Requested size: 144.23631pt x 142.4296pt.
  [3] [4
 
 ] [5] [6
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 475.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 476.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 475.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 476.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 475
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 476
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 475
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 476
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 475.
+(Font)              <10.95> on input line 476.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 475.
+(Font)              <8> on input line 476.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 475.
-LaTeX Font Info:    Try loading font information for U+msa on input line 475.
+(Font)              <6> on input line 476.
+LaTeX Font Info:    Try loading font information for U+msa on input line 476.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 475.
+LaTeX Font Info:    Try loading font information for U+msb on input line 476.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1357,29 +1361,28 @@ LaTeX Font Info:    Font shape `T1/lmr/bx/sc' in size <10.95> not available
 \tf@toc=\write6
 \openout6 = `skripsi.toc'.
 
- [17] (./skripsi.lof)
+ [17] (./skripsi.lof
+[18])
 \tf@lof=\write7
 \openout7 = `skripsi.lof'.
 
-
-[18] (./skripsi.lot)
+ [19] (./skripsi.lot)
 \tf@lot=\write8
 \openout8 = `skripsi.lot'.
 
- [19] [20
-
-]
+ [20]
 \openout2 = `Bab/bab1.aux'.
 
  (./Bab/bab1.tex
 Bab 1.
-<Gambar/HybridGenetic1.jpg, id=293, 280.04625pt x 222.07968pt>
+<Gambar/HybridGenetic1.jpg, id=346, 280.04625pt x 222.07968pt>
 File: Gambar/HybridGenetic1.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic1.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic1.jpg used on input line 15.
 (pdftex.def)             Requested size: 280.04555pt x 222.07913pt.
  [1
+
 
 
 
@@ -1397,7 +1400,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 6.
 
-<Gambar/Backtracking1.jpg, id=352, 150.5625pt x 150.5625pt>
+<Gambar/Backtracking1.jpg, id=404, 150.5625pt x 150.5625pt>
 File: Gambar/Backtracking1.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking1.jpg>
@@ -1408,7 +1411,7 @@ Package pdftex.def Info: Gambar/Backtracking1.jpg used on input line 23.
 
 
 ]
-<Gambar/Backtracking2.jpg, id=369, 150.5625pt x 150.5625pt>
+<Gambar/Backtracking2.jpg, id=421, 150.5625pt x 150.5625pt>
 File: Gambar/Backtracking2.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking2.jpg>
@@ -1420,42 +1423,42 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 67.
 
 [7 <./Gambar/Backtracking2.jpg>]
-<Gambar/Backtracking3.jpg, id=405, 204.01219pt x 204.01219pt>
+<Gambar/Backtracking3.jpg, id=458, 204.01219pt x 204.01219pt>
 File: Gambar/Backtracking3.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking3.jpg>
 Package pdftex.def Info: Gambar/Backtracking3.jpg used on input line 105.
 (pdftex.def)             Requested size: 204.01169pt x 204.01169pt.
  [8] [9 <./Gambar/Backtracking3.jpg>]
-<Gambar/Backtracking4.jpg, id=434, 112.92188pt x 112.92188pt>
+<Gambar/Backtracking4.jpg, id=486, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking4.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking4.jpg>
 Package pdftex.def Info: Gambar/Backtracking4.jpg used on input line 148.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
  [10 <./Gambar/Backtracking4.jpg>]
-<Gambar/Backtracking5.jpg, id=450, 226.59656pt x 75.28125pt>
+<Gambar/Backtracking5.jpg, id=502, 226.59656pt x 75.28125pt>
 File: Gambar/Backtracking5.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking5.jpg>
 Package pdftex.def Info: Gambar/Backtracking5.jpg used on input line 163.
 (pdftex.def)             Requested size: 226.596pt x 75.28105pt.
  [11 <./Gambar/Backtracking5.jpg>]
-<Gambar/Backtracking6.jpg, id=473, 112.92188pt x 112.92188pt>
+<Gambar/Backtracking6.jpg, id=525, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking6.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking6.jpg>
 Package pdftex.def Info: Gambar/Backtracking6.jpg used on input line 186.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
 
-<Gambar/Backtracking7.jpg, id=478, 112.92188pt x 112.92188pt>
+<Gambar/Backtracking7.jpg, id=530, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking7.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking7.jpg>
 Package pdftex.def Info: Gambar/Backtracking7.jpg used on input line 201.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
 
-<Gambar/Backtracking8.jpg, id=481, 231.86626pt x 422.32782pt>
+<Gambar/Backtracking8.jpg, id=533, 231.86626pt x 422.32782pt>
 File: Gambar/Backtracking8.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking8.jpg>
@@ -1467,35 +1470,35 @@ acktracking8.jpg>]
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 227.
 
-<Gambar/HybridGenetic2.jpg, id=507, 158.09062pt x 28.60687pt>
+<Gambar/HybridGenetic2.jpg, id=559, 158.09062pt x 28.60687pt>
 File: Gambar/HybridGenetic2.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic2.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic2.jpg used on input line 244.
 (pdftex.def)             Requested size: 158.09023pt x 28.6068pt.
 
-<Gambar/HybridGenetic3.jpg, id=511, 205.5178pt x 47.42719pt>
+<Gambar/HybridGenetic3.jpg, id=563, 205.5178pt x 47.42719pt>
 File: Gambar/HybridGenetic3.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic3.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic3.jpg used on input line 254.
 (pdftex.def)             Requested size: 205.5173pt x 47.42706pt.
 
-<Gambar/HybridGenetic4.jpg, id=515, 273.27094pt x 37.64063pt>
+<Gambar/HybridGenetic4.jpg, id=567, 273.27094pt x 37.64063pt>
 File: Gambar/HybridGenetic4.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic4.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic4.jpg used on input line 264.
 (pdftex.def)             Requested size: 273.27025pt x 37.64052pt.
  [14 <./Gambar/HybridGenetic2.jpg>]
-<Gambar/HybridGenetic5.jpg, id=528, 198.7425pt x 82.80937pt>
+<Gambar/HybridGenetic5.jpg, id=581, 198.7425pt x 82.80937pt>
 File: Gambar/HybridGenetic5.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic5.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic5.jpg used on input line 274.
 (pdftex.def)             Requested size: 198.742pt x 82.80916pt.
 
-<Gambar/HybridGenetic6.jpg, id=532, 146.04562pt x 147.55125pt>
+<Gambar/HybridGenetic6.jpg, id=585, 146.04562pt x 147.55125pt>
 File: Gambar/HybridGenetic6.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic6.jpg>
@@ -1503,28 +1506,28 @@ Package pdftex.def Info: Gambar/HybridGenetic6.jpg used on input line 284.
 (pdftex.def)             Requested size: 146.04524pt x 147.55087pt.
  [15 <./Gambar/HybridGenetic3.jpg> <./Gambar/HybridGenetic4.jpg> <./Gambar/Hybr
 idGenetic5.jpg>] [16 <./Gambar/HybridGenetic6.jpg>] <Gambar/HybridGenetic8.jpg,
- id=553, 118.94438pt x 124.96687pt>
+ id=605, 118.94438pt x 124.96687pt>
 File: Gambar/HybridGenetic8.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic8.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic8.jpg used on input line 326.
 (pdftex.def)             Requested size: 118.94408pt x 124.96657pt.
  [17 <./Gambar/HybridGenetic8.jpg>]
-<Gambar/HybridGenetic9.jpg, id=569, 284.56313pt x 75.28125pt>
+<Gambar/HybridGenetic9.jpg, id=621, 284.56313pt x 75.28125pt>
 File: Gambar/HybridGenetic9.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic9.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic9.jpg used on input line 349.
 (pdftex.def)             Requested size: 284.56242pt x 75.28105pt.
 
-<Gambar/HybridGenetic10.jpg, id=573, 282.30469pt x 41.4047pt>
+<Gambar/HybridGenetic10.jpg, id=625, 282.30469pt x 41.4047pt>
 File: Gambar/HybridGenetic10.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic10.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic10.jpg used on input line 359.
 (pdftex.def)             Requested size: 282.30399pt x 41.40457pt.
 
-<Gambar/HybridGenetic7.jpg, id=578, 451.6875pt x 173.89969pt>
+<Gambar/HybridGenetic7.jpg, id=630, 451.6875pt x 173.89969pt>
 File: Gambar/HybridGenetic7.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic7.jpg>
@@ -1540,75 +1543,288 @@ ar/HybridGenetic7.jpg>]
 
 ]
 Bab 3.
-<Gambar/backtracking/State1.jpg, id=602, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State1.jpg, id=654, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State1.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State1.jpg>
 Package pdftex.def Info: Gambar/backtracking/State1.jpg used on input line 14.
-(pdftex.def)             Requested size: 153.57336pt x 153.57336pt.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State4.jpg, id=609, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State4.jpg, id=661, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State4.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State4.jpg>
 Package pdftex.def Info: Gambar/backtracking/State4.jpg used on input line 28.
-(pdftex.def)             Requested size: 153.57336pt x 153.57336pt.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
  [21 <./Gambar/backtracking/State1.jpg>]
-<Gambar/backtracking/State11.jpg, id=621, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State11.jpg, id=674, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State11.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State11.jpg>
 Package pdftex.def Info: Gambar/backtracking/State11.jpg used on input line 44.
 
-(pdftex.def)             Requested size: 153.57336pt x 153.57336pt.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State12.jpg, id=623, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State12.jpg, id=676, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State12.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State12.jpg>
 Package pdftex.def Info: Gambar/backtracking/State12.jpg used on input line 54.
 
-(pdftex.def)             Requested size: 153.57336pt x 152.56961pt.
- [22 <./Gambar/backtracking/State4.jpg> <./Gambar/backtracking/State11.jpg>]
-<Gambar/backtracking/State17.jpg, id=637, 307.1475pt x 307.1475pt>
+(pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
+ [22 <./Gambar/backtracking/State4.jpg> <./Gambar/backtracking/State11.jpg> <./
+Gambar/backtracking/State12.jpg>]
+<Gambar/backtracking/State17.jpg, id=690, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State17.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State17.jpg>
 Package pdftex.def Info: Gambar/backtracking/State17.jpg used on input line 68.
 
-(pdftex.def)             Requested size: 153.57336pt x 153.57336pt.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State18.jpg, id=639, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State18.jpg, id=692, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State18.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State18.jpg>
 Package pdftex.def Info: Gambar/backtracking/State18.jpg used on input line 78.
 
-(pdftex.def)             Requested size: 153.57336pt x 153.57336pt.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State19.jpg, id=641, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State19.jpg, id=694, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State19.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State19.jpg>
 Package pdftex.def Info: Gambar/backtracking/State19.jpg used on input line 88.
 
-(pdftex.def)             Requested size: 153.57336pt x 153.57336pt.
- [23 <./Gambar/backtracking/State12.jpg> <./Gambar/backtracking/State17.jpg>] [
-24 <./Gambar/backtracking/State18.jpg> <./Gambar/backtracking/State19.jpg>]
-<Gambar/backtracking/State23.jpg, id=661, 307.1475pt x 307.1475pt>
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+ [23 <./Gambar/backtracking/State17.jpg> <./Gambar/backtracking/State18.jpg> <.
+/Gambar/backtracking/State19.jpg>]
+<Gambar/backtracking/State23.jpg, id=708, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State23.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State23.jpg>
 Package pdftex.def Info: Gambar/backtracking/State23.jpg used on input line 101
 .
-(pdftex.def)             Requested size: 153.57336pt x 153.57336pt.
-) [25 <./Gambar/backtracking/State23.jpg>]
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State24.jpg, id=710, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State24.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State24.jpg>
+Package pdftex.def Info: Gambar/backtracking/State24.jpg used on input line 111
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State31.jpg, id=712, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State31.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State31.jpg>
+Package pdftex.def Info: Gambar/backtracking/State31.jpg used on input line 127
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+ [24 <./Gambar/backtracking/State23.jpg> <./Gambar/backtracking/State24.jpg>]
+<Gambar/backtracking/State32.jpg, id=728, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State32.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State32.jpg>
+Package pdftex.def Info: Gambar/backtracking/State32.jpg used on input line 137
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State34.jpg, id=730, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State34.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State34.jpg>
+Package pdftex.def Info: Gambar/backtracking/State34.jpg used on input line 148
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State37.jpg, id=732, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State37.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State37.jpg>
+Package pdftex.def Info: Gambar/backtracking/State37.jpg used on input line 160
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+ [25 <./Gambar/backtracking/State31.jpg> <./Gambar/backtracking/State32.jpg> <.
+/Gambar/backtracking/State34.jpg>]
+<Gambar/backtracking/State47.jpg, id=744, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State47.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State47.jpg>
+Package pdftex.def Info: Gambar/backtracking/State47.jpg used on input line 179
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State48.jpg, id=746, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State48.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State48.jpg>
+Package pdftex.def Info: Gambar/backtracking/State48.jpg used on input line 189
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+ [26 <./Gambar/backtracking/State37.jpg> <./Gambar/backtracking/State47.jpg>]
+<Gambar/backtracking/State52.jpg, id=763, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State52.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State52.jpg>
+Package pdftex.def Info: Gambar/backtracking/State52.jpg used on input line 202
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State53.jpg, id=765, 307.1475pt x 305.14pt>
+File: Gambar/backtracking/State53.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State53.jpg>
+Package pdftex.def Info: Gambar/backtracking/State53.jpg used on input line 212
+.
+(pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
+ [27 <./Gambar/backtracking/State48.jpg> <./Gambar/backtracking/State52.jpg> <.
+/Gambar/backtracking/State53.jpg>]
+<Gambar/backtracking/State68.jpg, id=778, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State68.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State68.jpg>
+Package pdftex.def Info: Gambar/backtracking/State68.jpg used on input line 236
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State69.jpg, id=780, 307.1475pt x 305.14pt>
+File: Gambar/backtracking/State69.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State69.jpg>
+Package pdftex.def Info: Gambar/backtracking/State69.jpg used on input line 246
+.
+(pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
+ [28 <./Gambar/backtracking/State68.jpg>]
+<Gambar/backtracking/State71.jpg, id=801, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State71.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State71.jpg>
+Package pdftex.def Info: Gambar/backtracking/State71.jpg used on input line 257
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State72.jpg, id=803, 307.1475pt x 305.14pt>
+File: Gambar/backtracking/State72.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State72.jpg>
+Package pdftex.def Info: Gambar/backtracking/State72.jpg used on input line 267
+.
+(pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
+
+<Gambar/backtracking/State74.jpg, id=805, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State74.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State74.jpg>
+Package pdftex.def Info: Gambar/backtracking/State74.jpg used on input line 278
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State75.jpg, id=807, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State75.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State75.jpg>
+Package pdftex.def Info: Gambar/backtracking/State75.jpg used on input line 288
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+ [29 <./Gambar/backtracking/State69.jpg> <./Gambar/backtracking/State71.jpg> <.
+/Gambar/backtracking/State72.jpg>]
+<Gambar/backtracking/State76.jpg, id=820, 307.1475pt x 305.14pt>
+File: Gambar/backtracking/State76.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State76.jpg>
+Package pdftex.def Info: Gambar/backtracking/State76.jpg used on input line 298
+.
+(pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
+
+<Gambar/backtracking/State77.jpg, id=822, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State77.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State77.jpg>
+Package pdftex.def Info: Gambar/backtracking/State77.jpg used on input line 308
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State78.jpg, id=824, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State78.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State78.jpg>
+Package pdftex.def Info: Gambar/backtracking/State78.jpg used on input line 318
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State81.jpg, id=826, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State81.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State81.jpg>
+Package pdftex.def Info: Gambar/backtracking/State81.jpg used on input line 330
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+ [30 <./Gambar/backtracking/State74.jpg> <./Gambar/backtracking/State75.jpg> <.
+/Gambar/backtracking/State76.jpg>]
+[31 <./Gambar/backtracking/State77.jpg> <./Gambar/backtracking/State78.jpg> <./
+Gambar/backtracking/State81.jpg>]
+<Gambar/backtracking/State83.jpg, id=843, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State83.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State83.jpg>
+Package pdftex.def Info: Gambar/backtracking/State83.jpg used on input line 341
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State85.jpg, id=845, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State85.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State85.jpg>
+Package pdftex.def Info: Gambar/backtracking/State85.jpg used on input line 352
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State88.jpg, id=847, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State88.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State88.jpg>
+Package pdftex.def Info: Gambar/backtracking/State88.jpg used on input line 364
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+ [32 <./Gambar/backtracking/State83.jpg> <./Gambar/backtracking/State85.jpg> <.
+/Gambar/backtracking/State88.jpg>]
+<Gambar/backtracking/State92.jpg, id=860, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State92.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State92.jpg>
+Package pdftex.def Info: Gambar/backtracking/State92.jpg used on input line 377
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+
+<Gambar/backtracking/State93.jpg, id=862, 307.1475pt x 307.1475pt>
+File: Gambar/backtracking/State93.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/State93.jpg>
+Package pdftex.def Info: Gambar/backtracking/State93.jpg used on input line 387
+.
+(pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
+ [33 <./Gambar/backtracking/State92.jpg> <./Gambar/backtracking/State93.jpg>]
+<Gambar/backtracking/StateSpaceTree.jpg, id=872, 848.4197pt x 599.23875pt>
+File: Gambar/backtracking/StateSpaceTree.jpg Graphic file (type jpg)
+
+<use Gambar/backtracking/StateSpaceTree.jpg>
+Package pdftex.def Info: Gambar/backtracking/StateSpaceTree.jpg used on input l
+ine 400.
+(pdftex.def)             Requested size: 636.31322pt x 449.42796pt.
+
+
+LaTeX Warning: Float too large for page by 3.55746pt on input line 403.
+
+[34 <./Gambar/backtracking/StateSpaceTree.jpg>])
 \openout2 = `Bab/bab4.aux'.
 
-(./Bab/bab4.tex)
+ (./Bab/bab4.tex)
 \openout2 = `Bab/bab5.aux'.
 
- (./Bab/bab5.tex)
+
+(./Bab/bab5.tex)
 \openout2 = `Bab/bab6.aux'.
 
  (./Bab/bab6.tex)
@@ -1617,26 +1833,11 @@ Package pdftex.def Info: Gambar/backtracking/State23.jpg used on input line 101
  (./Bab/bab7.tex)
 \openout2 = `Bab/bab8.aux'.
 
-
-(./Bab/bab8.tex)
+ (./Bab/bab8.tex)
 \openout2 = `Bab/bab9.aux'.
 
- (./Bab/bab9.tex) (./skripsi.bbl [26
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-]
+(./Bab/bab9.tex) (./skripsi.bbl
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 9.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -1659,7 +1860,24 @@ Underfull \hbox (badness 3058) in paragraph at lines 4--10
 -for-ma-ti-ka, In-sti-tut Tek-no-lo-
  []
 
-) [27]
+) [35
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]
 \openout2 = `Lampiran/lampA.aux'.
 
  (./Lampiran/lampA.tex)
@@ -1689,8 +1907,8 @@ Underfull \hbox (badness 3058) in paragraph at lines 4--10
 \openout2 = `Lampiran/lampI.aux'.
 
  (./Lampiran/lampI.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 515.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 515.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 516.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
 
 (./skripsi.aux (./Bab/bab1.aux) (./Bab/bab2.aux) (./Bab/bab3.aux)
 (./Bab/bab4.aux) (./Bab/bab5.aux) (./Bab/bab6.aux) (./Bab/bab7.aux)
@@ -1698,16 +1916,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 515.
 (./Lampiran/lampC.aux) (./Lampiran/lampD.aux) (./Lampiran/lampE.aux)
 (./Lampiran/lampF.aux) (./Lampiran/lampG.aux) (./Lampiran/lampH.aux)
 (./Lampiran/lampI.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 515.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 515.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 516.
 Package rerunfilecheck Info: File `skripsi.out' has not changed.
-(rerunfilecheck)             Checksum: BB2C02D321967B704FE2BECFF21F462D;3234.
+(rerunfilecheck)             Checksum: A747C645A9C38C205B3C1884A0FFF711;3234.
  ) 
 Here is how much of TeX's memory you used:
- 40976 strings out of 493027
- 882317 string characters out of 6134069
- 1227059 words of memory out of 5000000
- 43526 multiletter control sequences out of 15000+600000
+ 41243 strings out of 493027
+ 887985 string characters out of 6134069
+ 1229423 words of memory out of 5000000
+ 43662 multiletter control sequences out of 15000+600000
  65863 words of font info for 48 fonts, out of 8000000 for 9000
  1150 hyphenation exceptions out of 8191
  66i,13n,86p,10422b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1731,10 +1949,10 @@ exlive/2015/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/201
 st/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
 /cm-super/sfxc1095.pfb>
-Output written on skripsi.pdf (47 pages, 970872 bytes).
+Output written on skripsi.pdf (55 pages, 1862349 bytes).
 PDF statistics:
- 790 PDF objects out of 1000 (max. 8388607)
- 668 compressed objects within 7 object streams
- 229 named destinations out of 1000 (max. 500000)
- 316 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1020 PDF objects out of 1200 (max. 8388607)
+ 862 compressed objects within 9 object streams
+ 332 named destinations out of 1000 (max. 500000)
+ 441 words of extra memory for PDF output out of 10000 (max. 10000000)
 

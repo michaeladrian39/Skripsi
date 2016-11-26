@@ -2,7 +2,7 @@
 \contentsline {chapter}{Kata Pengantar}{xv}{chapter*.1}
 \contentsline {chapter}{Daftar Isi}{xvii}{section*.2}
 \contentsline {chapter}{Daftar Gambar}{xviii}{section*.3}
-\contentsline {chapter}{Daftar Tabel}{xix}{section*.4}
+\contentsline {chapter}{Daftar Tabel}{xx}{section*.4}
 \contentsline {chapter}{\numberline {1}Pendahuluan}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Latar Belakang}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Rumusan Masalah}{2}{section.1.2}
@@ -19,5 +19,5 @@
 \contentsline {subsection}{\numberline {2.3.3}Algoritma \textit {Hybrid Genetic}}{16}{subsection.2.3.3}
 \contentsline {chapter}{\numberline {3}Analisis}{21}{chapter.3}
 \contentsline {section}{\numberline {3.1}Algoritma \textit {Backtracking}}{21}{section.3.1}
-\contentsline {chapter}{Daftar Referensi}{27}{chapter*.31}
+\contentsline {chapter}{Daftar Referensi}{35}{chapter*.56}
 \renewcommand {\cftchappresnum }{\bf \scshape }
