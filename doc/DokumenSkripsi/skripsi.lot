@@ -2,3 +2,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tabel parameter untuk algoritma genetik yang akan digunakan untuk menyelesaikan teka-teki Calcudoku yang digambarkan pada Gambar~\ref {fig:analisishg2}}}{36}{table.caption.58}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1}}{41}{table.caption.71}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1}}{46}{table.caption.84}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-3}}{51}{table.caption.97}
