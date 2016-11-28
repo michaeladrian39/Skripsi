@@ -7,8 +7,8 @@
 \usepackage[cm]{fullpage}
 \pagestyle{myheadings}
 \usepackage{etoolbox}
-\usepackage{setspace} 
-\usepackage{lipsum} 
+\usepackage{setspace}
+\usepackage{lipsum}
 \usepackage{caption}
 \usepackage{pdflscape}
 
@@ -22,16 +22,16 @@
 \markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Skripsi\textemdash Sem. Ganjil 2016/2017}}}
 
 \onehalfspacing
- 
+
 \begin{document}
 
 \title{\@judultopik}
-\author{\nama \textendash \@npm} 
+\author{\nama \textendash \@npm}
 
 %ISILAH DATA BERIKUT INI:
 \newcommand{\nama}{Michael Adrian}
 \newcommand{\@npm}{2013730039}
-\newcommand{\tanggal}{25/11/2016} %Tanggal pembuatan dokumen
+\newcommand{\tanggal}{28/11/2016} %Tanggal pembuatan dokumen
 \newcommand{\@judultopik}{Perbandingan Algoritma Backtracking dengan Algoritma Hybrid Genetic untuk Menyelesaikan Permainan Calcudoku} % Judul/topik anda
 \newcommand{\kodetopik}{CEN4107}
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
@@ -72,7 +72,7 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan 
 	\begin{enumerate}
 		\item \textbf{Melakukan studi literatur tentang permainan teka-teki Calcudoku.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} 
+		{\bf Hasil :}
 		
 		Sebagai salah satu jenis permainan teka-teki aritmatika dan \textit{grid}, Calcudoku, atau dikenal juga sebagai KenKen, KenDoku, atau Mathdoku, diciptakan pada tahun 2004 oleh seorang guru matematika dari Jepang yang bernama Tetsuya Miyamoto untuk memenuhi tujuannya untuk melatih kemampuan matematika dan logika siswa-siswinya dengan cara yang menyenangkan. Nama KenKen diambil dari kata bahasa Jepang yang berarti kepandaian. Permainan yang mengasah otak ini dengan cepat menyebar ke seluruh Jepang dan Amerika Serikat, menggantikan permainan teka-teki silang di banyak koran. Permainan ini kemudian menjadi sensasi di seluruh dunia setelah munculnya versi \textit{online} dan \textit{mobile} dari permainan teka-teki ini, khususnya menarik untuk pecinta permainan teka-teki angka seperti Sudoku.
 
@@ -100,10 +100,10 @@ Untuk menyelesaikan sebuah teka-teki Calcudoku, pemain harus pertama-tama memaha
 \item Dalam urutan apa angka-angka tersebut harus dimasukkan ke dalam sebuah \textit{cage}
 \end{enumerate}
 
-Seperti kebanyakan permainan teka-teki angka, cara yang paling mudah untuk menyelesaikan teka-teki ini adalah dengan mengeliminasi angka-angka yang sudah digunakan dan mencoba satu per satu angka yang mungkin (\textit{trial and error}). 
+Seperti kebanyakan permainan teka-teki angka, cara yang paling mudah untuk menyelesaikan teka-teki ini adalah dengan mengeliminasi angka-angka yang sudah digunakan dan mencoba satu per satu angka yang mungkin (\textit{trial and error}).
 
 Dalam pengisian teka-teki ini ada dua tahapan, yaitu:
-\begin{enumerate} 
+\begin{enumerate}
 \item Mencari \textit{cage} yang hanya berukuran 1 sel, karena \textit{cage} ini tidak menghasilkan pertanyaan angka apa dan urutan apa. Tahap ini adalah tahap yang paling jelas. Contoh, pada Gambar~\ref{fig:backtracking1}, \textit{cage} pada sudut kiri atas dan \textit{cage} pada sudut kanan bawah hanya berukuran 1 sel, dan dapat langsung diisi dengan angka tujuannya.
 \item Mencari mencari \textit{cage} yang hanya mempunyai satu kemungkinan kombinasi angka, sehingga masalah angka-angka apa yang harus diisi dalam \textit{cage} tersebut terjawab. Contoh, \textit{cage} pada sudut kanan atas mempunyai aturan "3-", artinya angka tujuannya adalah 3 dengan menggunakan operasi pengurangan. Satu-satunya pasangan angka dari himpunan \{1,2,3,4\} yang akan menghasilkan angka 3 saat satu angka dikurangkan dari angka yang lainnya adalah \{1,4\}. Namun masalahnya adalah urutan angka-angka yang harus dimasukkan. Dalam kasus ini, untungnya, sel pada sudut kanan bawah sudah diisi dengan angka 1, maka angka 1 tidak bisa digunakan lagi pada kolom yang paling kanan. Jadi, dengan menggunakan cara eliminasi, sel pada sudut kanan atas harus diisi dengan angka 4 dan sel di sebelah kirinya, yaitu sel pada baris yang paling atas dan kolom ketiga dari kiri, harus diisi dengan angka 1. Hal ini memberikan solusi untuk sel pada baris yang paling atas dan kolom kedua dari kiri, yaitu angka 2, karena angka 2 adalah angka yang belum pernah dipakai dalam baris tersebut. Proses ini berlanjut sampai semua sel dalam \textit{grid} terisi dan menghasilkan solusi pada Gambar~\ref{fig:backtracking2} ~\cite{Fahda}.
 \end{enumerate}
@@ -296,7 +296,7 @@ Singkatnya, langkah-langkah dasar dari implementasi algoritma \textit{backtracki
 		
 		\item \textbf{Melakukan studi literatur tentang algoritma \textit{hybrid genetic}.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} 
+		{\bf Hasil :}
 		
 		Dalam kasus ini, algoritma \textit{hybrid genetic} adalah gabungan dari algoritma \textit{rule based} dan algoritma genetik. Algoritma \textit{rule based} akan dijalankan sampai pada titik dimana algoritma tidak bisa menyelesaikan permainan teka-teki Calcudoku. Jika algoritma sudah tidak bisa menyelesaikan permainan, maka algoritma genetik akan mulai dijalankan.
 
@@ -360,7 +360,7 @@ Aturan \textit{X-wing} digunakan jika hanya ada dua kemungkinan angka yang bisa 
 
 Pencarian heuristik adalah sebuah teknik pencarian kecerdasan buatan (\textit{artifical intelligence}) yang menggunakan heuristik dalam langkah-langkahnya. Heuristik adalah semacam aturan tidak tertulis yang mungkin menghasilkan solusi. Heuristik kadang-kadang efektif, tetapi tidak dijamin akan berhasil. dalam setiap kasus. Heuristik memerankan peran penting dalam strategi pencarian karena sifat eksponensial dari kebanyakan masalah. Heuristik membantu mengurangi jumlah alternatif solusi dari angka yang bersifat eksponensial menjadi angka yang bersifat polinomial. Contoh teknik pencarian heuristik adalah \textit{Generate and Test}, \textit{Hill Climbing}, dan \textit{Best First Search}.
 
-Algoritma genetik adalah salah satu teknik heuristik \textit{Generate and Test} yang terinspirasi oleh sistem seleksi alam. Algoritma ini adalah perpaduan dari bidang biologi dan ilmu komputer. Algoritma ini adalah salah satu dari teknik pencarian heuristik. 
+Algoritma genetik adalah salah satu teknik heuristik \textit{Generate and Test} yang terinspirasi oleh sistem seleksi alam. Algoritma ini adalah perpaduan dari bidang biologi dan ilmu komputer. Algoritma ini adalah salah satu dari teknik pencarian heuristik.
 
 Algoritma genetik adalah salah satu teknik heuristik \textit{Generate and Test} yang terinspirasi oleh sistem seleksi alam. Algoritma ini adalah perpaduan dari bidang biologi dan ilmu komputer. Algoritma ini memanipulasi informasi, biasanya disebut sebagai kromosom. Kromosom ini meng-\textit{encode} kemungkinan jawaban untuk sebuah masalah yang diberikan. Kromosom dievaluasi dan diberi \textit{fitness value} berdasarkan seberapa baikkah kromosom dalam menyelesaikan masalah yang diberikan berdasarkan kriteria yang ditentukan oleh pembuat program. Nilai kelayakan ini digunakan sebagai probabilitas kebertahanan hidup kromosom dalam satu siklus reproduksi. Kromosom baru (kromosom anak, \textit{child chromosome}) diproduksi dengan menggabungkan dua (atau lebih) kromosom orang tua (\textit{parent chromosome}). Proses ini dirancang untuk menghasilkan kromosom-kromosom keturunan yang lebih layak, kromosom-kromosom ini menyandikan jawaban yang lebih baik, sampai solusi yang baik dan yang bisa diterima ditemukan.
 
@@ -398,7 +398,7 @@ Algoritma genetik digunakan saat teka-teki masih tidak bisa diselesaikan setelah
 
 Menurut Johanna, Lukas, dan Saputra, fungsi objektif, yang direpresentasikan dengan \begin{math}x_j\end{math}, akan dihitung setelah pembangkitan nilai dari gen pada kromosom sudah dilakukan. Nilai untuk gen ke-\begin{math}j\end{math} pada sebuah kromosom direpresentasikan dengan \begin{math}w_j\end{math}. \begin{math}x_j\end{math} akan bernilai 0 jika belum diselesaikan (\begin{math}w_j = 0\end{math}), dan bernilai 1 jika sudah diselesaikan (\begin{math}w_j \neq 0\end{math}). Untuk kromosom dengan jumlah gen \begin{math}k\end{math}, fungsi kelayakan, yaitu hasil penjumlahan dari hasil fungsi objektif untuk setiap gen dibagi dengan jumlah gen, dinyatakan dalam persamaan di bawah ini ~\cite{JohannaLukasSaputra}:
 \begin{displaymath}
-x_j = 
+x_j =
 \begin{cases}
 0, w_j = 0 \\
 1, w_j \neq 0
@@ -455,7 +455,7 @@ Alur (\textit{flow chart}) penyelesaian permainan teka-teki Calcudoku dengan men
 						
 		\item \textbf{Melakukan analisis cara kerja algoritma \textit{backtraccking} dan algoritma \textit{hybrid genetic} untuk Calcudoku.}\\
 		{\bf Status :} Baru ditambahkan setelah UTS Skripsi 1.\\
-		{\bf Hasil :} 
+		{\bf Hasil :}
 		
 		\textbf{Algoritma \textit{Backtracking}}
 		
@@ -1360,7 +1360,7 @@ Proses yang sama diulang untuk menghasilkan Generasi ke-4 dan generasi-generasi 
 
 		\item \textbf{Menulis dokumen skripsi}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} Bab 1 dan Bab 2 telah selesai ditulis.
+		{\bf Hasil :} Bab 1, Bab 2, dan Bab 3 telah selesai ditulis.
 
 	\end{enumerate}
 
@@ -1405,14 +1405,14 @@ Keterangan (*)\\
   Makalah IF2211 Strategi Algoritma - Semester II Tahun 2014/2015,
   Program Studi Teknik Informatika, Sekolah Teknik Elektro dan Informatika, Institut Teknologi Bandung
   2015.
-  
+
 \bibitem{JohannaLukasSaputra}
   Olivia Johanna, Samuel Lukas, Kie Van Ivanky Saputra,
   \emph{Solving and Modeling Ken-ken Puzzle by Using Hybrid Genetics Algorithm},
   1st International Conference on Engineering and Technology Development (ICETD 2012),
   Faculty of Engineering and Faculty of Computer Science, Bandar Lampung University,
   2012.
-  
+
 \end{thebibliography}
 
 %\section{Kendala yang dihadapi}
@@ -1427,7 +1427,7 @@ Keterangan (*)\\
 
 \vspace{1cm}
 \centering Bandung, \tanggal\\
-\vspace{2cm} \nama \\ 
+\vspace{2cm} \nama \\
 \vspace{1cm}
 
 Menyetujui, \\
