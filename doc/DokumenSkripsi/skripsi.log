@@ -1,16 +1,19 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.22)  27 NOV 2016 21:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.19)  29 NOV 2016 11:57
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
 **skripsi.tex
-(./skripsi.tex
-LaTeX2e <2016/03/31>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(E:\Skripsi\doc\DokumenSkripsi\skripsi.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
+, bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
+ian, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, icelandic, indonesian, interlingua, irish, italian,
+ kannada, kurmanji, latin, latvian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, ngerman
+-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, sloven
+ian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishmax, w
+elsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -24,8 +27,7 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/lmodern.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\lmodern.sty"
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -60,61 +62,64 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2016/02/24 3.9q The Babel package
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/babel-bahasa/bahasai.ldf
-Language: bahasa 2008/03/15 v1.0l Bahasa Indonesia support from the babel syste
-m
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-bahasa\bahasai.ldf"
+Language: bahasa 2008/03/15 v1.0l Bahasa Indonesia support from the babel system
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2016/02/24 3.9q Babel common definitions
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
-)))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+))) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/abstract/abstract.sty
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\abstract\abstract.sty"
 Package: abstract 2009/06/08 v1.2a configurable abstracts
 \abstitleskip=\skip43
 \absleftindent=\skip44
 \absrightindent=\skip45
 \absparindent=\skip46
 \absparsep=\skip47
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/chappg/chappg.sty
-Package: chappg 2006/05/09 v2.1b page numbering by chapter number pages by chap
-ter (or other unit)
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\chappg\chappg.sty"
+Package: chappg 2006/05/09 v2.1b page numbering by chapter number pages by chapter (or other unit)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 143.
+Package color Info: Driver file: pdftex.def on input line 130.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count89
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count90
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\misc\etex.sty"
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count90
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\etb@tempcnta=\count91
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 \fancy@headwidth=\skip48
 \f@ncyO@elh=\skip49
 \f@ncyO@erh=\skip50
@@ -124,36 +129,34 @@ Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \f@ncyO@erf=\skip54
 \f@ncyO@olf=\skip55
 \f@ncyO@orf=\skip56
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count91
+\c@float@type=\count92
 \float@exts=\toks14
 \float@box=\box26
 \@float@everytoks=\toks15
 \@floatcapt=\box27
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count92
-\Gm@cntv=\count93
-\c@Gm@tempcnt=\count94
+\Gm@cnth=\count93
+\Gm@cntv=\count94
+\c@Gm@tempcnt=\count95
 \Gm@bindingoffset=\dimen104
 \Gm@wd@mp=\dimen105
 \Gm@odd@mp=\dimen106
@@ -163,62 +166,60 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen110
 \Gm@layoutvoffset=\dimen111
 \Gm@dimlist=\toks17
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
-)
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 )
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count95
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count96
 \lst@gtempboxa=\box28
 \lst@token=\toks18
-\lst@length=\count96
+\lst@length=\count97
 \lst@currlwidth=\dimen114
-\lst@column=\count97
-\lst@pos=\count98
+\lst@column=\count98
+\lst@pos=\count99
 \lst@lostspace=\dimen115
 \lst@width=\dimen116
-\lst@newlines=\count99
-\lst@lineno=\count100
+\lst@newlines=\count100
+\lst@lineno=\count101
 \lst@maxwidth=\dimen117
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count101
-\lst@skipnumbers=\count102
+\c@lstnumber=\count102
+\lst@skipnumbers=\count103
 \lst@framebox=\box29
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/lscape.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2016/02/08 v1.8o multicolumn formatting (FMi)
-\c@tracingmulticols=\count103
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count104
 \mult@box=\box30
 \multicol@leftmargin=\dimen118
-\c@unbalance=\count104
-\c@collectmore=\count105
-\doublecol@number=\count106
-\multicoltolerance=\count107
-\multicolpretolerance=\count108
+\c@unbalance=\count105
+\c@collectmore=\count106
+\doublecol@number=\count107
+\multicoltolerance=\count108
+\multicolpretolerance=\count109
 \full@width=\dimen119
 \page@free=\dimen120
 \premulticols=\dimen121
@@ -227,7 +228,6 @@ Package: multicol 2016/02/08 v1.8o multicolumn formatting (FMi)
 \multicolbaselineskip=\skip58
 \partial@page=\box31
 \last@line=\box32
-\maxbalancingoverflow=\dimen123
 \mult@rightbox=\box33
 \mult@grightbox=\box34
 \mult@gfirstbox=\box35
@@ -249,75 +249,72 @@ Package: multicol 2016/02/08 v1.8o multicolumn formatting (FMi)
 \@tempa=\box51
 \@tempa=\box52
 \@tempa=\box53
-\c@columnbadness=\count109
-\c@finalcolumnbadness=\count110
-\last@try=\dimen124
-\multicolovershoot=\dimen125
-\multicolundershoot=\dimen126
+\c@columnbadness=\count110
+\c@finalcolumnbadness=\count111
+\last@try=\dimen123
+\multicolovershoot=\dimen124
+\multicolundershoot=\dimen125
 \mult@nat@firstbox=\box54
 \colbreak@box=\box55
-\mc@col@check@num=\count111
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lineno/lineno.sty
+\multicol@sort@counter=\count112
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\lineno\lineno.sty"
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count112
+\linenopenalty=\count113
 \output=\toks19
-\linenoprevgraf=\count113
-\linenumbersep=\dimen127
-\linenumberwidth=\dimen128
-\c@linenumber=\count114
-\c@pagewiselinenumber=\count115
-\c@LN@truepage=\count116
-\c@internallinenumber=\count117
-\c@internallinenumbers=\count118
-\quotelinenumbersep=\dimen129
-\bframerule=\dimen130
-\bframesep=\dimen131
+\linenoprevgraf=\count114
+\linenumbersep=\dimen126
+\linenumberwidth=\dimen127
+\c@linenumber=\count115
+\c@pagewiselinenumber=\count116
+\c@LN@truepage=\count117
+\c@internallinenumber=\count118
+\c@internallinenumbers=\count119
+\quotelinenumbersep=\dimen128
+\bframerule=\dimen129
+\bframesep=\dimen130
 \bframebox=\box56
 LaTeX Info: Redefining \\ on input line 3056.
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/kantlipsum/kantlipsum.sty
-(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2016/03/28 v6468 L3 programming layer (loader) 
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\kantlipsum\kantlipsum.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty"
+Package: expl3 2015/07/30 v5724 L3 programming layer (loader) 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2016/03/28 v6468 L3 programming layer (code)
-L3 Module: l3bootstrap 2016/02/12 v6412 L3 Bootstrap code
-L3 Module: l3names 2016/03/11 v6433 L3 Namespace for primitives
-L3 Module: l3basics 2015/11/22 v6315 L3 Basic definitions
-L3 Module: l3expan 2015/09/10 v5983 L3 Argument expansion
-L3 Module: l3tl 2016/03/26 v6465 L3 Token lists
-L3 Module: l3str 2016/03/24 v6441 L3 Strings
-L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
-L3 Module: l3int 2016/03/24 v6441 L3 Integers
-\c_max_int=\count119
-\l_tmpa_int=\count120
-\l_tmpb_int=\count121
-\g_tmpa_int=\count122
-\g_tmpb_int=\count123
-L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
-L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
-\g__prg_map_int=\count124
-L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
-L3 Module: l3token 2016/03/26 v6465 L3 Experimental token manipulation
-L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
-L3 Module: l3msg 2016/03/26 v6464 L3 Messages
-L3 Module: l3file 2016/03/25 v6458 L3 File and I/O operations
-\l_iow_line_count_int=\count125
-\l__iow_target_count_int=\count126
-\l__iow_current_line_int=\count127
-\l__iow_current_word_int=\count128
-\l__iow_current_indentation_int=\count129
-L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
-\c_zero_dim=\dimen132
-\c_max_dim=\dimen133
-\l_tmpa_dim=\dimen134
-\l_tmpb_dim=\dimen135
-\g_tmpa_dim=\dimen136
-\g_tmpb_dim=\dimen137
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex"
+Package: expl3 2015/07/30 v5724 L3 programming layer (code) 
+L3 Module: l3bootstrap 2015/07/30 v5721 L3 Bootstrap code
+L3 Module: l3names 2015/07/28 v5705 L3 Namespace for primitives
+L3 Module: l3basics 2015/01/27 v5500 L3 Basic definitions
+L3 Module: l3expan 2014/11/27 v5472 L3 Argument expansion
+L3 Module: l3tl 2015/07/14 v5659 L3 Token lists
+L3 Module: l3str 2015/07/14 v5659 L3 Strings
+L3 Module: l3seq 2015/07/24 v5681 L3 Sequences and stacks
+L3 Module: l3int 2015/07/14 v5659 L3 Integers
+\c_max_int=\count120
+\l_tmpa_int=\count121
+\l_tmpb_int=\count122
+\g_tmpa_int=\count123
+\g_tmpb_int=\count124
+L3 Module: l3quark 2015/07/14 v5659 L3 Quarks
+L3 Module: l3prg 2015/07/30 v5722 L3 Control structures
+\g__prg_map_int=\count125
+L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
+L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
+L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
+L3 Module: l3msg 2015/02/26 v5537 L3 Messages
+L3 Module: l3file 2015/07/30 v5714 L3 File and I/O operations
+\l_iow_line_count_int=\count126
+\l__iow_target_count_int=\count127
+\l__iow_current_line_int=\count128
+\l__iow_current_word_int=\count129
+\l__iow_current_indentation_int=\count130
+L3 Module: l3skip 2015/07/14 v5659 L3 Dimensions and skips
+\c_zero_dim=\dimen131
+\c_max_dim=\dimen132
+\l_tmpa_dim=\dimen133
+\l_tmpb_dim=\dimen134
+\g_tmpa_dim=\dimen135
+\g_tmpb_dim=\dimen136
 \c_zero_skip=\skip59
 \c_max_skip=\skip60
 \l_tmpa_skip=\skip61
@@ -330,34 +327,34 @@ L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \l_tmpb_muskip=\muskip13
 \g_tmpa_muskip=\muskip14
 \g_tmpb_muskip=\muskip15
-L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
-\g__keyval_level_int=\count130
-\l_keys_choice_int=\count131
-L3 Module: l3fp 2016/03/26 v6465 L3 Floating points
-\c__fp_leading_shift_int=\count132
-\c__fp_middle_shift_int=\count133
-\c__fp_trailing_shift_int=\count134
-\c__fp_big_leading_shift_int=\count135
-\c__fp_big_middle_shift_int=\count136
-\c__fp_big_trailing_shift_int=\count137
-\c__fp_Bigg_leading_shift_int=\count138
-\c__fp_Bigg_middle_shift_int=\count139
-\c__fp_Bigg_trailing_shift_int=\count140
-L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
+L3 Module: l3keys 2015/07/26 v5684 L3 Key-value interfaces
+\g__keyval_level_int=\count131
+\l_keys_choice_int=\count132
+L3 Module: l3fp 2015/07/09 v5652 L3 Floating points
+\c__fp_leading_shift_int=\count133
+\c__fp_middle_shift_int=\count134
+\c__fp_trailing_shift_int=\count135
+\c__fp_big_leading_shift_int=\count136
+\c__fp_big_middle_shift_int=\count137
+\c__fp_big_trailing_shift_int=\count138
+\c__fp_Bigg_leading_shift_int=\count139
+\c__fp_Bigg_middle_shift_int=\count140
+\c__fp_Bigg_trailing_shift_int=\count141
+L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
 \c_empty_box=\box57
 \l_tmpa_box=\box58
 \l_tmpb_box=\box59
 \g_tmpa_box=\box60
 \g_tmpb_box=\box61
-L3 Module: l3coffins 2016/03/24 v6440 L3 Coffin code layer
+L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
 \l__coffin_internal_box=\box62
-\l__coffin_internal_dim=\dimen138
-\l__coffin_offset_x_dim=\dimen139
-\l__coffin_offset_y_dim=\dimen140
-\l__coffin_x_dim=\dimen141
-\l__coffin_y_dim=\dimen142
-\l__coffin_x_prime_dim=\dimen143
-\l__coffin_y_prime_dim=\dimen144
+\l__coffin_internal_dim=\dimen137
+\l__coffin_offset_x_dim=\dimen138
+\l__coffin_offset_y_dim=\dimen139
+\l__coffin_x_dim=\dimen140
+\l__coffin_y_dim=\dimen141
+\l__coffin_x_prime_dim=\dimen142
+\l__coffin_y_prime_dim=\dimen143
 \c_empty_coffin=\box63
 \l__coffin_aligned_coffin=\box64
 \l__coffin_aligned_internal_coffin=\box65
@@ -366,46 +363,48 @@ L3 Module: l3coffins 2016/03/24 v6440 L3 Coffin code layer
 \l__coffin_display_coffin=\box68
 \l__coffin_display_coord_coffin=\box69
 \l__coffin_display_pole_coffin=\box70
-\l__coffin_display_offset_dim=\dimen145
-\l__coffin_display_x_dim=\dimen146
-\l__coffin_display_y_dim=\dimen147
+\l__coffin_display_offset_dim=\dimen144
+\l__coffin_display_x_dim=\dimen145
+\l__coffin_display_y_dim=\dimen146
 L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
-L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
-L3 Module: l3candidates 2016/03/25 v6456 L3 Experimental additions to l3kernel
-\l__box_top_dim=\dimen148
-\l__box_bottom_dim=\dimen149
-\l__box_left_dim=\dimen150
-\l__box_right_dim=\dimen151
-\l__box_top_new_dim=\dimen152
-\l__box_bottom_new_dim=\dimen153
-\l__box_left_new_dim=\dimen154
-\l__box_right_new_dim=\dimen155
+L3 Module: l3candidates 2015/07/22 v5677 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen147
+\l__box_bottom_dim=\dimen148
+\l__box_left_dim=\dimen149
+\l__box_right_dim=\dimen150
+\l__box_top_new_dim=\dimen151
+\l__box_bottom_new_dim=\dimen152
+\l__box_left_new_dim=\dimen153
+\l__box_right_new_dim=\dimen154
 \l__box_internal_box=\box71
-\l__coffin_bounding_shift_dim=\dimen156
-\l__coffin_left_corner_dim=\dimen157
-\l__coffin_right_corner_dim=\dimen158
-\l__coffin_bottom_corner_dim=\dimen159
-\l__coffin_top_corner_dim=\dimen160
-\l__coffin_scaled_total_height_dim=\dimen161
-\l__coffin_scaled_width_dim=\dimen162
-L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
+\l__coffin_bounding_shift_dim=\dimen155
+\l__coffin_left_corner_dim=\dimen156
+\l__coffin_right_corner_dim=\dimen157
+\l__coffin_bottom_corner_dim=\dimen158
+\l__coffin_top_corner_dim=\dimen159
+\l__coffin_scaled_total_height_dim=\dimen160
+\l__coffin_scaled_width_dim=\dimen161
+L3 Module: l3luatex 2015/06/30 v5646 L3 Experimental LuaTeX-specific functions
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
-File: l3pdfmode.def 2016/03/26 v6465 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count141
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3unicode-data.def"
+File: l3unicode-data.def 2015/07/20 v-1 L3 Unicode data
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def"
+File: l3pdfmode.def 2015/06/30 v5646 L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count142
 ))
 Package: kantlipsum 2012/10/14 v0.6 Dummy text in Kantian style
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2016/03/28 v6468 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count142
-\l__xparse_m_args_int=\count143
-\l__xparse_mandatory_args_int=\count144
-\l__xparse_processor_int=\count145
-\l__xparse_v_nesting_int=\count146
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty"
+Package: xparse 2015/07/28 v5700 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count143
+\l__xparse_m_args_int=\count144
+\l__xparse_mandatory_args_int=\count145
+\l__xparse_processor_int=\count146
+\l__xparse_v_nesting_int=\count147
 )
-\l_kgl_start_int=\count147
-\l_kgl_end_int=\count148
+\l_kgl_start_int=\count148
+\l_kgl_end_int=\count149
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -424,26 +423,26 @@ Package: xparse 2016/03/28 v6468 L3 Experimental document command parser
 . ignored.
 .................................................
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+("C:\Program Files\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box72
 \beforetitleunit=\skip65
 \aftertitleunit=\skip66
-\ttl@plus=\dimen163
-\ttl@minus=\dimen164
+\ttl@plus=\dimen162
+\ttl@minus=\dimen163
 \ttl@toksa=\toks20
-\titlewidth=\dimen165
-\titlewidthlast=\dimen166
-\titlewidthfirst=\dimen167
+\titlewidth=\dimen164
+\titlewidthlast=\dimen165
+\titlewidthfirst=\dimen166
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\tocbibind\tocbibind.sty"
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
 
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/tocloft/tocloft.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 44.
 \cftparskip=\skip67
@@ -475,35 +474,34 @@ Package tocloft Info: The document has chapter divisions on input line 44.
 \cftbeforefigskip=\skip93
 \cftfigindent=\skip94
 \cftfignumwidth=\skip95
-\c@lofdepth=\count149
-\c@lotdepth=\count150
+\c@lofdepth=\count150
+\c@lotdepth=\count151
 \cftbeforelottitleskip=\skip96
 \cftafterlottitleskip=\skip97
 \cftbeforetabskip=\skip98
 \cfttabindent=\skip99
 \cfttabnumwidth=\skip100
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.sty
-(/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
 \@xs@message=\write3
-\integerpart=\count151
-\decimalpart=\count152
+\integerpart=\count152
+\decimalpart=\count153
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
@@ -518,50 +516,48 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
-)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO)
 Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
 Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
 Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
 Package: xcolor-patch 2011/01/30 xcolor patch
 Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen168
-\Hy@linkcounter=\count153
-\Hy@pagecounter=\count154
+\@linkdim=\dimen167
+\Hy@linkcounter=\count154
+\Hy@pagecounter=\count155
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count155
+\Hy@SavedSpaceFactor=\count156
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `plainpages' set `false' on input line 4319.
 Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4319.
 Package hyperref Info: Option `unicode' set `true' on input line 4319.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/puenc.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -571,17 +567,16 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count156
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\c@Hy@tempcnt=\count157
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen169
-\Fld@menulength=\count157
-\Field@Width=\dimen170
-\Fld@charsize=\dimen171
+\XeTeXLinkMargin=\dimen168
+\Fld@menulength=\count158
+\Field@Width=\dimen169
+\Fld@charsize=\dimen170
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -591,107 +586,99 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count158
-\c@Item=\count159
-\c@Hfootnote=\count160
+\Hy@abspage=\count159
+\c@Item=\count160
+\c@Hfootnote=\count161
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count161
-\c@bookmark@seq@number=\count162
+\Fld@listcount=\count162
+\c@bookmark@seq@number=\count163
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip101
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/emptypage/emptypage.sty
-Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
-pages
+("C:\Program Files\MiKTeX 2.9\tex\latex\emptypage\emptypage.sty"
+Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty pages
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen172
-\captionmargin@=\dimen173
-\captionwidth=\dimen174
-\caption@tempdima=\dimen175
-\caption@indent=\dimen176
-\caption@parindent=\dimen177
-\caption@hangindent=\dimen178
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen171
+\captionmargin@=\dimen172
+\captionwidth=\dimen173
+\caption@tempdima=\dimen174
+\caption@indent=\dimen175
+\caption@parindent=\dimen176
+\caption@hangindent=\dimen177
 )
-\c@ContinuedFloat=\count163
+\c@ContinuedFloat=\count164
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
 Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lcg/lcg.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\lcg\lcg.sty"
 Package: lcg 2013/08/09 v1.3 generating random numbers
-\f@rst=\count164
-\l@st=\count165
-\cr@nd=\count166
-\c@rand=\count167
+\f@rst=\count165
+\l@st=\count166
+\cr@nd=\count167
+\c@rand=\count168
 
 Smallest possible random number: 1
 Largest possible random number: 2147483647
 The pseudo random numbers will be stored in the LaTeX counter `rand'
 )
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 69.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Package hyperref Info: Option `unicode' set `true' on input line 276.
 Package hyperref Info: Option `colorlinks' set `true' on input line 276.
 
 \@input{data.aux}
-\openout2 = `data.aux'.
-
-(./data.tex (/usr/local/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty
+(E:\Skripsi\doc\DokumenSkripsi\data.tex ("C:\Program Files\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen179
-\lightrulewidth=\dimen180
-\cmidrulewidth=\dimen181
-\belowrulesep=\dimen182
-\belowbottomsep=\dimen183
-\aboverulesep=\dimen184
-\abovetopsep=\dimen185
-\cmidrulesep=\dimen186
-\cmidrulekern=\dimen187
-\defaultaddspace=\dimen188
-\@cmidla=\count168
-\@cmidlb=\count169
-\@aboverulesep=\dimen189
-\@belowrulesep=\dimen190
-\@thisruleclass=\count170
-\@lastruleclass=\count171
-\@thisrulewidth=\dimen191
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
+\heavyrulewidth=\dimen178
+\lightrulewidth=\dimen179
+\cmidrulewidth=\dimen180
+\belowrulesep=\dimen181
+\belowbottomsep=\dimen182
+\aboverulesep=\dimen183
+\abovetopsep=\dimen184
+\cmidrulesep=\dimen185
+\cmidrulekern=\dimen186
+\defaultaddspace=\dimen187
+\@cmidla=\count169
+\@cmidlb=\count170
+\@aboverulesep=\dimen188
+\@belowrulesep=\dimen189
+\@thisruleclass=\count171
+\@lastruleclass=\count172
+\@thisrulewidth=\dimen190
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/colortbl/colortbl.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen192
-\extrarowheight=\dimen193
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen191
+\extrarowheight=\dimen192
 \NC@list=\toks21
 \extratabsurround=\skip102
 \backup@length=\skip103
@@ -700,7 +687,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \minrowclearance=\skip104
 )
 LaTeX Info: Redefining \color on input line 702.
-\rownum=\count172
+\rownum=\count173
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -710,460 +697,383 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip105
 \LTright=\skip106
 \LTpre=\skip107
 \LTpost=\skip108
-\LTchunksize=\count173
-\LTcapwidth=\dimen194
+\LTchunksize=\count174
+\LTcapwidth=\dimen193
 \LT@head=\box73
 \LT@firsthead=\box74
 \LT@foot=\box75
 \LT@lastfoot=\box76
-\LT@cols=\count174
-\LT@rows=\count175
-\c@LT@tables=\count176
-\c@LT@chunks=\count177
+\LT@cols=\count175
+\LT@rows=\count176
+\c@LT@tables=\count177
+\c@LT@chunks=\count178
 \LT@p@ftn=\toks23
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks24
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/todo/todo.sty
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\todo\todo.sty"
 Package: todo 2010/03/31 v2.4142 To-do list (Federico Garcia)
 \@todotoks=\toks25
-\c@todo=\count178
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\c@todo=\count179
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks26
 \verbatim@line=\toks27
 \verbatim@in@stream=\read1
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgfplots/pgfplots.sty
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
-Package: pgfplots 2016/01/06 v1.13 Data Visualization (1.13)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
-x
-\pgfutil@everybye=\toks28
-\pgfutil@tempdima=\dimen195
-\pgfutil@tempdimb=\dimen196
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgfplots\pgfplots.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.revision.tex")
+Package: pgfplots 2015/05/02 v1.12.1 Data Visualization (1.12.1)
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
-sts.tex))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.tex"
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen194
+\pgfutil@tempdimb=\dimen195
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common-lists.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def"
 \pgfutil@abb=\box77
-(/usr/local/texlive/2015/texmf-dist/tex/latex/ms/everyshi.sty
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfrcs.code.tex"
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
 ))
-Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfcore.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\systemlayer\pgfsys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex"
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
 \pgfkeys@pathtoks=\toks29
 \pgfkeys@temptoks=\toks30
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
-ode.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks31
 ))
-\pgf@x=\dimen197
-\pgf@y=\dimen198
-\pgf@xa=\dimen199
-\pgf@ya=\dimen256
-\pgf@xb=\dimen257
-\pgf@yb=\dimen258
-\pgf@xc=\dimen259
-\pgf@yc=\dimen260
+\pgf@x=\dimen196
+\pgf@y=\dimen197
+\pgf@xa=\dimen198
+\pgf@ya=\dimen199
+\pgf@xb=\dimen200
+\pgf@yb=\dimen201
+Normal \dimen register pool exhausted, switching to extended pool.
+\pgf@xc=\dimen256
+\pgf@yc=\dimen257
 \w@pgf@writea=\write4
 \r@pgf@reada=\read2
-\c@pgf@counta=\count179
-\c@pgf@countb=\count180
-\c@pgf@countc=\count181
-\c@pgf@countd=\count182
+\c@pgf@counta=\count180
+\c@pgf@countb=\count181
+\c@pgf@countc=\count182
+\c@pgf@countd=\count183
 \t@pgf@toka=\toks32
 \t@pgf@tokb=\toks33
 \t@pgf@tokc=\toks34
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
-ef
-File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
-df.def
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def"
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
-code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count183
-\pgfsyssoftpath@bigbuffer@items=\count184
+\pgfsyssoftpath@smallbuffer@items=\count184
+\pgfsyssoftpath@bigbuffer@items=\count185
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
-code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex"
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen261
-\pgfmath@count=\count185
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex"
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex"
+\pgfmath@dimen=\dimen258
+\pgfmath@count=\count186
 \pgfmath@box=\box78
 \pgfmath@toks=\toks35
 \pgfmath@stack@operand=\toks36
 \pgfmath@stack@operation=\toks37
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
-tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
-.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
-nometric.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
-m.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
-rison.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
-code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
-.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
-code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
-erarithmetics.code.tex)))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count186
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.random.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.base.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.round.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex")))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count187
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
-de.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen262
-\pgf@picmaxx=\dimen263
-\pgf@picminy=\dimen264
-\pgf@picmaxy=\dimen265
-\pgf@pathminx=\dimen266
-\pgf@pathmaxx=\dimen267
-\pgf@pathminy=\dimen268
-\pgf@pathmaxy=\dimen269
-\pgf@xx=\dimen270
-\pgf@xy=\dimen271
-\pgf@yx=\dimen272
-\pgf@yy=\dimen273
-\pgf@zx=\dimen274
-\pgf@zy=\dimen275
+\pgf@picminx=\dimen259
+\pgf@picmaxx=\dimen260
+\pgf@picminy=\dimen261
+\pgf@picmaxy=\dimen262
+\pgf@pathminx=\dimen263
+\pgf@pathmaxx=\dimen264
+\pgf@pathminy=\dimen265
+\pgf@pathmaxy=\dimen266
+\pgf@xx=\dimen267
+\pgf@xy=\dimen268
+\pgf@yx=\dimen269
+\pgf@yy=\dimen270
+\pgf@zx=\dimen271
+\pgf@zy=\dimen272
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
-ruct.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen276
-\pgf@path@lasty=\dimen277
+\pgf@path@lastx=\dimen273
+\pgf@path@lasty=\dimen274
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
-.code.tex
-File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen278
-\pgf@shorten@start@additional=\dimen279
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex"
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
+\pgf@shorten@end@additional=\dimen275
+\pgf@shorten@start@additional=\dimen276
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
-de.tex
-File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex"
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box79
 \pgf@hbox=\box80
 \pgf@layerbox@main=\box81
-\pgf@picture@serial@count=\count187
+\pgf@picture@serial@count=\count188
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
-ate.code.tex
-File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen280
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex"
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
+\pgflinewidth=\dimen277
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
-ations.code.tex
-File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen281
-\pgf@pt@y=\dimen282
-\pgf@pt@temp=\dimen283
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex"
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
+\pgf@pt@x=\dimen278
+\pgf@pt@y=\dimen279
+\pgf@pt@temp=\dimen280
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
-e.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
-ode.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex"
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
-ssing.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex"
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
-de.tex
-File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen284
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex"
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
+\pgfarrowsep=\dimen281
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
-e.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen285
-\pgf@sys@shading@range@num=\count188
+\pgf@max=\dimen282
+\pgf@sys@shading@range@num=\count189
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
-e.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex"
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
-code.tex
-File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex"
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
 \pgfexternal@startupbox=\box82
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
-de.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex"
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
-ncy.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex"
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
-code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex"
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
-e.tex
-File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
 \pgfnodeparttextbox=\box83
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
-tex
-File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--0-65.sty
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen286
-\pgf@nodesepend=\dimen287
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty"
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen283
+\pgf@nodesepend=\dimen284
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--1-18.sty
-Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty"
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgffor.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfkeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\math\pgfmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgffor.code.tex"
+Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen288
-\pgffor@skip=\dimen289
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
+\pgffor@iter=\dimen285
+\pgffor@skip=\dimen286
 \pgffor@stack=\toks38
 \pgffor@toks=\toks39
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
-e.tex
-Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex"
+Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
-dlers.code.tex
-File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count189
-\pgfplotmarksize=\dimen290
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex"
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
+\pgf@plot@mark@count=\count190
+\pgfplotmarksize=\dimen287
 )
-\tikz@lastx=\dimen291
-\tikz@lasty=\dimen292
-\tikz@lastxsaved=\dimen293
-\tikz@lastysaved=\dimen294
-\tikzleveldistance=\dimen295
-\tikzsiblingdistance=\dimen296
+\tikz@lastx=\dimen288
+\tikz@lasty=\dimen289
+\tikz@lastxsaved=\dimen290
+\tikz@lastysaved=\dimen291
+\tikzleveldistance=\dimen292
+\tikzsiblingdistance=\dimen293
 \tikz@figbox=\box84
 \tikz@figbox@bg=\box85
 \tikz@tempbox=\box86
 \tikz@tempbox@bg=\box87
-\tikztreelevel=\count190
-\tikznumberofchildren=\count191
-\tikznumberofcurrentchild=\count192
-\tikz@fig@count=\count193
+\tikztreelevel=\count191
+\tikznumberofchildren=\count192
+\tikznumberofcurrentchild=\count193
+\tikz@fig@count=\count194
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
-e.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count194
-\pgfmatrixcurrentcolumn=\count195
-\pgf@matrix@numberofcolumns=\count196
+\pgfmatrixcurrentrow=\count195
+\pgfmatrixcurrentcolumn=\count196
+\pgf@matrix@numberofcolumns=\count197
 )
-\tikz@expandcount=\count197
+\tikz@expandcount=\count198
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 )))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotscore.code.tex"
 \t@pgfplots@toka=\toks40
 \t@pgfplots@tokb=\toks41
 \t@pgfplots@tokc=\toks42
-\pgfplots@tmpa=\dimen297
-\c@pgfplots@coordindex=\count198
-\c@pgfplots@scanlineindex=\count199
+\pgfplots@tmpa=\dimen294
+\c@pgfplots@coordindex=\count199
+\c@pgfplots@scanlineindex=\count200
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
-.code.tex))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.c
-ode.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
-soldpgfsupp_loader.code.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.cod
-e.tex)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\sys\pgfplotssysgeneric.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\libs\pgfplotslibrary.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryfpu.code.tex")
 Package pgfplots: loading complementary arithmetics for your pgf version...
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
-soldpgfsupp_pgflibraryfpu.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
-soldpgfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count266
-))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
-.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
-liststructure.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
-liststructureext.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
-array.code.tex
-\c@pgfplotsarray@tmp=\count267
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count201
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
-matrix.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
-shared.code.tex
-\c@pgfplotstable@counta=\count268
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_trig_format.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsutil.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsliststructure.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsliststructureext.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsarray.code.tex"
+Normal \count register pool exhausted, switching to extended pool.
+\c@pgfplotsarray@tmp=\count277
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsmatrix.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\numtable\pgfplotstableshared.code.tex"
+\c@pgfplotstable@counta=\count278
 \t@pgfplotstable@a=\toks43
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
-deque.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.co
-de.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.da
-ta.code.tex))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb
-.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
-s.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count269
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsdeque.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsbinary.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsbinary.data.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsutil.verb.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\libs\pgflibrarypgfplots.surfshading.code.tex"
+\c@pgfplotslibrarysurf@no=\count279
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
-.surfshading.pgfsys-pdftex.def)))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.
-code.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.cod
-e.tex))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.c
-ode.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.c
-ode.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandle
-r.code.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.
-code.tex)))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.
-tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessin
-g.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.cod
-e.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.
-tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex
-)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.te
-x)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarydecorations.code.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
-s.code.tex
-\pgfdecoratedcompleteddistance=\dimen298
-\pgfdecoratedremainingdistance=\dimen299
-\pgfdecoratedinputsegmentcompleteddistance=\dimen300
-\pgfdecoratedinputsegmentremainingdistance=\dimen301
-\pgf@decorate@distancetomove=\dimen302
-\pgf@decorate@repeatstate=\count270
-\pgfdecorationsegmentamplitude=\dimen303
-\pgfdecorationsegmentlength=\dimen304
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def")))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotscolormap.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotscolor.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsstackedplots.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsplothandlers.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsmeshplothandler.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.scaling.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotscoordprocessing.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.errorbars.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.markers.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsticks.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.paths.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduledecorations.code.tex"
+\pgfdecoratedcompleteddistance=\dimen295
+\pgfdecoratedremainingdistance=\dimen296
+\pgfdecoratedinputsegmentcompleteddistance=\dimen297
+\pgfdecoratedinputsegmentremainingdistance=\dimen298
+\pgf@decorate@distancetomove=\dimen299
+\pgf@decorate@repeatstate=\count280
+\pgfdecorationsegmentamplitude=\dimen300
+\pgfdecorationsegmentlength=\dimen301
 )
 \tikz@lib@dec@box=\box88
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarydecorations.pathmorphing.code.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
-brarydecorations.pathmorphing.code.tex))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarydecorations.pathreplacing.code.tex
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
-brarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count271
-\pgfplots@xmin@reg=\dimen305
-\pgfplots@xmax@reg=\dimen306
-\pgfplots@ymin@reg=\dimen307
-\pgfplots@ymax@reg=\dimen308
-\pgfplots@zmin@reg=\dimen309
-\pgfplots@zmax@reg=\dimen310
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathmorphing.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+" ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex"))
+\pgfplots@numplots=\count281
+\pgfplots@xmin@reg=\dimen302
+\pgfplots@xmax@reg=\dimen303
+\pgfplots@ymin@reg=\dimen304
+\pgfplots@ymax@reg=\dimen305
+\pgfplots@zmin@reg=\dimen306
+\pgfplots@zmax@reg=\dimen307
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryplotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryplotmarks.code.tex"
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmar
-ks.code.tex
-File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplotmarks.code.tex"
+File: pgflibraryplotmarks.code.tex 2013/07/20 v3.0.0 (rcs-revision 1.13)
 )))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarypatterns.code.tex
-File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.1a (rcs-revision 1.2)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarypatterns.code.tex"
+File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.0 (rcs-revision 1.2)
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibrarypattern
-s.code.tex
-File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibrarypatterns.code.tex"
+File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.0 (rcs-revision 1.13)
 )))
 \@input{dosen.aux}
-\openout2 = `dosen.aux'.
-
-(./dosen.tex) (./skripsi.aux (./Bab/bab1.aux) (./Bab/bab2.aux) (./Bab/bab3.aux)
-(./Bab/bab4.aux) (./Bab/bab5.aux) (./Bab/bab6.aux) (./Bab/bab7.aux)
-(./Bab/bab8.aux) (./Bab/bab9.aux) (./Lampiran/lampA.aux) (./Lampiran/lampB.aux)
-(./Lampiran/lampC.aux) (./Lampiran/lampD.aux) (./Lampiran/lampE.aux)
-(./Lampiran/lampF.aux) (./Lampiran/lampG.aux) (./Lampiran/lampH.aux)
-(./Lampiran/lampI.aux))
-\openout1 = `skripsi.aux'.
-
+(E:\Skripsi\doc\DokumenSkripsi\dosen.tex) (E:\Skripsi\doc\DokumenSkripsi\skripsi.aux
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab1.aux) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab2.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab3.aux) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab4.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab5.aux) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab6.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab7.aux) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab8.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab9.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampA.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampB.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampC.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampD.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampE.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampF.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampG.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampH.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampI.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 286.
 LaTeX Font Info:    ... okay on input line 286.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 286.
@@ -1181,18 +1091,18 @@ LaTeX Font Info:    ... okay on input line 286.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 286.
 LaTeX Font Info:    ... okay on input line 286.
 
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count272
-\scratchdimen=\dimen311
+\scratchcounter=\count282
+\scratchdimen=\dimen308
 \scratchbox=\box89
-\nofMPsegments=\count273
-\nofMParguments=\count274
+\nofMPsegments=\count283
+\nofMParguments=\count284
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count275
-\MPscratchDim=\dimen312
-\MPnumerator=\count276
-\makeMPintoPDFobject=\count277
+\MPscratchCnt=\count285
+\MPscratchDim=\dimen309
+\MPnumerator=\count286
+\makeMPintoPDFobject=\count287
 \everyMPtoPDFconversion=\toks45
 )
 *geometry* driver: auto-detecting
@@ -1229,57 +1139,37 @@ LaTeX Font Info:    ... okay on input line 286.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-)
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-\c@lstlisting=\count278
+\c@lstlisting=\count288
 \AtBeginShipoutBox=\box90
 Package hyperref Info: Link coloring ON on input line 286.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count279
+\c@section@level=\count289
 )
 LaTeX Info: Redefining \ref on input line 286.
 LaTeX Info: Redefining \pageref on input line 286.
 LaTeX Info: Redefining \nameref on input line 286.
-
-(./skripsi.out) (./skripsi.out)
+ (E:\Skripsi\doc\DokumenSkripsi\skripsi.out)
+(E:\Skripsi\doc\DokumenSkripsi\skripsi.out)
 \@outlinefile=\write5
-\openout5 = `skripsi.out'.
-
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/ltcaption.sty
-Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\ltcaption.sty"
+Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-Package pgfplots notification 'compat/show suggested version=true': document ha
-s been generated with the most recent feature set (\pgfplotsset{compat=1.13}).
+Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent fea
+ture set (\pgfplotsset{compat=1.12}).
 
-<Gambar/logo-unpar.png, id=103, 360.59718pt x 356.0803pt>
+<Gambar/logo-unpar.png, id=102, 360.59718pt x 356.0803pt>
 File: Gambar/logo-unpar.png Graphic file (type png)
-
-<use Gambar/logo-unpar.png>
+ <use Gambar/logo-unpar.png>
 Package pdftex.def Info: Gambar/logo-unpar.png used on input line 476.
 (pdftex.def)             Requested size: 144.23631pt x 142.4296pt.
  [1
@@ -1288,42 +1178,34 @@ Package pdftex.def Info: Gambar/logo-unpar.png used on input line 476.
 
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Gamba
-r/logo-unpar.png>] [2
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <E:/Skripsi/doc/DokumenSkripsi/Gambar/logo-unpar.png>] [2
 
 ]
 File: Gambar/logo-unpar.png Graphic file (type png)
-
-<use Gambar/logo-unpar.png>
+ <use Gambar/logo-unpar.png>
 Package pdftex.def Info: Gambar/logo-unpar.png used on input line 476.
 (pdftex.def)             Requested size: 144.23631pt x 142.4296pt.
  [3] [4
 
-] [5] [6
+]
+[5] [6
 
 ]
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 476.
-
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 476.
-
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 476
-.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 476.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 476
-.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 476.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1334,17 +1216,16 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 476.
 LaTeX Font Info:    Try loading font information for U+msa on input line 476.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 476.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [7] [8
+)
+[7] [8
 
-]
-[9] [10
+] [9] [10
 
 ] [11] [12
 
@@ -1354,44 +1235,31 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [16
 
-] (./skripsi.toc
+] (E:\Skripsi\doc\DokumenSkripsi\skripsi.toc
 LaTeX Font Info:    Font shape `T1/lmr/bx/sc' in size <10.95> not available
 (Font)              Font shape `T1/cmr/bx/sc' tried instead on input line 2.
 )
 \tf@toc=\write6
-\openout6 = `skripsi.toc'.
-
- [17] (./skripsi.lof
-[18] [19])
+ [17]
+(E:\Skripsi\doc\DokumenSkripsi\skripsi.lof [18] [19])
 \tf@lof=\write7
-\openout7 = `skripsi.lof'.
-
- [20] (./skripsi.lot)
+ [20] (E:\Skripsi\doc\DokumenSkripsi\skripsi.lot)
 \tf@lot=\write8
-\openout8 = `skripsi.lot'.
-
  [21] [22
 
 ]
-\openout2 = `Bab/bab1.aux'.
-
- (./Bab/bab1.tex
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab1.tex
 Bab 1.
-<Gambar/HybridGenetic1.jpg, id=458, 280.04625pt x 222.07968pt>
+<Gambar/HybridGenetic1.jpg, id=455, 280.04625pt x 222.07968pt>
 File: Gambar/HybridGenetic1.jpg Graphic file (type jpg)
-
-<use Gambar/HybridGenetic1.jpg>
+ <use Gambar/HybridGenetic1.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic1.jpg used on input line 15.
 (pdftex.def)             Requested size: 280.04555pt x 222.07913pt.
  [1
 
 
 
-] [2 <./Gambar/HybridGenetic1.jpg>] [3])
-[4]
-\openout2 = `Bab/bab2.aux'.
-
- (./Bab/bab2.tex
+] [2 <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic1.jpg>] [3]) [4] (E:\Skripsi\doc\DokumenSkripsi\Bab/bab2.tex
 Bab 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1401,10 +1269,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 6.
 
-<Gambar/Backtracking1.jpg, id=518, 150.5625pt x 150.5625pt>
+<Gambar/Backtracking1.jpg, id=514, 150.5625pt x 150.5625pt>
 File: Gambar/Backtracking1.jpg Graphic file (type jpg)
-
-<use Gambar/Backtracking1.jpg>
+ <use Gambar/Backtracking1.jpg>
 Package pdftex.def Info: Gambar/Backtracking1.jpg used on input line 23.
 (pdftex.def)             Requested size: 150.56212pt x 150.56212pt.
  [5
@@ -1412,775 +1279,645 @@ Package pdftex.def Info: Gambar/Backtracking1.jpg used on input line 23.
 
 
 ]
-<Gambar/Backtracking2.jpg, id=534, 150.5625pt x 150.5625pt>
+<Gambar/Backtracking2.jpg, id=530, 150.5625pt x 150.5625pt>
 File: Gambar/Backtracking2.jpg Graphic file (type jpg)
-
-<use Gambar/Backtracking2.jpg>
+ <use Gambar/Backtracking2.jpg>
 Package pdftex.def Info: Gambar/Backtracking2.jpg used on input line 45.
 (pdftex.def)             Requested size: 150.56212pt x 150.56212pt.
- [6 <./Gambar/Backtracking1.jpg>]
+ [6 <E:/Skripsi/doc/DokumenSkripsi/Gambar/Backtracking1.jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 67.
 
-[7 <./Gambar/Backtracking2.jpg>]
-<Gambar/Backtracking3.jpg, id=570, 204.01219pt x 204.01219pt>
+[7 <E:/Skripsi/doc/DokumenSkripsi/Gambar/Backtracking2.jpg>]
+<Gambar/Backtracking3.jpg, id=566, 204.01219pt x 204.01219pt>
 File: Gambar/Backtracking3.jpg Graphic file (type jpg)
-
-<use Gambar/Backtracking3.jpg>
+ <use Gambar/Backtracking3.jpg>
 Package pdftex.def Info: Gambar/Backtracking3.jpg used on input line 105.
 (pdftex.def)             Requested size: 204.01169pt x 204.01169pt.
- [8] [9 <./Gambar/Backtracking3.jpg>]
-<Gambar/Backtracking4.jpg, id=600, 112.92188pt x 112.92188pt>
+ [8] [9 <E:/Skripsi/doc/DokumenSkripsi/Gambar/Backtracking3.jpg>] <Gambar/Backtracking4.jpg, id=595, 112.92188pt x 112.9
+2188pt>
 File: Gambar/Backtracking4.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking4.jpg>
 Package pdftex.def Info: Gambar/Backtracking4.jpg used on input line 148.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
- [10 <./Gambar/Backtracking4.jpg>]
-<Gambar/Backtracking5.jpg, id=616, 226.59656pt x 75.28125pt>
+ [10 <E:/Skripsi/doc/DokumenSkripsi/Gambar/Backtracking4.jpg>]
+<Gambar/Backtracking5.jpg, id=611, 226.59656pt x 75.28125pt>
 File: Gambar/Backtracking5.jpg Graphic file (type jpg)
-
-<use Gambar/Backtracking5.jpg>
+ <use Gambar/Backtracking5.jpg>
 Package pdftex.def Info: Gambar/Backtracking5.jpg used on input line 163.
 (pdftex.def)             Requested size: 226.596pt x 75.28105pt.
- [11 <./Gambar/Backtracking5.jpg>]
-<Gambar/Backtracking6.jpg, id=638, 112.92188pt x 112.92188pt>
+ [11 <E:/Skripsi/doc/DokumenSkripsi/Gambar/Backtracking5.jpg>] <Gambar/Backtracking6.jpg, id=633, 112.92188pt x 112.9218
+8pt>
 File: Gambar/Backtracking6.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking6.jpg>
 Package pdftex.def Info: Gambar/Backtracking6.jpg used on input line 186.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
-
-<Gambar/Backtracking7.jpg, id=643, 112.92188pt x 112.92188pt>
+ <Gambar/Backtracking7.jpg, id=638, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking7.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking7.jpg>
 Package pdftex.def Info: Gambar/Backtracking7.jpg used on input line 201.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
-
-<Gambar/Backtracking8.jpg, id=646, 231.86626pt x 422.32782pt>
+ <Gambar/Backtracking8.jpg, id=641, 231.86626pt x 422.32782pt>
 File: Gambar/Backtracking8.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking8.jpg>
 Package pdftex.def Info: Gambar/Backtracking8.jpg used on input line 211.
 (pdftex.def)             Requested size: 231.86568pt x 422.32678pt.
- [12 <./Gambar/Backtracking6.jpg>] [13 <./Gambar/Backtracking7.jpg> <./Gambar/B
-acktracking8.jpg>]
+ [12 <E:/Skripsi/doc/DokumenSkripsi/Gambar/Backtracking6.jpg>] [13 <E:/Skripsi/doc/DokumenSkripsi/Gambar/Backtracking7.j
+pg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/Backtracking8.jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 227.
 
-<Gambar/HybridGenetic2.jpg, id=672, 158.09062pt x 28.60687pt>
+<Gambar/HybridGenetic2.jpg, id=667, 158.09062pt x 28.60687pt>
 File: Gambar/HybridGenetic2.jpg Graphic file (type jpg)
-
-<use Gambar/HybridGenetic2.jpg>
+ <use Gambar/HybridGenetic2.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic2.jpg used on input line 244.
 (pdftex.def)             Requested size: 158.09023pt x 28.6068pt.
 
-<Gambar/HybridGenetic3.jpg, id=676, 205.5178pt x 47.42719pt>
+<Gambar/HybridGenetic3.jpg, id=671, 205.5178pt x 47.42719pt>
 File: Gambar/HybridGenetic3.jpg Graphic file (type jpg)
-
-<use Gambar/HybridGenetic3.jpg>
+ <use Gambar/HybridGenetic3.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic3.jpg used on input line 254.
 (pdftex.def)             Requested size: 205.5173pt x 47.42706pt.
 
-<Gambar/HybridGenetic4.jpg, id=680, 273.27094pt x 37.64063pt>
+<Gambar/HybridGenetic4.jpg, id=675, 273.27094pt x 37.64063pt>
 File: Gambar/HybridGenetic4.jpg Graphic file (type jpg)
-
-<use Gambar/HybridGenetic4.jpg>
+ <use Gambar/HybridGenetic4.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic4.jpg used on input line 264.
 (pdftex.def)             Requested size: 273.27025pt x 37.64052pt.
- [14 <./Gambar/HybridGenetic2.jpg>]
-<Gambar/HybridGenetic5.jpg, id=693, 198.7425pt x 82.80937pt>
+ [14 <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic2.jpg>] <Gambar/HybridGenetic5.jpg, id=688, 198.7425pt x 82.8093
+7pt>
 File: Gambar/HybridGenetic5.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic5.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic5.jpg used on input line 274.
 (pdftex.def)             Requested size: 198.742pt x 82.80916pt.
-
-<Gambar/HybridGenetic6.jpg, id=697, 146.04562pt x 147.55125pt>
+ <Gambar/HybridGenetic6.jpg, id=692, 146.04562pt x 147.55125pt>
 File: Gambar/HybridGenetic6.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic6.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic6.jpg used on input line 284.
 (pdftex.def)             Requested size: 146.04524pt x 147.55087pt.
- [15 <./Gambar/HybridGenetic3.jpg> <./Gambar/HybridGenetic4.jpg> <./Gambar/Hybr
-idGenetic5.jpg>] [16 <./Gambar/HybridGenetic6.jpg>] <Gambar/HybridGenetic8.jpg,
- id=719, 118.94438pt x 124.96687pt>
+ [15 <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic3.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic4.jpg>
+ <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic5.jpg>] [16 <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic6.jpg
+>] <Gambar/HybridGenetic8.jpg, id=713, 118.94438pt x 124.96687pt>
 File: Gambar/HybridGenetic8.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic8.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic8.jpg used on input line 326.
 (pdftex.def)             Requested size: 118.94408pt x 124.96657pt.
- [17 <./Gambar/HybridGenetic8.jpg>]
-<Gambar/HybridGenetic9.jpg, id=734, 284.56313pt x 75.28125pt>
+ [17 <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic8.jpg>]
+<Gambar/HybridGenetic9.jpg, id=728, 284.56313pt x 75.28125pt>
 File: Gambar/HybridGenetic9.jpg Graphic file (type jpg)
-
-<use Gambar/HybridGenetic9.jpg>
+ <use Gambar/HybridGenetic9.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic9.jpg used on input line 349.
 (pdftex.def)             Requested size: 284.56242pt x 75.28105pt.
 
-<Gambar/HybridGenetic10.jpg, id=738, 282.30469pt x 41.4047pt>
+<Gambar/HybridGenetic10.jpg, id=732, 282.30469pt x 41.4047pt>
 File: Gambar/HybridGenetic10.jpg Graphic file (type jpg)
-
-<use Gambar/HybridGenetic10.jpg>
+ <use Gambar/HybridGenetic10.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic10.jpg used on input line 359.
 (pdftex.def)             Requested size: 282.30399pt x 41.40457pt.
 
-<Gambar/HybridGenetic7.jpg, id=743, 451.6875pt x 173.89969pt>
+<Gambar/HybridGenetic7.jpg, id=737, 451.6875pt x 173.89969pt>
 File: Gambar/HybridGenetic7.jpg Graphic file (type jpg)
-
-<use Gambar/HybridGenetic7.jpg>
+ <use Gambar/HybridGenetic7.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic7.jpg used on input line 379.
 (pdftex.def)             Requested size: 451.68639pt x 173.89925pt.
-) [18 <./Gambar/HybridGenetic9.jpg> <./Gambar/HybridGenetic10.jpg>] [19 <./Gamb
-ar/HybridGenetic7.jpg>]
-\openout2 = `Bab/bab3.aux'.
-
- (./Bab/bab3.tex [20
+) [18 <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic9.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic10.jp
+g>] [19 <E:/Skripsi/doc/DokumenSkripsi/Gambar/HybridGenetic7.jpg>] (E:\Skripsi\doc\DokumenSkripsi\Bab/bab3.tex [20
 
 
 
 ]
 Bab 3.
-<Gambar/backtracking/State1.jpg, id=767, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State1.jpg, id=761, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State1.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State1.jpg>
+ <use Gambar/backtracking/State1.jpg>
 Package pdftex.def Info: Gambar/backtracking/State1.jpg used on input line 14.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State4.jpg, id=774, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State4.jpg, id=768, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State4.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State4.jpg>
+ <use Gambar/backtracking/State4.jpg>
 Package pdftex.def Info: Gambar/backtracking/State4.jpg used on input line 28.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- [21 <./Gambar/backtracking/State1.jpg>]
-<Gambar/backtracking/State11.jpg, id=788, 307.1475pt x 307.1475pt>
+ [21 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State1.jpg>] <Gambar/backtracking/State11.jpg, id=782, 307.1475p
+t x 307.1475pt>
 File: Gambar/backtracking/State11.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State11.jpg>
 Package pdftex.def Info: Gambar/backtracking/State11.jpg used on input line 44.
-
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
-
-<Gambar/backtracking/State12.jpg, id=790, 307.1475pt x 305.14pt>
+ <Gambar/backtracking/State12.jpg, id=784, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State12.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State12.jpg>
 Package pdftex.def Info: Gambar/backtracking/State12.jpg used on input line 54.
-
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
- [22 <./Gambar/backtracking/State4.jpg> <./Gambar/backtracking/State11.jpg> <./
-Gambar/backtracking/State12.jpg>]
-<Gambar/backtracking/State17.jpg, id=803, 307.1475pt x 307.1475pt>
+ [22 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State4.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/S
+tate11.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State12.jpg>]
+<Gambar/backtracking/State17.jpg, id=797, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State17.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State17.jpg>
+ <use Gambar/backtracking/State17.jpg>
 Package pdftex.def Info: Gambar/backtracking/State17.jpg used on input line 68.
-
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State18.jpg, id=805, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State18.jpg, id=799, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State18.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State18.jpg>
+ <use Gambar/backtracking/State18.jpg>
 Package pdftex.def Info: Gambar/backtracking/State18.jpg used on input line 78.
-
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State19.jpg, id=807, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State19.jpg, id=801, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State19.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State19.jpg>
+ <use Gambar/backtracking/State19.jpg>
 Package pdftex.def Info: Gambar/backtracking/State19.jpg used on input line 88.
-
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- [23 <./Gambar/backtracking/State17.jpg> <./Gambar/backtracking/State18.jpg> <.
-/Gambar/backtracking/State19.jpg>]
-<Gambar/backtracking/State23.jpg, id=820, 307.1475pt x 307.1475pt>
+ [23 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State17.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/
+State18.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State19.jpg>]
+<Gambar/backtracking/State23.jpg, id=814, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State23.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State23.jpg>
-Package pdftex.def Info: Gambar/backtracking/State23.jpg used on input line 101
-.
+ <use Gambar/backtracking/State23.jpg>
+Package pdftex.def Info: Gambar/backtracking/State23.jpg used on input line 101.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State24.jpg, id=822, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State24.jpg, id=816, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State24.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State24.jpg>
-Package pdftex.def Info: Gambar/backtracking/State24.jpg used on input line 111
-.
+ <use Gambar/backtracking/State24.jpg>
+Package pdftex.def Info: Gambar/backtracking/State24.jpg used on input line 111.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State31.jpg, id=824, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State31.jpg, id=818, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State31.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State31.jpg>
-Package pdftex.def Info: Gambar/backtracking/State31.jpg used on input line 127
-.
+ <use Gambar/backtracking/State31.jpg>
+Package pdftex.def Info: Gambar/backtracking/State31.jpg used on input line 127.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- [24 <./Gambar/backtracking/State23.jpg> <./Gambar/backtracking/State24.jpg>]
-<Gambar/backtracking/State32.jpg, id=841, 307.1475pt x 307.1475pt>
+ [24 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State23.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/
+State24.jpg>]
+<Gambar/backtracking/State32.jpg, id=834, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State32.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State32.jpg>
-Package pdftex.def Info: Gambar/backtracking/State32.jpg used on input line 137
-.
+ <use Gambar/backtracking/State32.jpg>
+Package pdftex.def Info: Gambar/backtracking/State32.jpg used on input line 137.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State34.jpg, id=843, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State34.jpg, id=836, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State34.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State34.jpg>
-Package pdftex.def Info: Gambar/backtracking/State34.jpg used on input line 148
-.
+ <use Gambar/backtracking/State34.jpg>
+Package pdftex.def Info: Gambar/backtracking/State34.jpg used on input line 148.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State37.jpg, id=845, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State37.jpg, id=838, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State37.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State37.jpg>
-Package pdftex.def Info: Gambar/backtracking/State37.jpg used on input line 160
-.
+ <use Gambar/backtracking/State37.jpg>
+Package pdftex.def Info: Gambar/backtracking/State37.jpg used on input line 160.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- [25 <./Gambar/backtracking/State31.jpg> <./Gambar/backtracking/State32.jpg> <.
-/Gambar/backtracking/State34.jpg>]
-<Gambar/backtracking/State47.jpg, id=857, 307.1475pt x 307.1475pt>
+ [25 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State31.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/
+State32.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State34.jpg>]
+<Gambar/backtracking/State47.jpg, id=850, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State47.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State47.jpg>
-Package pdftex.def Info: Gambar/backtracking/State47.jpg used on input line 179
-.
+ <use Gambar/backtracking/State47.jpg>
+Package pdftex.def Info: Gambar/backtracking/State47.jpg used on input line 179.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State48.jpg, id=859, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State48.jpg, id=852, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State48.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State48.jpg>
-Package pdftex.def Info: Gambar/backtracking/State48.jpg used on input line 189
-.
+ <use Gambar/backtracking/State48.jpg>
+Package pdftex.def Info: Gambar/backtracking/State48.jpg used on input line 189.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- [26 <./Gambar/backtracking/State37.jpg> <./Gambar/backtracking/State47.jpg>]
-<Gambar/backtracking/State52.jpg, id=876, 307.1475pt x 307.1475pt>
+ [26 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State37.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/
+State47.jpg>]
+<Gambar/backtracking/State52.jpg, id=869, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State52.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State52.jpg>
-Package pdftex.def Info: Gambar/backtracking/State52.jpg used on input line 202
-.
+ <use Gambar/backtracking/State52.jpg>
+Package pdftex.def Info: Gambar/backtracking/State52.jpg used on input line 202.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State53.jpg, id=878, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State53.jpg, id=871, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State53.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State53.jpg>
-Package pdftex.def Info: Gambar/backtracking/State53.jpg used on input line 212
-.
+ <use Gambar/backtracking/State53.jpg>
+Package pdftex.def Info: Gambar/backtracking/State53.jpg used on input line 212.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
- [27 <./Gambar/backtracking/State48.jpg> <./Gambar/backtracking/State52.jpg> <.
-/Gambar/backtracking/State53.jpg>]
-<Gambar/backtracking/State68.jpg, id=892, 307.1475pt x 307.1475pt>
+ [27 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State48.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/
+State52.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State53.jpg>]
+<Gambar/backtracking/State68.jpg, id=885, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State68.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State68.jpg>
-Package pdftex.def Info: Gambar/backtracking/State68.jpg used on input line 236
-.
+ <use Gambar/backtracking/State68.jpg>
+Package pdftex.def Info: Gambar/backtracking/State68.jpg used on input line 236.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State69.jpg, id=894, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State69.jpg, id=887, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State69.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State69.jpg>
-Package pdftex.def Info: Gambar/backtracking/State69.jpg used on input line 246
-.
+ <use Gambar/backtracking/State69.jpg>
+Package pdftex.def Info: Gambar/backtracking/State69.jpg used on input line 246.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
- [28 <./Gambar/backtracking/State68.jpg>]
-<Gambar/backtracking/State71.jpg, id=914, 307.1475pt x 307.1475pt>
+ [28 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State68.jpg>] <Gambar/backtracking/State71.jpg, id=907, 307.1475
+pt x 307.1475pt>
 File: Gambar/backtracking/State71.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State71.jpg>
-Package pdftex.def Info: Gambar/backtracking/State71.jpg used on input line 257
-.
+Package pdftex.def Info: Gambar/backtracking/State71.jpg used on input line 257.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
-
-<Gambar/backtracking/State72.jpg, id=916, 307.1475pt x 305.14pt>
+ <Gambar/backtracking/State72.jpg, id=909, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State72.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State72.jpg>
-Package pdftex.def Info: Gambar/backtracking/State72.jpg used on input line 267
-.
+Package pdftex.def Info: Gambar/backtracking/State72.jpg used on input line 267.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
-
-<Gambar/backtracking/State74.jpg, id=918, 307.1475pt x 307.1475pt>
+ <Gambar/backtracking/State74.jpg, id=911, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State74.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State74.jpg>
-Package pdftex.def Info: Gambar/backtracking/State74.jpg used on input line 278
-.
+Package pdftex.def Info: Gambar/backtracking/State74.jpg used on input line 278.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
-
-<Gambar/backtracking/State75.jpg, id=920, 307.1475pt x 307.1475pt>
+ <Gambar/backtracking/State75.jpg, id=913, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State75.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State75.jpg>
-Package pdftex.def Info: Gambar/backtracking/State75.jpg used on input line 288
-.
+Package pdftex.def Info: Gambar/backtracking/State75.jpg used on input line 288.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- [29 <./Gambar/backtracking/State69.jpg> <./Gambar/backtracking/State71.jpg> <.
-/Gambar/backtracking/State72.jpg>]
-<Gambar/backtracking/State76.jpg, id=932, 307.1475pt x 305.14pt>
+ [29 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State69.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/
+State71.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State72.jpg>]
+<Gambar/backtracking/State76.jpg, id=925, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State76.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State76.jpg>
-Package pdftex.def Info: Gambar/backtracking/State76.jpg used on input line 298
-.
+ <use Gambar/backtracking/State76.jpg>
+Package pdftex.def Info: Gambar/backtracking/State76.jpg used on input line 298.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
 
-<Gambar/backtracking/State77.jpg, id=934, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State77.jpg, id=927, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State77.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State77.jpg>
-Package pdftex.def Info: Gambar/backtracking/State77.jpg used on input line 308
-.
+ <use Gambar/backtracking/State77.jpg>
+Package pdftex.def Info: Gambar/backtracking/State77.jpg used on input line 308.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State78.jpg, id=936, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State78.jpg, id=929, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State78.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State78.jpg>
-Package pdftex.def Info: Gambar/backtracking/State78.jpg used on input line 318
-.
+ <use Gambar/backtracking/State78.jpg>
+Package pdftex.def Info: Gambar/backtracking/State78.jpg used on input line 318.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State81.jpg, id=938, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State81.jpg, id=931, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State81.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State81.jpg>
-Package pdftex.def Info: Gambar/backtracking/State81.jpg used on input line 330
-.
+ <use Gambar/backtracking/State81.jpg>
+Package pdftex.def Info: Gambar/backtracking/State81.jpg used on input line 330.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- [30 <./Gambar/backtracking/State74.jpg> <./Gambar/backtracking/State75.jpg> <.
-/Gambar/backtracking/State76.jpg>]
-[31 <./Gambar/backtracking/State77.jpg> <./Gambar/backtracking/State78.jpg> <./
-Gambar/backtracking/State81.jpg>]
-<Gambar/backtracking/State83.jpg, id=956, 307.1475pt x 307.1475pt>
+ [30 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State74.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/
+State75.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State76.jpg>] [31 <E:/Skripsi/doc/DokumenSkripsi/Gambar/
+backtracking/State77.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State78.jpg> <E:/Skripsi/doc/DokumenSkripsi
+/Gambar/backtracking/State81.jpg>] <Gambar/backtracking/State83.jpg, id=948, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State83.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State83.jpg>
-Package pdftex.def Info: Gambar/backtracking/State83.jpg used on input line 341
-.
+Package pdftex.def Info: Gambar/backtracking/State83.jpg used on input line 341.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
-
-<Gambar/backtracking/State85.jpg, id=958, 307.1475pt x 307.1475pt>
+ <Gambar/backtracking/State85.jpg, id=950, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State85.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State85.jpg>
-Package pdftex.def Info: Gambar/backtracking/State85.jpg used on input line 352
-.
+Package pdftex.def Info: Gambar/backtracking/State85.jpg used on input line 352.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
-
-<Gambar/backtracking/State88.jpg, id=960, 307.1475pt x 307.1475pt>
+ <Gambar/backtracking/State88.jpg, id=952, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State88.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State88.jpg>
-Package pdftex.def Info: Gambar/backtracking/State88.jpg used on input line 364
-.
+Package pdftex.def Info: Gambar/backtracking/State88.jpg used on input line 364.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- [32 <./Gambar/backtracking/State83.jpg> <./Gambar/backtracking/State85.jpg> <.
-/Gambar/backtracking/State88.jpg>]
-<Gambar/backtracking/State92.jpg, id=973, 307.1475pt x 307.1475pt>
+ [32 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State83.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/
+State85.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State88.jpg>]
+<Gambar/backtracking/State92.jpg, id=965, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State92.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State92.jpg>
-Package pdftex.def Info: Gambar/backtracking/State92.jpg used on input line 377
-.
+ <use Gambar/backtracking/State92.jpg>
+Package pdftex.def Info: Gambar/backtracking/State92.jpg used on input line 377.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State93.jpg, id=975, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State93.jpg, id=967, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State93.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/State93.jpg>
-Package pdftex.def Info: Gambar/backtracking/State93.jpg used on input line 387
-.
+ <use Gambar/backtracking/State93.jpg>
+Package pdftex.def Info: Gambar/backtracking/State93.jpg used on input line 387.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- [33 <./Gambar/backtracking/State92.jpg> <./Gambar/backtracking/State93.jpg>]
-<Gambar/backtracking/StateSpaceTree.jpg, id=986, 848.4197pt x 599.23875pt>
+ [33 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/State92.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/
+State93.jpg>]
+<Gambar/backtracking/StateSpaceTree.jpg, id=978, 848.4197pt x 599.23875pt>
 File: Gambar/backtracking/StateSpaceTree.jpg Graphic file (type jpg)
-
-<use Gambar/backtracking/StateSpaceTree.jpg>
-Package pdftex.def Info: Gambar/backtracking/StateSpaceTree.jpg used on input l
-ine 400.
+ <use Gambar/backtracking/StateSpaceTree.jpg>
+Package pdftex.def Info: Gambar/backtracking/StateSpaceTree.jpg used on input line 400.
 (pdftex.def)             Requested size: 636.31322pt x 449.42796pt.
 
 
 LaTeX Warning: Float too large for page by 3.55746pt on input line 403.
 
-[34 <./Gambar/backtracking/StateSpaceTree.jpg>]
-<Gambar/hybridgenetic/Puzzle.jpg, id=994, 459.7175pt x 457.71pt>
+[34 <E:/Skripsi/doc/DokumenSkripsi/Gambar/backtracking/StateSpaceTree.jpg>]
+<Gambar/hybridgenetic/Puzzle.jpg, id=986, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Puzzle.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Puzzle.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Puzzle.jpg used on input line 414
-.
+ <use Gambar/hybridgenetic/Puzzle.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Puzzle.jpg used on input line 414.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg, id=1000, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg, id=992, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg Graphic file (type jpg)
+
 <use Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg used on 
-input line 429.
+Package pdftex.def Info: Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg used on input line 429.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
  [35
 
 
- <./Gambar/hybridgenetic/Puzzle.jpg>] [36 <./Gambar/hybridgenetic/PuzzleAfterRu
-leBased.jpg>]
-<Gambar/hybridgenetic/Generation1Chromosome1.jpg, id=1024, 459.7175pt x 457.71p
-t>
+ <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Puzzle.jpg>] [36 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgeneti
+c/PuzzleAfterRuleBased.jpg>]
+<Gambar/hybridgenetic/Generation1Chromosome1.jpg, id=1016, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome1.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome1.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome1.jpg used o
-n input line 468.
+
+<use Gambar/hybridgenetic/Generation1Chromosome1.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome1.jpg used on input line 468.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome2.jpg, id=1025, 459.7175pt x 457.71p
-t>
+<Gambar/hybridgenetic/Generation1Chromosome2.jpg, id=1017, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome2.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome2.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome2.jpg used o
-n input line 476.
+
+<use Gambar/hybridgenetic/Generation1Chromosome2.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome2.jpg used on input line 476.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome3.jpg, id=1026, 459.7175pt x 457.71p
-t>
+<Gambar/hybridgenetic/Generation1Chromosome3.jpg, id=1018, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome3.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome3.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome3.jpg used o
-n input line 484.
+
+<use Gambar/hybridgenetic/Generation1Chromosome3.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome3.jpg used on input line 484.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome4.jpg, id=1027, 459.7175pt x 457.71p
-t>
+<Gambar/hybridgenetic/Generation1Chromosome4.jpg, id=1019, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome4.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome4.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome4.jpg used o
-n input line 492.
+
+<use Gambar/hybridgenetic/Generation1Chromosome4.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome4.jpg used on input line 492.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome5.jpg, id=1028, 459.7175pt x 457.71p
-t>
+<Gambar/hybridgenetic/Generation1Chromosome5.jpg, id=1020, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome5.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome5.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome5.jpg used o
-n input line 500.
+
+<use Gambar/hybridgenetic/Generation1Chromosome5.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome5.jpg used on input line 500.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome6.jpg, id=1029, 459.7175pt x 457.71p
-t>
+<Gambar/hybridgenetic/Generation1Chromosome6.jpg, id=1021, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome6.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome6.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome6.jpg used o
-n input line 508.
+
+<use Gambar/hybridgenetic/Generation1Chromosome6.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome6.jpg used on input line 508.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome7.jpg, id=1030, 459.7175pt x 457.71p
-t>
+<Gambar/hybridgenetic/Generation1Chromosome7.jpg, id=1022, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome7.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome7.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome7.jpg used o
-n input line 516.
+
+<use Gambar/hybridgenetic/Generation1Chromosome7.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome7.jpg used on input line 516.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome8.jpg, id=1031, 459.7175pt x 457.71p
-t>
+<Gambar/hybridgenetic/Generation1Chromosome8.jpg, id=1023, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome8.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome8.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome8.jpg used o
-n input line 524.
+
+<use Gambar/hybridgenetic/Generation1Chromosome8.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome8.jpg used on input line 524.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome9.jpg, id=1032, 459.7175pt x 457.71p
-t>
+<Gambar/hybridgenetic/Generation1Chromosome9.jpg, id=1024, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome9.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome9.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome9.jpg used o
-n input line 532.
+
+<use Gambar/hybridgenetic/Generation1Chromosome9.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome9.jpg used on input line 532.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome10.jpg, id=1033, 459.7175pt x 457.71
-pt>
+<Gambar/hybridgenetic/Generation1Chromosome10.jpg, id=1025, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome10.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome10.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome10.jpg used 
-on input line 540.
+
+<use Gambar/hybridgenetic/Generation1Chromosome10.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome10.jpg used on input line 540.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome11.jpg, id=1034, 459.7175pt x 457.71
-pt>
+<Gambar/hybridgenetic/Generation1Chromosome11.jpg, id=1026, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome11.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome11.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome11.jpg used 
-on input line 548.
+
+<use Gambar/hybridgenetic/Generation1Chromosome11.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome11.jpg used on input line 548.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome12.jpg, id=1035, 459.7175pt x 457.71
-pt>
+<Gambar/hybridgenetic/Generation1Chromosome12.jpg, id=1027, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Generation1Chromosome12.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation1Chromosome12.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome12.jpg used 
-on input line 556.
+
+<use Gambar/hybridgenetic/Generation1Chromosome12.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome12.jpg used on input line 556.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
- [37 <./Gambar/hybridgenetic/Generation1Chromosome1.jpg> <./Gambar/hybridgeneti
-c/Generation1Chromosome2.jpg> <./Gambar/hybridgenetic/Generation1Chromosome3.jp
-g>] [38 <./Gambar/hybridgenetic/Generation1Chromosome4.jpg> <./Gambar/hybridgen
-etic/Generation1Chromosome5.jpg> <./Gambar/hybridgenetic/Generation1Chromosome6
-.jpg>] [39 <./Gambar/hybridgenetic/Generation1Chromosome7.jpg> <./Gambar/hybrid
-genetic/Generation1Chromosome8.jpg> <./Gambar/hybridgenetic/Generation1Chromoso
-me9.jpg>] [40 <./Gambar/hybridgenetic/Generation1Chromosome10.jpg> <./Gambar/hy
-bridgenetic/Generation1Chromosome11.jpg> <./Gambar/hybridgenetic/Generation1Chr
-omosome12.jpg>]
-[41
+ [37 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation1Chromosome1.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gamb
+ar/hybridgenetic/Generation1Chromosome2.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation1Chromosome3.
+jpg>] [38 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation1Chromosome4.jpg> <E:/Skripsi/doc/DokumenSkripsi
+/Gambar/hybridgenetic/Generation1Chromosome5.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation1Chromos
+ome6.jpg>] [39 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation1Chromosome7.jpg> <E:/Skripsi/doc/DokumenSk
+ripsi/Gambar/hybridgenetic/Generation1Chromosome8.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation1Ch
+romosome9.jpg>] [40 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation1Chromosome10.jpg> <E:/Skripsi/doc/Dok
+umenSkripsi/Gambar/hybridgenetic/Generation1Chromosome11.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Genera
+tion1Chromosome12.jpg>] [41
 
 
 ]
-<Gambar/hybridgenetic/Generation2Chromosome1.jpg, id=1071, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation2Chromosome1.jpg, id=1062, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome1.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome1.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome1.jpg used o
-n input line 610.
+
+<use Gambar/hybridgenetic/Generation2Chromosome1.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome1.jpg used on input line 610.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome2.jpg, id=1072, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation2Chromosome2.jpg, id=1063, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome2.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome2.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome2.jpg used o
-n input line 618.
+
+<use Gambar/hybridgenetic/Generation2Chromosome2.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome2.jpg used on input line 618.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome3.jpg, id=1073, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation2Chromosome3.jpg, id=1064, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome3.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome3.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome3.jpg used o
-n input line 626.
+
+<use Gambar/hybridgenetic/Generation2Chromosome3.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome3.jpg used on input line 626.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome4.jpg, id=1074, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation2Chromosome4.jpg, id=1065, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome4.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome4.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome4.jpg used o
-n input line 634.
+
+<use Gambar/hybridgenetic/Generation2Chromosome4.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome4.jpg used on input line 634.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome5.jpg, id=1075, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation2Chromosome5.jpg, id=1066, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome5.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome5.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome5.jpg used o
-n input line 642.
+
+<use Gambar/hybridgenetic/Generation2Chromosome5.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome5.jpg used on input line 642.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome6.jpg, id=1076, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation2Chromosome6.jpg, id=1067, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome6.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome6.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome6.jpg used o
-n input line 650.
+
+<use Gambar/hybridgenetic/Generation2Chromosome6.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome6.jpg used on input line 650.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome7.jpg, id=1077, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation2Chromosome7.jpg, id=1068, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome7.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome7.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome7.jpg used o
-n input line 658.
+
+<use Gambar/hybridgenetic/Generation2Chromosome7.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome7.jpg used on input line 658.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome8.jpg, id=1078, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation2Chromosome8.jpg, id=1069, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome8.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome8.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome8.jpg used o
-n input line 666.
+
+<use Gambar/hybridgenetic/Generation2Chromosome8.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome8.jpg used on input line 666.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome9.jpg, id=1079, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation2Chromosome9.jpg, id=1070, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome9.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome9.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome9.jpg used o
-n input line 674.
+
+<use Gambar/hybridgenetic/Generation2Chromosome9.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome9.jpg used on input line 674.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome10.jpg, id=1080, 459.7175pt x 459.71
-75pt>
+<Gambar/hybridgenetic/Generation2Chromosome10.jpg, id=1071, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome10.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome10.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome10.jpg used 
-on input line 682.
+
+<use Gambar/hybridgenetic/Generation2Chromosome10.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome10.jpg used on input line 682.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome11.jpg, id=1081, 459.7175pt x 459.71
-75pt>
+<Gambar/hybridgenetic/Generation2Chromosome11.jpg, id=1072, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome11.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome11.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome11.jpg used 
-on input line 690.
+
+<use Gambar/hybridgenetic/Generation2Chromosome11.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome11.jpg used on input line 690.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome12.jpg, id=1082, 459.7175pt x 459.71
-75pt>
+<Gambar/hybridgenetic/Generation2Chromosome12.jpg, id=1073, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation2Chromosome12.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation2Chromosome12.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome12.jpg used 
-on input line 698.
+
+<use Gambar/hybridgenetic/Generation2Chromosome12.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome12.jpg used on input line 698.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
- [42 <./Gambar/hybridgenetic/Generation2Chromosome1.jpg> <./Gambar/hybridgeneti
-c/Generation2Chromosome2.jpg> <./Gambar/hybridgenetic/Generation2Chromosome3.jp
-g>] [43 <./Gambar/hybridgenetic/Generation2Chromosome4.jpg> <./Gambar/hybridgen
-etic/Generation2Chromosome5.jpg> <./Gambar/hybridgenetic/Generation2Chromosome6
-.jpg>] [44 <./Gambar/hybridgenetic/Generation2Chromosome7.jpg> <./Gambar/hybrid
-genetic/Generation2Chromosome8.jpg> <./Gambar/hybridgenetic/Generation2Chromoso
-me9.jpg>] [45 <./Gambar/hybridgenetic/Generation2Chromosome10.jpg> <./Gambar/hy
-bridgenetic/Generation2Chromosome11.jpg> <./Gambar/hybridgenetic/Generation2Chr
-omosome12.jpg>]
-[46
+ [42 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation2Chromosome1.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gamb
+ar/hybridgenetic/Generation2Chromosome2.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation2Chromosome3.
+jpg>] [43 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation2Chromosome4.jpg> <E:/Skripsi/doc/DokumenSkripsi
+/Gambar/hybridgenetic/Generation2Chromosome5.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation2Chromos
+ome6.jpg>] [44 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation2Chromosome7.jpg> <E:/Skripsi/doc/DokumenSk
+ripsi/Gambar/hybridgenetic/Generation2Chromosome8.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation2Ch
+romosome9.jpg>] [45 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation2Chromosome10.jpg> <E:/Skripsi/doc/Dok
+umenSkripsi/Gambar/hybridgenetic/Generation2Chromosome11.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Genera
+tion2Chromosome12.jpg>] [46
 
 
 ]
-<Gambar/hybridgenetic/Generation3Chromosome1.jpg, id=1117, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation3Chromosome1.jpg, id=1108, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome1.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome1.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome1.jpg used o
-n input line 752.
+
+<use Gambar/hybridgenetic/Generation3Chromosome1.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome1.jpg used on input line 752.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome2.jpg, id=1118, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation3Chromosome2.jpg, id=1109, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome2.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome2.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome2.jpg used o
-n input line 760.
+
+<use Gambar/hybridgenetic/Generation3Chromosome2.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome2.jpg used on input line 760.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome3.jpg, id=1119, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation3Chromosome3.jpg, id=1110, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome3.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome3.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome3.jpg used o
-n input line 768.
+
+<use Gambar/hybridgenetic/Generation3Chromosome3.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome3.jpg used on input line 768.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome4.jpg, id=1120, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation3Chromosome4.jpg, id=1111, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome4.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome4.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome4.jpg used o
-n input line 776.
+
+<use Gambar/hybridgenetic/Generation3Chromosome4.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome4.jpg used on input line 776.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome5.jpg, id=1121, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation3Chromosome5.jpg, id=1112, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome5.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome5.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome5.jpg used o
-n input line 784.
+
+<use Gambar/hybridgenetic/Generation3Chromosome5.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome5.jpg used on input line 784.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome6.jpg, id=1122, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation3Chromosome6.jpg, id=1113, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome6.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome6.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome6.jpg used o
-n input line 792.
+
+<use Gambar/hybridgenetic/Generation3Chromosome6.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome6.jpg used on input line 792.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome7.jpg, id=1123, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation3Chromosome7.jpg, id=1114, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome7.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome7.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome7.jpg used o
-n input line 800.
+
+<use Gambar/hybridgenetic/Generation3Chromosome7.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome7.jpg used on input line 800.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome8.jpg, id=1124, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation3Chromosome8.jpg, id=1115, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome8.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome8.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome8.jpg used o
-n input line 808.
+
+<use Gambar/hybridgenetic/Generation3Chromosome8.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome8.jpg used on input line 808.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome9.jpg, id=1125, 459.7175pt x 459.717
-5pt>
+<Gambar/hybridgenetic/Generation3Chromosome9.jpg, id=1116, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome9.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome9.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome9.jpg used o
-n input line 816.
+
+<use Gambar/hybridgenetic/Generation3Chromosome9.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome9.jpg used on input line 816.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome10.jpg, id=1126, 459.7175pt x 459.71
-75pt>
+<Gambar/hybridgenetic/Generation3Chromosome10.jpg, id=1117, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome10.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome10.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome10.jpg used 
-on input line 824.
+
+<use Gambar/hybridgenetic/Generation3Chromosome10.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome10.jpg used on input line 824.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome11.jpg, id=1127, 459.7175pt x 459.71
-75pt>
+<Gambar/hybridgenetic/Generation3Chromosome11.jpg, id=1118, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome11.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome11.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome11.jpg used 
-on input line 832.
+
+<use Gambar/hybridgenetic/Generation3Chromosome11.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome11.jpg used on input line 832.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome12.jpg, id=1128, 459.7175pt x 459.71
-75pt>
+<Gambar/hybridgenetic/Generation3Chromosome12.jpg, id=1119, 459.7175pt x 459.7175pt>
 File: Gambar/hybridgenetic/Generation3Chromosome12.jpg Graphic file (type jpg)
- <use Gambar/hybridgenetic/Generation3Chromosome12.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome12.jpg used 
-on input line 840.
+
+<use Gambar/hybridgenetic/Generation3Chromosome12.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome12.jpg used on input line 840.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
- [47 <./Gambar/hybridgenetic/Generation3Chromosome1.jpg> <./Gambar/hybridgeneti
-c/Generation3Chromosome2.jpg> <./Gambar/hybridgenetic/Generation3Chromosome3.jp
-g>] [48 <./Gambar/hybridgenetic/Generation3Chromosome4.jpg> <./Gambar/hybridgen
-etic/Generation3Chromosome5.jpg> <./Gambar/hybridgenetic/Generation3Chromosome6
-.jpg>] [49 <./Gambar/hybridgenetic/Generation3Chromosome7.jpg> <./Gambar/hybrid
-genetic/Generation3Chromosome8.jpg> <./Gambar/hybridgenetic/Generation3Chromoso
-me9.jpg>] [50 <./Gambar/hybridgenetic/Generation3Chromosome10.jpg> <./Gambar/hy
-bridgenetic/Generation3Chromosome11.jpg> <./Gambar/hybridgenetic/Generation3Chr
-omosome12.jpg>])
-[51
+ [47 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation3Chromosome1.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gamb
+ar/hybridgenetic/Generation3Chromosome2.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation3Chromosome3.
+jpg>] [48 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation3Chromosome4.jpg> <E:/Skripsi/doc/DokumenSkripsi
+/Gambar/hybridgenetic/Generation3Chromosome5.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation3Chromos
+ome6.jpg>] [49 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation3Chromosome7.jpg> <E:/Skripsi/doc/DokumenSk
+ripsi/Gambar/hybridgenetic/Generation3Chromosome8.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation3Ch
+romosome9.jpg>] [50 <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Generation3Chromosome10.jpg> <E:/Skripsi/doc/Dok
+umenSkripsi/Gambar/hybridgenetic/Generation3Chromosome11.jpg> <E:/Skripsi/doc/DokumenSkripsi/Gambar/hybridgenetic/Genera
+tion3Chromosome12.jpg>]) [51
 
 
 ]
-\openout2 = `Bab/bab4.aux'.
-
- (./Bab/bab4.tex)
-\openout2 = `Bab/bab5.aux'.
-
- (./Bab/bab5.tex)
-\openout2 = `Bab/bab6.aux'.
-
- (./Bab/bab6.tex)
-\openout2 = `Bab/bab7.aux'.
-
- (./Bab/bab7.tex)
-\openout2 = `Bab/bab8.aux'.
-
-
-(./Bab/bab8.tex)
-\openout2 = `Bab/bab9.aux'.
-
- (./Bab/bab9.tex) (./skripsi.bbl [52
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab4.tex) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab5.tex)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab6.tex) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab7.tex)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab8.tex) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab9.tex)
+(E:\Skripsi\doc\DokumenSkripsi\skripsi.bbl [52
 
 
 
@@ -2197,103 +1934,75 @@ omosome12.jpg>])
 
 ]
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 9.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Underfull \hbox (badness 5954) in paragraph at lines 4--10
-[]\T1/lmr/m/n/10.95 Fahda, A. (2015) Ken-ken pu-zzle so-lver using back-track-i
-ng al-go-ri-thm.  Ma-ka-
+[]\T1/lmr/m/n/10.95 Fahda, A. (2015) Ken-ken pu-zzle so-lver using back-track-ing al-go-ri-thm.  Ma-ka-
  []
 
 
 Underfull \hbox (badness 7186) in paragraph at lines 4--10
-\T1/lmr/m/n/10.95 lah IF2211 Stra-te-gi Al-go-rit-ma - Se-mes-ter II Ta-hun 201
-4/2015, Pro-gram Stu-
+\T1/lmr/m/n/10.95 lah IF2211 Stra-te-gi Al-go-rit-ma - Se-mes-ter II Ta-hun 2014/2015, Pro-gram Stu-
  []
 
 
 Underfull \hbox (badness 3058) in paragraph at lines 4--10
-\T1/lmr/m/n/10.95 di Tek-nik In-for-ma-ti-ka, Se-ko-lah Tek-nik Elek-tro dan In
--for-ma-ti-ka, In-sti-tut Tek-no-lo-
+\T1/lmr/m/n/10.95 di Tek-nik In-for-ma-ti-ka, Se-ko-lah Tek-nik Elek-tro dan In-for-ma-ti-ka, In-sti-tut Tek-no-lo-
  []
 
-) [53]
-\openout2 = `Lampiran/lampA.aux'.
-
- (./Lampiran/lampA.tex)
-\openout2 = `Lampiran/lampB.aux'.
-
- (./Lampiran/lampB.tex)
-\openout2 = `Lampiran/lampC.aux'.
-
- (./Lampiran/lampC.tex)
-\openout2 = `Lampiran/lampD.aux'.
-
-
-(./Lampiran/lampD.tex)
-\openout2 = `Lampiran/lampE.aux'.
-
- (./Lampiran/lampE.tex)
-\openout2 = `Lampiran/lampF.aux'.
-
- (./Lampiran/lampF.tex)
-\openout2 = `Lampiran/lampG.aux'.
-
-
-(./Lampiran/lampG.tex)
-\openout2 = `Lampiran/lampH.aux'.
-
- (./Lampiran/lampH.tex)
-\openout2 = `Lampiran/lampI.aux'.
-
- (./Lampiran/lampI.tex)
+) [53] (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampA.tex) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampB.tex)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampC.tex) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampD.tex)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampE.tex) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampF.tex)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampG.tex) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampH.tex)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampI.tex)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 516.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
-
-(./skripsi.aux (./Bab/bab1.aux) (./Bab/bab2.aux) (./Bab/bab3.aux)
-(./Bab/bab4.aux) (./Bab/bab5.aux) (./Bab/bab6.aux) (./Bab/bab7.aux)
-(./Bab/bab8.aux) (./Bab/bab9.aux) (./Lampiran/lampA.aux) (./Lampiran/lampB.aux)
-(./Lampiran/lampC.aux) (./Lampiran/lampD.aux) (./Lampiran/lampE.aux)
-(./Lampiran/lampF.aux) (./Lampiran/lampG.aux) (./Lampiran/lampH.aux)
-(./Lampiran/lampI.aux))
+ (E:\Skripsi\doc\DokumenSkripsi\skripsi.aux
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab1.aux) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab2.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab3.aux) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab4.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab5.aux) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab6.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab7.aux) (E:\Skripsi\doc\DokumenSkripsi\Bab/bab8.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Bab/bab9.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampA.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampB.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampC.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampD.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampE.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampF.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampG.aux)
+(E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampH.aux) (E:\Skripsi\doc\DokumenSkripsi\Lampiran/lampI.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 516.
-Package rerunfilecheck Info: File `skripsi.out' has not changed.
-(rerunfilecheck)             Checksum: 6BE592915791F49B567A73ACF9495FD7;3733.
+
+
+Package rerunfilecheck Warning: File `skripsi.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `skripsi.out':
+(rerunfilecheck)             Before: 6BE592915791F49B567A73ACF9495FD7;3733
+(rerunfilecheck)             After:  CD2CB0D77D0FA469B63469499E456B51;3757.
  ) 
 Here is how much of TeX's memory you used:
- 41549 strings out of 493027
- 898619 string characters out of 6134069
- 1230423 words of memory out of 5000000
- 43863 multiletter control sequences out of 15000+600000
- 65863 words of font info for 48 fonts, out of 8000000 for 9000
- 1150 hyphenation exceptions out of 8191
- 66i,13n,86p,10422b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
-15/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-d
-ist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-dist/fonts/
-enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-s
-uper/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/
-lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
-public/lm/lmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
-mr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr8.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
-pe1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
-/cm-super/sfxc1095.pfb>
-Output written on skripsi.pdf (75 pages, 5165432 bytes).
+ 40291 strings out of 493921
+ 869365 string characters out of 3147281
+ 1187121 words of memory out of 3000000
+ 42361 multiletter control sequences out of 15000+200000
+ 65863 words of font info for 48 fonts, out of 3000000 for 9000
+ 850 hyphenation exceptions out of 8191
+ 66i,13n,86p,10422b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.en
+c}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathe
+x.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm
+-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/cm-super/sfxc1095.pfb>
+Output written on skripsi.pdf (75 pages, 5299240 bytes).
 PDF statistics:
- 1309 PDF objects out of 1440 (max. 8388607)
- 1088 compressed objects within 11 object streams
+ 1297 PDF objects out of 1440 (max. 8388607)
  397 named destinations out of 1000 (max. 500000)
  655 words of extra memory for PDF output out of 10000 (max. 10000000)
 
