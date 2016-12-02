@@ -1,3 +1,4 @@
 \beamer@endinputifotherversion {3.36pt}
 \beamer@sectionintoc {1}{Dasar Teori}{2}{0}{1}
 \beamer@subsectionintoc {1}{1}{Calcudoku}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Algoritma \textit {Backtracking}}{13}{0}{1}

@@ -43,7 +43,7 @@ Dalam pengisian teka-teki ini ada dua tahapan, yaitu:
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/Backtracking2}
-\caption[Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1}  ~\cite{fahda:16:backtracking}]{Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1}.  ~\cite{fahda:16:backtracking}}
+\caption[Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1}  ~\cite{fahda:16:backtracking}]{Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1}.}
 \label{fig:backtracking2}
 \end{figure}
 
@@ -81,15 +81,15 @@ X = (x_1, x_2, ..., x_n), x_i \in S_i
 di mana adalah mungkin bahwa:
 \begin{displaymath}
 S_1 = S_2 = ... = S_n
-\end{displaymath}
+\end{displaymath} 
 \begin{math}n\end{math} adalah jumlah sel dalam satu baris atau kolom. \begin{math}X\end{math} adalah sebuah \textit{tuple} yang berukuran \begin{math}n^2\end{math}, yang mereprentasikan isi dari setiap sel dalam \textit{grid}, dimulai pada sel pada sudut kiri atas, lalu bergerak ke sel di sebelah kanannya dalam baris yang sama, jika sudah mencapai sel yang paling kanan maka bergerak ke sel yang paling kiri pada baris dibawahnya, hingga berakhir di sel pada sudut kanan bawah. \begin{math}S_i\end{math} adalah sebuah himpunan yang berisi angka-angka dari 1 sampai \begin{math}n\end{math}.
-\item Fungsi pembangkit \begin{math}X_k\end{math}
+\item Fungsi pembangkit \begin{math}X_k\end{math} (\textit{generating function})
 \\ Fungsi pembangkit \begin{math}X_k\end{math} dinyatakan sebagai:
 \begin{displaymath}
 T(k)
 \end{displaymath}
 di mana \begin{math}T(k)\end{math} membangkitkan nilai \begin{math}X_k\end{math}, dari 1 sampai \begin{math}n\end{math}, yang merupakan komponen dari vektor solusi.
-\item Fungsi pembatas
+\item Fungsi pembatas (\textit{generating function})
 \\ Fungsi pembatas dinyatakan sebagai:
 \begin{displaymath}
 B(x_1, x_2, ..., x_k)
@@ -121,8 +121,6 @@ Langkah-langkah dalam menggunakan \textit{state space tree} untuk mencari solusi
 \item Pencarian selesai jika simpul tujuan tercapai.
 \end{enumerate}
 Setiap simpul di dalam \textit{state space tree} terkait dengan panggilan rekursif. Jika jumlah simpul di dalam pohon \begin{math}2n\end{math} atau \begin{math}n!\end{math}, maka pada kasus terburuk untuk algoritma \textit{backtracking} ini memiliki kompleksitas waktu \begin{math}O(p(n)2n)\end{math} atau \begin{math}O(q(n)n!)\end{math}, dengan \begin{math}p(n)\end{math} dan \begin{math}q(n)\end{math} sebagai polinomial dengan \begin{math}n\end{math}-derajat menyatakan waktu komputasi untuk setiap simpul.
-
-Algoritma \textit{backtracking} mempunyai beberapa sifat-sifat umum, yaitu ruang solusi (\textit{solution space}), fungsi pembangkit (\textit{generating function}), dan fungsi pembatas (\textit{bounding function}).
 
 Ruang solusi untuk sebuah permainan teka-teki Calcudoku dengan \textit{grid} yang berukuran \begin{math}n \times n\end{math} adalah \begin{math}X = (x_1,x_2,...,x_m), x_i \in \{1,2,...,n\}\end{math}, dengan \begin{math}m = n^2\end{math}. Fungsi pembangkit membangkitkan sebuah integer secara berurutan dari 1 sampai \begin{math}n\end{math} sebagai \begin{math}x_k\end{math}. Fungsi pembatas menggabungkan tiga fungsi pemeriksa pembatas (\textit{constraint checking}), yaitu fungsi pemeriksa kolom (\textit{column checking}), fungsi pemeriksa baris (\textit{row checking}), dan fungsi pemeriksa \textit{grid} (\textit{grid checking}).
 
