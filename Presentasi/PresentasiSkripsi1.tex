@@ -2,6 +2,7 @@
 
 \usepackage{pgfpages}
 \usepackage{caption}
+\usepackage{amsmath}
 \setbeameroption{show notes on second screen}
 
 \setbeamertemplate{caption}[numbered]
@@ -539,6 +540,538 @@ Singkatnya, langkah-langkah dasar dari implementasi algoritma \textit{backtracki
 \item Jika angka untuk sel sudah melebihi \begin{math}n\end{math} dan tidak ada angka dari 1 sampai \begin{math}n\end{math} yang berlaku untuk sel tersebut, mundur ke sel sebelumnya dan cobalah kemungkinan angka berikutnya yang berlaku untul sel tersebut.
 \item Jika tidak ada lagi sel yang kosong, solusi sudah ditemukan.
 \end{enumerate}
+}
+
+\subsection{Algoritma \protect\textit{Hybrid Genetic}}
+
+\begin{frame}
+\frametitle{Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Dalam kasus ini, algoritma \textit{hybrid genetic} adalah gabungan dari algoritma \textit{rule based} dan algoritma genetik
+\item Algoritma \textit{rule based} akan dijalankan sampai pada titik dimana algoritma tidak bisa menyelesaikan permainan teka-teki Calcudoku
+\item Jika algoritma sudah tidak bisa menyelesaikan permainan, maka algoritma genetik akan mulai dijalankan
+\end{itemize}
+\end{frame}
+
+\note{
+Dalam kasus ini, algoritma ini gabungan dari algoritma \textit{rule based} dan algoritma genetik. Algoritma \textit{rule based} akan dijalankan sampai pada titik dimana algoritma tidak bisa menyelesaikan permainan teka-teki Calcudoku. Jika algoritma sudah tidak bisa menyelesaikan permainan, maka algoritma genetik akan mulai dijalankan.
+}
+
+\begin{frame}
+\frametitle{Algoritma \textit{Rule Based}}
+\begin{itemize}
+\item Sebuah algoritma berbasis aturan logika untuk menyelesaikan teka-teki Sudoku dan variasinya, termasuk Calcudoku
+\item Beberapa aturan logika yang digunakan dalam algoritma ini adalah:
+	\begin{itemize}
+ 	\item \textit{Single square rule}
+	\item \textit{Naked subset rule}
+	\item \textit{Hidden single rule}
+	\item \textit{Evil twin rule}
+	\item \textit{Killer combination}
+	\item \textit{X-wing}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\note{
+Algoritma \textit{rule based} adalah sebuah algoritma berbasis aturan logika untuk menyelesaikan teka-teki Sudoku dan variasinya, termasuk Calcudoku. Menurut Johanna, Lukas, dan Saputra, beberapa aturan logika yang digunakan dalam algoritma ini adalah \textit{single square rule}, \textit{naked subset rule}, \textit{hidden single rule}, \textit{evil twin rule}, \textit{killer combination}, dan \textit{X-wing} ~\cite{johanna:12:hybrid}.
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{Single Square}}
+\begin{itemize}
+\item Digunakan jika sebuah \textit{cage} hanya berisi satu sel
+\item Nilai dari sel tersebut sama dengan angka tujuan yang telah ditentukan
+\end{itemize}
+\end{frame}
+
+\note{
+Aturan \textit{single square} digunakan jika sebuah \textit{cage} hanya berisi satu sel. Hal ini berarti nilai dari sel tersebut sama dengan angka tujuan yang telah ditentukan.
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{Naked Subset}}
+\begin{itemize}
+\item Digunakan jika ada \begin{math}n\end{math} sel dalam kolom atau baris yang sama yang mempunyai \begin{math}n\end{math} kemungkinan nilai yang sama persis untuk mengisikannya, dengan \begin{math}n \geq 2 \end{math}.
+\item Sel-sel lainnya dalam baris dan kolom tersebut tidak mungkin diisi dengan nilai yang sama dengan nilai milik \begin{math}n\end{math} sel tersebut. 
+\end{itemize}
+\end{frame}
+
+\note{
+Aturan \textit{naked subset} digunakan jika ada \begin{math}n\end{math} sel dalam kolom atau baris yang sama yang mempunyai \begin{math}n\end{math} kemungkinan nilai yang sama persis untuk mengisikannya, dengan \begin{math}n \geq 2 \end{math}. Hal ini berarti sel-sel lainnya dalam baris dan kolom tersebut tidak mungkin diisi dengan nilai yang sama dengan nilai milik \begin{math}n\end{math} sel tersebut. 
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{Naked Subset}}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=1]{Gambar/HybridGenetic2}
+\caption[Contoh bagaimana cara mendeteksi aturan  \textit{naked pair}]{Contoh bagaimana cara mendeteksi aturan  \textit{naked pair}}
+\label{fig:hybrid2}
+\end{figure}
+\begin{itemize}
+\item Gambar~\ref{fig:hybrid2} menunjukkan bagaimana cara kerja aturan ini
+\item Sel-sel pada kolom ke-4 dan ke-6 mempunyai tepat dua kemungkinan nilai (1 atau 7)
+\item Ini disebut sebagai \textit{naked pair}
+\item Karena angka 1 dan 7 harus diisi pada sel-sel pada kolom ke-4 dan ke-6, maka angka 1 dan 7 bisa dieliminasi dari sel-sel pada kolom ke-7 dan ke-8
+\end{itemize}
+\end{frame}
+
+\note{
+Gambar~\ref{fig:hybrid2} menunjukkan bagaimana cara kerja aturan ini. Sel-sel pada kolom ke-4 dan ke-6 mempunyai tepat dua kemungkinan nilai (1 atau 7). Ini disebut sebagai \textit{naked pair}. Karena angka 1 dan 7 harus diisi pada sel-sel pada kolom ke-4 dan ke-6, maka angka 1 dan 7 bisa dieliminasi dari sel-sel pada kolom ke-7 dan ke-8.
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{Evil Twin}}
+\begin{itemize}
+\item Digunakan jika sebuah \textit{cage} berisikan dua sel, dan salah satu dari kedua sel sudah terisi, maka sel yang satunya lagi diisi dengan angka yang jika kedua angka dihitung dengan operasi matematika yang ditentukan maka akan menghasilkan angka tujuan yang ditentukan
+\item Bisa digeneralisasikan untuk \textit{cage} yang berukuran lebih dari 2 sel
+\item Sel yang belum terisi yang terakhir dalam sebuah area diisi oleh sebuah nilai yang diperlukan untuk mencapai nilai tujuan menggunakan operasi matematika yang telah ditentukan.
+\end{itemize}
+\end{frame}
+
+\note{
+Aturan \textit{evil twin} digunakan jika sebuah \textit{cage} berisikan dua sel, dan salah satu dari kedua sel sudah terisi, maka sel yang satunya lagi diisi dengan angka yang jika kedua angka dihitung dengan operasi matematika yang ditentukan maka akan menghasilkan angka tujuan yang ditentukan. Aturan ini adalah aturan yang paling mudah. Kenyataannya, aturan ini bisa digeneralisasikan untuk \textit{cage} yang berukuran lebih dari 2 sel. Sel yang belum terisi yang terakhir dalam sebuah area diisi oleh sebuah nilai yang diperlukan untuk mencapai nilai tujuan menggunakan operasi matematika yang telah ditentukan. 
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{Evil Twin}}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=1]{Gambar/HybridGenetic3}
+\caption[Contoh aturan  \textit{evil twin}]{Contoh aturan  \textit{evil twin}}
+\label{fig:hybrid3}
+\end{figure}
+\begin{itemize}
+\item Contohnya, pada Gambar~\ref{fig:hybrid3}, begitu sel di sudut kiri bawah diisi oleh angka 4, maka sel diatasnya harus diisi oleh angka 9.
+\end{itemize}
+\end{frame}
+
+\note{
+Contohnya, pada Gambar~\ref{fig:hybrid3}, begitu sel di sudut kiri bawah diisi oleh angka 4, maka sel diatasnya harus diisi oleh angka 9.
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{Hidden Single}}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=1]{Gambar/HybridGenetic4}
+\caption[Contoh aturan  \textit{hidden single}]{Contoh aturan  \textit{hidden single}}
+\label{fig:hybrid4}
+\end{figure}
+\begin{itemize}
+\item Digunakan jika sebuah angka hanya bisa diisikan dalam satu sel dalam sebuah baris atau kolom.
+\item Pada Gambar~\ref{fig:hybrid4}, nilai-nilai yang mungkin untuk sel yang paling kiri adalah 3, 5, dan 7
+\item Tetapi dalam baris ini, angka 7 harus muncul dalam salah satu selnya, dan hanya sel yang paling kiri tersebut yang memiliki kemungkinan nilai 7
+\item Ini disebut sebagai \textit{hidden single}
+\item Sel tersebut harus diisi dengan angka 7.
+\end{itemize}
+\end{frame}
+
+\note{
+Aturan \textit{hidden single} digunakan jika sebuah angka hanya bisa diisikan dalam satu sel dalam sebuah baris atau kolom. Aturan ini secara konsep cukup mudah, tetapi kadang-kadang sulit untuk diamati. Pada Gambar~\ref{fig:hybrid4}, nilai-nilai yang mungkin untuk sel yang paling kiri adalah 3, 5, dan 7, tetapi dalam baris ini, angka 7 harus muncul dalam salah satu selnya, dan hanya sel yang paling kiri tersebut yang memiliki kemungkinan nilai 7. Ini disebut sebagai \textit{hidden single}. Sel tersebut harus diisi dengan angka 7.
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{Killer Combination}}
+\begin{itemize}
+\item Digunakan jika sebuah \textit{cage} berisikan sel-sel yang berada dalam baris atau kolom yang sama dan operasi yang ditentukan adalah penjumlahan
+\item Kemungkinan angka yang unik untuk aturan \textit{killer combination} berhubungan dengan ukuran \textit{cage}
+\item Contoh, jika sebuah \textit{cage} memiliki dua sel dan angka tujuannya adalah 3, maka kemungkinan angka yang bisa diisikan ke dalam kedua sel tersebut adalah 1 atau 2
+\item Hal ini berarti semua angka lainnya tidak mungkin diisikan ke dalam kedua sel tersebut
+\item Jika sebuah \textit{cage} memiliki tiga sel dan angka tujuannya adalah 24, maka kemungkinan angka yang bisa diisikan ke dalam ketiga sel tersebut adalah 7, 8, atau 9
+\end{itemize}
+\end{frame}
+
+\note{
+Aturan \textit{killer combination} adalah aturan yang paling krusial. Aturan ini digunakan jika sebuah \textit{cage} berisikan sel-sel yang berada dalam baris atau kolom yang sama dan operasi yang ditentukan adalah penjumlahan. Kemungkinan angka yang unik untuk aturan \textit{killer combination} berhubungan dengan ukuran \textit{cage}. Contoh, jika sebuah \textit{cage} memiliki dua sel dan angka tujuannya adalah 3, maka kemungkinan angka yang bisa diisikan ke dalam kedua sel tersebut adalah 1 atau 2. Hal ini berarti semua angka lainnya tidak mungkin diisikan ke dalam kedua sel tersebut. Contoh lain, jika sebuah \textit{cage} memiliki tiga sel dan angka tujuannya adalah 24, maka kemungkinan angka yang bisa diisikan ke dalam ketiga sel tersebut adalah 7, 8, atau 9. 
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{Killer Combination}}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=1]{Gambar/HybridGenetic5}
+\caption[Contoh aturan  \textit{killer combination} untuk \textit{cage} dengan ukuran 2 sel]{Contoh aturan  \textit{killer combination} untuk \textit{cage} dengan ukuran 2 sel}
+\label{fig:hybrid5}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{X-Wing}}
+\begin{itemize}
+\item Digunakan jika hanya ada dua kemungkinan angka yang bisa diisikan ke dalam dua sel yang berada di dalam dua baris yang berbeda, dan dua kemungkinan angka tersebut juga berada di dalam kolom yang sama maka sel-sel lainnya dalam kolom tersebut tidak mungkin diisi oleh dua kemungkinan angka tersebut
+\item Juga digunakan jika hanya ada dua kemungkinan angka yang bisa diisikan ke dalam dua sel yang berada di dalam dua kolom yang berbeda, dan dua kemungkinan angka tersebut juga berada di dalam baris yang sama maka sel-sel lainnya dalam baris tersebut tidak mungkin diisi oleh dua kemungkinan angka tersebut
+\end{itemize}
+\end{frame}
+
+\note{
+Aturan \textit{X-wing} digunakan jika hanya ada dua kemungkinan angka yang bisa diisikan ke dalam dua sel yang berada di dalam dua baris yang berbeda, dan dua kemungkinan angka tersebut juga berada di dalam kolom yang sama maka sel-sel lainnya dalam kolom tersebut tidak mungkin diisi oleh dua kemungkinan angka tersebut, atau jika hanya ada dua kemungkinan angka yang bisa diisikan ke dalam dua sel yang berada di dalam dua kolom yang berbeda, dan dua kemungkinan angka tersebut juga berada di dalam baris yang sama maka sel-sel lainnya dalam baris tersebut tidak mungkin diisi oleh dua kemungkinan angka tersebut.
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{X-Wing}}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=1]{Gambar/HybridGenetic6}
+\caption[Contoh aturan  \textit{X-wing}  ~\cite{johanna:12:hybrid}]{Contoh aturan  \textit{X-wing} ~\cite{johanna:12:hybrid}}
+\label{fig:hybrid6}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Aturan \textit{X-Wing}}
+\begin{itemize}
+\item Gambar~\ref{fig:hybrid6} menampilkan contoh penggunaan aturan \textit{X-wing}
+\item Misalnya, jika sel A diisi oleh angka 7, maka angka 7 akan dieliminasi dari sel B dan sel C
+\item Karena sel A dengan sel C dan sel D 'terkunci', maka sel D harus diisi oleh angka 7
+\item Jadi, angka 7 harus di isi pada sel A dan sel D atau pada sel B dan sel C
+\item Angka 7 bisa dieliminasi dari sel-sel yang berwarna hijau
+\end{itemize}
+\end{frame}
+
+\note{
+Gambar~\ref{fig:hybrid6} menampilkan contoh penggunaan aturan \textit{X-wing}. Misalnya, jika sel A diisi oleh angka 7, maka angka 7 akan dieliminasi dari sel B dan sel C. Karena sel A dengan sel C dan sel D 'terkunci', maka sel D harus diisi oleh angka 7. Jadi, angka 7 harus di isi pada sel A dan sel D atau pada sel B dan sel C. Angka 7 bisa dieliminasi dari sel-sel yang berwarna hijau.
+}
+
+\begin{frame}
+\frametitle{Heuristik}
+\begin{itemize}
+\item Semacam aturan tidak tertulis yang mungkin menghasilkan solusi
+\item Kadang-kadang efektif, tetapi tidak dijamin akan berhasil dalam setiap kasus
+\item Memerankan peran penting dalam strategi pencarian karena sifat eksponensial dari kebanyakan masalah
+\item Membantu mengurangi jumlah alternatif solusi dari angka yang bersifat eksponensial menjadi angka yang bersifat polinomial
+\end{itemize}
+\end{frame}
+
+\note{
+Heuristik adalah semacam aturan tidak tertulis yang mungkin menghasilkan solusi. Heuristik kadang-kadang efektif, tetapi tidak dijamin akan berhasil. dalam setiap kasus. Heuristik memerankan peran penting dalam strategi pencarian karena sifat eksponensial dari kebanyakan masalah. Heuristik membantu mengurangi jumlah alternatif solusi dari angka yang bersifat eksponensial menjadi angka yang bersifat polinomial.
+}
+
+\begin{frame}
+\frametitle{Pencarian Heuristik}
+\begin{itemize}
+\item Sebuah teknik pencarian kecerdasan buatan (\textit{artifical intelligence}) yang menggunakan heuristik dalam langkah-langkahnya
+\item Contoh teknik pencarian heuristik adalah:
+	\begin{itemize}
+	\item \textit{Generate and Test}
+	\item \textit{Hill Climbing}
+	\item \textit{Best First Search}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\note{
+Pencarian heuristik adalah sebuah teknik pencarian kecerdasan buatan (\textit{artifical intelligence}) yang menggunakan heuristik dalam langkah-langkahnya. Contoh teknik pencarian heuristik adalah \textit{Generate and Test}, \textit{Hill Climbing}, dan \textit{Best First Search}.
+}
+
+\begin{frame}
+\frametitle{Algoritma Genetik}
+\begin{itemize}
+\item Salah satu teknik heuristik \textit{Generate and Test} yang terinspirasi oleh sistem seleksi alam
+\item Perpaduan dari bidang biologi dan ilmu komputer.
+\item Algoritma ini memanipulasi informasi, biasanya disebut sebagai kromosom.
+\end{itemize}
+\end{frame}
+
+\note{
+Algoritma genetik adalah salah satu teknik heuristik \textit{Generate and Test} yang terinspirasi oleh sistem seleksi alam. Algoritma ini adalah perpaduan dari bidang biologi dan ilmu komputer. Algoritma ini memanipulasi informasi, biasanya disebut sebagai kromosom. 
+}
+
+\begin{frame}
+\frametitle{Kromosom}
+\begin{itemize}
+\item Meng-\textit{encode} kemungkinan jawaban untuk sebuah masalah yang diberikan.
+\item Dievaluasi dan diberi \textit{fitness value} berdasarkan seberapa baikkah kromosom dalam menyelesaikan masalah yang diberikan berdasarkan kriteria yang ditentukan
+\item Nilai kelayakan ini digunakan sebagai probabilitas kebertahanan hidup kromosom dalam satu siklus reproduksi
+\item \textit{Child chromosome} diproduksi dengan menggabungkan dua (atau lebih) \textit{parent chromosome}
+\item Proses ini dirancang untuk menghasilkan kromosom-kromosom keturunan yang lebih layak
+\item Kromosom-kromosom ini meng-\textit{encode} jawaban yang lebih baik, sampai solusi yang baik dan yang bisa diterima ditemukan.
+\end{itemize}
+\end{frame}
+
+\note{
+Kromosom ini meng-\textit{encode} kemungkinan jawaban untuk sebuah masalah yang diberikan. Kromosom dievaluasi dan diberi \textit{fitness value} berdasarkan seberapa baikkah kromosom dalam menyelesaikan masalah yang diberikan berdasarkan kriteria yang ditentukan oleh pembuat program. Nilai kelayakan ini digunakan sebagai probabilitas kebertahanan hidup kromosom dalam satu siklus reproduksi. Kromosom baru (kromosom anak, \textit{child chromosome}) diproduksi dengan menggabungkan dua (atau lebih) kromosom orang tua (\textit{parent chromosome}). Proses ini dirancang untuk menghasilkan kromosom-kromosom keturunan yang lebih layak, kromosom-kromosom ini meng-\textit{encode} jawaban yang lebih baik, sampai solusi yang baik dan yang bisa diterima ditemukan.
+}
+
+\begin{frame}
+\frametitle{Cara Kerja Algoritma Genetik}
+\begin{itemize}
+\item Cara kerja algoritma genetik adalah sebagai berikut:
+\begin{enumerate}
+\item Menentukan populasi kromosom kemungkinan jawaban awal
+\item Membangkitkan populasi kemungkinan jawaban awal secara acak
+\item Mengevaluasi fungsi objektif
+\item Melakukan operasi terhadap kromosom menggunakan operator genetik (reproduksi, kawin silang, dan mutasi)
+\item Ulangi langkah 3 dan 4 sampai mencapai kriteria untuk menghentikan algoritm.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\note{
+Cara kerja algoritma genetik adalah sebagai berikut ~\cite{johanna:12:hybrid}:
+	\begin{enumerate}
+	\item Menentukan populasi kromosom kemungkinan jawaban awal.
+	\item Membangkitkan populasi kemungkinan jawaban awal secara acak.
+	\item Mengevaluasi fungsi objektif.
+	\item Melakukan operasi terhadap kromosom menggunakan operator genetik (reproduksi, kawin silang, dan mutasi).
+	\item Ulangi langkah 3 dan 4 sampai mencapai kriteria untuk menghentikan algoritma.
+	\end{enumerate}
+}
+
+\begin{frame}
+\frametitle{Langkah-Langkah Utama dalam Penggunaan Algoritma Genetik}
+\begin{itemize}
+\item Langkah-langkah utama dalam penggunaan algoritma genetik adalah:
+	\begin{itemize}
+	\item Membangkitkan populasi kemungkinan jawaban
+	\item Mencari fungsi objektif dan fungsi kelayakan
+	\item Penggunaan operator genetik
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\note{
+Langkah-langkah utama dalam penggunaan algoritma genetik adalah membangkitkan populasi kemungkinan jawaban, mencari fungsi objektif dan fungsi kelayakan, dan penggunaan operator genetik.
+}
+
+\begin{frame}
+\frametitle{Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Pencarian \textit{rule based} dimulai dengan mengasumsikan semua nilai sel yang tidak diketahui dengan semua kemungkinan nilai untuk mengisi sel tersebut tanpa melanggar batasan, dengan \begin{math}P(C_{b,k}) = {1, 2, ..., n}\end{math}
+\item Setelah nilai dari satu sel sudah ditentukan, kemungkinan nilai untuk beberapa sel tertentu diperbaharui \item Misalnya, penggunaan aturan \textit{naked single} yang dinyatakan dalam persamaan 1 di slide berikutnya, akan mengakibatkan semua kemungkinan nilai untuk semua sel lain dalam baris yang sama dan dalam kolom yang sama harus diperbaharui, seperti dinyatakan dalam persamaan 2 dan 3 di slide berikutnya
+\item Aturan \textit{naked pair}, salah satu dari aturan jenis \textit{naked subset}, dinyatakan dalam persamaan 4 untuk baris dan persamaan 5 untuk kolom
+\end{itemize}
+\end{frame}
+
+\note{
+Pencarian \textit{rule based} dimulai dengan mengasumsikan semua nilai sel yang tidak diketahui dengan semua kemungkinan nilai untuk mengisi sel tersebut tanpa melanggar batasan, dengan \begin{math}P(C_{b,k}) = {1, 2, ..., n}\end{math}. Setelah nilai dari satu sel sudah ditentukan, kemungkinan nilai untuk beberapa sel tertentu diperbaharui. Misalnya, penggunaan aturan \textit{naked single} yang dinyatakan dalam persamaan 1 di bawah ini, akan mengakibatkan semua kemungkinan nilai untuk semua sel lain dalam baris yang sama dan dalam kolom yang sama harus diperbaharui, seperti dinyatakan dalam persamaan 2 dan 3 di bawah ini. Aturan \textit{naked pair}, salah satu dari aturan jenis \textit{naked subset}, dinyatakan dalam persamaan 4 untuk baris dan persamaan 5 untuk kolom. ~\cite{johanna:12:hybrid}
+}
+
+\begin{frame}
+\frametitle{Algoritma \textit{Hybrid Genetic}}
+\begin{enumerate}
+\item \begin{math}|P(C_{b,k})| = 1 \land x \in P(C_{b,k}) \rightarrow V(C_{b,k}) = x\end{math}, artinya jika sebuah \textit{cage} berukuran 1 sel, dan \begin{math}x\end{math} adalah nilai tujuan dari \textit{cage} tersebut, maka nilai dari sel tersebut adalah \begin{math}x\end{math}
+\item \begin{math}(V(C_{b,k}) = x) \land (\forall a \in \{1, 2, ..., n\}) \rightarrow P(C_{a,k}) = P(C_{a,k}) - \{x\}\end{math}, artinya jika nilai suatu sel pada baris \begin{math}b\end{math} dan kolom \begin{math}k\end{math} adalah \begin{math}x\end{math}, maka \begin{math}x\end{math} dihapus dari kemungkinan angka-angka yang bisa digunakan untuk mengisi sel-sel lain pada baris \begin{math}b\end{math}
+\item \begin{math}(V(C_{b,k}) = x) \land (\forall q \in \{1, 2, ..., n\}) \rightarrow P(C_{b,q}) = P(C_{b,q}) - \{x\}\end{math} artinya jika nilai suatu sel pada baris \begin{math}b\end{math} dan kolom \begin{math}k\end{math} adalah \begin{math}x\end{math}, maka \begin{math}x\end{math} dihapus dari kemungkinan angka-angka yang bisa digunakan untuk mengisi sel-sel lain pada kolom \begin{math}k\end{math}
+\end{enumerate}
+\end{frame}
+
+\note{
+\begin{enumerate}
+\item \begin{math}|P(C_{b,k})| = 1 \land x \in P(C_{b,k}) \rightarrow V(C_{b,k}) = x\end{math}, artinya jika sebuah \textit{cage} berukuran 1 sel, dan \begin{math}x\end{math} adalah nilai tujuan dari \textit{cage} tersebut, maka nilai dari sel tersebut adalah \begin{math}x\end{math}.
+\item \begin{math}(V(C_{b,k}) = x) \land (\forall a \in \{1, 2, ..., n\}) \rightarrow P(C_{a,k}) = P(C_{a,k}) - \{x\}\end{math}, artinya jika nilai suatu sel pada baris \begin{math}b\end{math} dan kolom \begin{math}k\end{math} adalah \begin{math}x\end{math}, maka \begin{math}x\end{math} dihapus dari kemungkinan angka-angka yang bisa digunakan untuk mengisi sel-sel lain pada baris \begin{math}b\end{math}.
+\item \begin{math}(V(C_{b,k}) = x) \land (\forall q \in \{1, 2, ..., n\}) \rightarrow P(C_{b,q}) = P(C_{b,q}) - \{x\}\end{math} artinya jika nilai suatu sel pada baris \begin{math}b\end{math} dan kolom \begin{math}k\end{math} adalah \begin{math}x\end{math}, maka \begin{math}x\end{math} dihapus dari kemungkinan angka-angka yang bisa digunakan untuk mengisi sel-sel lain pada kolom \begin{math}k\end{math}.
+\end{enumerate}
+}
+
+\begin{frame}
+\frametitle{Algoritma \textit{Hybrid Genetic}}
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item \begin{math}|P(C_{b,k1})| = |P(C_{b,k2})| = 2 \land P(C_{b,k1}) = P(C_{b,k2}) \rightarrow P(C_{b,q}) = P(C_{b,q}) - P(C_{b,k1})\end{math}, artinya jika ada dua sel dalam satu baris yang hanya bisa diisi oleh dua kemungkinan angka, maka kedua angka tersebut dihapus dari kemungkinan angka-angka yang bisa digunakan untuk mengisi sel-sel lain pada baris tersebut
+\item \begin{math}|P(C_{b1,k})| = |P(C_{b2,k})| = 2 \land P(C_{b1,k}) = P(C_{b2,k}) \rightarrow P(C_{p,k}) = P(C_{p,k}) - P(C_{b1,k})\end{math}, artinya jika ada dua sel dalam satu kolom yang hanya bisa diisi oleh dua kemungkinan angka, maka kedua angka tersebut dihapus dari kemungkinan angka-angka yang bisa digunakan untuk mengisi sel-sel lain pada kolom tersebut
+\end{enumerate}
+\end{frame}
+
+\note{
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item \begin{math}|P(C_{b,k1})| = |P(C_{b,k2})| = 2 \land P(C_{b,k1}) = P(C_{b,k2}) \rightarrow P(C_{b,q}) = P(C_{b,q}) - P(C_{b,k1})\end{math}, artinya jika ada dua sel dalam satu baris yang hanya bisa diisi oleh dua kemungkinan angka, maka kedua angka tersebut dihapus dari kemungkinan angka-angka yang bisa digunakan untuk mengisi sel-sel lain pada baris tersebut.
+\item \begin{math}|P(C_{b1,k})| = |P(C_{b2,k})| = 2 \land P(C_{b1,k}) = P(C_{b2,k}) \rightarrow P(C_{p,k}) = P(C_{p,k}) - P(C_{b1,k})\end{math}, artinya jika ada dua sel dalam satu kolom yang hanya bisa diisi oleh dua kemungkinan angka, maka kedua angka tersebut dihapus dari kemungkinan angka-angka yang bisa digunakan untuk mengisi sel-sel lain pada kolom tersebut.
+\end{enumerate}
+}
+
+\begin{frame}
+\frametitle{Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Algoritma genetik digunakan saat teka-teki masih tidak bisa diselesaikan setelah mengerjakan semua aturan logika secara berulang-ulang
+\item Algoritma ini dimulai dengan meng-\textit{encode} kromosom
+\end{itemize}
+\end{frame}
+
+\note{
+Algoritma genetik digunakan saat teka-teki masih tidak bisa diselesaikan setelah mengerjakan semua aturan logika secara berulang-ulang. Algoritma ini dimulai dengan meng-\textit{encode} kromosom. 
+}
+
+\begin{frame}
+\frametitle{Pemodelan Kromosom}
+\begin{itemize}
+\item Satu kromosom terdiri dari \begin{math}k\end{math} segmen, dengan \begin{math}m \leq n\end{math}
+\item Satu segmen berisikan sekumpulan gen yang belum diselesaikan yang berada di dalam segmen tersebut
+\item Sebuah segmen merepresentasikan sebuah baris
+\item Dalam sebuah kromosom, segmen diurutkan dari baris yang paling atas ke baris yang paling bawah
+\item Setiap segmen merepresentasikan sebuah baris yang belum terselesaikan
+\end{itemize}
+\end{frame}
+
+\note{
+Satu kromosom terdiri dari \begin{math}k\end{math} segmen, dengan \begin{math}m \leq n\end{math}. Satu segmen berisikan sekumpulan gen yang belum diselesaikan yang berada di dalam segmen tersebut. Sebuah segmen merepresentasikan sebuah baris atau kolom. Dalam sebuah kromosom, segmen diurutkan dari baris yang paling atas ke baris yang paling bawah atau dari kolom yang paling kiri ke kolom yang paling kanan. Setiap segmen merepresentasikan sebuah baris yang belum terselesaikan.
+}
+
+\begin{frame}
+\frametitle{Pemodelan Kromosom}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=1]{Gambar/HybridGenetic8}
+\caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 6 x 6]{Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 6 x 6}
+\label{fig:hybrid8}
+\end{figure}
+Contoh salah satu kromosom dari permainan teka-teki Calcudoku pada Gambar~\ref{fig:hybrid8} adalah:
+\begin{align*}
+34 \ 35 \ | \ 28 \ 29 \ 24 \ 25 \ | \ 0 \ 4 \ 5 \ 1 \ 2 \ 3 \ | \ 11 \ 6 \ 9 \ 7 \ 8 \ 10 \ | \\ 12 \ 14 \ 15 \ 17 \ 16 \ 13 \ | \ 20 \ 18 \ 19 \ 23 \ 21 \ 22\
+\end{align*}
+Setiap segmen dalam contoh kromosom ini merepresentasikan sebuah baris yang belum terselesaikan
+\end{frame}
+
+\note{
+Contoh, salah satu kromosom dari permainan teka-teki Calcudoku pada Gambar~\ref{fig:hybrid8} adalah \begin{math}34 \ 35 \ | \ 28 \ 29 \ 24 \ 25 \ | \ 0 \ 4 \ 5 \ 1 \ 2 \ 3 \ | \ 11 \ 6 \ 9 \ 7 \ 8 \ 10 \ | \ 12 \ 14 \ 15 \ 17 \ 16 \ 13 \ | \ 20 \ 18 \ 19 \ 23 \ 21 \ 22\end{math}.
+}
+
+\begin{frame}
+\frametitle{Fungsi Objektif}
+\begin{itemize}
+\item Fungsi objektif, yang direpresentasikan dengan \begin{math}x_j\end{math}, akan dihitung setelah pembangkitan nilai dari gen pada kromosom sudah dilakukan
+\item Nilai untuk gen ke-\begin{math}j\end{math} pada sebuah kromosom direpresentasikan dengan \begin{math}w_j\end{math}
+\item \begin{math}x_j\end{math} akan bernilai 0 jika belum diselesaikan (\begin{math}w_j = 0\end{math}), dan bernilai 1 jika sudah diselesaikan (\begin{math}w_j \neq 0\end{math})
+\end{itemize}
+\end{frame}
+
+\note{
+Menurut Johanna, Lukas, dan Saputra, fungsi objektif, yang direpresentasikan dengan \begin{math}x_j\end{math}, akan dihitung setelah pembangkitan nilai dari gen pada kromosom sudah dilakukan. Nilai untuk gen ke-\begin{math}j\end{math} pada sebuah kromosom direpresentasikan dengan \begin{math}w_j\end{math}. \begin{math}x_j\end{math} akan bernilai 0 jika belum diselesaikan (\begin{math}w_j = 0\end{math}), dan bernilai 1 jika sudah diselesaikan (\begin{math}w_j \neq 0\end{math}).
+}
+
+\begin{frame}
+\frametitle{Fungsi Kelayakan}
+\begin{itemize}
+\item Untuk kromosom dengan jumlah gen \begin{math}k\end{math}, fungsi kelayakan, yaitu hasil penjumlahan dari hasil fungsi objektif untuk setiap gen dibagi dengan jumlah gen, dinyatakan dalam persamaan di bawah ini:
+\begin{displaymath}
+x_j = 
+\begin{cases}
+0, w_j = 0 \\
+1, w_j \neq 0
+\end{cases}
+\end{displaymath}
+\begin{displaymath}
+fitness = \frac{\sum_{j=0}^k x_j}{k}
+\end{displaymath}
+\item Jadi, solusi dari teka-teki ini adalah mencari kromosom yang nilai kelayakannya 1
+\end{itemize}
+\end{frame}
+
+\note{
+Fungsi kelayakan, yaitu hasil penjumlahan dari hasil fungsi objektif untuk setiap gen dibagi dengan jumlah gen, dinyatakan dalam persamaan di bawah ini ~\cite{johanna:12:hybrid}:
+\begin{displaymath}
+x_j = 
+\begin{cases}
+0, w_j = 0 \\
+1, w_j \neq 0
+\end{cases}
+\end{displaymath}
+\begin{displaymath}
+fitness = \frac{\sum_{j=0}^k x_j}{k}
+\end{displaymath}
+Jadi, solusi dari teka-teki ini adalah mencari kromosom yang nilai kelayakannya 1.
+}
+
+\begin{frame}
+\frametitle{Kawin Silang}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.75]{Gambar/HybridGenetic9}
+\caption[Contoh proses kawin silang antara dua kromosom ~\cite{johanna:12:hybrid}]{Contoh proses kawin silang antara dua kromosom ~\cite{johanna:12:hybrid}}
+\label{fig:hybrid9}
+\end{figure}
+\begin{itemize}
+\item Dua kromosom, yaitu kromosom orang tua, disilangkan untuk membuat dua kromosom yang baru, yaitu kromosom anak, dengan metodologi kawin silang \textit{\begin{math}N\end{math}-segments}
+\item Gambar~\ref{fig:hybrid9} menggambarkan contoh proses kawin silang antara dua kromosom.
+\end{itemize}
+\end{frame}
+
+\note{
+Dalam proses reproduksi kawin silang, dua kromosom, yaitu kromosom orang tua, disilangkan untuk membuat dua kromosom yang baru, yaitu kromosom anak, dengan metodologi kawin silang \textit{\begin{math}N\end{math}-segments}. Gambar~\ref{fig:hybrid9} menggambarkan contoh proses kawin silang antara dua kromosom.
+}
+
+\begin{frame}
+\frametitle{Mutasi}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.75]{Gambar/HybridGenetic10}
+\caption[Contoh proses mutasi ~\cite{johanna:12:hybrid}]{Contoh proses mutasi ~\cite{johanna:12:hybrid}}
+\label{fig:hybrid10}
+\end{figure}
+\begin{itemize}
+\item Digunakan untuk mendapatkan kemungkinan kromosom yang lain
+\item Dilakukan di antara gen yang berada dalam segmen yang sama
+\item Gambar~\ref{fig:hybrid10} adalah contoh proses mutasi antara dua gen dalam segmen yang sama
+\end{itemize}
+\end{frame}
+
+\note{
+Pertukaran mutasi digunakan untuk mendapatkan kemungkinan kromosom yang lain. Mutasi dilakukan di antara gen yang berada dalam segmen yang sama. Gambar~\ref{fig:hybrid10} adalah contoh proses mutasi antara dua gen dalam segmen yang sama.
+}
+
+\begin{frame}
+\frametitle{Cara Kerja Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Cara kerja algoritma \textit{hybrid genetic} menurut Johanna, Lukas, dan Saputra adalah sebagai berikut:
+	\begin{itemize}
+	\item Masukkan teka-teki yang akan diselesaikan sebagai input.
+	\item Program akan merepresentasikan input yang dimasukkan dalam format teka-teki.
+	\item Program akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based} terlebih dahulu.
+	\item Jika program berhasil menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based}, maka algoritma selesai.
+	\item Jika program gagal dengan menggunakan algoritma \textit{rule based}, maka program akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma genetik.
+	\item Jika program berhasil menyelesaikan teka-teki tersebut dengan menggunakan algoritma genetik, maka algoritma selesai.
+	\item Jika program gagal dalam menyelesaikan teka-teki tersebut setelah menggunakan algoritma genetik, artinya algoritma gagal dalam menyelesaikan teka-teki terseebut.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\note{
+Cara kerja algoritma \textit{hybrid genetic} adalah sebagai berikut ~\cite{johanna:12:hybrid}:
+\begin{itemize}
+\item Masukkan teka-teki yang akan diselesaikan sebagai input.
+\item Program akan merepresentasikan input yang dimasukkan dalam format teka-teki.
+\item Program akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based} terlebih dahulu.
+\item Jika program berhasil menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based}, maka algoritma selesai.
+\item Jika program gagal dengan menggunakan algoritma \textit{rule based}, maka program akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma genetik.
+\item Jika program berhasil menyelesaikan teka-teki tersebut dengan menggunakan algoritma genetik, maka algoritma selesai.
+\item Jika program gagal dalam menyelesaikan teka-teki tersebut setelah menggunakan algoritma genetik, artinya algoritma gagal dalam menyelesaikan teka-teki terseebut.
+\end{itemize}
+}
+
+\begin{frame}
+\frametitle{Alur Cara Kerja Algoritma \textit{Hybrid Genetic}}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/HybridGenetic7}
+\caption[Alur penyelesaian permainan teka-teki Calcudoku dengan menggunakan algoritma \textit{hybrid genetic} ~\cite{johanna:12:hybrid}]{Alur penyelesaian permainan teka-teki Calcudoku dengan menggunakan algoritma \textit{hybrid genetic}}
+\label{fig:hybrid7}
+\end{figure}
+\begin{itemize}
+\item Alur (\textit{flow chart}) penyelesaian permainan teka-teki Calcudoku dengan menggunakan algoritma \textit{hybrid genetic} dapat dilihat di Gambar~\ref{fig:hybrid7}.
+\end{itemize}
+\end{frame}
+
+\note{
+Alur (\textit{flow chart}) penyelesaian permainan teka-teki Calcudoku dengan menggunakan algoritma \textit{hybrid genetic} dapat dilihat di Gambar~\ref{fig:hybrid7}.
 }
 
 \end{document}
