@@ -1089,6 +1089,7 @@ Alur (\textit{flow chart}) penyelesaian permainan teka-teki Calcudoku dengan men
 \end{figure}
 \begin{itemize}
 \item Untuk mengilustrasikan cara kerja algoritma \textit{backtracking}, teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:backtracking4} akan digunakan.
+\item Contoh teka-teki ini dapat dilihat di Bab 2 (Dasar Teori).
 \end{itemize}
 \end{frame}
 
@@ -1284,6 +1285,874 @@ Untuk mengilustrasikan cara kerja algoritma \textit{backtracking}, teka-teki Cal
 
 }
 
+\subsection{Algoritma \protect\textit{Hybrid Genetic}}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.33]{Gambar/hybridgenetic/Puzzle}
+\caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 6 x 6 yang belum diselesaikan]{Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 6 x 6 yang belum diselesaikan}
+\label{fig:analisishg1}
+\end{figure}
+\begin{itemize}
+\item Untuk mengilustrasikan cara kerja algoritma \textit{hybrid genetic}, akan digunakan permainan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:analisishg1} sebagai contoh
+\end{itemize}
+\end{frame}
+
+\note{
+Untuk mengilustrasikan cara kerja algoritma \textit{hybrid genetic}, akan digunakan permainan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:analisishg1} sebagai contoh. 
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Algoritma \textit{hybrid genetic} dimulai dengan mencoba menyelesaikan permainan teka-teki Calcudoku dengan algoritma \textit{rule based}
+\item Sel pada baris ke-4 dan kolom ke-6 adalah bagian dari sebuah \textit{cage} yang berukuran hanya 1 sel
+\item Oleh karena itu, angka tujuan dari sel tersebut adalah angka tujuan dari \textit{cage} tersebut (aturan \textit{single square})
+\item Angka tujuan dari \textit{cage} tersebut adalah 1
+\item Oleh karena itu sel tersebut dapat langsung diisi dengan angka 1, seperti dapat dilihat pada Gambar~\ref{fig:analisishg2}.
+\end{itemize}
+\end{frame}
+
+\note{
+Algoritma \textit{hybrid genetic} dimulai dengan mencoba menyelesaikan permainan teka-teki Calcudoku dengan algoritma \textit{rule based}.
+Sel pada baris ke-4 dan kolom ke-6 adalah bagian dari sebuah \textit{cage} yang berukuran hanya 1 sel, dan oleh karena itu, angka tujuan dari sel tersebut adalah angka tujuan dari \textit{cage} tersebut (aturan \textit{single square}). Angka tujuan dari \textit{cage} tersebut adalah 1, dan oleh karena itu sel tersebut dapat langsung diisi dengan angka 1, seperti dapat dilihat pada Gambar~\ref{fig:analisishg2}.
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/PuzzleAfterRuleBased}
+\caption[Permainan teka-teki Calcudoku setelah diselesaikan dengan algoritma \textit{rule based}]{Permainan teka-teki Calcudoku setelah diselesaikan dengan algoritma \textit{rule based}}
+\label{fig:analisishg2}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Sayangnya, algoritma \textit{rule based} gagal dalam mengisi sel-sel lainnya berdasarkan aturan-aturan yang telah didefinisikan setelah beberapa kali percobaan
+\item Oleh karena itu, algoritma \textit{hybrid genetic} akan mencoba menyelesaikan teka-teki Calcudoku dengan algoritma genetik
+\end{itemize}
+\end{frame}
+
+\note{
+Sayangnya, algoritma \textit{rule based} gagal dalam mengisi sel-sel lainnya berdasarkan aturan-aturan yang telah didefinisikan setelah beberapa kali percobaan, sehingga algoritma \textit{hybrid genetic} akan mencoba menyelesaikan teka-teki Calcudoku dengan algoritma genetik.
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Dalam contoh ini, parameter-parameter untuk algoritma genetik yang akan digunakan untuk teka-teki Calcudoku ini ditunjukkan pada Tabel~\ref{tab:analisishg1}.
+\item Setiap generasi terdiri dari 12 kromosom
+\item 5 kromosom diambil dari generasi sebelumnya (\textit{elitism})
+\item 6 kromosom adalah hasil dari pembentukan kromosom-kromosom baru dengan operasi kawin silang
+\item 1 kromosom adalah hasil dari pembentukan kromosom-kromosom baru dengan operasi mutasi
+\item Ditentukan bahwa operasi kawin silang hanya akan menghasilkan 1 kromosom baru
+\item Untuk mengilustrasikan cara kerja algoritma genetik, hanya 3 generasi pertama yang akan dibahas.
+\end{itemize}
+\end{frame}
+
+\note{
+Dalam contoh ini, parameter-parameter untuk algoritma genetik yang akan digunakan untuk teka-teki Calcudoku ini ditunjukkan pada Tabel~\ref{tab:analisishg1}. Setiap generasi terdiri dari 12 kromosom. \begin{math}40\% \times 12 \approx 5\end{math} kromosom diambil dari generasi sebelumnya (\textit{elitism}). \begin{math}50\% \times 12 \approx 6\end{math} kromosom adalah hasil dari pembentukan kromosom-kromosom baru dengan operasi kawin silang, dan \begin{math}10\% \times 12 \approx 1\end{math} kromosom adalah hasil dari pembentukan kromosom-kromosom baru dengan operasi mutasi. Biasanya, operasi kawin silang akan menghasilkan 2 kromosom baru, tetapi dalam kasus ini ditentukan bahwa operasi kawin silang hanya akan menghasilkan 1 kromosom baru. Untuk mengilustrasikan cara kerja algoritma genetik, hanya 3 generasi pertama yang akan dibahas.
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l | l |}
+\hline
+Parameter & Nilai \\
+\hline \hline
+Ukuran Populasi & 12 \\
+\hline
+Probabilitas \textit{Elitism} & 40\% \\
+\hline
+Probabilitas silang & 50\% \\
+\hline
+Probabilitas Mutasi & 10\% \\
+\hline
+\end{tabular}
+\caption[Tabel parameter untuk algoritma genetik yang akan digunakan untuk menyelesaikan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:analisishg2}]{Tabel parameter untuk algoritma genetik yang akan digunakan untuk menyelesaikan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:analisishg2}}
+\label{tab:analisishg1}
+\end{table}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Algoritma genetik dimulai dengan membangkitkan kromosom-kromosom baru sebanyak ukuran populasi yang telah ditentukan.
+\item Dalam contoh ini, ukuran populasi adalah 12
+\item Maka, algoritma akan membangkitkan 12 kromosom baru
+\item Ke-12 kromosom awal ini adalah bagian dari generasi pertama.
+\end{itemize}
+\end{frame}
+
+\note{
+Algoritma genetik dimulai dengan membangkitkan kromosom-kromosom baru sebanyak ukuran populasi yang telah ditentukan. Dalam contoh ini, ukuran populasi adalah 12, maka algoritma akan membangkitkan 12 kromosom baru. Ke-12 kromosom awal ini adalah bagian dari generasi pertama.
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome1}
+\caption[Kromosom 1 dalam Generasi ke-1]{Kromosom 1 dalam Generasi ke-1}
+\label{fig:analisisg1k1}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome2}
+\caption[Kromosom 2 dalam Generasi ke-1]{Kromosom 2 dalam Generasi ke-1}
+\label{fig:analisisg1k2}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome3}
+\caption[Kromosom 3 dalam Generasi ke-1]{Kromosom 3 dalam Generasi ke-1}
+\label{fig:analisisg1k3}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome4}
+\caption[Kromosom 4 dalam Generasi ke-1]{Kromosom 4 dalam Generasi ke-1}
+\label{fig:analisisg1k4}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome5}
+\caption[Kromosom 5 dalam Generasi ke-1]{Kromosom 5 dalam Generasi ke-1}
+\label{fig:analisisg1k5}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome6}
+\caption[Kromosom 6 dalam Generasi ke-1]{Kromosom 6 dalam Generasi ke-1}
+\label{fig:analisisg1k6}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome7}
+\caption[Kromosom 7 dalam Generasi ke-1]{Kromosom 7 dalam Generasi ke-1}
+\label{fig:analisisg1k7}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome8}
+\caption[Kromosom 8 dalam Generasi ke-1]{Kromosom 8 dalam Generasi ke-1}
+\label{fig:analisisg1k8}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome9}
+\caption[Kromosom 9 dalam Generasi ke-1]{Kromosom 9 dalam Generasi ke-1}
+\label{fig:analisisg1k9}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome10}
+\caption[Kromosom 10 dalam Generasi ke-1]{Kromosom 10 dalam Generasi ke-1}
+\label{fig:analisisg1k10}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome11}
+\caption[Kromosom 11 dalam Generasi ke-1]{Kromosom 11 dalam Generasi ke-1}
+\label{fig:analisisg1k11}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-1}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation1Chromosome12}
+\caption[Kromosom 12 dalam Generasi ke-1]{Kromosom 12 dalam Generasi ke-1}
+\label{fig:analisisg1k12}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-1 yang ditampilkan pada Tabel~\ref{tab:analisishg2}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-2
+\item Ke-5 kromosom yang terpilih adalah Kromosom 12, Kromosom 5, Kromosom 7, Kromosom 11, dan Kromosom 1
+\end{itemize}
+\end{frame}
+
+\note{
+Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-1 yang ditampilkan pada Tabel~\ref{tab:analisishg2}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-2. Ke-5 kromosom yang terpilih adalah Kromosom 12, Kromosom 5, Kromosom 7, Kromosom 11, dan Kromosom 1.
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l | l |}
+\hline
+Nomor Kromosom & Nilai Kelayakan \\
+\hline \hline
+1 & 0,3333 \\
+\hline
+2 & 0,3056 \\
+\hline
+3 & 0,25 \\
+\hline
+4 & 0,2222 \\
+\hline
+5 & 0,4444 \\
+\hline
+6 & 0,1389 \\
+\hline
+7 & 0,3889 \\
+\hline
+8 & 0,25 \\
+\hline
+9 & 0,1389 \\
+\hline
+10 & 0,3056 \\
+\hline
+11 & 0,3889 \\
+\hline
+12 & 0,5556 \\
+\hline
+\end{tabular}
+\caption[Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1]{Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1}
+\label{tab:analisishg2}
+\end{table}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Untuk Generasi ke-2, 5 kromosom adalah 5 kromosom terbaik dari Generasi ke-1
+\item 6 kromosom adalah hasil kawin silang dari 2 kromosom dari Generasi ke-1
+\item 1 kromosom adalah hasil mutasi dari 1 kromosom dari Generasi ke-1
+\end{itemize}
+\end{frame}
+
+\note{
+Untuk Generasi ke-2, 5 kromosom adalah 5 kromosom terbaik dari Generasi ke-1, 6 kromosom adalah hasil kawin silang dari 2 kromosom dari Generasi ke-1, dan 1 kromosom adalah hasil mutasi dari 1 kromosom dari Generasi ke-1.
+Kromosom 1 adalah Kromosom 12 dari Generasi ke-1, Kromosom 2 adalah Kromosom 5 dari Generasi ke-1, Kromosom 3 adalah Kromosom 7 dari Generasi ke-1, Kromosom 1 adalah Kromosom 11 dari Generasi ke-1, Kromosom 5 adalah Kromosom 11 dari Generasi ke-1.
+Kromosom 6 adalah hasil kawin silang dari Kromosom 5 dan Kromosom 12 dari Generasi ke-1, Kromosom 7 adalah hasil kawin silang dari Kromosom 7 dan Kromosom 11 dari Generasi ke-1, Kromosom 8 adalah hasil kawin silang dari Kromosom 2 dan Kromosom 10 dari Generasi ke-1, Kromosom 9 adalah hasil kawin silang dari Kromosom 6 dan Kromosom 9 dari Generasi ke-1, Kromosom 10 adalah hasil kawin silang dari Kromosom 7 dan Kromosom 12 dari Generasi ke-1, Kromosom 11 adalah hasil kawin silang dari Kromosom 11 dan Kromosom 12 dari Generasi ke-1.
+Kromosom 12 adalah hasil mutasi dari Kromosom 12 dari Generasi ke-1.
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome1}
+\caption[Kromosom 1 dalam Generasi Ke-2]{Kromosom 1 dalam Generasi Ke-2}
+\label{fig:analisisg2k1}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome2}
+\caption[Kromosom 2 dalam Generasi Ke-2]{Kromosom 2 dalam Generasi Ke-2}
+\label{fig:analisisg2k2}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome3}
+\caption[Kromosom 3 dalam Generasi Ke-2]{Kromosom 3 dalam Generasi Ke-2}
+\label{fig:analisisg2k3}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome4}
+\caption[Kromosom 4 dalam Generasi Ke-2]{Kromosom 4 dalam Generasi Ke-2}
+\label{fig:analisisg2k4}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome5}
+\caption[Kromosom 5 dalam Generasi Ke-2]{Kromosom 5 dalam Generasi Ke-2}
+\label{fig:analisisg2k5}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome6}
+\caption[Kromosom 6 dalam Generasi Ke-2]{Kromosom 6 dalam Generasi Ke-2}
+\label{fig:analisisg2k6}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome7}
+\caption[Kromosom 7 dalam Generasi Ke-2]{Kromosom 7 dalam Generasi Ke-2}
+\label{fig:analisisg2k7}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome8}
+\caption[Kromosom 8 dalam Generasi Ke-2]{Kromosom 8 dalam Generasi Ke-2}
+\label{fig:analisisg2k8}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome9}
+\caption[Kromosom 9 dalam Generasi Ke-2]{Kromosom 9 dalam Generasi Ke-2}
+\label{fig:analisisg2k9}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome10}
+\caption[Kromosom 10 dalam Generasi Ke-2]{Kromosom 10 dalam Generasi Ke-2}
+\label{fig:analisisg2k10}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome11}
+\caption[Kromosom 11 dalam Generasi Ke-2]{Kromosom 11 dalam Generasi Ke-2}
+\label{fig:analisisg2k11}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-2}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation2Chromosome12}
+\caption[Kromosom 12 dalam Generasi Ke-2]{Kromosom 12 dalam Generasi Ke-2}
+\label{fig:analisisg2k12}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-2 yang ditampilkan pada Tabel~\ref{tab:analisishg3}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-3
+\item Ke-5 kromosom yang terpilih adalah Kromosom 1, Kromosom 12, Kromosom 2, Kromosom 3, dan Kromosom 4
+\end{itemize}
+\end{frame}
+
+\note{
+Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-1 yang ditampilkan pada Tabel~\ref{tab:analisishg2}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-2. Ke-5 kromosom yang terpilih adalah Kromosom 12, Kromosom 5, Kromosom 7, Kromosom 11, dan Kromosom 1.
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l | l |}
+\hline
+Nomor Kromosom & Nilai Kelayakan \\
+\hline \hline
+1 & 0,5556 \\
+\hline
+2 & 0,4444 \\
+\hline
+3 & 0,3889 \\
+\hline
+4 & 0,3889 \\
+\hline
+5 & 0,3333 \\
+\hline
+6 & 0,2778 \\
+\hline
+7 & 0,3889 \\
+\hline
+8 & 0,0833 \\
+\hline
+9 & 0,1944 \\
+\hline
+10 & 0,2778 \\
+\hline
+11 & 0,0833 \\
+\hline
+12 & 0,5 \\
+\hline
+\end{tabular}
+\caption[Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1]{Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-2}
+\label{tab:analisishg3}kawin silang
+\end{table}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Untuk Generasi ke-3, 5 kromosom adalah 5 kromosom terbaik dari Generasi ke-2
+\item 6 kromosom adalah hasil kawin silang dari 2 kromosom dari Generasi ke-2
+\item 1 kromosom adalah hasil mutasi dari 1 kromosom dari Generasi ke-2
+\end{itemize}
+\end{frame}
+
+\note{
+Untuk Generasi ke-3, 5 kromosom adalah 5 kromosom terbaik dari Generasi ke-2, 6 kromosom adalah hasil kawin silang dari 2 kromosom dari Generasi ke-2, dan 1 kromosom adalah hasil mutasi dari 1 kromosom dari Generasi ke-2.
+Kromosom 1 adalah Kromosom 1 dari Generasi ke-2, Kromosom 2 adalah Kromosom 12 dari Generasi ke-2, Kromosom 3 adalah Kromosom 2 dari Generasi ke-2, Kromosom 1 adalah Kromosom 3 dari Generasi ke-2, Kromosom 5 adalah Kromosom 4 dari Generasi ke-2.
+Kromosom 6 adalah hasil kawin silang dari Kromosom 6 dan Kromosom 10 dari Generasi ke-1, Kromosom 7 adalah hasil kawin silang dari Kromosom 2 dan Kromosom 3 dari Generasi ke-2, Kromosom 8 adalah hasil kawin silang dari Kromosom 2 dan Kromosom 4 dari Generasi ke-2, Kromosom 9 adalah hasil kawin silang dari Kromosom 2 dan Kromosom 12 dari Generasi ke-2, Kromosom 10 adalah hasil kawin silang dari Kromosom 3 dan Kromosom 12 dari Generasi ke-2, Kromosom 11 adalah hasil kawin silang dari Kromosom 4 dan Kromosom 12 dari Generasi ke-2.
+Kromosom 12 adalah hasil mutasi dari Kromosom 2 dari Generasi ke-2.
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome1}
+\caption[Kromosom 1 dalam Generasi Ke-3]{Kromosom 1 dalam Generasi Ke-3}
+\label{fig:analisisg3k1}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome2}
+\caption[Kromosom 2 dalam Generasi Ke-3]{Kromosom 2 dalam Generasi Ke-3}
+\label{fig:analisisg3k2}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome3}
+\caption[Kromosom 3 dalam Generasi Ke-3]{Kromosom 3 dalam Generasi Ke-3}
+\label{fig:analisisg3k3}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome4}
+\caption[Kromosom 4 dalam Generasi Ke-3]{Kromosom 4 dalam Generasi Ke-3}
+\label{fig:analisisg3k4}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome5}
+\caption[Kromosom 5 dalam Generasi Ke-3]{Kromosom 5 dalam Generasi Ke-3}
+\label{fig:analisisg3k5}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome6}
+\caption[Kromosom 6 dalam Generasi Ke-3]{Kromosom 6 dalam Generasi Ke-3}
+\label{fig:analisisg3k6}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome7}
+\caption[Kromosom 7 dalam Generasi Ke-3]{Kromosom 7 dalam Generasi Ke-3}
+\label{fig:analisisg3k7}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome8}
+\caption[Kromosom 8 dalam Generasi Ke-3]{Kromosom 8 dalam Generasi Ke-3}
+\label{fig:analisisg3k8}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome9}
+\caption[Kromosom 9 dalam Generasi Ke-3]{Kromosom 9 dalam Generasi Ke-3}
+\label{fig:analisisg3k9}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome10}
+\caption[Kromosom 10 dalam Generasi Ke-3]{Kromosom 10 dalam Generasi Ke-3}
+\label{fig:analisisg3k10}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome11}
+\caption[Kromosom 11 dalam Generasi Ke-3]{Kromosom 11 dalam Generasi Ke-3}
+\label{fig:analisisg3k11}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Kromosom Generasi Ke-3}
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/hybridgenetic/Generation3Chromosome12}
+\caption[Kromosom 12 dalam Generasi Ke-3]{Kromosom 12 dalam Generasi Ke-3}
+\label{fig:analisisg3k12}
+\end{figure}
+\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-3 yang ditampilkan pada Tabel~\ref{tab:analisishg4}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-4
+\item Ke-5 kromosom yang terpilih adalah Kromosom 1, Kromosom 2, Kromosom 3, Kromosom 4, dan Kromosom 12
+\end{itemize}
+\end{frame}
+
+\note{
+Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-3 yang ditampilkan pada Tabel~\ref{tab:analisishg4}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-4. Ke-5 kromosom yang terpilih adalah Kromosom 1, Kromosom 2, Kromosom 3, Kromosom 4, dan Kromosom 12.
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l | l |}
+\hline
+Nomor Kromosom & Nilai Kelayakan \\
+\hline \hline
+1 & 0,5556 \\
+\hline
+2 & 0,4444 \\
+\hline
+3 & 0,3889 \\
+\hline
+4 & 0,3889 \\
+\hline
+5 & 0,3333 \\
+\hline
+6 & 0,2778 \\
+\hline
+7 & 0,3333 \\
+\hline
+8 & 0,1667 \\
+\hline
+9 & 0,1389 \\
+\hline
+10 & 0,0833 \\
+\hline
+11 & 0,1667 \\
+\hline
+12 & 0,3889 \\
+\hline
+\end{tabular}
+\caption[Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-3]{Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-3}
+\label{tab:analisishg4}
+\end{table}\end{frame}
+
+\note{
+
+}
+
+\begin{frame}
+\frametitle{Analisis Algoritma \textit{Hybrid Genetic}}
+\begin{itemize}
+\item Proses yang sama diulang untuk menghasilkan Generasi ke-4 dan generasi-generasi berikutnya, hingga algoritma genetik dapat menemukan solusi dari teka-teki Calcudoku tersebut.
+\end{itemize}
+\end{frame}
+
+\note{
+Proses yang sama diulang untuk menghasilkan Generasi ke-4 dan generasi-generasi berikutnya, hingga algoritma genetik dapat menemukan solusi dari teka-teki Calcudoku tersebut.
+}
+
 \section{Daftar Pustaka}
 
 \begin{frame}
@@ -1303,6 +2172,15 @@ Untuk mengilustrasikan cara kerja algoritma \textit{backtracking}, teka-teki Cal
   Faculty of Engineering and Faculty of Computer Science, Bandar Lampung University,
   2012.
 \end{thebibliography}
+\end{frame}
+
+\section{Thank You}
+
+\begin{frame}
+\frametitle{Terima Kasih}
+\begin{itemize}
+\item Ada pertanyaan?
+\end{itemize}
 \end{frame}
 
 \note{
