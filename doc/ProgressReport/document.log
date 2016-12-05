@@ -1,19 +1,16 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.19)  29 NOV 2016 11:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.22)  5 DEC 2016 12:13
 entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
 **document.tex
-(E:\Skripsi\doc\ProgressReport\document.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
-, bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
-ian, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, icelandic, indonesian, interlingua, irish, italian,
- kannada, kurmanji, latin, latvian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, ngerman
--x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, sloven
-ian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishmax, w
-elsh, loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(./document.tex
+LaTeX2e <2016/03/31>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -26,52 +23,51 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
-)) ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2008/07/08 v3.8m The Babel package
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/02/24 3.9q The Babel package
 
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
-File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\babel-bahasa\bahasai.ldf"
-Language: bahasa 2008/03/15 v1.0l Bahasa Indonesia support from the babel system
+(/usr/local/texlive/2015/texmf-dist/tex/generic/babel-bahasa/bahasai.ldf
+Language: bahasa 2008/03/15 v1.0l Bahasa Indonesia support from the babel syste
+m
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2008/07/08 v3.8m Babel common definitions
+(/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/02/24 3.9q Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
 )))
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
- ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
-)
-Package graphics Info: Driver file: pdftex.def on input line 91.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 95.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
@@ -79,34 +75,35 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count89
 \float@exts=\toks15
 \float@box=\box26
 \@float@everytoks=\toks16
 \@floatcapt=\box27
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\preprint\fullpage.sty"
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip43
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
-Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
- ("C:\Program Files\MiKTeX 2.9\tex\latex\misc\etex.sty"
-Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count90
 )
-\etb@tempcnta=\count91
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count90
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count92
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
+\c@lips@count=\count91
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen106
 \captionmargin@=\dimen107
 \captionwidth=\dimen108
@@ -115,34 +112,34 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen111
 \caption@hangindent=\dimen112
 )
-\c@ContinuedFloat=\count93
+\c@ContinuedFloat=\count92
 Package caption Info: float package is loaded.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count94
-\Gm@cntv=\count95
-\c@Gm@tempcnt=\count96
+\Gm@cnth=\count93
+\Gm@cntv=\count94
+\c@Gm@tempcnt=\count95
 \Gm@bindingoffset=\dimen113
 \Gm@wd@mp=\dimen114
 \Gm@odd@mp=\dimen115
@@ -152,8 +149,10 @@ Package ifvtex Info: VTeX not detected.
 \Gm@layouthoffset=\dimen119
 \Gm@layoutvoffset=\dimen120
 \Gm@dimlist=\toks17
+)
+(./document.aux)
+\openout1 = `document.aux'.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg")) (E:\Skripsi\doc\ProgressReport\document.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
@@ -167,20 +166,63 @@ LaTeX Font Info:    ... okay on input line 26.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count97
+\scratchcounter=\count96
 \scratchdimen=\dimen121
 \scratchbox=\box28
-\nofMPsegments=\count98
-\nofMParguments=\count99
+\nofMPsegments=\count97
+\nofMParguments=\count98
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count100
+\MPscratchCnt=\count99
 \MPscratchDim=\dimen122
-\MPnumerator=\count101
-\makeMPintoPDFobject=\count102
+\MPnumerator=\count100
+\makeMPintoPDFobject=\count101
 \everyMPtoPDFconversion=\toks19
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -225,114 +267,138 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] <Gambar/Backtracking1.jpg, id=14, 150.5625pt x 150.5625pt>
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+<Gambar/Backtracking1.jpg, id=15, 150.5625pt x 150.5625pt>
 File: Gambar/Backtracking1.jpg Graphic file (type jpg)
- <use Gambar/Backtracking1.jpg>
+
+<use Gambar/Backtracking1.jpg>
 Package pdftex.def Info: Gambar/Backtracking1.jpg used on input line 92.
 (pdftex.def)             Requested size: 150.56212pt x 150.56212pt.
 
-<Gambar/Backtracking2.jpg, id=15, 150.5625pt x 150.5625pt>
+<Gambar/Backtracking2.jpg, id=16, 150.5625pt x 150.5625pt>
 File: Gambar/Backtracking2.jpg Graphic file (type jpg)
- <use Gambar/Backtracking2.jpg>
+
+<use Gambar/Backtracking2.jpg>
 Package pdftex.def Info: Gambar/Backtracking2.jpg used on input line 114.
 (pdftex.def)             Requested size: 150.56212pt x 150.56212pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [2 <E:/Skripsi/doc/ProgressReport/Gambar/Backtracking1.jpg>]
+
+[2 <./Gambar/Backtracking1.jpg>]
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [3 <E:/Skripsi/doc/ProgressReport/Gambar/Backtracking2.jpg>] <Gambar/Backtracking3.jpg, id=29, 204.01219pt x 204.01219p
-t>
+
+[3 <./Gambar/Backtracking2.jpg>]
+<Gambar/Backtracking3.jpg, id=30, 204.01219pt x 204.01219pt>
 File: Gambar/Backtracking3.jpg Graphic file (type jpg)
- <use Gambar/Backtracking3.jpg>
+
+<use Gambar/Backtracking3.jpg>
 Package pdftex.def Info: Gambar/Backtracking3.jpg used on input line 175.
 (pdftex.def)             Requested size: 204.01169pt x 204.01169pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [4]
+
+[4]
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [5 <E:/Skripsi/doc/ProgressReport/Gambar/Backtracking3.jpg>] <Gambar/Backtracking4.jpg, id=36, 112.92188pt x 112.92188p
-t>
+
+[5 <./Gambar/Backtracking3.jpg>]
+<Gambar/Backtracking4.jpg, id=37, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking4.jpg Graphic file (type jpg)
- <use Gambar/Backtracking4.jpg>
+
+<use Gambar/Backtracking4.jpg>
 Package pdftex.def Info: Gambar/Backtracking4.jpg used on input line 218.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [6 <E:/Skripsi/doc/ProgressReport/Gambar/Backtracking4.jpg>] <Gambar/Backtracking5.jpg, id=40, 226.59656pt x 75.28125pt
->
+
+[6 <./Gambar/Backtracking4.jpg>]
+<Gambar/Backtracking5.jpg, id=41, 226.59656pt x 75.28125pt>
 File: Gambar/Backtracking5.jpg Graphic file (type jpg)
- <use Gambar/Backtracking5.jpg>
+
+<use Gambar/Backtracking5.jpg>
 Package pdftex.def Info: Gambar/Backtracking5.jpg used on input line 233.
 (pdftex.def)             Requested size: 226.596pt x 75.28105pt.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [7 <E:/Skripsi/doc/ProgressReport/Gambar/Backtracking5.jpg>] <Gambar/Backtracking6.jpg, id=45, 112.92188pt x 112.92188p
-t>
+
+[7 <./Gambar/Backtracking5.jpg>]
+<Gambar/Backtracking6.jpg, id=46, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking6.jpg Graphic file (type jpg)
- <use Gambar/Backtracking6.jpg>
+
+<use Gambar/Backtracking6.jpg>
 Package pdftex.def Info: Gambar/Backtracking6.jpg used on input line 256.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
 
-<Gambar/Backtracking7.jpg, id=46, 112.92188pt x 112.92188pt>
+<Gambar/Backtracking7.jpg, id=47, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking7.jpg Graphic file (type jpg)
- <use Gambar/Backtracking7.jpg>
+
+<use Gambar/Backtracking7.jpg>
 Package pdftex.def Info: Gambar/Backtracking7.jpg used on input line 271.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
 
-<Gambar/Backtracking8.jpg, id=47, 231.86626pt x 422.32782pt>
+<Gambar/Backtracking8.jpg, id=48, 231.86626pt x 422.32782pt>
 File: Gambar/Backtracking8.jpg Graphic file (type jpg)
- <use Gambar/Backtracking8.jpg>
+
+<use Gambar/Backtracking8.jpg>
 Package pdftex.def Info: Gambar/Backtracking8.jpg used on input line 281.
 (pdftex.def)             Requested size: 231.86568pt x 422.32678pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [8 <E:/Skripsi/doc/ProgressReport/Gambar/Backtracking6.jpg>]
+
+[8 <./Gambar/Backtracking6.jpg>]
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [9 <E:/Skripsi/doc/ProgressReport/Gambar/Backtracking7.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/Backtracking8.jpg>]
+
+[9 <./Gambar/Backtracking7.jpg> <./Gambar/Backtracking8.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
 
-<Gambar/HybridGenetic2.jpg, id=54, 158.09062pt x 28.60687pt>
+<Gambar/HybridGenetic2.jpg, id=55, 158.09062pt x 28.60687pt>
 File: Gambar/HybridGenetic2.jpg Graphic file (type jpg)
- <use Gambar/HybridGenetic2.jpg>
+
+<use Gambar/HybridGenetic2.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic2.jpg used on input line 314.
 (pdftex.def)             Requested size: 158.09023pt x 28.6068pt.
 
-<Gambar/HybridGenetic3.jpg, id=55, 205.5178pt x 47.42719pt>
+<Gambar/HybridGenetic3.jpg, id=56, 205.5178pt x 47.42719pt>
 File: Gambar/HybridGenetic3.jpg Graphic file (type jpg)
- <use Gambar/HybridGenetic3.jpg>
+
+<use Gambar/HybridGenetic3.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic3.jpg used on input line 324.
 (pdftex.def)             Requested size: 205.5173pt x 47.42706pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [10 <E:/Skripsi/doc/ProgressReport/Gambar/HybridGenetic2.jpg>] <Gambar/HybridGenetic4.jpg, id=59, 273.27094pt x 37.6406
-3pt>
+
+[10 <./Gambar/HybridGenetic2.jpg>]
+<Gambar/HybridGenetic4.jpg, id=60, 273.27094pt x 37.64063pt>
 File: Gambar/HybridGenetic4.jpg Graphic file (type jpg)
- <use Gambar/HybridGenetic4.jpg>
+
+<use Gambar/HybridGenetic4.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic4.jpg used on input line 334.
 (pdftex.def)             Requested size: 273.27025pt x 37.64052pt.
 
-<Gambar/HybridGenetic5.jpg, id=60, 198.7425pt x 82.80937pt>
+<Gambar/HybridGenetic5.jpg, id=61, 198.7425pt x 82.80937pt>
 File: Gambar/HybridGenetic5.jpg Graphic file (type jpg)
- <use Gambar/HybridGenetic5.jpg>
+
+<use Gambar/HybridGenetic5.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic5.jpg used on input line 344.
 (pdftex.def)             Requested size: 198.742pt x 82.80916pt.
 
-<Gambar/HybridGenetic6.jpg, id=61, 146.04562pt x 147.55125pt>
+<Gambar/HybridGenetic6.jpg, id=62, 146.04562pt x 147.55125pt>
 File: Gambar/HybridGenetic6.jpg Graphic file (type jpg)
- <use Gambar/HybridGenetic6.jpg>
+
+<use Gambar/HybridGenetic6.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic6.jpg used on input line 354.
 (pdftex.def)             Requested size: 146.04524pt x 147.55087pt.
 
@@ -343,8 +409,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [11 <E:/Skripsi/doc/ProgressReport/Gambar/HybridGenetic3.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/HybridGenetic4.jpg>
- <E:/Skripsi/doc/ProgressReport/Gambar/HybridGenetic5.jpg>]
+
+[11 <./Gambar/HybridGenetic3.jpg> <./Gambar/HybridGenetic4.jpg> <./Gambar/Hybri
+dGenetic5.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
  []
@@ -352,296 +419,370 @@ Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [12 <E:/Skripsi/doc/ProgressReport/Gambar/HybridGenetic6.jpg>] <Gambar/HybridGenetic8.jpg, id=68, 118.94438pt x 124.966
-87pt>
+
+[12 <./Gambar/HybridGenetic6.jpg>]
+<Gambar/HybridGenetic8.jpg, id=69, 118.94438pt x 124.96687pt>
 File: Gambar/HybridGenetic8.jpg Graphic file (type jpg)
- <use Gambar/HybridGenetic8.jpg>
+
+<use Gambar/HybridGenetic8.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic8.jpg used on input line 394.
 (pdftex.def)             Requested size: 118.94408pt x 124.96657pt.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [13 <E:/Skripsi/doc/ProgressReport/Gambar/HybridGenetic8.jpg>] <Gambar/HybridGenetic9.jpg, id=73, 284.56313pt x 75.2812
-5pt>
+
+[13 <./Gambar/HybridGenetic8.jpg>]
+<Gambar/HybridGenetic9.jpg, id=74, 284.56313pt x 75.28125pt>
 File: Gambar/HybridGenetic9.jpg Graphic file (type jpg)
- <use Gambar/HybridGenetic9.jpg>
+
+<use Gambar/HybridGenetic9.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic9.jpg used on input line 417.
 (pdftex.def)             Requested size: 284.56242pt x 75.28105pt.
 
-<Gambar/HybridGenetic10.jpg, id=74, 282.30469pt x 41.4047pt>
+<Gambar/HybridGenetic10.jpg, id=75, 282.30469pt x 41.4047pt>
 File: Gambar/HybridGenetic10.jpg Graphic file (type jpg)
- <use Gambar/HybridGenetic10.jpg>
+
+<use Gambar/HybridGenetic10.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic10.jpg used on input line 427.
 (pdftex.def)             Requested size: 282.30399pt x 41.40457pt.
 
-<Gambar/HybridGenetic7.jpg, id=75, 451.6875pt x 173.89969pt>
+<Gambar/HybridGenetic7.jpg, id=76, 451.6875pt x 173.89969pt>
 File: Gambar/HybridGenetic7.jpg Graphic file (type jpg)
- <use Gambar/HybridGenetic7.jpg>
+
+<use Gambar/HybridGenetic7.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic7.jpg used on input line 447.
 (pdftex.def)             Requested size: 451.68639pt x 173.89925pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [14 <E:/Skripsi/doc/ProgressReport/Gambar/HybridGenetic9.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/HybridGenetic10.jpg
->]
-<Gambar/backtracking/State1.jpg, id=79, 307.1475pt x 307.1475pt>
+
+[14 <./Gambar/HybridGenetic9.jpg> <./Gambar/HybridGenetic10.jpg>]
+<Gambar/backtracking/State1.jpg, id=80, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State1.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State1.jpg>
+
+<use Gambar/backtracking/State1.jpg>
 Package pdftex.def Info: Gambar/backtracking/State1.jpg used on input line 467.
+
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 473.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 473.
 
-<Gambar/backtracking/State4.jpg, id=80, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State4.jpg, id=81, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State4.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State4.jpg>
+
+<use Gambar/backtracking/State4.jpg>
 Package pdftex.def Info: Gambar/backtracking/State4.jpg used on input line 481.
+
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [15 <E:/Skripsi/doc/ProgressReport/Gambar/HybridGenetic7.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State1
-.jpg>]
-<Gambar/backtracking/State11.jpg, id=84, 307.1475pt x 307.1475pt>
+
+[15 <./Gambar/HybridGenetic7.jpg> <./Gambar/backtracking/State1.jpg>]
+<Gambar/backtracking/State11.jpg, id=85, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State11.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State11.jpg>
-Package pdftex.def Info: Gambar/backtracking/State11.jpg used on input line 497.
+
+<use Gambar/backtracking/State11.jpg>
+Package pdftex.def Info: Gambar/backtracking/State11.jpg used on input line 497
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State12.jpg, id=85, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State12.jpg, id=86, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State12.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State12.jpg>
-Package pdftex.def Info: Gambar/backtracking/State12.jpg used on input line 507.
+
+<use Gambar/backtracking/State12.jpg>
+Package pdftex.def Info: Gambar/backtracking/State12.jpg used on input line 507
+.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [16 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State4.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/S
-tate11.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State12.jpg>] <Gambar/backtracking/State17.jpg, id=89, 30
-7.1475pt x 307.1475pt>
+
+[16 <./Gambar/backtracking/State4.jpg> <./Gambar/backtracking/State11.jpg> <./G
+ambar/backtracking/State12.jpg>]
+<Gambar/backtracking/State17.jpg, id=90, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State17.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State17.jpg>
-Package pdftex.def Info: Gambar/backtracking/State17.jpg used on input line 521.
+Package pdftex.def Info: Gambar/backtracking/State17.jpg used on input line 521
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- <Gambar/backtracking/State18.jpg, id=90, 307.1475pt x 307.1475pt>
+
+<Gambar/backtracking/State18.jpg, id=91, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State18.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State18.jpg>
-Package pdftex.def Info: Gambar/backtracking/State18.jpg used on input line 531.
+Package pdftex.def Info: Gambar/backtracking/State18.jpg used on input line 531
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- <Gambar/backtracking/State19.jpg, id=91, 307.1475pt x 307.1475pt>
+
+<Gambar/backtracking/State19.jpg, id=92, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State19.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State19.jpg>
-Package pdftex.def Info: Gambar/backtracking/State19.jpg used on input line 541.
+Package pdftex.def Info: Gambar/backtracking/State19.jpg used on input line 541
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [17 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State17.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State18.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State19.jpg>] <Gambar/backtracking/State23.jpg, id=95, 3
-07.1475pt x 307.1475pt>
+
+[17 <./Gambar/backtracking/State17.jpg> <./Gambar/backtracking/State18.jpg> <./
+Gambar/backtracking/State19.jpg>]
+<Gambar/backtracking/State23.jpg, id=96, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State23.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State23.jpg>
-Package pdftex.def Info: Gambar/backtracking/State23.jpg used on input line 554.
+Package pdftex.def Info: Gambar/backtracking/State23.jpg used on input line 554
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- <Gambar/backtracking/State24.jpg, id=96, 307.1475pt x 307.1475pt>
+
+<Gambar/backtracking/State24.jpg, id=97, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State24.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State24.jpg>
-Package pdftex.def Info: Gambar/backtracking/State24.jpg used on input line 564.
+Package pdftex.def Info: Gambar/backtracking/State24.jpg used on input line 564
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- <Gambar/backtracking/State31.jpg, id=97, 307.1475pt x 307.1475pt>
+
+<Gambar/backtracking/State31.jpg, id=98, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State31.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State31.jpg>
-Package pdftex.def Info: Gambar/backtracking/State31.jpg used on input line 580.
+Package pdftex.def Info: Gambar/backtracking/State31.jpg used on input line 580
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- <Gambar/backtracking/State32.jpg, id=98, 307.1475pt x 307.1475pt>
+
+<Gambar/backtracking/State32.jpg, id=99, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State32.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State32.jpg>
-Package pdftex.def Info: Gambar/backtracking/State32.jpg used on input line 590.
+Package pdftex.def Info: Gambar/backtracking/State32.jpg used on input line 590
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [18 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State23.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State24.jpg>]
-<Gambar/backtracking/State34.jpg, id=102, 307.1475pt x 307.1475pt>
+
+[18 <./Gambar/backtracking/State23.jpg> <./Gambar/backtracking/State24.jpg>]
+<Gambar/backtracking/State34.jpg, id=103, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State34.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State34.jpg>
-Package pdftex.def Info: Gambar/backtracking/State34.jpg used on input line 601.
+
+<use Gambar/backtracking/State34.jpg>
+Package pdftex.def Info: Gambar/backtracking/State34.jpg used on input line 601
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State37.jpg, id=103, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State37.jpg, id=104, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State37.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State37.jpg>
-Package pdftex.def Info: Gambar/backtracking/State37.jpg used on input line 613.
+
+<use Gambar/backtracking/State37.jpg>
+Package pdftex.def Info: Gambar/backtracking/State37.jpg used on input line 613
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [19 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State31.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State32.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State34.jpg>] <Gambar/backtracking/State47.jpg, id=108, 
-307.1475pt x 307.1475pt>
+
+[19 <./Gambar/backtracking/State31.jpg> <./Gambar/backtracking/State32.jpg> <./
+Gambar/backtracking/State34.jpg>]
+<Gambar/backtracking/State47.jpg, id=109, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State47.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State47.jpg>
-Package pdftex.def Info: Gambar/backtracking/State47.jpg used on input line 632.
+Package pdftex.def Info: Gambar/backtracking/State47.jpg used on input line 632
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- <Gambar/backtracking/State48.jpg, id=109, 307.1475pt x 307.1475pt>
+
+<Gambar/backtracking/State48.jpg, id=110, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State48.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State48.jpg>
-Package pdftex.def Info: Gambar/backtracking/State48.jpg used on input line 642.
+Package pdftex.def Info: Gambar/backtracking/State48.jpg used on input line 642
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [20 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State37.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State47.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State48.jpg>] <Gambar/backtracking/State52.jpg, id=113, 
-307.1475pt x 307.1475pt>
+
+[20 <./Gambar/backtracking/State37.jpg> <./Gambar/backtracking/State47.jpg> <./
+Gambar/backtracking/State48.jpg>]
+<Gambar/backtracking/State52.jpg, id=114, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State52.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State52.jpg>
-Package pdftex.def Info: Gambar/backtracking/State52.jpg used on input line 655.
+Package pdftex.def Info: Gambar/backtracking/State52.jpg used on input line 655
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- <Gambar/backtracking/State53.jpg, id=114, 307.1475pt x 305.14pt>
+
+<Gambar/backtracking/State53.jpg, id=115, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State53.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State53.jpg>
-Package pdftex.def Info: Gambar/backtracking/State53.jpg used on input line 665.
+Package pdftex.def Info: Gambar/backtracking/State53.jpg used on input line 665
+.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [21 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State52.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State53.jpg>]
-<Gambar/backtracking/State68.jpg, id=118, 307.1475pt x 307.1475pt>
+
+[21 <./Gambar/backtracking/State52.jpg> <./Gambar/backtracking/State53.jpg>]
+<Gambar/backtracking/State68.jpg, id=119, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State68.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State68.jpg>
-Package pdftex.def Info: Gambar/backtracking/State68.jpg used on input line 689.
+
+<use Gambar/backtracking/State68.jpg>
+Package pdftex.def Info: Gambar/backtracking/State68.jpg used on input line 689
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State69.jpg, id=119, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State69.jpg, id=120, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State69.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State69.jpg>
-Package pdftex.def Info: Gambar/backtracking/State69.jpg used on input line 699.
+
+<use Gambar/backtracking/State69.jpg>
+Package pdftex.def Info: Gambar/backtracking/State69.jpg used on input line 699
+.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
 
-<Gambar/backtracking/State71.jpg, id=120, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State71.jpg, id=121, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State71.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State71.jpg>
-Package pdftex.def Info: Gambar/backtracking/State71.jpg used on input line 710.
+
+<use Gambar/backtracking/State71.jpg>
+Package pdftex.def Info: Gambar/backtracking/State71.jpg used on input line 710
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State72.jpg, id=121, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State72.jpg, id=122, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State72.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State72.jpg>
-Package pdftex.def Info: Gambar/backtracking/State72.jpg used on input line 720.
+
+<use Gambar/backtracking/State72.jpg>
+Package pdftex.def Info: Gambar/backtracking/State72.jpg used on input line 720
+.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [22 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State68.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State69.jpg>]
-<Gambar/backtracking/State74.jpg, id=125, 307.1475pt x 307.1475pt>
+
+[22 <./Gambar/backtracking/State68.jpg> <./Gambar/backtracking/State69.jpg>]
+<Gambar/backtracking/State74.jpg, id=126, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State74.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State74.jpg>
-Package pdftex.def Info: Gambar/backtracking/State74.jpg used on input line 731.
+
+<use Gambar/backtracking/State74.jpg>
+Package pdftex.def Info: Gambar/backtracking/State74.jpg used on input line 731
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State75.jpg, id=126, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State75.jpg, id=127, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State75.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State75.jpg>
-Package pdftex.def Info: Gambar/backtracking/State75.jpg used on input line 741.
+
+<use Gambar/backtracking/State75.jpg>
+Package pdftex.def Info: Gambar/backtracking/State75.jpg used on input line 741
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State76.jpg, id=127, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State76.jpg, id=128, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State76.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State76.jpg>
-Package pdftex.def Info: Gambar/backtracking/State76.jpg used on input line 751.
+
+<use Gambar/backtracking/State76.jpg>
+Package pdftex.def Info: Gambar/backtracking/State76.jpg used on input line 751
+.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
 
-<Gambar/backtracking/State77.jpg, id=128, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State77.jpg, id=129, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State77.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State77.jpg>
-Package pdftex.def Info: Gambar/backtracking/State77.jpg used on input line 761.
+
+<use Gambar/backtracking/State77.jpg>
+Package pdftex.def Info: Gambar/backtracking/State77.jpg used on input line 761
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State78.jpg, id=129, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State78.jpg, id=130, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State78.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State78.jpg>
-Package pdftex.def Info: Gambar/backtracking/State78.jpg used on input line 771.
+
+<use Gambar/backtracking/State78.jpg>
+Package pdftex.def Info: Gambar/backtracking/State78.jpg used on input line 771
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [23 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State71.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State72.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State74.jpg>]
+
+[23 <./Gambar/backtracking/State71.jpg> <./Gambar/backtracking/State72.jpg> <./
+Gambar/backtracking/State74.jpg>]
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [24 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State75.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State76.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State77.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backt
-racking/State78.jpg>]
-<Gambar/backtracking/State81.jpg, id=136, 307.1475pt x 307.1475pt>
+
+[24 <./Gambar/backtracking/State75.jpg> <./Gambar/backtracking/State76.jpg> <./
+Gambar/backtracking/State77.jpg> <./Gambar/backtracking/State78.jpg>]
+<Gambar/backtracking/State81.jpg, id=137, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State81.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State81.jpg>
-Package pdftex.def Info: Gambar/backtracking/State81.jpg used on input line 783.
+
+<use Gambar/backtracking/State81.jpg>
+Package pdftex.def Info: Gambar/backtracking/State81.jpg used on input line 783
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State83.jpg, id=137, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State83.jpg, id=138, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State83.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State83.jpg>
-Package pdftex.def Info: Gambar/backtracking/State83.jpg used on input line 794.
+
+<use Gambar/backtracking/State83.jpg>
+Package pdftex.def Info: Gambar/backtracking/State83.jpg used on input line 794
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State85.jpg, id=138, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State85.jpg, id=139, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State85.jpg Graphic file (type jpg)
- <use Gambar/backtracking/State85.jpg>
-Package pdftex.def Info: Gambar/backtracking/State85.jpg used on input line 805.
+
+<use Gambar/backtracking/State85.jpg>
+Package pdftex.def Info: Gambar/backtracking/State85.jpg used on input line 805
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [25 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State81.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State83.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State85.jpg>] <Gambar/backtracking/State88.jpg, id=143, 
-307.1475pt x 307.1475pt>
+
+[25 <./Gambar/backtracking/State81.jpg> <./Gambar/backtracking/State83.jpg> <./
+Gambar/backtracking/State85.jpg>]
+<Gambar/backtracking/State88.jpg, id=144, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State88.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State88.jpg>
-Package pdftex.def Info: Gambar/backtracking/State88.jpg used on input line 817.
+Package pdftex.def Info: Gambar/backtracking/State88.jpg used on input line 817
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- <Gambar/backtracking/State92.jpg, id=144, 307.1475pt x 307.1475pt>
+
+<Gambar/backtracking/State92.jpg, id=145, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State92.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State92.jpg>
-Package pdftex.def Info: Gambar/backtracking/State92.jpg used on input line 830.
+Package pdftex.def Info: Gambar/backtracking/State92.jpg used on input line 830
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
- <Gambar/backtracking/State93.jpg, id=145, 307.1475pt x 307.1475pt>
+
+<Gambar/backtracking/State93.jpg, id=146, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State93.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State93.jpg>
-Package pdftex.def Info: Gambar/backtracking/State93.jpg used on input line 840.
+Package pdftex.def Info: Gambar/backtracking/State93.jpg used on input line 840
+.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [26 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State88.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/
-State92.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/State93.jpg>] <Gambar/backtracking/StateSpaceTree.jpg, i
-d=149, 848.4197pt x 599.23875pt>
+
+[26 <./Gambar/backtracking/State88.jpg> <./Gambar/backtracking/State92.jpg> <./
+Gambar/backtracking/State93.jpg>]
+<Gambar/backtracking/StateSpaceTree.jpg, id=150, 848.4197pt x 599.23875pt>
 File: Gambar/backtracking/StateSpaceTree.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/StateSpaceTree.jpg>
-Package pdftex.def Info: Gambar/backtracking/StateSpaceTree.jpg used on input line 853.
+Package pdftex.def Info: Gambar/backtracking/StateSpaceTree.jpg used on input l
+ine 853.
 (pdftex.def)             Requested size: 636.31322pt x 449.42796pt.
 
 
@@ -650,12 +791,14 @@ LaTeX Warning: Float too large for page by 1.95747pt on input line 856.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [27 <E:/Skripsi/doc/ProgressReport/Gambar/backtracking/StateSpaceTree.jpg>] <Gambar/hybridgenetic/Puzzle.jpg, id=153, 4
-59.7175pt x 457.71pt>
+
+[27 <./Gambar/backtracking/StateSpaceTree.jpg>]
+<Gambar/hybridgenetic/Puzzle.jpg, id=154, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Puzzle.jpg Graphic file (type jpg)
 
 <use Gambar/hybridgenetic/Puzzle.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Puzzle.jpg used on input line 866.
+Package pdftex.def Info: Gambar/hybridgenetic/Puzzle.jpg used on input line 866
+.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
 
@@ -664,386 +807,451 @@ LaTeX Warning: Reference `fig:hybrid1' on page 28 undefined on input line 867.
 
 LaTeX Warning: Reference `fig:hybrid1' on page 28 undefined on input line 867.
 
-<Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg, id=154, 459.7175pt x 457.71pt>
+
+<Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg, id=155, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg Graphic file (type jpg)
 
 <use Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg used on input line 880.
+Package pdftex.def Info: Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg used on 
+input line 880.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [28
+
+[28
 
 
- <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Puzzle.jpg>]
+ <./Gambar/hybridgenetic/Puzzle.jpg>]
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [29 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg>] <Gambar/hybridgenetic/Generation1Chr
-omosome1.jpg, id=161, 459.7175pt x 457.71pt>
+
+[29 <./Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg>]
+<Gambar/hybridgenetic/Generation1Chromosome1.jpg, id=162, 459.7175pt x 457.71pt
+>
 File: Gambar/hybridgenetic/Generation1Chromosome1.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome1.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome1.jpg used on input line 918.
+ <use Gambar/hybridgenetic/Generation1Chromosome1.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome1.jpg used o
+n input line 918.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome2.jpg, id=162, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome2.jpg, id=163, 459.7175pt x 457.71pt
+>
 File: Gambar/hybridgenetic/Generation1Chromosome2.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome2.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome2.jpg used on input line 926.
+ <use Gambar/hybridgenetic/Generation1Chromosome2.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome2.jpg used o
+n input line 926.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome3.jpg, id=163, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome3.jpg, id=164, 459.7175pt x 457.71pt
+>
 File: Gambar/hybridgenetic/Generation1Chromosome3.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome3.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome3.jpg used on input line 934.
+ <use Gambar/hybridgenetic/Generation1Chromosome3.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome3.jpg used o
+n input line 934.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome4.jpg, id=164, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome4.jpg, id=165, 459.7175pt x 457.71pt
+>
 File: Gambar/hybridgenetic/Generation1Chromosome4.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome4.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome4.jpg used on input line 942.
+ <use Gambar/hybridgenetic/Generation1Chromosome4.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome4.jpg used o
+n input line 942.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome5.jpg, id=165, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome5.jpg, id=166, 459.7175pt x 457.71pt
+>
 File: Gambar/hybridgenetic/Generation1Chromosome5.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome5.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome5.jpg used on input line 950.
+ <use Gambar/hybridgenetic/Generation1Chromosome5.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome5.jpg used o
+n input line 950.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome6.jpg, id=166, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome6.jpg, id=167, 459.7175pt x 457.71pt
+>
 File: Gambar/hybridgenetic/Generation1Chromosome6.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome6.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome6.jpg used on input line 958.
+ <use Gambar/hybridgenetic/Generation1Chromosome6.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome6.jpg used o
+n input line 958.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome7.jpg, id=167, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome7.jpg, id=168, 459.7175pt x 457.71pt
+>
 File: Gambar/hybridgenetic/Generation1Chromosome7.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome7.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome7.jpg used on input line 966.
+ <use Gambar/hybridgenetic/Generation1Chromosome7.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome7.jpg used o
+n input line 966.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome8.jpg, id=168, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome8.jpg, id=169, 459.7175pt x 457.71pt
+>
 File: Gambar/hybridgenetic/Generation1Chromosome8.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome8.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome8.jpg used on input line 974.
+ <use Gambar/hybridgenetic/Generation1Chromosome8.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome8.jpg used o
+n input line 974.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome9.jpg, id=169, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome9.jpg, id=170, 459.7175pt x 457.71pt
+>
 File: Gambar/hybridgenetic/Generation1Chromosome9.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome9.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome9.jpg used on input line 982.
+ <use Gambar/hybridgenetic/Generation1Chromosome9.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome9.jpg used o
+n input line 982.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome10.jpg, id=170, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome10.jpg, id=171, 459.7175pt x 457.71p
+t>
 File: Gambar/hybridgenetic/Generation1Chromosome10.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome10.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome10.jpg used on input line 990.
+ <use Gambar/hybridgenetic/Generation1Chromosome10.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome10.jpg used 
+on input line 990.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome11.jpg, id=171, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome11.jpg, id=172, 459.7175pt x 457.71p
+t>
 File: Gambar/hybridgenetic/Generation1Chromosome11.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome11.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome11.jpg used on input line 998.
+ <use Gambar/hybridgenetic/Generation1Chromosome11.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome11.jpg used 
+on input line 998.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome12.jpg, id=172, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Generation1Chromosome12.jpg, id=173, 459.7175pt x 457.71p
+t>
 File: Gambar/hybridgenetic/Generation1Chromosome12.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation1Chromosome12.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome12.jpg used on input line 1006.
+ <use Gambar/hybridgenetic/Generation1Chromosome12.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome12.jpg used 
+on input line 1006.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [30 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation1Chromosome1.jpg> <E:/Skripsi/doc/ProgressReport/Gamb
-ar/hybridgenetic/Generation1Chromosome2.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation1Chromosome3.
-jpg>]
+
+[30 <./Gambar/hybridgenetic/Generation1Chromosome1.jpg> <./Gambar/hybridgenetic
+/Generation1Chromosome2.jpg> <./Gambar/hybridgenetic/Generation1Chromosome3.jpg
+>]
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [31 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation1Chromosome4.jpg> <E:/Skripsi/doc/ProgressReport/Gamb
-ar/hybridgenetic/Generation1Chromosome5.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation1Chromosome6.
+
+[31 <./Gambar/hybridgenetic/Generation1Chromosome4.jpg> <./Gambar/hybridgenetic
+/Generation1Chromosome5.jpg> <./Gambar/hybridgenetic/Generation1Chromosome6.jpg
+>]
+Overfull \vbox (6.4151pt too high) has occurred while \output is active []
+
+
+[32 <./Gambar/hybridgenetic/Generation1Chromosome7.jpg> <./Gambar/hybridgenetic
+/Generation1Chromosome8.jpg> <./Gambar/hybridgenetic/Generation1Chromosome9.jpg
+>]
+Overfull \vbox (7.49817pt too high) has occurred while \output is active []
+
+
+[33 <./Gambar/hybridgenetic/Generation1Chromosome10.jpg> <./Gambar/hybridgeneti
+c/Generation1Chromosome11.jpg> <./Gambar/hybridgenetic/Generation1Chromosome12.
 jpg>]
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [32 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation1Chromosome7.jpg> <E:/Skripsi/doc/ProgressReport/Gamb
-ar/hybridgenetic/Generation1Chromosome8.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation1Chromosome9.
-jpg>]
-Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [33 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation1Chromosome10.jpg> <E:/Skripsi/doc/ProgressReport/Gam
-bar/hybridgenetic/Generation1Chromosome11.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation1Chromosome
-12.jpg>]
-Overfull \vbox (6.4151pt too high) has occurred while \output is active []
-
- [34
+[34
 
 
 ]
-<Gambar/hybridgenetic/Generation2Chromosome1.jpg, id=189, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome1.jpg, id=190, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation2Chromosome1.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome1.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome1.jpg used on input line 1060.
+ <use Gambar/hybridgenetic/Generation2Chromosome1.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome1.jpg used o
+n input line 1060.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome2.jpg, id=190, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome2.jpg, id=191, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation2Chromosome2.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome2.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome2.jpg used on input line 1068.
+ <use Gambar/hybridgenetic/Generation2Chromosome2.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome2.jpg used o
+n input line 1068.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome3.jpg, id=191, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome3.jpg, id=192, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation2Chromosome3.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome3.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome3.jpg used on input line 1076.
+ <use Gambar/hybridgenetic/Generation2Chromosome3.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome3.jpg used o
+n input line 1076.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome4.jpg, id=192, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome4.jpg, id=193, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation2Chromosome4.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome4.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome4.jpg used on input line 1084.
+ <use Gambar/hybridgenetic/Generation2Chromosome4.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome4.jpg used o
+n input line 1084.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome5.jpg, id=193, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome5.jpg, id=194, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation2Chromosome5.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome5.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome5.jpg used on input line 1092.
+ <use Gambar/hybridgenetic/Generation2Chromosome5.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome5.jpg used o
+n input line 1092.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome6.jpg, id=194, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome6.jpg, id=195, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation2Chromosome6.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome6.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome6.jpg used on input line 1100.
+ <use Gambar/hybridgenetic/Generation2Chromosome6.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome6.jpg used o
+n input line 1100.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome7.jpg, id=195, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome7.jpg, id=196, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation2Chromosome7.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome7.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome7.jpg used on input line 1108.
+ <use Gambar/hybridgenetic/Generation2Chromosome7.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome7.jpg used o
+n input line 1108.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome8.jpg, id=196, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome8.jpg, id=197, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation2Chromosome8.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome8.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome8.jpg used on input line 1116.
+ <use Gambar/hybridgenetic/Generation2Chromosome8.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome8.jpg used o
+n input line 1116.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome9.jpg, id=197, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome9.jpg, id=198, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation2Chromosome9.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome9.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome9.jpg used on input line 1124.
+ <use Gambar/hybridgenetic/Generation2Chromosome9.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome9.jpg used o
+n input line 1124.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome10.jpg, id=198, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome10.jpg, id=199, 459.7175pt x 459.717
+5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome10.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome10.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome10.jpg used on input line 1132.
+ <use Gambar/hybridgenetic/Generation2Chromosome10.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome10.jpg used 
+on input line 1132.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome11.jpg, id=199, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome11.jpg, id=200, 459.7175pt x 459.717
+5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome11.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome11.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome11.jpg used on input line 1140.
+ <use Gambar/hybridgenetic/Generation2Chromosome11.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome11.jpg used 
+on input line 1140.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome12.jpg, id=200, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation2Chromosome12.jpg, id=201, 459.7175pt x 459.717
+5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome12.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation2Chromosome12.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome12.jpg used on input line 1148.
+ <use Gambar/hybridgenetic/Generation2Chromosome12.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome12.jpg used 
+on input line 1148.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [35 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation2Chromosome1.jpg> <E:/Skripsi/doc/ProgressReport/Gamb
-ar/hybridgenetic/Generation2Chromosome2.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation2Chromosome3.
-jpg>]
+
+[35 <./Gambar/hybridgenetic/Generation2Chromosome1.jpg> <./Gambar/hybridgenetic
+/Generation2Chromosome2.jpg> <./Gambar/hybridgenetic/Generation2Chromosome3.jpg
+>]
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [36 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation2Chromosome4.jpg> <E:/Skripsi/doc/ProgressReport/Gamb
-ar/hybridgenetic/Generation2Chromosome5.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation2Chromosome6.
+
+[36 <./Gambar/hybridgenetic/Generation2Chromosome4.jpg> <./Gambar/hybridgenetic
+/Generation2Chromosome5.jpg> <./Gambar/hybridgenetic/Generation2Chromosome6.jpg
+>]
+Overfull \vbox (7.49817pt too high) has occurred while \output is active []
+
+
+[37 <./Gambar/hybridgenetic/Generation2Chromosome7.jpg> <./Gambar/hybridgenetic
+/Generation2Chromosome8.jpg> <./Gambar/hybridgenetic/Generation2Chromosome9.jpg
+>]
+Overfull \vbox (6.4151pt too high) has occurred while \output is active []
+
+
+[38 <./Gambar/hybridgenetic/Generation2Chromosome10.jpg> <./Gambar/hybridgeneti
+c/Generation2Chromosome11.jpg> <./Gambar/hybridgenetic/Generation2Chromosome12.
 jpg>]
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [37 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation2Chromosome7.jpg> <E:/Skripsi/doc/ProgressReport/Gamb
-ar/hybridgenetic/Generation2Chromosome8.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation2Chromosome9.
-jpg>]
-Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [38 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation2Chromosome10.jpg> <E:/Skripsi/doc/ProgressReport/Gam
-bar/hybridgenetic/Generation2Chromosome11.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation2Chromosome
-12.jpg>]
-Overfull \vbox (7.49817pt too high) has occurred while \output is active []
-
- [39
+[39
 
 
 ]
-<Gambar/hybridgenetic/Generation3Chromosome1.jpg, id=217, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome1.jpg, id=218, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation3Chromosome1.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome1.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome1.jpg used on input line 1202.
+ <use Gambar/hybridgenetic/Generation3Chromosome1.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome1.jpg used o
+n input line 1202.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome2.jpg, id=218, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome2.jpg, id=219, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation3Chromosome2.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome2.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome2.jpg used on input line 1210.
+ <use Gambar/hybridgenetic/Generation3Chromosome2.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome2.jpg used o
+n input line 1210.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome3.jpg, id=219, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome3.jpg, id=220, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation3Chromosome3.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome3.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome3.jpg used on input line 1218.
+ <use Gambar/hybridgenetic/Generation3Chromosome3.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome3.jpg used o
+n input line 1218.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome4.jpg, id=220, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome4.jpg, id=221, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation3Chromosome4.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome4.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome4.jpg used on input line 1226.
+ <use Gambar/hybridgenetic/Generation3Chromosome4.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome4.jpg used o
+n input line 1226.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome5.jpg, id=221, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome5.jpg, id=222, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation3Chromosome5.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome5.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome5.jpg used on input line 1234.
+ <use Gambar/hybridgenetic/Generation3Chromosome5.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome5.jpg used o
+n input line 1234.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome6.jpg, id=222, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome6.jpg, id=223, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation3Chromosome6.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome6.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome6.jpg used on input line 1242.
+ <use Gambar/hybridgenetic/Generation3Chromosome6.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome6.jpg used o
+n input line 1242.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome7.jpg, id=223, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome7.jpg, id=224, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation3Chromosome7.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome7.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome7.jpg used on input line 1250.
+ <use Gambar/hybridgenetic/Generation3Chromosome7.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome7.jpg used o
+n input line 1250.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome8.jpg, id=224, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome8.jpg, id=225, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation3Chromosome8.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome8.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome8.jpg used on input line 1258.
+ <use Gambar/hybridgenetic/Generation3Chromosome8.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome8.jpg used o
+n input line 1258.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome9.jpg, id=225, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome9.jpg, id=226, 459.7175pt x 459.7175
+pt>
 File: Gambar/hybridgenetic/Generation3Chromosome9.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome9.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome9.jpg used on input line 1266.
+ <use Gambar/hybridgenetic/Generation3Chromosome9.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome9.jpg used o
+n input line 1266.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome10.jpg, id=226, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome10.jpg, id=227, 459.7175pt x 459.717
+5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome10.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome10.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome10.jpg used on input line 1274.
+ <use Gambar/hybridgenetic/Generation3Chromosome10.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome10.jpg used 
+on input line 1274.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome11.jpg, id=227, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome11.jpg, id=228, 459.7175pt x 459.717
+5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome11.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome11.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome11.jpg used on input line 1282.
+ <use Gambar/hybridgenetic/Generation3Chromosome11.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome11.jpg used 
+on input line 1282.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome12.jpg, id=228, 459.7175pt x 459.7175pt>
+<Gambar/hybridgenetic/Generation3Chromosome12.jpg, id=229, 459.7175pt x 459.717
+5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome12.jpg Graphic file (type jpg)
-
-<use Gambar/hybridgenetic/Generation3Chromosome12.jpg>
-Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome12.jpg used on input line 1290.
+ <use Gambar/hybridgenetic/Generation3Chromosome12.jpg>
+Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome12.jpg used 
+on input line 1290.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [40 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation3Chromosome1.jpg> <E:/Skripsi/doc/ProgressReport/Gamb
-ar/hybridgenetic/Generation3Chromosome2.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation3Chromosome3.
-jpg>]
+
+[40 <./Gambar/hybridgenetic/Generation3Chromosome1.jpg> <./Gambar/hybridgenetic
+/Generation3Chromosome2.jpg> <./Gambar/hybridgenetic/Generation3Chromosome3.jpg
+>]
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [41 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation3Chromosome4.jpg> <E:/Skripsi/doc/ProgressReport/Gamb
-ar/hybridgenetic/Generation3Chromosome5.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation3Chromosome6.
+
+[41 <./Gambar/hybridgenetic/Generation3Chromosome4.jpg> <./Gambar/hybridgenetic
+/Generation3Chromosome5.jpg> <./Gambar/hybridgenetic/Generation3Chromosome6.jpg
+>]
+Overfull \vbox (6.4151pt too high) has occurred while \output is active []
+
+
+[42 <./Gambar/hybridgenetic/Generation3Chromosome7.jpg> <./Gambar/hybridgenetic
+/Generation3Chromosome8.jpg> <./Gambar/hybridgenetic/Generation3Chromosome9.jpg
+>]
+Overfull \vbox (7.49817pt too high) has occurred while \output is active []
+
+
+[43 <./Gambar/hybridgenetic/Generation3Chromosome10.jpg> <./Gambar/hybridgeneti
+c/Generation3Chromosome11.jpg> <./Gambar/hybridgenetic/Generation3Chromosome12.
 jpg>]
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [42 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation3Chromosome7.jpg> <E:/Skripsi/doc/ProgressReport/Gamb
-ar/hybridgenetic/Generation3Chromosome8.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation3Chromosome9.
-jpg>]
-Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [43 <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation3Chromosome10.jpg> <E:/Skripsi/doc/ProgressReport/Gam
-bar/hybridgenetic/Generation3Chromosome11.jpg> <E:/Skripsi/doc/ProgressReport/Gambar/hybridgenetic/Generation3Chromosome
-12.jpg>]
-Overfull \vbox (6.4151pt too high) has occurred while \output is active []
-
- [44
+[44
 
 
 ]
 Overfull \vbox (7.49817pt too high) has occurred while \output is active []
 
- [45]
+
+[45]
 Overfull \vbox (6.4151pt too high) has occurred while \output is active []
 
- [46
 
-] (E:\Skripsi\doc\ProgressReport\document.aux)
+[46
+
+] (./document.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4441 strings out of 493921
- 73357 string characters out of 3147281
- 220896 words of memory out of 3000000
- 7605 multiletter control sequences out of 15000+200000
- 15675 words of font info for 30 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 36i,7n,38p,1425b,481s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbi1000.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/cm-super/sfrm1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1000.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/cm-super/sfxc1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfxc1200.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on document.pdf (46 pages, 5011603 bytes).
+ 4839 strings out of 493027
+ 80827 string characters out of 6134069
+ 239096 words of memory out of 5000000
+ 8231 multiletter control sequences out of 15000+600000
+ 15675 words of font info for 30 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 38i,7n,39p,1425b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/cm-super/sfxc1000.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/cm-super/sfxc1728.pfb>
+Output written on document.pdf (46 pages, 4984748 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  441 words of extra memory for PDF output out of 10000 (max. 10000000)
 
