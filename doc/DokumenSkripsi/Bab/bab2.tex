@@ -7,11 +7,11 @@ Bab ini membahas tentang landasan teori yang akan digunakan dalam skripsi ini ya
 \label{sec:calcudoku}
 Sebagai salah satu jenis permainan teka-teki aritmatika dan \textit{grid}, Calcudoku, atau dikenal juga sebagai KenKen, KenDoku, atau Mathdoku, diciptakan pada tahun 2004 oleh seorang guru matematika dari Jepang yang bernama Tetsuya Miyamoto untuk memenuhi tujuannya untuk melatih kemampuan matematika dan logika siswa-siswinya dengan cara yang menyenangkan. Nama KenKen diambil dari kata bahasa Jepang yang berarti kepandaian. Permainan yang mengasah otak ini dengan cepat menyebar ke seluruh Jepang dan Amerika Serikat, menggantikan permainan teka-teki silang di banyak koran. Permainan ini kemudian menjadi sensasi di seluruh dunia setelah munculnya versi \textit{online} dan \textit{mobile} dari permainan teka-teki ini, khususnya menarik untuk pecinta permainan teka-teki angka seperti Sudoku.
 
-Seperti dalam Sudoku, dalam teka-teki ini, pemain diberikan sebuah \textit{grid} dengan ukuran \begin{math}n \times n\end{math}, dengan \begin{math}n\end{math} biasanya antara 3 sampai dengan 9. \textit{Grid} ini harus diisi dengan angka 1 sampai dengan \begin{math}n\end{math} sehingga dalam setiap baris setiap angka hanya muncul sekali, dalam setiap kolom setiap angka hanya muncul sekali. Perbedaannya dengan Sudoku adalah, Calcudoku dibagi ke dalam \textit{cage} (sekelompok sel yang dibatasi oleh garis yang lebih tebal daripada garis pembatas antar sel dengan angka tujuan dan operator yang telah ditentukan), dan angka-angka dalam setiap \textit{cage}  harus mencapai angka tujuan jika dihitung menggunakan operator yang telah ditentukan. Angka tujuan dan operasi yang telah ditentukan ditulis di sudut kiri atas \textit{cage}. Ada lima kemungkinan operator:
+Seperti dalam Sudoku, dalam teka-teki ini, pemain diberikan sebuah \textit{grid} dengan ukuran \begin{math}n \times n\end{math}, dengan \begin{math}n\end{math} biasanya \begin{math}3 \leq n \leq 9\end{math}. \textit{Grid} ini harus diisi dengan angka 1 sampai dengan \begin{math}n\end{math} sehingga dalam setiap baris setiap angka hanya muncul sekali, dalam setiap kolom setiap angka hanya muncul sekali. Perbedaannya dengan Sudoku adalah, Calcudoku dibagi ke dalam \textit{cage} (sekelompok sel yang dibatasi oleh garis yang lebih tebal daripada garis pembatas antar sel, setiap \textit{cage} mempunyai angka tujuan dan operator yang telah ditentukan), dan angka-angka dalam setiap \textit{cage} harus mencapai angka tujuan jika dihitung menggunakan operator yang telah ditentukan. Angka tujuan dan operasi yang telah ditentukan ditulis di sudut kiri atas \textit{cage}. Ada lima kemungkinan operator:
 \begin{enumerate}
 \item +, sebuah operator \begin{math}n\end{math}-ary yang menandakan penjumlahan.
 \item -, sebuah operator biner yang menandakan pengurangan.
-\item \begin{math}\times\end{math}, sebuah operator  \begin{math}n\end{math}-ary yang menandakan perkalian.
+\item \begin{math}\times\end{math}, sebuah operator \begin{math}n\end{math}-ary yang menandakan perkalian.
 \item \begin{math}\div\end{math} sebuah operator biner yang menandakan pembagian.
 \item =, (simbol ini biasanya dihilangkan), sebuah operator uner yang menandakan persamaan.
 \end{enumerate}
@@ -21,7 +21,7 @@ Jika operasi matematika yang ditentukan adalah pengurangan atau pembagian, maka 
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/Backtracking1}
-\caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan.  ~\cite{fahda:16:backtracking}]{Contoh permainan teka-teki dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan.  ~\cite{fahda:16:backtracking}}
+\caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan. ~\cite{fahda:16:backtracking}]{Contoh permainan teka-teki dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan. ~\cite{fahda:16:backtracking}}
 \label{fig:backtracking1}
 \end{figure}
 
@@ -36,22 +36,22 @@ Seperti kebanyakan permainan teka-teki angka, cara yang paling mudah untuk menye
 Dalam pengisian teka-teki ini ada dua tahapan, yaitu:
 \begin{enumerate} 
 \item Mencari \textit{cage} yang hanya berukuran 1 sel, karena \textit{cage} ini tidak menghasilkan pertanyaan angka apa dan urutan apa. Tahap ini adalah tahap yang paling jelas. Contoh, pada Gambar~\ref{fig:backtracking1}, \textit{cage} pada sudut kiri atas dan \textit{cage} pada sudut kanan bawah hanya berukuran 1 sel, dan dapat langsung diisi dengan angka tujuannya.
-\item Mencari mencari \textit{cage} yang hanya mempunyai satu kemungkinan kombinasi angka, sehingga masalah angka-angka apa yang harus diisi dalam \textit{cage} tersebut terjawab. Contoh, \textit{cage} pada sudut kanan atas mempunyai aturan "3-", artinya angka tujuannya adalah 3 dengan menggunakan operasi pengurangan. Satu-satunya pasangan angka dari himpunan \{1,2,3,4\} yang akan menghasilkan angka 3 saat satu angka dikurangkan dari angka yang lainnya adalah \{1,4\}. Namun masalahnya adalah urutan angka-angka yang harus dimasukkan. Dalam kasus ini, untungnya, sel pada sudut kanan bawah sudah diisi dengan angka 1, maka angka 1 tidak bisa digunakan lagi pada kolom yang paling kanan. Jadi, dengan menggunakan cara eliminasi, sel pada sudut kanan atas harus diisi dengan angka 4 dan sel di sebelah kirinya, yaitu sel pada baris yang paling atas dan kolom ketiga dari kiri, harus diisi dengan angka 1. Hal ini memberikan solusi untuk sel pada baris yang paling atas dan kolom kedua dari kiri, yaitu angka 2, karena angka 2 adalah angka yang belum pernah dipakai dalam baris tersebut. Proses ini berlanjut sampai semua sel dalam \textit{grid} terisi dan menghasilkan solusi pada Gambar~\ref{fig:backtracking2} ~\cite{fahda:16:backtracking}.
+\item Mencari \textit{cage} yang hanya mempunyai satu kemungkinan kombinasi angka, sehingga masalah angka-angka apa yang harus diisi dalam \textit{cage} tersebut terjawab. Contoh, \textit{cage} pada sudut kanan atas mempunyai aturan "3-", artinya angka tujuannya adalah 3 dengan menggunakan operasi pengurangan. Satu-satunya pasangan angka dari himpunan \{1,2,3,4\} yang akan menghasilkan angka 3 saat satu angka dikurangkan dari angka yang lainnya adalah \{1,4\}. Namun masalahnya adalah urutan angka-angka yang harus dimasukkan. Dalam kasus ini, untungnya, sel pada sudut kanan bawah sudah diisi dengan angka 1, maka angka 1 tidak bisa digunakan lagi pada kolom yang paling kanan. Jadi, dengan menggunakan cara eliminasi, sel pada sudut kanan atas harus diisi dengan angka 4 dan sel di sebelah kirinya, yaitu sel pada baris yang paling atas dan kolom ketiga dari kiri, harus diisi dengan angka 1. Hal ini memberikan solusi untuk sel pada baris yang paling atas dan kolom kedua dari kiri, yaitu angka 2, karena angka 2 adalah angka yang belum pernah dipakai dalam baris tersebut. Proses ini berlanjut sampai semua sel dalam \textit{grid} terisi dan menghasilkan solusi pada Gambar~\ref{fig:backtracking2} ~\cite{fahda:16:backtracking}.
 \end{enumerate}
 
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/Backtracking2}
-\caption[Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1}  ~\cite{fahda:16:backtracking}]{Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1}.}
+\caption[Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1} ~\cite{fahda:16:backtracking}]{Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1}.}
 \label{fig:backtracking2}
 \end{figure}
 
 Seiring dengan meningkatnya tingkat kesulitan, langkah berikutnya tidak akan langsung muncul dengan jelas. Kadang-kadang, pemain mencapai titik dimana langkah berikutnya tidak pasti. Pemain harus menebak langkah-langkah berikutnya dan melihat apakah langkah ini akan menghasilkan solusinya. Jika tidak, pemain harus mundur kembali ke titik ketidakpastian tersebut.
 
-Sebuah teka-teki Calcudoku dengan ukuran \begin{math}n \times n\end{math}, dengan \begin{math}n\end{math} melambangkan jumlah sel dalam satu baris atau kolom, mempunyai \begin{math}n^2\end{math} sel. Sel yang terletak dalam baris \begin{math}b\end{math} dan kolom \begin{math}k\end{math} diberi label \begin{math}C_{b,k} = bn + k\end{math} dan nilai dari sel tersebut adalah \begin{math}V(C_{b,k}) \in \{1, 2, ..., n\}\end{math}. Sebuah \textit{cage}, yang diberi label \begin{math}A_i\end{math} adalah sebuah himpunan dari sel, yaitu \begin{math}A_i = \{C_{b,k}\}\end{math}. Setiap \textit{cage} terhubung dengan satu operator aritmatika \begin{math}O_i \in \{+, -, \times, \div\}\end{math} dan satu angka tujuan \begin{math}H_i \in N\end{math}. Menurut Johanna, Lukas, dan Saputra, tiga aturan dalam mendefinisikan masalah dalam Calcudoku adalah sebagai berikut ~\cite{johanna:12:hybrid}:
+Sebuah teka-teki Calcudoku dengan ukuran \begin{math}n \times n\end{math}, dengan \begin{math}n\end{math} melambangkan jumlah sel dalam satu baris atau kolom, mempunyai \begin{math}n^2\end{math} sel dalam sebuah \textit{grid}. Sel yang terletak dalam baris \begin{math}b\end{math} dan kolom \begin{math}k\end{math} diberi label \begin{math}C_{b,k} = bn + k\end{math} dan nilai dari sel tersebut adalah \begin{math}V(C_{b,k}) \in \{1, 2, ..., n\}\end{math}. Nomor baris \begin{math}b\end{math} memiliki \textit{range} \begin{math}0 \leq b \leq n - 1\end{math}. Nomor kolom \begin{math}k\end{math} memiliki \textit{range} \begin{math}0 \leq k \leq n - 1\end{math}. Nomor sel \begin{math}C\end{math} memiliki \textit{range} \begin{math}0 \leq C \leq n^2 - 1\end{math}. Nomor sel adalah hasil perkalian dari nomor baris tempat sebuah sel berada dikalikan dengan banyaknya sel dalam sebuah baris, lalu dijumlahkan dengan nomor kolom tempat sebuah sel berada. Sebuah \textit{cage}, yang diberi label \begin{math}A_i\end{math} adalah sebuah himpunan dari sel, yaitu \begin{math}A_i = \{C_{b,k}\}\end{math}. Setiap \textit{cage} terhubung dengan satu operator aritmatika \begin{math}O_i \in \{+, -, \times, \div, =\}\end{math}, artinya operator aritmatika adalah salah satu dari penjumlahan, pengurangan, perkalian, pembagian, dan sama dengan, dan satu angka tujuan \begin{math}H_i \in N\end{math}, artinya angka tujuan adalah sebuah bilangan asli. Menurut Johanna, Lukas, dan Saputra, tiga aturan dalam mendefinisikan masalah dalam Calcudoku adalah sebagai berikut ~\cite{johanna:12:hybrid}:
 \begin{enumerate}
-\item \begin{math}|A_i| = 1 \rightarrow O_i = \phi\end{math}, artinya setiap \textit{cage} yang jumlah selnya 1 dengan operasi matematika yang terkait dengan \textit{cage} tersebut bersifat homeomorfik (setara).
+\item \begin{math}|A_i| = 1 \rightarrow O_i = \phi\end{math}, artinya setiap \textit{cage} yang jumlah selnya 1 dengan operasi matematika yang terkait dengan \textit{cage} tersebut memiliki hubungan korespondensi satu ke satu.
 \item \begin{math}O_i \in {-, \div} \rightarrow |A_i| = 2\end{math}, artinya jika operasi yang digunakan dalam sebuah \textit{cage} adalah pengurangan atau pembagian, maka jumlah sel dalam \textit{cage} tersebut harus 2.
 \item \begin{math}\forall C_{b,k} \rightarrow C_{b,k} \in \exists! A_i\end{math}, artinya setiap sel hanya boleh menjadi anggota dari satu dan hanya satu \textit{cage}.
 \end{enumerate}
@@ -103,7 +103,7 @@ Ruang solusi untuk algoritma \textit{backtracking} disusun dalam sebuah struktur
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/Backtracking3}
-\caption[Ilustrasi \textit{State space tree} yang digunakan dalam algoritma  \textit{backtracking}  ~\cite{fahda:16:backtracking}]{Ilustrasi \textit{State space tree} yang digunakan dalam algoritma  \textit{backtracking} ~\cite{fahda:16:backtracking}}
+\caption[Ilustrasi \textit{State space tree} yang digunakan dalam algoritma \textit{backtracking} ~\cite{fahda:16:backtracking}]{Ilustrasi \textit{State space tree} yang digunakan dalam algoritma \textit{backtracking} ~\cite{fahda:16:backtracking}}
 \label{fig:backtracking3}
 \end{figure}
 
@@ -144,7 +144,7 @@ Fungsi pemeriksa \textit{grid} memeriksa operator pada \textit{grid} dan memerik
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/Backtracking4}
-\caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 3 x 3 ~\cite{fahda:16:backtracking}]{Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 3 x 3  ~\cite{fahda:16:backtracking}}
+\caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 3 x 3 ~\cite{fahda:16:backtracking}]{Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 3 x 3 ~\cite{fahda:16:backtracking}}
 \label{fig:backtracking4}
 \end{figure}
 
@@ -159,7 +159,7 @@ Fungsi pemeriksa \textit{grid} memeriksa operator pada \textit{grid} dan memerik
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/Backtracking5}
-\caption[Ilustrasi \textit{state} 3, 4, dan 5 pada sebuah \textit{grid} teka-teki Calcudoku ~\cite{fahda:16:backtracking}]{Ilustrasi \textit{state} 3, 4, dan 5 pada sebuah \textit{grid} teka-teki Calcudoku  ~\cite{fahda:16:backtracking}}
+\caption[Ilustrasi \textit{state} 3, 4, dan 5 pada sebuah \textit{grid} teka-teki Calcudoku ~\cite{fahda:16:backtracking}]{Ilustrasi \textit{state} 3, 4, dan 5 pada sebuah \textit{grid} teka-teki Calcudoku ~\cite{fahda:16:backtracking}}
 \label{fig:backtracking5}
 \end{figure}
 
@@ -182,7 +182,7 @@ Fungsi pemeriksa \textit{grid} memeriksa operator pada \textit{grid} dan memerik
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/Backtracking6}
-\caption[Ilustrasi \textit{state} 19 pada sebuah \textit{grid} teka-teki Calcudoku ~\cite{fahda:16:backtracking}]{Ilustrasi \textit{state} 19 pada sebuah \textit{grid} teka-teki Calcudoku  ~\cite{fahda:16:backtracking}}
+\caption[Ilustrasi \textit{state} 19 pada sebuah \textit{grid} teka-teki Calcudoku ~\cite{fahda:16:backtracking}]{Ilustrasi \textit{state} 19 pada sebuah \textit{grid} teka-teki Calcudoku ~\cite{fahda:16:backtracking}}
 \label{fig:backtracking6}
 \end{figure}
 
@@ -197,7 +197,7 @@ Fungsi pemeriksa \textit{grid} memeriksa operator pada \textit{grid} dan memerik
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/Backtracking7}
-\caption[\textit{State} 25, simpul tujuan, sebagai hasil yang dicapai  ~\cite{fahda:16:backtracking}]{\textit{State} 25, simpul tujuan, sebagai hasil yang dicapai  ~\cite{fahda:16:backtracking}}
+\caption[\textit{State} 25, simpul tujuan, sebagai hasil yang dicapai ~\cite{fahda:16:backtracking}]{\textit{State} 25, simpul tujuan, sebagai hasil yang dicapai ~\cite{fahda:16:backtracking}}
 \label{fig:backtracking7}
 \end{figure}
 
@@ -207,7 +207,7 @@ Fungsi pemeriksa \textit{grid} memeriksa operator pada \textit{grid} dan memerik
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/Backtracking8}
-\caption[\textit{State space tree} yang dikembangkan dalam proses menyelesaikan teka-teki Calcudoku yang digambarkan pada  Gambar~\ref{fig:backtracking4}  ~\cite{fahda:16:backtracking}]{\textit{State space tree} yang dikembangkan dalam proses menyelesaikan teka-teki Calcudoku yang digambarkan pada  Gambar~\ref{fig:backtracking4}  ~\cite{fahda:16:backtracking}}
+\caption[\textit{State space tree} yang dikembangkan dalam proses menyelesaikan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:backtracking4} ~\cite{fahda:16:backtracking}]{\textit{State space tree} yang dikembangkan dalam proses menyelesaikan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:backtracking4} ~\cite{fahda:16:backtracking}}
 \label{fig:backtracking8}
 \end{figure}
 
@@ -240,7 +240,7 @@ Aturan \textit{naked subset} digunakan jika ada \begin{math}n\end{math} sel dala
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/HybridGenetic2}
-\caption[Contoh bagaimana cara mendeteksi aturan  \textit{naked pair}  ~\cite{johanna:12:hybrid}]{Contoh bagaimana cara mendeteksi aturan  \textit{naked pair}  ~\cite{johanna:12:hybrid}}
+\caption[Contoh bagaimana cara mendeteksi aturan \textit{naked pair} ~\cite{johanna:12:hybrid}]{Contoh bagaimana cara mendeteksi aturan \textit{naked pair} ~\cite{johanna:12:hybrid}}
 \label{fig:hybrid2}
 \end{figure}
 
@@ -250,7 +250,7 @@ Aturan \textit{evil twin} digunakan jika sebuah \textit{cage} berisikan dua sel,
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/HybridGenetic3}
-\caption[Contoh aturan  \textit{evil twin}  ~\cite{johanna:12:hybrid}]{Contoh aturan  \textit{evil twin}  ~\cite{johanna:12:hybrid}}
+\caption[Contoh aturan \textit{evil twin} ~\cite{johanna:12:hybrid}]{Contoh aturan \textit{evil twin} ~\cite{johanna:12:hybrid}}
 \label{fig:hybrid3}
 \end{figure}
 
@@ -260,7 +260,7 @@ Aturan \textit{hidden single} digunakan jika sebuah angka hanya bisa diisikan da
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/HybridGenetic4}
-\caption[Contoh aturan  \textit{hidden single}  ~\cite{johanna:12:hybrid}]{Contoh aturan  \textit{hidden single}  ~\cite{johanna:12:hybrid}}
+\caption[Contoh aturan \textit{hidden single} ~\cite{johanna:12:hybrid}]{Contoh aturan \textit{hidden single} ~\cite{johanna:12:hybrid}}
 \label{fig:hybrid4}
 \end{figure}
 
@@ -270,7 +270,7 @@ Aturan \textit{killer combination} adalah aturan yang paling krusial. Aturan ini
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/HybridGenetic5}
-\caption[Contoh aturan  \textit{killer combination} untuk \textit{cage} dengan ukuran 2 sel  ~\cite{johanna:12:hybrid}]{Contoh aturan  \textit{killer combination} untuk \textit{cage} dengan ukuran 2 sel ~\cite{johanna:12:hybrid}}
+\caption[Contoh aturan \textit{killer combination} untuk \textit{cage} dengan ukuran 2 sel dengan operasi matematika penjumlahan~\cite{johanna:12:hybrid}]{Contoh aturan \textit{killer combination} untuk \textit{cage} dengan ukuran 2 sel dengan operasi matematika penjumlahan~\cite{johanna:12:hybrid}}
 \label{fig:hybrid5}
 \end{figure}
 
@@ -280,7 +280,7 @@ Aturan \textit{X-wing} digunakan jika hanya ada dua kemungkinan angka yang bisa 
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=1]{Gambar/HybridGenetic6}
-\caption[Contoh aturan  \textit{X-wing}  ~\cite{johanna:12:hybrid}]{Contoh aturan  \textit{X-wing} ~\cite{johanna:12:hybrid}}
+\caption[Contoh aturan \textit{X-wing} ~\cite{johanna:12:hybrid}]{Contoh aturan \textit{X-wing} ~\cite{johanna:12:hybrid}}
 \label{fig:hybrid6}
 \end{figure}
 
@@ -359,8 +359,8 @@ Pertukaran mutasi digunakan untuk mendapatkan kemungkinan kromosom yang lain. Mu
 
 Cara kerja algoritma \textit{hybrid genetic} menurut Johanna, Lukas, dan Saputra adalah sebagai berikut ~\cite{johanna:12:hybrid}:
 \begin{enumerate}
-\item Masukkan teka-teki yang akan diselesaikan sebagai input.
-\item Program akan merepresentasikan input yang dimasukkan dalam format teka-teki.
+\item Masukkan teka-teki yang akan diselesaikan sebagai input. Teka-teki Calcudoku diinputkan oleh pemain dalam bentuk file.
+\item Program akan merepresentasikan input yang dimasukkan dalam format teka-teki. File teka-teki Calcudoku yang telah diinputkan oleh pemain ditampilkan ke layar sebagai teka-teki Calcudoku.
 \item Program akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based} terlebih dahulu.
 \item Jika program berhasil menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based}, maka algoritma selesai.
 \item Jika program gagal dengan menggunakan algoritma \textit{rule based}, maka program akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma genetik.
