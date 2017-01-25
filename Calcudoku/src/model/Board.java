@@ -42,7 +42,9 @@ public class Board
             throw new IllegalStateException("Invalid array size.");
         }
         grid = new Cell[size][size];
+        generateGrid(grid);
         cages = new Cage[numberOfCages];
+        generateCages(cages);
     }
     
     private boolean isCageCellsSizeValid(int[][] cageCells)
@@ -76,6 +78,25 @@ public class Board
         }
     }
     
+    private void generateGrid(Cell[][] grid)
+    {
+        for (int i = 0; i < grid.length; i++)
+        {
+            for (int j = 0; j < grid[i].length; j++)
+            {
+                grid[i][j] = new Cell((i * size) + j, i, j);
+            }
+        }
+    }
+    
+    private void generateCages(Cage[] cages)
+    {
+        for (int i = 0; i < cages.length; i++)
+        {
+            cages[i] = new Cage(i, cageObjectives[i]);
+        }
+    }
+    
     public int getSize()
     {
         return size;
@@ -94,6 +115,6 @@ public class Board
     public String[] getCageObjectives()
     {
         return cageObjectives;
-    } 
+    }
     
 }
