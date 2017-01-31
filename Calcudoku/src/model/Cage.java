@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,10 +19,31 @@ public class Cage
     public Cage(int cageID, String objectives)
     {
         this.cageID = cageID;
-        this.objectives = objectives;
+        if (isCageObjectiveValid(objectives))
+        {
+            this.objectives = objectives;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Invalid cage objectives.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Invalid cage objectives.");
+        }
         this.targetNumber = generateTargetNumber(objectives);
         this.operator = generateOperator(objectives);
         cells = new ArrayList<Cell>();
+    }
+    
+    private boolean isCageObjectiveValid(String cageObjective)
+    {
+        if (cageObjective.matches("\\d+[*+-/=]"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     private int generateTargetNumber(String objectives)
@@ -35,7 +57,7 @@ public class Cage
         return objectives.charAt(objectives.length() - 1);
     }
     
-    private void addCell(Cell c)
+    public void addCell(Cell c)
     {
         cells.add(c);
     }

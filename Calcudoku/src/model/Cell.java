@@ -29,4 +29,14 @@ public class Cell
         return value;
     }
     
+    public int getRow()
+    {
+        return row;
+    }
+     
+    public int getColumn()
+    {
+        return column;
+    }
+    
 }
