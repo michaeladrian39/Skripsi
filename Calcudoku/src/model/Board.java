@@ -171,20 +171,14 @@ public class Board
     
     private boolean isCagesValid(Cage[] cages)
     {
-        for (int i = 0; i < cages.length; i++)
-        {
-            if (cages[i].getOperator() == '=' && cages[i].getSize() != 1)
-            {
+        for (Cage cage : cages) {
+            if (cage.getOperator() == '=' && cage.getSize() != 1) {
                 return false;
             }
-            if ((cages[i].getOperator() == '-' || cages[i].getOperator() == '/') 
-                    && cages[i].getSize() != 2)
-            {
+            if ((cage.getOperator() == '-' || cage.getOperator() == '/') && cage.getSize() != 2) {
                 return false;
             }
-            if ((cages[i].getOperator() == '+' || cages[i].getOperator() == '*') 
-                    && cages[i].getSize() < 2)
-            {
+            if ((cage.getOperator() == '+' || cage.getOperator() == '*') && cage.getSize() < 2) {
                 return false;
             }
         }
