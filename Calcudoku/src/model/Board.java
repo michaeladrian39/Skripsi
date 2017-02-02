@@ -239,4 +239,14 @@ public class Board
         return cageObjectives;
     }
     
+    public Cell[][] getGrid()
+    {
+        return grid;
+    }
+    
+    public Cage[] getCages()
+    {
+        return cages;
+    }
+    
 }

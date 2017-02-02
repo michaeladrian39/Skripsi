@@ -29,8 +29,8 @@ public class Cage
                     "Error", JOptionPane.ERROR_MESSAGE);
             throw new IllegalStateException("Invalid cage objectives.");
         }
-        this.targetNumber = generateTargetNumber(objectives);
-        this.operator = generateOperator(objectives);
+        this.targetNumber = generateTargetNumber(this.objectives);
+        this.operator = generateOperator(this.objectives);
         cells = new ArrayList<>();
     }
     

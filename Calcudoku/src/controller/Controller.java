@@ -27,6 +27,11 @@ public class Controller
         b = new Board(size, numberOfCages, cageCells, cageObjectives);
     }
     
+    public void setCellValue(int row, int column, int value)
+    {
+        b.getGrid()[row][column].setValue(value);
+    }
+    
     public int getSize()
     {
         return b.getSize();
@@ -45,6 +50,21 @@ public class Controller
     public String[] getCageObjectives()
     {
         return b.getCageObjectives();
+    }
+    
+    public int getCageTargetNumber(int cageID)
+    {
+        return b.getCages()[cageID].getTargetNumber();
+    }
+    
+    public char getCageOperator(int cageID)
+    {
+        return b.getCages()[cageID].getOperator();
+    }
+    
+    public int getCellValue(int row, int column)
+    {
+        return b.getGrid()[row][column].getValue();
     }
     
 }
