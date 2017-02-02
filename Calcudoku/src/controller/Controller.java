@@ -27,12 +27,12 @@ public class Controller
         b = new Board(size, numberOfCages, cageCells, cageObjectives);
     }
     
-    public void setCellValue(int row, int column, Integer value)
+    public void setCellValue(int row, int column, int value)
     {
         b.setCellValue(row, column, value);
     }
     
-    public Integer getCellValue(int row, int column)
+    public int getCellValue(int row, int column)
     {
         return b.getCellValue(row, column);
     }

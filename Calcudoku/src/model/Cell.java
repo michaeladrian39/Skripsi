@@ -10,7 +10,7 @@ public class Cell
     private final int cellID;
     private final int row;
     private final int column;
-    private Integer value;
+    private int value;
     
     public Cell(int cellID, int row, int column)
     {
@@ -19,12 +19,12 @@ public class Cell
         this.column = column;
     }
     
-    public void setValue(Integer value)
+    public void setValue(int value)
     {
         this.value = value;
     }
     
-    public Integer getValue()
+    public int getValue()
     {
         return value;
     }
