@@ -47,14 +47,4 @@ public class Controller
         return b.getCageObjectives();
     }
     
-    public Cell[][] getGrid()
-    {
-        return b.getGrid();
-    }
-    
-    public Cage[] getCages()
-    {
-        return b.getCages();
-    }
-    
 }
