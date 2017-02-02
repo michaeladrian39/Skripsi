@@ -13,15 +13,15 @@ public class Board
     private final int numberOfCages;
     private final int[][] cageCells;
     private final String[] cageObjectives;
-    private Cell[][] grid;
-    private Cage[] cages;
+    private final Cell[][] grid;
+    private final Cage[] cages;
     
     public Board(int size, int numberOfCages, int[][] cageCells, 
             String[] cageObjectives)
     {
         this.size = size;
         this.numberOfCages = numberOfCages;
-        if (isCageCellsSizeValid(cageCells) == true)
+        if (isCageCellsSizeValid(cageCells))
         {
             this.cageCells = cageCells;
         }
@@ -31,7 +31,7 @@ public class Board
                     JOptionPane.ERROR_MESSAGE);
             throw new IllegalStateException("Invalid array size.");
         }
-        if (isCageObjectivesSizeValid(cageObjectives) == true)
+        if (isCageObjectivesSizeValid(cageObjectives))
         {
             this.cageObjectives = cageObjectives;
         }
@@ -62,18 +62,20 @@ public class Board
                     }
                 }
             }
-            if (isCageAssignmentValid(array) == true)
-            {
-                continue;
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Invalid cage assignment.", 
+            if (!isCageAssignmentValid(array))
+            { 
+                JOptionPane.showMessageDialog(null, "Invalid cage assignment.",
                         "Error", JOptionPane.ERROR_MESSAGE);
                 throw new IllegalStateException("Invalid cage assignment.");
             }
         }
         generateCageAssignment(cages);
+        if (!isCagesValid(cages))
+        {
+            JOptionPane.showMessageDialog(null, "Invalid cages.", "Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Invalid cages.");
+        }
     }
     
     public int countAreas(int[][] array)
@@ -96,7 +98,7 @@ public class Board
         {
             for (int j = 0; j < array.length; j++)
             {
-                if (checked[i][j] == true)
+                if (checked[i][j])
                 {
                     continue;
                 }
@@ -115,7 +117,7 @@ public class Board
     public static void floodFill(int i, int j, int[][] array, 
             boolean[][] checked)
     {
-        if (array[i][j] == 0 || checked[i][j] == true)
+        if (array[i][j] == 0 || checked[i][j])
         {
             return;
         }
@@ -159,26 +161,34 @@ public class Board
     
     private boolean isCageObjectivesSizeValid(String[] cageObjectives)
     {
-        if (cageCells.length == size)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return cageCells.length == size;
     }
     
     private boolean isCageAssignmentValid(int[][] array)
     {
-        if (countAreas(array) == 1)
+        return countAreas(array) == 1;
+    }
+    
+    private boolean isCagesValid(Cage[] cages)
+    {
+        for (int i = 0; i < cages.length; i++)
         {
-            return true;
+            if (cages[i].getOperator() == '=' && cages[i].getSize() != 1)
+            {
+                return false;
+            }
+            if ((cages[i].getOperator() == '-' || cages[i].getOperator() == '/') 
+                    && cages[i].getSize() != 2)
+            {
+                return false;
+            }
+            if ((cages[i].getOperator() == '+' || cages[i].getOperator() == '*') 
+                    && cages[i].getSize() < 2)
+            {
+                return false;
+            }
         }
-        else
-        {
-            return false;
-        }
+        return true;
     }
     
     private void generateGrid(Cell[][] grid)

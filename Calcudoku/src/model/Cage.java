@@ -14,7 +14,7 @@ public class Cage
     private final String objectives;
     private final int targetNumber;
     private final char operator;
-    private ArrayList<Cell> cells;
+    private final ArrayList<Cell> cells;
     
     public Cage(int cageID, String objectives)
     {
@@ -31,19 +31,12 @@ public class Cage
         }
         this.targetNumber = generateTargetNumber(objectives);
         this.operator = generateOperator(objectives);
-        cells = new ArrayList<Cell>();
+        cells = new ArrayList<>();
     }
     
     private boolean isCageObjectiveValid(String cageObjective)
     {
-        if (cageObjective.matches("\\d+[*+-/=]"))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return cageObjective.matches("\\d+[*+-/=]");
     }
     
     private int generateTargetNumber(String objectives)
@@ -75,6 +68,11 @@ public class Cage
     public ArrayList<Cell> getCells()
     {
         return cells;
+    }
+    
+    public int getSize()
+    {
+        return cells.size();
     }
              
 }

@@ -1,6 +1,8 @@
 package controller;
 
 import model.Board;
+import model.Cage;
+import model.Cell;
 
 /**
  *
@@ -43,6 +45,16 @@ public class Controller
     public String[] getCageObjectives()
     {
         return b.getCageObjectives();
+    }
+    
+    public Cell[][] getGrid()
+    {
+        return b.getGrid();
+    }
+    
+    public Cage[] getCages()
+    {
+        return b.getCages();
     }
     
 }
