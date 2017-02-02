@@ -29,7 +29,12 @@ public class Controller
     
     public void setCellValue(int row, int column, int value)
     {
-        b.getGrid()[row][column].setValue(value);
+        b.setCellValue(row, column, value);
+    }
+    
+    public int getCellValue(int row, int column)
+    {
+        return b.getCellValue(row, column);
     }
     
     public int getSize()
@@ -60,11 +65,6 @@ public class Controller
     public char getCageOperator(int cageID)
     {
         return b.getCages()[cageID].getOperator();
-    }
-    
-    public int getCellValue(int row, int column)
-    {
-        return b.getGrid()[row][column].getValue();
     }
     
 }

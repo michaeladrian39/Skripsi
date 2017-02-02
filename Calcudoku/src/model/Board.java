@@ -219,6 +219,25 @@ public class Board
         }
     }
     
+    public void setCellValue(int row, int column, int value)
+    {
+        if (value > 0 && value <= size)
+        {
+            getGrid()[row][column].setValue(value);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, 
+                    "Cell value must be between 1 and " + size + ".",
+                    "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    public int getCellValue(int row, int column)
+    {
+        return getGrid()[row][column].getValue();
+    }
+    
     public int getSize()
     {
         return size;
