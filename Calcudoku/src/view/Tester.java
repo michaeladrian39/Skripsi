@@ -58,7 +58,7 @@ public class Tester
         //  3 4 1 2
         //  1 3 2 4
         //  2 1 4 3
-        c.setCellValue(0, 0, 0);
+        c.setCellValue(0, 0, 4);
         c.setCellValue(0, 1, 2);
         c.setCellValue(0, 2, 3);
         c.setCellValue(0, 3, 1);

@@ -219,7 +219,7 @@ public class Board
         }
     }
     
-    public void setCellValue(int row, int column, int value)
+    public void setCellValue(int row, int column, Integer value)
     {
         if (value > 0 && value <= size)
         {
@@ -233,7 +233,7 @@ public class Board
         }
     }
     
-    public int getCellValue(int row, int column)
+    public Integer getCellValue(int row, int column)
     {
         return getGrid()[row][column].getValue();
     }
