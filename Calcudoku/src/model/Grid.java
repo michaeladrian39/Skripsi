@@ -315,6 +315,11 @@ public class Grid
         }
     }
     
+    public void unsetCellValue(int row, int column)
+    {
+        getGrid()[row][column].setValue(0);
+    }
+    
     public int getCellValue(int row, int column)
     {
         return getGrid()[row][column].getValue();
