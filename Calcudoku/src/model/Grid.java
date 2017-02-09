@@ -276,6 +276,36 @@ public class Grid
         if (value > 0 && value <= size)
         {
             getGrid()[row][column].setValue(value);
+            int[] rowArray = getRow(row);
+            if (!isArrayContainZero(rowArray))
+            {
+                if (!isArrayValid(rowArray))
+                {
+                    JOptionPane.showMessageDialog(null, 
+                        "Row " + row + " has duplicate numbers.",
+                        "Information", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+            int[] columnArray = getColumn(column);
+            if (!isArrayContainZero(columnArray))
+            {
+                if (!isArrayValid(columnArray))
+                {
+                    JOptionPane.showMessageDialog(null, 
+                        "Column " + column + " has duplicate numbers.",
+                        "Information", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+            int[] cageArray = getCageValues(getGrid()[row][column].getCageID());
+            if (!isArrayContainZero(cageArray))
+            {
+                if (!isCageValuesValid(getGrid()[row][column].getCageID()))
+                {
+                    JOptionPane.showMessageDialog(null, 
+                        "Values of cells in the cage do not reach the target number",
+                        "Information", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
         }
         else
         {
@@ -283,36 +313,6 @@ public class Grid
                     "Cell value must be between 1 and " + size + ".",
                     "Information", JOptionPane.INFORMATION_MESSAGE);
         }   
-        int[] rowArray = getRow(row);
-        if (!isArrayContainZero(rowArray))
-        {
-            if (!isArrayValid(rowArray))
-            {
-                JOptionPane.showMessageDialog(null, 
-                    "Row " + row + " has duplicate numbers.",
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
-            }
-        }
-        int[] columnArray = getColumn(column);
-        if (!isArrayContainZero(columnArray))
-        {
-            if (!isArrayValid(columnArray))
-            {
-                JOptionPane.showMessageDialog(null, 
-                    "Column " + column + " has duplicate numbers.",
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
-            }
-        }
-        int[] cageArray = getCageValues(getGrid()[row][column].getCageID());
-        if (!isArrayContainZero(cageArray))
-        {
-            if (!isCageValuesValid(getGrid()[row][column].getCageID()))
-            {
-                JOptionPane.showMessageDialog(null, 
-                    "Values of cells in the cage do not reach the target number",
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
-            }
-        }
     }
     
     public void unsetCellValue(int row, int column)
