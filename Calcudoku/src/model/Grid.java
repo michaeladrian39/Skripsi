@@ -209,24 +209,46 @@ public class Grid
         }
     }
     
-    public boolean isRowValid(int rowNumber)
+    private boolean isArrayContainZero(int[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            if (array[i] == 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public int[] getRow(int rowNumber)
     {
         int[] row = new int[size];
         for (int i = 0; i < grid.length; i++)
         {
             row[i] = grid[rowNumber][i].getValue();
         }
-        return isArrayValid(row);
+        return row;
     }
     
-    public boolean isColumnValid(int columnNumber)
+    public int[] getColumn(int columnNumber)
     {
         int[] column = new int[size];
         for (int i = 0; i < size; i++)
         {
             column[i] = grid[i][columnNumber].getValue();
         }
-        return isArrayValid(column);
+        return column;
+    }
+    
+    public int[] getCageValues(int cageNumber)
+    {
+        int[] cage = new int[cages[cageNumber].getSize()];
+        for (int i = 0; i < cage.length; i++)
+        {
+            cage[i] = cages[cageNumber].getCells().get(i).getValue();
+        }
+        return cage;
     }
     
     private boolean isArrayValid(int[] array)
@@ -244,9 +266,9 @@ public class Grid
         return true;
     }
     
-    public boolean isCageContentsValid(int cageNumber)
+    public boolean isCageValuesValid(int cageNumber)
     {
-        return cages[cageNumber].isCageContentsValid();
+        return cages[cageNumber].isCageValuesValid();
     }
     
     public void setCellValue(int row, int column, int value)
@@ -260,6 +282,36 @@ public class Grid
             JOptionPane.showMessageDialog(null, 
                     "Cell value must be between 1 and " + size + ".",
                     "Information", JOptionPane.INFORMATION_MESSAGE);
+        }   
+        int[] rowArray = getRow(row);
+        if (!isArrayContainZero(rowArray))
+        {
+            if (!isArrayValid(rowArray))
+            {
+                JOptionPane.showMessageDialog(null, 
+                    "Row " + row + " has duplicate numbers.",
+                    "Information", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+        int[] columnArray = getColumn(column);
+        if (!isArrayContainZero(columnArray))
+        {
+            if (!isArrayValid(columnArray))
+            {
+                JOptionPane.showMessageDialog(null, 
+                    "Column " + column + " has duplicate numbers.",
+                    "Information", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+        int[] cageArray = getCageValues(getGrid()[row][column].getCageID());
+        if (!isArrayContainZero(cageArray))
+        {
+            if (!isCageValuesValid(getGrid()[row][column].getCageID()))
+            {
+                JOptionPane.showMessageDialog(null, 
+                    "Values of cells in the cage do not reach the target number",
+                    "Information", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }
     

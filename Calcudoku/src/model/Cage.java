@@ -55,7 +55,7 @@ public class Cage
         cells.add(c);
     }
     
-    public boolean isCageContentsValid()
+    public boolean isCageValuesValid()
     {
         return (countValue() == getTargetNumber());
     }

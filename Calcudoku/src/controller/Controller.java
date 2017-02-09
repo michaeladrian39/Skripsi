@@ -27,21 +27,6 @@ public class Controller
         g = new Grid(size, numberOfCages, cageCells, cageObjectives);
     }
     
-    public boolean isRowValid(int rowNumber)
-    {
-        return g.isRowValid(rowNumber);
-    }
-    
-    public boolean isColumnValid(int columnNumber)
-    {
-        return g.isColumnValid(columnNumber);
-    }
-    
-    public boolean isCageContentsValid(int cageNumber)
-    {
-        return g.isCageContentsValid(cageNumber);
-    }
-    
     public void setCellValue(int row, int column, int value)
     {
         g.setCellValue(row, column, value);

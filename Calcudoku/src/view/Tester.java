@@ -73,12 +73,12 @@ public class Tester
         //  3 4 1 2
         //  1 3 2 4
         //  2 1 4 3        
-        c.setCellValue(0, 0, 4);
+        c.setCellValue(0, 0, 3);
         c.setCellValue(0, 1, 2);
         c.setCellValue(0, 2, 3);
         c.setCellValue(0, 3, 1);
         
-        c.setCellValue(1, 0, 3);
+        c.setCellValue(1, 0, 4);
         c.setCellValue(1, 1, 4);
         c.setCellValue(1, 2, 1);
         c.setCellValue(1, 3, 2);
@@ -92,6 +92,15 @@ public class Tester
         c.setCellValue(3, 1, 1);
         c.setCellValue(3, 2, 4);
         c.setCellValue(3, 3, 3);
+        
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                System.out.print(c.getGrid()[i][j].getValue() + " ");
+            }
+            System.out.println("");
+        }
     }
     
 }
