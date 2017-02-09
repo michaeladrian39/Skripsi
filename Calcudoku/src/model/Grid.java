@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  *
  * @author michaeladrian39
  */
-public class Board
+public class Grid
 {
     
     private final int size;
@@ -16,7 +16,7 @@ public class Board
     private final Cell[][] grid;
     private final Cage[] cages;
     
-    public Board(int size, int numberOfCages, int[][] cageCells, 
+    public Grid(int size, int numberOfCages, int[][] cageCells, 
             String[] cageObjectives)
     {
         this.size = size;
@@ -219,6 +219,46 @@ public class Board
         }
     }
     
+    public boolean isRowValid(int rowNumber)
+    {
+        int[] row = new int[size];
+        for (int i = 0; i < grid.length; i++)
+        {
+            row[i] = grid[rowNumber][i].getValue();
+        }
+        return isArrayValid(row);
+    }
+    
+    public boolean isColumnValid(int columnNumber)
+    {
+        int[] column = new int[size];
+        for (int i = 0; i < size; i++)
+        {
+            column[i] = grid[i][columnNumber].getValue();
+        }
+        return isArrayValid(column);
+    }
+    
+    private boolean isArrayValid(int[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            for (int j = 0; j < array.length; j++)
+            {
+                if (array[i] == array[j] && (i != j))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public boolean isCageContentsValid(int cageNumber)
+    {
+        return cages[cageNumber].isCageContentsValid();
+    }
+    
     public void setCellValue(int row, int column, int value)
     {
         if (value > 0 && value <= size)
@@ -237,7 +277,7 @@ public class Board
     {
         return getGrid()[row][column].getValue();
     }
-    
+        
     public int getSize()
     {
         return size;

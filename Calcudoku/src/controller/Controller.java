@@ -1,6 +1,6 @@
 package controller;
 
-import model.Board;
+import model.Grid;
 import model.Cage;
 import model.Cell;
 
@@ -15,7 +15,7 @@ public class Controller
     int numberOfCages;
     int[][] cageCells;
     String[] cageObjectives;
-    Board b;
+    Grid g;
     
     public Controller(int size, int numberOfCages, int[][] cageCells, 
             String[] cageObjectives)
@@ -24,47 +24,72 @@ public class Controller
         this.numberOfCages = numberOfCages;
         this.cageCells = cageCells;
         this.cageObjectives = cageObjectives;
-        b = new Board(size, numberOfCages, cageCells, cageObjectives);
+        g = new Grid(size, numberOfCages, cageCells, cageObjectives);
+    }
+    
+    public boolean isRowValid(int rowNumber)
+    {
+        return g.isRowValid(rowNumber);
+    }
+    
+    public boolean isColumnValid(int columnNumber)
+    {
+        return g.isColumnValid(columnNumber);
+    }
+    
+    public boolean isCageContentsValid(int cageNumber)
+    {
+        return g.isCageContentsValid(cageNumber);
     }
     
     public void setCellValue(int row, int column, int value)
     {
-        b.setCellValue(row, column, value);
+        g.setCellValue(row, column, value);
     }
     
     public int getCellValue(int row, int column)
     {
-        return b.getCellValue(row, column);
+        return g.getCellValue(row, column);
     }
     
     public int getSize()
     {
-        return b.getSize();
+        return g.getSize();
     }
     
     public int getNumberOfCages()
     {
-        return b.getNumberOfCages();
+        return g.getNumberOfCages();
     }
     
     public int[][] getCageCells()
     {
-        return b.getCageCells();
+        return g.getCageCells();
     } 
     
     public String[] getCageObjectives()
     {
-        return b.getCageObjectives();
+        return g.getCageObjectives();
     }
     
     public int getCageTargetNumber(int cageID)
     {
-        return b.getCages()[cageID].getTargetNumber();
+        return g.getCages()[cageID].getTargetNumber();
     }
     
     public char getCageOperator(int cageID)
     {
-        return b.getCages()[cageID].getOperator();
+        return g.getCages()[cageID].getOperator();
+    }
+    
+    public Cell[][] getGrid()
+    {
+        return g.getGrid();
+    }
+    
+    public Cage[] getCages()
+    {
+        return g.getCages();
     }
     
 }

@@ -55,6 +55,55 @@ public class Cage
         cells.add(c);
     }
     
+    public boolean isCageContentsValid()
+    {
+        return (countValue() == getTargetNumber());
+    }
+    
+    private int countValue()
+    {
+        int value = 0;
+        switch (getOperator())
+        {
+            case '+':
+                for (int i = 0; i < cells.size(); i++)
+                {
+                    value += cells.get(i).getValue();
+                }
+                break;
+            case '-':
+                if (cells.get(0).getValue() > cells.get(1).getValue())
+                {
+                    value = cells.get(0).getValue() - cells.get(1).getValue();
+                }
+                else
+                {
+                    value = cells.get(1).getValue() - cells.get(0).getValue();
+                }
+                break;
+            case '*':
+                value = 1;
+                for (int i = 0; i < cells.size(); i++)
+                {
+                    value *= cells.get(i).getValue();
+                }
+                break;
+            case '/':
+                if (cells.get(0).getValue() > cells.get(1).getValue())
+                {
+                    value = cells.get(0).getValue() / cells.get(1).getValue();
+                }
+                else
+                {
+                    value = cells.get(1).getValue() / cells.get(0).getValue();
+                }
+                break;
+            case '=':
+                value = cells.get(0).getValue();
+        }
+        return value;
+    }
+    
     public int getTargetNumber()
     {
         return targetNumber;
