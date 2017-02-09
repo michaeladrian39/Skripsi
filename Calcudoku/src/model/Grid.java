@@ -42,7 +42,6 @@ public class Grid
             throw new IllegalStateException("Invalid array size.");
         }
         grid = new Cell[size][size];
-        generateGrid(grid);
         cages = new Cage[numberOfCages];
         generateCages(cages);
         for (int i = 0; i < cages.length; i++)
@@ -69,7 +68,7 @@ public class Grid
                 throw new IllegalStateException("Invalid cage assignment.");
             }
         }
-        generateCageAssignment(cages);
+        generateGrid(grid, cages);
         if (!isCagesValid(cages))
         {
             JOptionPane.showMessageDialog(null, "Invalid cages.", "Error", 
@@ -189,17 +188,6 @@ public class Grid
         return true;
     }
     
-    private void generateGrid(Cell[][] grid)
-    {
-        for (int i = 0; i < grid.length; i++)
-        {
-            for (int j = 0; j < grid[i].length; j++)
-            {
-                grid[i][j] = new Cell((i * size) + j, i, j);
-            }
-        }
-    }
-    
     private void generateCages(Cage[] cages)
     {
         for (int i = 0; i < cages.length; i++)
@@ -208,13 +196,15 @@ public class Grid
         }
     }
     
-    private void generateCageAssignment(Cage[] cages)
+    private void generateGrid(Cell[][] grid, Cage[] cages)
     {
-        for (int j = 0; j < cageCells.length; j++)
+        for (int i = 0; i < cageCells.length; i++)
         {
-            for (int k = 0; k < cageCells[j].length; k++)
+            for (int j = 0; j < cageCells[i].length; j++)
             {
-                cages[cageCells[j][k] - 1].addCell(grid[j][k]);
+                grid[i][j] = new Cell((i * size) + j, i, j, 
+                        (cageCells[i][j] - 1));
+                cages[cageCells[i][j] - 1].addCell(grid[i][j]);
             }
         }
     }
