@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Objects;
 import javax.swing.JOptionPane;
 
 /**
@@ -79,7 +80,7 @@ public class Grid
         }
     }
     
-    public int countAreas(int[][] array)
+    private int countAreas(int[][] array)
     {
         boolean[][] checked = new boolean[size][size];
         for (int i = 0; i < size; i++)
@@ -92,7 +93,7 @@ public class Grid
         return countAreas(array, checked);
     }
 
-    public static int countAreas(int[][] array, boolean[][] checked)
+    private int countAreas(int[][] array, boolean[][] checked)
     {
         int areas = 0;
         for (int i = 0; i < array.length; i++)
@@ -115,7 +116,7 @@ public class Grid
         return areas;
     }
 
-    public static void floodFill(int i, int j, int[][] array, 
+    private void floodFill(int i, int j, int[][] array, 
             boolean[][] checked)
     {
         if (array[i][j] == 0 || checked[i][j])
@@ -240,12 +241,17 @@ public class Grid
         }
         return cage;
     }
-        
+    
+    public Boolean getCellValidity(int row, int column)
+    {
+        return gridValidity[row][column];
+    }
+    
     private boolean isArrayContainNull(Integer[] array)
     {
-        for (int i = 0; i < array.length; i++)
+        for (Integer item : array)
         {
-            if (array[i] == null)
+            if (item == null)
             {
                 return true;
             }
@@ -259,7 +265,7 @@ public class Grid
         {
             for (int j = 0; j < array.length; j++)
             {
-                if (array[i] == array[j] && (i != j))
+                if (Objects.equals(array[i], array[j]) && (i != j))
                 {
                     return false;
                 }
@@ -268,7 +274,7 @@ public class Grid
         return true;
     }
     
-    public boolean isCageValuesValid(int cageNumber)
+    private boolean isCageValuesValid(int cageNumber)
     {
         return cages[cageNumber].isCageValuesValid();
     }
@@ -342,18 +348,16 @@ public class Grid
         }
     }
     
-    private boolean isCellValid(int row, int column)
+    private void isCellValid(int row, int column)
     {
         if (isRowValid(row) && isColumnValid(column) 
                 && isCageValid(row, column))
         {
             gridValidity[row][column] = true;
-            return true;
         }
         else
         {
             gridValidity[row][column] = false;
-            return false;
         }
     }
     
@@ -362,7 +366,8 @@ public class Grid
         if (value > 0 && value <= size)
         {
             getGrid()[row][column].setValue(value);
-            return isCellValid(row, column);
+            isCellValid(row, column);
+            return getCellValidity(row, column);
         }
         else
         {
