@@ -439,4 +439,9 @@ public class Grid
         return cages;
     }
     
+    public Boolean[][] getGridValidity()
+    {
+        return gridValidity;
+    }
+    
 }
