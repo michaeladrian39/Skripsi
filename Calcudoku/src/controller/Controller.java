@@ -27,9 +27,14 @@ public class Controller
         g = new Grid(size, numberOfCages, cageCells, cageObjectives);
     }
     
-    public void setCellValue(int row, int column, int value)
+    public boolean setCellValue(int row, int column, int value)
     {
-        g.setCellValue(row, column, value);
+        return g.setCellValue(row, column, value);
+    }
+    
+    public Boolean isWin()
+    {
+        return g.isWin();
     }
     
     public int getCellValue(int row, int column)

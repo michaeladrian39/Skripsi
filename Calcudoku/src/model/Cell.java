@@ -11,7 +11,7 @@ public class Cell
     private final int row;
     private final int column;
     private final int cageID;
-    private int value;
+    private Integer value;
     
     public Cell(int cellID, int row, int column, int cageID)
     {
@@ -21,12 +21,12 @@ public class Cell
         this.cageID = cageID;
     }
     
-    public void setValue(int value)
+    public void setValue(Integer value)
     {
         this.value = value;
     }
     
-    public int getValue()
+    public Integer getValue()
     {
         return value;
     }
