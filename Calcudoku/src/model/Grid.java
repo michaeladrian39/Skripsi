@@ -350,15 +350,8 @@ public class Grid
     
     private void isCellValid(int row, int column)
     {
-        if (isRowValid(row) && isColumnValid(column) 
-                && isCageValid(row, column))
-        {
-            gridValidity[row][column] = true;
-        }
-        else
-        {
-            gridValidity[row][column] = false;
-        }
+        gridValidity[row][column] = isRowValid(row) && isColumnValid(column) 
+                && isCageValid(row, column);
     }
     
     public boolean setCellValue(int row, int column, Integer value)
