@@ -39,7 +39,7 @@ public class Cage
         return cageObjective.matches("\\d+[*+-/=]");
     }
     
-    private int generateTargetNumber(String objectives)
+    private Integer generateTargetNumber(String objectives)
     {
         return Integer.parseInt(objectives.substring(0, 
                 objectives.length() - 1));
@@ -55,51 +55,81 @@ public class Cage
         cells.add(c);
     }
     
-    public boolean isCageValuesValid()
+    public boolean isCageContainsNull()
     {
-        return (countValue() == getTargetNumber());
+        for (int i = 0; i < cells.size(); i++)
+        {
+            if (cells.get(i).getValue() == null)
+            {
+                return true;
+            }
+        }
+        return false;
     }
     
-    private int countValue()
+    public Boolean isCageValuesValid()
     {
-        int value = 0;
-        switch (getOperator())
+        if (countValue() == null)
         {
-            case '+':
-                for (int i = 0; i < cells.size(); i++)
-                {
-                    value += cells.get(i).getValue();
-                }
-                break;
-            case '-':
-                if (cells.get(0).getValue() > cells.get(1).getValue())
-                {
-                    value = cells.get(0).getValue() - cells.get(1).getValue();
-                }
-                else
-                {
-                    value = cells.get(1).getValue() - cells.get(0).getValue();
-                }
-                break;
-            case '*':
-                value = 1;
-                for (int i = 0; i < cells.size(); i++)
-                {
-                    value *= cells.get(i).getValue();
-                }
-                break;
-            case '/':
-                if (cells.get(0).getValue() > cells.get(1).getValue())
-                {
-                    value = cells.get(0).getValue() / cells.get(1).getValue();
-                }
-                else
-                {
-                    value = cells.get(1).getValue() / cells.get(0).getValue();
-                }
-                break;
-            case '=':
-                value = cells.get(0).getValue();
+            return null;
+        }
+        else
+        {
+            return (countValue() == getTargetNumber());
+        }
+    }
+    
+    private Integer countValue()
+    {
+        Integer value = null;
+        if (isCageContainsNull() == true)
+        {
+            value = null;
+        }
+        else
+        {
+            switch (getOperator())
+            {
+                case '+':
+                    value = 0;
+                    for (int i = 0; i < cells.size(); i++)
+                    {
+                        value += cells.get(i).getValue();
+                    }
+                    break;
+                case '-':
+                    if (cells.get(0).getValue() > cells.get(1).getValue())
+                    {
+                        value = cells.get(0).getValue() - cells.get(1).getValue();
+                    }
+                    else
+                    {
+                        value = cells.get(1).getValue() - cells.get(0).getValue();
+                    }
+                    break;
+                case '*':
+                    value = 1;
+                    for (int i = 0; i < cells.size(); i++)
+                    {
+                        value *= cells.get(i).getValue();
+                    }
+                    break;
+                case '/':
+                    if (cells.get(0).getValue() > cells.get(1).getValue())
+                    {
+                        value = cells.get(0).getValue() / cells.get(1).getValue();
+                    }
+                    else
+                    {
+                        value = cells.get(1).getValue() / cells.get(0).getValue();
+                    }
+                    break;
+                case '=':
+                    value = cells.get(0).getValue();
+                    break;
+                default :
+                    value = null;
+            }
         }
         return value;
     }

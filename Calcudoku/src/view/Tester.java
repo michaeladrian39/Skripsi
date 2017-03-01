@@ -69,31 +69,29 @@ public class Tester
         }
         Controller c = new Controller(size, numberOfCages, cageCells, 
                 cageObjectives);        
-        //  4 2 3 1
-        //  3 4 1 2
-        //  1 3 2 4
-        //  2 1 4 3        
-        System.out.println(c.setCellValue(0, 0, 4));
-        System.out.println(c.setCellValue(0, 1, 2));
-        System.out.println(c.setCellValue(0, 2, 3));
-        System.out.println(c.setCellValue(0, 3, 1));
         
-        System.out.println(c.setCellValue(1, 0, 3));
-        System.out.println(c.setCellValue(1, 1, 4));
-        System.out.println(c.setCellValue(1, 2, 1));
-        System.out.println(c.setCellValue(1, 3, 2));
-        
-        System.out.println(c.setCellValue(2, 0, 1));
-        System.out.println(c.setCellValue(2, 1, 3));
-        System.out.println(c.setCellValue(2, 2, 2));
-        System.out.println(c.setCellValue(2, 3, 4));
-        
-        System.out.println(c.setCellValue(3, 0, 2));
-        System.out.println(c.setCellValue(3, 1, 1));
-        System.out.println(c.setCellValue(3, 2, 4));
-        System.out.println(c.setCellValue(3, 3, 3));
-        
-        System.out.println(c.isWin());
+//        System.out.println(c.setCellValue(0, 0, 4));
+//        System.out.println(c.setCellValue(0, 1, 2));
+//        System.out.println(c.setCellValue(0, 2, 3));
+//        System.out.println(c.setCellValue(0, 3, 1));
+//        
+//        System.out.println(c.setCellValue(1, 0, 3));
+//        System.out.println(c.setCellValue(1, 1, 4));
+//        System.out.println(c.setCellValue(1, 2, 1));
+//        System.out.println(c.setCellValue(1, 3, 2));
+//        
+//        System.out.println(c.setCellValue(2, 0, 1));
+//        System.out.println(c.setCellValue(2, 1, 3));
+//        System.out.println(c.setCellValue(2, 2, 2));
+//        System.out.println(c.setCellValue(2, 3, 4));
+//        
+//        System.out.println(c.setCellValue(3, 0, 2));
+//        System.out.println(c.setCellValue(3, 1, 1));
+//        System.out.println(c.setCellValue(3, 2, 4));
+//        System.out.println(c.setCellValue(3, 3, 3));
+                
+        c.solveBacktracking();
+
     }
     
 }

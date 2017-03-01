@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import javax.swing.JOptionPane;
 
@@ -16,7 +17,6 @@ public class Grid
     private final String[] cageObjectives;
     private final Cell[][] grid;
     private final Cage[] cages;
-    private Boolean[][] gridValidity;
     
     public Grid(int size, int numberOfCages, int[][] cageCells, 
             String[] cageObjectives)
@@ -45,7 +45,6 @@ public class Grid
         }
         grid = new Cell[size][size];
         cages = new Cage[numberOfCages];
-        gridValidity = new Boolean[size][size];
         generateCages(cages);
         for (int i = 0; i < cages.length; i++)
         {
@@ -212,60 +211,50 @@ public class Grid
         }
     }
     
-    public Integer[] getRow(int rowNumber)
+    public ArrayList<Integer> getRow(int rowNumber)
     {
-        Integer[] row = new Integer[size];
+        ArrayList<Integer> row = new ArrayList<>();
         for (int i = 0; i < grid.length; i++)
         {
-            row[i] = grid[rowNumber][i].getValue();
+            if (grid[rowNumber][i].getValue() != null)
+            {
+                row.add(grid[rowNumber][i].getValue());
+            }
         }
         return row;
     }
     
-    public Integer[] getColumn(int columnNumber)
+    public ArrayList<Integer> getColumn(int columnNumber)
     {
-        Integer[] column = new Integer[size];
-        for (int i = 0; i < size; i++)
-        {
-            column[i] = grid[i][columnNumber].getValue();
+        ArrayList<Integer> column = new ArrayList<>();
+        for (Cell[] row : grid) {
+            if (row[columnNumber].getValue() != null) {
+                column.add(row[columnNumber].getValue());
+            }
         }
         return column;
     }
     
-    public Integer[] getCageValues(int cageNumber)
+    public ArrayList<Integer> getCageValues(int cageNumber)
     {
-        Integer[] cage = new Integer[cages[cageNumber].getSize()];
-        for (int i = 0; i < cage.length; i++)
+        ArrayList<Integer> cage = new ArrayList<>();
+        for (int i = 0; i < cages[cageNumber].getSize(); i++)
         {
-            cage[i] = cages[cageNumber].getCells().get(i).getValue();
+            if (cages[cageNumber].getCells().get(i).getValue() != null)
+            {
+                cage.add(cages[cageNumber].getCells().get(i).getValue());
+            }
         }
         return cage;
     }
     
-    public Boolean getCellValidity(int row, int column)
+    private boolean isArrayValid(ArrayList<Integer> array)
     {
-        return gridValidity[row][column];
-    }
-    
-    private boolean isArrayContainNull(Integer[] array)
-    {
-        for (Integer item : array)
+        for (int i = 0; i < array.size(); i++)
         {
-            if (item == null)
+            for (int j = 0; j < array.size(); j++)
             {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    private boolean isArrayValid(Integer[] array)
-    {
-        for (int i = 0; i < array.length; i++)
-        {
-            for (int j = 0; j < array.length; j++)
-            {
-                if (Objects.equals(array[i], array[j]) && (i != j))
+                if (Objects.equals(array.get(i), array.get(j)) && (i != j))
                 {
                     return false;
                 }
@@ -274,73 +263,72 @@ public class Grid
         return true;
     }
     
-    private boolean isCageValuesValid(int cageNumber)
+    private Boolean isRowValid(int row)
     {
-        return cages[cageNumber].isCageValuesValid();
-    }
-    
-    private boolean isRowValid(int row)
-    {
-        Integer[] array = getRow(row);
-        if (!isArrayContainNull(array))
+        ArrayList<Integer> array = getRow(row);
+        if (!isArrayValid(array))
         {
-            if (!isArrayValid(array))
-            {
-                JOptionPane.showMessageDialog(null, 
-                    "Row " + row + " has duplicate numbers.",
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            JOptionPane.showMessageDialog(null, 
+                "Row " + row + " has duplicate numbers.",
+                "Information", JOptionPane.INFORMATION_MESSAGE);
+            return false;
         }
         else
         {
             return true;
         }
+    }
+    
+    private Boolean solverIsRowValid(int row)
+    {
+        ArrayList<Integer> array = getRow(row);
+        return isArrayValid(array);
     }
     
     private boolean isColumnValid(int column)
     {
-        Integer[] array = getColumn(column);
-        if (!isArrayContainNull(array))
+        ArrayList<Integer> array = getColumn(column);
+        if (!isArrayValid(array))
         {
-            if (!isArrayValid(array))
-            {
-                JOptionPane.showMessageDialog(null, 
-                    "Column " + column + " has duplicate numbers.",
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            JOptionPane.showMessageDialog(null, 
+                "Column " + column + " has duplicate numbers.",
+                "Information", JOptionPane.INFORMATION_MESSAGE);
+            return false;
         }
         else
         {
             return true;
+        }
+    }
+    
+    private boolean solverIsColumnValid(int column)
+    {
+        ArrayList<Integer> array = getColumn(column);
+        return isArrayValid(array);
+    }
+    
+    private Boolean isCageValuesValid(int cageNumber)
+    {
+        if (cages[cageNumber].isCageValuesValid() == null)
+        {
+            return true;
+        }
+        else
+        {
+            return cages[cageNumber].isCageValuesValid();
         }
     }
     
     private boolean isCageValid(int row, int column)
     {
-        Integer[] array = getCageValues(getGrid()[row][column].getCageID());
-        if (!isArrayContainNull(array))
+        ArrayList<Integer> cage = 
+                getCageValues(getGrid()[row][column].getCageID());
+        if (isCageValuesValid(getGrid()[row][column].getCageID()) == false)
         {
-            if (!isCageValuesValid(getGrid()[row][column].getCageID()))
-            {
-                JOptionPane.showMessageDialog(null, 
-                    "Values of cells in the cage do not reach the target number.",
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            JOptionPane.showMessageDialog(null, 
+                "Values of cells in the cage do not reach the target number.",
+                "Information", JOptionPane.INFORMATION_MESSAGE);
+            return false;
         }
         else
         {
@@ -348,10 +336,17 @@ public class Grid
         }
     }
     
-    private void isCellValid(int row, int column)
+    private boolean solverIsCageValid(int row, int column)
     {
-        gridValidity[row][column] = isRowValid(row) && isColumnValid(column) 
-                && isCageValid(row, column);
+        ArrayList<Integer> cage = 
+                getCageValues(getGrid()[row][column].getCageID());
+        return isCageValuesValid(getGrid()[row][column].getCageID()) != false;
+    }
+    
+    private boolean isCellValueValid(int row, int column)
+    {
+        return (isRowValid(row) && isColumnValid(column) 
+                    && isCageValid(row, column));
     }
     
     public boolean setCellValue(int row, int column, Integer value)
@@ -359,8 +354,7 @@ public class Grid
         if (value > 0 && value <= size)
         {
             getGrid()[row][column].setValue(value);
-            isCellValid(row, column);
-            return getCellValidity(row, column);
+            return isCellValueValid(row, column);
         }
         else
         {
@@ -371,26 +365,39 @@ public class Grid
         }   
     }
     
+    public boolean solverSetCellValue(int row, int column, Integer value)
+    {
+        if (value > 0 && value <= size)
+        {
+            getGrid()[row][column].setValue(value);
+            return (solverIsRowValid(row) && solverIsColumnValid(column) 
+                    && solverIsCageValid(row, column));
+        }
+        else
+        {
+            return false;
+        }   
+    }
+    
     public void unsetCellValue(int row, int column)
     {
         getGrid()[row][column].setValue(null);
-        gridValidity[row][column] = null;
     }
     
     public Boolean isWin()
     {
-        for (Boolean[] array : gridValidity)
+        for (int i = 0; i < size; i++)
         {
-            for (Boolean item : array)
+            for (int j = 0; j < size; j++)
             {
-                if (item == null)
+                if (getGrid()[i][j].getValue() == null)
                 {
-                    JOptionPane.showMessageDialog(null,
+                    JOptionPane.showMessageDialog(null, 
                             "There are empty cells in the grid.", 
                             "Information", JOptionPane.INFORMATION_MESSAGE);
                     return null;
                 }
-                if (item == false)
+                if (isCellValueValid(i, j) == false)
                 {
                     JOptionPane.showMessageDialog(null,
                             "There are cells with incorrect values in the grid.", 
@@ -439,9 +446,14 @@ public class Grid
         return cages;
     }
     
-    public Boolean[][] getGridValidity()
+    public void solveBacktracking()
     {
-        return gridValidity;
+        SolverBacktracking sb = new SolverBacktracking(this);
+    }
+    
+    public void solveHybridGenetic()
+    {
+        SolverHybridGenetic shg = new SolverHybridGenetic(this);
     }
     
 }

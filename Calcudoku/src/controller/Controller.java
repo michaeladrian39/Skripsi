@@ -82,4 +82,14 @@ public class Controller
         return g.getCages();
     }
     
+    public void solveBacktracking()
+    {
+        g.solveBacktracking();
+    }
+    
+    public void solveHybridGenetic()
+    {
+        g.solveHybridGenetic();
+    }
+    
 }
