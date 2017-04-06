@@ -42,6 +42,7 @@ public class SolverRuleBased
     public void solve()
     {
         singleSquare();
+        killerCombination();
         printGrid();
         printPossibleValues();
     }
@@ -168,10 +169,7 @@ public class SolverRuleBased
                                             break;
                                     }
                                 default :
-                                    JOptionPane.showMessageDialog(null, 
-                                            "Invalid operator.", "Error", 
-                                            JOptionPane.ERROR_MESSAGE);
-                                    throw new IllegalStateException("Invalid operator.");
+                                    break;
                             }
                         case 4 :
                             switch(cageOperator)
@@ -192,7 +190,7 @@ public class SolverRuleBased
                                             array.add(4);
                                             break;
                                         case 7 :
-                                            array.add(2);
+                                            array.add(3);
                                             array.add(4);
                                             break;
                                         default :
@@ -257,10 +255,7 @@ public class SolverRuleBased
                                             break;
                                     }
                                 default :
-                                    JOptionPane.showMessageDialog(null, 
-                                            "Invalid operator.", "Error", 
-                                            JOptionPane.ERROR_MESSAGE);
-                                    throw new IllegalStateException("Invalid operator.");
+                                    break;
                             }
                         case 5 :
                             switch(cageOperator)
@@ -366,10 +361,7 @@ public class SolverRuleBased
                                             break;
                                     }
                                 default :
-                                    JOptionPane.showMessageDialog(null, 
-                                            "Invalid operator.", "Error", 
-                                            JOptionPane.ERROR_MESSAGE);
-                                    throw new IllegalStateException("Invalid operator.");
+                                    break;
                             }
                         case 6 :
                             switch(cageOperator)
@@ -479,10 +471,7 @@ public class SolverRuleBased
                                             break;
                                     }
                                 default :
-                                    JOptionPane.showMessageDialog(null, 
-                                            "Invalid operator.", "Error", 
-                                            JOptionPane.ERROR_MESSAGE);
-                                    throw new IllegalStateException("Invalid operator.");
+                                    break;
                             }
                         case 7 :
                             switch(cageOperator)
@@ -620,10 +609,7 @@ public class SolverRuleBased
                                             break;
                                     }
                                 default :
-                                    JOptionPane.showMessageDialog(null, 
-                                            "Invalid operator.", "Error", 
-                                            JOptionPane.ERROR_MESSAGE);
-                                    throw new IllegalStateException("Invalid operator.");
+                                    break;
                             }
                         case 8 :
                             switch(cageOperator)
@@ -773,10 +759,7 @@ public class SolverRuleBased
                                             break;
                                     }
                                 default :
-                                    JOptionPane.showMessageDialog(null, 
-                                            "Invalid operator.", "Error", 
-                                            JOptionPane.ERROR_MESSAGE);
-                                    throw new IllegalStateException("Invalid operator.");
+                                    break;
                             }
                         case 9 :
                             switch(cageOperator)
@@ -954,16 +937,10 @@ public class SolverRuleBased
                                             break;
                                     }
                                 default :
-                                    JOptionPane.showMessageDialog(null, 
-                                            "Invalid operator.", "Error", 
-                                            JOptionPane.ERROR_MESSAGE);
-                                    throw new IllegalStateException("Invalid operator.");
+                                    break;
                             }
                         default :
-                            JOptionPane.showMessageDialog(null, 
-                                            "Invalid grid size.", "Error", 
-                                            JOptionPane.ERROR_MESSAGE);
-                                    throw new IllegalStateException("Invalid grid size.");
+                            break;
                     }
                 default :
                     array = createRetainAllArray();

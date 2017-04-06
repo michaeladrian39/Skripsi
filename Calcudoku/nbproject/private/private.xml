@@ -5,10 +5,6 @@
         <group>
             <file>file:/Volumes/KINGSTON/Skripsi/Calcudoku/src/view/Tester.java</file>
             <file>file:/Volumes/KINGSTON/Skripsi/Calcudoku/src/model/SolverRuleBased.java</file>
-            <file>file:/Volumes/KINGSTON/Skripsi/Calcudoku/src/model/Grid.java</file>
-            <file>file:/Volumes/KINGSTON/Skripsi/Calcudoku/src/model/SolverHybridGenetic.java</file>
-            <file>file:/Volumes/KINGSTON/Skripsi/Calcudoku/src/model/SolverBacktracking.java</file>
-            <file>file:/Volumes/KINGSTON/Skripsi/Calcudoku/src/model/SolverGenetic.java</file>
         </group>
     </open-files>
 </project-private>
