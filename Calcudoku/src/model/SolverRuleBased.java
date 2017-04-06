@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -108,22 +109,18 @@ public class SolverRuleBased
                                         case 3 :
                                             array.add(1);
                                             array.add(2);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 4 :  
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 5 :
                                             array.add(2);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 case '-' :
                                     switch(cageTargetNumber)
@@ -131,12 +128,10 @@ public class SolverRuleBased
                                         case 2 :
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 case '*' :
                                    switch(cageTargetNumber)
@@ -144,22 +139,18 @@ public class SolverRuleBased
                                         case 2 :
                                             array.add(1);
                                             array.add(2);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 3 :
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 6 :
                                             array.add(2);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 case '/' :
                                     switch(cageTargetNumber)
@@ -167,22 +158,20 @@ public class SolverRuleBased
                                         case 2 :
                                             array.add(1);
                                             array.add(2);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 3 :
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 default :
-                                    array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                    JOptionPane.showMessageDialog(null, 
+                                            "Invalid operator.", "Error", 
+                                            JOptionPane.ERROR_MESSAGE);
+                                    throw new IllegalStateException("Invalid operator.");
                             }
                         case 4 :
                             switch(cageOperator)
@@ -193,27 +182,22 @@ public class SolverRuleBased
                                         case 3 :
                                             array.add(1);
                                             array.add(2);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 4 :  
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 6 :
                                             array.add(2);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 7 :
                                             array.add(2);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 case '-' :
                                     switch(cageTargetNumber)
@@ -221,12 +205,10 @@ public class SolverRuleBased
                                         case 3 :
                                             array.add(1);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 case '*' :
                                    switch(cageTargetNumber)
@@ -234,37 +216,30 @@ public class SolverRuleBased
                                         case 2 :
                                             array.add(1);
                                             array.add(2);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 3 :
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 4 :
                                             array.add(1);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 6 :
                                             array.add(2);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 8 :
                                             array.add(2);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 12 :
                                             array.add(3);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 case '/' :
                                     switch(cageTargetNumber)
@@ -272,22 +247,20 @@ public class SolverRuleBased
                                         case 3 :
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 4 :
                                             array.add(1);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 default :
-                                    array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                    JOptionPane.showMessageDialog(null, 
+                                            "Invalid operator.", "Error", 
+                                            JOptionPane.ERROR_MESSAGE);
+                                    throw new IllegalStateException("Invalid operator.");
                             }
                         case 5 :
                             switch(cageOperator)
@@ -298,27 +271,22 @@ public class SolverRuleBased
                                         case 3 :
                                             array.add(1);
                                             array.add(2);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 4 :  
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 8 :
                                             array.add(3);
                                             array.add(5);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 9 :
                                             array.add(4);
                                             array.add(5);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 case '-' :
                                     switch(cageTargetNumber)
@@ -326,12 +294,10 @@ public class SolverRuleBased
                                         case 4 :
                                             array.add(1);
                                             array.add(5);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 case '*' :
                                    switch(cageTargetNumber)
@@ -339,57 +305,46 @@ public class SolverRuleBased
                                         case 2 :
                                             array.add(1);
                                             array.add(2);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 3 :
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 4 :
                                             array.add(1);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 5 :
                                             array.add(1);
                                             array.add(5);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 6 :
                                             array.add(2);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 8 :
                                             array.add(2);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 10 :
                                             array.add(2);
                                             array.add(5);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 12 :
                                             array.add(3);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 15 :
                                             array.add(3);
                                             array.add(5);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 20 :
                                             array.add(4);
                                             array.add(5);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 case '/' :
                                     switch(cageTargetNumber)
@@ -397,33 +352,624 @@ public class SolverRuleBased
                                         case 3 :
                                             array.add(1);
                                             array.add(3);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 4 :
                                             array.add(1);
                                             array.add(4);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         case 5 :
                                             array.add(1);
                                             array.add(5);
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                         default :
                                             array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                            break;
                                     }
                                 default :
-                                    array = createRetainAllArray();
-                                            removeImpossibleValuesCage(grid.getCages()[i], 
-                                                    array);
+                                    JOptionPane.showMessageDialog(null, 
+                                            "Invalid operator.", "Error", 
+                                            JOptionPane.ERROR_MESSAGE);
+                                    throw new IllegalStateException("Invalid operator.");
                             }
+                        case 6 :
+                            switch(cageOperator)
+                            {
+                                case '+' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 3 :
+                                            array.add(1);
+                                            array.add(2);
+                                            break;
+                                        case 4 :  
+                                            array.add(1);
+                                            array.add(3);
+                                            break;
+                                        case 10 :
+                                            array.add(4);
+                                            array.add(6);
+                                            break;
+                                        case 11 :
+                                            array.add(5);
+                                            array.add(6);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '-' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 5 :
+                                            array.add(1);
+                                            array.add(6);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '*' :
+                                   switch(cageTargetNumber)
+                                    {
+                                        case 2 :
+                                            array.add(1);
+                                            array.add(2);
+                                            break;
+                                        case 3 :
+                                            array.add(1);
+                                            array.add(3);
+                                            break;
+                                        case 4 :
+                                            array.add(1);
+                                            array.add(4);
+                                            break;
+                                        case 5 :
+                                            array.add(1);
+                                            array.add(5);
+                                            break;
+                                        case 8 :
+                                            array.add(2);
+                                            array.add(4);
+                                            break;
+                                        case 10 :
+                                            array.add(2);
+                                            array.add(5);
+                                            break;
+                                        case 15 :
+                                            array.add(3);
+                                            array.add(5);
+                                            break;
+                                        case 18 :
+                                            array.add(3);
+                                            array.add(6);
+                                            break;
+                                        case 20 :
+                                            array.add(4);
+                                            array.add(5);
+                                            break;
+                                        case 24 :
+                                            array.add(4);
+                                            array.add(6);
+                                            break;
+                                        case 30 :
+                                            array.add(5);
+                                            array.add(6);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '/' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 4 :
+                                            array.add(1);
+                                            array.add(4);
+                                            break;
+                                        case 5 :
+                                            array.add(1);
+                                            array.add(5);
+                                            break;
+                                        case 6 :
+                                            array.add(1);
+                                            array.add(6);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                default :
+                                    JOptionPane.showMessageDialog(null, 
+                                            "Invalid operator.", "Error", 
+                                            JOptionPane.ERROR_MESSAGE);
+                                    throw new IllegalStateException("Invalid operator.");
+                            }
+                        case 7 :
+                            switch(cageOperator)
+                            {
+                                case '+' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 3 :
+                                            array.add(1);
+                                            array.add(2);
+                                            break;
+                                        case 4 :  
+                                            array.add(1);
+                                            array.add(3);
+                                            break;
+                                        case 12 :
+                                            array.add(5);
+                                            array.add(7);
+                                            break;
+                                        case 13 :
+                                            array.add(6);
+                                            array.add(7);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '-' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 6 :
+                                            array.add(1);
+                                            array.add(7);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '*' :
+                                   switch(cageTargetNumber)
+                                    {
+                                        case 2 :
+                                            array.add(1);
+                                            array.add(2);
+                                            break;
+                                        case 3 :
+                                            array.add(1);
+                                            array.add(3);
+                                            break;
+                                        case 4 :
+                                            array.add(1);
+                                            array.add(4);
+                                            break;
+                                        case 5 :
+                                            array.add(1);
+                                            array.add(5);
+                                            break;
+                                        case 7 :
+                                            array.add(1);
+                                            array.add(7);
+                                            break;
+                                        case 8 :
+                                            array.add(2);
+                                            array.add(4);
+                                            break;
+                                        case 10 :
+                                            array.add(2);
+                                            array.add(5);
+                                            break;
+                                        case 14 :
+                                            array.add(2);
+                                            array.add(7);
+                                            break;
+                                        case 15 :
+                                            array.add(3);
+                                            array.add(5);
+                                            break;
+                                        case 18 :
+                                            array.add(3);
+                                            array.add(6);
+                                            break;
+                                        case 20 :
+                                            array.add(4);
+                                            array.add(5);
+                                            break;
+                                        case 21 :
+                                            array.add(3);
+                                            array.add(7);
+                                            break;
+                                        case 24 :
+                                            array.add(4);
+                                            array.add(6);
+                                            break;
+                                        case 28 :
+                                            array.add(4);
+                                            array.add(7);
+                                            break;
+                                        case 30 :
+                                            array.add(5);
+                                            array.add(6);
+                                            break;
+                                        case 35 :
+                                            array.add(5);
+                                            array.add(7);
+                                            break;
+                                        case 42 :
+                                            array.add(6);
+                                            array.add(7);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '/' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 4 :
+                                            array.add(1);
+                                            array.add(4);
+                                            break;
+                                        case 5 :
+                                            array.add(1);
+                                            array.add(5);
+                                            break;
+                                        case 6 :
+                                            array.add(1);
+                                            array.add(6);
+                                            break;
+                                        case 7 :
+                                            array.add(1);
+                                            array.add(7);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                default :
+                                    JOptionPane.showMessageDialog(null, 
+                                            "Invalid operator.", "Error", 
+                                            JOptionPane.ERROR_MESSAGE);
+                                    throw new IllegalStateException("Invalid operator.");
+                            }
+                        case 8 :
+                            switch(cageOperator)
+                            {
+                                case '+' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 3 :
+                                            array.add(1);
+                                            array.add(2);
+                                            break;
+                                        case 4 :  
+                                            array.add(1);
+                                            array.add(3);
+                                            break;
+                                        case 14 :
+                                            array.add(6);
+                                            array.add(8);
+                                            break;
+                                        case 15 :
+                                            array.add(7);
+                                            array.add(8);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '-' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 7 :
+                                            array.add(1);
+                                            array.add(8);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '*' :
+                                   switch(cageTargetNumber)
+                                    {
+                                        case 2 :
+                                            array.add(1);
+                                            array.add(2);
+                                            break;
+                                        case 3 :
+                                            array.add(1);
+                                            array.add(3);
+                                            break;
+                                        case 4 :
+                                            array.add(1);
+                                            array.add(4);
+                                            break;
+                                        case 5 :
+                                            array.add(1);
+                                            array.add(5);
+                                            break;
+                                        case 7 :
+                                            array.add(1);
+                                            array.add(7);
+                                            break;
+                                        case 10 :
+                                            array.add(2);
+                                            array.add(5);
+                                            break;
+                                        case 14 :
+                                            array.add(2);
+                                            array.add(7);
+                                            break;
+                                        case 15 :
+                                            array.add(3);
+                                            array.add(5);
+                                            break;
+                                        case 16 :
+                                            array.add(2);
+                                            array.add(8);
+                                            break;
+                                        case 18 :
+                                            array.add(3);
+                                            array.add(6);
+                                            break;
+                                        case 20 :
+                                            array.add(4);
+                                            array.add(5);
+                                            break;
+                                        case 21 :
+                                            array.add(3);
+                                            array.add(7);
+                                            break;
+                                        case 28 :
+                                            array.add(4);
+                                            array.add(7);
+                                            break;
+                                        case 30 :
+                                            array.add(5);
+                                            array.add(6);
+                                            break;
+                                        case 32 :
+                                            array.add(4);
+                                            array.add(8);
+                                            break;
+                                        case 35 :
+                                            array.add(5);
+                                            array.add(7);
+                                            break;
+                                        case 40 :
+                                            array.add(5);
+                                            array.add(8);
+                                            break;
+                                        case 42 :
+                                            array.add(6);
+                                            array.add(7);
+                                            break;
+                                        case 48 :
+                                            array.add(6);
+                                            array.add(8);
+                                            break;
+                                        case 56 :
+                                            array.add(7);
+                                            array.add(8);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '/' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 5 :
+                                            array.add(1);
+                                            array.add(5);
+                                            break;
+                                        case 6 :
+                                            array.add(1);
+                                            array.add(6);
+                                            break;
+                                        case 7 :
+                                            array.add(1);
+                                            array.add(7);
+                                            break;
+                                        case 8 :
+                                            array.add(1);
+                                            array.add(8);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                default :
+                                    JOptionPane.showMessageDialog(null, 
+                                            "Invalid operator.", "Error", 
+                                            JOptionPane.ERROR_MESSAGE);
+                                    throw new IllegalStateException("Invalid operator.");
+                            }
+                        case 9 :
+                            switch(cageOperator)
+                            {
+                                case '+' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 3 :
+                                            array.add(1);
+                                            array.add(2);
+                                            break;
+                                        case 4 :  
+                                            array.add(1);
+                                            array.add(3);
+                                            break;
+                                        case 16 :
+                                            array.add(7);
+                                            array.add(9);
+                                            break;
+                                        case 17 :
+                                            array.add(8);
+                                            array.add(9);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '-' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 8 :
+                                            array.add(1);
+                                            array.add(9);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '*' :
+                                   switch(cageTargetNumber)
+                                    {
+                                        case 2 :
+                                            array.add(1);
+                                            array.add(2);
+                                            break;
+                                        case 3 :
+                                            array.add(1);
+                                            array.add(3);
+                                            break;
+                                        case 4 :
+                                            array.add(1);
+                                            array.add(4);
+                                            break;
+                                        case 5 :
+                                            array.add(1);
+                                            array.add(5);
+                                            break;
+                                        case 7 :
+                                            array.add(1);
+                                            array.add(7);
+                                            break;
+                                        case 9 :
+                                            array.add(1);
+                                            array.add(9);
+                                            break;
+                                        case 10 :
+                                            array.add(2);
+                                            array.add(5);
+                                            break;
+                                        case 14 :
+                                            array.add(2);
+                                            array.add(7);
+                                            break;
+                                        case 15 :
+                                            array.add(3);
+                                            array.add(5);
+                                            break;
+                                        case 16 :
+                                            array.add(2);
+                                            array.add(8);
+                                            break;
+                                        case 20 :
+                                            array.add(4);
+                                            array.add(5);
+                                            break;
+                                        case 21 :
+                                            array.add(3);
+                                            array.add(7);
+                                            break;
+                                        case 27 :
+                                            array.add(3);
+                                            array.add(9);
+                                            break;
+                                        case 28 :
+                                            array.add(4);
+                                            array.add(7);
+                                            break;
+                                        case 30 :
+                                            array.add(5);
+                                            array.add(6);
+                                            break;
+                                        case 32 :
+                                            array.add(4);
+                                            array.add(8);
+                                            break;
+                                        case 35 :
+                                            array.add(5);
+                                            array.add(7);
+                                            break;
+                                        case 36 :
+                                            array.add(4);
+                                            array.add(9);
+                                            break;
+                                        case 40 :
+                                            array.add(5);
+                                            array.add(8);
+                                            break;
+                                        case 42 :
+                                            array.add(6);
+                                            array.add(7);
+                                            break;
+                                        case 45 :
+                                            array.add(5);
+                                            array.add(9);
+                                            break;
+                                        case 48 :
+                                            array.add(6);
+                                            array.add(8);
+                                            break;
+                                        case 54 :
+                                            array.add(6);
+                                            array.add(9);
+                                            break;
+                                        case 56 :
+                                            array.add(7);
+                                            array.add(8);
+                                            break;
+                                        case 63 :
+                                            array.add(7);
+                                            array.add(9);
+                                            break;
+                                        case 72 :
+                                            array.add(8);
+                                            array.add(9);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                case '/' :
+                                    switch(cageTargetNumber)
+                                    {
+                                        case 5 :
+                                            array.add(1);
+                                            array.add(5);
+                                            break;
+                                        case 6 :
+                                            array.add(1);
+                                            array.add(6);
+                                            break;
+                                        case 7 :
+                                            array.add(1);
+                                            array.add(7);
+                                            break;
+                                        case 8 :
+                                            array.add(1);
+                                            array.add(8);
+                                            break;
+                                        case 9 :
+                                            array.add(1);
+                                            array.add(9);
+                                            break;
+                                        default :
+                                            array = createRetainAllArray();
+                                            break;
+                                    }
+                                default :
+                                    JOptionPane.showMessageDialog(null, 
+                                            "Invalid operator.", "Error", 
+                                            JOptionPane.ERROR_MESSAGE);
+                                    throw new IllegalStateException("Invalid operator.");
+                            }
+                        default :
+                            JOptionPane.showMessageDialog(null, 
+                                            "Invalid grid size.", "Error", 
+                                            JOptionPane.ERROR_MESSAGE);
+                                    throw new IllegalStateException("Invalid grid size.");
                     }
                 default :
                     array = createRetainAllArray();
-                    removeImpossibleValuesCage(grid.getCages()[i], array);
+                    break;
             }
+            removeImpossibleValuesCage(grid.getCages()[i], array);
         }
     }
     
