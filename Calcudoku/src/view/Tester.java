@@ -22,76 +22,46 @@ public class Tester
         String[] cageObjectives;
         try
         {
-            Scanner sc = new Scanner(new File("test4x4.txt"));
-            // 4
-            size = sc.nextInt();
-            cageCells = new int[size][size];
-            // 9
-            numberOfCages = sc.nextInt();
-            cageObjectives = new String[numberOfCages];            
-            // 1 2 3 3
-            // 1 4 4 5
-            // 6 7 7 5
-            // 8 8 9 9            
-            for (int i = 0; i < size; i++)
+            try (Scanner sc = new Scanner(new File("test4x4.txt")))
             {
-                for (int j = 0; j < size; j++)
+                size = sc.nextInt();
+                cageCells = new int[size][size];
+                numberOfCages = sc.nextInt();
+                cageObjectives = new String[numberOfCages];
+                for (int i = 0; i < size; i++)
                 {
-                    cageCells[i][j] = sc.nextInt();
+                    for (int j = 0; j < size; j++)
+                    {
+                        cageCells[i][j] = sc.nextInt();
+                    }
                 }
-            }            
-            // 7+
-            // 2=
-            // 2-
-            // 3-
-            // 2/
-            // 1=
-            // 6*
-            // 3+
-            // 7+            
-            for (int i = 0; i < numberOfCages; i++)
-            {
-                cageObjectives[i] = sc.next();
+                for (int i = 0; i < numberOfCages; i++)
+                {
+                    cageObjectives[i] = sc.next();
+                }
+                if (sc.hasNext())
+                {
+                    JOptionPane.showMessageDialog(null, "Invalid puzzle file.", 
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                    throw new IllegalStateException("Invalid puzzle file.");
+                }
             }
-            if (sc.hasNext())
+            catch (FileNotFoundException fnfe)
             {
-                JOptionPane.showMessageDialog(null, "Invalid puzzle file.", "Error", 
-                    JOptionPane.ERROR_MESSAGE);
-                throw new IllegalStateException("Invalid puzzle file.");
+                JOptionPane.showMessageDialog(null, "Puzzle file not found.", 
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                throw new FileNotFoundException("Puzzle file not found.");
             }
-            sc.close();
         }
         catch (NoSuchElementException nsee)
         {
-            JOptionPane.showMessageDialog(null, "Invalid puzzle file.", "Error", 
-                    JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Invalid puzzle file.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
             throw new IllegalStateException("Invalid puzzle file.");
         }
         Controller c = new Controller(size, numberOfCages, cageCells, 
-                cageObjectives);        
-        
-//        System.out.println(c.setCellValue(0, 0, 4));
-//        System.out.println(c.setCellValue(0, 1, 2));
-//        System.out.println(c.setCellValue(0, 2, 3));
-//        System.out.println(c.setCellValue(0, 3, 1));
-//        
-//        System.out.println(c.setCellValue(1, 0, 3));
-//        System.out.println(c.setCellValue(1, 1, 4));
-//        System.out.println(c.setCellValue(1, 2, 1));
-//        System.out.println(c.setCellValue(1, 3, 2));
-//        
-//        System.out.println(c.setCellValue(2, 0, 1));
-//        System.out.println(c.setCellValue(2, 1, 3));
-//        System.out.println(c.setCellValue(2, 2, 2));
-//        System.out.println(c.setCellValue(2, 3, 4));
-//        
-//        System.out.println(c.setCellValue(3, 0, 2));
-//        System.out.println(c.setCellValue(3, 1, 1));
-//        System.out.println(c.setCellValue(3, 2, 4));
-//        System.out.println(c.setCellValue(3, 3, 3));
-                
-        c.solveBacktracking();
-
+                cageObjectives);
+        c.solveHybridGenetic();
     }
     
 }

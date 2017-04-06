@@ -102,9 +102,13 @@ public class Cage
                     {
                         value = cells.get(0).getValue() - cells.get(1).getValue();
                     }
-                    else
+                    else if (cells.get(1).getValue() > cells.get(0).getValue())
                     {
                         value = cells.get(1).getValue() - cells.get(0).getValue();
+                    }
+                    else
+                    {
+                        value = 0;
                     }
                     break;
                 case '*':
@@ -117,11 +121,33 @@ public class Cage
                 case '/':
                     if (cells.get(0).getValue() > cells.get(1).getValue())
                     {
-                        value = cells.get(0).getValue() / cells.get(1).getValue();
+                        if (cells.get(0).getValue() 
+                                % cells.get(1).getValue() == 0)
+                        {
+                            value = cells.get(0).getValue() 
+                                    / cells.get(1).getValue();
+                        }
+                        else
+                        {
+                            value = 0;
+                        }
+                    }
+                    else if(cells.get(1).getValue() > cells.get(0).getValue())
+                    {
+                        if (cells.get(1).getValue() 
+                                % cells.get(0).getValue() == 0)
+                        {
+                            value = cells.get(1).getValue() 
+                                    / cells.get(0).getValue();
+                        }
+                        else
+                        {
+                            value = 0;
+                        }
                     }
                     else
                     {
-                        value = cells.get(1).getValue() / cells.get(0).getValue();
+                        value = 0;
                     }
                     break;
                 case '=':

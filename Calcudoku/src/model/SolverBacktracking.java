@@ -24,7 +24,7 @@ public class SolverBacktracking
             float duration = (endTime - startTime) / 1000000000;
             JOptionPane.showMessageDialog(null, 
                     "The backtracking algorithm has successfully solved the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds.", 
+                            + "\nTime elapsed: " + duration + " seconds", 
                     "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         else
@@ -33,7 +33,7 @@ public class SolverBacktracking
             float duration = (endTime - startTime) / 1000000000;
             JOptionPane.showMessageDialog(null, 
                     "The backtracking algorithm has failed to solve the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds.", 
+                            + "\nTime elapsed: " + duration + " seconds", 
                     "Information", JOptionPane.INFORMATION_MESSAGE);
         }
     }
@@ -82,6 +82,7 @@ public class SolverBacktracking
             }
             System.out.println("");
         }
+        System.out.println("");
     }
     
 }

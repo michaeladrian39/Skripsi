@@ -4,22 +4,16 @@ package model;
  *
  * @author michaeladrian39
  */
-public class SolverHybridGenetic
+public class SolverGenetic
 {
     
     private final Grid grid;
     private final int size;
     
-    public SolverHybridGenetic(Grid grid)
+    public SolverGenetic(Grid grid)
     {
         this.grid = grid;
         this.size = grid.getSize();
-        solve();
-    }
-    
-    public void solve()
-    {
-        SolverRuleBased srb = new SolverRuleBased(grid);
     }
     
     public void printGrid()
