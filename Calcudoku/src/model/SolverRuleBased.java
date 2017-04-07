@@ -88,866 +88,995 @@ public class SolverRuleBased
     private void killerCombination()
     {
         int cageSize;
-        char cageOperator;
-        int cageTargetNumber;
         ArrayList<Integer> array = new ArrayList();
         for (int i = 0; i < grid.getCages().length; i++)
         {
             cageSize = grid.getCages()[i].getSize();
-            cageOperator = grid.getCages()[i].getOperator();
-            cageTargetNumber = grid.getCages()[i].getTargetNumber();
             switch(cageSize)
             {
                 case 2 :
-                    switch(size)
-                    {
-                        case 3 :
-                            switch(cageOperator)
-                            {
-                                case '+' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 4 :  
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 5 :
-                                            array.add(2);
-                                            array.add(3);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '-' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 2 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '*' :
-                                   switch(cageTargetNumber)
-                                    {
-                                        case 2 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 6 :
-                                            array.add(2);
-                                            array.add(3);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '/' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 2 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                default :
-                                    break;
-                            }
-                        case 4 :
-                            switch(cageOperator)
-                            {
-                                case '+' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 4 :  
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 6 :
-                                            array.add(2);
-                                            array.add(4);
-                                            break;
-                                        case 7 :
-                                            array.add(3);
-                                            array.add(4);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '-' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '*' :
-                                   switch(cageTargetNumber)
-                                    {
-                                        case 2 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        case 6 :
-                                            array.add(2);
-                                            array.add(3);
-                                            break;
-                                        case 8 :
-                                            array.add(2);
-                                            array.add(4);
-                                            break;
-                                        case 12 :
-                                            array.add(3);
-                                            array.add(4);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '/' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                default :
-                                    break;
-                            }
-                        case 5 :
-                            switch(cageOperator)
-                            {
-                                case '+' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 4 :  
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 8 :
-                                            array.add(3);
-                                            array.add(5);
-                                            break;
-                                        case 9 :
-                                            array.add(4);
-                                            array.add(5);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '-' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '*' :
-                                   switch(cageTargetNumber)
-                                    {
-                                        case 2 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        case 6 :
-                                            array.add(2);
-                                            array.add(3);
-                                            break;
-                                        case 8 :
-                                            array.add(2);
-                                            array.add(4);
-                                            break;
-                                        case 10 :
-                                            array.add(2);
-                                            array.add(5);
-                                            break;
-                                        case 12 :
-                                            array.add(3);
-                                            array.add(4);
-                                            break;
-                                        case 15 :
-                                            array.add(3);
-                                            array.add(5);
-                                            break;
-                                        case 20 :
-                                            array.add(4);
-                                            array.add(5);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '/' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                default :
-                                    break;
-                            }
-                        case 6 :
-                            switch(cageOperator)
-                            {
-                                case '+' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 4 :  
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 10 :
-                                            array.add(4);
-                                            array.add(6);
-                                            break;
-                                        case 11 :
-                                            array.add(5);
-                                            array.add(6);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '-' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(6);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '*' :
-                                   switch(cageTargetNumber)
-                                    {
-                                        case 2 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        case 8 :
-                                            array.add(2);
-                                            array.add(4);
-                                            break;
-                                        case 10 :
-                                            array.add(2);
-                                            array.add(5);
-                                            break;
-                                        case 15 :
-                                            array.add(3);
-                                            array.add(5);
-                                            break;
-                                        case 18 :
-                                            array.add(3);
-                                            array.add(6);
-                                            break;
-                                        case 20 :
-                                            array.add(4);
-                                            array.add(5);
-                                            break;
-                                        case 24 :
-                                            array.add(4);
-                                            array.add(6);
-                                            break;
-                                        case 30 :
-                                            array.add(5);
-                                            array.add(6);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '/' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        case 6 :
-                                            array.add(1);
-                                            array.add(6);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                default :
-                                    break;
-                            }
-                        case 7 :
-                            switch(cageOperator)
-                            {
-                                case '+' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 4 :  
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 12 :
-                                            array.add(5);
-                                            array.add(7);
-                                            break;
-                                        case 13 :
-                                            array.add(6);
-                                            array.add(7);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '-' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 6 :
-                                            array.add(1);
-                                            array.add(7);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '*' :
-                                   switch(cageTargetNumber)
-                                    {
-                                        case 2 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        case 7 :
-                                            array.add(1);
-                                            array.add(7);
-                                            break;
-                                        case 8 :
-                                            array.add(2);
-                                            array.add(4);
-                                            break;
-                                        case 10 :
-                                            array.add(2);
-                                            array.add(5);
-                                            break;
-                                        case 14 :
-                                            array.add(2);
-                                            array.add(7);
-                                            break;
-                                        case 15 :
-                                            array.add(3);
-                                            array.add(5);
-                                            break;
-                                        case 18 :
-                                            array.add(3);
-                                            array.add(6);
-                                            break;
-                                        case 20 :
-                                            array.add(4);
-                                            array.add(5);
-                                            break;
-                                        case 21 :
-                                            array.add(3);
-                                            array.add(7);
-                                            break;
-                                        case 24 :
-                                            array.add(4);
-                                            array.add(6);
-                                            break;
-                                        case 28 :
-                                            array.add(4);
-                                            array.add(7);
-                                            break;
-                                        case 30 :
-                                            array.add(5);
-                                            array.add(6);
-                                            break;
-                                        case 35 :
-                                            array.add(5);
-                                            array.add(7);
-                                            break;
-                                        case 42 :
-                                            array.add(6);
-                                            array.add(7);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '/' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        case 6 :
-                                            array.add(1);
-                                            array.add(6);
-                                            break;
-                                        case 7 :
-                                            array.add(1);
-                                            array.add(7);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                default :
-                                    break;
-                            }
-                        case 8 :
-                            switch(cageOperator)
-                            {
-                                case '+' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 4 :  
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 14 :
-                                            array.add(6);
-                                            array.add(8);
-                                            break;
-                                        case 15 :
-                                            array.add(7);
-                                            array.add(8);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '-' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 7 :
-                                            array.add(1);
-                                            array.add(8);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '*' :
-                                   switch(cageTargetNumber)
-                                    {
-                                        case 2 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        case 7 :
-                                            array.add(1);
-                                            array.add(7);
-                                            break;
-                                        case 10 :
-                                            array.add(2);
-                                            array.add(5);
-                                            break;
-                                        case 14 :
-                                            array.add(2);
-                                            array.add(7);
-                                            break;
-                                        case 15 :
-                                            array.add(3);
-                                            array.add(5);
-                                            break;
-                                        case 16 :
-                                            array.add(2);
-                                            array.add(8);
-                                            break;
-                                        case 18 :
-                                            array.add(3);
-                                            array.add(6);
-                                            break;
-                                        case 20 :
-                                            array.add(4);
-                                            array.add(5);
-                                            break;
-                                        case 21 :
-                                            array.add(3);
-                                            array.add(7);
-                                            break;
-                                        case 28 :
-                                            array.add(4);
-                                            array.add(7);
-                                            break;
-                                        case 30 :
-                                            array.add(5);
-                                            array.add(6);
-                                            break;
-                                        case 32 :
-                                            array.add(4);
-                                            array.add(8);
-                                            break;
-                                        case 35 :
-                                            array.add(5);
-                                            array.add(7);
-                                            break;
-                                        case 40 :
-                                            array.add(5);
-                                            array.add(8);
-                                            break;
-                                        case 42 :
-                                            array.add(6);
-                                            array.add(7);
-                                            break;
-                                        case 48 :
-                                            array.add(6);
-                                            array.add(8);
-                                            break;
-                                        case 56 :
-                                            array.add(7);
-                                            array.add(8);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '/' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        case 6 :
-                                            array.add(1);
-                                            array.add(6);
-                                            break;
-                                        case 7 :
-                                            array.add(1);
-                                            array.add(7);
-                                            break;
-                                        case 8 :
-                                            array.add(1);
-                                            array.add(8);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                default :
-                                    break;
-                            }
-                        case 9 :
-                            switch(cageOperator)
-                            {
-                                case '+' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 4 :  
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 16 :
-                                            array.add(7);
-                                            array.add(9);
-                                            break;
-                                        case 17 :
-                                            array.add(8);
-                                            array.add(9);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '-' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 8 :
-                                            array.add(1);
-                                            array.add(9);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '*' :
-                                   switch(cageTargetNumber)
-                                    {
-                                        case 2 :
-                                            array.add(1);
-                                            array.add(2);
-                                            break;
-                                        case 3 :
-                                            array.add(1);
-                                            array.add(3);
-                                            break;
-                                        case 4 :
-                                            array.add(1);
-                                            array.add(4);
-                                            break;
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        case 7 :
-                                            array.add(1);
-                                            array.add(7);
-                                            break;
-                                        case 9 :
-                                            array.add(1);
-                                            array.add(9);
-                                            break;
-                                        case 10 :
-                                            array.add(2);
-                                            array.add(5);
-                                            break;
-                                        case 14 :
-                                            array.add(2);
-                                            array.add(7);
-                                            break;
-                                        case 15 :
-                                            array.add(3);
-                                            array.add(5);
-                                            break;
-                                        case 16 :
-                                            array.add(2);
-                                            array.add(8);
-                                            break;
-                                        case 20 :
-                                            array.add(4);
-                                            array.add(5);
-                                            break;
-                                        case 21 :
-                                            array.add(3);
-                                            array.add(7);
-                                            break;
-                                        case 27 :
-                                            array.add(3);
-                                            array.add(9);
-                                            break;
-                                        case 28 :
-                                            array.add(4);
-                                            array.add(7);
-                                            break;
-                                        case 30 :
-                                            array.add(5);
-                                            array.add(6);
-                                            break;
-                                        case 32 :
-                                            array.add(4);
-                                            array.add(8);
-                                            break;
-                                        case 35 :
-                                            array.add(5);
-                                            array.add(7);
-                                            break;
-                                        case 36 :
-                                            array.add(4);
-                                            array.add(9);
-                                            break;
-                                        case 40 :
-                                            array.add(5);
-                                            array.add(8);
-                                            break;
-                                        case 42 :
-                                            array.add(6);
-                                            array.add(7);
-                                            break;
-                                        case 45 :
-                                            array.add(5);
-                                            array.add(9);
-                                            break;
-                                        case 48 :
-                                            array.add(6);
-                                            array.add(8);
-                                            break;
-                                        case 54 :
-                                            array.add(6);
-                                            array.add(9);
-                                            break;
-                                        case 56 :
-                                            array.add(7);
-                                            array.add(8);
-                                            break;
-                                        case 63 :
-                                            array.add(7);
-                                            array.add(9);
-                                            break;
-                                        case 72 :
-                                            array.add(8);
-                                            array.add(9);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                case '/' :
-                                    switch(cageTargetNumber)
-                                    {
-                                        case 5 :
-                                            array.add(1);
-                                            array.add(5);
-                                            break;
-                                        case 6 :
-                                            array.add(1);
-                                            array.add(6);
-                                            break;
-                                        case 7 :
-                                            array.add(1);
-                                            array.add(7);
-                                            break;
-                                        case 8 :
-                                            array.add(1);
-                                            array.add(8);
-                                            break;
-                                        case 9 :
-                                            array.add(1);
-                                            array.add(9);
-                                            break;
-                                        default :
-                                            array = createRetainAllArray();
-                                            break;
-                                    }
-                                default :
-                                    break;
-                            }
-                        default :
-                            break;
-                    }
+                    killerCombinationCageSize2(grid.getCages()[i]);
+                    break;
                 default :
+                    System.out.println("cage size not 2");
                     array = createRetainAllArray();
+                    removeImpossibleValuesCage(grid.getCages()[i], array);
                     break;
             }
-            removeImpossibleValuesCage(grid.getCages()[i], array);
         }
+    }
+    
+    private void killerCombinationCageSize2(Cage cage)
+    {
+        int gridSize = size;
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch(gridSize)
+        {
+            case 3 :
+                array = killerCombinationCageSize2GridSize3(cage);
+                break;
+            case 4 :
+                array = killerCombinationCageSize2GridSize4(cage);
+                break;
+            case 5 :
+                array = killerCombinationCageSize2GridSize5(cage);
+                break;
+            case 6 :
+                array = killerCombinationCageSize2GridSize6(cage);
+                break;
+            case 7 :
+                array = killerCombinationCageSize2GridSize7(cage);
+                break;
+            case 8 :
+                array = killerCombinationCageSize2GridSize8(cage);
+                break;
+            case 9 :
+                array = killerCombinationCageSize2GridSize9(cage);
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, "Invalid grid size.", 
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid grid size.");
+        }
+        removeImpossibleValuesCage(cage, array);
+    }
+
+    private ArrayList<Integer> killerCombinationCageSize2GridSize3(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch(cageOperator)
+        {
+            case '+' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 5 :
+                        array.add(2);
+                        array.add(3);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch(cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch(cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 6 :
+                        array.add(2);
+                        array.add(3);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch(cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize4(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch(cageOperator)
+        {
+            case '+' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 6 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 7 :
+                        array.add(3);
+                        array.add(4);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch(cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 6 :
+                        array.add(2);
+                        array.add(3);
+                        break;
+                    case 8 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 12 :
+                        array.add(3);
+                        array.add(4);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize5(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch(cageOperator)
+        {
+            case '+' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 8 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 9 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch(cageTargetNumber)
+                {
+                    case 4 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch(cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(2);
+                        array.add(3);
+                        break;
+                    case 8 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 12 :
+                        array.add(3);
+                        array.add(4);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize6(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch(cageOperator)
+        {
+            case '+' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 10 :
+                        array.add(4);
+                        array.add(6);
+                        break;
+                    case 11 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch(cageTargetNumber)
+                {
+                    case 5 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch(cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 8 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 18 :
+                        array.add(3);
+                        array.add(6);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    case 24 :
+                        array.add(4);
+                        array.add(6);
+                        break;
+                    case 30 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch(cageTargetNumber)
+                {
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize7(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch(cageOperator)
+        {
+            case '+' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 12 :
+                        array.add(5);
+                        array.add(7);
+                        break;
+                    case 13 :
+                        array.add(6);
+                        array.add(7);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch(cageTargetNumber)
+                {
+                    case 6 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch(cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 8 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 14 :
+                        array.add(2);
+                        array.add(7);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 18 :
+                        array.add(3);
+                        array.add(6);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    case 21 :
+                        array.add(3);
+                        array.add(7);
+                        break;
+                    case 24 :
+                        array.add(4);
+                        array.add(6);
+                        break;
+                    case 28 :
+                        array.add(4);
+                        array.add(7);
+                        break;
+                    case 30 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    case 35 :
+                        array.add(5);
+                        array.add(7);
+                        break;
+                    case 42 :
+                        array.add(6);
+                        array.add(7);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch(cageTargetNumber)
+                {
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize8(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch(cageOperator)
+        {
+            case '+' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 14 :
+                        array.add(6);
+                        array.add(8);
+                        break;
+                    case 15 :
+                        array.add(7);
+                        array.add(8);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch(cageTargetNumber)
+                {
+                    case 7 :
+                        array.add(1);
+                        array.add(8);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch(cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 14 :
+                        array.add(2);
+                        array.add(7);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 16 :
+                        array.add(2);
+                        array.add(8);
+                        break;
+                    case 18 :
+                        array.add(3);
+                        array.add(6);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    case 21 :
+                        array.add(3);
+                        array.add(7);
+                        break;
+                    case 28 :
+                        array.add(4);
+                        array.add(7);
+                        break;
+                    case 30 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    case 32 :
+                        array.add(4);
+                        array.add(8);
+                        break;
+                    case 35 :
+                        array.add(5);
+                        array.add(7);
+                        break;
+                    case 40 :
+                        array.add(5);
+                        array.add(8);
+                        break;
+                    case 42 :
+                        array.add(6);
+                        array.add(7);
+                        break;
+                    case 48 :
+                        array.add(6);
+                        array.add(8);
+                        break;
+                    case 56 :
+                        array.add(7);
+                        array.add(8);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch(cageTargetNumber)
+                {
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 8 :
+                        array.add(1);
+                        array.add(8);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize9(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch(cageOperator)
+        {
+            case '+' :
+                switch(cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 16 :
+                        array.add(7);
+                        array.add(9);
+                        break;
+                    case 17 :
+                        array.add(8);
+                        array.add(9);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch(cageTargetNumber)
+                {
+                    case 8 :
+                        array.add(1);
+                        array.add(9);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch(cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 9 :
+                        array.add(1);
+                        array.add(9);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 14 :
+                        array.add(2);
+                        array.add(7);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 16 :
+                        array.add(2);
+                        array.add(8);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    case 21 :
+                        array.add(3);
+                        array.add(7);
+                        break;
+                    case 27 :
+                        array.add(3);
+                        array.add(9);
+                        break;
+                    case 28 :
+                        array.add(4);
+                        array.add(7);
+                        break;
+                    case 30 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    case 32 :
+                        array.add(4);
+                        array.add(8);
+                        break;
+                    case 35 :
+                        array.add(5);
+                        array.add(7);
+                        break;
+                    case 36 :
+                        array.add(4);
+                        array.add(9);
+                        break;
+                    case 40 :
+                        array.add(5);
+                        array.add(8);
+                        break;
+                    case 42 :
+                        array.add(6);
+                        array.add(7);
+                        break;
+                    case 45 :
+                        array.add(5);
+                        array.add(9);
+                        break;
+                    case 48 :
+                        array.add(6);
+                        array.add(8);
+                        break;
+                    case 54 :
+                        array.add(6);
+                        array.add(9);
+                        break;
+                    case 56 :
+                        array.add(7);
+                        array.add(8);
+                        break;
+                    case 63 :
+                        array.add(7);
+                        array.add(9);
+                        break;
+                    case 72 :
+                        array.add(8);
+                        array.add(9);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch(cageTargetNumber)
+                {
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 8 :
+                        array.add(1);
+                        array.add(8);
+                        break;
+                    case 9 :
+                        array.add(1);
+                        array.add(9);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
     }
     
     private void setCellValue(int row, int column, int value)

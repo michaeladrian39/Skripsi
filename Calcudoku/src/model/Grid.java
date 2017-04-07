@@ -178,11 +178,13 @@ public class Grid
             {
                 return false;
             }
-            if ((c.getOperator() == '-' || c.getOperator() == '/') && c.getSize() != 2)
+            if ((c.getOperator() == '-' || c.getOperator() == '/') 
+                    && c.getSize() != 2)
             {
                 return false;
             }
-            if ((c.getOperator() == '+' || c.getOperator() == '*') && c.getSize() < 2)
+            if ((c.getOperator() == '+' || c.getOperator() == '*') 
+                    && c.getSize() < 2)
             {
                 return false;
             }
