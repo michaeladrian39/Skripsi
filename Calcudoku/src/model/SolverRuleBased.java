@@ -43,6 +43,7 @@ public class SolverRuleBased
     {
         singleSquare();
         killerCombination();
+        nakedSubset();
         printGrid();
         printPossibleValues();
     }
@@ -75,12 +76,9 @@ public class SolverRuleBased
         {
             if (grid.getCages()[i].getSize() == 1)
             {
-                for (int j = 0; j < grid.getCages()[i].getCells().size(); j++)
-                {
-                    setCellValue(grid.getCages()[i].getCells().get(j).getRow(), 
-                            grid.getCages()[i].getCells().get(j).getColumn(), 
-                            grid.getCages()[i].getTargetNumber());
-                }
+                setCellValue(grid.getCages()[i].getCells().get(0).getRow(), 
+                        grid.getCages()[i].getCells().get(0).getColumn(), 
+                        grid.getCages()[i].getTargetNumber());
             }
         }
     }
@@ -98,7 +96,6 @@ public class SolverRuleBased
                     killerCombinationCageSize2(grid.getCages()[i]);
                     break;
                 default :
-                    System.out.println("cage size not 2");
                     array = createRetainAllArray();
                     removeImpossibleValuesCage(grid.getCages()[i], array);
                     break;
@@ -1121,7 +1118,7 @@ public class SolverRuleBased
         possibleValues[row][column].retainAll(array);
     }
     
-    public ArrayList<Integer> createRetainAllArray()
+    private ArrayList<Integer> createRetainAllArray()
     {
         ArrayList<Integer> array = new ArrayList();
         for (int i = 1; i <= size; i++)
@@ -1129,6 +1126,77 @@ public class SolverRuleBased
             array.add(i);
         }
         return array;
+    }
+    
+    private void nakedSubset()
+    {
+        nakedSubsetRow();
+        nakedSubsetColumn();
+    }
+    
+    private void nakedSubsetRow()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            nakedSubsetRow(i);
+        }
+    }
+    
+    private void nakedSubsetRow(int row)
+    {
+        int numberOfPossibleValues;
+        ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
+        for (int i = 0; i < rowPossibleValues.length; i++)
+        {
+            numberOfPossibleValues = rowPossibleValues[i].size();
+            switch(numberOfPossibleValues)
+            {
+                case 1 :
+                    nakedSingle(row, i);
+                    break;
+                case 2 :
+                    nakedDoubleRow(i, row);
+                    break;
+                default :
+                    break;
+            }
+        }
+    }
+    
+    private void nakedSubsetColumn()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            nakedSubsetColumn(i);
+        }
+    }
+    
+    private void nakedSubsetColumn(int column)
+    {
+        int numberOfPossibleValues;
+        ArrayList<Integer>[] columnPossibleValues = 
+                getColumnPossibleValues(column);
+        for (int i = 0; i < columnPossibleValues.length; i++)
+        {
+            numberOfPossibleValues = columnPossibleValues[i].size();
+            switch(numberOfPossibleValues)
+            {
+                case 1 :
+                    nakedSingle(i, column);
+                    break;
+                case 2:
+                    nakedDoubleColumn(i, column);
+                    break;
+                default :
+                    break;
+            }
+        }
+    }
+    
+    private void nakedSingle(int row, int column)
+    {
+        int value = possibleValues[row][column].get(0);
+        setCellValue(row, column, value);
     }
     
     public void printGrid()
