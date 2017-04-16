@@ -47,6 +47,7 @@ public class SolverRuleBased
         nakedSingle();
         nakedDouble();
         hiddenSingle();
+        hiddenDouble();
         printGrid();
         printPossibleValues();
     }
@@ -1200,7 +1201,7 @@ public class SolverRuleBased
     private void nakedDoubleRow(int row)
     {
         ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
-        ArrayList<Integer> column2PossibleValuesIndex = new ArrayList();
+        ArrayList<Integer> column2PossibleIndexes = new ArrayList();
         ArrayList<ArrayList<Integer>> column2PossibleValues = new ArrayList();
         ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList();
         ArrayList<Integer> uniquePossibleValuesFrequency = new ArrayList();
@@ -1208,11 +1209,11 @@ public class SolverRuleBased
         {
             if (rowPossibleValues[i].size() == 2)
             {
-                column2PossibleValuesIndex.add(i);
+                column2PossibleIndexes.add(i);
                 column2PossibleValues.add(rowPossibleValues[i]);
             }
         }
-        if (column2PossibleValuesIndex.size() >= 2
+        if (column2PossibleIndexes.size() >= 2
                 && column2PossibleValues.size() >= 2)
         {
             for (int i = 0; i < column2PossibleValues.size(); i++)
@@ -1234,19 +1235,19 @@ public class SolverRuleBased
                 {
                     ArrayList<Integer> doublePossibleValues = 
                             uniquePossibleValues.get(i);
-                    ArrayList<Integer> doublePossibleValuesIndex = 
+                    ArrayList<Integer> doublePossibleIndexes = 
                             new ArrayList();
                     for (int j = 0; j < column2PossibleValues.size(); j++)
                     {
                         if (column2PossibleValues.get(j).equals(
                                 uniquePossibleValues.get(i)))
                         {
-                            doublePossibleValuesIndex.add(
-                                    column2PossibleValuesIndex.get(j));
+                            doublePossibleIndexes.add(
+                                    column2PossibleIndexes.get(j));
                         }
                     }
                     nakedDoubleRow(row, doublePossibleValues, 
-                            doublePossibleValuesIndex);
+                            doublePossibleIndexes);
                 }
             }
         }
@@ -1254,11 +1255,11 @@ public class SolverRuleBased
     
     private void nakedDoubleRow(int row, 
             ArrayList<Integer> doublePossibleValues, 
-            ArrayList<Integer> doublePossibleValuesIndex)
+            ArrayList<Integer> doublePossibleIndexes)
     {
         for (int i = 0; i < size; i++)
         {
-            if (!doublePossibleValuesIndex.contains(i))
+            if (!doublePossibleIndexes.contains(i))
             {
                 possibleValues[row][i].removeAll(doublePossibleValues);
             }
@@ -1277,7 +1278,7 @@ public class SolverRuleBased
     {
         ArrayList<Integer>[] columnPossibleValues = 
                 getColumnPossibleValues(column);
-        ArrayList<Integer> row2PossibleValuesIndex = new ArrayList();
+        ArrayList<Integer> row2PossibleIndexes = new ArrayList();
         ArrayList<ArrayList<Integer>> row2PossibleValues = new ArrayList();
         ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList();
         ArrayList<Integer> uniquePossibleValuesFrequency = new ArrayList();
@@ -1285,11 +1286,11 @@ public class SolverRuleBased
         {
             if (columnPossibleValues[i].size() == 2)
             {
-                row2PossibleValuesIndex.add(i);
+                row2PossibleIndexes.add(i);
                 row2PossibleValues.add(columnPossibleValues[i]);
             }
         }
-        if (row2PossibleValuesIndex.size() >= 2 
+        if (row2PossibleIndexes.size() >= 2 
                 && row2PossibleValues.size() >= 2)
         {
             for (int i = 0; i < row2PossibleValues.size(); i++)
@@ -1311,19 +1312,19 @@ public class SolverRuleBased
                 {
                     ArrayList<Integer> doublePossibleValues = 
                             uniquePossibleValues.get(i);
-                    ArrayList<Integer> doublePossibleValuesIndex = 
+                    ArrayList<Integer> doublePossibleIndexes = 
                             new ArrayList();
                     for (int j = 0; j < row2PossibleValues.size(); j++)
                     {
                         if (row2PossibleValues.get(j).equals(
                                 uniquePossibleValues.get(i)))
                         {
-                            doublePossibleValuesIndex.add(
-                                    row2PossibleValuesIndex.get(j));
+                            doublePossibleIndexes.add(
+                                    row2PossibleIndexes.get(j));
                         }
                     }
                     nakedDoubleColumn(column, doublePossibleValues,
-                            doublePossibleValuesIndex);
+                            doublePossibleIndexes);
                 }
             }
         }
@@ -1331,11 +1332,11 @@ public class SolverRuleBased
     
     private void nakedDoubleColumn(int column,
             ArrayList<Integer> doublePossibleValues, 
-            ArrayList<Integer> doublePossibleValuesIndex)
+            ArrayList<Integer> doublePossibleIndexes)
     {
         for (int i = 0; i < size; i++)
         {
-            if (!doublePossibleValuesIndex.contains(i))
+            if (!doublePossibleIndexes.contains(i))
             {
                 possibleValues[i][column].removeAll(doublePossibleValues);
             }
@@ -1360,11 +1361,14 @@ private void hiddenSingle()
     {
         ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
         int[] possibleValuesFrequency = new int[size];
-        ArrayList<Integer> value = new ArrayList();
-        ArrayList<Integer> columnValue = new ArrayList();
-        for (ArrayList<Integer> rowPossibleValue : rowPossibleValues) {
-            for (int i = 1; i <= possibleValuesFrequency.length; i++) {
-                if (rowPossibleValue.contains(i)) {
+        ArrayList<Integer> columnValues = new ArrayList();
+        ArrayList<Integer> columnIndexes = new ArrayList();
+        for (ArrayList<Integer> rowPossibleValue : rowPossibleValues)
+        {
+            for (int i = 1; i <= possibleValuesFrequency.length; i++)
+            {
+                if (rowPossibleValue.contains(i))
+                {
                     possibleValuesFrequency[i - 1]++;
                 }
             }
@@ -1373,24 +1377,24 @@ private void hiddenSingle()
         {
             if (possibleValuesFrequency[i] == 1)
             {
-                value.add(i + 1);
+                columnValues.add(i + 1);
             }
         }
-        for (int i = 0; i < value.size(); i++)
+        for (int i = 0; i < columnValues.size(); i++)
         {
             for (int j = 0; j < rowPossibleValues.length; j++)
             {
-                if (rowPossibleValues[j].contains(value.get(i)))
+                if (rowPossibleValues[j].contains(columnValues.get(i)))
                 {
-                    columnValue.add(j);
+                    columnIndexes.add(j);
                 }
             }
         }
-        for (int i = 0; i < value.size(); i++)
+        for (int i = 0; i < columnValues.size(); i++)
         {
-            if (rowPossibleValues[columnValue.get(i)].size() >= 2)
+            if (rowPossibleValues[columnIndexes.get(i)].size() >= 2)
             {
-                hiddenSingle(row, columnValue.get(i), value.get(i));
+                hiddenSingle(row, columnIndexes.get(i), columnValues.get(i));
             }
         }
     }
@@ -1407,11 +1411,14 @@ private void hiddenSingle()
     {
         ArrayList<Integer>[] columnPossibleValues = getColumnPossibleValues(column);
         int[] possibleValuesFrequency = new int[size];
-        ArrayList<Integer> value = new ArrayList();
-        ArrayList<Integer> rowValue = new ArrayList();
-        for (ArrayList<Integer> columnPossibleValue : columnPossibleValues) {
-            for (int i = 1; i <= possibleValuesFrequency.length; i++) {
-                if (columnPossibleValue.contains(i)) {
+        ArrayList<Integer> rowValues = new ArrayList();
+        ArrayList<Integer> rowIndexes = new ArrayList();
+        for (ArrayList<Integer> columnPossibleValue : columnPossibleValues)
+        {
+            for (int i = 1; i <= possibleValuesFrequency.length; i++)
+            {
+                if (columnPossibleValue.contains(i))
+                {
                     possibleValuesFrequency[i - 1]++;
                 }
             }
@@ -1420,24 +1427,24 @@ private void hiddenSingle()
         {
             if (possibleValuesFrequency[i] == 1)
             {
-                value.add(i + 1);
+                rowValues.add(i + 1);
             }
         }
-        for (int i = 0; i < value.size(); i++)
+        for (int i = 0; i < rowValues.size(); i++)
         {
             for (int j = 0; j < columnPossibleValues.length; j++)
             {
-                if (columnPossibleValues[j].contains(value.get(i)))
+                if (columnPossibleValues[j].contains(rowValues.get(i)))
                 {
-                    rowValue.add(j);
+                    rowIndexes.add(j);
                 }
             }
         }
-        for (int i = 0; i < value.size(); i++)
+        for (int i = 0; i < rowValues.size(); i++)
         {
-            if (columnPossibleValues[rowValue.get(i)].size() >= 2)
+            if (columnPossibleValues[rowIndexes.get(i)].size() >= 2)
             {
-                hiddenSingle(rowValue.get(i), column, value.get(i));
+                hiddenSingle(rowIndexes.get(i), column, rowValues.get(i));
             }
         }
     }
@@ -1445,6 +1452,226 @@ private void hiddenSingle()
     private void hiddenSingle(int row, int column, int value)
     {
         setCellValue(row, column, value);
+    }
+    
+    private void hiddenDouble()
+    {
+        hiddenDoubleRow();
+        hiddenDoubleColumn();
+    }
+    
+    private void hiddenDoubleRow()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            hiddenDoubleRow(i);
+        }
+    }
+    
+    private void hiddenDoubleRow(int row)
+    {
+        ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
+        int[] possibleValuesFrequency = new int[size];
+        ArrayList<Integer> columnValues = new ArrayList();
+        ArrayList<ArrayList<Integer>> columnIndexes = new ArrayList();
+        ArrayList<ArrayList<Integer>> uniqueColumnIndexes = new ArrayList();
+        ArrayList<Integer> uniqueColumnIndexesFrequency = new ArrayList();
+        for (ArrayList<Integer> rowPossibleValue : rowPossibleValues)
+        {
+            for (int i = 1; i <= possibleValuesFrequency.length; i++)
+            {
+                if (rowPossibleValue.contains(i))
+                {
+                    possibleValuesFrequency[i - 1]++;
+                }
+            }
+        }
+        for (int i = 0; i < possibleValuesFrequency.length; i++)
+        {
+            if (possibleValuesFrequency[i] == 2)
+            {
+                columnValues.add(i + 1);
+            }
+        }
+        for (int i = 0; i < columnValues.size(); i++)
+        {
+            ArrayList<Integer> columns = new ArrayList();
+            for (int j = 0; j < size; j++)
+            {
+                if (rowPossibleValues[j].contains(columnValues.get(i)))
+                {
+                    columns.add(j);
+                }
+            }
+            columnIndexes.add(columns);
+        }
+        for (int i = 0; i < columnIndexes.size(); i++)
+        {
+            if (!uniqueColumnIndexes.contains(columnIndexes.get(i)))
+            {
+                uniqueColumnIndexes.add(columnIndexes.get(i));
+            }
+        }
+        for (int i = 0; i < uniqueColumnIndexes.size(); i++)
+        {
+            uniqueColumnIndexesFrequency.add(Collections.frequency(
+                    columnIndexes, uniqueColumnIndexes.get(i)));
+        }
+        for (int i = 0; i < uniqueColumnIndexesFrequency.size(); i++)
+        {
+            if (uniqueColumnIndexesFrequency.get(i) == 2)
+            {
+                ArrayList<Integer> doubleColumnIndexes = 
+                        uniqueColumnIndexes.get(i);
+                ArrayList<ArrayList<Integer>> uniqueDoubleColumnValues = 
+                        new ArrayList();
+                ArrayList<Integer> doubleColumnValues = new ArrayList();
+                for (int j = 0; j < doubleColumnIndexes.size(); j++)
+                {
+                    if (!uniqueDoubleColumnValues.contains(
+                            rowPossibleValues[doubleColumnIndexes.get(j)]))
+                    {
+                        uniqueDoubleColumnValues.add(
+                                rowPossibleValues[doubleColumnIndexes.get(j)]);
+                    }
+                }
+                for (int j = 0; j < uniqueDoubleColumnValues.size(); j++)
+                {
+                    for (int k = 0; k < uniqueDoubleColumnValues.get(j).size(); 
+                            k++)
+                    {
+                        doubleColumnValues.add(
+                                uniqueDoubleColumnValues.get(j).get(k));
+                    }
+                }
+                if (rowPossibleValues[doubleColumnIndexes.get(0)].size() >= 3 
+                        && rowPossibleValues[doubleColumnIndexes.get(1)].size() 
+                        >= 3)
+                {
+                    hiddenDoubleRow(row, doubleColumnValues, 
+                            doubleColumnIndexes);
+                }
+            }
+        }
+    }
+    
+    private void hiddenDoubleRow(int row, 
+            ArrayList<Integer> doubleColumnValues, 
+            ArrayList<Integer> doubleColumnIndexes)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (!doubleColumnIndexes.contains(i))
+            {
+                possibleValues[row][i].removeAll(doubleColumnValues);
+            }
+        }
+    }
+    
+    private void hiddenDoubleColumn()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            hiddenDoubleColumn(i);
+        }
+    }
+    
+    private void hiddenDoubleColumn(int column)
+    {
+        ArrayList<Integer>[] columnPossibleValues = getRowPossibleValues(column);
+        int[] possibleValuesFrequency = new int[size];
+        ArrayList<Integer> rowValues = new ArrayList();
+        ArrayList<ArrayList<Integer>> rowIndexes = new ArrayList();
+        ArrayList<ArrayList<Integer>> uniqueRowIndexes = new ArrayList();
+        ArrayList<Integer> uniqueRowIndexesFrequency = new ArrayList();
+        for (ArrayList<Integer> columnPossibleValue : columnPossibleValues)
+        {
+            for (int i = 1; i <= possibleValuesFrequency.length; i++)
+            {
+                if (columnPossibleValue.contains(i))
+                {
+                    possibleValuesFrequency[i - 1]++;
+                }
+            }
+        }
+        for (int i = 0; i < possibleValuesFrequency.length; i++)
+        {
+            if (possibleValuesFrequency[i] == 2)
+            {
+                rowValues.add(i + 1);
+            }
+        }
+        for (int i = 0; i < rowValues.size(); i++)
+        {
+            ArrayList<Integer> rows = new ArrayList();
+            for (int j = 0; j < size; j++)
+            {
+                if (columnPossibleValues[j].contains(rowValues.get(i)))
+                {
+                    rows.add(j);
+                }
+            }
+            rowIndexes.add(rows);
+        }
+        for (int i = 0; i < rowIndexes.size(); i++)
+        {
+            if (!uniqueRowIndexes.contains(rowIndexes.get(i)))
+            {
+                uniqueRowIndexes.add(rowIndexes.get(i));
+            }
+        }
+        for (int i = 0; i < uniqueRowIndexes.size(); i++)
+        {
+            uniqueRowIndexesFrequency.add(Collections.frequency(rowIndexes, 
+                    uniqueRowIndexes.get(i)));
+        }
+        for (int i = 0; i < uniqueRowIndexesFrequency.size(); i++)
+        {
+            if (uniqueRowIndexesFrequency.get(i) == 2)
+            {
+                ArrayList<Integer> doubleRowIndexes = uniqueRowIndexes.get(i);
+                ArrayList<ArrayList<Integer>> uniqueDoubleRowValues = 
+                        new ArrayList();
+                ArrayList<Integer> doubleRowValues = new ArrayList();
+                for (int j = 0; j < doubleRowIndexes.size(); j++)
+                {
+                    if (!uniqueDoubleRowValues.contains(
+                            columnPossibleValues[doubleRowIndexes.get(j)]))
+                    {
+                        uniqueDoubleRowValues.add(
+                                columnPossibleValues[doubleRowIndexes.get(j)]);
+                    }
+                }
+                for (int j = 0; j < uniqueDoubleRowValues.size(); j++)
+                {
+                    for (int k = 0; k < uniqueDoubleRowValues.get(j).size(); 
+                            k++)
+                    {
+                        doubleRowValues.add(
+                                uniqueDoubleRowValues.get(j).get(k));
+                    }
+                }
+                if (columnPossibleValues[doubleRowIndexes.get(0)].size() >= 3 
+                        && columnPossibleValues[doubleRowIndexes.get(1)].size() 
+                        >= 3)
+                {
+                    hiddenDoubleRow(column, doubleRowValues, doubleRowIndexes);
+                }
+            }
+        }
+    }
+    
+    private void hiddenDoubleColumn(int column, 
+            ArrayList<Integer> doubleRowValues, 
+            ArrayList<Integer> doubleRowIndexes)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (!doubleRowIndexes.contains(i))
+            {
+                possibleValues[i][column].removeAll(doubleRowValues);
+            }
+        }
     }
     
     public void printGrid()
