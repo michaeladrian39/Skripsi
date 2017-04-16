@@ -44,10 +44,8 @@ public class SolverRuleBased
     {
         singleSquare();
         killerCombination();
-        nakedSingle();
-        nakedDouble();
-        hiddenSingle();
-        hiddenDouble();
+        nakedSubset();
+        hiddenSubset();
         printGrid();
         printPossibleValues();
     }
@@ -1079,56 +1077,10 @@ public class SolverRuleBased
         return array;
     }
     
-    private void setCellValue(int row, int column, int value)
+    private void nakedSubset()
     {
-        grid.setCellValue(row, column, value);
-        removePossibleValues(row, column, value);
-    }
-    
-    private void removePossibleValues(int row, int column, int value)
-    {
-        possibleValues[row][column].clear();
-        for (int i = 0; i < size; i++)
-        {
-            if (possibleValues[i][column].contains(value))
-            {
-                possibleValues[i][column].remove(
-                        possibleValues[i][column].indexOf(value));
-            }
-        }
-        for (int i = 0; i < size; i++)
-        {
-            if (possibleValues[row][i].contains(value))
-            {
-                possibleValues[row][i].remove(
-                        possibleValues[row][i].indexOf(value));
-            }
-        }
-    }
-    
-    private void removeImpossibleValuesCage(Cage cage, ArrayList<Integer> array)
-    {
-        for (int i = 0; i < cage.getSize(); i++)
-        {
-            removeImpossibleValuesCell(cage.getCells().get(i).getRow(), 
-                cage.getCells().get(i).getColumn(), array);
-        }
-    }
-    
-    private void removeImpossibleValuesCell(int row, int column, 
-            ArrayList<Integer> array)
-    {
-        possibleValues[row][column].retainAll(array);
-    }
-    
-    private ArrayList<Integer> createRetainAllArray()
-    {
-        ArrayList<Integer> array = new ArrayList();
-        for (int i = 1; i <= size; i++)
-        {
-            array.add(i);
-        }
-        return array;
+        nakedSingle();
+        nakedDouble();
     }
     
     private void nakedSingle()
@@ -1343,7 +1295,13 @@ public class SolverRuleBased
         }
     }
     
-private void hiddenSingle()
+    private void hiddenSubset()
+    {
+        hiddenSingle();
+        hiddenDouble();
+    }
+    
+    private void hiddenSingle()
     {
         hiddenSingleRow();
         hiddenSingleColumn();
@@ -1655,7 +1613,7 @@ private void hiddenSingle()
                         && columnPossibleValues[doubleRowIndexes.get(1)].size() 
                         >= 3)
                 {
-                    hiddenDoubleRow(column, doubleRowValues, doubleRowIndexes);
+                    hiddenDoubleColumn(column, doubleRowValues, doubleRowIndexes);
                 }
             }
         }
@@ -1672,6 +1630,58 @@ private void hiddenSingle()
                 possibleValues[i][column].removeAll(doubleRowValues);
             }
         }
+    }
+    
+    private void setCellValue(int row, int column, int value)
+    {
+        grid.setCellValue(row, column, value);
+        removePossibleValues(row, column, value);
+    }
+    
+    private void removePossibleValues(int row, int column, int value)
+    {
+        possibleValues[row][column].clear();
+        for (int i = 0; i < size; i++)
+        {
+            if (possibleValues[i][column].contains(value))
+            {
+                possibleValues[i][column].remove(
+                        possibleValues[i][column].indexOf(value));
+            }
+        }
+        for (int i = 0; i < size; i++)
+        {
+            if (possibleValues[row][i].contains(value))
+            {
+                possibleValues[row][i].remove(
+                        possibleValues[row][i].indexOf(value));
+            }
+        }
+    }
+    
+    private void removeImpossibleValuesCage(Cage cage, ArrayList<Integer> array)
+    {
+        for (int i = 0; i < cage.getSize(); i++)
+        {
+            removeImpossibleValuesCell(cage.getCells().get(i).getRow(), 
+                cage.getCells().get(i).getColumn(), array);
+        }
+    }
+    
+    private void removeImpossibleValuesCell(int row, int column, 
+            ArrayList<Integer> array)
+    {
+        possibleValues[row][column].retainAll(array);
+    }
+    
+    private ArrayList<Integer> createRetainAllArray()
+    {
+        ArrayList<Integer> array = new ArrayList();
+        for (int i = 1; i <= size; i++)
+        {
+            array.add(i);
+        }
+        return array;
     }
     
     public void printGrid()
