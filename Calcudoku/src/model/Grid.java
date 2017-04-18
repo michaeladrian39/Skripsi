@@ -413,6 +413,21 @@ public class Grid
         return true;
     }
     
+    public boolean isFilled()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (getGrid()[i][j].getValue() == null || isCellValueValid(i, j) == false)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
     public Integer getCellValue(int row, int column)
     {
         return getGrid()[row][column].getValue();

@@ -37,18 +37,29 @@ public class SolverRuleBased
                 }
             }
         }
-        solve();
     }
     
-    public void solve()
+    public Grid solve()
     {
         singleSquare();
-        killerCombination();
+        killerCombination();;
+        ArrayList<ArrayList<Integer>> currentGridArrayList 
+                = getGridArrayList();
+        ArrayList<ArrayList<Integer>> newGridArrayList = solveLoop();
+        while(!currentGridArrayList.equals(newGridArrayList))
+        {
+            currentGridArrayList = newGridArrayList;
+            newGridArrayList = solveLoop();
+        }
+        return grid;
+    }
+    
+    public ArrayList<ArrayList<Integer>> solveLoop()
+    {
         nakedSubset();
         hiddenSubset();
         evilTwin();
-        printGrid();
-        printPossibleValues();
+        return getGridArrayList();
     }
     
     private ArrayList<Integer>[] getRowPossibleValues(int row)
@@ -1750,6 +1761,21 @@ public class SolverRuleBased
             array.add(i);
         }
         return array;
+    }
+    
+    private ArrayList<ArrayList<Integer>> getGridArrayList()
+    {
+        ArrayList<ArrayList<Integer>> gridArrayList = new ArrayList();
+        for (int i = 0; i < size; i++)
+        {
+            ArrayList<Integer> gridArrayListRow = new ArrayList();
+            for (int j = 0; j < size; j++)
+            {
+                gridArrayListRow.add(grid.getCellValue(i, j));
+            }
+            gridArrayList.add(gridArrayListRow);
+        }
+        return gridArrayList;
     }
     
     public void printGrid()
