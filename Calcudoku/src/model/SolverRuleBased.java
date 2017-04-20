@@ -19,6 +19,12 @@ public class SolverRuleBased
     {
         this.grid = grid;
         this.size = grid.getSize();
+        this.possibleValues = generatePossibleValuesArray();
+        solve();
+    }
+    
+    private ArrayList<Integer>[][] generatePossibleValuesArray()
+    {
         possibleValues = new ArrayList[size][size];
         for (int i = 0; i < size; i++)
         {
@@ -37,12 +43,13 @@ public class SolverRuleBased
                 }
             }
         }
+        return possibleValues;
     }
     
-    public Grid solve()
+    public boolean solve()
     {
         singleSquare();
-        killerCombination();;
+        killerCombination();
         ArrayList<ArrayList<Integer>> currentGridArrayList 
                 = getGridArrayList();
         ArrayList<ArrayList<Integer>> newGridArrayList = solveLoop();
@@ -51,7 +58,7 @@ public class SolverRuleBased
             currentGridArrayList = newGridArrayList;
             newGridArrayList = solveLoop();
         }
-        return grid;
+        return grid.isFilled();     
     }
     
     public ArrayList<ArrayList<Integer>> solveLoop()
@@ -1776,6 +1783,16 @@ public class SolverRuleBased
             gridArrayList.add(gridArrayListRow);
         }
         return gridArrayList;
+    }
+    
+    public Grid getGrid()
+    {
+        return grid;
+    }
+    
+    public ArrayList<Integer>[][] getPossibleValues()
+    {
+        return possibleValues;
     }
     
     public void printGrid()

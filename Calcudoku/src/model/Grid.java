@@ -345,10 +345,16 @@ public class Grid
         return isCageValuesValid(getGrid()[row][column].getCageID()) != false;
     }
     
-    private boolean isCellValueValid(int row, int column)
+    public boolean isCellValueValid(int row, int column)
     {
         return (isRowValid(row) && isColumnValid(column) 
                     && isCageValid(row, column));
+    }
+    
+    public boolean solverIsCellValueValid(int row, int column)
+    {
+        return (solverIsRowValid(row) && solverIsColumnValid(column) 
+                    && solverIsCageValid(row, column));
     }
     
     public boolean setCellValue(int row, int column, Integer value)
@@ -419,7 +425,7 @@ public class Grid
         {
             for (int j = 0; j < size; j++)
             {
-                if (getGrid()[i][j].getValue() == null || isCellValueValid(i, j) == false)
+                if (getGrid()[i][j].getValue() == null)
                 {
                     return false;
                 }

@@ -71,6 +71,11 @@ public class SolverBacktracking
         return false;
     }
     
+    public Grid getGrid()
+    {
+        return grid;
+    }
+    
     public void printGrid()
     {
         Cell[][] cells = grid.getGrid();

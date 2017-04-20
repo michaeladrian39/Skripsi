@@ -41,8 +41,9 @@ public class SolverHybridGenetic
     public boolean solve()
     {
         SolverRuleBased srb = new SolverRuleBased(grid);
-        gridRuleBased = srb.solve();
-        if (gridRuleBased.isFilled() == true)
+        boolean isFilled = srb.solve();
+        gridRuleBased = srb.getGrid();
+        if (isFilled)
         {
             return true;
         }
@@ -53,9 +54,8 @@ public class SolverHybridGenetic
         return false;
     }
     
-    public void printGrid()
+    public void printGrid(Cell[][] cells)
     {
-        Cell[][] cells = grid.getGrid();
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
