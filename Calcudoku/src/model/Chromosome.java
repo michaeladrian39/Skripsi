@@ -5,30 +5,30 @@
  */
 package model;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author michaeladrian39
  */
-public class Chromosome implements Comparable<Chromosome>
+public class Chromosome
 {
     
     private final Grid grid;
     private final int size;
-    private double fitness;
+    private final double fitness;
     
     public Chromosome(Grid grid)
     {
         this.grid = grid;
         this.size = grid.getSize();
-        printGrid();
-        setFitness();
-        System.out.println(getFitness());
+        this.fitness = setFitness();
     }
     
     private double setFitness()
     {
-        int numberOfValidCells = 0;
-        int numberOfCells = size * size;
+        double numberOfValidCells = 0;
+        double numberOfCells = size * size;
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
@@ -39,37 +39,23 @@ public class Chromosome implements Comparable<Chromosome>
                 }
             }
         }
-        System.out.println(numberOfValidCells);
-        double fitness = numberOfValidCells / numberOfCells;
-        return fitness;
+        double value = numberOfValidCells / numberOfCells;
+        return value;
     }
     
-    private double getFitness()
+    public double getFitness()
     {
         return fitness;
     }
     
-
-    @Override
-    public int compareTo(Chromosome otherChromosome)
+    public Grid getGrid()
     {
-        if (this.getFitness() - otherChromosome.getFitness() > 0)
-        {
-            return 1;
-        }
-        else if (this.getFitness() - otherChromosome.getFitness() < 0)
-        {
-            return -1;
-        }
-        else
-        {
-            return 0;
-        }
+        return grid;
     }
 
     public void printGrid()
     {
-        Cell[][] cells = grid.getGrid();
+        Cell[][] cells = grid.getGridContents();
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)

@@ -324,8 +324,9 @@ public class Grid
     private boolean isCageValid(int row, int column)
     {
         ArrayList<Integer> cage = 
-                getCageValues(getGrid()[row][column].getCageID());
-        if (isCageValuesValid(getGrid()[row][column].getCageID()) == false)
+                getCageValues(getGridContents()[row][column].getCageID());
+        if (isCageValuesValid(
+                getGridContents()[row][column].getCageID()) == false)
         {
             JOptionPane.showMessageDialog(null, 
                 "Values of cells in the cage do not reach the target number.",
@@ -341,8 +342,9 @@ public class Grid
     private boolean solverIsCageValid(int row, int column)
     {
         ArrayList<Integer> cage = 
-                getCageValues(getGrid()[row][column].getCageID());
-        return isCageValuesValid(getGrid()[row][column].getCageID()) != false;
+                getCageValues(getGridContents()[row][column].getCageID());
+        return isCageValuesValid(
+                getGridContents()[row][column].getCageID()) != false;
     }
     
     public boolean isCellValueValid(int row, int column)
@@ -361,7 +363,7 @@ public class Grid
     {
         if (value > 0 && value <= size)
         {
-            getGrid()[row][column].setValue(value);
+            getGridContents()[row][column].setValue(value);
             return isCellValueValid(row, column);
         }
         else
@@ -377,7 +379,7 @@ public class Grid
     {
         if (value > 0 && value <= size)
         {
-            getGrid()[row][column].setValue(value);
+            getGridContents()[row][column].setValue(value);
             return (solverIsRowValid(row) && solverIsColumnValid(column) 
                     && solverIsCageValid(row, column));
         }
@@ -389,7 +391,7 @@ public class Grid
     
     public void unsetCellValue(int row, int column)
     {
-        getGrid()[row][column].setValue(null);
+        getGridContents()[row][column].setValue(null);
     }
     
     public Boolean isWin()
@@ -398,7 +400,7 @@ public class Grid
         {
             for (int j = 0; j < size; j++)
             {
-                if (getGrid()[i][j].getValue() == null)
+                if (getGridContents()[i][j].getValue() == null)
                 {
                     JOptionPane.showMessageDialog(null, 
                             "There are empty cells in the grid.", 
@@ -425,7 +427,7 @@ public class Grid
         {
             for (int j = 0; j < size; j++)
             {
-                if (getGrid()[i][j].getValue() == null)
+                if (getGridContents()[i][j].getValue() == null)
                 {
                     return false;
                 }
@@ -436,7 +438,7 @@ public class Grid
     
     public Integer getCellValue(int row, int column)
     {
-        return getGrid()[row][column].getValue();
+        return getGridContents()[row][column].getValue();
     }
         
     public int getSize()
@@ -459,7 +461,7 @@ public class Grid
         return cageObjectives;
     }
     
-    public Cell[][] getGrid()
+    public Cell[][] getGridContents()
     {
         return grid;
     }

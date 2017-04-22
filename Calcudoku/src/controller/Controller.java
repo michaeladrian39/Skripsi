@@ -74,7 +74,7 @@ public class Controller
     
     public Cell[][] getGrid()
     {
-        return g.getGrid();
+        return g.getGridContents();
     }
     
     public Cage[] getCages()
