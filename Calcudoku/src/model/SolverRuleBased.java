@@ -13,6 +13,7 @@ public class SolverRuleBased
     
     private final Grid grid;
     private final int size;
+    private Grid solution;
     ArrayList<Integer>[][] possibleValues;
     
     public SolverRuleBased(Grid grid)
@@ -58,7 +59,15 @@ public class SolverRuleBased
             currentGridArrayList = newGridArrayList;
             newGridArrayList = solveLoop();
         }
-        return grid.isFilled();     
+        if (grid.isFilled())
+        {
+            this.solution = grid;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     public ArrayList<ArrayList<Integer>> solveLoop()
@@ -1788,6 +1797,11 @@ public class SolverRuleBased
     public Grid getGrid()
     {
         return grid;
+    }
+    
+    public Grid getSolution()
+    {
+        return solution;
     }
     
     public ArrayList<Integer>[][] getPossibleValues()

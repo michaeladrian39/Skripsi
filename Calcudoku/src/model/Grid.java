@@ -344,7 +344,7 @@ public class Grid
         ArrayList<Integer> cage = 
                 getCageValues(getGridContents()[row][column].getCageID());
         return isCageValuesValid(
-                getGridContents()[row][column].getCageID()) != false;
+                getGridContents()[row][column].getCageID()) == true;
     }
     
     public boolean isCellValueValid(int row, int column)

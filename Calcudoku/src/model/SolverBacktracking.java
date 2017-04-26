@@ -12,6 +12,7 @@ public class SolverBacktracking
     
     private final Grid grid;
     private final int size;
+    private Grid solution;
     
     public SolverBacktracking(Grid grid)
     {
@@ -21,6 +22,7 @@ public class SolverBacktracking
         if (solve() == true)
         {
             float endTime = System.nanoTime();
+            this.solution = grid;
             float duration = (endTime - startTime) / 1000000000;
             JOptionPane.showMessageDialog(null, 
                     "The backtracking algorithm has successfully solved the puzzle." 
@@ -51,13 +53,13 @@ public class SolverBacktracking
             row++;
             if (row >= size)
             {
-                printGrid();
+                printGrid(grid.getGridContents());
                 return true;
             }
         }
         for (int value = 1; value <= size; value++)
         {
-            printGrid();
+            printGrid(grid.getGridContents());
             if (grid.solverSetCellValue(row, column, value))
             {
                 if (solve(row, column + 1))
@@ -66,7 +68,7 @@ public class SolverBacktracking
                 }
             }
         }
-        printGrid();
+        printGrid(grid.getGridContents());
         grid.unsetCellValue(row, column);
         return false;
     }
@@ -76,9 +78,13 @@ public class SolverBacktracking
         return grid;
     }
     
-    public void printGrid()
+    public Grid getSolution()
     {
-        Cell[][] cells = grid.getGridContents();
+        return solution;
+    }
+    
+    public void printGrid(Cell[][] cells)
+    {
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)

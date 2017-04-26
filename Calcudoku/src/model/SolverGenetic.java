@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
@@ -16,10 +15,12 @@ public class SolverGenetic
     private final int size;
     private final boolean[][] isCellFixed;
     private final Random randomGenerator;
-    private int generationsNumber = 10;
+    private int generationsNumber = 1000;
     private int populationSize = 1000;
     private double elitismRate = 0.1;
-    private double mutationRate = 0.5;
+    private double mutationRate = 0.1;
+    private double crossoverRate = 0.9;
+    private Grid solution;
     ArrayList<Chromosome> currentGeneration = new ArrayList();
     ArrayList<Chromosome> nextGeneration = new ArrayList();
     
@@ -28,52 +29,74 @@ public class SolverGenetic
         this.grid = grid;
         this.size = grid.getSize();
         this.isCellFixed = generateIsCellFixedArray();
-        this.randomGenerator = new Random();
+        this.randomGenerator = new Random();   
         generatePopulation();
         solve();
     }
     
-    private boolean solve()
+    public boolean solve()
     {
         for (int i = 0; i < generationsNumber; i++)
         {
+            System.out.println("GENERATION " + (i + 1));
             solveLoop();
             sortChromosomes();
             for (int j = 0; j < populationSize; j++)
             {
+                printGrid(currentGeneration.get(j).getGrid().getGridContents());
+                System.out.println(currentGeneration.get(j).getFitness());
                 if (currentGeneration.get(j).getFitness() == 1.0)
                 {
+                    this.solution = currentGeneration.get(j).getGrid();
                     return true;
                 }
             }
         }
         return false;
     }
-    
+
     private void solveLoop()
     {
-        long elitismNumber = Math.round(populationSize * elitismRate);
-        long mutationNumber = Math.round(populationSize * mutationRate);
-        long crossoverNumber 
-                = (populationSize - elitismNumber - mutationNumber) / 2;
+        ArrayList<Chromosome> nonElitism = new ArrayList();
+        int elitismNumber = (int) Math.round(populationSize * elitismRate);
+        int mutationNumber = (int) Math.round(populationSize * mutationRate);
+        int crossoverNumber
+                =  (int) Math.round((populationSize * crossoverRate) / 2);
+        int nonElitismNumber = populationSize - elitismNumber;
         sortChromosomes();
+        for (int i = 0; i < populationSize; i++)
+        {
+            printGrid(currentGeneration.get(i).getGrid().getGridContents());
+            System.out.println(currentGeneration.get(i).getFitness());
+        }
         for (int i = 0; i < elitismNumber; i++)
         {
-            nextGeneration.add(currentGeneration.get(i));
-        }
-        for (int i = 0; i < mutationNumber; i++)
-        {
-            nextGeneration.add(mutation(tournamentSelection()));
+            if (!nextGeneration.contains(currentGeneration.get(i)))
+            {
+                nextGeneration.add(cloneChromosome(currentGeneration.get(i)));
+            }
         }
         for (int i = 0; i < crossoverNumber; i++)
         {
-            nextGeneration.addAll(crossover(tournamentSelection(), 
-                    tournamentSelection()));
+            nonElitism.addAll(crossover(randomSelection(currentGeneration),
+                    randomSelection(currentGeneration)));
         }
-        for (int i = 0; i < nextGeneration.size(); i++)
+        while (nonElitism.size() < nonElitismNumber)
         {
-            System.out.println(nextGeneration.get(i).getFitness());
+            Chromosome c = randomSelection(currentGeneration);
+            while (!nextGeneration.contains(c))
+            {
+                c = randomSelection(currentGeneration);
+            }
+            nonElitism.add(c);
         }
+        for (int i = 0; i < mutationNumber; i++)
+        {
+            Chromosome parent = randomSelection(nonElitism);
+            nextGeneration.add(mutation(parent));
+            nonElitism.remove(parent);
+        }
+        nextGeneration.addAll(nonElitism);
         currentGeneration = nextGeneration;
         nextGeneration = new ArrayList();
     }
@@ -111,11 +134,11 @@ public class SolverGenetic
     {
         for (int i = 0; i < populationSize; i++)
         {
-            generateChromosome();
+            currentGeneration.add(generateChromosome());
         }
     }
     
-    private void generateChromosome()
+    private Chromosome generateChromosome()
     {
         Grid chromosomeGrid = new Grid(size, grid.getNumberOfCages(), 
                 grid.getCageCells(), grid.getCageObjectives());
@@ -146,7 +169,7 @@ public class SolverGenetic
             }
         }
         Chromosome c = new Chromosome(chromosomeGrid);
-        currentGeneration.add(c);
+        return c;
     }
     
     private void sortChromosomes()
@@ -155,22 +178,11 @@ public class SolverGenetic
                 new ChromosomeComparator().reversed());
     }
     
-    private Chromosome tournamentSelection()
+    private Chromosome randomSelection(ArrayList<Chromosome> chromosomes)
     {
-        Chromosome bestChromosome;
-        ArrayList<Chromosome> randomChromosomes = new ArrayList();
-        int randomNumberOfChromosomes = 
-                randomGenerator.nextInt(populationSize) + 1;
-        for (int i = 0; i < randomNumberOfChromosomes; i++)
-        {
-            int randomChromosomeIndex = 
-                    randomGenerator.nextInt(populationSize);
-            randomChromosomes.add(
-                    currentGeneration.get(randomChromosomeIndex));
-        }
-        bestChromosome = Collections.max(randomChromosomes, 
-                new ChromosomeComparator());
-        return bestChromosome;
+        int randomIndex = randomGenerator.nextInt(chromosomes.size());
+        Chromosome c = cloneChromosome(chromosomes.get(randomIndex));
+        return c;
     }
     
     private Chromosome cloneChromosome(Chromosome c)
@@ -192,7 +204,11 @@ public class SolverGenetic
     private ArrayList<Chromosome> crossover(Chromosome parent1, 
             Chromosome parent2)
     {
-        ArrayList<Chromosome> childChromosomes = new ArrayList();
+        while (parent1 == parent2 || parent1.equals(parent2))
+        {
+            parent1 = randomSelection(currentGeneration);
+            parent2 = randomSelection(currentGeneration);
+        }
         Grid childGrid1 = new Grid(size, grid.getNumberOfCages(), 
                 grid.getCageCells(), grid.getCageObjectives());
         Grid childGrid2 = new Grid(size, grid.getNumberOfCages(), 
@@ -218,6 +234,7 @@ public class SolverGenetic
                 }
             }
         }
+        ArrayList<Chromosome> childChromosomes = new ArrayList();
         Chromosome child1 = new Chromosome(childGrid1);
         Chromosome child2 = new Chromosome(childGrid2);
         childChromosomes.add(child1);
@@ -258,9 +275,17 @@ public class SolverGenetic
             }
         }
         Chromosome child = new Chromosome(childGrid);
-        printGrid(parent.getGrid().getGridContents());
-        printGrid(child.getGrid().getGridContents());
         return child;
+    }
+    
+    public Grid getGrid()
+    {
+        return grid;
+    }
+    
+    public Grid getSolution()
+    {
+        return solution;
     }
     
     public void printGrid(Cell[][] cells)

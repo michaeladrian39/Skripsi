@@ -50,6 +50,10 @@ public class SolverHybridGenetic
         else
         {
             SolverGenetic sg = new SolverGenetic(gridRuleBased);
+            if (sg.solve() == true)
+            {
+                return true;
+            }
         }
         return false;
     }
