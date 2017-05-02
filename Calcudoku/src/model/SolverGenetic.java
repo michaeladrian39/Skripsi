@@ -15,14 +15,14 @@ public class SolverGenetic
     private final int size;
     private final boolean[][] isCellFixed;
     private final Random randomGenerator;
-    private int generationsNumber = 1000;
+    private int generationsNumber = 100;
     private int populationSize = 1000;
     private double elitismRate = 0.1;
     private double mutationRate = 0.1;
     private double crossoverRate = 0.9;
     private Grid solution;
-    ArrayList<Chromosome> currentGeneration = new ArrayList();
-    ArrayList<Chromosome> nextGeneration = new ArrayList();
+    private ArrayList<Chromosome> currentGeneration = new ArrayList();
+    private ArrayList<Chromosome> nextGeneration = new ArrayList();
     
     public SolverGenetic(Grid grid)
     {
@@ -31,6 +31,11 @@ public class SolverGenetic
         this.isCellFixed = generateIsCellFixedArray();
         this.randomGenerator = new Random();   
         generatePopulation();
+        for (int i = 0; i < currentGeneration.size(); i++)
+        {
+            printGrid(currentGeneration.get(i).getGrid().getGridContents());
+            System.out.println(currentGeneration.get(i).getFitness());
+        }
         solve();
     }
     
@@ -38,7 +43,6 @@ public class SolverGenetic
     {
         for (int i = 0; i < generationsNumber; i++)
         {
-            System.out.println("GENERATION " + (i + 1));
             solveLoop();
             sortChromosomes();
             for (int j = 0; j < populationSize; j++)
@@ -184,6 +188,24 @@ public class SolverGenetic
         Chromosome c = cloneChromosome(chromosomes.get(randomIndex));
         return c;
     }
+    
+    private Chromosome tournamentSelection(ArrayList<Chromosome> chromosomes)
+    {
+        Chromosome bestChromosome;
+        ArrayList<Chromosome> randomChromosomes = new ArrayList();
+        int randomNumberOfChromosomes = 
+                randomGenerator.nextInt(populationSize) + 1;
+        for (int i = 0; i < randomNumberOfChromosomes; i++)
+        {
+            int randomChromosomeIndex = 
+                    randomGenerator.nextInt(populationSize);
+            randomChromosomes.add(
+                    chromosomes.get(randomChromosomeIndex));
+        }
+        bestChromosome = Collections.max(randomChromosomes, 
+                new ChromosomeComparator());
+        return bestChromosome;
+     }
     
     private Chromosome cloneChromosome(Chromosome c)
     {

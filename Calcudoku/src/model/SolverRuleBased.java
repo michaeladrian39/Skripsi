@@ -14,7 +14,7 @@ public class SolverRuleBased
     private final Grid grid;
     private final int size;
     private Grid solution;
-    ArrayList<Integer>[][] possibleValues;
+    private ArrayList<Integer>[][] possibleValues;
     
     public SolverRuleBased(Grid grid)
     {
@@ -78,7 +78,7 @@ public class SolverRuleBased
         return getGridArrayList();
     }
     
-    private ArrayList<Integer>[] getRowPossibleValues(int row)
+    public ArrayList<Integer>[] getRowPossibleValues(int row)
     {
         ArrayList<Integer>[] array;
         array = new ArrayList[size];
@@ -89,7 +89,7 @@ public class SolverRuleBased
         return array;
     }
     
-    private ArrayList<Integer>[] getColumnPossibleValues(int column)
+    public ArrayList<Integer>[] getColumnPossibleValues(int column)
     {
         ArrayList<Integer>[] array;
         array = new ArrayList[size];
@@ -1779,7 +1779,7 @@ public class SolverRuleBased
         return array;
     }
     
-    private ArrayList<ArrayList<Integer>> getGridArrayList()
+    public ArrayList<ArrayList<Integer>> getGridArrayList()
     {
         ArrayList<ArrayList<Integer>> gridArrayList = new ArrayList();
         for (int i = 0; i < size; i++)

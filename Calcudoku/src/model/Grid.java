@@ -281,7 +281,7 @@ public class Grid
         }
     }
     
-    private Boolean solverIsRowValid(int row)
+    private boolean solverIsRowValid(int row)
     {
         ArrayList<Integer> array = getRow(row);
         return isArrayValid(array);

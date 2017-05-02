@@ -22,7 +22,7 @@ public class Tester
         String[] cageObjectives;
         try
         {
-            try (Scanner sc = new Scanner(new File("test6x6.txt")))
+            try (Scanner sc = new Scanner(new File("test5x5.txt")))
             {
                 size = sc.nextInt();
                 cageCells = new int[size][size];
