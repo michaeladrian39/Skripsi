@@ -1754,19 +1754,20 @@ public class SolverRuleBased
         }
     }
     
-    private void removeImpossibleValuesCage(Cage cage, ArrayList<Integer> array)
+    private void removeImpossibleValuesCage(Cage cage, 
+            ArrayList<Integer> values)
     {
         for (int i = 0; i < cage.getSize(); i++)
         {
             removeImpossibleValuesCell(cage.getCells().get(i).getRow(), 
-                cage.getCells().get(i).getColumn(), array);
+                cage.getCells().get(i).getColumn(), values);
         }
     }
     
     private void removeImpossibleValuesCell(int row, int column, 
-            ArrayList<Integer> array)
+            ArrayList<Integer> values)
     {
-        possibleValues[row][column].retainAll(array);
+        possibleValues[row][column].retainAll(values);
     }
     
     private ArrayList<Integer> createRetainAllArray()
