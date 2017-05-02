@@ -106,12 +106,12 @@ public class SolverGenetic
     }
 
     private void setParameters(int generationsNumber, int populationSize, 
-            double crossoverRate, double elitismRate, double mutationRate)
+            double elitismRate, double crossoverRate, double mutationRate)
     {
         this.generationsNumber = generationsNumber;
         this.populationSize = populationSize;
-        this.crossoverRate = crossoverRate;
         this.elitismRate = elitismRate;
+        this.crossoverRate = crossoverRate;
         this.mutationRate = mutationRate;
     }
     
