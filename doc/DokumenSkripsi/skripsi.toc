@@ -22,5 +22,13 @@
 \contentsline {section}{\numberline {3.2}Algoritma \textit {Hybrid Genetic}}{35}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Algoritma \textit {Rule Based}}{35}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Algoritma Genetik}{35}{subsection.3.2.2}
-\contentsline {chapter}{Daftar Referensi}{53}{chapter*.98}
+\contentsline {chapter}{\numberline {4}Perancangan}{53}{chapter.4}
+\contentsline {section}{\numberline {4.1}Perancangan Masukan}{53}{section.4.1}
+\contentsline {section}{\numberline {4.2}Perancangan Keluaran}{53}{section.4.2}
+\contentsline {section}{\numberline {4.3}Diagram Kelas}{53}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Kelas Grid}{55}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Kelas Cage}{59}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Kelas Cell}{61}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Kelas SolverBacktracking}{63}{subsection.4.3.4}
+\contentsline {chapter}{Daftar Referensi}{65}{chapter*.105}
 \renewcommand {\cftchappresnum }{\bf \scshape }

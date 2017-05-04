@@ -23,7 +23,11 @@ public class SolverBacktracking
         {
             float endTime = System.nanoTime();
             this.solution = grid;
+            printGrid(solution.getGridContents());
             float duration = (endTime - startTime) / 1000000000;
+            System.out.println("The backtracking algorithm has successfully "
+                    + "solved the puzzle." + "\nTime elapsed: " + duration 
+                    + " seconds");
             JOptionPane.showMessageDialog(null, 
                     "The backtracking algorithm has successfully solved the puzzle." 
                             + "\nTime elapsed: " + duration + " seconds", 
@@ -33,6 +37,9 @@ public class SolverBacktracking
         {
             float endTime = System.nanoTime();
             float duration = (endTime - startTime) / 1000000000;
+            System.out.println("The backtracking algorithm has failed to solve "
+                    + "the puzzle." + "\nTime elapsed: " + duration 
+                    + " seconds");
             JOptionPane.showMessageDialog(null, 
                     "The backtracking algorithm has failed to solve the puzzle." 
                             + "\nTime elapsed: " + duration + " seconds", 

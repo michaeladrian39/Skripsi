@@ -11,17 +11,17 @@ public class Cage
 {
     
     private final int cageID;
-    private final String objectives;
+    private final String objective;
     private final int targetNumber;
     private final char operator;
     private final ArrayList<Cell> cells;
     
-    public Cage(int cageID, String objectives)
+    public Cage(int cageID, String objective)
     {
         this.cageID = cageID;
-        if (isCageObjectiveValid(objectives))
+        if (isCageObjectiveValid(objective))
         {
-            this.objectives = objectives;
+            this.objective = objective;
         }
         else
         {
@@ -29,8 +29,8 @@ public class Cage
                     "Error", JOptionPane.ERROR_MESSAGE);
             throw new IllegalStateException("Invalid cage objectives.");
         }
-        this.targetNumber = generateTargetNumber(this.objectives);
-        this.operator = generateOperator(this.objectives);
+        this.targetNumber = generateTargetNumber(this.objective);
+        this.operator = generateOperator(this.objective);
         cells = new ArrayList<>();
     }
     

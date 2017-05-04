@@ -91,3 +91,11 @@
 \contentsline {figure}{\numberline {3.69}{\ignorespaces Kromosom 10 dalam Generasi ke-3}}{50}{figure.caption.94}
 \contentsline {figure}{\numberline {3.70}{\ignorespaces Kromosom 11 dalam Generasi ke-3}}{50}{figure.caption.95}
 \contentsline {figure}{\numberline {3.71}{\ignorespaces Kromosom 12 dalam Generasi ke-3}}{50}{figure.caption.96}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Contoh \textit {file} masukan.}}{54}{figure.caption.98}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Contoh keluaran.}}{54}{figure.caption.99}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagram kelas untuk perangkat lunak Calcudoku.}}{56}{figure.caption.100}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagram kelas Grid.}}{60}{figure.caption.101}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram kelas Cage.}}{62}{figure.caption.102}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagram kelas Cell.}}{63}{figure.caption.103}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram kelas SolverBacktracking.}}{64}{figure.caption.104}
