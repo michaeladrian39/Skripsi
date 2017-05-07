@@ -1,8 +1,8 @@
 \select@language {bahasa}
 \contentsline {chapter}{Kata Pengantar}{xv}{chapter*.1}
 \contentsline {chapter}{Daftar Isi}{xvii}{section*.2}
-\contentsline {chapter}{Daftar Gambar}{xviii}{section*.3}
-\contentsline {chapter}{Daftar Tabel}{xxi}{section*.4}
+\contentsline {chapter}{Daftar Gambar}{xix}{section*.3}
+\contentsline {chapter}{Daftar Tabel}{xxii}{section*.4}
 \contentsline {chapter}{\numberline {1}Pendahuluan}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Latar Belakang}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Rumusan Masalah}{2}{section.1.2}
@@ -28,7 +28,17 @@
 \contentsline {section}{\numberline {4.3}Diagram Kelas}{53}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Kelas Grid}{55}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Kelas Cage}{59}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Kelas Cell}{61}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.3}Kelas Cell}{62}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Kelas SolverBacktracking}{63}{subsection.4.3.4}
-\contentsline {chapter}{Daftar Referensi}{65}{chapter*.105}
+\contentsline {subsection}{\numberline {4.3.5}Kelas SolverHybridGenetic}{64}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Kelas SolverRuleBased}{64}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.7}Kelas SolverGenetic}{69}{subsection.4.3.7}
+\contentsline {subsection}{\numberline {4.3.8}Kelas Chromosome}{72}{subsection.4.3.8}
+\contentsline {subsection}{\numberline {4.3.9}Kelas ChromosomeComparator}{73}{subsection.4.3.9}
+\contentsline {subsection}{\numberline {4.3.10}Kelas Controller}{74}{subsection.4.3.10}
+\contentsline {subsection}{\numberline {4.3.11}Kelas Tester}{75}{subsection.4.3.11}
+\contentsline {section}{\numberline {4.4}Diagram Aktivitas}{75}{section.4.4}
+\contentsline {section}{\numberline {4.5}Diagram \textit {Use Case}}{76}{section.4.5}
+\contentsline {section}{\numberline {4.6}Diagram \textit {Sequence}}{77}{section.4.6}
+\contentsline {chapter}{Daftar Referensi}{79}{chapter*.115}
 \renewcommand {\cftchappresnum }{\bf \scshape }

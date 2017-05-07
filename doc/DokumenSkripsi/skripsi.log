@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.22)  4 MAY 2017 13:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.22)  7 MAY 2017 09:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1276,7 +1276,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.13}).
 
-<Gambar/logo-unpar.png, id=135, 360.59718pt x 356.0803pt>
+<Gambar/logo-unpar.png, id=175, 360.59718pt x 356.0803pt>
 File: Gambar/logo-unpar.png Graphic file (type png)
 
 <use Gambar/logo-unpar.png>
@@ -1357,33 +1357,31 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] (./skripsi.toc
 LaTeX Font Info:    Font shape `T1/lmr/bx/sc' in size <10.95> not available
 (Font)              Font shape `T1/cmr/bx/sc' tried instead on input line 2.
-)
+ [17])
 \tf@toc=\write6
 \openout6 = `skripsi.toc'.
 
- [17] (./skripsi.lof
-[18] [19])
+ [18] (./skripsi.lof [19] [20])
 \tf@lof=\write7
 \openout7 = `skripsi.lof'.
 
- [20] (./skripsi.lot)
+ [21] (./skripsi.lot)
 \tf@lot=\write8
 \openout8 = `skripsi.lot'.
 
- [21] [22
-
-]
+ [22]
 \openout2 = `Bab/bab1.aux'.
 
  (./Bab/bab1.tex
 Bab 1.
-<Gambar/HybridGenetic1.jpg, id=514, 280.04625pt x 222.07968pt>
+<Gambar/HybridGenetic1.jpg, id=584, 280.04625pt x 222.07968pt>
 File: Gambar/HybridGenetic1.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic1.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic1.jpg used on input line 15.
 (pdftex.def)             Requested size: 280.04555pt x 222.07913pt.
  [1
+
 
 
 
@@ -1401,7 +1399,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 6.
 
-<Gambar/Backtracking1.jpg, id=571, 150.5625pt x 150.5625pt>
+<Gambar/Backtracking1.jpg, id=641, 150.5625pt x 150.5625pt>
 File: Gambar/Backtracking1.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking1.jpg>
@@ -1412,7 +1410,7 @@ Package pdftex.def Info: Gambar/Backtracking1.jpg used on input line 23.
 
 
 ]
-<Gambar/Backtracking2.jpg, id=587, 150.5625pt x 150.5625pt>
+<Gambar/Backtracking2.jpg, id=658, 150.5625pt x 150.5625pt>
 File: Gambar/Backtracking2.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking2.jpg>
@@ -1424,42 +1422,42 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 67.
 
 [7 <./Gambar/Backtracking2.jpg>]
-<Gambar/Backtracking3.jpg, id=622, 204.01219pt x 204.01219pt>
+<Gambar/Backtracking3.jpg, id=692, 204.01219pt x 204.01219pt>
 File: Gambar/Backtracking3.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking3.jpg>
 Package pdftex.def Info: Gambar/Backtracking3.jpg used on input line 105.
 (pdftex.def)             Requested size: 204.01169pt x 204.01169pt.
  [8] [9 <./Gambar/Backtracking3.jpg>]
-<Gambar/Backtracking4.jpg, id=650, 112.92188pt x 112.92188pt>
+<Gambar/Backtracking4.jpg, id=720, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking4.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking4.jpg>
 Package pdftex.def Info: Gambar/Backtracking4.jpg used on input line 146.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
  [10 <./Gambar/Backtracking4.jpg>]
-<Gambar/Backtracking5.jpg, id=666, 226.59656pt x 75.28125pt>
+<Gambar/Backtracking5.jpg, id=736, 226.59656pt x 75.28125pt>
 File: Gambar/Backtracking5.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking5.jpg>
 Package pdftex.def Info: Gambar/Backtracking5.jpg used on input line 161.
 (pdftex.def)             Requested size: 226.596pt x 75.28105pt.
  [11 <./Gambar/Backtracking5.jpg>]
-<Gambar/Backtracking6.jpg, id=688, 112.92188pt x 112.92188pt>
+<Gambar/Backtracking6.jpg, id=759, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking6.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking6.jpg>
 Package pdftex.def Info: Gambar/Backtracking6.jpg used on input line 184.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
 
-<Gambar/Backtracking7.jpg, id=693, 112.92188pt x 112.92188pt>
+<Gambar/Backtracking7.jpg, id=764, 112.92188pt x 112.92188pt>
 File: Gambar/Backtracking7.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking7.jpg>
 Package pdftex.def Info: Gambar/Backtracking7.jpg used on input line 199.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
 
-<Gambar/Backtracking8.jpg, id=696, 231.86626pt x 422.32782pt>
+<Gambar/Backtracking8.jpg, id=767, 231.86626pt x 422.32782pt>
 File: Gambar/Backtracking8.jpg Graphic file (type jpg)
 
 <use Gambar/Backtracking8.jpg>
@@ -1471,35 +1469,35 @@ acktracking8.jpg>]
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 225.
 
-<Gambar/HybridGenetic2.jpg, id=723, 158.09062pt x 28.60687pt>
+<Gambar/HybridGenetic2.jpg, id=794, 158.09062pt x 28.60687pt>
 File: Gambar/HybridGenetic2.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic2.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic2.jpg used on input line 242.
 (pdftex.def)             Requested size: 158.09023pt x 28.6068pt.
 
-<Gambar/HybridGenetic3.jpg, id=727, 205.5178pt x 47.42719pt>
+<Gambar/HybridGenetic3.jpg, id=798, 205.5178pt x 47.42719pt>
 File: Gambar/HybridGenetic3.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic3.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic3.jpg used on input line 252.
 (pdftex.def)             Requested size: 205.5173pt x 47.42706pt.
  [14 <./Gambar/HybridGenetic2.jpg>]
-<Gambar/HybridGenetic4.jpg, id=741, 273.27094pt x 37.64063pt>
+<Gambar/HybridGenetic4.jpg, id=811, 273.27094pt x 37.64063pt>
 File: Gambar/HybridGenetic4.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic4.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic4.jpg used on input line 262.
 (pdftex.def)             Requested size: 273.27025pt x 37.64052pt.
 
-<Gambar/HybridGenetic5.jpg, id=745, 198.7425pt x 82.80937pt>
+<Gambar/HybridGenetic5.jpg, id=815, 198.7425pt x 82.80937pt>
 File: Gambar/HybridGenetic5.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic5.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic5.jpg used on input line 272.
 (pdftex.def)             Requested size: 198.742pt x 82.80916pt.
 
-<Gambar/HybridGenetic6.jpg, id=749, 146.04562pt x 147.55125pt>
+<Gambar/HybridGenetic6.jpg, id=819, 146.04562pt x 147.55125pt>
 File: Gambar/HybridGenetic6.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic6.jpg>
@@ -1507,28 +1505,28 @@ Package pdftex.def Info: Gambar/HybridGenetic6.jpg used on input line 282.
 (pdftex.def)             Requested size: 146.04524pt x 147.55087pt.
  [15 <./Gambar/HybridGenetic3.jpg> <./Gambar/HybridGenetic4.jpg> <./Gambar/Hybr
 idGenetic5.jpg>] [16 <./Gambar/HybridGenetic6.jpg>] <Gambar/HybridGenetic8.jpg,
- id=770, 118.94438pt x 124.96687pt>
+ id=840, 118.94438pt x 124.96687pt>
 File: Gambar/HybridGenetic8.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic8.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic8.jpg used on input line 322.
 (pdftex.def)             Requested size: 118.94408pt x 124.96657pt.
  [17 <./Gambar/HybridGenetic8.jpg>]
-<Gambar/HybridGenetic9.jpg, id=785, 284.56313pt x 75.28125pt>
+<Gambar/HybridGenetic9.jpg, id=855, 284.56313pt x 75.28125pt>
 File: Gambar/HybridGenetic9.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic9.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic9.jpg used on input line 345.
 (pdftex.def)             Requested size: 284.56242pt x 75.28105pt.
 
-<Gambar/HybridGenetic10.jpg, id=789, 282.30469pt x 41.4047pt>
+<Gambar/HybridGenetic10.jpg, id=859, 282.30469pt x 41.4047pt>
 File: Gambar/HybridGenetic10.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic10.jpg>
 Package pdftex.def Info: Gambar/HybridGenetic10.jpg used on input line 355.
 (pdftex.def)             Requested size: 282.30399pt x 41.40457pt.
 
-<Gambar/HybridGenetic7.jpg, id=794, 451.6875pt x 173.89969pt>
+<Gambar/HybridGenetic7.jpg, id=864, 451.6875pt x 173.89969pt>
 File: Gambar/HybridGenetic7.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic7.jpg>
@@ -1544,21 +1542,21 @@ ar/HybridGenetic7.jpg>]
 
 ]
 Bab 3.
-<Gambar/backtracking/State1.jpg, id=818, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State1.jpg, id=889, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State1.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State1.jpg>
 Package pdftex.def Info: Gambar/backtracking/State1.jpg used on input line 14.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State4.jpg, id=825, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State4.jpg, id=896, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State4.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State4.jpg>
 Package pdftex.def Info: Gambar/backtracking/State4.jpg used on input line 28.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
  [21 <./Gambar/backtracking/State1.jpg>]
-<Gambar/backtracking/State11.jpg, id=839, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State11.jpg, id=910, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State11.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State11.jpg>
@@ -1566,7 +1564,7 @@ Package pdftex.def Info: Gambar/backtracking/State11.jpg used on input line 44.
 
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State12.jpg, id=841, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State12.jpg, id=912, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State12.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State12.jpg>
@@ -1575,7 +1573,7 @@ Package pdftex.def Info: Gambar/backtracking/State12.jpg used on input line 54.
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
  [22 <./Gambar/backtracking/State4.jpg> <./Gambar/backtracking/State11.jpg> <./
 Gambar/backtracking/State12.jpg>]
-<Gambar/backtracking/State17.jpg, id=855, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State17.jpg, id=925, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State17.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State17.jpg>
@@ -1583,7 +1581,7 @@ Package pdftex.def Info: Gambar/backtracking/State17.jpg used on input line 68.
 
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State18.jpg, id=857, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State18.jpg, id=927, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State18.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State18.jpg>
@@ -1591,7 +1589,7 @@ Package pdftex.def Info: Gambar/backtracking/State18.jpg used on input line 78.
 
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State19.jpg, id=859, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State19.jpg, id=929, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State19.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State19.jpg>
@@ -1600,7 +1598,7 @@ Package pdftex.def Info: Gambar/backtracking/State19.jpg used on input line 88.
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
  [23 <./Gambar/backtracking/State17.jpg> <./Gambar/backtracking/State18.jpg> <.
 /Gambar/backtracking/State19.jpg>]
-<Gambar/backtracking/State23.jpg, id=872, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State23.jpg, id=942, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State23.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State23.jpg>
@@ -1608,7 +1606,7 @@ Package pdftex.def Info: Gambar/backtracking/State23.jpg used on input line 101
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State24.jpg, id=874, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State24.jpg, id=944, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State24.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State24.jpg>
@@ -1616,7 +1614,7 @@ Package pdftex.def Info: Gambar/backtracking/State24.jpg used on input line 111
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State31.jpg, id=876, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State31.jpg, id=946, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State31.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State31.jpg>
@@ -1624,7 +1622,7 @@ Package pdftex.def Info: Gambar/backtracking/State31.jpg used on input line 127
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
  [24 <./Gambar/backtracking/State23.jpg> <./Gambar/backtracking/State24.jpg>]
-<Gambar/backtracking/State32.jpg, id=892, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State32.jpg, id=962, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State32.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State32.jpg>
@@ -1632,7 +1630,7 @@ Package pdftex.def Info: Gambar/backtracking/State32.jpg used on input line 137
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State34.jpg, id=894, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State34.jpg, id=964, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State34.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State34.jpg>
@@ -1640,7 +1638,7 @@ Package pdftex.def Info: Gambar/backtracking/State34.jpg used on input line 148
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State37.jpg, id=896, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State37.jpg, id=966, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State37.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State37.jpg>
@@ -1649,7 +1647,7 @@ Package pdftex.def Info: Gambar/backtracking/State37.jpg used on input line 160
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
  [25 <./Gambar/backtracking/State31.jpg> <./Gambar/backtracking/State32.jpg> <.
 /Gambar/backtracking/State34.jpg>]
-<Gambar/backtracking/State47.jpg, id=908, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State47.jpg, id=978, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State47.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State47.jpg>
@@ -1657,7 +1655,7 @@ Package pdftex.def Info: Gambar/backtracking/State47.jpg used on input line 179
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State48.jpg, id=910, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State48.jpg, id=980, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State48.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State48.jpg>
@@ -1665,7 +1663,7 @@ Package pdftex.def Info: Gambar/backtracking/State48.jpg used on input line 189
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
  [26 <./Gambar/backtracking/State37.jpg> <./Gambar/backtracking/State47.jpg>]
-<Gambar/backtracking/State52.jpg, id=927, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State52.jpg, id=998, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State52.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State52.jpg>
@@ -1673,7 +1671,7 @@ Package pdftex.def Info: Gambar/backtracking/State52.jpg used on input line 202
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State53.jpg, id=929, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State53.jpg, id=1000, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State53.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State53.jpg>
@@ -1682,7 +1680,7 @@ Package pdftex.def Info: Gambar/backtracking/State53.jpg used on input line 212
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
  [27 <./Gambar/backtracking/State48.jpg> <./Gambar/backtracking/State52.jpg> <.
 /Gambar/backtracking/State53.jpg>]
-<Gambar/backtracking/State68.jpg, id=943, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State68.jpg, id=1014, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State68.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State68.jpg>
@@ -1690,7 +1688,7 @@ Package pdftex.def Info: Gambar/backtracking/State68.jpg used on input line 236
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State69.jpg, id=945, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State69.jpg, id=1016, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State69.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State69.jpg>
@@ -1698,7 +1696,7 @@ Package pdftex.def Info: Gambar/backtracking/State69.jpg used on input line 246
 .
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
  [28 <./Gambar/backtracking/State68.jpg>]
-<Gambar/backtracking/State71.jpg, id=966, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State71.jpg, id=1036, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State71.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State71.jpg>
@@ -1706,7 +1704,7 @@ Package pdftex.def Info: Gambar/backtracking/State71.jpg used on input line 257
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State72.jpg, id=968, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State72.jpg, id=1038, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State72.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State72.jpg>
@@ -1714,7 +1712,7 @@ Package pdftex.def Info: Gambar/backtracking/State72.jpg used on input line 267
 .
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
 
-<Gambar/backtracking/State74.jpg, id=970, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State74.jpg, id=1040, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State74.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State74.jpg>
@@ -1722,7 +1720,7 @@ Package pdftex.def Info: Gambar/backtracking/State74.jpg used on input line 278
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State75.jpg, id=972, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State75.jpg, id=1042, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State75.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State75.jpg>
@@ -1731,7 +1729,7 @@ Package pdftex.def Info: Gambar/backtracking/State75.jpg used on input line 288
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
  [29 <./Gambar/backtracking/State69.jpg> <./Gambar/backtracking/State71.jpg> <.
 /Gambar/backtracking/State72.jpg>]
-<Gambar/backtracking/State76.jpg, id=984, 307.1475pt x 305.14pt>
+<Gambar/backtracking/State76.jpg, id=1054, 307.1475pt x 305.14pt>
 File: Gambar/backtracking/State76.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State76.jpg>
@@ -1739,7 +1737,7 @@ Package pdftex.def Info: Gambar/backtracking/State76.jpg used on input line 298
 .
 (pdftex.def)             Requested size: 102.27757pt x 101.60909pt.
 
-<Gambar/backtracking/State77.jpg, id=986, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State77.jpg, id=1056, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State77.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State77.jpg>
@@ -1747,7 +1745,7 @@ Package pdftex.def Info: Gambar/backtracking/State77.jpg used on input line 308
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State78.jpg, id=988, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State78.jpg, id=1058, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State78.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State78.jpg>
@@ -1755,7 +1753,7 @@ Package pdftex.def Info: Gambar/backtracking/State78.jpg used on input line 318
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State81.jpg, id=990, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State81.jpg, id=1060, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State81.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State81.jpg>
@@ -1766,7 +1764,7 @@ Package pdftex.def Info: Gambar/backtracking/State81.jpg used on input line 330
 /Gambar/backtracking/State76.jpg>]
 [31 <./Gambar/backtracking/State77.jpg> <./Gambar/backtracking/State78.jpg> <./
 Gambar/backtracking/State81.jpg>]
-<Gambar/backtracking/State83.jpg, id=1007, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State83.jpg, id=1077, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State83.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State83.jpg>
@@ -1774,7 +1772,7 @@ Package pdftex.def Info: Gambar/backtracking/State83.jpg used on input line 341
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State85.jpg, id=1009, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State85.jpg, id=1079, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State85.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State85.jpg>
@@ -1782,7 +1780,7 @@ Package pdftex.def Info: Gambar/backtracking/State85.jpg used on input line 352
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State88.jpg, id=1011, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State88.jpg, id=1081, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State88.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State88.jpg>
@@ -1791,7 +1789,7 @@ Package pdftex.def Info: Gambar/backtracking/State88.jpg used on input line 364
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
  [32 <./Gambar/backtracking/State83.jpg> <./Gambar/backtracking/State85.jpg> <.
 /Gambar/backtracking/State88.jpg>]
-<Gambar/backtracking/State92.jpg, id=1024, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State92.jpg, id=1095, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State92.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State92.jpg>
@@ -1799,7 +1797,7 @@ Package pdftex.def Info: Gambar/backtracking/State92.jpg used on input line 377
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
 
-<Gambar/backtracking/State93.jpg, id=1026, 307.1475pt x 307.1475pt>
+<Gambar/backtracking/State93.jpg, id=1097, 307.1475pt x 307.1475pt>
 File: Gambar/backtracking/State93.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/State93.jpg>
@@ -1807,7 +1805,7 @@ Package pdftex.def Info: Gambar/backtracking/State93.jpg used on input line 387
 .
 (pdftex.def)             Requested size: 102.27757pt x 102.27757pt.
  [33 <./Gambar/backtracking/State92.jpg> <./Gambar/backtracking/State93.jpg>]
-<Gambar/backtracking/StateSpaceTree.jpg, id=1037, 848.4197pt x 599.23875pt>
+<Gambar/backtracking/StateSpaceTree.jpg, id=1108, 848.4197pt x 599.23875pt>
 File: Gambar/backtracking/StateSpaceTree.jpg Graphic file (type jpg)
 
 <use Gambar/backtracking/StateSpaceTree.jpg>
@@ -1819,7 +1817,7 @@ ine 400.
 LaTeX Warning: Float too large for page by 3.55746pt on input line 403.
 
 [34 <./Gambar/backtracking/StateSpaceTree.jpg>]
-<Gambar/hybridgenetic/Puzzle.jpg, id=1045, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/Puzzle.jpg, id=1116, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/Puzzle.jpg Graphic file (type jpg)
 
 <use Gambar/hybridgenetic/Puzzle.jpg>
@@ -1827,7 +1825,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Puzzle.jpg used on input line 414
 .
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg, id=1051, 459.7175pt x 457.71pt>
+<Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg, id=1122, 459.7175pt x 457.71pt>
 File: Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg Graphic file (type jpg)
 <use Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg>
 Package pdftex.def Info: Gambar/hybridgenetic/PuzzleAfterRuleBased.jpg used on 
@@ -1838,7 +1836,7 @@ input line 429.
 
  <./Gambar/hybridgenetic/Puzzle.jpg>] [36 <./Gambar/hybridgenetic/PuzzleAfterRu
 leBased.jpg>]
-<Gambar/hybridgenetic/Generation1Chromosome1.jpg, id=1076, 459.7175pt x 457.71p
+<Gambar/hybridgenetic/Generation1Chromosome1.jpg, id=1146, 459.7175pt x 457.71p
 t>
 File: Gambar/hybridgenetic/Generation1Chromosome1.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome1.jpg>
@@ -1846,7 +1844,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome1.jpg used o
 n input line 468.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome2.jpg, id=1077, 459.7175pt x 457.71p
+<Gambar/hybridgenetic/Generation1Chromosome2.jpg, id=1147, 459.7175pt x 457.71p
 t>
 File: Gambar/hybridgenetic/Generation1Chromosome2.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome2.jpg>
@@ -1854,7 +1852,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome2.jpg used o
 n input line 476.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome3.jpg, id=1078, 459.7175pt x 457.71p
+<Gambar/hybridgenetic/Generation1Chromosome3.jpg, id=1148, 459.7175pt x 457.71p
 t>
 File: Gambar/hybridgenetic/Generation1Chromosome3.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome3.jpg>
@@ -1862,7 +1860,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome3.jpg used o
 n input line 484.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome4.jpg, id=1079, 459.7175pt x 457.71p
+<Gambar/hybridgenetic/Generation1Chromosome4.jpg, id=1149, 459.7175pt x 457.71p
 t>
 File: Gambar/hybridgenetic/Generation1Chromosome4.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome4.jpg>
@@ -1870,7 +1868,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome4.jpg used o
 n input line 492.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome5.jpg, id=1080, 459.7175pt x 457.71p
+<Gambar/hybridgenetic/Generation1Chromosome5.jpg, id=1150, 459.7175pt x 457.71p
 t>
 File: Gambar/hybridgenetic/Generation1Chromosome5.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome5.jpg>
@@ -1878,7 +1876,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome5.jpg used o
 n input line 500.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome6.jpg, id=1081, 459.7175pt x 457.71p
+<Gambar/hybridgenetic/Generation1Chromosome6.jpg, id=1151, 459.7175pt x 457.71p
 t>
 File: Gambar/hybridgenetic/Generation1Chromosome6.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome6.jpg>
@@ -1886,7 +1884,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome6.jpg used o
 n input line 508.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome7.jpg, id=1082, 459.7175pt x 457.71p
+<Gambar/hybridgenetic/Generation1Chromosome7.jpg, id=1152, 459.7175pt x 457.71p
 t>
 File: Gambar/hybridgenetic/Generation1Chromosome7.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome7.jpg>
@@ -1894,7 +1892,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome7.jpg used o
 n input line 516.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome8.jpg, id=1083, 459.7175pt x 457.71p
+<Gambar/hybridgenetic/Generation1Chromosome8.jpg, id=1153, 459.7175pt x 457.71p
 t>
 File: Gambar/hybridgenetic/Generation1Chromosome8.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome8.jpg>
@@ -1902,7 +1900,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome8.jpg used o
 n input line 524.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome9.jpg, id=1084, 459.7175pt x 457.71p
+<Gambar/hybridgenetic/Generation1Chromosome9.jpg, id=1154, 459.7175pt x 457.71p
 t>
 File: Gambar/hybridgenetic/Generation1Chromosome9.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome9.jpg>
@@ -1910,7 +1908,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome9.jpg used o
 n input line 532.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome10.jpg, id=1085, 459.7175pt x 457.71
+<Gambar/hybridgenetic/Generation1Chromosome10.jpg, id=1155, 459.7175pt x 457.71
 pt>
 File: Gambar/hybridgenetic/Generation1Chromosome10.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome10.jpg>
@@ -1918,7 +1916,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome10.jpg used
 on input line 540.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome11.jpg, id=1086, 459.7175pt x 457.71
+<Gambar/hybridgenetic/Generation1Chromosome11.jpg, id=1156, 459.7175pt x 457.71
 pt>
 File: Gambar/hybridgenetic/Generation1Chromosome11.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome11.jpg>
@@ -1926,7 +1924,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation1Chromosome11.jpg used
 on input line 548.
 (pdftex.def)             Requested size: 153.08212pt x 152.41365pt.
 
-<Gambar/hybridgenetic/Generation1Chromosome12.jpg, id=1087, 459.7175pt x 457.71
+<Gambar/hybridgenetic/Generation1Chromosome12.jpg, id=1157, 459.7175pt x 457.71
 pt>
 File: Gambar/hybridgenetic/Generation1Chromosome12.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation1Chromosome12.jpg>
@@ -1946,7 +1944,7 @@ omosome12.jpg>]
 
 
 ]
-<Gambar/hybridgenetic/Generation2Chromosome1.jpg, id=1122, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation2Chromosome1.jpg, id=1192, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome1.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome1.jpg>
@@ -1954,7 +1952,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome1.jpg used o
 n input line 610.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome2.jpg, id=1123, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation2Chromosome2.jpg, id=1193, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome2.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome2.jpg>
@@ -1962,7 +1960,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome2.jpg used o
 n input line 618.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome3.jpg, id=1124, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation2Chromosome3.jpg, id=1194, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome3.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome3.jpg>
@@ -1970,7 +1968,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome3.jpg used o
 n input line 626.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome4.jpg, id=1125, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation2Chromosome4.jpg, id=1195, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome4.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome4.jpg>
@@ -1978,7 +1976,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome4.jpg used o
 n input line 634.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome5.jpg, id=1126, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation2Chromosome5.jpg, id=1196, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome5.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome5.jpg>
@@ -1986,7 +1984,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome5.jpg used o
 n input line 642.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome6.jpg, id=1127, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation2Chromosome6.jpg, id=1197, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome6.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome6.jpg>
@@ -1994,7 +1992,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome6.jpg used o
 n input line 650.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome7.jpg, id=1128, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation2Chromosome7.jpg, id=1198, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome7.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome7.jpg>
@@ -2002,7 +2000,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome7.jpg used o
 n input line 658.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome8.jpg, id=1129, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation2Chromosome8.jpg, id=1199, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome8.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome8.jpg>
@@ -2010,7 +2008,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome8.jpg used o
 n input line 666.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome9.jpg, id=1130, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation2Chromosome9.jpg, id=1200, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation2Chromosome9.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome9.jpg>
@@ -2018,7 +2016,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome9.jpg used o
 n input line 674.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome10.jpg, id=1131, 459.7175pt x 459.71
+<Gambar/hybridgenetic/Generation2Chromosome10.jpg, id=1201, 459.7175pt x 459.71
 75pt>
 File: Gambar/hybridgenetic/Generation2Chromosome10.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome10.jpg>
@@ -2026,7 +2024,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome10.jpg used
 on input line 682.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome11.jpg, id=1132, 459.7175pt x 459.71
+<Gambar/hybridgenetic/Generation2Chromosome11.jpg, id=1202, 459.7175pt x 459.71
 75pt>
 File: Gambar/hybridgenetic/Generation2Chromosome11.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome11.jpg>
@@ -2034,7 +2032,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation2Chromosome11.jpg used
 on input line 690.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation2Chromosome12.jpg, id=1133, 459.7175pt x 459.71
+<Gambar/hybridgenetic/Generation2Chromosome12.jpg, id=1203, 459.7175pt x 459.71
 75pt>
 File: Gambar/hybridgenetic/Generation2Chromosome12.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation2Chromosome12.jpg>
@@ -2054,7 +2052,7 @@ omosome12.jpg>]
 
 
 ]
-<Gambar/hybridgenetic/Generation3Chromosome1.jpg, id=1168, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation3Chromosome1.jpg, id=1239, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome1.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome1.jpg>
@@ -2062,7 +2060,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome1.jpg used o
 n input line 752.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome2.jpg, id=1169, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation3Chromosome2.jpg, id=1240, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome2.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome2.jpg>
@@ -2070,7 +2068,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome2.jpg used o
 n input line 760.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome3.jpg, id=1170, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation3Chromosome3.jpg, id=1241, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome3.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome3.jpg>
@@ -2078,7 +2076,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome3.jpg used o
 n input line 768.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome4.jpg, id=1171, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation3Chromosome4.jpg, id=1242, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome4.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome4.jpg>
@@ -2086,7 +2084,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome4.jpg used o
 n input line 776.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome5.jpg, id=1172, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation3Chromosome5.jpg, id=1243, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome5.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome5.jpg>
@@ -2094,7 +2092,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome5.jpg used o
 n input line 784.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome6.jpg, id=1173, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation3Chromosome6.jpg, id=1244, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome6.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome6.jpg>
@@ -2102,7 +2100,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome6.jpg used o
 n input line 792.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome7.jpg, id=1174, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation3Chromosome7.jpg, id=1245, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome7.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome7.jpg>
@@ -2110,7 +2108,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome7.jpg used o
 n input line 800.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome8.jpg, id=1175, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation3Chromosome8.jpg, id=1246, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome8.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome8.jpg>
@@ -2118,7 +2116,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome8.jpg used o
 n input line 808.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome9.jpg, id=1176, 459.7175pt x 459.717
+<Gambar/hybridgenetic/Generation3Chromosome9.jpg, id=1247, 459.7175pt x 459.717
 5pt>
 File: Gambar/hybridgenetic/Generation3Chromosome9.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome9.jpg>
@@ -2126,7 +2124,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome9.jpg used o
 n input line 816.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome10.jpg, id=1177, 459.7175pt x 459.71
+<Gambar/hybridgenetic/Generation3Chromosome10.jpg, id=1248, 459.7175pt x 459.71
 75pt>
 File: Gambar/hybridgenetic/Generation3Chromosome10.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome10.jpg>
@@ -2134,7 +2132,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome10.jpg used
 on input line 824.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome11.jpg, id=1178, 459.7175pt x 459.71
+<Gambar/hybridgenetic/Generation3Chromosome11.jpg, id=1249, 459.7175pt x 459.71
 75pt>
 File: Gambar/hybridgenetic/Generation3Chromosome11.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome11.jpg>
@@ -2142,7 +2140,7 @@ Package pdftex.def Info: Gambar/hybridgenetic/Generation3Chromosome11.jpg used
 on input line 832.
 (pdftex.def)             Requested size: 153.08212pt x 153.08212pt.
 
-<Gambar/hybridgenetic/Generation3Chromosome12.jpg, id=1179, 459.7175pt x 459.71
+<Gambar/hybridgenetic/Generation3Chromosome12.jpg, id=1250, 459.7175pt x 459.71
 75pt>
 File: Gambar/hybridgenetic/Generation3Chromosome12.jpg Graphic file (type jpg)
  <use Gambar/hybridgenetic/Generation3Chromosome12.jpg>
@@ -2170,7 +2168,7 @@ omosome12.jpg>])
 
 ]
 Bab 4.
-<Gambar/Perancangan/PerancanganInput.png, id=1208, 754.82pt x 525.965pt>
+<Gambar/Perancangan/PerancanganInput.png, id=1278, 754.82pt x 525.965pt>
 File: Gambar/Perancangan/PerancanganInput.png Graphic file (type png)
 
 <use Gambar/Perancangan/PerancanganInput.png>
@@ -2178,7 +2176,7 @@ Package pdftex.def Info: Gambar/Perancangan/PerancanganInput.png used on input
 line 14.
 (pdftex.def)             Requested size: 377.40909pt x 262.98184pt.
 
-<Gambar/Perancangan/PerancanganOutput.png, id=1210, 75.28125pt x 75.28125pt>
+<Gambar/Perancangan/PerancanganOutput.png, id=1280, 75.28125pt x 75.28125pt>
 File: Gambar/Perancangan/PerancanganOutput.png Graphic file (type png)
 
 <use Gambar/Perancangan/PerancanganOutput.png>
@@ -2187,7 +2185,7 @@ Package pdftex.def Info: Gambar/Perancangan/PerancanganOutput.png used on input
 (pdftex.def)             Requested size: 75.28105pt x 75.28105pt.
  [53] [54 <./Gambar/Perancangan/PerancanganInput.png> <./Gambar/Perancangan/Per
 ancanganOutput.png>]
-<Gambar/Perancangan/DiagramKelas.jpg, id=1229, 2673.99pt x 2326.6925pt>
+<Gambar/Perancangan/DiagramKelas.jpg, id=1299, 2673.99pt x 2326.6925pt>
 File: Gambar/Perancangan/DiagramKelas.jpg Graphic file (type jpg)
 
 <use Gambar/Perancangan/DiagramKelas.jpg>
@@ -2200,60 +2198,175 @@ Overfull \hbox (65.31805pt too wide) in paragraph at lines 72--73
  []
 
 [55] [56 <./Gambar/Perancangan/DiagramKelas.jpg>] [57] [58]
-<Gambar/Perancangan/DiagramKelasGrid.png, id=1288, 721.69624pt x 959.585pt>
+<Gambar/Perancangan/DiagramKelasGrid.png, id=1359, 721.69624pt x 959.585pt>
 File: Gambar/Perancangan/DiagramKelasGrid.png Graphic file (type png)
 
 <use Gambar/Perancangan/DiagramKelasGrid.png>
 Package pdftex.def Info: Gambar/Perancangan/DiagramKelasGrid.png used on input 
-line 138.
+line 139.
 (pdftex.def)             Requested size: 360.84724pt x 479.79132pt.
  [59] [60 <./Gambar/Perancangan/DiagramKelasGrid.png>]
-<Gambar/Perancangan/DiagramKelasCage.png, id=1317, 509.905pt x 442.65375pt>
+<Gambar/Perancangan/DiagramKelasCage.png, id=1387, 509.905pt x 442.65375pt>
 File: Gambar/Perancangan/DiagramKelasCage.png Graphic file (type png)
 
 <use Gambar/Perancangan/DiagramKelasCage.png>
 Package pdftex.def Info: Gambar/Perancangan/DiagramKelasCage.png used on input 
-line 178.
+line 179.
 (pdftex.def)             Requested size: 254.95187pt x 221.32632pt.
  [61]
-<Gambar/Perancangan/DiagramKelasCell.png, id=1335, 481.8pt x 324.21124pt>
+<Gambar/Perancangan/DiagramKelasCell.png, id=1405, 481.8pt x 324.21124pt>
 File: Gambar/Perancangan/DiagramKelasCell.png Graphic file (type png)
 
 <use Gambar/Perancangan/DiagramKelasCell.png>
 Package pdftex.def Info: Gambar/Perancangan/DiagramKelasCell.png used on input 
-line 212.
+line 213.
 (pdftex.def)             Requested size: 240.8994pt x 162.10522pt.
  [62 <./Gambar/Perancangan/DiagramKelasCage.png>]
-<Gambar/Perancangan/DiagramKelasSolverBacktracking.png, id=1352, 380.42125pt x 
+<Gambar/Perancangan/DiagramKelasSolverBacktracking.png, id=1423, 380.42125pt x 
 284.06125pt>
 File: Gambar/Perancangan/DiagramKelasSolverBacktracking.png Graphic file (type 
 png)
  <use Gambar/Perancangan/DiagramKelasSolverBacktracking.png>
 Package pdftex.def Info: Gambar/Perancangan/DiagramKelasSolverBacktracking.png 
-used on input line 244.
+used on input line 245.
 (pdftex.def)             Requested size: 190.21014pt x 142.03026pt.
+
+[63 <./Gambar/Perancangan/DiagramKelasCell.png>]
+<Gambar/Perancangan/DiagramKelasSolverHybridGenetic.png, id=1441, 334.24875pt x
+ 224.84pt>
+File: Gambar/Perancangan/DiagramKelasSolverHybridGenetic.png Graphic file (type
+ png)
+ <use Gambar/Perancangan/DiagramKelasSolverHybridGenetic.png>
+Package pdftex.def Info: Gambar/Perancangan/DiagramKelasSolverHybridGenetic.png
+ used on input line 276.
+(pdftex.def)             Requested size: 167.12396pt x 112.41972pt.
+
+[64 <./Gambar/Perancangan/DiagramKelasSolverBacktracking.png>]
+Overfull \hbox (2.07324pt too wide) in paragraph at lines 297--298
+[]\T1/lmr/m/n/10.95 generatePossibleValuesArray(), ya-i-tu \T1/lmr/m/it/10.95 m
+e-thod \T1/lmr/m/n/10.95 yang mem-bang-kitk-an ke-mung-kin-an angka-angka
+ []
+
+
+Overfull \hbox (7.06009pt too wide) in paragraph at lines 300--301
+[]\T1/lmr/m/n/10.95 getRowPossibleValues(int ro-wNum-ber), ya-i-tu \T1/lmr/m/it
+/10.95 me-thod \T1/lmr/m/n/10.95 un-tuk men-da-patk-an ke-mung-kin-an angka-
+ []
+
+[65 <./Gambar/Perancangan/DiagramKelasSolverHybridGenetic.png>] [66]
+Overfull \hbox (19.38625pt too wide) in paragraph at lines 326--327
+[]\T1/lmr/m/n/10.95 nakedDoubleColumn(int co-lumn, Ar-ra-yList<Integer> do-u-bl
+e-Pos-si-ble-Va-lu-es, Ar-ra-yList<Integer>
+ []
+
+[67]
+Overfull \hbox (23.64418pt too wide) in paragraph at lines 339--340
+[]\T1/lmr/m/n/10.95 hiddenDoubleColumn(int co-lumn, Ar-ra-yList<Integer> do-u-b
+le-Pos-si-ble-Va-lu-es, Ar-ra-yList<Integer>
+ []
+
+[68]
+<Gambar/Perancangan/DiagramKelasSolverRuleBased.png, id=1522, 1122.1925pt x 131
+6.92pt>
+File: Gambar/Perancangan/DiagramKelasSolverRuleBased.png Graphic file (type png
 )
-[63 <./Gambar/Perancangan/DiagramKelasCell.png>] [64 <./Gambar/Perancangan/Diag
-ramKelasSolverBacktracking.png>]
+ <use Gambar/Perancangan/DiagramKelasSolverRuleBased.png>
+Package pdftex.def Info: Gambar/Perancangan/DiagramKelasSolverRuleBased.png use
+d on input line 358.
+(pdftex.def)             Requested size: 448.86905pt x 526.75867pt.
+ [69] [70 <./Gambar/Perancangan/DiagramKelasSolverRuleBased.png>] [71]
+<Gambar/Perancangan/DiagramKelasSolverGenetic.png, id=1570, 1064.97874pt x 681.
+54625pt>
+File: Gambar/Perancangan/DiagramKelasSolverGenetic.png Graphic file (type png)
+ <use Gambar/Perancangan/DiagramKelasSolverGenetic.png>
+Package pdftex.def Info: Gambar/Perancangan/DiagramKelasSolverGenetic.png used 
+on input line 409.
+(pdftex.def)             Requested size: 425.98395pt x 272.61366pt.
+ [72 <./Gambar/Perancangan/DiagramKelasSolverGenetic.png>]
+<Gambar/Perancangan/DiagramKelasChromosome.png, id=1584, 278.03876pt x 263.9862
+5pt>
+File: Gambar/Perancangan/DiagramKelasChromosome.png Graphic file (type png)
+ <use Gambar/Perancangan/DiagramKelasChromosome.png>
+Package pdftex.def Info: Gambar/Perancangan/DiagramKelasChromosome.png used on 
+input line 440.
+(pdftex.def)             Requested size: 139.01903pt x 131.9928pt.
+
+<Gambar/Perancangan/DiagramKelasChromosomeComparator.png, id=1586, 492.84125pt 
+x 125.46875pt>
+File: Gambar/Perancangan/DiagramKelasChromosomeComparator.png Graphic file (typ
+e png)
+ <use Gambar/Perancangan/DiagramKelasChromosomeComparator.png>
+Package pdftex.def Info: Gambar/Perancangan/DiagramKelasChromosomeComparator.pn
+g used on input line 453.
+(pdftex.def)             Requested size: 246.42001pt x 62.7342pt.
+
+[73 <./Gambar/Perancangan/DiagramKelasChromosome.png> <./Gambar/Perancangan/Dia
+gramKelasChromosomeComparator.png>] [74]
+<Gambar/Perancangan/DiagramKelasController.png, id=1621, 765.86125pt x 482.8037
+6pt>
+File: Gambar/Perancangan/DiagramKelasController.png Graphic file (type png)
+ <use Gambar/Perancangan/DiagramKelasController.png>
+Package pdftex.def Info: Gambar/Perancangan/DiagramKelasController.png used on 
+input line 494.
+(pdftex.def)             Requested size: 382.92969pt x 241.40129pt.
+
+<Gambar/Perancangan/DiagramKelasTester.png, id=1623, 285.065pt x 125.46875pt>
+File: Gambar/Perancangan/DiagramKelasTester.png Graphic file (type png)
+
+<use Gambar/Perancangan/DiagramKelasTester.png>
+Package pdftex.def Info: Gambar/Perancangan/DiagramKelasTester.png used on inpu
+t line 507.
+(pdftex.def)             Requested size: 142.53215pt x 62.7342pt.
+ [75 <./Gambar/Perancangan/DiagramKelasController.png> <./Gambar/Perancangan/Di
+agramKelasTester.png>]
+<Gambar/Perancangan/DiagramAktivitas.jpg, id=1637, 959.585pt x 812.03375pt>
+File: Gambar/Perancangan/DiagramAktivitas.jpg Graphic file (type jpg)
+
+<use Gambar/Perancangan/DiagramAktivitas.jpg>
+Package pdftex.def Info: Gambar/Perancangan/DiagramAktivitas.jpg used on input 
+line 527.
+(pdftex.def)             Requested size: 479.79132pt x 406.01588pt.
+
+Overfull \hbox (10.32083pt too wide) in paragraph at lines 527--528
+ [][] 
+ []
+
+<Gambar/Perancangan/DiagramUseCase.jpg, id=1639, 900.36375pt x 748.7975pt>
+File: Gambar/Perancangan/DiagramUseCase.jpg Graphic file (type jpg)
+
+<use Gambar/Perancangan/DiagramUseCase.jpg>
+Package pdftex.def Info: Gambar/Perancangan/DiagramUseCase.jpg used on input li
+ne 546.
+(pdftex.def)             Requested size: 450.18077pt x 374.39783pt.
+ [76 <./Gambar/Perancangan/DiagramAktivitas.jpg>]
+<Gambar/Perancangan/DiagramSequence.jpg, id=1651, 904.37875pt x 714.67pt>
+File: Gambar/Perancangan/DiagramSequence.jpg Graphic file (type jpg)
+
+<use Gambar/Perancangan/DiagramSequence.jpg>
+Package pdftex.def Info: Gambar/Perancangan/DiagramSequence.jpg used on input l
+ine 560.
+(pdftex.def)             Requested size: 452.18828pt x 357.33412pt.
+) [77 <./Gambar/Perancangan/DiagramUseCase.jpg>] [78 <./Gambar/Perancangan/Diag
+ramSequence.jpg>]
 \openout2 = `Bab/bab5.aux'.
 
  (./Bab/bab5.tex)
 \openout2 = `Bab/bab6.aux'.
 
- (./Bab/bab6.tex)
+
+(./Bab/bab6.tex)
 \openout2 = `Bab/bab7.aux'.
 
-
-(./Bab/bab7.tex)
+ (./Bab/bab7.tex)
 \openout2 = `Bab/bab8.aux'.
 
  (./Bab/bab8.tex)
 \openout2 = `Bab/bab9.aux'.
 
- (./Bab/bab9.tex) (./skripsi.bbl
+ (./Bab/bab9.tex)
+(./skripsi.bbl
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 9.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Underfull \hbox (badness 5954) in paragraph at lines 4--10
@@ -2273,7 +2386,7 @@ Underfull \hbox (badness 3058) in paragraph at lines 4--10
 -for-ma-ti-ka, In-sti-tut Tek-no-lo-
  []
 
-) [65
+) [79
 
 
 
@@ -2328,13 +2441,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 516.
 Package rerunfilecheck Info: File `skripsi.out' has not changed.
-(rerunfilecheck)             Checksum: 5DFE149383DC1ADFA36F6E0362F18101;4797.
+(rerunfilecheck)             Checksum: 3098D6C2ECC1394CA60D2EC21C35EE45;6351.
  ) 
 Here is how much of TeX's memory you used:
- 41728 strings out of 493027
- 901552 string characters out of 6134069
+ 41971 strings out of 493027
+ 905911 string characters out of 6134069
  1231423 words of memory out of 5000000
- 43914 multiletter control sequences out of 15000+600000
+ 43984 multiletter control sequences out of 15000+600000
  65863 words of font info for 48 fonts, out of 8000000 for 9000
  1150 hyphenation exceptions out of 8191
  66i,13n,86p,10422b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2358,10 +2471,10 @@ exlive/2015/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/201
 st/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
 /cm-super/sfxc1095.pfb>
-Output written on skripsi.pdf (87 pages, 6133263 bytes).
+Output written on skripsi.pdf (101 pages, 6737271 bytes).
 PDF statistics:
- 1552 PDF objects out of 1728 (max. 8388607)
- 1304 compressed objects within 14 object streams
- 517 named destinations out of 1000 (max. 500000)
- 754 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1870 PDF objects out of 2073 (max. 8388607)
+ 1589 compressed objects within 16 object streams
+ 680 named destinations out of 1000 (max. 500000)
+ 884 words of extra memory for PDF output out of 10000 (max. 10000000)
 
