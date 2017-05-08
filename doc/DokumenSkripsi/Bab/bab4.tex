@@ -380,7 +380,7 @@ Kelas SolverGenetic mempunyai atribut-atribut berikut, yaitu:
 \item nextGeneration, yaitu generasi berikutnya dalam algoritma genetik.
 \end{enumerate}
 
-Kelas SolverRuleBased mempunyai \textit{method-method} berikut:
+Kelas SolverGenetic mempunyai \textit{method-method} berikut:
 
 \begin{enumerate}
 \item SolverGenetic(Grid grid), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma genetik.
@@ -445,7 +445,7 @@ Diagram kelas Chromosome dapat dilihat pada Gambar~\ref{fig:diagramkelaschromoso
 \subsection{Kelas ChromosomeComparator}
 \label{sec:kelaschromosomecomparator}
 
-Kelas Chromosome tidak mempunyai variabel, tetapi kelas ini mempunyai sebuah \textit{method}, yaitu compare(Chromosome c1, Chromosome c2). Fungsi dari \textit{method} ini adalah membandingkan dua buah kromosom berdasarkan nilai kelayakannya. \textit{Method} ini mengeluarkan hasil 1 jika c1 lebih besar daripada c2, -1 jika c1 lebih kecil daripada c2, atau 0 jika c1 sama dengan c2. Diagram kelas ChromosomeComparator dapat dilihat pada Gambar~\ref{fig:diagramkelaschromosomecomparator}.
+Kelas ChromosomeComparator tidak mempunyai variabel, tetapi kelas ini mempunyai sebuah \textit{method}, yaitu compare(Chromosome c1, Chromosome c2). Fungsi dari \textit{method} ini adalah membandingkan dua buah kromosom berdasarkan nilai kelayakannya. \textit{Method} ini mengeluarkan hasil 1 jika c1 lebih besar daripada c2, -1 jika c1 lebih kecil daripada c2, atau 0 jika c1 sama dengan c2. Diagram kelas ChromosomeComparator dapat dilihat pada Gambar~\ref{fig:diagramkelaschromosomecomparator}.
 
 \begin{figure}
 \centering
@@ -468,7 +468,7 @@ Kelas Controller mempunyai beberapa atribut, yaitu:
 \item g, yaitu representasi dari \textit{grid} dalam teka-teki Calcudoku. grid adalah sebuah matriks yang berisi sel-sel. Matriks ini berukuran \begin{math} n \times n\end{math}.
 \end{enumerate}
 
-Kelas Grid mempunyai beberapa \textit{method}, yaitu:
+Kelas Controller mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
 \item Controller(int size, int numberOfCages, int[][] cageCells, String[] cageObjectives), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa ukuran dari matriks \textit{grid}, banyaknya \textit{cage} yang terdapat dalam \textit{grid}, matriks \textit{cage assignment}, dan array \textit{cage objectives}.
@@ -524,7 +524,7 @@ Diagram aktivitas untuk perangkat lunak Calcudoku dapat dilihat pada Gambar~\ref
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramAktivitas.jpg}
+\includegraphics[scale=0.4]{Gambar/Perancangan/DiagramAktivitas.jpg}
 \caption[Diagram aktivitas untuk perangkat lunak Calcudoku.]{Diagram aktivitas untuk perangkat lunak Calcudoku.}
 \label{fig:diagramaktivitas}
 \end{figure}
