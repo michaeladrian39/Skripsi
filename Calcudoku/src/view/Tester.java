@@ -22,7 +22,7 @@ public class Tester
         String[] cageObjectives;
         try
         {
-            try (Scanner sc = new Scanner(new File("test4x4.txt")))
+            try (Scanner sc = new Scanner(new File("puzzle files/6x6_12.txt")))
             {
                 size = sc.nextInt();
                 cageCells = new int[size][size];
@@ -61,7 +61,7 @@ public class Tester
         }
         Controller c = new Controller(size, numberOfCages, cageCells, 
                 cageObjectives);
-        c.solveHybridGenetic();
+        c.solveBacktracking();
     }
     
 }

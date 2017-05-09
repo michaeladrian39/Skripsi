@@ -73,7 +73,11 @@ public class SolverRuleBased
     public ArrayList<ArrayList<Integer>> solveLoop()
     {
         nakedSubset();
+        nakedSingle();
+        nakedDouble();
         hiddenSubset();
+        hiddenSingle();
+        hiddenDouble();
         evilTwin();
         return getGridArrayList();
     }
