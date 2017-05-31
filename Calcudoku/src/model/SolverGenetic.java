@@ -276,6 +276,7 @@ public class SolverGenetic
                 || isCellFixed[randomRow][randomColumn2] == true 
                 || randomColumn1 == randomColumn2)
         {
+            randomRow = randomGenerator.nextInt(size);
             randomColumn1 = randomGenerator.nextInt(size);
             randomColumn2 = randomGenerator.nextInt(size);
         }

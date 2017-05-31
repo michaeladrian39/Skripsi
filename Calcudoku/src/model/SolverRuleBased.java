@@ -56,6 +56,8 @@ public class SolverRuleBased
         ArrayList<ArrayList<Integer>> newGridArrayList = solveLoop();
         while(!currentGridArrayList.equals(newGridArrayList))
         {
+            printGrid();
+            printPossibleValues();
             currentGridArrayList = newGridArrayList;
             newGridArrayList = solveLoop();
         }
@@ -73,7 +75,11 @@ public class SolverRuleBased
     public ArrayList<ArrayList<Integer>> solveLoop()
     {
         nakedSubset();
+        nakedSingle();
+        nakedDouble();
         hiddenSubset();
+        hiddenSingle();
+        hiddenDouble();
         evilTwin();
         return getGridArrayList();
     }
@@ -1729,7 +1735,7 @@ public class SolverRuleBased
     
     private void setCellValue(int row, int column, int value)
     {
-        grid.setCellValue(row, column, value);
+        grid.solverSetCellValue(row, column, value);
         removePossibleValues(row, column, value);
     }
     
