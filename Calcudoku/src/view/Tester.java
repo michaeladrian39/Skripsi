@@ -22,11 +22,7 @@ public class Tester
         String[] cageObjectives;
         try
         {
-<<<<<<< HEAD
             try (Scanner sc = new Scanner(new File("/Volumes/KINGSTON/Skripsi/Calcudoku/test4x4.txt")))
-=======
-            try (Scanner sc = new Scanner(new File("puzzle files/6x6_12.txt")))
->>>>>>> 947382676b7aa37b83f69ace78006673efe4beef
             {
                 size = sc.nextInt();
                 cageCells = new int[size][size];
