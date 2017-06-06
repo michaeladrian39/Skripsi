@@ -12,9 +12,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,19 +22,21 @@ import javax.swing.JOptionPane;
  */
 public class GUI extends javax.swing.JFrame {
 
-    File puzzleFile;
-    String puzzleFileName;
-    int size;
-    int[][] cageCells;
-    int numberOfCages;
-    String[] cageObjectives;
-    Controller c;
+    private File puzzleFile;
+    private String puzzleFileName;
+    private int size;
+    private int[][] cageCells;
+    private int numberOfCages;
+    private String[] cageObjectives;
+    private Controller c;
     
     /**
      * Creates new form GUI
      */
-    public GUI() {
+    public GUI()
+    {
         initComponents();
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         addListeners();
     }
 
@@ -49,6 +50,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jFileChooser = new javax.swing.JFileChooser();
+        canvas1 = new java.awt.Canvas();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuFile = new javax.swing.JMenu();
         jMenuItemLoad = new javax.swing.JMenuItem();
@@ -119,11 +121,17 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -132,12 +140,12 @@ public class GUI extends javax.swing.JFrame {
     private void jMenuItemLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemLoadActionPerformed
         if (jFileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION)
         {
-            puzzleFile = jFileChooser.getSelectedFile();
-            puzzleFileName = puzzleFile.getAbsolutePath();
+            this.puzzleFile = jFileChooser.getSelectedFile();
             try
             {
                 if (puzzleFile.getAbsolutePath().endsWith(".txt"))
                 {
+                    this.puzzleFileName = puzzleFile.getAbsolutePath();
                     loadPuzzleFile(puzzleFile);
                 }
                 else
@@ -163,7 +171,7 @@ public class GUI extends javax.swing.JFrame {
         }
         else
         {
-            c = new Controller(size, numberOfCages, cageCells, cageObjectives);
+            this.c = new Controller(size, numberOfCages, cageCells, cageObjectives);
         }
     }//GEN-LAST:event_jMenuItemResetActionPerformed
 
@@ -241,6 +249,7 @@ public class GUI extends javax.swing.JFrame {
     {
         this.addWindowListener(new WindowAdapter()
         {
+            
             @Override
             public void windowClosing(WindowEvent e)
             {
@@ -249,9 +258,17 @@ public class GUI extends javax.swing.JFrame {
                         "Exit", JOptionPane.YES_NO_OPTION) 
                         == JOptionPane.YES_OPTION);
                 {
-                    System.exit(0);
+                    
                 }
             }
+            
+            @Override
+            public void windowClosed(WindowEvent e)
+            {
+                System.exit(0);
+            }
+            
+            
         });
     }
     
@@ -260,20 +277,20 @@ public class GUI extends javax.swing.JFrame {
         try
         {
             Scanner sc = new Scanner(puzzleFile);
-            size = sc.nextInt();
-            cageCells = new int[size][size];
-            numberOfCages = sc.nextInt();
-            cageObjectives = new String[numberOfCages];
+            this. size = sc.nextInt();
+            this.cageCells = new int[size][size];
+            this.numberOfCages = sc.nextInt();
+            this.cageObjectives = new String[numberOfCages];
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    cageCells[i][j] = sc.nextInt();
+                    this.cageCells[i][j] = sc.nextInt();
                 }
             }
             for (int i = 0; i < numberOfCages; i++)
             {
-                cageObjectives[i] = sc.next();
+                this.cageObjectives[i] = sc.next();
             }
             if (sc.hasNext())
             {
@@ -282,7 +299,7 @@ public class GUI extends javax.swing.JFrame {
                 throw new IllegalStateException("Invalid puzzle file.");
             }
             sc.close();
-            c = new Controller(size, numberOfCages, cageCells, cageObjectives);
+            this.c = new Controller(size, numberOfCages, cageCells, cageObjectives);
         }
         catch (NoSuchElementException nsee)
         {
@@ -293,6 +310,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Canvas canvas1;
     private javax.swing.JFileChooser jFileChooser;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuFile;
