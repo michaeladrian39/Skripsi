@@ -6,6 +6,7 @@
 package view;
 
 import controller.Controller;
+import java.awt.BorderLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -15,6 +16,7 @@ import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -28,7 +30,11 @@ public class GUI extends javax.swing.JFrame {
     private int[][] cageCells;
     private int numberOfCages;
     private String[] cageObjectives;
-    private Controller c;
+    private Controller c;    
+    public boolean running = false;
+    public String fontPath;
+    private final String FONT_PATH = "res/DroidSans.ttf";
+    private Thread gameThread;
     
     /**
      * Creates new form GUI
@@ -36,8 +42,8 @@ public class GUI extends javax.swing.JFrame {
     public GUI()
     {
         initComponents();
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        addListeners();
+        initGame();
+        startGame();
     }
 
     /**
@@ -50,7 +56,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jFileChooser = new javax.swing.JFileChooser();
-        canvas1 = new java.awt.Canvas();
+        jPanel = new javax.swing.JPanel();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuFile = new javax.swing.JMenu();
         jMenuItemLoad = new javax.swing.JMenuItem();
@@ -65,6 +71,17 @@ public class GUI extends javax.swing.JFrame {
         jFileChooser.setFileFilter(new PuzzleFileFilter());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanelLayout);
+        jPanelLayout.setHorizontalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+        );
+        jPanelLayout.setVerticalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+        );
 
         jMenuFile.setText("File");
 
@@ -123,14 +140,14 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -163,7 +180,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemLoadActionPerformed
 
     private void jMenuItemResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemResetActionPerformed
-        if (puzzleFile == null)
+        if (puzzleFile == null || puzzleFileName == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.", 
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -180,12 +197,13 @@ public class GUI extends javax.swing.JFrame {
                 "Are you sure you want to exit this application?", "Exit", 
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
         {
+            remove(jPanel);
             System.exit(0);
         }
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     private void jMenuItemBacktrackingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBacktrackingActionPerformed
-        if (puzzleFile == null)
+        if (puzzleFile == null || puzzleFileName == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.", 
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -198,7 +216,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemBacktrackingActionPerformed
 
     private void jMenuItemHybridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHybridActionPerformed
-        if (puzzleFile == null)
+        if (puzzleFile == null || puzzleFileName == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.", 
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -258,7 +276,7 @@ public class GUI extends javax.swing.JFrame {
                         "Exit", JOptionPane.YES_NO_OPTION) 
                         == JOptionPane.YES_OPTION);
                 {
-                    
+                    remove(jPanel);
                 }
             }
             
@@ -272,33 +290,110 @@ public class GUI extends javax.swing.JFrame {
         });
     }
     
+    public void startLWJGL()
+    {
+        gameThread = new Thread()
+        {
+            
+            @Override
+            public void run()
+            {
+                startGame();
+            }
+            
+        };
+        gameThread.start();
+    }
+
+    private void stopLWJGL()
+    {
+        running = false;
+        try
+        {
+            gameThread.join();
+        }
+        catch (InterruptedException ie)
+        {
+            System.out.println(ie);
+        }
+    }
+    
+    private void startGame()
+    {
+        running = true;
+        //gameLoop();
+        //destroy();
+    }
+    
+    private void initGame()
+    {
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        addListeners();
+        setLayout(new BorderLayout());
+        this.fontPath = FONT_PATH;
+        try
+        {
+            jPanel = new JPanel()
+            {
+
+                @Override
+                public final void addNotify()
+                {
+                    super.addNotify();
+                    startLWJGL();
+                }
+
+                @Override
+                public final void removeNotify()
+                {
+                    stopLWJGL();
+                    super.removeNotify();
+                }
+                
+            };
+            jPanel.setSize(getWidth(), getHeight());
+            add(jPanel);
+            jPanel.setFocusable(true);
+            jPanel.requestFocus();
+            jPanel.setIgnoreRepaint(true);
+            setVisible(true);
+        }
+        catch (Exception e)
+        {
+            System.err.println(e);
+            throw new RuntimeException("Unable to create display");
+        }
+    }
+    
     private void loadPuzzleFile(File puzzleFile) throws FileNotFoundException
     {
         try
         {
-            Scanner sc = new Scanner(puzzleFile);
-            this. size = sc.nextInt();
-            this.cageCells = new int[size][size];
-            this.numberOfCages = sc.nextInt();
-            this.cageObjectives = new String[numberOfCages];
-            for (int i = 0; i < size; i++)
+            try (Scanner sc = new Scanner(puzzleFile))
             {
-                for (int j = 0; j < size; j++)
+                this.size = sc.nextInt();
+                this.cageCells = new int[size][size];
+                this.numberOfCages = sc.nextInt();
+                this.cageObjectives = new String[numberOfCages];
+                for (int i = 0; i < size; i++)
                 {
-                    this.cageCells[i][j] = sc.nextInt();
+                    for (int j = 0; j < size; j++)
+                    {
+                        this.cageCells[i][j] = sc.nextInt();
+                    }
                 }
+                for (int i = 0; i < numberOfCages; i++)
+                {
+                    this.cageObjectives[i] = sc.next();
+                }
+                if (sc.hasNext())
+                {
+                    JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                    throw new IllegalStateException("Invalid puzzle file.");
+                }
+                sc.close();
             }
-            for (int i = 0; i < numberOfCages; i++)
-            {
-                this.cageObjectives[i] = sc.next();
-            }
-            if (sc.hasNext())
-            {
-                JOptionPane.showMessageDialog(null, "Invalid puzzle file.", 
-                        "Error", JOptionPane.ERROR_MESSAGE);
-                throw new IllegalStateException("Invalid puzzle file.");
-            }
-            sc.close();
             this.c = new Controller(size, numberOfCages, cageCells, cageObjectives);
         }
         catch (NoSuchElementException nsee)
@@ -308,9 +403,13 @@ public class GUI extends javax.swing.JFrame {
             throw new IllegalStateException("Invalid puzzle file.");
         }
     }
+    
+    public String getFontPath()
+    {
+        return fontPath;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Canvas canvas1;
     private javax.swing.JFileChooser jFileChooser;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuFile;
@@ -320,6 +419,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemLoad;
     private javax.swing.JMenuItem jMenuItemReset;
     private javax.swing.JMenu jMenuSolve;
+    private javax.swing.JPanel jPanel;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
