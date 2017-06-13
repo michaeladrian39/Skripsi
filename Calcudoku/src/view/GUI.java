@@ -7,6 +7,7 @@ package view;
 
 import controller.Controller;
 import java.awt.BorderLayout;
+import java.awt.Canvas;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -17,6 +18,35 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import org.lwjgl.LWJGLException;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.opengl.Display;
+import org.lwjgl.opengl.DisplayMode;
+import static org.lwjgl.opengl.GL11.GL_BLEND;
+import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_COLOR_MATERIAL;
+import static org.lwjgl.opengl.GL11.GL_DEPTH_TEST;
+import static org.lwjgl.opengl.GL11.GL_LIGHTING;
+import static org.lwjgl.opengl.GL11.GL_MODELVIEW;
+import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.GL_PROJECTION;
+import static org.lwjgl.opengl.GL11.GL_SMOOTH;
+import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
+import static org.lwjgl.opengl.GL11.glBlendFunc;
+import static org.lwjgl.opengl.GL11.glClear;
+import static org.lwjgl.opengl.GL11.glClearColor;
+import static org.lwjgl.opengl.GL11.glDisable;
+import static org.lwjgl.opengl.GL11.glEnable;
+import static org.lwjgl.opengl.GL11.glLineWidth;
+import static org.lwjgl.opengl.GL11.glLoadIdentity;
+import static org.lwjgl.opengl.GL11.glMatrixMode;
+import static org.lwjgl.opengl.GL11.glOrtho;
+import static org.lwjgl.opengl.GL11.glShadeModel;
+import org.newdawn.slick.SlickException;
+import org.newdawn.slick.UnicodeFont;
+import org.newdawn.slick.font.effects.ColorEffect;
 
 /**
  *
@@ -30,20 +60,34 @@ public class GUI extends javax.swing.JFrame {
     private int[][] cageCells;
     private int numberOfCages;
     private String[] cageObjectives;
-    private Controller c;    
+    private Controller c;
     public boolean running = false;
     public String fontPath;
-    private final String FONT_PATH = "res/DroidSans.ttf";
+    private final String FONT_PATH = "res/Roboto-Regular.ttf";
     private Thread gameThread;
+    private final int WINDOW_SIZE = 480;
+    private final int BOARD_WIDTH = WINDOW_SIZE - 30;
+    private final float LINE_WIDTH = 2.0f;
+    private final int BOARD_OFFSET_X = 15;
+    private final int BOARD_OFFSET_Y = 15;
+    private final int CLUE_OFFSET_X = 3;
+    private final int CLUE_OFFSET_Y = 1;
+    private final int CLUE_FONT_SIZE = 12;
+    private int guess_offset_x;
+    private int guess_offset_y;
+    private static final int GUESS_FONT_SIZE = 25;
+    private UnicodeFont clueFont;
+    private UnicodeFont guessFont;
     
     /**
      * Creates new form GUI
      */
     public GUI()
     {
+        initApplication();
         initComponents();
         initGame();
-        startGame();
+        initGUI();
     }
 
     /**
@@ -57,6 +101,7 @@ public class GUI extends javax.swing.JFrame {
 
         jFileChooser = new javax.swing.JFileChooser();
         jPanel = new javax.swing.JPanel();
+        canvas = new java.awt.Canvas();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuFile = new javax.swing.JMenu();
         jMenuItemLoad = new javax.swing.JMenuItem();
@@ -76,11 +121,17 @@ public class GUI extends javax.swing.JFrame {
         jPanel.setLayout(jPanelLayout);
         jPanelLayout.setHorizontalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(canvas, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(canvas, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jMenuFile.setText("File");
@@ -138,17 +189,11 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -263,6 +308,14 @@ public class GUI extends javax.swing.JFrame {
         });
     }
     
+    private void initApplication()
+    {
+        this.setTitle("Calcudoku");
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        JPopupMenu.setDefaultLightWeightPopupEnabled(false); 
+        addListeners();
+    }
+    
     private void addListeners()
     {
         this.addWindowListener(new WindowAdapter()
@@ -276,6 +329,7 @@ public class GUI extends javax.swing.JFrame {
                         "Exit", JOptionPane.YES_NO_OPTION) 
                         == JOptionPane.YES_OPTION);
                 {
+                    remove(canvas);
                     remove(jPanel);
                 }
             }
@@ -284,8 +338,7 @@ public class GUI extends javax.swing.JFrame {
             public void windowClosed(WindowEvent e)
             {
                 System.exit(0);
-            }
-            
+            }    
             
         });
     }
@@ -327,13 +380,11 @@ public class GUI extends javax.swing.JFrame {
     
     private void initGame()
     {
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        addListeners();
         setLayout(new BorderLayout());
         this.fontPath = FONT_PATH;
         try
         {
-            jPanel = new JPanel()
+            canvas = new Canvas()
             {
 
                 @Override
@@ -351,11 +402,11 @@ public class GUI extends javax.swing.JFrame {
                 }
                 
             };
-            jPanel.setSize(getWidth(), getHeight());
-            add(jPanel);
-            jPanel.setFocusable(true);
-            jPanel.requestFocus();
-            jPanel.setIgnoreRepaint(true);
+            canvas.setSize(getWidth(), getHeight());
+            add(canvas);
+            canvas.setFocusable(true);
+            canvas.requestFocus();
+            canvas.setIgnoreRepaint(true);
             setVisible(true);
         }
         catch (Exception e)
@@ -394,7 +445,8 @@ public class GUI extends javax.swing.JFrame {
                 }
                 sc.close();
             }
-            this.c = new Controller(size, numberOfCages, cageCells, cageObjectives);
+            this.c = new Controller(size, numberOfCages, cageCells, 
+                    cageObjectives);
         }
         catch (NoSuchElementException nsee)
         {
@@ -408,8 +460,68 @@ public class GUI extends javax.swing.JFrame {
     {
         return fontPath;
     }
+    
+    private void initGUI()
+    {
+        try
+        {
+            Display.setDisplayMode(new DisplayMode(WINDOW_SIZE, WINDOW_SIZE));
+            Display.setTitle("Calcudoku");
+            Display.setParent(canvas);
+            Display.create();
+        }
+        catch (LWJGLException e)
+        {
+            JOptionPane.showMessageDialog(null, 
+                    "Display was not initialized correctly.", "Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try
+        {
+            Keyboard.create();
+        }
+        catch (LWJGLException e)
+        {
+            JOptionPane.showMessageDialog(null, 
+                    "Keyboard could not be created.", "Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        glEnable(GL_TEXTURE_2D);
+        glShadeModel(GL_SMOOTH);
+        glDisable(GL_DEPTH_TEST);
+        glDisable(GL_LIGHTING);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glOrtho(0, WINDOW_SIZE, WINDOW_SIZE, 0, 1, -1);
+        glMatrixMode(GL_MODELVIEW);
+        glEnable(GL_COLOR_MATERIAL);
+        glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glLineWidth(LINE_WIDTH);
+        try
+        {
+            clueFont = new UnicodeFont(fontPath, CLUE_FONT_SIZE, false, false);
+            clueFont.addAsciiGlyphs();
+            clueFont.getEffects().add(new ColorEffect());
+            clueFont.loadGlyphs();
+            guessFont = new UnicodeFont(fontPath, GUESS_FONT_SIZE, false, false);
+            guessFont.addAsciiGlyphs();
+            guessFont.getEffects().add(new ColorEffect());
+            guessFont.loadGlyphs();
+        }
+        catch (SlickException e)
+        {
+            JOptionPane.showMessageDialog(null, "Failed to create font.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Canvas canvas;
     private javax.swing.JFileChooser jFileChooser;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuFile;
