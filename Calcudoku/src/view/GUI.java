@@ -17,7 +17,6 @@ import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
@@ -66,18 +65,18 @@ public class GUI extends javax.swing.JFrame {
     private final String FONT_PATH = "res/Roboto-Regular.ttf";
     private Thread gameThread;
     private final int WINDOW_SIZE = 480;
-    private final int BOARD_WIDTH = WINDOW_SIZE - 30;
+    private final int GRID_WIDTH = WINDOW_SIZE - 30;
     private final float LINE_WIDTH = 2.0f;
-    private final int BOARD_OFFSET_X = 15;
-    private final int BOARD_OFFSET_Y = 15;
-    private final int CLUE_OFFSET_X = 3;
-    private final int CLUE_OFFSET_Y = 1;
-    private final int CLUE_FONT_SIZE = 12;
-    private int guess_offset_x;
-    private int guess_offset_y;
-    private static final int GUESS_FONT_SIZE = 25;
-    private UnicodeFont clueFont;
-    private UnicodeFont guessFont;
+    private final int GRID_OFFSET_X = 15;
+    private final int GRID_OFFSET_Y = 15;
+    private final int OBJECTIVE_OFFSET_X = 3;
+    private final int OBJECTIVE_OFFSET_Y = 1;
+    private final int OBJECTIVE_FONT_SIZE = 12;
+    private int cell_offset_x;
+    private int cell_offset_y;
+    private static final int CELL_FONT_SIZE = 25;
+    private UnicodeFont objectiveFont;
+    private UnicodeFont cellFont;
     
     /**
      * Creates new form GUI
@@ -504,14 +503,15 @@ public class GUI extends javax.swing.JFrame {
         glLineWidth(LINE_WIDTH);
         try
         {
-            clueFont = new UnicodeFont(fontPath, CLUE_FONT_SIZE, false, false);
-            clueFont.addAsciiGlyphs();
-            clueFont.getEffects().add(new ColorEffect());
-            clueFont.loadGlyphs();
-            guessFont = new UnicodeFont(fontPath, GUESS_FONT_SIZE, false, false);
-            guessFont.addAsciiGlyphs();
-            guessFont.getEffects().add(new ColorEffect());
-            guessFont.loadGlyphs();
+            objectiveFont = new UnicodeFont(fontPath, OBJECTIVE_FONT_SIZE, 
+                    false, false);
+            objectiveFont.addAsciiGlyphs();
+            objectiveFont.getEffects().add(new ColorEffect());
+            objectiveFont.loadGlyphs();
+            cellFont = new UnicodeFont(fontPath, CELL_FONT_SIZE, false, false);
+            cellFont.addAsciiGlyphs();
+            cellFont.getEffects().add(new ColorEffect());
+            cellFont.loadGlyphs();
         }
         catch (SlickException e)
         {
