@@ -160,6 +160,11 @@ public class Cage
         return value;
     }
     
+    public String getObjective()
+    {
+        return objective;
+    }
+    
     public int getTargetNumber()
     {
         return targetNumber;
@@ -169,7 +174,7 @@ public class Cage
     {
         return operator;
     }
-    
+
     public ArrayList<Cell> getCells()
     {
         return cells;
