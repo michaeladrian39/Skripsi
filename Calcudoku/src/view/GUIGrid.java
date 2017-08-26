@@ -10,10 +10,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.BorderFactory;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -37,12 +40,13 @@ public class GUIGrid extends JPanel
     private final Cell[][] grid;
     private final Cage[] cages;
     private final JTextField[][] textFields;
+    private final Map<JTextField, Point> textFieldCoordinates = 
+            new HashMap<>();
     private static final Font FONT = new Font("Courier New", 
             Font.CENTER_BASELINE, 24);
     private final int cellSize = 48;
     private final int cellBorderWidth = 1;
-    private final int cageBorderWidth = 2;
-    private Dimension textFieldDimension;
+    private final int cageBorderWidth = 3;
     
     public GUIGrid(Controller c)
     {
@@ -54,7 +58,6 @@ public class GUIGrid extends JPanel
         this.grid = c.getGrid();
         this.cages = c.getCages();
         this.textFields = new JTextField[size][size];
-        Dimension textFieldDimension = new Dimension(cellSize, cellSize);
         this.setPreferredSize(new Dimension(cellSize * size, cellSize * size));
         this.setLayout(new GridLayout(size, size));
         generateTextFields();
@@ -103,7 +106,8 @@ public class GUIGrid extends JPanel
             {
                 JTextField textField = new JTextField();
                 textField.addKeyListener(new SudokuCellKeyListener(this));
-                textFields[x][y] = textField;
+                textFieldCoordinates.put(textField, new Point(x, y));
+                textFields[y][x] = textField;
             }   
         }
         for (int y = 0; y < size; y++)
@@ -208,7 +212,7 @@ public class GUIGrid extends JPanel
                         rightBorderWidth, Color.BLACK));
                 textField.setFont(FONT);
                 textField.setHorizontalAlignment(JTextField.CENTER);
-                textField.setPreferredSize(textFieldDimension);                
+                textField.setPreferredSize(new Dimension(cellSize, cellSize));                
                 JPopupMenu popupMenu = new JPopupMenu();                
                 for (int i = 0; i <= size; i++)
                 {
@@ -229,6 +233,63 @@ public class GUIGrid extends JPanel
             }
         }
     }
+    
+    public void moveCursor(JTextField textField, int keyCode)
+    {
+        Point coordinates = textFieldCoordinates.get(textField);
+        switch (keyCode)
+        {
+            case KeyEvent.VK_LEFT:
+                if (coordinates.x > 0)
+                {
+                    textFields[coordinates.y][coordinates.x - 1].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_KP_LEFT:
+                if (coordinates.x > 0)
+                {
+                    textFields[coordinates.y][coordinates.x - 1].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_UP:
+                if (coordinates.y > 0)
+                {
+                    textFields[coordinates.y - 1][coordinates.x].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_KP_UP:
+                if (coordinates.y > 0)
+                {
+                    textFields[coordinates.y - 1][coordinates.x].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_RIGHT:
+                if (coordinates.x < size - 1)
+                {
+                    textFields[coordinates.y][coordinates.x + 1].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_KP_RIGHT:
+                if (coordinates.x < size - 1)
+                {
+                    textFields[coordinates.y][coordinates.x + 1].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_DOWN:
+                if (coordinates.y < size - 1)
+                {
+                    textFields[coordinates.y + 1][coordinates.x].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_KP_DOWN:
+                if (coordinates.y < size - 1)
+                {
+                    textFields[coordinates.y + 1][coordinates.x].requestFocus();
+                }
+                break;
+        }
+    }
+    
 }
 
 class SudokuCellKeyListener implements KeyListener
@@ -242,21 +303,62 @@ class SudokuCellKeyListener implements KeyListener
     }
 
     @Override
+    public void keyPressed(KeyEvent e)
+    {
+        int keyCode = e.getKeyCode();
+        JTextField textField = (JTextField) e.getSource();        
+        switch (keyCode)
+        {
+            case KeyEvent.VK_LEFT :
+                e.consume();
+                gui.moveCursor(textField, keyCode);
+                break;
+            case KeyEvent.VK_UP :
+                e.consume();
+                gui.moveCursor(textField, keyCode);
+                break;
+            case KeyEvent.VK_RIGHT :
+                e.consume();
+                gui.moveCursor(textField, keyCode);
+                break;
+            case KeyEvent.VK_DOWN :
+                e.consume();
+                gui.moveCursor(textField, keyCode);
+                break;
+            case KeyEvent.VK_KP_LEFT :
+                e.consume();
+                gui.moveCursor(textField, keyCode);
+                break;
+            case KeyEvent.VK_KP_UP :
+                e.consume();
+                gui.moveCursor(textField, keyCode);
+                break;
+            case KeyEvent.VK_KP_RIGHT :
+                e.consume();
+                gui.moveCursor(textField, keyCode);
+                break;
+            case KeyEvent.VK_KP_DOWN :
+                e.consume();
+                gui.moveCursor(textField, keyCode);
+                break;
+        }
+    }
+
+    @Override
     public void keyTyped(KeyEvent e)
     {
-        JTextField textField = (JTextField) e.getSource();        
+        JTextField textField = (JTextField) e.getSource();
+        char c = e.getKeyChar();
+        if (!Character.isDigit(c))
+        {
+            e.consume();
+        }
         String gridSize = "" + gui.getGridSize();
         int gridSizeDigits = gridSize.length();
         if (textField.getText().length() >= gridSizeDigits)
         {
             e.consume();
         }
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e)
-    {
-        
     }
 
     @Override
