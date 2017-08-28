@@ -364,6 +364,7 @@ public class Grid
         if (value > 0 && value <= size)
         {
             getGridContents()[row][column].setValue(value);
+            isWin();
             return isCellValueValid(row, column);
         }
         else
@@ -402,6 +403,28 @@ public class Grid
             {
                 if (getGridContents()[i][j].getValue() == null)
                 {
+                    return null;
+                }
+                if (isCellValueValid(i, j) == false)
+                {
+                    return false;
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(null, 
+                "Congratulations, you have successfully solved the puzzle!", 
+                "Information", JOptionPane.INFORMATION_MESSAGE);
+        return true;
+    }
+    
+    public Boolean manualIsWin()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (getGridContents()[i][j].getValue() == null)
+                {
                     JOptionPane.showMessageDialog(null, 
                             "There are empty cells in the grid.", 
                             "Information", JOptionPane.INFORMATION_MESSAGE);
@@ -416,8 +439,9 @@ public class Grid
                 }
             }
         }
-        JOptionPane.showMessageDialog(null, "You Win!", "Information", 
-                    JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, 
+                "Congratulations, You have successfully solved the puzzle!", 
+                "Information", JOptionPane.INFORMATION_MESSAGE);
         return true;
     }
     

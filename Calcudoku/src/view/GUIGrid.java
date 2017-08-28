@@ -46,8 +46,8 @@ public class GUIGrid extends JPanel
     private final Cell[][] grid;
     private final Cage[] cages;
     private final JTextField[][] textFields;
-    private final Map<JTextField, Point> textFieldCoordinates = 
-            new HashMap<>();
+    private final Map<JTextField, Point> textFieldCoordinates;
+    private final CellTextFieldListener[][] cellTextFieldListeners;
     private static final Font FONT = new Font("Courier New", 
             Font.CENTER_BASELINE, 36);
     private final int cellSize = 72;
@@ -65,6 +65,8 @@ public class GUIGrid extends JPanel
         this.grid = c.getGrid();
         this.cages = c.getCages();
         this.textFields = new JTextField[size][size];
+        this.textFieldCoordinates = new HashMap<>();
+        this.cellTextFieldListeners = new CellTextFieldListener[size][size];
         this.setPreferredSize(new Dimension(cellSize * size, cellSize * size));
         this.setLayout(new GridLayout(size, size));
         generateTextFields();
@@ -113,8 +115,10 @@ public class GUIGrid extends JPanel
             {
                 JTextField textField = new JTextField();
                 textField.addKeyListener(new CellKeyListener(this));
+                cellTextFieldListeners[y][x] = new CellTextFieldListener(c, 
+                        textField, y, x);
                 textField.getDocument().addDocumentListener(
-                        new CellTextFieldListener(textField));
+                        cellTextFieldListeners[y][x]);
                 textFieldCoordinates.put(textField, new Point(x, y));
                 textFields[y][x] = textField;
             }   
@@ -245,14 +249,56 @@ public class GUIGrid extends JPanel
     
     public void solveBacktracking()
     {
+        removeCellTextFieldListeners();
         SolverBacktracking sb = new SolverBacktracking(game);
         Cell[][] solution = sb.getSolution().getGridContents();
+        printGridToScreen(solution);
+        addCellTextFieldListeners();
     }
     
     public void solveHybridGenetic()
     {
+        removeCellTextFieldListeners();
         SolverHybridGenetic shg = new SolverHybridGenetic(game);
         Cell[][] solution = shg.getSolution().getGridContents();
+        printGridToScreen(solution);
+        addCellTextFieldListeners();
+    }
+    
+    private void printGridToScreen(Cell[][] grid)
+    {
+        for (int x = 0; x < size; x++)
+        {
+            for (int y = 0; y < size; y++)
+            {
+                String value = Integer.toString(grid[x][y].getValue());
+                textFields[x][y].setText(value);
+            }
+        }
+    }
+    
+    private void addCellTextFieldListeners()
+    {
+        for (int x = 0; x < size; x++)
+        {
+            for (int y = 0; y < size; y++)
+            {
+                textFields[x][y].getDocument().addDocumentListener(
+                        cellTextFieldListeners[x][y]);
+            }
+        }
+    }
+    
+    private void removeCellTextFieldListeners()
+    {
+        for (int x = 0; x < size; x++)
+        {
+            for (int y = 0; y < size; y++)
+            {
+                textFields[x][y].getDocument().removeDocumentListener(
+                        cellTextFieldListeners[x][y]);
+            }
+        }
     }
     
     public void moveCursor(JTextField textField, int keyCode)
@@ -413,29 +459,37 @@ class PopupMenuListener implements ActionListener
 class CellTextFieldListener implements DocumentListener
 {
 
-    JTextField textField;
+    private final Controller c;
+    private final JTextField textField;
+    private final int x;
+    private final int y;
     
-    public CellTextFieldListener(JTextField textField)
+    public CellTextFieldListener(Controller c, JTextField textField, int x, 
+            int y)
     {
+        this.c = c;
         this.textField = textField;
+        this.x = x;
+        this.y = y;
     }
     
     @Override
     public void insertUpdate(DocumentEvent e)
     {
-        
+        c.setCellValue(x, y, Integer.parseInt(textField.getText()));
     }
 
     @Override
     public void removeUpdate(DocumentEvent e)
     {
-        
+        c.unsetCellValue(x, y);
     }
 
     @Override
     public void changedUpdate(DocumentEvent e)
     {
-        
+        c.unsetCellValue(x, y);
+        c.setCellValue(x, y, Integer.parseInt(textField.getText()));
     }
     
 }

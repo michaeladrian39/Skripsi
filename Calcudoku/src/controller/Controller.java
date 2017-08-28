@@ -32,6 +32,11 @@ public class Controller
         return g.setCellValue(row, column, value);
     }
     
+    public void unsetCellValue(int row, int column)
+    {
+        g.unsetCellValue(row, column);
+    }
+    
     public Boolean isWin()
     {
         return g.isWin();
