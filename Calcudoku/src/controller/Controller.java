@@ -81,15 +81,10 @@ public class Controller
     {
         return g.getCages();
     }
-    
-    public void solveBacktracking()
+
+    public Grid getGame()
     {
-        g.solveBacktracking();
-    }
-    
-    public void solveHybridGenetic()
-    {
-        g.solveHybridGenetic();
+        return g.getGame();
     }
     
 }

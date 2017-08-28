@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import model.SolverBacktracking;
+import model.SolverHybridGenetic;
 
 /**
  *
@@ -61,7 +63,9 @@ public class Tester
         }
         Controller c = new Controller(size, numberOfCages, cageCells, 
                 cageObjectives);
-        c.solveBacktracking();
+        SolverBacktracking sbt = new SolverBacktracking(c.getGame());
+        SolverHybridGenetic shg = new SolverHybridGenetic(c.getGame());
+        System.exit(0);
     }
     
 }

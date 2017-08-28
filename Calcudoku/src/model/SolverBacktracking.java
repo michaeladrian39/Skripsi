@@ -1,6 +1,5 @@
 package model;
 
-import java.util.Objects;
 import javax.swing.JOptionPane;
 
 /**
@@ -47,12 +46,12 @@ public class SolverBacktracking
         }
     }
     
-    public boolean solve()
+    private boolean solve()
     {
         return solve(0, 0);
     }
     
-    public boolean solve(int row, int column)
+    private boolean solve(int row, int column)
     {
         if (column >= size)
         {
@@ -90,7 +89,7 @@ public class SolverBacktracking
         return solution;
     }
     
-    public void printGrid(Cell[][] cells)
+    private void printGrid(Cell[][] cells)
     {
         for (int i = 0; i < size; i++)
         {

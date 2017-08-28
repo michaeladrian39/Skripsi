@@ -36,7 +36,6 @@ public class SolverGenetic
             printGrid(currentGeneration.get(i).getGrid().getGridContents());
             System.out.println(currentGeneration.get(i).getFitness());
         }
-        solve();
     }
     
     public boolean solve()
@@ -105,7 +104,7 @@ public class SolverGenetic
         nextGeneration = new ArrayList();
     }
 
-    private void setParameters(int generationsNumber, int populationSize, 
+    public void setParameters(int generationsNumber, int populationSize, 
             double elitismRate, double crossoverRate, double mutationRate)
     {
         this.generationsNumber = generationsNumber;
@@ -122,14 +121,7 @@ public class SolverGenetic
         {
             for (int j = 0; j < size; j++)
             {
-                if (grid.getCellValue(i, j) == null)
-                {
-                    array[i][j] = false;
-                }
-                else
-                {
-                    array[i][j] = true;
-                }
+                array[i][j] = grid.getCellValue(i, j) != null;
             }
         }
         return array;
@@ -312,7 +304,7 @@ public class SolverGenetic
         return solution;
     }
     
-    public void printGrid(Cell[][] cells)
+    private void printGrid(Cell[][] cells)
     {
         for (int i = 0; i < size; i++)
         {
@@ -325,7 +317,7 @@ public class SolverGenetic
         System.out.println("");
     }
     
-    public void printPossibleValues(ArrayList<Integer>[][] possibleValues)
+    private void printPossibleValues(ArrayList<Integer>[][] possibleValues)
     {
         for (int i = 0; i < possibleValues.length; i++)
         {

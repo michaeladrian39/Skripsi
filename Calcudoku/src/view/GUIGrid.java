@@ -22,8 +22,13 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import model.Cage;
 import model.Cell;
+import model.Grid;
+import model.SolverBacktracking;
+import model.SolverHybridGenetic;
 
 /**
  *
@@ -33,6 +38,7 @@ public class GUIGrid extends JPanel
 {
     
     private final Controller c;
+    private final Grid game;
     private final int size;
     private final int[][] cageCells;
     private final int numberOfCages;
@@ -43,14 +49,15 @@ public class GUIGrid extends JPanel
     private final Map<JTextField, Point> textFieldCoordinates = 
             new HashMap<>();
     private static final Font FONT = new Font("Courier New", 
-            Font.CENTER_BASELINE, 24);
-    private final int cellSize = 48;
+            Font.CENTER_BASELINE, 36);
+    private final int cellSize = 72;
     private final int cellBorderWidth = 1;
     private final int cageBorderWidth = 3;
     
     public GUIGrid(Controller c)
     {
         this.c = c;
+        this.game = c.getGame();
         this.size = c.getSize();
         this.cageCells = c.getCageCells();
         this.numberOfCages = c.getNumberOfCages();
@@ -105,7 +112,9 @@ public class GUIGrid extends JPanel
             for (int x = 0; x < size; x++)
             {
                 JTextField textField = new JTextField();
-                textField.addKeyListener(new SudokuCellKeyListener(this));
+                textField.addKeyListener(new CellKeyListener(this));
+                textField.getDocument().addDocumentListener(
+                        new CellTextFieldListener(textField));
                 textFieldCoordinates.put(textField, new Point(x, y));
                 textFields[y][x] = textField;
             }   
@@ -234,6 +243,18 @@ public class GUIGrid extends JPanel
         }
     }
     
+    public void solveBacktracking()
+    {
+        SolverBacktracking sb = new SolverBacktracking(game);
+        Cell[][] solution = sb.getSolution().getGridContents();
+    }
+    
+    public void solveHybridGenetic()
+    {
+        SolverHybridGenetic shg = new SolverHybridGenetic(game);
+        Cell[][] solution = shg.getSolution().getGridContents();
+    }
+    
     public void moveCursor(JTextField textField, int keyCode)
     {
         Point coordinates = textFieldCoordinates.get(textField);
@@ -292,12 +313,12 @@ public class GUIGrid extends JPanel
     
 }
 
-class SudokuCellKeyListener implements KeyListener
+class CellKeyListener implements KeyListener
 {
 
     private final GUIGrid gui;
 
-    SudokuCellKeyListener(GUIGrid gui)
+    CellKeyListener(GUIGrid gui)
     {
         this.gui = gui;
     }
@@ -311,35 +332,35 @@ class SudokuCellKeyListener implements KeyListener
         {
             case KeyEvent.VK_LEFT :
                 e.consume();
-                gui.moveCursor(textField, keyCode);
+                gui.moveCursor(textField, KeyEvent.VK_LEFT);
                 break;
             case KeyEvent.VK_UP :
                 e.consume();
-                gui.moveCursor(textField, keyCode);
+                gui.moveCursor(textField, KeyEvent.VK_UP);
                 break;
             case KeyEvent.VK_RIGHT :
                 e.consume();
-                gui.moveCursor(textField, keyCode);
+                gui.moveCursor(textField, KeyEvent.VK_RIGHT);
                 break;
             case KeyEvent.VK_DOWN :
                 e.consume();
-                gui.moveCursor(textField, keyCode);
+                gui.moveCursor(textField, KeyEvent.VK_DOWN);
                 break;
             case KeyEvent.VK_KP_LEFT :
                 e.consume();
-                gui.moveCursor(textField, keyCode);
+                gui.moveCursor(textField, KeyEvent.VK_KP_LEFT);
                 break;
             case KeyEvent.VK_KP_UP :
                 e.consume();
-                gui.moveCursor(textField, keyCode);
+                gui.moveCursor(textField, KeyEvent.VK_KP_UP);
                 break;
             case KeyEvent.VK_KP_RIGHT :
                 e.consume();
-                gui.moveCursor(textField, keyCode);
+                gui.moveCursor(textField, KeyEvent.VK_KP_RIGHT);
                 break;
             case KeyEvent.VK_KP_DOWN :
                 e.consume();
-                gui.moveCursor(textField, keyCode);
+                gui.moveCursor(textField, KeyEvent.VK_KP_DOWN);
                 break;
         }
     }
@@ -385,6 +406,36 @@ class PopupMenuListener implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         textField.setText(number + "");
+    }
+    
+}
+
+class CellTextFieldListener implements DocumentListener
+{
+
+    JTextField textField;
+    
+    public CellTextFieldListener(JTextField textField)
+    {
+        this.textField = textField;
+    }
+    
+    @Override
+    public void insertUpdate(DocumentEvent e)
+    {
+        
+    }
+
+    @Override
+    public void removeUpdate(DocumentEvent e)
+    {
+        
+    }
+
+    @Override
+    public void changedUpdate(DocumentEvent e)
+    {
+        
     }
     
 }

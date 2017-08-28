@@ -21,7 +21,6 @@ public class SolverRuleBased
         this.grid = grid;
         this.size = grid.getSize();
         this.possibleValues = generatePossibleValuesArray();
-        solve();
     }
     
     private ArrayList<Integer>[][] generatePossibleValuesArray()
@@ -1786,7 +1785,7 @@ public class SolverRuleBased
         return array;
     }
     
-    public ArrayList<ArrayList<Integer>> getGridArrayList()
+    private ArrayList<ArrayList<Integer>> getGridArrayList()
     {
         ArrayList<ArrayList<Integer>> gridArrayList = new ArrayList();
         for (int i = 0; i < size; i++)
@@ -1811,12 +1810,12 @@ public class SolverRuleBased
         return solution;
     }
     
-    public ArrayList<Integer>[][] getPossibleValues()
+    private ArrayList<Integer>[][] getPossibleValues()
     {
         return possibleValues;
     }
     
-    public void printGrid()
+    private void printGrid()
     {
         Cell[][] cells = grid.getGridContents();
         for (int i = 0; i < size; i++)
@@ -1830,7 +1829,7 @@ public class SolverRuleBased
         System.out.println("");
     }
     
-    public void printPossibleValues()
+    private void printPossibleValues()
     {
         for (int i = 0; i < possibleValues.length; i++)
         {

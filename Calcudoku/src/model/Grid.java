@@ -471,14 +471,9 @@ public class Grid
         return cages;
     }
     
-    public void solveBacktracking()
+    public Grid getGame()
     {
-        SolverBacktracking sb = new SolverBacktracking(this);
-    }
-    
-    public void solveHybridGenetic()
-    {
-        SolverHybridGenetic shg = new SolverHybridGenetic(this);
+        return this;
     }
     
 }

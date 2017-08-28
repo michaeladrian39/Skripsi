@@ -152,7 +152,8 @@ public class GUIFrame extends JFrame
 
     private void menuItemResetActionPerformed(ActionEvent evt)
     {
-        if (puzzleFile == null || puzzleFileName == null || c == null)
+        if (puzzleFile == null || puzzleFileName == null || c == null 
+                || gui == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -185,7 +186,8 @@ public class GUIFrame extends JFrame
 
     private void menuItemBacktrackingActionPerformed(ActionEvent evt)
     {
-        if (puzzleFile == null || puzzleFileName == null || c == null)
+        if (puzzleFile == null || puzzleFileName == null || c == null 
+                || gui == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -193,13 +195,14 @@ public class GUIFrame extends JFrame
         }
         else
         {
-            c.solveBacktracking();
+            gui.solveBacktracking();
         }
     }
 
     private void menuItemHybridGeneticActionPerformed(ActionEvent evt)
     {
-        if (puzzleFile == null || puzzleFileName == null || c == null)
+        if (puzzleFile == null || puzzleFileName == null || c == null 
+                || gui == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -207,7 +210,7 @@ public class GUIFrame extends JFrame
         }
         else
         {
-            c.solveHybridGenetic();
+            gui.solveHybridGenetic();
         }
     }
 
