@@ -476,7 +476,8 @@ class CellTextFieldListener implements DocumentListener
     @Override
     public void insertUpdate(DocumentEvent e)
     {
-        c.setCellValue(x, y, Integer.parseInt(textField.getText()));
+        Integer value = Integer.parseInt(textField.getText());
+        c.setCellValue(x, y, value);
     }
 
     @Override
@@ -488,8 +489,9 @@ class CellTextFieldListener implements DocumentListener
     @Override
     public void changedUpdate(DocumentEvent e)
     {
+        Integer value = Integer.parseInt(textField.getText());
         c.unsetCellValue(x, y);
-        c.setCellValue(x, y, Integer.parseInt(textField.getText()));
+        c.setCellValue(x, y, value);
     }
     
 }
