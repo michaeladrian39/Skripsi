@@ -38,9 +38,12 @@ public class GUIFrame extends JFrame
     private final JMenuItem menuItemReset = new JMenuItem("Reset Puzzle");
     private final JMenuItem menuItemCheck = new JMenuItem("Check Puzzle");
     private final JMenuItem menuItemExit = new JMenuItem("Exit");
-    private final JMenuItem menuItemBacktracking = new JMenuItem("Backtracking");
-    private final JMenuItem menuItemHybridGenetic = new JMenuItem("Hybrid Genetic");
-    private final JFileChooser fileChooser = new JFileChooser("Load Puzzle File");
+    private final JMenuItem menuItemBacktracking 
+            = new JMenuItem("Backtracking");
+    private final JMenuItem menuItemHybridGenetic 
+            = new JMenuItem("Hybrid Genetic");
+    private final JFileChooser fileChooser 
+            = new JFileChooser("Load Puzzle File");
     private GUIGrid gui;
     
     public GUIFrame()

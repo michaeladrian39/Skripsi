@@ -1466,7 +1466,8 @@ public class SolverRuleBased
     
     private void hiddenSingleColumn(int column)
     {
-        ArrayList<Integer>[] columnPossibleValues = getColumnPossibleValues(column);
+        ArrayList<Integer>[] columnPossibleValues 
+                = getColumnPossibleValues(column);
         int[] possibleValuesFrequency = new int[size];
         ArrayList<Integer> rowValues = new ArrayList();
         ArrayList<Integer> rowIndexes = new ArrayList();
@@ -1635,7 +1636,8 @@ public class SolverRuleBased
     
     private void hiddenDoubleColumn(int column)
     {
-        ArrayList<Integer>[] columnPossibleValues = getRowPossibleValues(column);
+        ArrayList<Integer>[] columnPossibleValues 
+                = getRowPossibleValues(column);
         int[] possibleValuesFrequency = new int[size];
         ArrayList<Integer> rowValues = new ArrayList();
         ArrayList<ArrayList<Integer>> rowIndexes = new ArrayList();

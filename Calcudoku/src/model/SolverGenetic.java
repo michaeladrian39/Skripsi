@@ -46,7 +46,8 @@ public class SolverGenetic
             sortChromosomes();
             for (int j = 0; j < populationSize; j++)
             {
-                printGrid(currentGeneration.get(j).getGrid().getGridContents());
+                printGrid(
+                        currentGeneration.get(j).getGrid().getGridContents());
                 System.out.println(currentGeneration.get(j).getFitness());
                 if (currentGeneration.get(j).getFitness() == 1.0)
                 {

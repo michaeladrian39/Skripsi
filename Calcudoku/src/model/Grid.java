@@ -433,8 +433,9 @@ public class Grid
                 if (solverIsCellValueValid(i, j) == false)
                 {
                     JOptionPane.showMessageDialog(null,
-                            "There are cells with incorrect values in the grid.", 
-                            "Information", JOptionPane.INFORMATION_MESSAGE);
+                            "There are cells with incorrect values in the " 
+                                    + "grid.", "Information", 
+                                    JOptionPane.INFORMATION_MESSAGE);
                     return false;
                 }
             }

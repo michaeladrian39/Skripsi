@@ -1,7 +1,5 @@
 package model;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author apple

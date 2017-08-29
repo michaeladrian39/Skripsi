@@ -100,11 +100,13 @@ public class Cage
                 case '-':
                     if (cells.get(0).getValue() > cells.get(1).getValue())
                     {
-                        value = cells.get(0).getValue() - cells.get(1).getValue();
+                        value = cells.get(0).getValue() 
+                                - cells.get(1).getValue();
                     }
                     else if (cells.get(1).getValue() > cells.get(0).getValue())
                     {
-                        value = cells.get(1).getValue() - cells.get(0).getValue();
+                        value = cells.get(1).getValue() 
+                                - cells.get(0).getValue();
                     }
                     else
                     {
