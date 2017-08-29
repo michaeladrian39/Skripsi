@@ -261,9 +261,10 @@ public class GUIGrid extends JPanel
                     + "solved the puzzle." + "\nTime elapsed: " + duration 
                     + " seconds");
             JOptionPane.showMessageDialog(null, 
-                    "The backtracking algorithm has successfully solved the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds", 
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
+                    "The backtracking algorithm has successfully solved the " 
+                            + "puzzle." + "\nTime elapsed: " + duration 
+                            + " seconds", "Information", 
+                            JOptionPane.INFORMATION_MESSAGE);
         }
         else
         {
@@ -273,9 +274,10 @@ public class GUIGrid extends JPanel
                     + "the puzzle." + "\nTime elapsed: " + duration 
                     + " seconds");
             JOptionPane.showMessageDialog(null, 
-                    "The backtracking algorithm has failed to solve the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds", 
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
+                    "The backtracking algorithm has failed to solve the " 
+                            + "puzzle." + "\nTime elapsed: " + duration 
+                            + " seconds", "Information", 
+                            JOptionPane.INFORMATION_MESSAGE);
         }
         addCellTextFieldListeners();
     }
@@ -298,9 +300,10 @@ public class GUIGrid extends JPanel
                     + "solved the puzzle." + "\nTime elapsed: " + duration 
                     + " seconds");
             JOptionPane.showMessageDialog(null, 
-                    "The hybrid genetic algorithm has successfully solved the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds", 
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
+                    "The hybrid genetic algorithm has successfully solved the " 
+                            + "puzzle." + "\nTime elapsed: " + duration 
+                            + " seconds", "Information", 
+                            JOptionPane.INFORMATION_MESSAGE);
         }
         else
         {
@@ -310,9 +313,10 @@ public class GUIGrid extends JPanel
                     + "solve the puzzle." + "\nTime elapsed: " + duration 
                     + " seconds");
             JOptionPane.showMessageDialog(null, 
-                    "The hybrid genetic algorithm has failed to solve the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds", 
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
+                    "The hybrid genetic algorithm has failed to solve the " + 
+                            "puzzle." + "\nTime elapsed: " + duration 
+                            + " seconds", "Information", 
+                            JOptionPane.INFORMATION_MESSAGE);
         }
         addCellTextFieldListeners();
     }
