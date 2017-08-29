@@ -85,4 +85,3 @@ class ChromosomeComparator implements Comparator<Chromosome>
     }
     
 }
-
