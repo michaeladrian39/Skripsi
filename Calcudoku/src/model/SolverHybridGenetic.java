@@ -18,41 +18,16 @@ public class SolverHybridGenetic
     {
         this.grid = grid;
         this.size = grid.getSize();
-        float startTime = System.nanoTime();
-        if (solve() == true)
-        {
-            float endTime = System.nanoTime();
-            float duration = (endTime - startTime) / 1000000000;
-            System.out.println("The hybrid genetic algorithm has successfully "
-                    + "solved the puzzle." + "\nTime elapsed: " + duration 
-                    + " seconds");
-            JOptionPane.showMessageDialog(null, 
-                    "The hybrid genetic algorithm has successfully solved the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds", 
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else
-        {
-            float endTime = System.nanoTime();
-            float duration = (endTime - startTime) / 1000000000;
-            System.out.println("The hybrid genetic algorithm has failed to "
-                    + "solve the puzzle." + "\nTime elapsed: " + duration 
-                    + " seconds");
-            JOptionPane.showMessageDialog(null, 
-                    "The hybrid genetic algorithm has failed to solve the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds", 
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
-        }
     }
     
-    private boolean solve()
+    public boolean solve()
     {
         SolverRuleBased srb = new SolverRuleBased(grid);
         boolean isFilled = srb.solve();
-        gridRuleBased = srb.getGrid();
+        this.gridRuleBased = srb.getGrid();
         if (isFilled)
         {
-            solution = srb.getSolution();
+            this.solution = srb.getSolution();
             printGrid(solution.getGridContents());
             return true;
         }
@@ -61,7 +36,7 @@ public class SolverHybridGenetic
             SolverGenetic sg = new SolverGenetic(gridRuleBased);
             if (sg.solve() == true)
             {
-                solution = sg.getSolution();
+                this.solution = sg.getSolution();
                 printGrid(solution.getGridContents());
                 return true;
             }
@@ -73,7 +48,7 @@ public class SolverHybridGenetic
     {
         return grid;
     }
-    
+
     public Grid getSolution()
     {
         return solution;

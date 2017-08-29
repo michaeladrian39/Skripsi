@@ -36,6 +36,7 @@ public class GUIFrame extends JFrame
     private final JMenu menuSolve = new JMenu("Solve");
     private final JMenuItem menuItemLoad = new JMenuItem("Load Puzzle File");
     private final JMenuItem menuItemReset = new JMenuItem("Reset Puzzle");
+    private final JMenuItem menuItemCheck = new JMenuItem("Check Puzzle");
     private final JMenuItem menuItemExit = new JMenuItem("Exit");
     private final JMenuItem menuItemBacktracking = new JMenuItem("Backtracking");
     private final JMenuItem menuItemHybridGenetic = new JMenuItem("Hybrid Genetic");
@@ -99,6 +100,7 @@ public class GUIFrame extends JFrame
         fileChooser.setFileFilter(new PuzzleFileFilter());      
         menuItemLoad.addActionListener(this::menuItemLoadActionPerformed);
         menuItemReset.addActionListener(this::menuItemResetActionPerformed);
+        menuItemCheck.addActionListener(this::menuItemCheckActionPerformed);
         menuItemExit.addActionListener(this::menuItemExitActionPerformed);
         menuItemBacktracking.addActionListener(
                 this::menuItemBacktrackingActionPerformed);
@@ -110,6 +112,8 @@ public class GUIFrame extends JFrame
     {
         menuFile.add(menuItemLoad);
         menuFile.add(menuItemReset);
+        menuFile.addSeparator();
+        menuFile.add(menuItemCheck);
         menuFile.addSeparator();
         menuFile.add(menuItemExit);
         menuBar.add(menuFile);
@@ -165,6 +169,21 @@ public class GUIFrame extends JFrame
             this.revalidate();
             this.pack();
             this.setLocationRelativeTo(null);
+        }
+    }
+    
+    private void menuItemCheckActionPerformed(ActionEvent evt)
+    {
+        if (puzzleFile == null || puzzleFileName == null || c == null 
+                || gui == null)
+        {
+            JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not loaded.");
+        }
+        else
+        {
+            c.checkGrid();
         }
     }
 

@@ -16,39 +16,21 @@ public class SolverBacktracking
     public SolverBacktracking(Grid grid)
     {
         this.grid = grid;
-        this.size = grid.getSize();
-        float startTime = System.nanoTime();
-        if (solve() == true)
+        this.size = grid.getSize();     
+    }
+    
+    public boolean solve()
+    {
+        if (solve(0, 0) == true)
         {
-            float endTime = System.nanoTime();
             this.solution = grid;
             printGrid(solution.getGridContents());
-            float duration = (endTime - startTime) / 1000000000;
-            System.out.println("The backtracking algorithm has successfully "
-                    + "solved the puzzle." + "\nTime elapsed: " + duration 
-                    + " seconds");
-            JOptionPane.showMessageDialog(null, 
-                    "The backtracking algorithm has successfully solved the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds", 
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
+            return true;
         }
         else
         {
-            float endTime = System.nanoTime();
-            float duration = (endTime - startTime) / 1000000000;
-            System.out.println("The backtracking algorithm has failed to solve "
-                    + "the puzzle." + "\nTime elapsed: " + duration 
-                    + " seconds");
-            JOptionPane.showMessageDialog(null, 
-                    "The backtracking algorithm has failed to solve the puzzle." 
-                            + "\nTime elapsed: " + duration + " seconds", 
-                    "Information", JOptionPane.INFORMATION_MESSAGE);
+            return false;
         }
-    }
-    
-    private boolean solve()
-    {
-        return solve(0, 0);
     }
     
     private boolean solve(int row, int column)

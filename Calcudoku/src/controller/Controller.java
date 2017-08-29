@@ -37,9 +37,9 @@ public class Controller
         g.unsetCellValue(row, column);
     }
     
-    public Boolean isWin()
+    public Boolean checkGrid()
     {
-        return g.isWin();
+        return g.checkGrid();
     }
     
     public int getCellValue(int row, int column)

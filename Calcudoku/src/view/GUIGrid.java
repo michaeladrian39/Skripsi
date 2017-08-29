@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.BorderFactory;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
@@ -245,18 +246,74 @@ public class GUIGrid extends JPanel
     public void solveBacktracking()
     {
         removeCellTextFieldListeners();
+        Cell[][] solution;
+        float startTime = System.nanoTime();
+        float endTime;
+        float duration;
         SolverBacktracking sb = new SolverBacktracking(game);
-        Cell[][] solution = sb.getSolution().getGridContents();
-        printGridToScreen(solution);
+        if (sb.solve() == true)
+        {
+            solution = sb.getSolution().getGridContents();
+            printGridToScreen(solution);
+            endTime = System.nanoTime();
+            duration = (endTime - startTime) / 1000000000;
+            System.out.println("The backtracking algorithm has successfully "
+                    + "solved the puzzle." + "\nTime elapsed: " + duration 
+                    + " seconds");
+            JOptionPane.showMessageDialog(null, 
+                    "The backtracking algorithm has successfully solved the puzzle." 
+                            + "\nTime elapsed: " + duration + " seconds", 
+                    "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else
+        {
+            endTime = System.nanoTime();
+            duration = (endTime - startTime) / 1000000000;
+            System.out.println("The backtracking algorithm has failed to solve "
+                    + "the puzzle." + "\nTime elapsed: " + duration 
+                    + " seconds");
+            JOptionPane.showMessageDialog(null, 
+                    "The backtracking algorithm has failed to solve the puzzle." 
+                            + "\nTime elapsed: " + duration + " seconds", 
+                    "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
         addCellTextFieldListeners();
     }
     
     public void solveHybridGenetic()
     {
         removeCellTextFieldListeners();
+        Cell[][] solution;
+        float startTime = System.nanoTime();
+        float endTime;
+        float duration;
         SolverHybridGenetic shg = new SolverHybridGenetic(game);
-        Cell[][] solution = shg.getSolution().getGridContents();
-        printGridToScreen(solution);
+        if (shg.solve() == true)
+        {
+            solution = shg.getSolution().getGridContents();
+            printGridToScreen(solution);
+            endTime = System.nanoTime();
+            duration = (endTime - startTime) / 1000000000;
+            System.out.println("The hybrid genetic algorithm has successfully "
+                    + "solved the puzzle." + "\nTime elapsed: " + duration 
+                    + " seconds");
+            JOptionPane.showMessageDialog(null, 
+                    "The hybrid genetic algorithm has successfully solved the puzzle." 
+                            + "\nTime elapsed: " + duration + " seconds", 
+                    "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else
+        {
+            endTime = System.nanoTime();
+            duration = (endTime - startTime) / 1000000000;
+            System.out.println("The hybrid genetic algorithm has failed to "
+                    + "solve the puzzle." + "\nTime elapsed: " + duration 
+                    + " seconds");
+            JOptionPane.showMessageDialog(null, 
+                    "The hybrid genetic algorithm has failed to solve the puzzle." 
+                            + "\nTime elapsed: " + duration + " seconds", 
+                    "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
         addCellTextFieldListeners();
     }
     

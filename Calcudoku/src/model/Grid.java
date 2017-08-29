@@ -417,7 +417,7 @@ public class Grid
         return true;
     }
     
-    public Boolean manualIsWin()
+    public Boolean checkGrid()
     {
         for (int i = 0; i < size; i++)
         {
@@ -430,7 +430,7 @@ public class Grid
                             "Information", JOptionPane.INFORMATION_MESSAGE);
                     return null;
                 }
-                if (isCellValueValid(i, j) == false)
+                if (solverIsCellValueValid(i, j) == false)
                 {
                     JOptionPane.showMessageDialog(null,
                             "There are cells with incorrect values in the grid.", 
