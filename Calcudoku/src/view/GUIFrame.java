@@ -122,7 +122,7 @@ public class GUIFrame extends JFrame
                 {
                     JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
                         "Error", JOptionPane.ERROR_MESSAGE);
-                    //throw new IllegalStateException("Invalid puzzle file.");
+                    throw new IllegalStateException("Invalid puzzle file.");
                 }
             }
             catch (FileNotFoundException fnfe)

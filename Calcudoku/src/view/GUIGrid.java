@@ -124,6 +124,7 @@ public class GUIGrid extends JPanel
             for (int x = 0; x < size; x++)
             {
                 JTextField textField = textFields[y][x];
+                int cageID;
                 int topBorderWidth;
                 int leftBorderWidth;
                 int bottomBorderWidth;
@@ -214,8 +215,8 @@ public class GUIGrid extends JPanel
                         leftBorderWidth = cageBorderWidth;
                     }
                 }
-                textField.setToolTipText(
-                        cages[grid[y][x].getCageID()].getObjective());
+                cageID = grid[y][x].getCageID();
+                textField.setToolTipText(cages[cageID].getObjective());
                 textField.setBorder(BorderFactory.createMatteBorder(
                         topBorderWidth, leftBorderWidth, bottomBorderWidth, 
                         rightBorderWidth, Color.BLACK));
