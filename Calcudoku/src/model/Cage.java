@@ -31,7 +31,7 @@ public class Cage
         }
         this.targetNumber = generateTargetNumber(this.objective);
         this.operator = generateOperator(this.objective);
-        cells = new ArrayList<>();
+        this.cells = new ArrayList<>();
     }
     
     private boolean isCageObjectiveValid(String cageObjective)

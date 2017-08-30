@@ -43,8 +43,8 @@ public class Grid
                     JOptionPane.ERROR_MESSAGE);
             throw new IllegalStateException("Invalid array size.");
         }
-        grid = new Cell[size][size];
-        cages = new Cage[numberOfCages];
+        this.grid = new Cell[size][size];
+        this.cages = new Cage[numberOfCages];
         generateCages(cages);
         for (int i = 0; i < cages.length; i++)
         {
