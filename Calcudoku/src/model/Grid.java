@@ -441,7 +441,7 @@ public class Grid
             }
         }
         JOptionPane.showMessageDialog(null, 
-                "Congratulations, You have successfully solved the puzzle!", 
+                "Congratulations, you have successfully solved the puzzle!", 
                 "Information", JOptionPane.INFORMATION_MESSAGE);
         return true;
     }
