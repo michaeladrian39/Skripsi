@@ -224,7 +224,7 @@ public class GUIGrid extends JPanel
                 textField.setHorizontalAlignment(JTextField.CENTER);
                 textField.setPreferredSize(new Dimension(cellSize, cellSize));                
                 JPopupMenu popupMenu = new JPopupMenu();                
-                for (int i = 0; i <= size; i++)
+                for (int i = 1; i <= size; i++)
                 {
                     JMenuItem menuItem = new JMenuItem("" + i);
                     popupMenu.add(menuItem);
