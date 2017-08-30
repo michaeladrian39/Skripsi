@@ -100,29 +100,31 @@ public class GUIFrame extends JFrame
     
     private void initActionListeners()
     {
-        fileChooser.setFileFilter(new PuzzleFileFilter());      
-        menuItemLoad.addActionListener(this::menuItemLoadActionPerformed);
-        menuItemReset.addActionListener(this::menuItemResetActionPerformed);
-        menuItemCheck.addActionListener(this::menuItemCheckActionPerformed);
-        menuItemExit.addActionListener(this::menuItemExitActionPerformed);
-        menuItemBacktracking.addActionListener(
+        this.fileChooser.setFileFilter(new PuzzleFileFilter());      
+        this.menuItemLoad.addActionListener(this::menuItemLoadActionPerformed);
+        this.menuItemReset.addActionListener(
+                this::menuItemResetActionPerformed);
+        this.menuItemCheck.addActionListener(
+                this::menuItemCheckActionPerformed);
+        this.menuItemExit.addActionListener(this::menuItemExitActionPerformed);
+        this.menuItemBacktracking.addActionListener(
                 this::menuItemBacktrackingActionPerformed);
-        menuItemHybridGenetic.addActionListener(
+        this.menuItemHybridGenetic.addActionListener(
                 this::menuItemHybridGeneticActionPerformed);
     }
     
     private void initMenuBar()
     {
-        menuFile.add(menuItemLoad);
-        menuFile.add(menuItemReset);
-        menuFile.addSeparator();
-        menuFile.add(menuItemCheck);
-        menuFile.addSeparator();
-        menuFile.add(menuItemExit);
-        menuBar.add(menuFile);
-        menuSolve.add(menuItemBacktracking);
-        menuSolve.add(menuItemHybridGenetic);
-        menuBar.add(menuSolve);
+        this.menuFile.add(menuItemLoad);
+        this.menuFile.add(menuItemReset);
+        this.menuFile.addSeparator();
+        this.menuFile.add(menuItemCheck);
+        this.menuFile.addSeparator();
+        this.menuFile.add(menuItemExit);
+        this.menuBar.add(menuFile);
+        this.menuSolve.add(menuItemBacktracking);
+        this.menuSolve.add(menuItemHybridGenetic);
+        this.menuBar.add(menuSolve);
         this.setJMenuBar(menuBar);
     }
     
@@ -167,7 +169,8 @@ public class GUIFrame extends JFrame
             this.c = new Controller(size, numberOfCages, cageCells,
                     cageObjectives);
             this.getContentPane().removeAll();
-            this.getContentPane().add(gui = new GUIGrid(c));
+            this.gui = new GUIGrid(c);
+            this.getContentPane().add(gui);
             this.validate();
             this.revalidate();
             this.pack();
@@ -197,7 +200,7 @@ public class GUIFrame extends JFrame
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
         {
             this.getContentPane().removeAll();
-            dispose();
+            this.dispose();
         }
     }
 
@@ -267,7 +270,8 @@ public class GUIFrame extends JFrame
             this.c = new Controller(size, numberOfCages, cageCells,
                     cageObjectives);
             this.getContentPane().removeAll();
-            this.getContentPane().add(gui = new GUIGrid(c));
+            this.gui = new GUIGrid(c);
+            this.getContentPane().add(gui);
             this.validate();
             this.revalidate();
             this.pack();
