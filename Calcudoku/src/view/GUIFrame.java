@@ -73,29 +73,7 @@ public class GUIFrame extends JFrame
 
     private void initWindowListener()
     {
-        this.addWindowListener(new WindowAdapter()
-        {
-
-            @Override
-            public void windowClosing(WindowEvent e)
-            {
-                if (JOptionPane.showConfirmDialog(null,
-                        "Are you sure you want to exit the application?",
-                        "Exit", JOptionPane.YES_NO_OPTION) 
-                        == JOptionPane.YES_OPTION);
-                {
-                    getContentPane().removeAll();
-                    dispose();
-                }
-            }
-            
-            @Override
-            public void windowClosed(WindowEvent e)
-            {
-                System.exit(0);
-            }
-
-        });
+        this.addWindowListener(new WindowListener(this));
     }
     
     private void initActionListeners()
@@ -285,6 +263,37 @@ public class GUIFrame extends JFrame
         }
     }
     
+}
+
+class WindowListener extends WindowAdapter
+{
+
+    private final JFrame frame;
+    
+    public WindowListener(JFrame frame)
+    {
+        this.frame = frame;
+    }
+    
+    @Override
+    public void windowClosing(WindowEvent e)
+    {
+        if (JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to exit the application?",
+                "Exit", JOptionPane.YES_NO_OPTION) 
+                == JOptionPane.YES_OPTION)
+        {
+            frame.getContentPane().removeAll();
+            frame.dispose();
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e)
+    {
+        System.exit(0);
+    }
+
 }
 
 class PuzzleFileFilter extends FileFilter
