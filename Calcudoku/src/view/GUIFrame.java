@@ -279,9 +279,8 @@ class WindowListener extends WindowAdapter
     public void windowClosing(WindowEvent e)
     {
         if (JOptionPane.showConfirmDialog(null,
-                "Are you sure you want to exit the application?",
-                "Exit", JOptionPane.YES_NO_OPTION) 
-                == JOptionPane.YES_OPTION)
+                "Are you sure you want to exit the application?", "Exit", 
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
         {
             frame.getContentPane().removeAll();
             frame.dispose();
