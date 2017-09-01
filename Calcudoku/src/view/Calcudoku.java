@@ -1,6 +1,7 @@
 package view;
 
 import controller.Controller;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -70,6 +71,7 @@ public class Calcudoku extends JFrame
     { 
         this.setTitle("Calcudoku");
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.setMinimumSize(new Dimension(216, 216));
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         initWindowListener();
@@ -141,6 +143,7 @@ public class Calcudoku extends JFrame
                 if (puzzleFile.getAbsolutePath().endsWith(".txt"))
                 {
                     this.puzzleFileName = puzzleFile.getAbsolutePath();
+                    this.setTitle("Calcudoku (" + puzzleFile.getName() + ")");
                     loadPuzzleFile(puzzleFile);
                 }
                 else
