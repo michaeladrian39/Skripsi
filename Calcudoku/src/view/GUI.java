@@ -30,7 +30,7 @@ import model.SolverHybridGenetic;
  *
  * @author michaeladrian39
  */
-public class GUIGrid extends JPanel
+public class GUI extends JPanel
 {
     
     private final Controller c;
@@ -44,13 +44,12 @@ public class GUIGrid extends JPanel
     private final JTextField[][] textFields;
     private final Map<JTextField, Point> textFieldCoordinates;
     private final CellTextFieldListener[][] cellTextFieldListeners;
-    private static final Font FONT = new Font("Courier New", 
-            Font.CENTER_BASELINE, 36);
-    private final int cellSize = 72;
-    private final int cellBorderWidth = 1;
-    private final int cageBorderWidth = 3;
+    private final Font font;
+    private final int cellSize;
+    private final int cellBorderWidth;
+    private final int cageBorderWidth;
     
-    public GUIGrid(Controller c)
+    public GUI(Controller c)
     {
         this.c = c;
         this.game = c.getGame();
@@ -63,9 +62,18 @@ public class GUIGrid extends JPanel
         this.textFields = new JTextField[size][size];
         this.textFieldCoordinates = new HashMap<>();
         this.cellTextFieldListeners = new CellTextFieldListener[size][size];
+        this.font = new Font("Courier New", Font.CENTER_BASELINE, 36);
+        this.cellSize = 72;
+        this.cellBorderWidth = 1;
+        this.cageBorderWidth = 3;
+        initComponents();
+    }
+    
+    private void initComponents()
+    {
         this.setPreferredSize(new Dimension(cellSize * size, cellSize * size));
         this.setLayout(new GridLayout(size, size));
-        generateTextFields();
+        initTextFields();
     }
     
     public Controller getController()
@@ -103,7 +111,7 @@ public class GUIGrid extends JPanel
         return cages;
     }
     
-    private void generateTextFields()
+    private void initTextFields()
     {
         for (int y = 0; y < size; y++)
         {
@@ -220,7 +228,7 @@ public class GUIGrid extends JPanel
                 textField.setBorder(BorderFactory.createMatteBorder(
                         topBorderWidth, leftBorderWidth, bottomBorderWidth, 
                         rightBorderWidth, Color.BLACK));
-                textField.setFont(FONT);
+                textField.setFont(font);
                 textField.setHorizontalAlignment(JTextField.CENTER);
                 textField.setPreferredSize(new Dimension(cellSize, cellSize));                
                 JPopupMenu popupMenu = new JPopupMenu();                
@@ -419,9 +427,9 @@ public class GUIGrid extends JPanel
 class CellKeyListener implements KeyListener
 {
 
-    private final GUIGrid gui;
+    private final GUI gui;
 
-    CellKeyListener(GUIGrid gui)
+    CellKeyListener(GUI gui)
     {
         this.gui = gui;
     }

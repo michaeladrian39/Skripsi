@@ -21,7 +21,7 @@ import javax.swing.filechooser.FileFilter;
  *
  * @author michaeladrian39
  */
-public class GUIFrame extends JFrame
+public class Calcudoku extends JFrame
 {
     
     private File puzzleFile;
@@ -31,23 +31,30 @@ public class GUIFrame extends JFrame
     private int numberOfCages;
     private String[] cageObjectives;
     private Controller c;
-    private final JMenuBar menuBar = new JMenuBar();
-    private final JMenu menuFile = new JMenu("File");
-    private final JMenu menuSolve = new JMenu("Solve");
-    private final JMenuItem menuItemLoad = new JMenuItem("Load Puzzle File");
-    private final JMenuItem menuItemReset = new JMenuItem("Reset Puzzle");
-    private final JMenuItem menuItemCheck = new JMenuItem("Check Puzzle");
-    private final JMenuItem menuItemExit = new JMenuItem("Exit");
-    private final JMenuItem menuItemBacktracking 
-            = new JMenuItem("Backtracking");
-    private final JMenuItem menuItemHybridGenetic 
-            = new JMenuItem("Hybrid Genetic");
-    private final JFileChooser fileChooser 
-            = new JFileChooser("Load Puzzle File");
-    private GUIGrid gui;
+    private final JMenuBar menuBar;
+    private final JMenu menuFile;
+    private final JMenu menuSolve;
+    private final JMenuItem menuItemLoad;
+    private final JMenuItem menuItemReset;
+    private final JMenuItem menuItemCheck;
+    private final JMenuItem menuItemExit;
+    private final JMenuItem menuItemBacktracking;
+    private final JMenuItem menuItemHybridGenetic;
+    private final JFileChooser fileChooser;
+    private GUI gui;
     
-    public GUIFrame()
+    public Calcudoku()
     {        
+        this.menuBar = new JMenuBar();
+        this.menuFile = new JMenu();
+        this.menuSolve = new JMenu();
+        this.menuItemLoad = new JMenuItem();
+        this.menuItemReset = new JMenuItem();
+        this.menuItemCheck = new JMenuItem();
+        this.menuItemExit = new JMenuItem();
+        this.menuItemBacktracking = new JMenuItem();
+        this.menuItemHybridGenetic = new JMenuItem();
+        this.fileChooser = new JFileChooser();
         initComponents();
     }
     
@@ -55,20 +62,23 @@ public class GUIFrame extends JFrame
     {
         EventQueue.invokeLater(() ->
         {
-            new GUIFrame().setVisible(true);
+            new Calcudoku().setVisible(true);
         });
     }
     
     private void initComponents()
-    {
+    { 
         this.setTitle("Calcudoku");
-        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); 
-        initWindowListener();
-        initActionListeners();
-        initMenuBar();
-        this.pack();
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        initWindowListener();
+        initActionListeners();
+        initMenu();
+        initMenuBar();
+        this.validate();
+        this.revalidate();
+        this.pack();
     }
 
     private void initWindowListener()
@@ -89,6 +99,21 @@ public class GUIFrame extends JFrame
                 this::menuItemBacktrackingActionPerformed);
         this.menuItemHybridGenetic.addActionListener(
                 this::menuItemHybridGeneticActionPerformed);
+    }
+    
+    private void initMenu()
+    {
+        File directory = new File(System.getProperty("user.dir"));
+        this.menuFile.setText("File");
+        this.menuSolve.setText("Solve");
+        this.menuItemLoad.setText("Load Puzzle File");
+        this.menuItemReset.setText("Reset Puzzle");
+        this.menuItemCheck.setText("Check Puzzle");
+        this.menuItemExit.setText("Exit");
+        this.menuItemBacktracking.setText("Backtracking");
+        this.menuItemHybridGenetic.setText("Hybrid Genetic");
+        this.fileChooser.setDialogTitle("Load Puzzle File");
+        fileChooser.setCurrentDirectory(directory);
     }
     
     private void initMenuBar()
@@ -149,7 +174,7 @@ public class GUIFrame extends JFrame
             this.c = new Controller(size, numberOfCages, cageCells,
                     cageObjectives);
             this.getContentPane().removeAll();
-            this.gui = new GUIGrid(c);
+            this.gui = new GUI(c);
             this.getContentPane().add(gui);
             this.validate();
             this.revalidate();
@@ -250,7 +275,7 @@ public class GUIFrame extends JFrame
             this.c = new Controller(size, numberOfCages, cageCells,
                     cageObjectives);
             this.getContentPane().removeAll();
-            this.gui = new GUIGrid(c);
+            this.gui = new GUI(c);
             this.getContentPane().add(gui);
             this.validate();
             this.revalidate();
@@ -303,7 +328,7 @@ class PuzzleFileFilter extends FileFilter
     @Override
     public boolean accept(File puzzleFile)
     {
-        return puzzleFile.isDirectory()
+        return puzzleFile.isDirectory() 
                 || puzzleFile.getAbsolutePath().endsWith(".txt");
     }
 
