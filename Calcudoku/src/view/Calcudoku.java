@@ -144,17 +144,31 @@ public class Calcudoku extends JFrame
                 {
                     this.puzzleFileName = puzzleFile.getAbsolutePath();
                     this.setTitle("Calcudoku (" + puzzleFile.getName() + ")");
-                    loadPuzzleFile(puzzleFile);
+                    try
+                    {
+                        loadPuzzleFile(puzzleFile);
+                    }
+                    catch (IllegalStateException ise)
+                    {
+                        resetFrame();
+                        JOptionPane.showMessageDialog(null, 
+                                "Error in loading puzzle file.", "Error", 
+                                JOptionPane.ERROR_MESSAGE);
+                        throw new IllegalStateException("Error in loading " 
+                                + "puzzle file.");
+                    }
                 }
                 else
                 {
+                    resetFrame();
                     JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
                         "Error", JOptionPane.ERROR_MESSAGE);
                     throw new IllegalStateException("Invalid puzzle file.");
                 }
             }
             catch (FileNotFoundException fnfe)
-            {
+            {                
+                resetFrame();
                 JOptionPane.showMessageDialog(null, "Puzzle file not found.",
                         "Error", JOptionPane.ERROR_MESSAGE);
                 throw new IllegalStateException("Puzzle file not found.");
@@ -167,6 +181,7 @@ public class Calcudoku extends JFrame
         if (puzzleFile == null || puzzleFileName == null || c == null 
                 || gui == null)
         {
+            resetFrame();
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
                     "Error", JOptionPane.ERROR_MESSAGE);
             throw new IllegalStateException("Puzzle file not loaded.");
@@ -207,8 +222,7 @@ public class Calcudoku extends JFrame
                 "Are you sure you want to exit this application?", "Exit",
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
         {
-            this.getContentPane().removeAll();
-            this.dispose();
+            destroyFrame();
         }
     }
 
@@ -265,6 +279,7 @@ public class Calcudoku extends JFrame
                 }
                 if (sc.hasNext())
                 {
+                    resetFrame();
                     JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
                             "Error", JOptionPane.ERROR_MESSAGE);
                     throw new IllegalStateException("Invalid puzzle file.");
@@ -287,10 +302,27 @@ public class Calcudoku extends JFrame
         }
         catch (NoSuchElementException nsee)
         {
+            resetFrame();
             JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
                     "Error", JOptionPane.ERROR_MESSAGE);
             throw new IllegalStateException("Invalid puzzle file.");
         }
+    }
+    
+    private void resetFrame()
+    {
+        this.getContentPane().removeAll();
+        this.setTitle("Calcudoku");
+        this.validate();
+        this.revalidate();
+        this.pack();
+        this.setLocationRelativeTo(null);
+    }
+    
+    public void destroyFrame()
+    {
+        resetFrame();
+        this.dispose();
     }
     
 }
@@ -298,9 +330,9 @@ public class Calcudoku extends JFrame
 class WindowListener extends WindowAdapter
 {
 
-    private final JFrame frame;
+    private final Calcudoku frame;
     
-    public WindowListener(JFrame frame)
+    public WindowListener(Calcudoku frame)
     {
         this.frame = frame;
     }
@@ -312,8 +344,7 @@ class WindowListener extends WindowAdapter
                 "Are you sure you want to exit the application?", "Exit", 
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
         {
-            frame.getContentPane().removeAll();
-            frame.dispose();
+            frame.destroyFrame();
         }
     }
 
