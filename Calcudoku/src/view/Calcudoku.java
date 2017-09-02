@@ -37,6 +37,7 @@ public class Calcudoku extends JFrame
     private final JMenu menuSolve;
     private final JMenuItem menuItemLoad;
     private final JMenuItem menuItemReset;
+    private final JMenuItem menuItemClose;
     private final JMenuItem menuItemCheck;
     private final JMenuItem menuItemExit;
     private final JMenuItem menuItemBacktracking;
@@ -51,6 +52,7 @@ public class Calcudoku extends JFrame
         this.menuSolve = new JMenu();
         this.menuItemLoad = new JMenuItem();
         this.menuItemReset = new JMenuItem();
+        this.menuItemClose = new JMenuItem();
         this.menuItemCheck = new JMenuItem();
         this.menuItemExit = new JMenuItem();
         this.menuItemBacktracking = new JMenuItem();
@@ -96,6 +98,8 @@ public class Calcudoku extends JFrame
                 this::menuItemResetActionPerformed);
         this.menuItemCheck.addActionListener(
                 this::menuItemCheckActionPerformed);
+        this.menuItemClose.addActionListener(
+                this::menuItemCloseActionPerformed);
         this.menuItemExit.addActionListener(this::menuItemExitActionPerformed);
         this.menuItemBacktracking.addActionListener(
                 this::menuItemBacktrackingActionPerformed);
@@ -110,6 +114,7 @@ public class Calcudoku extends JFrame
         this.menuSolve.setText("Solve");
         this.menuItemLoad.setText("Load Puzzle File");
         this.menuItemReset.setText("Reset Puzzle");
+        this.menuItemClose.setText("Close Puzzle File");
         this.menuItemCheck.setText("Check Puzzle");
         this.menuItemExit.setText("Exit");
         this.menuItemBacktracking.setText("Backtracking");
@@ -122,6 +127,7 @@ public class Calcudoku extends JFrame
     {
         this.menuFile.add(menuItemLoad);
         this.menuFile.add(menuItemReset);
+        this.menuFile.add(menuItemClose);
         this.menuFile.addSeparator();
         this.menuFile.add(menuItemCheck);
         this.menuFile.addSeparator();
@@ -214,6 +220,11 @@ public class Calcudoku extends JFrame
         {
             c.checkGrid();
         }
+    }
+    
+    private void menuItemCloseActionPerformed(ActionEvent evt)
+    {
+        resetFrame();
     }
 
     private void menuItemExitActionPerformed(ActionEvent evt)
