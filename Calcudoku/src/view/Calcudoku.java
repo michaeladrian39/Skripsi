@@ -224,7 +224,17 @@ public class Calcudoku extends JFrame
     
     private void menuItemCloseActionPerformed(ActionEvent evt)
     {
-        resetFrame();
+        if (puzzleFile == null || puzzleFileName == null || c == null 
+                || gui == null)
+        {
+            JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not loaded.");
+        }
+        else
+        {
+            resetFrame();
+        }
     }
 
     private void menuItemExitActionPerformed(ActionEvent evt)
