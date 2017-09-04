@@ -12,7 +12,7 @@ public class SolverGenetic
 {
     
     private final Grid grid;
-    private final int size;
+    private final Integer size;
     private final boolean[][] isCellFixed;
     private final Random randomGenerator;
     private int generationsNumber = 100;

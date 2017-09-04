@@ -8,7 +8,7 @@ public class SolverBacktracking
 {
     
     private final Grid grid;
-    private final int size;
+    private final Integer size;
     private Grid solution;
     
     public SolverBacktracking(Grid grid)

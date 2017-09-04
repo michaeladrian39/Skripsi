@@ -39,7 +39,7 @@ public class Cage
         return cageObjective.matches("\\d+[*+-/=]");
     }
     
-    private Integer generateTargetNumber(String objectives)
+    private int generateTargetNumber(String objectives)
     {
         return Integer.parseInt(objectives.substring(0, 
                 objectives.length() - 1));

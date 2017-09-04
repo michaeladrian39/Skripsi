@@ -42,7 +42,7 @@ public class Controller
         return g.checkGrid();
     }
     
-    public int getCellValue(int row, int column)
+    public Integer getCellValue(int row, int column)
     {
         return g.getCellValue(row, column);
     }

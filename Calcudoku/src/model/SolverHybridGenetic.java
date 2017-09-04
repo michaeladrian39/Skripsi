@@ -9,7 +9,7 @@ public class SolverHybridGenetic
     
     private final Grid grid;
     private Grid gridRuleBased;
-    private final int size;
+    private final Integer size;
     private Grid solution;
     
     public SolverHybridGenetic(Grid grid)

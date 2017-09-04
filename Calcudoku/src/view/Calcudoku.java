@@ -26,7 +26,6 @@ public class Calcudoku extends JFrame
 {
     
     private File puzzleFile;
-    private String puzzleFileName;
     private Integer size;
     private int[][] cageCells;
     private Integer numberOfCages;
@@ -166,7 +165,6 @@ public class Calcudoku extends JFrame
             {
                 if (puzzleFile.getAbsolutePath().endsWith(".txt"))
                 {
-                    this.puzzleFileName = puzzleFile.getAbsolutePath();
                     try
                     {
                         loadPuzzleFile(puzzleFile);
@@ -226,6 +224,7 @@ public class Calcudoku extends JFrame
                 this.revalidate();
                 this.pack();
                 this.setLocationRelativeTo(null);
+                this.setTitle("Calcudoku (" + puzzleFile.getName() + ")");
             }
         }
     }
@@ -342,7 +341,8 @@ public class Calcudoku extends JFrame
             this.revalidate();
             this.pack();
             this.setLocationRelativeTo(null);
-            this.setTitle("Calcudoku (" + puzzleFile + ")");
+            this.puzzleFile = puzzleFile;
+            this.setTitle("Calcudoku (" + puzzleFile.getName() + ")");
         }
         catch (NoSuchElementException nsee)
         {
@@ -368,7 +368,6 @@ public class Calcudoku extends JFrame
     private void clearVariables()
     {
         this.puzzleFile = null;
-        this.puzzleFileName = null;
         this.size = null;
         this.cageCells = null;
         this.numberOfCages = null;

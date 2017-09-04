@@ -12,7 +12,7 @@ public class SolverRuleBased
 {
     
     private final Grid grid;
-    private final int size;
+    private final Integer size;
     private Grid solution;
     private ArrayList<Integer>[][] possibleValues;
     
