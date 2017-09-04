@@ -27,9 +27,9 @@ public class Calcudoku extends JFrame
     
     private File puzzleFile;
     private String puzzleFileName;
-    private int size;
+    private Integer size;
     private int[][] cageCells;
-    private int numberOfCages;
+    private Integer numberOfCages;
     private String[] cageObjectives;
     private Controller c;
     private final JMenuBar menuBar;
@@ -141,6 +141,24 @@ public class Calcudoku extends JFrame
     
     private void menuItemLoadActionPerformed(ActionEvent evt)
     {
+        if (c != null && gui != null)
+        {
+            if (JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to load another puzzle file?", 
+                "Load Puzzle File", JOptionPane.YES_NO_OPTION) 
+                    == JOptionPane.YES_OPTION)
+            {
+                selectPuzzleFile();
+            }
+        }
+        else
+        {
+            selectPuzzleFile();
+        }
+    }
+    
+    private void selectPuzzleFile()
+    {
         if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION)
         {
             this.puzzleFile = fileChooser.getSelectedFile();
@@ -149,7 +167,6 @@ public class Calcudoku extends JFrame
                 if (puzzleFile.getAbsolutePath().endsWith(".txt"))
                 {
                     this.puzzleFileName = puzzleFile.getAbsolutePath();
-                    this.setTitle("Calcudoku (" + puzzleFile.getName() + ")");
                     try
                     {
                         loadPuzzleFile(puzzleFile);
@@ -157,6 +174,7 @@ public class Calcudoku extends JFrame
                     catch (IllegalStateException ise)
                     {
                         resetFrame();
+                        clearVariables();
                         JOptionPane.showMessageDialog(null, 
                                 "Error in loading puzzle file.", "Error", 
                                 JOptionPane.ERROR_MESSAGE);
@@ -167,6 +185,7 @@ public class Calcudoku extends JFrame
                 else
                 {
                     resetFrame();
+                    clearVariables();
                     JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
                         "Error", JOptionPane.ERROR_MESSAGE);
                     throw new IllegalStateException("Invalid puzzle file.");
@@ -175,6 +194,7 @@ public class Calcudoku extends JFrame
             catch (FileNotFoundException fnfe)
             {                
                 resetFrame();
+                clearVariables();
                 JOptionPane.showMessageDialog(null, "Puzzle file not found.",
                         "Error", JOptionPane.ERROR_MESSAGE);
                 throw new IllegalStateException("Puzzle file not found.");
@@ -184,8 +204,7 @@ public class Calcudoku extends JFrame
 
     private void menuItemResetActionPerformed(ActionEvent evt)
     {
-        if (puzzleFile == null || puzzleFileName == null || c == null 
-                || gui == null)
+        if (c == null || gui == null)
         {
             resetFrame();
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
@@ -194,23 +213,26 @@ public class Calcudoku extends JFrame
         }
         else
         {
-            this.c = null;
-            this.c = new Controller(size, numberOfCages, cageCells,
-                    cageObjectives);
-            this.getContentPane().removeAll();
-            this.gui = new GUI(c);
-            this.getContentPane().add(gui);
-            this.validate();
-            this.revalidate();
-            this.pack();
-            this.setLocationRelativeTo(null);
+            if (JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to reset this puzzle?", "Reset Puzzle",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
+            {
+                resetFrame();
+                this.c = new Controller(size, numberOfCages, cageCells,
+                        cageObjectives);
+                this.gui = new GUI(c);
+                this.getContentPane().add(gui);
+                this.validate();
+                this.revalidate();
+                this.pack();
+                this.setLocationRelativeTo(null);
+            }
         }
     }
     
     private void menuItemCheckActionPerformed(ActionEvent evt)
     {
-        if (puzzleFile == null || puzzleFileName == null || c == null 
-                || gui == null)
+        if (c == null || gui == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -224,8 +246,7 @@ public class Calcudoku extends JFrame
     
     private void menuItemCloseActionPerformed(ActionEvent evt)
     {
-        if (puzzleFile == null || puzzleFileName == null || c == null 
-                || gui == null)
+        if (c == null || gui == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -233,7 +254,14 @@ public class Calcudoku extends JFrame
         }
         else
         {
-            resetFrame();
+            if (JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to close this puzzle file?", 
+                "Close Puzzle File", JOptionPane.YES_NO_OPTION) 
+                    == JOptionPane.YES_OPTION)
+            {
+                resetFrame();
+                clearVariables();
+            }
         }
     }
 
@@ -249,8 +277,7 @@ public class Calcudoku extends JFrame
 
     private void menuItemBacktrackingActionPerformed(ActionEvent evt)
     {
-        if (puzzleFile == null || puzzleFileName == null || c == null 
-                || gui == null)
+        if (c == null || gui == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -264,8 +291,7 @@ public class Calcudoku extends JFrame
 
     private void menuItemHybridGeneticActionPerformed(ActionEvent evt)
     {
-        if (puzzleFile == null || puzzleFileName == null || c == null 
-                || gui == null)
+        if (c == null || gui == null)
         {
             JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -279,6 +305,8 @@ public class Calcudoku extends JFrame
 
     private void loadPuzzleFile(File puzzleFile) throws FileNotFoundException
     {
+        resetFrame();
+        clearVariables();
         try
         {
             try (Scanner sc = new Scanner(puzzleFile))
@@ -300,30 +328,26 @@ public class Calcudoku extends JFrame
                 }
                 if (sc.hasNext())
                 {
-                    resetFrame();
                     JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
                             "Error", JOptionPane.ERROR_MESSAGE);
                     throw new IllegalStateException("Invalid puzzle file.");
                 }
                 sc.close();
             }
-            if (this.c != null)
-            {
-                this.c = null;
-            }
             this.c = new Controller(size, numberOfCages, cageCells,
                     cageObjectives);
-            this.getContentPane().removeAll();
             this.gui = new GUI(c);
             this.getContentPane().add(gui);
             this.validate();
             this.revalidate();
             this.pack();
             this.setLocationRelativeTo(null);
+            this.setTitle("Calcudoku (" + puzzleFile + ")");
         }
         catch (NoSuchElementException nsee)
         {
             resetFrame();
+            clearVariables();
             JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
                     "Error", JOptionPane.ERROR_MESSAGE);
             throw new IllegalStateException("Invalid puzzle file.");
@@ -333,12 +357,6 @@ public class Calcudoku extends JFrame
     private void resetFrame()
     {
         this.getContentPane().removeAll();
-        this.puzzleFile = null;
-        this.puzzleFileName = null;
-        this.size = 0;
-        this.cageCells = null;
-        this.numberOfCages = 0;
-        this.cageObjectives = null;
         this.c = null;
         this.setTitle("Calcudoku");
         this.validate();
@@ -347,9 +365,20 @@ public class Calcudoku extends JFrame
         this.setLocationRelativeTo(null);
     }
     
+    private void clearVariables()
+    {
+        this.puzzleFile = null;
+        this.puzzleFileName = null;
+        this.size = null;
+        this.cageCells = null;
+        this.numberOfCages = null;
+        this.cageObjectives = null;
+    }
+    
     public void destroyFrame()
     {
         resetFrame();
+        clearVariables();
         this.dispose();
     }
     

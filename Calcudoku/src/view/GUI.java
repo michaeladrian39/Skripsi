@@ -35,9 +35,9 @@ public class GUI extends JPanel
     
     private final Controller c;
     private final Grid game;
-    private final int size;
+    private final Integer size;
     private final int[][] cageCells;
-    private final int numberOfCages;
+    private final Integer numberOfCages;
     private final String[] cageObjectives;
     private final Cell[][] grid;
     private final Cage[] cages;
@@ -81,7 +81,7 @@ public class GUI extends JPanel
         return c;
     }
     
-    public int getGridSize()
+    public Integer getGridSize()
     {
         return size;
     }
@@ -91,7 +91,7 @@ public class GUI extends JPanel
         return cageCells;
     }
     
-    public int getNumberOfCages()
+    public Integer getNumberOfCages()
     {
         return numberOfCages;
     }

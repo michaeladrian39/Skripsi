@@ -11,8 +11,8 @@ import javax.swing.JOptionPane;
 public class Grid
 {
     
-    private final int size;
-    private final int numberOfCages;
+    private final Integer size;
+    private final Integer numberOfCages;
     private final int[][] cageCells;
     private final String[] cageObjectives;
     private final Cell[][] grid;
@@ -466,12 +466,12 @@ public class Grid
         return getGridContents()[row][column].getValue();
     }
         
-    public int getSize()
+    public Integer getSize()
     {
         return size;
     }
     
-    public int getNumberOfCages()
+    public Integer getNumberOfCages()
     {
         return numberOfCages;
     }

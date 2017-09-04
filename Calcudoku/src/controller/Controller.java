@@ -11,11 +11,11 @@ import model.Cell;
 public class Controller
 {
     
-    int size;
-    int numberOfCages;
-    int[][] cageCells;
-    String[] cageObjectives;
-    Grid g;
+    private int size;
+    private int numberOfCages;
+    private int[][] cageCells;
+    private String[] cageObjectives;
+    private Grid g;
     
     public Controller(int size, int numberOfCages, int[][] cageCells, 
             String[] cageObjectives)
@@ -47,12 +47,12 @@ public class Controller
         return g.getCellValue(row, column);
     }
     
-    public int getSize()
+    public Integer getSize()
     {
         return g.getSize();
     }
     
-    public int getNumberOfCages()
+    public Integer getNumberOfCages()
     {
         return g.getNumberOfCages();
     }
