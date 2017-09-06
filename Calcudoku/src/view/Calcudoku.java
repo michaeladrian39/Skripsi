@@ -140,63 +140,63 @@ public class Calcudoku extends JFrame
     
     private void menuItemLoadActionPerformed(ActionEvent evt)
     {
-        if (c != null && gui != null)
+        if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION)
         {
-            if (JOptionPane.showConfirmDialog(null,
-                "Are you sure you want to load another puzzle file?", 
-                "Load Puzzle File", JOptionPane.YES_NO_OPTION) 
-                    == JOptionPane.YES_OPTION)
+            if (c != null && gui != null)
+            {
+                if (JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to load another puzzle file?", 
+                    "Load Puzzle File", JOptionPane.YES_NO_OPTION) 
+                        == JOptionPane.YES_OPTION)
+                {
+                    selectPuzzleFile();
+                }
+            }
+            else
             {
                 selectPuzzleFile();
             }
-        }
-        else
-        {
-            selectPuzzleFile();
         }
     }
     
     private void selectPuzzleFile()
     {
-        if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION)
+        this.puzzleFile = fileChooser.getSelectedFile();
+        try
         {
-            this.puzzleFile = fileChooser.getSelectedFile();
-            try
+            if (puzzleFile.getAbsolutePath().endsWith(".txt"))
             {
-                if (puzzleFile.getAbsolutePath().endsWith(".txt"))
+                try
                 {
-                    try
-                    {
-                        loadPuzzleFile(puzzleFile);
-                    }
-                    catch (IllegalStateException ise)
-                    {
-                        resetFrame();
-                        clearVariables();
-                        JOptionPane.showMessageDialog(null, 
-                                "Error in loading puzzle file.", "Error", 
-                                JOptionPane.ERROR_MESSAGE);
-                        throw new IllegalStateException("Error in loading " 
-                                + "puzzle file.");
-                    }
+                    loadPuzzleFile(puzzleFile);
                 }
-                else
+                catch (IllegalStateException ise)
                 {
                     resetFrame();
                     clearVariables();
-                    JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
-                        "Error", JOptionPane.ERROR_MESSAGE);
-                    throw new IllegalStateException("Invalid puzzle file.");
+                    JOptionPane.showMessageDialog(null, 
+                            "Error in loading puzzle file.", "Error", 
+                            JOptionPane.ERROR_MESSAGE);
+                    throw new IllegalStateException("Error in loading " 
+                            + "puzzle file.");
                 }
             }
-            catch (FileNotFoundException fnfe)
-            {                
+            else
+            {
                 resetFrame();
                 clearVariables();
-                JOptionPane.showMessageDialog(null, "Puzzle file not found.",
-                        "Error", JOptionPane.ERROR_MESSAGE);
-                throw new IllegalStateException("Puzzle file not found.");
+                JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid puzzle file.");
             }
+        }
+        catch (FileNotFoundException fnfe)
+        {                
+            resetFrame();
+            clearVariables();
+            JOptionPane.showMessageDialog(null, "Puzzle file not found.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not found.");
         }
     }
 
