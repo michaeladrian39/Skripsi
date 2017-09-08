@@ -27,7 +27,7 @@ public class Calcudoku extends JFrame
     
     private File puzzleFile;
     private Integer size;
-    private int[][] cageCells;
+    private Integer[][] cageCells;
     private Integer numberOfCages;
     private String[] cageObjectives;
     private Controller c;
@@ -311,7 +311,7 @@ public class Calcudoku extends JFrame
             try (Scanner sc = new Scanner(puzzleFile))
             {
                 this.size = sc.nextInt();
-                this.cageCells = new int[size][size];
+                this.cageCells = new Integer[size][size];
                 this.numberOfCages = sc.nextInt();
                 this.cageObjectives = new String[numberOfCages];
                 for (int i = 0; i < size; i++)

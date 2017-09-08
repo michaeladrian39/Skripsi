@@ -13,12 +13,12 @@ public class Grid
     
     private final Integer size;
     private final Integer numberOfCages;
-    private final int[][] cageCells;
+    private final Integer[][] cageCells;
     private final String[] cageObjectives;
     private final Cell[][] grid;
     private final Cage[] cages;
     
-    public Grid(int size, int numberOfCages, int[][] cageCells, 
+    public Grid(Integer size, Integer numberOfCages, Integer[][] cageCells, 
             String[] cageObjectives)
     {
         this.size = size;
@@ -48,7 +48,7 @@ public class Grid
         generateCages(cages);
         for (int i = 0; i < cages.length; i++)
         {
-            int[][] array = new int[size][size];
+            Integer[][] array = new Integer[size][size];
             for (int j = 0; j < cageCells.length; j++)
             {
                 for (int k = 0; k < cageCells[j].length; k++)
@@ -79,7 +79,7 @@ public class Grid
         }
     }
     
-    private int countAreas(int[][] array)
+    private int countAreas(Integer[][] array)
     {
         boolean[][] checked = new boolean[size][size];
         for (int i = 0; i < size; i++)
@@ -92,7 +92,7 @@ public class Grid
         return countAreas(array, checked);
     }
 
-    private int countAreas(int[][] array, boolean[][] checked)
+    private int countAreas(Integer[][] array, boolean[][] checked)
     {
         int areas = 0;
         for (int i = 0; i < array.length; i++)
@@ -115,7 +115,7 @@ public class Grid
         return areas;
     }
 
-    private void floodFill(int i, int j, int[][] array, 
+    private void floodFill(int i, int j, Integer[][] array, 
             boolean[][] checked)
     {
         if (array[i][j] == 0 || checked[i][j])
@@ -141,7 +141,7 @@ public class Grid
         }
     }
     
-    private boolean isCageCellsSizeValid(int[][] cageCells)
+    private boolean isCageCellsSizeValid(Integer[][] cageCells)
     {
         if (cageCells.length == size)
         {
@@ -165,7 +165,7 @@ public class Grid
         return cageCells.length == size;
     }
     
-    private boolean isCageAssignmentValid(int[][] array)
+    private boolean isCageAssignmentValid(Integer[][] array)
     {
         return countAreas(array) == 1;
     }
@@ -265,7 +265,7 @@ public class Grid
         return true;
     }
     
-    private Boolean isRowValid(int row)
+    private boolean isRowValid(int row)
     {
         ArrayList<Integer> array = getRow(row);
         if (!isArrayValid(array))
@@ -476,7 +476,7 @@ public class Grid
         return numberOfCages;
     }
     
-    public int[][] getCageCells()
+    public Integer[][] getCageCells()
     {
         return cageCells;
     } 
