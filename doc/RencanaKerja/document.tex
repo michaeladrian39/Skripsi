@@ -10,6 +10,7 @@
 \usepackage{setspace} 
 \usepackage{lipsum} 
 \usepackage{caption}
+\usepackage{makecell}
 \setlength{\headsep}{30pt}
 \usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
 % \pagestyle{empty}
@@ -17,7 +18,7 @@
 \makeatletter
 \renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
 \renewcommand{\thispagestyle}[1]{}
-\markright{\textbf{\textsc{AIF401/AIF402 \textemdash Rencana Kerja Skripsi \textemdash Sem. Ganjil 2016/2017}}}
+\markright{\textbf{\textsc{AIF401/AIF402 \textemdash Rencana Kerja Skripsi \textemdash Sem. Ganjil 2017/2018}}}
 
 \onehalfspacing
 
@@ -33,7 +34,7 @@
 \newcommand{\@npm}{2013730039}
 \newcommand{\@judultopik}{Perbandingan Algoritma Backtracking dengan Algoritma Hybrid Genetic untuk Menyelesaikan Permainan Calcudoku} % Judul/topik anda
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-\newcommand{\tanggal}{08/09/2016}
+\newcommand{\tanggal}{12/09/2017}
 
 % Dokumen hasil template ini harus dicetak bolak-balik !!!!
 
@@ -119,13 +120,13 @@ Langkah-langkah yang akan dilakukan dalam pembuatan skripsi ini adalah:
   \begin{tabular}{ | c | c | c | c | l |}
     \hline
     1* & 2*(\%) & 3*(\%) & 4*(\%) & 5* \\ \hline \hline
-    1 & 10 & 10 & 0 & \\ \hline
-    2 & 10 & 10 & 0 & \\ \hline
-    3 & 10 & 10 & 0 & \\ \hline
-    4 & 5 & 5 & 0 & \\ \hline
-    5 & 10 & 0 & 10 & \\ \hline
-    6 & 15 & 0 & 15 & \\ \hline
-    7 & 15 & 0 & 15 & \\ \hline
+    1 & 10 & 10 & 0 &  \footnotesize Sudah diselesaikan di Skripsi 1 \\ \hline
+    2 & 10 & 10 & 0 &  \footnotesize Sudah diselesaikan di Skripsi 1 \\ \hline
+    3 & 10 & 10 & 0 &  \footnotesize Sudah diselesaikan di Skripsi 1 \\ \hline
+    4 & 5 & 5 & 0 & \footnotesize \makecell[l]{Sudah diselesaikan di S2 pengambilan kedua sebelum mengumpulkan rencana kerja} \\ \hline
+    5 & 10 & 0 & 10 & \footnotesize \makecell[l]{Sudah diselesaikan di S2 pengambilan kedua sebelum mengumpulkan rencana kerja} \\ \hline
+    6 & 15 & 0 & 15 &  \footnotesize Sudah diselesaikan di Skripsi 2 pengambilan pertama \\ \hline
+    7 & 15 & 0 & 15 &  \footnotesize Sudah diselesaikan di Skripsi 2 pengambilan pertama \\ \hline
     8 & 5 & 0 & 5 & \\ \hline
     9 & 5 & 0 & 5 & \\ \hline
     10 & 15 & 5 & 10 & {\footnotesize Pendahuluan, Dasar Teori, dan Analisis di S1} \\ \hline

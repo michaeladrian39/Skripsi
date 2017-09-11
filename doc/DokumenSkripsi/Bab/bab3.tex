@@ -1,7 +1,7 @@
 \chapter{Analisis}
 \label{chap:analisis}
 
-Bab ini membahas tentang analisis cara kerja algoritma \textit{backtracking} dan algoritma \textit{hybrid genetic} untuk menyelesaikan permainan teka-teki Calcudoku, dan analisis perangkat lunak Calcudoku.
+Bab ini membahas tentang analisis cara kerja algoritma \textit{backtracking} dan algoritma \textit{hybrid genetic} untuk menyelesaikan permainan teka-teki Calcudoku, dan analisis kebutuhan perangkat lunak Calcudoku.
 
 \section{Analisis Algoritma \textit{Backtracking}}
 \label{sec:analisisbt}
@@ -887,7 +887,7 @@ Proses ini diulang untuk menghasilkan generasi-generasi berikutnya, sampai algor
 \section{Perangkat Lunak}
 \label{sec:analisispl}
 
-Berdasarkan landasan teori dan analisis algoritma \textit{backtracking} dan \textit{hybrid genetic} untuk menyelesaikan permainan teka-teki Calcudoku yang telah dilakukan, perangkat lunak Calcudoku akan dibuat. Perangkat lunak ini akan menerima masukan-masukan dari pengguna, yaitu:
+Berdasarkan landasan teori dan analisis algoritma \textit{backtracking} dan \textit{hybrid genetic} untuk menyelesaikan permainan teka-teki Calcudoku yang telah dilakukan, perangkat lunak Calcudoku akan dibuat. Perangkat lunak ini akan menerima masukan dalam bentuk \textit{file} yang berisi:
 
 \begin{enumerate}
 \item Ukuran \textit{grid}.
@@ -896,21 +896,223 @@ Berdasarkan landasan teori dan analisis algoritma \textit{backtracking} dan \tex
 \item Matriks \textit{cage objectives}, yang berisikan angka tujuan dan operasi matematika yang telah ditentukan untuk setiap \textit{cage}.
 \end{enumerate}
 
-Perangkat lunak ini akan menghasilkan keluaran berupa antarmuka grafis permainan teka-teki Calcudoku berdasarkan masukan-masukan yang dimasukan oleh pengguna. Permainan ini dapat diselesaikan oleh pengguna, atau menggunakan salah satu dari dua \textit{solver} yang disediakan.  Kedua \textit{solver} tersebut yaitu:
+Perangkat lunak ini akan menghasilkan keluaran berupa antarmuka grafis permainan teka-teki Calcudoku berdasarkan isi \textit{file}  yang di-\textit{load} oleh pengguna. Permainan ini dapat diselesaikan oleh pengguna dengan usahanya sendiri, atau menggunakan salah satu dari dua \textit{solver} yang disediakan.  Kedua \textit{solver} tersebut yaitu:
 
 \begin{enumerate}
-\item Algoritma \textit{backtracking}.
+\item Algoritma \textit{backtracking}, dan
 \item Algoritma \textit{hybrid genetic}.
 \end{enumerate}
+
+Pengguna dapat me-\textit{load} file masukan untuk memulai permainan, me-\textit{reset} permainan untuk mengulang permainan berdasarkan \textit{file} masukan yang sudah di-\textit{load} dari awal, dan menutup \textit{file} masukan untuk mengakhiri permainan, atau jika ingin me-\textit{load file} masukan yang lain. Pengguna juga dapat meminta perangkat lunak untuk memeriksa permainan jika ada masukan yang salah di dalam \textit{grid}, misalnya ada angka yang berulang dalam sebuah baris atau kolom, atau angka-angka dalam sebuah \textit{cage} tidak mencapai angka tujuan yang ditentukan setelah dihitung dengan operasi matematika yang ditentukan.
 
 Kebutuhan-kebutuhan yang diperlukan oleh perangkat lunak ini akan dijelaskan menggunakan diagram \textit{use cage}, dan skenario.
 
 \subsection{Diagram \textit{Use Case} dan Skenario}
 \label{sec:analisisusecase}
 
-LOREM IPSUM DOLOR SIT AMET
+Diagram \textit{use case} adalah diagram yang menggambarkan interaksi antara sistem (perangkat lunak) dengan pengguna. Berdasarkan analisis perangkat lunak yang telah dilakukan, maka pengguna dapat:
+
+\begin{enumerate}
+\item Me-\textit{load} file masukan untuk memulai permainan.
+\item Memilih salah satu dari dua \textit{solver} yang disediakan untuk menyelesaikan permainan berdasarkan \textit{file} yang sudah di-\textit{load}.
+\item Me-\textit{reset} permainan untuk mengulang permainan berdasarkan \textit{file} masukan yang sudah di-\textit{load} dari awal.
+\item Meminta perangkat lunak untuk memeriksa permainan jika ada masukan yang salah di dalam \textit{grid}.
+\item Menutup \textit{file} masukan untuk mengakhiri permainan.
+\item Menyelesaikan permainan dengan usahanya sendiri.
+\end{enumerate}
+
+Diagram \textit{use case} untuk perangkat lunak permainan teka-teki Calcudoku dapat dilihat pada Gambar~\ref{fig:analisisusecase}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.4]{Gambar/Analisis/DiagramUseCase}
+\caption[Diagram \textit{use case} untuk perangkat lunak permainan teka-teki Calcudoku]{Diagram \textit{use case} untuk perangkat lunak permainan teka-teki Calcudoku}
+\label{fig:analisisusecase}
+\end{figure}
+
+Berdasarkan diagram \textit{use case} yang dapat dilihat pada Gambar~\ref{fig:analisisusecase}, skenario-skenario yang dapat dilakukan oleh pengguna adalah:
+
+\begin{enumerate}
+\item Me-\textit{load file} masukan. Penjelasan untuk skenario ini dapat dilihat pada Tabel~\ref{tab:analisisload}.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l || l |}
+\hline
+Nama & Me-\textit{load file} masukan \\
+\hline
+Aktor & Pengguna \\
+\hline
+Deskripsi & Me-\textit{load} file masukan untuk memulai permainan. \\
+\hline
+Kondisi Awal & Perangkat lunak belum me-\textit{load file} masukan. \\
+\hline
+Kondisi Akhir & Perangkat lunak sudah me-\textit{load file} masukan .\\
+\hline
+Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{File}", lalu memilih menu \textit{item} "\textit{Load} \\ \textit{Puzzle File}", lalu memilih \textit{file} masukan yang akan di-\textit{load}, dan mengklik \\ tombol "OK". Jika perangkat lunak sudah me-\textit{load file} masukan, dan ingin \\ me-\textit{load file} masukan yang baru, akan keluar kotak dialog "\textit{Are you sure} \\  \textit{you want to load another puzzle file}?", klik tombol "\textit{Yes}" untuk me-\textit{load file} \\ masukan baru, atau klik tombol "\textit{No}" untuk membatalkan.} \\
+\hline
+\end{tabular}
+\caption[Skenario me-\textit{load file}]{Skenario me-\textit{load file}}
+\label{tab:analisisload}
+\end{table}
+
+\item Memilih salah satu dari dua \textit{solver} yang disediakan. Penjelasan untuk skenario ini dapat dilihat pada Tabel~\ref{tab:analisischoose}
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l || l |}
+\hline
+Nama & Memilih salah satu dari dua \textit{solver} yang disediakan \\
+\hline
+Aktor & Pengguna \\
+\hline
+Deskripsi & \makecell[l]{Memilih salah satu dari dua \textit{solver} yang disediakan untuk menyelesaikan \\ permainan berdasarkan \textit{file} yang sudah di-\textit{load}.} \\
+\hline
+Kondisi Awal & \textit{Solver} belum menyelesaikan permainan. \\
+\hline
+Kondisi Akhir & \textit{Solver} berhasil atau gagal dalam menyelesaikan permainan. \\
+\hline
+Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{Solve}", lalu memilih salah satu dari dua \\\textit{solver} yang disediakan. Pemain memilih menu \textit{item} "\textit{Backtracking}" untuk \\ memilih \textit{solver} dengan algoritma \textit{backtracking}, atau menu \textit{item} "\textit{Hybrid} \\ \textit{Genetic}" untuk memilih \textit{solver} dengan algoritma \textit{hybrid genetic}.} \\
+\hline
+\end{tabular}
+\caption[Skenario memilih salah satu dari dua \textit{solver} yang disediakan]{Skenario memilih salah satu dari dua \textit{solver} yang disediakan}
+\label{tab:analisischoose}
+\end{table}
+
+\item Me-\textit{reset} permainan. Penjelasan untuk skenario ini dapat dilihat pada Tabel~\ref{tab:analisisreset}.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l || l |}
+\hline
+Nama & Me-\textit{reset} permainan \\
+\hline
+Aktor & Pengguna \\
+\hline
+Deskripsi & \makecell[l]{Me-\textit{reset} permainan untuk mengulang permainan berdasarkan \textit{file} masukan \\ yang sudah di-\textit{load} dari awal.} \\
+\hline
+Kondisi Awal & \makecell[l]{Permainan belum di-\textit{reset}, sel-sel dalam \textit{grid} mungkin masih berisi angka- \\ angka.} \\
+\hline
+Kondisi Akhir & \makecell[l]{Permainan sudah di-\textit{reset}, semua sel-sel dalam \textit{grid} sudah dalam keadaan \\ kosong.} \\
+\hline
+Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{File}", lalu memilih menu \textit{item} "\textit{Reset} \\ \textit{Puzzle File}". Akan keluar kotak dialog "\textit{Are you sure you want to reset this} \\ \textit{puzzle?}", klik tombol "\textit{Yes} untuk me-\textit{reset} permainan, atau klik tombol \\ "\textit{No}" untuk membatalkan. Jika perangkat lunak belum me-\textit{load file} \\ masukan, maka akan keluar pesan \textit{error} "\textit{Puzzle file not loaded}".} \\
+\hline
+\end{tabular}
+\caption[Skenario me-\textit{reset} permainan]{Skenario me-\textit{reset} permainan}
+\label{tab:analisisreset}
+\end{table}
+
+\item Meminta perangkat lunak untuk memeriksa permainan. Penjelasan untuk skenario ini dapat dilihat pada Tabel~\ref{tab:analisischeck}.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l || l |}
+\hline
+Nama & Meminta perangkat lunak untuk memeriksa permainan \\
+\hline
+Aktor & Pengguna \\
+\hline
+Deskripsi & \makecell[l]{Meminta perangkat lunak untuk memeriksa permainan jika ada masukan \\ yang salah di dalam \textit{grid}.} \\
+\hline
+Kondisi Awal & Permainan belum diperiksa oleh perangkat lunak. \\
+\hline
+Kondisi Akhir & \makecell[l]{Permainan sudah diperiksa oleh perangkat lunak. Pengguna akan \\ diberitahu oleh perangkat lunak jika ada masukan yang salah di dalam \\ \textit{grid}, misalnya ada angka yang berulang dalam sebuah baris atau kolom, \\ atau angka-angka dalam sebuah \textit{cage} tidak mencapai angka tujuan yang \\ ditentukan setelah dihitung dengan operasi matematika yang ditentukan.} \\
+\hline
+Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{File}", lalu memilih menu \textit{item} "\textit{Check} \\ \textit{Puzzle File}". Jika perangkat lunak belum me-\textit{load file} masukan, maka akan \\ keluar pesan \textit{error} "\textit{Puzzle file not loaded}".} \\
+\hline
+\end{tabular}
+\caption[Skenario meminta perangkat lunak untuk memeriksa permainan]{Skenario meminta perangkat lunak untuk memeriksa permainan}
+\label{tab:analisischeck}
+\end{table}
+
+\item Menutup \textit{file} masukan. Penjelasan untuk skenario ini dapat dilihat pada Tabel~\ref{tab:analisisclose}.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l || l |}
+\hline
+Nama & Menutup \textit{file} masukan \\
+\hline
+Aktor & Pengguna \\
+\hline
+Deskripsi & Menutup \textit{file} masukan untuk mengakhiri permainan. \\
+\hline
+Kondisi Awal & Perangkat lunak belum menutup \textit{file} masukan. \\
+\hline
+Kondisi Akhir & Perangkat lunak sudah menutup \textit{file} masukan. \\
+\hline
+Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{File}", lalu memilih menu \textit{item} "\textit{Close} \\ \textit{Puzzle File}". Jika perangkat lunak belum me-\textit{load file} masukan, maka akan \\ keluar pesan \textit{error} "\textit{Puzzle file not loaded}".} \\
+\hline
+\end{tabular}
+\caption[Skenario menutup \textit{file} masukan]{Skenario menutup \textit{file} masukan}
+\label{tab:analisisclose}
+\end{table}
+
+\item Menyelesaikan permainan dengan usahanya sendiri. Penjelasan untuk skenario ini dapat dilihat pada Tabel~\ref{tab:analisisplay}.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\begin{tabular}{| l || l |}
+\hline
+Nama & Menyelesaikan permainan dengan usahanya sendiri. \\
+\hline
+Aktor & Pengguna \\
+\hline
+Deskripsi & \makecell[l]{Pemain menyelesaikan permainan dengan usahanya sendiri. Pemain \\ mengisikan sel-sel dalam \textit{grid} dengan angka 1 sampai \begin{math}n\end{math}, dengan \begin{math}n\end{math} \\ merupakan ukuran dari \textit{grid}. Perangkat lunak dapat secara otomatis \\ memeriksa \textit{grid} jika ada masukan yang salah di dalam \textit{grid}, misalnya ada \\ angka yang berulang dalam sebuah baris atau kolom, atau angka-angka \\ dalam sebuah \textit{cage} tidak mencapai angka tujuan yang ditentukan setelah \\ dihitung dengan operasi matematika yang ditentukan.} \\
+\hline
+Kondisi Awal & Semua sel-sel dalam \textit{grid} dalam keadaan kosong. \\
+\hline
+Kondisi Akhir & \makecell[l]{Semua sel-sel dalam \textit{grid} sudah terisi dengan angka-angka, dengan rincian \\ tidak ada angka yang berulang dalam sebuah baris atau kolom, dan angka- \\ angka dalam setiap \textit{cage} mencapai angka tujuan yang ditentukan setelah \\ dihitung dengan operasi matematika yang ditentukan.} \\
+\hline
+Skenario Utama & \makecell[l]{Pemain mengisikan sel-sel dalam \textit{grid} dengan angka 1 sampai \begin{math}n\end{math}, dengan \begin{math}n\end{math} \\ merupakan ukuran dari \textit{grid}.} \\
+\hline
+\end{tabular}
+\caption[Skenario menyelesaikan permainan dengan usahanya sendiri]{Skenario Menyelesaikan permainan dengan usahanya sendiri}
+\label{tab:analisisplay}
+\end{table}
+
+\end{enumerate}
 
 \subsection{Diagram Kelas}
 \label{sec:analisiskelas}
 
-LOREM IPSUM DOLOR SIT AMET
+Berdasarkan diagram \textit{use case} yang telah dibuat, maka diagram kelas dapat dibuat. Diagram kelas untuk perangkat lunak permainan teka-teki Calcudoku dapat dilihat pada Gambar~\ref{fig:analisiskelas}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Analisis/DiagramKelas.jpg}
+\caption[Diagram kelas untuk perangkat lunak permainan teka-teki Calcudoku]{Diagram kelas untuk perangkat lunak permainan teka-teki Calcudoku}
+\label{fig:analisiskelas}
+\end{figure}
+
+Berdasarkan diagram kelas yang dapat dilihat pada Gambar~\ref{fig:analisisusekelas}, kelas-kelas yang digunakan dalam perangkat lunak Calcudoku adalah:
+
+\begin{enumerate}
+\item \textit{Package} model, yaitu \textit{package} yang berisi kelas-kelas yang merepresentasikan permainan teka-teki Calcudoku. \textit{Package} ini terdiri dari 8 kelas, yaitu:
+	\begin{enumerate}
+	\item Kelas Grid, yaitu kelas yang merepresentasikan sebuah \textit{grid} dalam permainan Calcudoku.
+	\item Kelas Cell, yaitu kelas yang merepresentasikan sebuah sel dalam \textit{grid}.
+	\item Kelas Cage, yaitu kelas yang merepresentasikan sebuah \textit{cage} dalam \textit{grid}.
+	\item Kelas SolverBacktracking, yaitu kelas yang merepresentasikan \textit{solver} untuk permainan Calcudoku dengan algoritma \textit{backtracking}.
+	\item Kelas SolverHybridGenetic, yaitu kelas yang merepresentasikan \textit{solver} untuk permainan Calcudoku dengan algoritma \textit{hybrid genetic}.
+	\item Kelas SolverRuleBased, yaitu kelas yang merepresentasikan \textit{solver} untuk permainan Calcudoku dengan algoritma \textit{rule based}, bagian pertama dari algoritma \textit{hybrid genetic}.
+	\item Kelas SolverGenetic, yaitu kelas yang merepresentasikan \textit{solver} untuk permainan Calcudoku dengan algoritma genetik, bagian kedua dari algoritma \textit{hybrid genetic}.
+	\item Kelas Chromosome, yaitu kelas yang merepresentasikan sebuah kromosom dalam algoritma genetik.
+	\end{enumerate}
+\item \textit{Package} view, yaitu \textit{package} yang merepresentasikan GUI untuk permainan Calcudoku. \textit{Package} ini terdiri dari 2 kelas, yaitu:
+	\begin{enumerate}
+	\item Kelas Calcudoku, yaitu kelas yang merepresentasikan \textit{frame} untuk GUI permainan Calcudoku. Kelas ini berisi menu \textit{bar}, dan panel yang merepresentasikan \textit{grid} untuk permainan Calcudoku (kelas GUI).
+	\item Kelas GUI, yaitu kelas yang merepresentasikan \textit{grid} untuk permainan Calcudoku.
+	\end{enumerate}
+\item \textit{Package} controller, yaitu penghubung antara kelas-kelas yang ada di dalam \textit{package} model dengan kelas-kelas yang ada di dalam \textit{package} view. \textit{Package} ini terdiri dari 1 kelas, yaitu kelas Controller. Kelas ini menghubungkan kelas-kelas yang ada di dalam  \textit{package} model dengan kelas-kelas yang ada di dalam \textit{package} view.
+\end{enumerate}
+
+Penjelasan tentang variabel-variabel dan \textit{method-method} yang ada di dalam kelas-kelas di atas akan dijelaskan di dalam bab Perancangan.
