@@ -1,0 +1,15 @@
+\select@language {bahasa}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tabel parameter untuk algoritma genetik yang akan digunakan untuk menyelesaikan teka-teki Calcudoku yang digambarkan pada Gambar~\ref {fig:analisishg2}}}{36}{table.caption.59}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1}}{41}{table.caption.72}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1}}{46}{table.caption.85}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-3}}{51}{table.caption.98}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Skenario me-\textit {load file}}}{52}{table.caption.100}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Skenario memilih salah satu dari dua \textit {solver} yang disediakan}}{53}{table.caption.101}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Skenario me-\textit {reset} permainan}}{54}{table.caption.102}
+\contentsline {table}{\numberline {3.8}{\ignorespaces Skenario meminta perangkat lunak untuk memeriksa permainan}}{54}{table.caption.103}
+\contentsline {table}{\numberline {3.9}{\ignorespaces Skenario menutup \textit {file} masukan}}{54}{table.caption.104}
+\contentsline {table}{\numberline {3.10}{\ignorespaces Skenario menyelesaikan permainan dengan usahanya sendiri}}{55}{table.caption.105}
+\addvspace {10\p@ }

@@ -20,12 +20,12 @@ Jika operasi matematika yang ditentukan adalah pengurangan atau pembagian, maka 
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=1]{Gambar/Backtracking1}
+\includegraphics[scale=0.75]{Gambar/Backtracking1}
 \caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan. ~\cite{fahda:16:backtracking}]{Contoh permainan teka-teki dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan. ~\cite{fahda:16:backtracking}}
 \label{fig:backtracking1}
 \end{figure}
 
-Untuk menyelesaikan sebuah teka-teki Calcudoku, pemain harus pertama-tama memahami dua permasalahan utama dari teka-teki ini, yaitu:
+Untuk menyelesaikan sebuah teka-teki Calcudoku, pemain pertama-tama harus memahami dua permasalahan utama dari teka-teki ini, yaitu:
 \begin{enumerate}
 \item Angka-angka mana yang harus dimasukkan ke dalam sebuah \textit{cage}
 \item Dalam urutan apa angka-angka tersebut harus dimasukkan ke dalam sebuah \textit{cage}
@@ -42,20 +42,20 @@ Dalam pengisian teka-teki ini ada dua tahapan, yaitu:
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=1]{Gambar/Backtracking2}
+\includegraphics[scale=0.75]{Gambar/Backtracking2}
 \caption[Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1} ~\cite{fahda:16:backtracking}]{Solusi untuk permainan teka-teki Calcudoku yang diberikan pada Gambar~\ref{fig:backtracking1}.}
 \label{fig:backtracking2}
 \end{figure}
 
 Seiring dengan meningkatnya tingkat kesulitan, langkah berikutnya tidak akan langsung muncul dengan jelas. Kadang-kadang, pemain mencapai titik dimana langkah berikutnya tidak pasti. Pemain harus menebak langkah-langkah berikutnya dan melihat apakah langkah ini akan menghasilkan solusinya. Jika tidak, pemain harus mundur kembali ke titik ketidakpastian tersebut.
 
-Sebuah teka-teki Calcudoku dengan ukuran \begin{math}n \times n\end{math}, dengan \begin{math}n\end{math} melambangkan jumlah sel dalam satu baris atau kolom, mempunyai \begin{math}n^2\end{math} sel dalam sebuah \textit{grid}. Sel yang terletak dalam baris \begin{math}b\end{math} dan kolom \begin{math}k\end{math} diberi label \begin{math}C_{b,k} = bn + k\end{math} dan nilai dari sel tersebut adalah \begin{math}V(C_{b,k}) \in \{1, 2, ..., n\}\end{math}. Nomor baris \begin{math}b\end{math} memiliki \textit{range} \begin{math}0 \leq b \leq n - 1\end{math}. Nomor kolom \begin{math}k\end{math} memiliki \textit{range} \begin{math}0 \leq k \leq n - 1\end{math}. Nomor sel \begin{math}C\end{math} memiliki \textit{range} \begin{math}0 \leq C \leq n^2 - 1\end{math}. Nomor sel adalah hasil perkalian dari nomor baris tempat sebuah sel berada dikalikan dengan banyaknya sel dalam sebuah baris, lalu dijumlahkan dengan nomor kolom tempat sebuah sel berada. Sebuah \textit{cage}, yang diberi label \begin{math}A_i\end{math} adalah sebuah himpunan dari sel, yaitu \begin{math}A_i = \{C_{b,k}\}\end{math}. Setiap \textit{cage} terhubung dengan satu operator aritmatika \begin{math}O_i \in \{+, -, \times, \div, =\}\end{math}, artinya operator aritmatika adalah salah satu dari penjumlahan, pengurangan, perkalian, pembagian, dan sama dengan, dan satu angka tujuan \begin{math}H_i \in N\end{math}, artinya angka tujuan adalah sebuah bilangan asli. Menurut Johanna, Lukas, dan Saputra, tiga aturan dalam mendefinisikan masalah dalam Calcudoku adalah sebagai berikut ~\cite{johanna:12:hybrid}:
+Sebuah teka-teki Calcudoku dengan ukuran \begin{math}n \times n\end{math}, dengan \begin{math}n\end{math} melambangkan jumlah sel dalam satu baris atau kolom, mempunyai \begin{math}n^2\end{math} sel dalam sebuah \textit{grid}. Sel yang terletak dalam baris \begin{math}b\end{math} dan kolom \begin{math}k\end{math} diberi label \begin{math}C_{b,k} = bn + k\end{math} dan nilai dari sel tersebut adalah \begin{math}V(C_{b,k}) \in \{1, 2, ..., n\}\end{math}. Nomor baris \begin{math}b\end{math} memiliki \textit{range} \begin{math}0 \leq b \leq n - 1\end{math}. Nomor kolom \begin{math}k\end{math} memiliki \textit{range} \begin{math}0 \leq k \leq n - 1\end{math}. Nomor sel \begin{math}C\end{math} memiliki \textit{range} \begin{math}0 \leq C \leq n^2 - 1\end{math}. Nomor sel adalah hasil perkalian dari nomor baris tempat sebuah sel berada dikalikan dengan banyaknya sel dalam sebuah baris, lalu dijumlahkan dengan nomor kolom tempat sebuah sel berada. Sebuah \textit{cage}, yang diberi label \begin{math}A_i\end{math} adalah sebuah himpunan dari sel, yaitu \begin{math}A_i = \{C_{b,k}\}\end{math}. Setiap \textit{cage} terhubung dengan satu operator aritmatika \begin{math}O_i \in \{+, -, \times, \div, =\}\end{math}, artinya operator aritmatika adalah salah satu dari penjumlahan, pengurangan, perkalian, pembagian, dan sama dengan, dan satu angka tujuan \begin{math}H_i \in N\end{math}, artinya angka tujuan adalah sebuah bilangan asli. Tiga aturan dalam mendefinisikan masalah dalam Calcudoku adalah sebagai berikut ~\cite{johanna:12:hybrid}:
 \begin{enumerate}
 \item \begin{math}|A_i| = 1 \rightarrow O_i = \phi\end{math}, artinya setiap \textit{cage} yang jumlah selnya 1 dengan operasi matematika yang terkait dengan \textit{cage} tersebut memiliki hubungan korespondensi satu ke satu.
-\item \begin{math}O_i \in {-, \div} \rightarrow |A_i| = 2\end{math}, artinya jika operasi yang digunakan dalam sebuah \textit{cage} adalah pengurangan atau pembagian, maka jumlah sel dalam \textit{cage} tersebut harus 2.
+\item \begin{math}O_i \in \{-, \div\} \rightarrow |A_i| = 2\end{math}, artinya jika operasi yang digunakan dalam sebuah \textit{cage} adalah pengurangan atau pembagian, maka jumlah sel dalam \textit{cage} tersebut harus 2.
 \item \begin{math}\forall C_{b,k} \rightarrow C_{b,k} \in \exists! A_i\end{math}, artinya setiap sel hanya boleh menjadi anggota dari satu dan hanya satu \textit{cage}.
 \end{enumerate}
-Menurut Johanna, Lukas, dan Saputra, tujuan dari teka-teki ini adalah untuk mencari nilai \begin{math}V(C_{b,k})\end{math} dan memenuhi persyaratan berikut ~\cite{johanna:12:hybrid}:
+Tujuan dari teka-teki ini adalah untuk mencari nilai \begin{math}V(C_{b,k})\end{math} dan memenuhi persyaratan berikut ~\cite{johanna:12:hybrid}:
 \begin{enumerate}
 \item \begin{math}|A_i| = 1 \land C_{b,k} \in A_i \rightarrow V(C_{b,k}) = H_i\end{math}, artinya jika sel adalah bagian dari sebuah \textit{cage} yang jumlah selnya 1, maka nilai dari sel tersebut adalah angka tujuan dari \textit{cage} tersebut.
 \item \begin{math}O_i \in \{-\} \land A_i = \{C_{a,b}, C_{p,q}\} \rightarrow |V(C_{a,b}) - V(C_{p,q})| = H_i\end{math}, artinya jika sebuah \textit{cage} yang operasi matematikanya adalah pengurangan, maka nilai absolut dari hasil pengurangan nilai kedua sel di dalam \textit{cage} tersebut adalah angka tujuan dari \textit{cage} tersebut.
@@ -71,7 +71,7 @@ Algoritma \textit{backtracking} adalah sebuah algoritma umum yang mencari solusi
 
 Algoritma \textit{backtracking} pertama kali diperkenalkan pada tahun 1950 oleh D.H. Lehmer sebagai perbaikan algoritma \textit{brute force}. Algoritma ini lalu dikembangkan lebih lanjut oleh R.J. Walker, S.W. Golomb, dan L.D. Baumert. Algoritma ini terbukti efektif untuk menyelesaikan banyak permainan logika (misalnya \textit{tic tac toe}, \textit{maze}, catur, dan lain-lain) karena algoritma itu terutama berguna untuk menyelesaikan masalah-masalah \textit{constraint satisfaction}, di mana sekumpulan objek harus memenuhi sejumlah batasan.
 
-Menurut Fahda, implementasi algoritma \textit{backtracking} memiliki beberapa sifat umum, yaitu ~\cite{fahda:16:backtracking}:
+Implementasi algoritma \textit{backtracking} memiliki tiga sifat umum, yaitu ~\cite{fahda:16:backtracking}:
 \begin{enumerate}
 \item \textit{Solution space}
 \\ Solusi untuk masalah ini dinyatakan sebagai sebuah vektor \begin{math}X\end{math} dengan \textit{\begin{math}n\end{math}-tuple}:
@@ -82,14 +82,13 @@ di mana adalah mungkin bahwa:
 \begin{displaymath}
 S_1 = S_2 = ... = S_n
 \end{displaymath} 
-\begin{math}n\end{math} adalah jumlah sel dalam satu baris atau kolom. \begin{math}X\end{math} adalah sebuah \textit{tuple} yang berukuran \begin{math}n^2\end{math}, yang mereprentasikan isi dari setiap sel dalam \textit{grid}, dimulai pada sel pada sudut kiri atas, lalu bergerak ke sel di sebelah kanannya dalam baris yang sama, jika sudah mencapai sel yang paling kanan maka bergerak ke sel yang paling kiri pada baris dibawahnya, hingga berakhir di sel pada sudut kanan bawah. \begin{math}S_i\end{math} adalah sebuah himpunan yang berisi angka-angka dari 1 sampai \begin{math}n\end{math}.
 \item Fungsi pembangkit \begin{math}X_k\end{math} (\textit{generating function})
 \\ Fungsi pembangkit \begin{math}X_k\end{math} dinyatakan sebagai:
 \begin{displaymath}
 T(k)
 \end{displaymath}
 di mana \begin{math}T(k)\end{math} membangkitkan nilai \begin{math}X_k\end{math}, dari 1 sampai \begin{math}n\end{math}, yang merupakan komponen dari vektor solusi.
-\item Fungsi pembatas (\textit{generating function})
+\item Fungsi pembatas (\textit{bounding function})
 \\ Fungsi pembatas dinyatakan sebagai:
 \begin{displaymath}
 B(x_1, x_2, ..., x_k)
@@ -122,7 +121,9 @@ Langkah-langkah dalam menggunakan \textit{state space tree} untuk mencari solusi
 \end{enumerate}
 Setiap simpul di dalam \textit{state space tree} terkait dengan panggilan rekursif. Jika jumlah simpul di dalam pohon \begin{math}2n\end{math} atau \begin{math}n!\end{math}, maka pada kasus terburuk untuk algoritma \textit{backtracking} ini memiliki kompleksitas waktu \begin{math}O(p(n)2n)\end{math} atau \begin{math}O(q(n)n!)\end{math}, dengan \begin{math}p(n)\end{math} dan \begin{math}q(n)\end{math} sebagai polinomial dengan \begin{math}n\end{math}-derajat menyatakan waktu komputasi untuk setiap simpul.
 
-Ruang solusi untuk sebuah permainan teka-teki Calcudoku dengan \textit{grid} yang berukuran \begin{math}n \times n\end{math} adalah \begin{math}X = (x_1,x_2,...,x_m), x_i \in \{1,2,...,n\}\end{math}, dengan \begin{math}m = n^2\end{math}. Fungsi pembangkit membangkitkan sebuah integer secara berurutan dari 1 sampai \begin{math}n\end{math} sebagai \begin{math}x_k\end{math}. Fungsi pembatas menggabungkan tiga fungsi pemeriksa pembatas (\textit{constraint checking}), yaitu fungsi pemeriksa kolom (\textit{column checking}), fungsi pemeriksa baris (\textit{row checking}), dan fungsi pemeriksa \textit{grid} (\textit{grid checking}).
+Ruang solusi untuk sebuah permainan teka-teki Calcudoku dengan \textit{grid} yang berukuran \begin{math}n \times n\end{math} adalah \begin{math}X = (x_1,x_2,...,x_m), x_i \in \{1,2,...,n\}\end{math}, dengan \begin{math}m = n^2\end{math}. Jadi, \begin{math}n\end{math} adalah jumlah sel dalam satu baris atau kolom, \begin{math}X\end{math} adalah sebuah himpunan yang merepresentasikan isi dari setiap sel dalam \textit{grid}, dimulai pada sel pada sudut kiri atas, lalu bergerak ke sel di sebelah kanannya dalam baris yang sama, jika sudah mencapai sel yang paling kanan maka bergerak ke sel yang paling kiri pada baris dibawahnya, hingga berakhir pada sel pada sudut kanan bawah, dan \begin{math}S_i\end{math} adalah sebuah himpunan yang berisi angka-angka dari 1 sampai \begin{math}n\end{math}.
+
+Fungsi pembangkit membangkitkan sebuah integer secara berurutan dari 1 sampai \begin{math}n\end{math} sebagai \begin{math}x_k\end{math}. Fungsi pembatas menggabungkan tiga fungsi pemeriksa pembatas (\textit{constraint checking}), yaitu fungsi pemeriksa kolom (\textit{column checking}), fungsi pemeriksa baris (\textit{row checking}), dan fungsi pemeriksa \textit{grid} (\textit{grid checking}).
 
 Fungsi pemeriksa kolom menghasilkan nilai \textit{true} jika \begin{math}x_k\end{math} belum ada di dalam kolom dan menghasilkan nilai \textit{false} jika \begin{math}x_k\end{math} sudah ada di dalam kolom.
 
@@ -163,20 +164,20 @@ Fungsi pemeriksa \textit{grid} memeriksa operator pada \textit{grid} dan memerik
 \label{fig:backtracking5}
 \end{figure}
 
-\item Karena tidak ada solusi yang mungkin, maka algoritma \textit{backtracking} akan mundur ke \textit{state} 1. Fungsi pembangkit akan membangkitkan kemungkinan angka berikutnya sebagai \begin{math}x_1\end{math}, yaitu 2, dan ternyata angka 2 berlaku sebagai \begin{math}x_1\end{math} (\textit{state} 6), sehingga algoritma bisa maju ke \begin{math}x_2\end{math}, yaitu sel pada kolom ke-2 dan baris ke-1.
-\item Fungsi pembangkit akan membangkitkan angka 1 (\textit{state} 7), dan ini memenuhi syarat yang ditentukan dalam fungsi pembatas, karena angka 1 sama dengan angka tujuan, yaitu angka 1, sehingga algoritma bisa maju ke \begin{math}x_3\end{math}, yaitu sel pada kolom ke-3 dan baris ke-1.
+\item Karena tidak ada solusi yang mungkin, maka mundur ke \textit{state} 1. Fungsi pembangkit akan membangkitkan kemungkinan angka berikutnya sebagai \begin{math}x_1\end{math}, yaitu 2, dan ternyata angka 2 berlaku sebagai \begin{math}x_1\end{math} (\textit{state} 6), sehingga bisa maju ke \begin{math}x_2\end{math}, yaitu sel pada kolom ke-2 dan baris ke-1.
+\item Fungsi pembangkit akan membangkitkan angka 1 (\textit{state} 7), dan ini memenuhi syarat yang ditentukan dalam fungsi pembatas, karena angka 1 sama dengan angka tujuan, yaitu angka 1, sehingga bisa maju ke \begin{math}x_3\end{math}, yaitu sel pada kolom ke-3 dan baris ke-1.
 \item Angka 1 (\textit{state} 8) gagal dalam pemeriksaan baris karena angka 1 sudah pernah digunakan pada baris tersebut.
 \item Angka 2 (\textit{state} 9) juga gagal dalam pemeriksaan baris karena angka 2 sudah pernah digunakan pada baris tersebut.
-\item Hal ini menyebabkan hanya tersisa angka 3 sebagai angka yang bisa dimasukkan ke dalam \begin{math}x_3\end{math} (\textit{state} 10). Karena \textit{state} 10 ternyata berlaku, maka algoritma telah selesai mengisi baris ke-1, dan akan mulai mengisi baris ke-2.
-\item Algoritma lalu membuat \textit{state} baru dengan mengisikan angka 1 pada \begin{math}x_4\end{math}, yaitu sel pada kolom ke-1 dan baris ke-2 (\textit{state} 11). Ini memenuhi pemeriksaan pembatas, karena 2 + 1 = 3, sehingga algoritma akan maju ke sel berikutnya, yaitu \begin{math}x_5\end{math}, atau sel pada kolom ke-2 dan baris ke-2.
+\item Hal ini menyebabkan hanya tersisa angka 3 sebagai angka yang bisa dimasukkan ke dalam \begin{math}x_3\end{math} (\textit{state} 10). Karena \textit{state} 10 ternyata berlaku, baris ke-1 telah selesai diisi, dan bisa maju ke baris ke-2.
+\item Langkah berikutnya adalah membuat \textit{state} baru dengan mengisikan angka 1 pada \begin{math}x_4\end{math}, yaitu sel pada kolom ke-1 dan baris ke-2 (\textit{state} 11). Ini memenuhi pemeriksaan pembatas, karena 2 + 1 = 3, sehingga akan maju ke sel berikutnya, yaitu \begin{math}x_5\end{math}, atau sel pada kolom ke-2 dan baris ke-2.
 \item Angka 1 (\textit{state} 12) jelas tidak bisa digunakan karena gagal dalam pemeriksaan kolom dan pemeriksaan baris; angka 1 sudah pernah digunakan pada kolom dan baris tersebut.
-\item Angka 2 (\textit{state} 13) adalah langkah yang berlaku, sehingga algoritma bisa maju ke sel berikutnya, yaitu \begin{math}x_6\end{math}, atau sel pada kolom ke-3 dan baris ke-2.
-\item Algoritma mengisikan \begin{math}x_6\end{math} dengan angka 1 (\textit{state} 14), tetapi gagal dalam pemeriksaan baris karena angka 1 sudah pernah digunakan pada baris tersebut.
-\item Algoritma lalu mencoba kemungkinan angka berikutnya, yaitu angka 2 (\textit{state} 15), tetapi juga gagal dalam pemeriksaan baris karena angka 2 sudah pernah digunakan pada baris tersebut.
-\item Algoritma lalu mencoba kemungkinan angka berikutnya, yaitu angka 3 (\textit{state} 16), tetapi juga gagal, kali ini angka 3 gagal dalam pemeriksaan kolom karena angka 3 sudah pernah digunakan pada kolom tersebut.
-\item Karena semua kemungkinan angka gagal dalam pemeriksaan baris dan kolom, maka algoritma akan mundur ke \textit{state} 11 dan mencoba kemungkinan angka berikutnya, yaitu angka 3 (\textit{state} 17), dan ternyata angka 3 berlaku sebagai \begin{math}x_5\end{math}, sehingga algoritma bisa maju ke sel berikutnya, yaitu \begin{math}x_6\end{math}.
-\item Algoritma lalu mencoba angka 1 (\textit{state} 18) sebagai \begin{math}x_6\end{math}, tetapi gagal dalam pemeriksaan baris karena angka 1 sudah pernah digunakan dalam baris tersebut.
-\item Algoritma lalu mencoba kemungkinan angka berikutnya, yaitu angka 2 (\textit{state} 19), dan ternyata angka 2 berlaku. Algoritma telah selesai mengisi baris ke-2. Gambar~\ref{fig:backtracking6} menggambarkan \textit{state} 19 dalam penyelesaian teka-teki Calcudoku ini.
+\item Angka 2 (\textit{state} 13) adalah langkah yang berlaku, sehingga bisa maju ke sel berikutnya, yaitu \begin{math}x_6\end{math}, atau sel pada kolom ke-3 dan baris ke-2.
+\item Langkah berikutnya adalah mengisikan \begin{math}x_6\end{math} dengan angka 1 (\textit{state} 14), tetapi gagal dalam pemeriksaan baris karena angka 1 sudah pernah digunakan pada baris tersebut.
+\item Langkah berikutnya adalah mencoba kemungkinan angka berikutnya, yaitu angka 2 (\textit{state} 15), tetapi juga gagal dalam pemeriksaan baris karena angka 2 sudah pernah digunakan pada baris tersebut.
+\item Langkah berikutnya adalah mencoba kemungkinan angka berikutnya, yaitu angka 3 (\textit{state} 16), tetapi juga gagal, kali ini angka 3 gagal dalam pemeriksaan kolom karena angka 3 sudah pernah digunakan pada kolom tersebut.
+\item Karena semua kemungkinan angka gagal dalam pemeriksaan baris dan kolom, maka akan mundur ke \textit{state} 11 dan mencoba kemungkinan angka berikutnya, yaitu angka 3 (\textit{state} 17), dan ternyata angka 3 berlaku sebagai \begin{math}x_5\end{math}, sehingga bisa maju ke sel berikutnya, yaitu \begin{math}x_6\end{math}.
+\item Langkah berikutnya adalah mencoba angka 1 (\textit{state} 18) sebagai \begin{math}x_6\end{math}, tetapi gagal dalam pemeriksaan baris karena angka 1 sudah pernah digunakan dalam baris tersebut.
+\item Langkah berikutnya adalah mencoba kemungkinan angka berikutnya, yaitu angka 2 (\textit{state} 19), dan ternyata angka 2 berlaku. Baris ke-2 telah selesai diisi. Gambar~\ref{fig:backtracking6} menggambarkan \textit{state} 19 dalam penyelesaian teka-teki Calcudoku ini.
 
 \begin{figure}
 \centering
@@ -186,12 +187,12 @@ Fungsi pemeriksa \textit{grid} memeriksa operator pada \textit{grid} dan memerik
 \label{fig:backtracking6}
 \end{figure}
 
-\item Algoritma mulai mengisikan sel-sel yang terletak pada baris ke-3. Algoritma mengisi dari kolom yang paling kiri ke kolom yang paling kanan. Algoritma mengisikan \begin{math}x_7\end{math}, yaitu sel pada kolom ke-1 dan baris ke-3 dengan angka 1 (\textit{state} 20), tetapi gagal dalam pemeriksaan kolom, karena angka 1 sudah pernah digunakan dalam kolom tersebut.
-\item Algoritma lalu mencoba kemungkinan angka berikutnya, yaitu angka 2 (\textit{state} 21), tetapi juga gagal dalam pemeriksaan kolom, karena angka 2 sudah pernah digunakan dalam kolom tersebut.
-\item Algoritma lalu mencoba kemungkinan angka berikutnya, yaitu angka 3 (\textit{state} 22), dan ternyata berhasil, sehingga algoritma bisa maju ke sel berikutnya, yaitu \begin{math}x_8\end{math}, atau sel pada kolom ke-2 dan baris ke-3.
-\item Algoritma lalu mencoba mengisikan angka 1 pada \begin{math}x_8\end{math} (\textit{state} 23), tetapi gagal dalam pemeriksaan kolom, karena angka 1 sudah pernah digunakan dalam kolom tersebut.
-\item Algoritma lalu mencoba kemungkinan angka berikutnya, yaitu angka 2 (\textit{state} 24), dan ternyata berhasil, sehingga algoritma bisa maju ke sel berikutnya, yaitu \begin{math}x_9\end{math}, atau sel pada kolom ke-3 dan baris ke-3.
-\item \begin{math}x_9\end{math} adalah sel terakhir, terletak pada sudut kanan bawah \textit{grid}. Algoritma lalu mencoba mengisikan \begin{math}x_9\end{math} dengan angka 1 (\textit{state} 25), dan ternyata berhasil. Algoritma telah selesai mengisikan seluruh sel dalam \textit{grid} dengan benar. Gambar~\ref{fig:backtracking7} menggambarkan \textit{state} 25 dalam penyelesaian teka-teki Calcudoku ini. Algoritma ini mencapai solusinya pada \textit{state} 25, seperti pada \textit{state space tree} yang digambarkan dalam Gambar~\ref{fig:backtracking8}. \textit{State space tree} ini telah mencapai simpul tujuannya, yaitu simpul 25, dengan jalur 2-1-3-1-3-2-3-2-1.
+\item Langkah berikutnya adalah mulai mengisikan sel-sel yang terletak pada baris ke-3, dari kolom yang paling kiri ke kolom yang paling kanan, dimulai dengan mengisikan \begin{math}x_7\end{math}, yaitu sel pada kolom ke-1 dan baris ke-3 dengan angka 1 (\textit{state} 20), tetapi gagal dalam pemeriksaan kolom, karena angka 1 sudah pernah digunakan dalam kolom tersebut.
+\item Langkah berikutnya adalah mencoba kemungkinan angka berikutnya, yaitu angka 2 (\textit{state} 21), tetapi juga gagal dalam pemeriksaan kolom, karena angka 2 sudah pernah digunakan dalam kolom tersebut.
+\item Langkah berikutnya adalah mencoba kemungkinan angka berikutnya, yaitu angka 3 (\textit{state} 22), dan ternyata berhasil, sehingga bisa maju ke sel berikutnya, yaitu \begin{math}x_8\end{math}, atau sel pada kolom ke-2 dan baris ke-3.
+\item Langkah berikutnya adalah mencoba mengisikan angka 1 pada \begin{math}x_8\end{math} (\textit{state} 23), tetapi gagal dalam pemeriksaan kolom, karena angka 1 sudah pernah digunakan dalam kolom tersebut.
+\item Langkah berikutnya adalah mencoba kemungkinan angka berikutnya, yaitu angka 2 (\textit{state} 24), dan ternyata berhasil, sehingga bisa maju ke sel berikutnya, yaitu \begin{math}x_9\end{math}, atau sel pada kolom ke-3 dan baris ke-3.
+\item \begin{math}x_9\end{math} adalah sel terakhir, terletak pada sudut kanan bawah \textit{grid}. Langkah berikutnya adalah mencoba mengisikan \begin{math}x_9\end{math} dengan angka 1 (\textit{state} 25), dan ternyata berhasil. Algoritma \textit{backtracking} telah selesai mengisikan seluruh sel dalam \textit{grid} dengan benar. Gambar~\ref{fig:backtracking7} menggambarkan \textit{state} 25 dalam penyelesaian teka-teki Calcudoku ini. Algoritma \textit{backtracking} ini mencapai solusinya pada \textit{state} 25, seperti pada \textit{state space tree} yang digambarkan dalam Gambar~\ref{fig:backtracking8}. \textit{State space tree} ini telah mencapai simpul tujuannya, yaitu simpul 25, dengan jalur 2-1-3-1-3-2-3-2-1.
 
 \begin{figure}
 \centering
@@ -211,7 +212,7 @@ Fungsi pemeriksa \textit{grid} memeriksa operator pada \textit{grid} dan memerik
 \label{fig:backtracking8}
 \end{figure}
 
-Tinggi pohon yang dikembangkan untuk menyelesaikan sebuah teka-teki dengan ukuran \begin{math}n \times n\end{math} seharusnya memiliki tinggi \begin{math}n^2+1\end{math} saat mencapai simpul tujuannya, dengan jalur dari simpul akar ke simpul tujuan merepresentasikan semua angka yang digunakan untuk mengisi \textit{grid} dari sel pada sudut kiri atas ke sel pada sudut kanan bawah.
+Tinggi pohon yang dikembangkan untuk menyelesaikan sebuah teka-teki dengan ukuran \begin{math}n \times n\end{math} akan memiliki tinggi \begin{math}n^2+1\end{math} saat mencapai simpul tujuannya, dengan jalur dari simpul akar ke simpul tujuan merepresentasikan semua angka yang digunakan untuk mengisi \textit{grid} dari sel pada sudut kiri atas ke sel pada sudut kanan bawah.
 
 Singkatnya, langkah-langkah dasar dari implementasi algoritma \textit{backtracking} dapat dijelaskan sebagai berikut ~\cite{fahda:16:backtracking}:
 \begin{enumerate}
@@ -230,7 +231,7 @@ Dalam kasus ini, algoritma \textit{hybrid genetic} adalah gabungan dari algoritm
 \subsection{Algoritma \textit{Rule Based}}
 \label{sec:rulebased}
 
-Algoritma \textit{rule based} adalah sebuah algoritma berbasis aturan logika untuk menyelesaikan teka-teki Sudoku dan variasinya, termasuk Calcudoku. Menurut Johanna, Lukas, dan Saputra, beberapa aturan logika yang digunakan dalam algoritma ini adalah \textit{single square rule}, \textit{naked subset rule}, \textit{hidden single rule}, \textit{evil twin rule}, \textit{killer combination}, dan \textit{X-wing} ~\cite{johanna:12:hybrid}.
+Algoritma \textit{rule based} adalah sebuah algoritma berbasis aturan logika untuk menyelesaikan teka-teki Sudoku dan variasinya, termasuk Calcudoku. Beberapa aturan logika yang digunakan dalam algoritma ini adalah \textit{single square rule}, \textit{naked subset rule}, \textit{hidden single rule}, \textit{evil twin rule}, \textit{killer combination}, dan \textit{X-wing} ~\cite{johanna:12:hybrid}.
 
 Aturan \textit{single square} digunakan jika sebuah \textit{cage} hanya berisi satu sel. Hal ini berarti nilai dari sel tersebut sama dengan angka tujuan yang telah ditentukan.
 
@@ -289,7 +290,7 @@ Aturan \textit{X-wing} digunakan jika hanya ada dua kemungkinan angka yang bisa 
 
 Pencarian heuristik adalah sebuah teknik pencarian kecerdasan buatan (\textit{artifical intelligence}) yang menggunakan heuristik dalam langkah-langkahnya. Heuristik adalah semacam aturan tidak tertulis yang mungkin menghasilkan solusi. Heuristik kadang-kadang efektif, tetapi tidak dijamin akan berhasil. dalam setiap kasus. Heuristik memerankan peran penting dalam strategi pencarian karena sifat eksponensial dari kebanyakan masalah. Heuristik membantu mengurangi jumlah alternatif solusi dari angka yang bersifat eksponensial menjadi angka yang bersifat polinomial. Contoh teknik pencarian heuristik adalah \textit{Generate and Test}, \textit{Hill Climbing}, dan \textit{Best First Search}.
 
-Algoritma genetik adalah salah satu teknik heuristik \textit{Generate and Test} yang terinspirasi oleh sistem seleksi alam. Algoritma ini adalah perpaduan dari bidang biologi dan ilmu komputer. Algoritma ini memanipulasi informasi, biasanya disebut sebagai kromosom. Kromosom ini meng-\textit{encode} kemungkinan jawaban untuk sebuah masalah yang diberikan. Kromosom dievaluasi dan diberi \textit{fitness value} berdasarkan seberapa baikkah kromosom dalam menyelesaikan masalah yang diberikan berdasarkan kriteria yang ditentukan oleh pembuat program. Nilai kelayakan ini digunakan sebagai probabilitas kebertahanan hidup kromosom dalam satu siklus reproduksi. Kromosom baru (kromosom anak, \textit{child chromosome}) diproduksi dengan menggabungkan dua (atau lebih) kromosom orang tua (\textit{parent chromosome}). Proses ini dirancang untuk menghasilkan kromosom-kromosom keturunan yang lebih layak, kromosom-kromosom ini meng-\textit{encode} jawaban yang lebih baik, sampai solusi yang baik dan yang bisa diterima ditemukan.
+Algoritma genetik adalah salah satu teknik heuristik \textit{Generate and Test} yang terinspirasi oleh sistem seleksi alam. Algoritma ini adalah perpaduan dari bidang biologi dan ilmu komputer. Algoritma ini memanipulasi informasi, biasanya disebut sebagai kromosom. Kromosom ini meng-\textit{encode} kemungkinan jawaban untuk sebuah masalah yang diberikan. Kromosom dievaluasi dan diberi \textit{fitness value} berdasarkan seberapa baik kromosom dalam menyelesaikan masalah yang diberikan berdasarkan kriteria yang ditentukan oleh pembuat program. Nilai kelayakan ini digunakan sebagai probabilitas kebertahanan hidup kromosom dalam satu siklus reproduksi. Kromosom baru (kromosom anak, \textit{child chromosome}) diproduksi dengan menggabungkan dua (atau lebih) kromosom orang tua (\textit{parent chromosome}). Proses ini dirancang untuk menghasilkan kromosom-kromosom keturunan yang lebih layak, kromosom-kromosom ini meng-\textit{encode} jawaban yang lebih baik, sampai solusi yang baik dan yang bisa diterima ditemukan.
 
 Cara kerja algoritma genetik adalah sebagai berikut ~\cite{johanna:12:hybrid}:
 \begin{enumerate}
@@ -324,7 +325,7 @@ Algoritma genetik digunakan saat teka-teki masih tidak bisa diselesaikan setelah
 \label{fig:hybrid8}
 \end{figure}
 
-Menurut Johanna, Lukas, dan Saputra, fungsi objektif, yang direpresentasikan dengan \begin{math}x_j\end{math}, akan dihitung setelah pembangkitan nilai dari gen pada kromosom sudah dilakukan. Nilai untuk gen ke-\begin{math}j\end{math} pada sebuah kromosom direpresentasikan dengan \begin{math}w_j\end{math}. \begin{math}x_j\end{math} akan bernilai 0 jika belum diselesaikan (\begin{math}w_j = 0\end{math}), dan bernilai 1 jika sudah diselesaikan (\begin{math}w_j \neq 0\end{math}). Untuk kromosom dengan jumlah gen \begin{math}k\end{math}, fungsi kelayakan, yaitu hasil penjumlahan dari hasil fungsi objektif untuk setiap gen dibagi dengan jumlah gen, dinyatakan dalam persamaan di bawah ini ~\cite{johanna:12:hybrid}:
+Fungsi objektif, yang direpresentasikan dengan \begin{math}x_j\end{math}, akan dihitung setelah pembangkitan nilai dari gen pada kromosom sudah dilakukan. Nilai untuk gen ke-\begin{math}j\end{math} pada sebuah kromosom direpresentasikan dengan \begin{math}w_j\end{math}. \begin{math}x_j\end{math} akan bernilai 0 jika belum diselesaikan (\begin{math}w_j = 0\end{math}), dan bernilai 1 jika sudah diselesaikan (\begin{math}w_j \neq 0\end{math}). Untuk kromosom dengan jumlah gen \begin{math}k\end{math}, fungsi kelayakan, yaitu hasil penjumlahan dari hasil fungsi objektif untuk setiap gen dibagi dengan jumlah gen, dinyatakan dalam persamaan di bawah ini ~\cite{johanna:12:hybrid}:
 \begin{displaymath}
 x_j = 
 \begin{cases}
@@ -357,15 +358,15 @@ Pertukaran mutasi digunakan untuk mendapatkan kemungkinan kromosom yang lain. Mu
 \label{fig:hybrid10}
 \end{figure}
 
-Cara kerja algoritma \textit{hybrid genetic} menurut Johanna, Lukas, dan Saputra adalah sebagai berikut ~\cite{johanna:12:hybrid}:
+Cara kerja algoritma \textit{hybrid genetic} adalah sebagai berikut ~\cite{johanna:12:hybrid}:
 \begin{enumerate}
-\item Masukkan teka-teki yang akan diselesaikan sebagai input. Teka-teki Calcudoku diinputkan oleh pemain dalam bentuk file.
-\item Program akan merepresentasikan input yang dimasukkan dalam format teka-teki. File teka-teki Calcudoku yang telah diinputkan oleh pemain ditampilkan ke layar sebagai teka-teki Calcudoku.
-\item Program akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based} terlebih dahulu.
-\item Jika program berhasil menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based}, maka algoritma selesai.
-\item Jika program gagal dengan menggunakan algoritma \textit{rule based}, maka program akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma genetik.
-\item Jika program berhasil menyelesaikan teka-teki tersebut dengan menggunakan algoritma genetik, maka algoritma selesai.
-\item Jika program gagal dalam menyelesaikan teka-teki tersebut setelah menggunakan algoritma genetik, artinya algoritma gagal dalam menyelesaikan teka-teki terseebut.
+\item Masukkan teka-teki yang akan diselesaikan sebagai input. Teka-teki Calcudoku diinputkan oleh pemain dalam bentuk \textit{file}.
+\item Representasikan input yang dimasukkan ke dalam format teka-teki Calcudoku. File teka-teki Calcudoku yang telah diinputkan oleh pemain ditampilkan ke layar sebagai teka-teki Calcudoku.
+\item Algoritma \textit{hybrid genetic} akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based} terlebih dahulu.
+\item Jika berhasil menyelesaikan teka-teki tersebut dengan menggunakan algoritma \textit{rule based}, maka algoritma selesai.
+\item Jika gagal dengan menggunakan algoritma \textit{rule based}, maka algoritma \textit{hybrid genetic} akan mencoba menyelesaikan teka-teki tersebut dengan menggunakan algoritma genetik.
+\item Jika berhasil menyelesaikan teka-teki tersebut dengan menggunakan algoritma genetik, maka algoritma selesai.
+\item Jika gagal dalam menyelesaikan teka-teki tersebut setelah menggunakan algoritma genetik, artinya algoritma \textit{hybrid genetic} gagal dalam menyelesaikan teka-teki terseebut.
 \end{enumerate}
 Alur (\textit{flow chart}) penyelesaian permainan teka-teki Calcudoku dengan menggunakan algoritma \textit{hybrid genetic} dapat dilihat di Gambar~\ref{fig:hybrid7}.
 
