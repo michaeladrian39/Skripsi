@@ -1,5 +1,5 @@
     Michael Adrian's implementation of the Calcudoku puzzle game.
-    Copyright (C) 2016 Michael Adrian
+    Copyright (C) 2016-2017 Michael Adrian
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
