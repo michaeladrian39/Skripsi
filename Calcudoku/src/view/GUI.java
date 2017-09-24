@@ -37,8 +37,8 @@ public class GUI extends JPanel
     private final Controller c;
     private final Grid game;
     private final Integer size;
-    private final Integer[][] cageCells;
     private final Integer numberOfCages;
+    private final Integer[][] cageCells;
     private final String[] cageObjectives;
     private final Cell[][] grid;
     private final Cage[] cages;
