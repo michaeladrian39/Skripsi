@@ -27,8 +27,8 @@ public class Calcudoku extends JFrame
     
     private File puzzleFile;
     private Integer size;
-    private Integer[][] cageCells;
     private Integer numberOfCages;
+    private Integer[][] cageCells;
     private String[] cageObjectives;
     private Controller c;
     private final JMenuBar menuBar;

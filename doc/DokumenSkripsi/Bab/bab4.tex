@@ -6,7 +6,7 @@ Bab ini membahas tentang perancangan perangkat lunak yang dibuat. Bab ini juga a
 \section{Perancangan Masukan}
 \label{sec:perancanganmasukan}
 
-Masukan untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah \textit{file text}, seperti yang ditunjukkan pada Gambar~\ref{fig:perancanganmasukan}.
+Masukan untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah \textit{file} teks, seperti yang ditunjukkan pada Gambar~\ref{fig:perancanganmasukan}.
 
 \begin{figure}
 \centering
@@ -57,11 +57,17 @@ Perangkat lunak teka-teki Calcudoku ini terdiri dari beberapa kelas, yang dikelo
 	\item ChromosomeComparator, yaitu kelas pembanding \textit{custom} (\textit{custom comparator}) yang berfungsi untuk mengurutkan kromosom berdasarkan nilai kelayakkannya (\textit{fitness value}).	
 	\item SolverGenetic, yaitu kelas \textit{solver} untuk teka-teki Calcudoku menggunakan algoritma genetik. Dalam algoritma \textit{hybrid genetic}, algoritma genetik baru akan dijalankan jika algoritma \textit{rule based} gagal dalam menyelesaikan teka-teki Calcudoku.
 	\end{enumerate}
-\item View, yaitu tampilan dari perangkat lunak ini. Package ini memiliki beberapa kelas, yaitu:
+\item View, yaitu GUI dari perangkat lunak ini. Package ini memiliki beberapa kelas, yaitu:
 	\begin{enumerate}
-	\item Tester, yaitu kelas untuk menguji program ini.
+	\item Calcudoku, yaitu kelas \textit{frame} yang berisi menu \textit{bar} dan instansiasi kelas panel GUI.
+	\item WindowListener, yaitu kelas \textit{listener} untuk kelas Calcudoku. \textit{Listener} ini berfungsi untuk menambahkan pesan peringatan saat akan menutup perangkat lunak.
+	\item PuzzleFileFilter, yaitu kelas filter untuk \textit{file chooser}. Filter ini membatasi agar \textit{file chooser} hanya bisa membuka \textit{file} teks.
+	\item GUI, yaitu kelas panel yang merepresentasikan GUI dari permainan teka-teki Calcudoku.
+	\item CellKeyListener, yaitu kelas \textit{listener} untuk kelas GUI. \textit{Listener} ini berfungsi untuk menggerakkan kursor dari sebuah sel ke sel di sebelahnya menggunakan tombol-tombol panah ke kiri, ke atas, ke bawah, dan ke kanan. Listener ini juga berfungsi untuk membatasi agar sel hanya bisa diisi oleh satu angka.
+	\item PopupMenuListener, yaitu kelas \textit{listener} untuk kelas GUI. \textit{Listener} ini berfungsi untuk mengisi sel dengan angka menggunakan menu \textit{pop up}, sel akan diisi dengan angka yang dipilih.
+	\item CellTextFieldListener, yaitu kelas \textit{listener} untuk kelas GUI. \textit{Listener} ini berfungsi untuk mengisikan sel dalam kelas Grid dengan angka yang diisikan ke dalam sel dalam GUI.
 	\end{enumerate}
-\item Controller, yaitu penghubung antara package Model dan package View. Package ini hanya berisi satu kelas, yaitu kelas Controller.
+\item Controller, yaitu penghubung antara \textit{package} model dan \textit{package} view. Package ini hanya berisi satu kelas, yaitu kelas Controller.
 \end{enumerate}
 
 Diagram kelas untuk perangkat lunak ini dapat dilihat pada Gambar~\ref{fig:diagramkelas}.
@@ -93,32 +99,34 @@ Kelas Grid mempunyai beberapa atribut, yaitu:
 Kelas Grid mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item Grid(int size, int numberOfCages, int[][] cageCells, String[] cageObjectives), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa ukuran dari matriks \textit{grid}, banyaknya \textit{cage} yang terdapat dalam \textit{grid}, matriks \textit{cage assignment}, dan array \textit{cage objectives}.
-\item countAreas(int[][] array), yaitu \textit{method} pembungkus dari \textit{method} countAreas(int[][] array, boolean[][] checked). \textit{Method} ini menerima masukan berupa array \textit{cage assignment} untuk sebuah \textit{cage}, dan menghasilkan keluaran berupa jumlah area dari \textit{cage} tersebut.
-\item countAreas(int[][] array, boolean[][] checked), yaitu \textit{method} yang menghitung jumlah area dari sebuah \textit{cage} secara rekursif dengan menggunakan algoritma \textit{flood fill}. \textit{Method} ini menerima masukan berupa array \textit{cage assignment} untuk sebuah \textit{cage} dan sebuah array checked yang berfungsi untuk menandai sel-sel yang sudah pernah dikunjungi atau belum, dan menghasilkan keluaran berupa jumlah area dari \textit{cage} tersebut.
-\item floodFill(int i, int j, int[][] array, boolean[][] checked), yaitu implementasi dari algoritma \textit{flood fill} untuk menghitung jumlah area dari sebuah \textit{cage}. \textit{Method} ini menerima masukan berupa posisi baris dan kolom dari sebuah sel, array \textit{cage assignment} untuk sebuah \textit{cage} dan sebuah array checked yang berfungsi untuk menandai sel-sel yang sudah pernah dikunjungi atau belum.
-\item isCageCellsSizeValid(int[][] cageCells), yaitu \textit{method} yang memeriksa apakah ukuran matriks \textit{cage assignment} valid atau tidak. \textit{Method} ini menerima masukan berupa matriks \textit{cage assignment}, dan menghasilkan keluaran apakah matriks tersebut \textit{valid} atau tidak. Matriks tersebut \textit{valid} jika ukuran barisnya dan kolomnya sama dengan variabel size.
+\item Grid(Integer size, Integer numberOfCages, Integer[][] cageCells, String[] cageObjectives), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa ukuran dari matriks \textit{grid}, banyaknya \textit{cage} yang terdapat dalam \textit{grid}, matriks \textit{cage assignment}, dan array \textit{cage objectives}.
+\item countAreas(Integer[][] array), yaitu \textit{method} pembungkus dari \textit{method} countAreas(int[][] array, boolean[][] checked). \textit{Method} ini menerima masukan berupa array \textit{cage assignment} untuk sebuah \textit{cage}, dan menghasilkan keluaran berupa jumlah area dari \textit{cage} tersebut.
+\item countAreas(Integer[][] array, boolean[][] checked), yaitu \textit{method} yang menghitung jumlah area dari sebuah \textit{cage} secara rekursif dengan menggunakan algoritma \textit{flood fill}. \textit{Method} ini menerima masukan berupa array \textit{cage assignment} untuk sebuah \textit{cage} dan sebuah array checked yang berfungsi untuk menandai sel-sel yang sudah pernah dikunjungi atau belum, dan menghasilkan keluaran berupa jumlah area dari \textit{cage} tersebut.
+\item floodFill(int i, int j, Integer[][] array, boolean[][] checked), yaitu implementasi dari algoritma \textit{flood fill} untuk menghitung jumlah area dari sebuah \textit{cage}. \textit{Method} ini menerima masukan berupa posisi baris dan kolom dari sebuah sel, array \textit{cage assignment} untuk sebuah \textit{cage} dan sebuah array checked yang berfungsi untuk menandai sel-sel yang sudah pernah dikunjungi atau belum.
+\item isCageCellsSizeValid(Integer[][] cageCells), yaitu \textit{method} yang memeriksa apakah ukuran matriks \textit{cage assignment} valid atau tidak. \textit{Method} ini menerima masukan berupa matriks \textit{cage assignment}, dan menghasilkan keluaran apakah matriks tersebut \textit{valid} atau tidak. Matriks tersebut \textit{valid} jika ukuran barisnya dan kolomnya sama dengan variabel size.
 \item isCageObjectivesSizeValid(String[] cageObjectives), yaitu \textit{method} yang memeriksa apakah ukuran matriks \textit{cage objectives} valid atau tidak. \textit{Method} ini menerima masukan berupa \textit{array cage objectives}, dan menghasilkan keluaran apakah \textit{array} tersebut \textit{valid} atau tidak. Array tersebut \textit{valid} jika ukuran dari \textit{array} tersebut sama dengan variabel numberOfCages.
-\item isCageAssignmentValid(int[][] array), yaitu \textit{method} yang memeriksa apakah \textit{cage assignment} untuk sebuah \textit{cage valid} atau tidak. \textit{Method} ini menerima masukan berupa matriks \textit{cage assignment} untuk sebuah \textit{cage} dan menghasilkan keluaran apakah matriks tersebut atau tidak. Matriks tersebut \textit{valid} jika jumlah area dari \textit{cage} tersebut adalah satu.
-\item isCageValid(Cage[] cages), yaitu \textit{method} yang memeriksa apakah setiap \textit{cage} yang ada di dalam \textit{grid valid} atau tidak. \textit{Method} ini menerima masukan berupa \textit{array cage}, dan menghasilkan keluaran apakah \textit{array} tersebut \textit{valid} atau tidak. \textit{Array} tersebut \textit{valid} jika setiap \textit{cage} dengan operator = hanya berukuran satu sel, setiap \textit{cage} dengan operator + atau \begin{math}\times\end{math} berukuran minimal dua sel, dan setiap \textit{cage} dengan operator - atau \begin{math}\div\end{math} berukuran tepat dua sel.
+\item isCageAssignmentValid(Integer[][] array), yaitu \textit{method} yang memeriksa apakah \textit{cage assignment} untuk sebuah \textit{cage valid} atau tidak. \textit{Method} ini menerima masukan berupa matriks \textit{cage assignment} untuk sebuah \textit{cage} dan menghasilkan keluaran apakah matriks tersebut atau tidak. Matriks tersebut \textit{valid} jika jumlah area dari \textit{cage} tersebut adalah satu.
+\item isCagesValid(Cage[] cages), yaitu \textit{method} yang memeriksa apakah setiap \textit{cage} yang ada di dalam \textit{grid valid} atau tidak. \textit{Method} ini menerima masukan berupa \textit{array cage}, dan menghasilkan keluaran apakah \textit{array} tersebut \textit{valid} atau tidak. \textit{Array} tersebut \textit{valid} jika setiap \textit{cage} dengan operator = hanya berukuran satu sel, setiap \textit{cage} dengan operator + atau \begin{math}\times\end{math} berukuran minimal dua sel, dan setiap \textit{cage} dengan operator - atau \begin{math}\div\end{math} berukuran tepat dua sel.
 \item generateCages(Cage[] cages), yaitu \textit{method} yang membangkitkan \textit{cage-cage} dalam sebuah \textit{grid}. \textit{Method} ini menerima masukan berupa sebuah array \textit{Cage} yang kosong.
 \item generateGrid(Cell[][] grid, Cage[] cages), yaitu \textit{method} yang membangkitkan \textit{grid} dan \textit{cage assignment} dari \textit{grid} tersebut.. \textit{Method} ini menerima masukan berupa sebuah matriks sel yang kosong dan sebuah array \textit{cage} yang kosong.
 \item getRow(int rowNumber), yaitu \textit{method} untuk mendapatkan isi dari sebuah baris yang diminta. \textit{Method} ini menerima masukan berupa nomor baris yang diminta dan menghasilkan keluaran berupa isi baris yang diminta.
-\item getColumn(int ColumnNumber), yaitu \textit{method} untuk mendapatkan isi dari sebuah kolom yang diminta. \textit{Method} ini menerima masukan berupa nomor kolom yang diminta dan menghasilkan keluaran berupa isi kolom yang diminta dalam bentuk ArrayList.
+\item getColumn(int columnNumber), yaitu \textit{method} untuk mendapatkan isi dari sebuah kolom yang diminta. \textit{Method} ini menerima masukan berupa nomor kolom yang diminta dan menghasilkan keluaran berupa isi kolom yang diminta dalam bentuk ArrayList.
 \item getCageValues(int cageNumber), yaitu \textit{method} untuk mendapatkan isi dari sebuah \textit{cage} yang diminta. \textit{Method} ini menerima masukan berupa nomor \textit{cage} yang diminta dan menghasilkan keluaran berupa isi \textit{cage} yang diminta dalam bentuk ArrayList.
 \item isArrayValid(ArrayList<Integer> array), yaitu \textit{method} untuk memeriksa apakah sebuah \textit{array valid} atau tidak. \textit{Method} ini menerima masukan berupa \textit{array} yang akan diperiksa dan menghasilkan keluaran apakah \textit{array} tersebut \textit{valid} atau tidak. \textit{Array} tersebut \textit{valid} jika tidak ada angka yang berulang dalam \textit{array} tersebut.
 \item isRowValid(int row), yaitu \textit{method} untuk memeriksa apakah sebuah baris \textit{valid} atau tidak. \textit{Method} ini menerima masukan berupa nomor baris yang diminta dan menghasilkan keluaran apakah baris yang diminta tersebut \textit{valid} atau tidak. Baris tersebut \textit{valid} jika tidak ada angka yang berulang dalam baris tersebut.
 \item solverIsRowValid(int column), yaitu \textit{method} yang sama dengan isRowValid, tetapi \textit{method} ini hanya untuk dipanggil oleh solver.
 \item isColumnValid(int column), yaitu \textit{method} untuk memeriksa apakah sebuah kolom \textit{valid} atau tidak. \textit{Method} ini menerima masukan berupa nomor kolom yang diminta dan menghasilkan keluaran apakah kolom yang diminta tersebut \textit{valid} atau tidak. Kolom tersebut \textit{valid} jika tidak ada angka yang berulang dalam kolom tersebut.
 \item solverIsColumnValid(int column), yaitu \textit{method} yang sama dengan isColumnValid, tetapi \textit{method} ini hanya untuk dipanggil oleh solver.
-\item isCage(int row, int column), yaitu \textit{method} untuk memeriksa apakah sebuah \textit{cage valid} atau tidak. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sebuah sel yang diminta dan menghasilkan keluaran apakah \textit{cage} yang berisi sel tersebut \textit{valid} atau tidak. \textit{Cage} tersebut \textit{valid} jika angka-angka dalam \textit{cage} tersebut mencapai angka tujuan yang telah ditentukan jika dihitung menggunakan operator yang telah ditentukan.
+\item isCageValuesValid(int cageNumber), yaitu \textit{method} untuk memeriksa apakah nilai dari setiap sel yang berada dalam sebuah \textit{cage valid} atau tidak. \textit{Method} ini menerima masukan berupa nomor \textit{cage} yang diminta dan menghasilkan keluaran apakah nilai dari setiap sel yang berada dalam \textit{cage} yang diminta tersebut \textit{valid} atau tidak. \textit{Cage} tersebut \textit{valid} jika nilai dari setiap sel yang berada di dalam \textit{cage} tersebut mencapai angka tujuan yang telah ditentukan jika dihitung menggunakan operator yang telah ditentukan.
+\item isCageValid(int row, int column), yaitu \textit{method} untuk memeriksa apakah sebuah \textit{cage valid} atau tidak. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sebuah sel yang diminta dan menghasilkan keluaran apakah \textit{cage} yang berisi sel tersebut \textit{valid} atau tidak. \textit{Cage} tersebut \textit{valid} jika angka-angka dalam \textit{cage} tersebut mencapai angka tujuan yang telah ditentukan jika dihitung menggunakan operator yang telah ditentukan.
 \item solverIsCageValid(int column), yaitu \textit{method} yang sama dengan isCageValid, tetapi \textit{method} ini hanya untuk dipanggil oleh solver.
 \item isCellValueValid(int row, int column), yaitu \textit{method} untuk memeriksa apakah nilai dari sel tersebut \textit{valid} atau tidak. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang akan diperiksa dan menghasilkan keluaran apakah nilai dari sel tersebut \textit{valid} atau tidak. Nilai dari sebuah sel \textit{valid} jika nilai dari sel tersebut tidak berulang dalam baris dan kolom tempat sel tersebut berada, dan angka-angka dari \textit{cage} yang berisi sel tersebut mencapai angka tujuan yang telah ditentukan jika dihitung menggunakan operator yang telah ditentukan.
 \item solverIsCellValueValid(int column), yaitu \textit{method} yang sama dengan isCellValueValid, tetapi \textit{method} ini hanya untuk dipanggil oleh solver.
 \item setCellValue(int row, int column, Integer value), yaitu \textit{method} untuk mengisi sebuah sel dengan nilai yang telah ditentukan. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang akan diisi dan nilai dari sel tersebut, dan menghasilkan keluaran apakah nilai dari sel tersebut \textit{valid} atau tidak. Nilai dari sebuah sel \textit{valid} jika nilai dari sel tersebut tidak berulang dalam baris dan kolom tempat sel tersebut berada, dan angka-angka dari \textit{cage} yang berisi sel tersebut mencapai angka tujuan yang telah ditentukan jika dihitung menggunakan operator yang telah ditentukan.
 \item solverSetCellValue(int row, int column, Integer value), yaitu \textit{method} yang sama dengan setCellValue, tetapi \textit{method} ini hanya untuk dipanggil oleh solver.
-\item unsetCellVaue(int row, int column), yaitu metho duntuk menghapus isi dari sebuah sel. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang akan dihapus isinya.
-\item isWin(), yaitu \textit{method} yang memeriksa apakah semua sel sudah diisi dengan nilai yang \textit{valid} atau tidak. \textit{Method} ini menghasilkan keluaran apakah semua sel sudah diisi dengan yang \textit{valid} atau tidak. \textit{Method} ini menghasilkan \textit{null} jika ada sel yang belum diisi.
+\item unsetCellValue(int row, int column), yaitu \textit{method} untuk menghapus isi dari sebuah sel. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang akan dihapus isinya.
+\item isWin(), yaitu \textit{method} yang memeriksa apakah semua sel sudah diisi dengan nilai yang \textit{valid} atau tidak. \textit{Method} ini menghasilkan keluaran apakah semua sel sudah diisi dengan nilai yang \textit{valid} atau tidak. \textit{Method} ini menghasilkan \textit{null} jika ada sel yang belum diisi.
+\item checkGrid(), yaitu \textit{method} yang memeriksa apakah ada sel yang berisi nilai yang tidak \textit{valid} atau tidak. \textit{Method} ini akan menghasilkan apakah ada sel yang berisi nilai yang tidak \textit{valid} atau tidak. \textit{Method} ini hanya bekerja jika semua sel yang berada di dalam \textit{grid} sudah diisi. Nilai dari sebuah sel \textit{valid} jika nilai dari sel tersebut tidak berulang dalam baris dan kolom tempat sel tersebut berada, dan angka-angka dari \textit{cage} yang berisi sel tersebut mencapai angka tujuan yang telah ditentukan jika dihitung menggunakan operator yang telah ditentukan.
 \item isFilled(), yaitu \textit{method} yang memeriksa apakah semua sel sudah diisi atau tidak. \textit{Method} ini menghasilkan keluaran apakah semua sel sudah diisi atau tidak.
 \item getCellValue(int row, int column), yaitu \textit{method} untuk mendapatkan isi dari sebuah sel. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang diminta dan menghasilkan keluaran berupa isi dari sel yang diminta tersebut.
 \item getSize(), yaitu \textit{method} untuk mendapatkan ukuran dari \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa ukuran dari \textit{grid}.
@@ -127,8 +135,7 @@ Kelas Grid mempunyai beberapa \textit{method}, yaitu:
 \item getCageObjectives(), yaitu \textit{method} untuk mendapatkan \textit{cage objectives} dari setiap \textit{cage} dalam \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa sebuah array yang berisi \textit{cage objectives} dari setiap \textit{cage} dalam \textit{grid}.
 \item getGridContents(), yaitu \textit{method} untuk mendapatkan nilai dari setiap sel \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa sebuah matriks yang berisi nilai dari setiap sel \textit{grid}.
 \item getCages(), yaitu \textit{method} untuk mendapatkan semua \textit{cage} dalam \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa array yang berisi semua \textit{cage} dalam \textit{grid}.
-\item solveBacktracking(), yaitu \textit{method} untuk memanggil solver untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{backtracking}. 
-\item solveHybridGenetic(), yaitu \textit{method} untuk memanggil solver untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{hybrid genetic}. 
+\item getGame(), yaitu \textit{method} untuk mendapatkan instansiasi saat ini dari kelas \textit{Grid}. \textit{Method} ini menghasilkan keluara berupa instansiasi saat ini dari kelas \textit{Grid}.
 \end{enumerate}
 
 Diagram kelas Grid dapat dilihat pada Gambar~\ref{fig:diagramkelasgrid}.
@@ -163,10 +170,10 @@ Kelas Cage mempunyai \textit{method-method} berikut:
 \item generateOperator(String objective), yaitu \textit{method} yang membangkitkan operator yang telah ditentukan untuk sebuah \textit{cage} dari \textit{cage objective} yang diberikan. \textit{Method} ini menerima masukan berupa String yang berisi \textit{cage objective} dari sebuah \textit{cage} dan menghasilkan keluaran berupa operator yang telah ditentukan untuk \textit{cage} tersebut.
 \item addCell(Cell c), yaitu \textit{method} untuk menambahkan sebuah sel kedalam sebuah \textit{cage}. \textit{Method} ini menerima masukan berupa sel yang akan dimasukkan ke dalam \textit{cage}.
 \item isCageContainsNull(), yaitu \textit{method} yang memeriksa apakah sebuah \textit{cage} mempunyai sel yang belum diisi. \textit{Method} ini menghasilkan keluaran apakah \textit{cage} tersebut mempunyai sel yang belum terisi.
-\item isCageValid(), yaitu \textit{method} yang memeriksa apakah angka-angka dalam sebuah \textit{cage} mencapai angka tujuan dari \textit{cage} tersebut jika dihitung menggunakan operator yang telah ditentukan untuk \textit{cage} tersebut. \textit{Method} ini menghasilkan keluaran apakah angka-angka dalam \textit{cage} tersebut mencapai angka tujuan dari \textit{cage} tersebut jika dihitung menggunakan operator yang telah ditentukan untuk \textit{cage} tersebut. \textit{Method} ini menghasilkan \textit{null} jika ada sel di dalam \textit{cage} yang belum diisi.
+\item isCageValuesValid(), yaitu \textit{method} yang memeriksa apakah angka-angka dalam sebuah \textit{cage} mencapai angka tujuan dari \textit{cage} tersebut jika dihitung menggunakan operator yang telah ditentukan untuk \textit{cage} tersebut. \textit{Method} ini menghasilkan keluaran apakah angka-angka dalam \textit{cage} tersebut mencapai angka tujuan dari \textit{cage} tersebut jika dihitung menggunakan operator yang telah ditentukan untuk \textit{cage} tersebut. \textit{Method} ini menghasilkan \textit{null} jika ada sel di dalam \textit{cage} yang belum diisi.
 \item countValue(), yaitu \textit{method} yang menghitung angka-angka di dalam sebuah \textit{cage} menggunakan operator yang telah ditentukan untuk \textit{cage} tersebut. \textit{Method} ini menghasilkan keluaran hasil perhitungan dari angka-angka di dalam sebuah \textit{cage} menggunakan operator yang telah ditentukan untuk \textit{cage} tersebut. \textit{Method} ini menghasilkan \textit{null} jika ada sel di dalam \textit{cage} yang belum diisi.
 \item getTargetNumber(), yaitu \textit{method} untuk mendapatkan angka tujuan dari sebuah \textit{cage}. \textit{Method} ini menghasilkan keluaran berupa angka tujuan dari \textit{cage} tersebut.
-\item getTargetNumber(), yaitu \textit{method} untuk mendapatkan operator yang telah ditentukan untuk sebuah \textit{cage}. \textit{Method} ini menghasilkan keluaran berupa operator yang telah ditentukan untuk \textit{cage} tersebut.
+\item getOperator(), yaitu \textit{method} untuk mendapatkan operator yang telah ditentukan untuk sebuah \textit{cage}. \textit{Method} ini menghasilkan keluaran berupa operator yang telah ditentukan untuk \textit{cage} tersebut.
 \item getCells(), yaitu \textit{method} untuk mendapatkan sel-sel anggota sebuah \textit{cage}. \textit{Method} ini menghasilkan keluaran sebuah ArrayList yang berisi sel-sel anggota \textit{cage} tersebut.
 \item getSize(), yaitu \textit{method} untuk mendapatkan jumlah dari sel-sel anggota sebuah \textit{cage}. \textit{Method} ini menghasilkan keluaran berupa jumlah dari sel-sel anggota \textit{cage} tersebut.
 \end{enumerate}
@@ -199,10 +206,10 @@ Kelas Cell mempunyai beberapa \textit{method}, yaitu:
 \begin{enumerate}
 \item Cell(int CellID, int row, int column, int cageID), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa nomor sel, nomor baris, dan nomor kolom dari sel tersebut, dan nomor \textit{cage} yang berisi sel tersebut.
 \item setValue(Integer value), yaitu \textit{method} untuk mengisi sebuah sel tersebut dengan nilai yang telah ditentukan. \textit{Method} ini menerima masukan berupa nilai yang akan diisikan ke dalam sel tersebut.
+\item getValue(), yaitu \textit{method} untuk mendapatkan nilai dari sel tersebut. \textit{Method} ini menghasilkan keluaran berupa nilai dari sel tersebut.
 \item getRow(), yaitu \textit{method} untuk mendapatkan nomor baris dari sebuah sel. \textit{Method} ini menghasilkan keluaran berupa nomor baris dari sel tersebut.
 \item getColumn(), yaitu \textit{method} untuk mendapatkan nomor kolom dari sebuah sel. \textit{Method} ini menghasilkan keluaran berupa nomor kolom dari sel tersebut.
 \item getCageID(), yaitu \textit{method} untuk mendapatkan nomor \textit{cage} yang berisi sebuah sel. \textit{Method} ini menghasilkan keluaran berupa nomor \textit{cage} yang berisi sel tersebut.
-\item getCageID(), yaitu \textit{method} untuk mendapatkan nomor sel dari sebuah sel. \textit{Method} ini menghasilkan keluaran berupa nomor sel dari sel tersebut.
 \end{enumerate}
 
 Diagram kelas Cell dapat dilihat pada Gambar~\ref{fig:diagramkelascell}.
@@ -231,7 +238,7 @@ Kelas SolverBacktracking mempunyai beberapa \textit{method}, yaitu:
 \begin{enumerate}
 \item SolverBacktracking(Grid grid), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{backtracking}.
 \item solve(), yaitu \textit{method} pembungkus dari \textit{method} solve(int row, int column). \textit{Method} ini menghasilkan keluaran apakah \textit{solver} berhasil menyelesaikan teka-teki Calcudoku atau tidak. \textit{Solver} bekerja mulai dari sel pada sudut kiri atas, lalu bergerak ke kanan sampai ke sel yang paling kanan, lalu bergerak ke baris berikutnya sampai ke baris yang paling bawah, selesai pada sel pada sudut kanan bawah.
-\item solve(int row, int column), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom yang akan diisi oleh \textit{solver} dan menghasilkan keluaran apakah nilai yang diisi oleh \textit{solver valid} atau tidak. \textit{Solver} akan mulai mengisi sel dari angka 1. Jika berhasil, maka \textit{solver} akan maju ke sel berikutnya. Jika gagal, maka \textit{solver} akan mencoba kemungkinan angka berikutnya. Jika semua kemungkinan angka gagal, maka \textit{solver} akan mundur ke sel sebelumnya dan mencoba kemungkinan angka berikutnya.
+\item solve(int row, int column), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{backtracking}. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom yang akan diisi oleh \textit{solver} dan menghasilkan keluaran apakah nilai yang diisi oleh \textit{solver valid} atau tidak. \textit{Solver} akan mulai mengisi sel dari angka 1. Jika berhasil, maka \textit{solver} akan maju ke sel berikutnya. Jika gagal, maka \textit{solver} akan mencoba kemungkinan angka berikutnya. Jika semua kemungkinan angka gagal, maka \textit{solver} akan mundur ke sel sebelumnya dan mencoba kemungkinan angka berikutnya.
 \item getGrid(), yaitu \textit{method} untuk mendapatkan \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa \textit{grid}.
 \item getSolution(), yaitu \textit{method} untuk mendapatkan solusi dari \textit{grid} yang sudah diselesaikan oleh \textit{solver}. \textit{Method} ini menghasilkan keluaran berupa solusi dari \textit{grid} tersebut.
 \item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar.
@@ -263,8 +270,7 @@ Kelas SolverHybridGenetic mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
 \item SolverHybridGenetic(Grid grid), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}.
-\item solve(), yaitu \textit{method} pembungkus dari \textit{method} solve(int row, int column). \textit{Method} ini menghasilkan keluaran apakah \textit{solver} berhasil menyelesaikan teka-teki Calcudoku atau tidak. \textit{Solver} bekerja mulai dari sel pada sudut kiri atas, lalu bergerak ke kanan sampai ke sel yang paling kanan, lalu bergerak ke baris berikutnya sampai ke baris yang paling bawah, selesai pada sel pada sudut kanan bawah.
-\item solve(int row, int column), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku. \textit{Method} ini akan memanggil solver dengan algoritma \textit{rule based}. Jika algoritma \textit{rule based} gagal dalam menyelesaikan teka-teki Calcudoku, maka \textit{method} akan memanggil solver dengan algoritma genetik.
+\item solve(), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{hybrid genetic}. \textit{Method} ini akan memanggil solver algoritma \textit{rule based}. Jika algoritma \textit{rule based} gagal dalam menyelesaikan teka-teki Calcudoku, maka \textit{method} akan memanggil solver algoritma genetik. \textit{Method} ini menghasilkan keluaran apakah \textit{solver} berhasil menyelesaikan teka-teki Calcudoku atau tidak.
 \item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar.
 \end{enumerate}
 
@@ -317,6 +323,7 @@ Kelas SolverRuleBased mempunyai \textit{method-method} berikut:
 \item nakedSingleRow(int row), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked single} kepada sebuah baris yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor baris yang akan diaplikasikan dengan aturan \textit{naked single}.
 \item nakedSingleColumn(), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked single} kepada kolom-kolom yang ada di dalam\textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}.
 \item nakedSingleColumn(int column), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked single} kepada sebuah kolom yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor kolom yang akan diaplikasikan dengan aturan \textit{naked single}.
+\item nakedSingle(int row, int column), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked single} kepada sebuah sel yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang akan diaplikasikan dengan aturan \textit{naked single}.
 \item nakedDouble(), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked double} kepada \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. Aturan ini diaplikasikan untuk baris (nakedSingleDouble()) dan untuk kolom (nakedSingleDouble()).
 \item nakedDoubleRow(), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked double} kepada baris-baris yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}.
 \item nakedDoubleRow(int row), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked double} kepada sebuah baris yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor baris yang akan diaplikasikan dengan aturan \textit{naked double}.
@@ -324,19 +331,12 @@ Kelas SolverRuleBased mempunyai \textit{method-method} berikut:
 \item nakedDoubleColumn(), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked double} kepada kolom-kolom yang ada di dalam\textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}.
 \item nakedDoubleColumn(int column), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked double} kepada sebuah kolom yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor kolom yang akan diaplikasikan dengan aturan \textit{naked double}.
 \item nakedDoubleColumn(int column, ArrayList<Integer> doublePossibleValues, ArrayList<Integer> doublePossibleIndexes), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked double} kepada kolom-kolom yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menyimpan nilai-nilai yang disimpan pada \textit{doublePossibleValues} pada baris-baris yang nomor barisnya disimpan pada \textit{array} doublePossibleIndexes dan menghapus nilai-nilai tersebut dari baris-baris lainnya. \textit{Method} ini menerima masukan berupa nomor kolom yang akan diaplikasikan dengan aturan \textit{naked double}, sebuah \textit{array} yang berisi nilai-nilai, dan sebuah \textit{array} yang berisi nomor-nomor baris.
-\item hiddenSubset(), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden subset} kepada \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. Dalam perangkat lunak ini aturan ini dibatasi hanya untuk \textit{cage} yang berukuran maksimum dua sel (\textit{hidden single} dan \textit{hidden double}).
 \item hiddenSingle(), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden single} kepada \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. Aturan ini diaplikasikan untuk baris (hiddenSingleRow()) dan untuk kolom (hiddenSingleColumn()).
 \item hiddenSingleRow(), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden single} kepada baris-baris yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}.
 \item hiddenSingleRow(int row), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden single} kepada sebuah baris yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor baris yang akan diaplikasikan dengan aturan \textit{hidden single}.
 \item hiddenSingleColumn(), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden single} kepada kolom-kolom yang ada di dalam\textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}.
 \item hiddenSingleColumn(int column), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden single} kepada sebuah kolom yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor kolom yang akan diaplikasikan dengan aturan \textit{hidden single}.
-\item hiddenDouble(), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden double} kepada \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. Aturan ini diaplikasikan untuk baris (hiddenSingleDouble()) dan untuk kolom (hiddenSingleDouble()).
-\item hiddenDoubleRow(), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden double} kepada baris-baris yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}.
-\item hiddenDoubleRow(int row), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden double} kepada sebuah baris yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor baris yang akan diaplikasikan dengan aturan \textit{hidden double}.
-\item hiddenDoubleRow(int row, ArrayList<Integer> doublePossibleValues, ArrayList<Integer> doublePossibleIndexes), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden double} kepada baris-baris yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menyimpan nilai-nilai yang disimpan pada \textit{doublePossibleValues} pada kolom-kolom yang nomor kolomnya disimpan pada \textit{array} doublePossibleIndexes dan menghapus nilai-nilai tersebut dari kolom-kolom lainnya. \textit{Method} ini menerima masukan berupa nomor baris yang akan diaplikasikan dengan aturan \textit{hidden double}, sebuah \textit{array} yang berisi nilai-nilai, dan sebuah \textit{array} yang berisi nomor-nomor kolom.
-\item hiddenDoubleColumn(), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden double} kepada kolom-kolom yang ada di dalam\textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}.
-\item hiddenDoubleColumn(int column), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden double} kepada sebuah kolom yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor kolom yang akan diaplikasikan dengan aturan \textit{hidden double}.
-\item hiddenDoubleColumn(int column, ArrayList<Integer> doublePossibleValues, ArrayList<Integer> doublePossibleIndexes), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden double} kepada kolom-kolom yang ada di dalam \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menyimpan nilai-nilai yang disimpan pada \textit{doublePossibleValues} pada baris-baris yang nomor barisnya disimpan pada \textit{array} doublePossibleIndexes dan menghapus nilai-nilai tersebut dari baris-baris lainnya. \textit{Method} ini menerima masukan berupa nomor kolom yang akan diaplikasikan dengan aturan \textit{hidden double}, sebuah \textit{array} yang berisi nilai-nilai, dan sebuah \textit{array} yang berisi nomor-nomor baris.
+\item hiddenSingle(int row, int column), yaitu \textit{method} yang mengaplikasikan aturan \textit{hidden single} kepada sebuah sel yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang akan diaplikasikan dengan aturan \textit{hidden single}.
 \item setCellValue(int row, int column, int value), yaitu \textit{method} untuk mengisi sebuah sel dengan nilai yang telah ditentukan. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang akan diisi dan nilai dari sel tersebut.
 \item removePossibleValues(int row, int column, int value), yaitu \textit{method} untuk menghapus kemungkinan nilai yang sudah digunakan dalam sebuah sel. \textit{Method} ini menghapus nilai tersebut dari baris yang sama dan kolom yang sama. \textit{Method} ini menerima masukan berupa nomor baris, nomor kolom, dan nilai yang akan dihapus dari sel-sel lain dalam baris dan kolom tempat sel tersebut berada.
 \item removeImpossibleValuesCage(Cage cage, ArrayList<Integer> values), yaitu \textit{method} untuk menghabus kemungkinan nilai yang tidak mungkin dari sel-sel di dalam sebuah \textit{cage}. Method ini menerima masukan berupa sebuah \textit{cage} dan sebuah \textit{array} yang berisi nilai-nilai yang mungkin.
@@ -373,8 +373,8 @@ Kelas SolverGenetic mempunyai atribut-atribut berikut, yaitu:
 \item generationsNumber, yaitu jumlah generasi maksimum yang akan dibangkitkan oleh algoritma genetik.
 \item populationSize, yaitu jumlah kromosom yang akan dibangkitkan dalam sebuah generasi.
 \item elitismRate, yaitu parameter tingkat \textit{elitism} dalam algoritma genetik.
-\item crossoverRate, yaitu parameter tingka kawin silang dalam algoritma genetik.
 \item mutationRate, yaitu parameter tingkat mutasi dalam algoritma genetik.
+\item crossoverRate, yaitu parameter tingka kawin silang dalam algoritma genetik.
 \item solution, yaitu \textit{grid} yang sudah diselesaikan oleh \textit{solver} dengan algoritma genetik.
 \item currentGeneration, yaitu generasi saat ini dalam algoritma genetik. Algoritma genetik akan membangkitkan generasi baru (nextGeneration), dan generasi baru ini akan menjadi generasi saat ini, dan algoritma akan membangkitkan generasi baru berikutnya.
 \item nextGeneration, yaitu generasi berikutnya dalam algoritma genetik.
@@ -388,7 +388,8 @@ Kelas SolverGenetic mempunyai \textit{method-method} berikut:
 \item solveLoop(), yaitu \textit{method} yang membangkitkan generasi berikutnya dari generasi sebelumnya menggunakan operator algoritma genetik, yaitu \textit{elitism}, mutasi, dan kawin silang.
 \item setParameters(int generationsNumber, int populationSize, double elitismRate, double crossoverRate, double mutationRate), yaitu \textit{method} untuk menentukan jumlah generasi maksimum, jumlah kromosom dalam satu generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi untuk algoritma genetik. Method ini menerima masukan berupa jumlah generasi maksimum, jumlah kromosom dalam satu generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi untuk algoritma genetik.
 \item generateIsCellFixedArray(), yaitu \textit{method} yang membangkitkan matriks yang berisi apakah sel tersebut sudah diisi oleh algoritma \textit{rule based} atau tidak. \textit{Method} ini menghasilkan keluaran berupa sebuah matriks yang berisi apakah sel tersebut sudah diisi oleh algoritma \textit{rule based} atau tidak.
-\item generatePopulation(), yaitu \textit{method} yang membangkitkan sebuah kromosom. \textit{Method} ini menghasilkan keluaran berupa sebuah kromosom.
+\item genereatePopulation(), yaitu \textit{method} yang membangkitkan populasi kromosom awal.
+\item generateChromosome(), yaitu \textit{method} yang membangkitkan sebuah kromosom. \textit{Method} ini menghasilkan keluaran berupa sebuah kromosom.
 \item sortChromosomes(), yaitu \textit{method} yang mengurutkan kromosom-kromosom dalam generasi saat ini berdasarkan nilai kelayakannya.
 \item randomSelection(ArrayList<Chromosome> chromosomes), yaitu \textit{method} untuk memilih sebuah kromosom dari sebuah populasi kromosom secara acak. \textit{Method} ini menerima masukan berupa ArrayList yang berisi sekumpulan kromosom dan menghasilkan keluaran berupa sebuah kromosom yang terpilih.
 \item tournamentSelection(ArrayList<Chromosome> chromosomes), yaitu \textit{method} untuk memilih sebuah kromosom dari sebuah populasi kromosom menggunakan metode \textit{tournament selection}. \textit{Method} ini menerima masukan berupa sebuah ArrayList yang berisi sekumpulan kromosom dan menghasilkan keluaran berupa sebuah kromosom yang terpilih.
@@ -471,10 +472,10 @@ Kelas Controller mempunyai beberapa atribut, yaitu:
 Kelas Controller mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item Controller(int size, int numberOfCages, int[][] cageCells, String[] cageObjectives), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa ukuran dari matriks \textit{grid}, banyaknya \textit{cage} yang terdapat dalam \textit{grid}, matriks \textit{cage assignment}, dan array \textit{cage objectives}.
+\item Controller(Integer size, Integer numberOfCages, Integer[][] cageCells, String[] cageObjectives), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa ukuran dari matriks \textit{grid}, banyaknya \textit{cage} yang terdapat dalam \textit{grid}, matriks \textit{cage assignment}, dan array \textit{cage objectives}.
 \item setCellValue(int row, int column, Integer value), yaitu \textit{method} untuk mengisi sebuah sel dengan nilai yang telah ditentukan. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang akan diisi dan nilai dari sel tersebut, dan menghasilkan keluaran apakah nilai dari sel tersebut \textit{valid} atau tidak. Nilai dari sebuah sel \textit{valid} jika nilai dari sel tersebut tidak berulang dalam baris dan kolom tempat sel tersebut berada, dan angka-angka dari \textit{cage} yang berisi sel tersebut mencapai angka tujuan yang telah ditentukan jika dihitung menggunakan operator yang telah ditentukan.
-\item isWin(), yaitu \textit{method} yang memeriksa apakah semua sel sudah diisi dengan nilai yang \textit{valid} atau tidak. \textit{Method} ini menghasilkan keluaran apakah semua sel sudah diisi dengan yang \textit{valid} atau tidak. \textit{Method} ini menghasilkan \textit{null} jika ada sel yang belum diisi.
-\item isFilled(), yaitu \textit{method} yang memeriksa apakah semua sel sudah diisi atau tidak. \textit{Method} ini menghasilkan keluaran apakah semua sel sudah diisi atau tidak.
+\item unsetCellValue(int row, int column), yaitu \textit{method} untuk menghapus isi dari sebuah sel. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang akan dihapus isinya.
+\item checkGrid(), yaitu \textit{method} yang memeriksa apakah ada sel yang berisi nilai yang tidak \textit{valid} atau tidak. \textit{Method} ini akan menghasilkan apakah ada sel yang berisi nilai yang tidak \textit{valid} atau tidak. \textit{Method} ini hanya bekerja jika semua sel yang berada di dalam \textit{grid} sudah diisi. Nilai dari sebuah sel \textit{valid} jika nilai dari sel tersebut tidak berulang dalam baris dan kolom tempat sel tersebut berada, dan angka-angka dari \textit{cage} yang berisi sel tersebut mencapai angka tujuan yang telah ditentukan jika dihitung menggunakan operator yang telah ditentukan.
 \item getCellValue(int row, int column), yaitu \textit{method} untuk mendapatkan isi dari sebuah sel. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom dari sel yang diminta dan menghasilkan keluaran berupa isi dari sel yang diminta tersebut.
 \item getSize(), yaitu \textit{method} untuk mendapatkan ukuran dari \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa ukuran dari \textit{grid}.
 \item getNumberOfCages(), yaitu \textit{method} untuk mendapatkan jumlah \textit{cage} yang ada di dalam \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa jumlah \textit{cage} yang ada di dalam \textit{grid}.
@@ -482,8 +483,7 @@ Kelas Controller mempunyai beberapa \textit{method}, yaitu:
 \item getCageObjectives(), yaitu \textit{method} untuk mendapatkan \textit{cage objectives} dari setiap \textit{cage} dalam \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa sebuah array yang berisi \textit{cage objectives} dari setiap \textit{cage} dalam \textit{grid}.
 \item getGridContents(), yaitu \textit{method} untuk mendapatkan nilai dari setiap sel \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa sebuah matriks yang berisi nilai dari setiap sel \textit{grid}.
 \item getCages(), yaitu \textit{method} untuk mendapatkan semua \textit{cage} dalam \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa array yang berisi semua \textit{cage} dalam \textit{grid}.
-\item solveBacktracking(), yaitu \textit{method} untuk memanggil solver untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{backtracking}. 
-\item solveHybridGenetic(), yaitu \textit{method} untuk memanggil solver untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{hybrid genetic}. 
+\item getGame(), yaitu \textit{method} untuk mendapatkan instansiasi saat ini dari kelas \textit{Grid}. \textit{Method} ini menghasilkan keluara berupa instansiasi saat ini dari kelas \textit{Grid}.
 \end{enumerate}
 
 Diagram kelas Controller dapat dilihat pada Gambar~\ref{fig:diagramkelascontroller}.
@@ -496,15 +496,124 @@ Diagram kelas Controller dapat dilihat pada Gambar~\ref{fig:diagramkelascontroll
 \label{fig:diagramkelascontroller}
 \end{figure}
 
-\subsection{Kelas Tester}
-\label{sec:kelastester}
+\subsection{Kelas Calcudoku}
+\label{sec:kelascalcudoku}
 
-Kelas Tester tidak mempunyai variabel, tetapi kelas ini mempunyai satu \textit{method}, yaitu main(String[] args). Fungsi dari \textit{method} ini adalah untuk menjalankan program ini. Diagram kelas Tester dapat dilihat pada Gambar~\ref{fig:diagramkelastester}.
+Kelas Calcudoku mempunyai beberapa atribut, yaitu:
 
-\begin{figure}
-\centering
-\captionsetup{justification=centering}
-\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramKelasTester.png}
-\caption[Diagram kelas Tester.]{Diagram kelas Tester.}
-\label{fig:diagramkelastester}
-\end{figure}
+\begin{enumerate}
+\item puzzleFile, yaitu \textit{file} permainan yang sedang dibuka oleh perangkat lunak. \textit{File} ini berbentuk \textit{file} teks.
+\item size, yaitu ukuran dari matriks \textit{grid} berdasarkan \textit{file} permainan yang sedang dibuka.
+\item numberOfCages, yaitu banyaknya \textit{cage} yang terdapat dalam \textit{grid} berdasarkan \textit{file} permainan yang sedang dibuka.
+\item cageCells, yaitu sebuah matriks \textit{cage assignment} berdasarkan \textit{file} permainan yang sedang dibuka. Matriks ini merepresentasikan posisi dari setiap \textit{cage} dalam \textit{grid}.
+\item cageObjectives, yaitu sebuah \textit{array} yang berisi \textit{cage objectives} untuk setiap \textit{cage} berdasarkan \textit{file} permainan yang sedang dibuka. \textit{Cage objectives} berisikan angka tujuan dan operasi matematika yang telah ditentukan.
+\item c, yaitu sebuah instansiasi dari kelas Controller. c berfungsi untuk menghubungkan kelas-kelas yang berada di dalam \textit{package} model dengan kelas-kelas yang berada di dalam \textit{package} view.
+\item menuBar, yaitu menu \textit{bar} untuk perangkat lunak ini.
+\item menuFile, yaitu menu File di dalam menu \textit{bar}.
+\item menuSolve, yaitu menu Solve di dalam menu \textit{bar}.
+\item menuItemLoad, yaitu menu \textit{item} Load Puzzle File di dalam menu File.
+\item menuItemReset, yaitu menu \textit{item} Reset Puzzle di dalam menu File.
+\item menuItemClose, yaitu menu \textit{item} Close Puzzle File di dalam menu File.
+\item menuItemCheck, yaitu menu \textit{item} Check Puzzle di dalam menu File.
+\item menuItemExit, yaitu menu \textit{item} Exit di dalam menu File.
+\item menuItemBacktracking, yaitu menu \textit{item} Backtracking di dalam menu Solve.
+\item menuItemHybridGenetic, yaitu menu \textit{item} Hybrid Genetic di dalam menu File.
+\item fileChooser, yaitu \textit{file chooser} untuk membuka \textit{file} permainan.
+\item gui, yaitu representasi GUI dari \textit{file} permainan yang sedang dibuka.
+\item
+\end{enumerate}
+
+Kelas Calcudoku mempunyai beberapa \textit{method}, yaitu:
+\begin{enumerate}
+\item Lorem ipsum
+\end{enumerate}
+
+\subsection{Kelas WindowListener}
+\label{sec:kelaswindowlistener}
+
+Kelas WindowListener hanya mempunyai satu atribut, yaitu frame. frame adalah sebuah instansiasi dari kelas Calcudoku. Kelas ini mempunya beberapa \textit{method}, yaitu:
+
+\begin{enumerate}
+\item Lorem ipsum
+\end{enumerate}
+
+\subsection{Kelas PuzzleFileFilter}
+\label{sec:kelaspuzzlefilefilter}
+
+Kelas PuzzleFileFilter tidak mempunyai atribut, tetapi memiliki beberapa \textit{method}, yaitu:
+
+\begin{enumerate}
+\item Lorem ipsum
+\end{enumerate}
+
+\subsection{Kelas GUI}
+\label{sec:kelasgui}
+
+Kelas GUI mempunyai beberapa atribut, yaitu:
+
+\begin{enumerate}
+\item c, yaitu sebuah instansiasi dari kelas Controller. c berfungsi untuk menghubungkan kelas-kelas yang berada di dalam \textit{package} model dengan kelas-kelas yang berada di dalam \textit{package} view.
+\item game, yaitu sebuah instansi dari kelas Grid berdasarkan \textit{file} permainan yang sedang dibuka.
+\item size, yaitu ukuran dari matriks \textit{grid} berdasarkan \textit{file} permainan yang sedang dibuka.
+\item numberOfCages, yaitu banyaknya \textit{cage} yang terdapat dalam \textit{grid} berdasarkan \textit{file} permainan yang sedang dibuka.
+\item cageCells, yaitu sebuah matriks \textit{cage assignment} berdasarkan \textit{file} permainan yang sedang dibuka. Matriks ini merepresentasikan posisi dari setiap \textit{cage} dalam \textit{grid}.
+\item cageObjectives, yaitu sebuah \textit{array} yang berisi \textit{cage objectives} untuk setiap \textit{cage} berdasarkan \textit{file} permainan yang sedang dibuka. \textit{Cage objectives} berisikan angka tujuan dan operasi matematika yang telah ditentukan.
+\item grid, yaitu sebuah \textit{array} yang berisikan semua sel yang ada di dalam \textit{grid}.
+\item cages, yaitu sebuah \textit{array} yang berisikan semua \textit{cage} yang ada di dalam \textit{grid}.
+\textit textFields, yaitu sebuah \textit{array} yang berisikan \textit{text field}. Setiap \textit{text field} merepresentasikan sebuah sel yang ada di dalam \textit{grid}.
+\textit textFieldCoordinates, yang berfungsi untuk memetakan \textit{text field} dengan koordinat posisinya.
+\textit cellTextFieldListeners, yaitu sebuah \textit{array} yang berisikan \textit{document listener} untuk semua sel yang ada di dalam \textit{grid}.
+\textit font, yaitu \textit{font} yang digunakan di dalam GUI ini.
+\textit cellSize, yaitu ukuran sebuah sel di dalam GUI ini.
+\textit cellBorderWidth, yaitu ukuran garis pembatas antara dua sel yang berada di dalam sebuah \textit{cage} yang sama.
+\textit cageBorderWidth, yaitu ukuran garis pembatas antara dua sel yang berada di dalam dua \textit{cage} yang berbeda, dan ukuran garis pembatas \textit{grid}.
+\end{enumerate}
+
+Kelas GUI mempunyai beberapa \textit{method}, yaitu:
+
+\begin{enumerate}
+\item Lorem ipsum
+\end{enumerate}
+
+\subsection{Kelas CellKeyListener}
+\label{sec:kelascellkeylistener}
+
+Kelas CellKeyListener hanya mempunyai satu atribut, yaitu gui. gui adalah sebuah instansiasi dari kelas GUI. Kelas ini mempunya beberapa \textit{method}, yaitu:
+
+\begin{enumerate}
+\item Lorem ipsum
+\end{enumerate}
+
+\subsection{Kelas PopupMenuListener}
+\label{sec:kelaspopupmenulistener}
+
+Kelas PopupMenuListener mempunyai beberapa atribut, yaitu:
+
+\begin{enumerate}
+\item textField, yaitu sebuah \textit{text field} yang merepresentasikan sebuah sel yang berada di dalam \textit{grid}.
+\item number, yaitu sebuah angka.
+\end{enumerate}
+
+Kelas PopupMenuListener mempunyai beberapa \textit{method}, yaitu:
+
+\begin{enumerate}
+\item Lorem ipsum
+\end{enumerate}
+
+\subsection{Kelas CellTextFieldListener}
+\label{sec:kelascelltextfieldlistener}
+
+Kelas CellTextFieldListener mempunyai beberapa atribut, yaitu:
+
+\begin{enumerate}
+\item c, yaitu sebuah instansiasi dari kelas Controller. c berfungsi untuk menghubungkan kelas-kelas yang berada di dalam \textit{package} model dengan kelas-kelas yang berada di dalam \textit{package} view.
+\item textField, yaitu sebuah \textit{text field} yang merepresentasikan sebuah sel yang berada di dalam \textit{grid}.
+\item x, yaitu koordinat x dari \textit{text field}.
+\item y, yaitu koordinat y dari \textit{text field}.
+\end{enumerate}
+
+Kelas CellTextFieldListener mempunyai beberapa \textit{method}, yaitu:
+
+\begin{enumerate}
+\item Lorem ipsum
+\end{enumerate}

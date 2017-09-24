@@ -12,6 +12,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import javax.swing.BorderFactory;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
@@ -140,7 +141,7 @@ public class GUI extends JPanel
                 if (y == 0)
                 {
                     topBorderWidth = cageBorderWidth;
-                    if (cageCells[y][x] == cageCells[y + 1][x])
+                    if (Objects.equals(cageCells[y][x], cageCells[y + 1][x]))
                     {
                         bottomBorderWidth = cellBorderWidth;
                     }
@@ -152,7 +153,7 @@ public class GUI extends JPanel
                 else if (y == size - 1)
                 {
                     bottomBorderWidth = cageBorderWidth;
-                    if (cageCells[y][x] == cageCells[y - 1][x])
+                    if (Objects.equals(cageCells[y][x], cageCells[y - 1][x]))
                     {
                         topBorderWidth = cellBorderWidth;
                     }
@@ -163,7 +164,7 @@ public class GUI extends JPanel
                 }
                 else
                 {
-                    if (cageCells[y][x] == cageCells[y + 1][x])
+                    if (Objects.equals(cageCells[y][x], cageCells[y + 1][x]))
                     {
                         bottomBorderWidth = cellBorderWidth;
                     }
@@ -171,7 +172,7 @@ public class GUI extends JPanel
                     {
                         bottomBorderWidth = cageBorderWidth;
                     }
-                    if (cageCells[y][x] == cageCells[y - 1][x])
+                    if (Objects.equals(cageCells[y][x], cageCells[y - 1][x]))
                     {
                         topBorderWidth = cellBorderWidth;
                     }
@@ -183,7 +184,7 @@ public class GUI extends JPanel
                 if (x == 0)
                 {
                     leftBorderWidth = cageBorderWidth;
-                    if (cageCells[y][x] == cageCells[y][x + 1])
+                    if (Objects.equals(cageCells[y][x], cageCells[y][x + 1]))
                     {
                         rightBorderWidth = cellBorderWidth;
                     }
@@ -195,7 +196,7 @@ public class GUI extends JPanel
                 else if (x == size - 1)
                 {
                     rightBorderWidth = cageBorderWidth;
-                    if (cageCells[y][x] == cageCells[y][x - 1])
+                    if (Objects.equals(cageCells[y][x], cageCells[y][x - 1]))
                     {
                         leftBorderWidth = cellBorderWidth;
                     }
@@ -206,7 +207,7 @@ public class GUI extends JPanel
                 }
                 else
                 {
-                    if (cageCells[y][x] == cageCells[y][x + 1])
+                    if (Objects.equals(cageCells[y][x], cageCells[y][x + 1]))
                     {
                         rightBorderWidth = cellBorderWidth;
                     }
@@ -214,7 +215,7 @@ public class GUI extends JPanel
                     {
                         rightBorderWidth = cageBorderWidth;
                     }
-                    if (cageCells[y][x] == cageCells[y][x - 1])
+                    if (Objects.equals(cageCells[y][x], cageCells[y][x - 1]))
                     {
                         leftBorderWidth = cellBorderWidth;
                     }
