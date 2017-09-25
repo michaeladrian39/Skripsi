@@ -534,7 +534,9 @@ Kelas Calcudoku mempunyai beberapa \textit{method}, yaitu:
 Kelas WindowListener hanya mempunyai satu atribut, yaitu frame. frame adalah sebuah instansiasi dari kelas Calcudoku. Kelas ini mempunya beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item Lorem ipsum
+\item WindowListener(Calcudoku frame), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa sebuah instansiasi dari kelas Calcudoku.
+\item windowClosing(WindowEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas WindowAdapter. \textit{Method} ini berfungsi untuk menutup semua komponen GUI saat perangkat lunak ditutup.
+\item windowClosed(WindowEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas WindowAdapter. \textit{Method} ini berfungsi untuk menutup perangkat lunak setelah semua komponen GUI ditutup.
 \end{enumerate}
 
 \subsection{Kelas PuzzleFileFilter}
@@ -543,7 +545,8 @@ Kelas WindowListener hanya mempunyai satu atribut, yaitu frame. frame adalah seb
 Kelas PuzzleFileFilter tidak mempunyai atribut, tetapi memiliki beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item Lorem ipsum
+\item accept(File puzzleFile), yaitu \textit{method} yang meng-\textit{override method} dari kelas FileFilter. \textit{Method} ini berfungsi untuk memeriksa apakah \textit{file} yang akan dibuka memenuhi syarat atau tidak. \textit{File} yang memenuhi syarat adalah \textit{file} teks.
+\item getDescription(), yaitu \textit{method} yang meng-\textit{override method} dari kelas FileFilter. \textit{Method} ini berfungsi untuk menampilkan deskripsi \textit{file} yang memenuhi syarat.
 \end{enumerate}
 
 \subsection{Kelas GUI}
@@ -581,7 +584,10 @@ Kelas GUI mempunyai beberapa \textit{method}, yaitu:
 Kelas CellKeyListener hanya mempunyai satu atribut, yaitu gui. gui adalah sebuah instansiasi dari kelas GUI. Kelas ini mempunya beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item Lorem ipsum
+\item CellKeyLIstener(GUI gui), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berpua sebuah instansiasi dari kelas GUI.
+\item keyPressed(KeyEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas KeyListener. \textit{Method} ini berfungsi untuk pindah dari sebuah \textit{text field} ke \textit{text field} di sebelahnya dengan menggunakan tombol-tombol panah.
+\item keyTyped(keyEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas KeyListener. \textit{Method} ini berfungsi agar \textit{text field} hanya bisa diisi oleh sebuah angka.
+\item keyReleased(keyEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas KeyListener. \textit{Method} ini kosong.
 \end{enumerate}
 
 \subsection{Kelas PopupMenuListener}
@@ -597,7 +603,8 @@ Kelas PopupMenuListener mempunyai beberapa atribut, yaitu:
 Kelas PopupMenuListener mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item Lorem ipsum
+\item PopupMenuListener(JTextField textField, int number), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa sebuah \textit{text field} dan sebuah angka.
+\item actionPerformed(ActionEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas ActionListener. \textit{Method} ini berfungsi untuk mengisi sebuah \textit{text field} dengan angka yang dipilih.
 \end{enumerate}
 
 \subsection{Kelas CellTextFieldListener}
@@ -615,5 +622,8 @@ Kelas CellTextFieldListener mempunyai beberapa atribut, yaitu:
 Kelas CellTextFieldListener mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item Lorem ipsum
+\item CellTextFieldListener(Controller c, JTextField textField, int x, int y), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa sebuah instansiasi dari kelas Controller, sebuah \textit{text field}, dan koordinat dari \textit{text field} tersebut.
+\item insertUpdate(DocumentEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas DocumentEvent. \textit{Method} ini berfungsi untuk mengisi sebuah sel pada kelas Grid dengan angka yang diisikan ke dalam sel pada GUI.
+\item removeUpdate(DocumentEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas DocumentEvent. \textit{Method} ini berfungsi untuk menghapus isi sebuah sel pada kelas Grid jika angka dalam sel pada GUI dihapus.
+\item changeUpdate(DocumentEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas DocumentEvent. \textit{Method} ini berfungsi untuk menghapus isi sebuah sel pada kelas Grid dan mengisi sebuah sel pada kelas Grid dengan angka yang baru yang diisikan ke dalam sel pada GUI jika terjadi perubahan angka yang diisikan ke dalam sel pada GUI.
 \end{enumerate}
