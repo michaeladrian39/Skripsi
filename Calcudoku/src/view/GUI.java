@@ -87,14 +87,14 @@ public class GUI extends JPanel
         return size;
     }
     
-    public Integer[][] getCageCells()
-    {
-        return cageCells;
-    }
-    
     public Integer getNumberOfCages()
     {
         return numberOfCages;
+    }
+    
+    public Integer[][] getCageCells()
+    {
+        return cageCells;
     }
     
     public String[] getCageObjectives()
