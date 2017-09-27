@@ -112,7 +112,6 @@ public class SolverGenetic
                 nextGeneration.remove(index);
             }
         }
-        System.out.println("size" + nextGeneration.size());
         currentGeneration = nextGeneration;
         nextGeneration = new ArrayList();
     }
