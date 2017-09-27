@@ -41,6 +41,7 @@ public class Calcudoku extends JFrame
     private final JMenuItem menuItemExit;
     private final JMenuItem menuItemBacktracking;
     private final JMenuItem menuItemHybridGenetic;
+    private final JMenuItem menuItemGeneticParameters;
     private final JFileChooser fileChooser;
     private GUI gui;
     
@@ -56,6 +57,7 @@ public class Calcudoku extends JFrame
         this.menuItemExit = new JMenuItem();
         this.menuItemBacktracking = new JMenuItem();
         this.menuItemHybridGenetic = new JMenuItem();
+        this.menuItemGeneticParameters = new JMenuItem();
         this.fileChooser = new JFileChooser();
         initComponents();
     }
@@ -104,6 +106,8 @@ public class Calcudoku extends JFrame
                 this::menuItemBacktrackingActionPerformed);
         this.menuItemHybridGenetic.addActionListener(
                 this::menuItemHybridGeneticActionPerformed);
+        this.menuItemGeneticParameters.addActionListener(
+                this::menuItemGeneticParametersActionPerformed);
     }
     
     private void initMenu()
@@ -118,6 +122,8 @@ public class Calcudoku extends JFrame
         this.menuItemExit.setText("Exit");
         this.menuItemBacktracking.setText("Backtracking");
         this.menuItemHybridGenetic.setText("Hybrid Genetic");
+        this.menuItemGeneticParameters.setText(
+                "Set Genetic Algorithm Parameters");
         this.fileChooser.setDialogTitle("Load Puzzle File");
         fileChooser.setCurrentDirectory(directory);
     }
@@ -134,6 +140,8 @@ public class Calcudoku extends JFrame
         this.menuBar.add(menuFile);
         this.menuSolve.add(menuItemBacktracking);
         this.menuSolve.add(menuItemHybridGenetic);
+        this.menuSolve.addSeparator();
+        this.menuSolve.add(menuItemGeneticParameters);
         this.menuBar.add(menuSolve);
         this.setJMenuBar(menuBar);
     }
@@ -299,6 +307,21 @@ public class Calcudoku extends JFrame
         else
         {
             gui.solveHybridGenetic();
+        }
+    }
+    
+    private void menuItemGeneticParametersActionPerformed(ActionEvent evt)
+    {
+        if (c == null || gui == null)
+        {
+            JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not loaded.");
+        }
+        else
+        {
+            GeneticParameters gp = new GeneticParameters(gui);
+            gp.setVisible(true);
         }
     }
 

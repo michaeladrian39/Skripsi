@@ -49,7 +49,7 @@ public class SolverRuleBased
     public boolean solve()
     {
         singleSquare();
-        killerCombination();
+        killerCombination();;
         ArrayList<ArrayList<Integer>> currentGridArrayList 
                 = getGridArrayList();
         ArrayList<ArrayList<Integer>> newGridArrayList = solveLoop();
@@ -73,7 +73,6 @@ public class SolverRuleBased
     
     public ArrayList<ArrayList<Integer>> solveLoop()
     {
-        nakedSubset();
         nakedSingle();
         nakedDouble();
         hiddenSingle();
@@ -1172,12 +1171,6 @@ public class SolverRuleBased
                 }
             }
         }
-    }
-    
-    private void nakedSubset()
-    {
-        nakedSingle();
-        nakedDouble();
     }
     
     private void nakedSingle()

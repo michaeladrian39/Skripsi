@@ -3,6 +3,7 @@ package view;
 import controller.Controller;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Point;
@@ -49,6 +50,11 @@ public class GUI extends JPanel
     private final int cellSize;
     private final int cellBorderWidth;
     private final int cageBorderWidth;
+    private Integer generations;
+    private Integer populationSize;
+    private Double elitismRate;
+    private Double crossoverRate;
+    private Double mutationRate;
     
     public GUI(Controller c)
     {
@@ -110,6 +116,17 @@ public class GUI extends JPanel
     public Cage[] getCages()
     {
         return cages;
+    }
+    
+    public void setGeneticAlgorithmParameters(Integer generations, 
+            Integer populationSize, Double elitismRate, Double crossoverRate, 
+            Double mutationRate)
+    {
+        this.generations = generations;
+        this.populationSize = populationSize;
+        this.elitismRate = elitismRate;
+        this.crossoverRate = crossoverRate;
+        this.mutationRate = mutationRate;
     }
     
     private void initTextFields()
@@ -294,41 +311,55 @@ public class GUI extends JPanel
     
     public void solveHybridGenetic()
     {
-        removeCellTextFieldListeners();
-        Cell[][] solution;
-        float startTime = System.nanoTime();
-        float endTime;
-        float duration;
-        SolverHybridGenetic shg = new SolverHybridGenetic(game);
-        if (shg.solve() == true)
+        if (generations == null || populationSize == null 
+                || elitismRate == null || crossoverRate == null 
+                || mutationRate == null)
         {
-            solution = shg.getSolution().getGridContents();
-            printGridToScreen(solution);
-            endTime = System.nanoTime();
-            duration = (endTime - startTime) / 1000000000;
-            System.out.println("The hybrid genetic algorithm has successfully "
-                    + "solved the puzzle." + "\nTime elapsed: " + duration 
-                    + " seconds");
-            JOptionPane.showMessageDialog(null, 
-                    "The hybrid genetic algorithm has successfully solved the " 
-                            + "puzzle." + "\nTime elapsed: " + duration 
-                            + " seconds", "Information", 
-                            JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,
+                    "Genetic algorithm parameters have not been set.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException(
+                    "Genetic algorithm parameters have not been set.");
         }
         else
         {
-            endTime = System.nanoTime();
-            duration = (endTime - startTime) / 1000000000;
-            System.out.println("The hybrid genetic algorithm has failed to "
-                    + "solve the puzzle." + "\nTime elapsed: " + duration 
-                    + " seconds");
-            JOptionPane.showMessageDialog(null, 
-                    "The hybrid genetic algorithm has failed to solve the " + 
-                            "puzzle." + "\nTime elapsed: " + duration 
-                            + " seconds", "Information", 
-                            JOptionPane.INFORMATION_MESSAGE);
+            removeCellTextFieldListeners();
+            Cell[][] solution;
+            float startTime = System.nanoTime();
+            float endTime;
+            float duration;
+            SolverHybridGenetic shg = new SolverHybridGenetic(game, generations, 
+                    populationSize, elitismRate, crossoverRate, mutationRate);
+            if (shg.solve() == true)
+            {
+                solution = shg.getSolution().getGridContents();
+                printGridToScreen(solution);
+                endTime = System.nanoTime();
+                duration = (endTime - startTime) / 1000000000;
+                System.out.println("The hybrid genetic algorithm has successfully "
+                        + "solved the puzzle." + "\nTime elapsed: " + duration 
+                        + " seconds");
+                JOptionPane.showMessageDialog(null, 
+                        "The hybrid genetic algorithm has successfully solved the " 
+                                + "puzzle." + "\nTime elapsed: " + duration 
+                                + " seconds", "Information", 
+                                JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                endTime = System.nanoTime();
+                duration = (endTime - startTime) / 1000000000;
+                System.out.println("The hybrid genetic algorithm has failed to "
+                        + "solve the puzzle." + "\nTime elapsed: " + duration 
+                        + " seconds");
+                JOptionPane.showMessageDialog(null, 
+                        "The hybrid genetic algorithm has failed to solve the " + 
+                                "puzzle." + "\nTime elapsed: " + duration 
+                                + " seconds", "Information", 
+                                JOptionPane.INFORMATION_MESSAGE);
+            }
+            addCellTextFieldListeners();
         }
-        addCellTextFieldListeners();
     }
     
     private void printGridToScreen(Cell[][] grid)

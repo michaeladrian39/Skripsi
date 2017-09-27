@@ -15,21 +15,28 @@ public class SolverGenetic
     private final Integer size;
     private final boolean[][] isCellFixed;
     private final Random randomGenerator;
-    private int generationsNumber = 100;
-    private int populationSize = 1000;
-    private double elitismRate = 0.1;
-    private double mutationRate = 0.1;
-    private double crossoverRate = 0.9;
+    private final Integer generations;
+    private final Integer populationSize;
+    private final Double elitismRate;
+    private final Double mutationRate;
+    private final Double crossoverRate;
     private Grid solution;
     private ArrayList<Chromosome> currentGeneration = new ArrayList();
     private ArrayList<Chromosome> nextGeneration = new ArrayList();
     
-    public SolverGenetic(Grid grid)
+    public SolverGenetic(Grid grid, Integer generations, 
+            Integer populationSize, double elitismRate, double crossoverRate, 
+            double mutationRate)
     {
         this.grid = grid;
         this.size = grid.getSize();
+        this.generations = generations;
+        this.populationSize = populationSize;
+        this.elitismRate = elitismRate;
+        this.crossoverRate = crossoverRate;
+        this.mutationRate = mutationRate;
         this.isCellFixed = generateIsCellFixedArray();
-        this.randomGenerator = new Random();   
+        this.randomGenerator = new Random(); 
         generatePopulation();
         for (int i = 0; i < currentGeneration.size(); i++)
         {
@@ -40,7 +47,7 @@ public class SolverGenetic
     
     public boolean solve()
     {
-        for (int i = 0; i < generationsNumber; i++)
+        for (int i = 0; i < generations; i++)
         {
             solveLoop();
             sortChromosomes();
@@ -60,13 +67,12 @@ public class SolverGenetic
     }
 
     private void solveLoop()
-    {
+    {      
         ArrayList<Chromosome> nonElitism = new ArrayList();
         int elitismNumber = (int) Math.round(populationSize * elitismRate);
         int mutationNumber = (int) Math.round(populationSize * mutationRate);
         int crossoverNumber
                 =  (int) Math.round((populationSize * crossoverRate) / 2);
-        int nonElitismNumber = populationSize - elitismNumber;
         sortChromosomes();
         for (int i = 0; i < populationSize; i++)
         {
@@ -80,39 +86,35 @@ public class SolverGenetic
                 nextGeneration.add(cloneChromosome(currentGeneration.get(i)));
             }
         }
-        for (int i = 0; i < crossoverNumber; i++)
-        {
-            nonElitism.addAll(crossover(randomSelection(currentGeneration),
-                    randomSelection(currentGeneration)));
-        }
-        while (nonElitism.size() < nonElitismNumber)
-        {
-            Chromosome c = randomSelection(currentGeneration);
-            while (!nextGeneration.contains(c))
-            {
-                c = randomSelection(currentGeneration);
-            }
-            nonElitism.add(c);
-        }
         for (int i = 0; i < mutationNumber; i++)
         {
-            Chromosome parent = randomSelection(nonElitism);
+            Chromosome parent = randomSelection(currentGeneration);
             nextGeneration.add(mutation(parent));
-            nonElitism.remove(parent);
         }
-        nextGeneration.addAll(nonElitism);
+        for (int i = 0; i < crossoverNumber; i++)
+        {
+            nextGeneration.addAll(crossover(randomSelection(currentGeneration),
+                    randomSelection(currentGeneration)));
+        }
+        if (nextGeneration.size() < populationSize)
+        {
+            while (nextGeneration.size() < populationSize)
+            {
+                nextGeneration.add(randomSelection(currentGeneration));
+            }
+        }
+        if (nextGeneration.size() > populationSize)
+        {
+            int extraChromosomes = nextGeneration.size() - populationSize;
+            for (int i = 0; i < extraChromosomes; i++)
+            {
+                int index = randomGenerator.nextInt(nextGeneration.size());
+                nextGeneration.remove(index);
+            }
+        }
+        System.out.println("size" + nextGeneration.size());
         currentGeneration = nextGeneration;
         nextGeneration = new ArrayList();
-    }
-
-    public void setParameters(int generationsNumber, int populationSize, 
-            double elitismRate, double crossoverRate, double mutationRate)
-    {
-        this.generationsNumber = generationsNumber;
-        this.populationSize = populationSize;
-        this.elitismRate = elitismRate;
-        this.crossoverRate = crossoverRate;
-        this.mutationRate = mutationRate;
     }
     
     private boolean[][] generateIsCellFixedArray()

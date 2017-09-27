@@ -11,11 +11,23 @@ public class SolverHybridGenetic
     private Grid gridRuleBased;
     private final Integer size;
     private Grid solution;
+    private final Integer generations;
+    private final Integer populationSize;
+    private final Double elitismRate;
+    private final Double mutationRate;
+    private final Double crossoverRate;
     
-    public SolverHybridGenetic(Grid grid)
+    public SolverHybridGenetic(Grid grid, Integer generations, 
+            Integer populationSize, Double elitismRate, Double crossoverRate, 
+            Double mutationRate)
     {
         this.grid = grid;
         this.size = grid.getSize();
+        this.generations = generations;
+        this.populationSize = populationSize;
+        this.elitismRate = elitismRate;
+        this.crossoverRate = crossoverRate;
+        this.mutationRate = mutationRate;
     }
     
     public boolean solve()
@@ -31,7 +43,8 @@ public class SolverHybridGenetic
         }
         else
         {
-            SolverGenetic sg = new SolverGenetic(gridRuleBased);
+            SolverGenetic sg = new SolverGenetic(gridRuleBased, generations, 
+                    populationSize, elitismRate, crossoverRate, mutationRate);
             if (sg.solve() == true)
             {
                 this.solution = sg.getSolution();
