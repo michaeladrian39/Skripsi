@@ -14,7 +14,8 @@ import javax.swing.WindowConstants;
  *
  * @author michaeladrian39
  */
-public class GeneticParameters extends JFrame {
+public class GeneticParameters extends JFrame
+{
 
     private final GUI gui;
     private final JLabel labelGenerations;
@@ -54,7 +55,10 @@ public class GeneticParameters extends JFrame {
 
     private void initComponents()
     {
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setTitle("Set Genetic Algorithm Parameters");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
         labelGenerations.setText("Generations");
         labelPopulation.setText("Population Size");
         labelElitism.setText("Elitism Rate");

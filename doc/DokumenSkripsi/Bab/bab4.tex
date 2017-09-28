@@ -66,6 +66,7 @@ Perangkat lunak teka-teki Calcudoku ini terdiri dari beberapa kelas, yang dikelo
 	\item CellKeyListener, yaitu kelas \textit{listener} untuk kelas GUI. \textit{Listener} ini berfungsi untuk menggerakkan kursor dari sebuah sel ke sel di sebelahnya menggunakan tombol-tombol panah ke kiri, ke atas, ke bawah, dan ke kanan. Listener ini juga berfungsi untuk membatasi agar sel hanya bisa diisi oleh satu angka.
 	\item PopupMenuListener, yaitu kelas \textit{listener} untuk kelas GUI. \textit{Listener} ini berfungsi untuk mengisi sel dengan angka menggunakan menu \textit{pop up}, sel akan diisi dengan angka yang dipilih.
 	\item CellTextFieldListener, yaitu kelas \textit{listener} untuk kelas GUI. \textit{Listener} ini berfungsi untuk mengisikan sel dalam kelas Grid dengan angka yang diisikan ke dalam sel dalam GUI.
+	\item GeneticParameterss, yaitu kelas yang berisi \textit{form} untuk mengatur nilai dari parameter-parameter untuk algoritma genetik.
 	\end{enumerate}
 \item Controller, yaitu penghubung antara \textit{package} model dan \textit{package} view. Package ini hanya berisi satu kelas, yaitu kelas Controller.
 \end{enumerate}
@@ -264,12 +265,17 @@ Kelas SolverHybridGenetic mempunyai beberapa atribut, yaitu:
 \item gridRuleBased, yaitu \textit{grid} yang telah diselesaikan oleh algoritma \textit{rule based}.
 \item size, yaitu ukuran dari \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}.
 \item solution, yaitu \textit{grid} yang sudah diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}.
+\item generations, yaitu jumlah generasi maksimum yang akan dibangkitkan oleh algoritma genetik.
+\item populationSize, yaitu jumlah kromosom yang akan dibangkitkan dalam sebuah generasi.
+\item elitismRate, yaitu parameter tingkat \textit{elitism} dalam algoritma genetik..
+\item crossoverRate, yaitu parameter tingkat kawin silang dalam algoritma genetik.
+\item mutationRate, yaitu parameter tingkat mutasi dalam algoritma genetik.
 \end{enumerate}
 
 Kelas SolverHybridGenetic mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item SolverHybridGenetic(Grid grid), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}.
+\item SolverHybridGenetic(Grid grid,  Integer generations, Integer populationSize, Double elitismRate, Double crossoverRate, Double mutationRate), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}, dan parameter-parameter algoritma genetik, yaitu jumlah generasi, jumlah populasi dalam sebuah generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi.
 \item solve(), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{hybrid genetic}. \textit{Method} ini akan memanggil solver algoritma \textit{rule based}. Jika algoritma \textit{rule based} gagal dalam menyelesaikan teka-teki Calcudoku, maka \textit{method} akan memanggil solver algoritma genetik. \textit{Method} ini menghasilkan keluaran apakah \textit{solver} berhasil menyelesaikan teka-teki Calcudoku atau tidak.
 \item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar.
 \end{enumerate}
@@ -299,7 +305,7 @@ Kelas SolverRuleBased mempunyai beberapa atribut, yaitu:
 Kelas SolverRuleBased mempunyai \textit{method-method} berikut:
 
 \begin{enumerate}
-\item SolverRuleBased(Grid grid), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{rule based}.
+\item SolverRuleBased(Grid grid), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{rule based}, dan parameter-parameter algoritma genetik, yaitu jumlah generasi, jumlah populasi dalam sebuah generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi.
 \item generatePossibleValuesArray(), yaitu \textit{method} yang membangkitkan kemungkinan angka-angka yang mungkin untuk setiap sel yang ada di dalam \textit{grid}. Angka-angka yang mungkin adalah dari 1 sampai ke ukuran dari \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa array yang menampung semua kemungkinan angka yang mungkin untuk setiap sel yang ada di dalam \textit{grid}.
 \item solve(), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{rule based}. \textit{Method} ini menghasilkan keluaran apakah \textit{solver} berhasil menyelesaikan teka-teki Calcudoku atau tidak. \textit{Solver} akan mencoba menyelesaikan teka-teki Calcudoku menggunakan aturan-aturan logika, misalnya \textit{single square rule}, \textit{killer combination rule}, \textit{naked subset rule}, \textit{hidden subset rule}, dan \textit{evil twin rule}. Aturan \textit{single square} dan \textit{killer combination} hanya dipakai sekali, dan dilakukan oleh \textit{method} ini, sedangkan aturan \textit{naked subset}, \textit{hidden subset}, dan \textit{evil twin} dapat dipakai berkali-kali, dan dilakukan oleh \textit{method} solveLoop().
 \item solveLoop(), yaitu \textit{method} yang mengaplikasikan aturan \textit{naked subset}, \textit{hidden subset}, dan \textit{evil twin} kepada \textit{grid} yang sedang diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menerima masukan berupa \textit{array} kemungkinan angka yang mungkin untuk setiap sel yang ada di dalam \textit{grid}. \textit{Method} ini akan diulang sampai \textit{method} ini tidak bisa mengisi sel-sel yang ada di dalam \textit{grid}.
@@ -370,11 +376,11 @@ Kelas SolverGenetic mempunyai atribut-atribut berikut, yaitu:
 \item size, yaitu ukuran dari \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma genetik.
 \item isGridFixed, yaitu sebuah matriks yang berisi apakah sel tersebut sudah diisi oleh algoritma \textit{rule based} atau belum. Nilai dari sel yang sudah diisi oleh \textit{rule based} tidak boleh diganti atau dihapus.
 \item randomGenerator, yaitu pembangkit angka acak.
-\item generationsNumber, yaitu jumlah generasi maksimum yang akan dibangkitkan oleh algoritma genetik.
+\item generations, yaitu jumlah generasi maksimum yang akan dibangkitkan oleh algoritma genetik.
 \item populationSize, yaitu jumlah kromosom yang akan dibangkitkan dalam sebuah generasi.
 \item elitismRate, yaitu parameter tingkat \textit{elitism} dalam algoritma genetik.
+\item crossoverRate, yaitu parameter tingkat kawin silang dalam algoritma genetik.
 \item mutationRate, yaitu parameter tingkat mutasi dalam algoritma genetik.
-\item crossoverRate, yaitu parameter tingka kawin silang dalam algoritma genetik.
 \item solution, yaitu \textit{grid} yang sudah diselesaikan oleh \textit{solver} dengan algoritma genetik.
 \item currentGeneration, yaitu generasi saat ini dalam algoritma genetik. Algoritma genetik akan membangkitkan generasi baru (nextGeneration), dan generasi baru ini akan menjadi generasi saat ini, dan algoritma akan membangkitkan generasi baru berikutnya.
 \item nextGeneration, yaitu generasi berikutnya dalam algoritma genetik.
@@ -383,10 +389,10 @@ Kelas SolverGenetic mempunyai atribut-atribut berikut, yaitu:
 Kelas SolverGenetic mempunyai \textit{method-method} berikut:
 
 \begin{enumerate}
-\item SolverGenetic(Grid grid), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma genetik.
+\item SolverGenetic(Grid grid, Integer generations, Integer populationSize, Double elitismRate, Double crossoverRate, Double mutationRate), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma genetik.
 \item solve(), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma genetik. \textit{Method} ini menghasilkan keluaran apakah \textit{solver} berhasil menyelesaikan teka-teki Calcudoku atau tidak. Algoritma genetik berhasil menyelesaikan teka-teki Calcudoku jika ada kromosom yang nilai kelayakannya 1. \textit{Solver} akan membangkitkan generasi pertama, sedangkan generasi-generasi berikutnya akan dibangkitkan oleh \textit{method} solveLoop().
 \item solveLoop(), yaitu \textit{method} yang membangkitkan generasi berikutnya dari generasi sebelumnya menggunakan operator algoritma genetik, yaitu \textit{elitism}, mutasi, dan kawin silang.
-\item setParameters(int generationsNumber, int populationSize, double elitismRate, double crossoverRate, double mutationRate), yaitu \textit{method} untuk menentukan jumlah generasi maksimum, jumlah kromosom dalam satu generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi untuk algoritma genetik. Method ini menerima masukan berupa jumlah generasi maksimum, jumlah kromosom dalam satu generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi untuk algoritma genetik.
+\item setParameters(int generations, int populationSize, double elitismRate, double crossoverRate, double mutationRate), yaitu \textit{method} untuk menentukan jumlah generasi maksimum, jumlah kromosom dalam satu generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi untuk algoritma genetik. Method ini menerima masukan berupa jumlah generasi maksimum, jumlah kromosom dalam satu generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi untuk algoritma genetik.
 \item generateIsCellFixedArray(), yaitu \textit{method} yang membangkitkan matriks yang berisi apakah sel tersebut sudah diisi oleh algoritma \textit{rule based} atau tidak. \textit{Method} ini menghasilkan keluaran berupa sebuah matriks yang berisi apakah sel tersebut sudah diisi oleh algoritma \textit{rule based} atau tidak.
 \item genereatePopulation(), yaitu \textit{method} yang membangkitkan populasi kromosom awal.
 \item generateChromosome(), yaitu \textit{method} yang membangkitkan sebuah kromosom. \textit{Method} ini menghasilkan keluaran berupa sebuah kromosom.
@@ -540,6 +546,7 @@ Kelas Calcudoku mempunyai beberapa \textit{method}, yaitu:
 \item menuItemExitActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika menu "\textit{Exit}" dipilih. \textit{Method} ini akan mengeluarkan kotak dialog "\textit{Are you sure you want to exit this application}", jika pengguna memilih "\textit{Yes}", maka perangkat lunak akan ditutup.
 \item menuItemBacktrackingActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika menu "\textit{Backtracking}" dijalankan. \textit{Method} ini akan mencoba menyelesaikan permainan berdasarkan \textit{file} permainan yang dibuka dengan algoritma \textit{backtracking}. Jika perangkat lunak tidak sedang membuka \textit{file} permainan, maka akan keluar pesan peringatan "\textit{Puzzle file not loaded}".
 \item menuItemHybridGeneticActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika menu "\textit{Hybrid Genetic}" dijalankan. \textit{Method} ini akan mencoba menyelesaikan permainan berdasarkan \textit{file} permainan yang dibuka dengan algoritma \textit{hybrid genetic}. Jika perangkat lunak tidak sedang membuka \textit{file} permainan, maka akan keluar pesan peringatan "\textit{Puzzle file not loaded}".
+\item menuItemHybridGeneticActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika menu "\textit{Set Genetic Algorithm Parameters}" dijalankan. \textit{Method} ini akan menampilkan \textit{window} baru dimana pengguna bisa mengatur parameter-parameter untuk algoritma genetik dengan mengisi \textit{form} yang disediakan pada \textit{window} tersebut. Jika perangkat lunak tidak sedang membuka \textit{file} permainan, maka akan keluar pesan peringatan "\textit{Puzzle file not loaded}".
 \item loadPuzzleFile(File puzzleFile), yaitu \textit{method} yang menginisialisasi sebuah instansiasi dari kelas GUI berdasarkan \textit{file} permainan yang dibuka. \textit{Method} ini menerima masukan berupa sebuah \textit{file} permainan. Jika perangkat lunak gagal dalam membuka \textit{file} permainan, maka akan keluar pesan peringatan "\textit{Invalid puzzle file}".
 \item resetFrame(), yaitu \textit{method} untuk me-\textit{reset frame} setelah menutup \textit{file} permainan. \textit{Method} ini akan menutup instansiasi kelas GUI dan menghapus isi dari variabel c dalam \textit{frame}.
 \item clearVariables(), yaitu \textit{method} untuk menghapus nilai dari variabel-variabel puzzleFile, size, cageCells, numberOfCages, dan cageObjectives dalam \textit{frame}.
@@ -588,6 +595,11 @@ Kelas GUI mempunyai beberapa atribut, yaitu:
 \textit cellSize, yaitu ukuran sebuah sel di dalam GUI ini.
 \textit cellBorderWidth, yaitu ukuran garis pembatas antara dua sel yang berada di dalam sebuah \textit{cage} yang sama.
 \textit cageBorderWidth, yaitu ukuran garis pembatas antara dua sel yang berada di dalam dua \textit{cage} yang berbeda, dan ukuran garis pembatas \textit{grid}.
+\item generations, yaitu jumlah generasi maksimum yang akan dibangkitkan oleh algoritma genetik.
+\item populationSize, yaitu jumlah kromosom yang akan dibangkitkan dalam sebuah generasi.
+\item elitismRate, yaitu parameter tingkat \textit{elitism} dalam algoritma genetik..
+\item crossoverRate, yaitu parameter tingkat kawin silang dalam algoritma genetik.
+\item mutationRate, yaitu parameter tingkat mutasi dalam algoritma genetik.
 \end{enumerate}
 
 Kelas GUI mempunyai beberapa \textit{method}, yaitu:
@@ -601,6 +613,7 @@ Kelas GUI mempunyai beberapa \textit{method}, yaitu:
 \item getCageObjectives(), yaitu \textit{method} untuk mendapatkan \textit{cage objectives} dari setiap \textit{cage} dalam \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa sebuah array yang berisi \textit{cage objectives} dari setiap \textit{cage} dalam \textit{grid}.
 \item getGrid(), yaitu \textit{method} untuk mendapatkan nilai dari setiap sel \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa sebuah matriks yang berisi nilai dari setiap sel \textit{grid}.
 \item getCages(), yaitu \textit{method} untuk mendapatkan semua \textit{cage} dalam \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa array yang berisi semua \textit{cage} dalam \textit{grid}.
+\item setGeneticAlgorithmParameters(Integer generations, Integer populationSize, Double elitismRate, Double crossoverRate, Double mutationRate), yaitu \textit{method} untuk mengatur parameter-parameter untuk algoritma genetik. \textit{Method} ini menerima masukan berupa jumlah generasi, jumlah populasi dalam sebuah generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi.
 \item initTextFields, yaitu \textit{method} untuk menginisialisasi \textit{text field} yang ada di dalam \textit{grid} pada GUI.
 \item solveBacktracking(), yaitu \textit{method} untuk memanggil solver untuk menyelesaikan permainan Calcudoku menggunakan algoritma \textit{backtracking}. 
 \item solveHybridGenetic(), yaitu \textit{method} untuk memanggil solver untuk menyelesaikan permainan Calcudoku menggunakan algoritma \textit{hybrid genetic}.
@@ -658,4 +671,38 @@ Kelas CellTextFieldListener mempunyai beberapa \textit{method}, yaitu:
 \item insertUpdate(DocumentEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas DocumentEvent. \textit{Method} ini berfungsi untuk mengisi sebuah sel pada kelas Grid dengan angka yang diisikan ke dalam sel pada GUI.
 \item removeUpdate(DocumentEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas DocumentEvent. \textit{Method} ini berfungsi untuk menghapus isi sebuah sel pada kelas Grid jika angka dalam sel pada GUI dihapus.
 \item changeUpdate(DocumentEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas DocumentEvent. \textit{Method} ini berfungsi untuk menghapus isi sebuah sel pada kelas Grid dan mengisi sebuah sel pada kelas Grid dengan angka yang baru yang diisikan ke dalam sel pada GUI jika terjadi perubahan angka yang diisikan ke dalam sel pada GUI.
+\end{enumerate}
+
+\subsection{Kelas GeneticParameters}
+\label{sec:kelasgeneticparamater}
+
+Kelas GeneticParameters mempunyai beberapa atribut, yaitu:
+
+\begin{enumerate}
+\item gui, yaitu representasi GUI dari \textit{file} permainan yang sedang dibuka.
+\item labelGenerations, yaitu label yang bertuliskan "\textit{Generations}".
+\item labelPopulation, yaitu label yang bertuliskan "\textit{Population Size}".
+\item labelElitism, yaitu label yang bertuliskan "\textit{Elitism Rate}".
+\item labelCrossover, yaitu label yang bertuliskan "\textit{Crossover Rate}".
+\item labelMutation, yaitu label yang bertuliskan "\textit{Mutation Rate}".
+\item textFieldGenerations, yaitu \textit{text field} untuk mengisi nilai jumlah generasi.
+\item textFieldPopulation, yaitu \textit{text field} untuk mengisi nilai jumlah populasi dalam sebuah generasi.
+\item textFieldElitism, yaitu \textit{text field} untuk mengisi nilai tingkat \textit{elitism}.
+\item textFieldCrossover, yaitu \textit{text field} untuk mengisi nilai tingkat kawin silang.
+\item textFieldMutation, yaitu \textit{text field} untuk mengisi nilai tingkat mutasi.
+\item buttonOK, yaitu tombol untuk mengganti nilai-nilai parameter untuk algoritma genetik dengan nilai-nilai yang dimasukkan ke dalam \textit{form} yang disediakan.
+\item buttonCancel, yaitu tombol untuk membatalkan perubahan nilai-nilai parameter untuk algoritma genetik.
+\end{enumerate}
+
+Kelas GeneticParameters mempunyai beberapa \textit{method}, yaitu:
+
+\begin{enumerate}
+\item GeneticParameterss(GUI gui), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berpua sebuah instansiasi dari kelas GUI.
+\item initComponents(), yaitu \textit{method} untuk menginisialisasi komponen-komponen dari \textit{form}.
+\item initActionListener(), yaitu \textit{method} untuk menginisialisasi \textit{action listener} untuk setiap tombol yang ada di dalam \textit{form}.
+\item initGUI(), yaitu \textit{method} untuk menginisialisasi GUI dari \textit{form}.
+\item initMenuBar(), yaitu \textit{method} untuk menginisialisasi menu \textit{bar} untuk \textit{frame} GUI.
+\item buttonOKActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika tombol "\textit{OK}" ditekan. \textit{Method} ini akan mengganti nilai-nilai parameter untuk algoritma genetik dengan nilai-nilai yang telah dimasukkan ke dalam \textit{form} yang disediakan.
+\item buttonCancelActionPerformed(ActionEventevt), yaitu \textit{method} yang akan dijalankan jika tombol "\textit{Cancel}" ditekan. \textit{Method} ini akan membatalkan perubahan nilai-nilai parameter untuk algoritma genetik.
+\item destroyFrame(), yaitu \textit{method} untuk menutup \textit{form}.
 \end{enumerate}
