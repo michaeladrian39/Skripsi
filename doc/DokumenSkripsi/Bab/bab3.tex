@@ -737,7 +737,7 @@ Nomor Kromosom & Nilai Kelayakan \\
 12 & 0,5 \\
 \hline
 \end{tabular}
-\label{tab:analisishg3}kawin silang
+\label{tab:analisishg3}
 \end{table}
 
 Untuk Generasi ke-3, 5 kromosom adalah 5 kromosom terbaik dari Generasi ke-2, 6 kromosom adalah hasil kawin silang dari 2 kromosom dari Generasi ke-2, dan 1 kromosom adalah hasil mutasi dari 1 kromosom dari Generasi ke-2.
@@ -903,7 +903,7 @@ Perangkat lunak ini akan menghasilkan keluaran berupa antarmuka grafis permainan
 \item Algoritma \textit{hybrid genetic}.
 \end{enumerate}
 
-Pengguna dapat me-\textit{load} file masukan untuk memulai permainan, me-\textit{reset} permainan untuk mengulang permainan berdasarkan \textit{file} masukan yang sudah di-\textit{load} dari awal, dan menutup \textit{file} masukan untuk mengakhiri permainan, atau jika ingin me-\textit{load file} masukan yang lain. Pengguna juga dapat meminta perangkat lunak untuk memeriksa permainan jika ada masukan yang salah di dalam \textit{grid}, misalnya ada angka yang berulang dalam sebuah baris atau kolom, atau angka-angka dalam sebuah \textit{cage} tidak mencapai angka tujuan yang ditentukan setelah dihitung dengan operasi matematika yang ditentukan.
+Pengguna dapat me-\textit{load} file masukan untuk memulai permainan, me-\textit{reset} permainan untuk mengulang permainan berdasarkan \textit{file} masukan yang sudah di-\textit{load} dari awal, dan menutup \textit{file} masukan untuk mengakhiri permainan, atau jika ingin me-\textit{load file} masukan yang lain. Pengguna juga dapat meminta perangkat lunak untuk memeriksa permainan jika ada masukan yang salah di dalam \textit{grid}, misalnya ada angka yang berulang dalam sebuah baris atau kolom, atau angka-angka dalam sebuah \textit{cage} tidak mencapai angka tujuan yang ditentukan setelah dihitung dengan operasi matematika yang ditentukan. Pemain juga dapat mengatur nilai dari parameter-parameter untuk algoritma genetik.
 
 Kebutuhan-kebutuhan yang diperlukan oleh perangkat lunak ini akan dijelaskan menggunakan diagram \textit{use cage}, dan skenario.
 
@@ -919,6 +919,7 @@ Diagram \textit{use case} adalah diagram yang menggambarkan interaksi antara sis
 \item Meminta perangkat lunak untuk memeriksa permainan jika ada masukan yang salah di dalam \textit{grid}.
 \item Menutup \textit{file} masukan untuk mengakhiri permainan.
 \item Menyelesaikan permainan dengan usahanya sendiri.
+\item Mengatur nilai dari parameter-parameter untuk algoritma genetik.
 \end{enumerate}
 
 Diagram \textit{use case} untuk perangkat lunak permainan teka-teki Calcudoku dapat dilihat pada Gambar~\ref{fig:analisisusecase}.
@@ -1059,7 +1060,7 @@ Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{File}", lalu
 \begin{table}
 \centering
 \captionsetup{justification=centering}
-\caption[Skenario menyelesaikan permainan dengan usahanya sendiri]{Skenario Menyelesaikan permainan dengan usahanya sendiri}
+\caption[Skenario menyelesaikan permainan dengan usahanya sendiri]{Skenario menyelesaikan permainan dengan usahanya sendiri}
 \begin{tabular}{| l || l |}
 \hline
 Nama & Menyelesaikan permainan dengan usahanya sendiri. \\
@@ -1078,6 +1079,30 @@ Skenario Utama & \makecell[l]{Pemain mengisikan sel-sel dalam \textit{grid} deng
 \label{tab:analisisplay}
 \end{table}
 
+\item Mengatur nilai dari parameter-parameter untuk algoritma genetik. Penjelasan untuk skenario ini dapat dilihat pada Tabel~\ref{tab:analisissetparameters}.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Skenario mengatur nilai dari parameter-parameter untuk algoritma genetik]{Skenario mengatur nilai dari parameter-parameter untuk algoritma genetik}
+\begin{tabular}{| l || l |}
+\hline
+Nama & Mengatur nilai dari parameter-parameter untuk algoritma genetik \\
+\hline
+Aktor & Pengguna \\
+\hline
+Deskripsi & \makecell[l]{Pemain mengatur atau mengubah nilai dari parameter-parameter untuk \\ algoritma genetik dengan mengisi \textit{form} yang telah disediakan. Pemain \\ menekan tombol "OK" untuk mengatur atau mengubah nilai dari \\ parameter-parameter untuk algoritma genetik.} \\
+\hline
+Kondisi Awal & \makecell[l]{Parameter-parameter untuk algoritma genetik belum diatur, atau sudah \\ diatur tetapi belum diubah.} \\
+\hline
+Kondisi Akhir & \makecell[l]{Parameter-parameter untuk algoritma genetik sudah diatur jika belum \\ diatur sebelumnya, atau sudah diubah jadi sudah diatur sebelumnya.} \\
+\hline
+Skenario Utama & \makecell[l]{Pemain mengisikan \textit{form} yang telah disediakan, lalu menekan tombol \\ "OK".} \\
+\hline
+\end{tabular}
+\label{tab:analisissetparameters}
+\end{table}
+
 \end{enumerate}
 
 \subsection{Diagram Kelas}
@@ -1093,7 +1118,7 @@ Berdasarkan diagram \textit{use case} yang telah dibuat, maka diagram kelas dapa
 \label{fig:analisiskelas}
 \end{figure}
 
-Berdasarkan diagram kelas yang dapat dilihat pada Gambar~\ref{fig:analisisusekelas}, kelas-kelas yang digunakan dalam perangkat lunak Calcudoku adalah:
+Berdasarkan diagram kelas yang dapat dilihat pada Gambar~\ref{fig:analiskelas}, kelas-kelas yang digunakan dalam perangkat lunak Calcudoku adalah:
 
 \begin{enumerate}
 \item \textit{Package} model, yaitu \textit{package} yang berisi kelas-kelas yang merepresentasikan permainan teka-teki Calcudoku. \textit{Package} ini terdiri dari 8 kelas, yaitu:
@@ -1111,6 +1136,7 @@ Berdasarkan diagram kelas yang dapat dilihat pada Gambar~\ref{fig:analisisusekel
 	\begin{enumerate}
 	\item Kelas Calcudoku, yaitu kelas yang merepresentasikan \textit{frame} untuk GUI permainan Calcudoku. Kelas ini berisi menu \textit{bar}, dan panel yang merepresentasikan \textit{grid} untuk permainan Calcudoku (kelas GUI).
 	\item Kelas GUI, yaitu kelas yang merepresentasikan \textit{grid} untuk permainan Calcudoku.
+	\item Kelas GeneticParameters, yaitu kelas yang berisi \textit{form} untuk mengatur nilai dari parameter-parameter untuk algoritma genetik.
 	\end{enumerate}
 \item \textit{Package} controller, yaitu penghubung antara kelas-kelas yang ada di dalam \textit{package} model dengan kelas-kelas yang ada di dalam \textit{package} view. \textit{Package} ini terdiri dari 1 kelas, yaitu kelas Controller. Kelas ini menghubungkan kelas-kelas yang ada di dalam  \textit{package} model dengan kelas-kelas yang ada di dalam \textit{package} view.
 \end{enumerate}
