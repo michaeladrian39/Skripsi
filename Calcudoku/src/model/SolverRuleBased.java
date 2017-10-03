@@ -71,7 +71,7 @@ public class SolverRuleBased
         }
     }
     
-    public ArrayList<ArrayList<Integer>> solveLoop()
+    private ArrayList<ArrayList<Integer>> solveLoop()
     {
         nakedSingle();
         nakedDouble();

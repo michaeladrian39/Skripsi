@@ -48,7 +48,7 @@ public class Chromosome
         return grid;
     }
 
-    public void printGrid()
+    private void printGrid()
     {
         Cell[][] cells = grid.getGridContents();
         for (int i = 0; i < size; i++)

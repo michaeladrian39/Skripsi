@@ -242,7 +242,7 @@ Kelas SolverBacktracking mempunyai beberapa \textit{method}, yaitu:
 \item solve(int row, int column), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{backtracking}. \textit{Method} ini menerima masukan berupa nomor baris dan nomor kolom yang akan diisi oleh \textit{solver} dan menghasilkan keluaran apakah nilai yang diisi oleh \textit{solver valid} atau tidak. \textit{Solver} akan mulai mengisi sel dari angka 1. Jika berhasil, maka \textit{solver} akan maju ke sel berikutnya. Jika gagal, maka \textit{solver} akan mencoba kemungkinan angka berikutnya. Jika semua kemungkinan angka gagal, maka \textit{solver} akan mundur ke sel sebelumnya dan mencoba kemungkinan angka berikutnya.
 \item getGrid(), yaitu \textit{method} untuk mendapatkan \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa \textit{grid}.
 \item getSolution(), yaitu \textit{method} untuk mendapatkan solusi dari \textit{grid} yang sudah diselesaikan oleh \textit{solver}. \textit{Method} ini menghasilkan keluaran berupa solusi dari \textit{grid} tersebut.
-\item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar.
+\item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar. \textit{Method} ini menerima masukan berupa \textit{grid} yang akan dicetak isinya ke layar.
 \end{enumerate}
 
 Diagram kelas SolverBacktracking dapat dilihat pada Gambar~\ref{fig:diagramkelassolverbt}.
@@ -276,8 +276,11 @@ Kelas SolverHybridGenetic mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
 \item SolverHybridGenetic(Grid grid,  Integer generations, Integer populationSize, Double elitismRate, Double crossoverRate, Double mutationRate), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}, dan parameter-parameter algoritma genetik, yaitu jumlah generasi, jumlah populasi dalam sebuah generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi.
+\item getGrid(), yaitu \textit{method} untuk mendapatkan \textit{grid} yang akan diselesaikan oleh \texit{solver} dengan algoritma \textit{hybrid genetic}.
+\item getSolution(), yaitu \textit{method} untuk mendapatkan \textit{grid} yang sudah diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}.
 \item solve(), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{hybrid genetic}. \textit{Method} ini akan memanggil solver algoritma \textit{rule based}. Jika algoritma \textit{rule based} gagal dalam menyelesaikan teka-teki Calcudoku, maka \textit{method} akan memanggil solver algoritma genetik. \textit{Method} ini menghasilkan keluaran apakah \textit{solver} berhasil menyelesaikan teka-teki Calcudoku atau tidak.
-\item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar.
+\item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar. \textit{Method} ini menerima masukan berupa \textit{grid} yang akan dicetak isinya ke layar.
+
 \end{enumerate}
 
 Diagram kelas SolverHybridGenetic dapat dilihat pada Gambar~\ref{fig:diagramkelassolverhg}.
@@ -405,7 +408,7 @@ Kelas SolverGenetic mempunyai \textit{method-method} berikut:
 \item getGrid, yaitu \textit{method} untuk mendapatkan \textit{grid}. Method ini menghasilkan keluaran berupa \textit{grid}.
 \item getSolution, yaitu \textit{method} untuk mendapatkan \textit{grid} yang sudah diselesaikan oleh algoritma genetik. \textit{Method} ini menghasilkan keluaran berupa \textit{grid} yang sudah diselesaikan oleh algoritma genetik.
 \item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar.
-\item printPossibleValues(), yaitu \textit{method} untuk mencetak kemungkinan angka-angka yang valid untuk setiap sel di dalam \textit{grid} ke layar.
+\item printPossibleValues(), yaitu \textit{method} untuk mencetak kemungkinan angka-angka yang valid untuk setiap sel di dalam \textit{grid} ke layar. \textit{Method} ini menerima masukan berupa sebuah \textit{array list} yang berisi kemungan angka-angka yang valid untuk setiap sel di dalam \textit{grid}.
 \end{enumerate}
 
 Diagram kelas SolverGenetic dapat dilihat pada Gambar~\ref{fig:diagramkelassolvergenetic}.
@@ -618,6 +621,7 @@ Kelas GUI mempunyai beberapa \textit{method}, yaitu:
 \item solveBacktracking(), yaitu \textit{method} untuk memanggil solver untuk menyelesaikan permainan Calcudoku menggunakan algoritma \textit{backtracking}. 
 \item solveHybridGenetic(), yaitu \textit{method} untuk memanggil solver untuk menyelesaikan permainan Calcudoku menggunakan algoritma \textit{hybrid genetic}.
 \item printGridToScreen(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke GUI.
+\item clearGrid(), yaitu \textit{method} untuk menghapus isi dari semua sel yang ada di dalam \textit{grid} yang akan diselesaikan oleh \textit{solver} sebelum \textit{solver} mencoba menyelesaikan \textit{grid} tersebut.
 \item addCellTextFieldListeners(), yaitu \textit{method} yang berfungsi untuk menambahkan \textit{document listener} untuk semua \textit{text field} yang ada pada GUI setelah \textit{solver} berhasil atau gagal dalam menyelesaikan permainan Calcudoku.
 \item removeCellTextFieldListeners(), yaitu \textit{method} yang berfungsi untuk menghapus \textit{document listener} untuk semua \textit{text field} yang ada pada GUI sebelum \textit{solver} mencoba untuk menyelesaikan permainan Calcudoku, untuk mencegah munculnya pesan peringatan jika ada sel yang kosong atau jika ada angka yang berulang di dalam sebuah baris atau kolom.
 \item moveCursor(JTextField textField), yaitu \textit{method} yang berfungsi untuk pindah dari sebuah \textit{text field} ke \textit{text field} di sebelahnya dengan menggunakan tombol-tombol panah. \textit{Method} ini menerima masukan berupa sebuah \textit{text field}.

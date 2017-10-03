@@ -272,6 +272,7 @@ public class GUI extends JPanel
     public void solveBacktracking()
     {
         removeCellTextFieldListeners();
+        clearGrid();
         Cell[][] solution;
         float startTime = System.nanoTime();
         float endTime;
@@ -323,6 +324,7 @@ public class GUI extends JPanel
         else
         {
             removeCellTextFieldListeners();
+            clearGrid();
             Cell[][] solution;
             float startTime = System.nanoTime();
             float endTime;
@@ -369,6 +371,17 @@ public class GUI extends JPanel
             {
                 String value = Integer.toString(grid[x][y].getValue());
                 textFields[x][y].setText(value);
+            }
+        }
+    }
+    
+    private void clearGrid()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                c.unsetCellValue(i, j);
             }
         }
     }

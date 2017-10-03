@@ -39,15 +39,15 @@ public class Cage
         return cageObjective.matches("\\d+[*+-/=]");
     }
     
-    private int generateTargetNumber(String objectives)
+    private int generateTargetNumber(String objective)
     {
-        return Integer.parseInt(objectives.substring(0, 
-                objectives.length() - 1));
+        return Integer.parseInt(objective.substring(0, 
+                objective.length() - 1));
     }
     
-    private char generateOperator(String objectives)
+    private char generateOperator(String objective)
     {
-        return objectives.charAt(objectives.length() - 1);
+        return objective.charAt(objective.length() - 1);
     }
     
     public void addCell(Cell c)
