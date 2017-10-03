@@ -11,12 +11,12 @@ Masukan untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah \t
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.5]{Gambar/Perancangan/PerancanganInput.png}
+\includegraphics[scale=1]{Gambar/Perancangan/PerancanganInput.png}
 \caption[Contoh \textit{file} masukan.]{Contoh \textit{file} masukan.}
 \label{fig:perancanganmasukan}
 \end{figure}
 
-Adapun rincian dari \textit{file text} masukan tersebut adalah sebagai berikut:
+Adapun rincian dari \textit{file} teks masukan tersebut adalah sebagai berikut:
 
 \begin{enumerate}
 \item Baris pertama berisi ukuran \textit{grid} dan banyaknya \textit{cage} dari teka-teki Calcudoku tersebut. Angka pertama adalah ukuran \textit{grid}, dan angka kedua adalah banyaknya \textit{cage}.
@@ -37,6 +37,79 @@ Keluaran untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah m
 \label{fig:perancangankeluaran}
 \end{figure}
 
+\section{Perancangan Antarmuka}
+\label{sec:perancanganantarmuka}
+
+Antarmuka untuk perangkat lunak ini terdiri dari sebuah \textit{frame} yang berisi sebuah menu \textit{bar} dan GUI dari permainan teka-teki Calcudoku. GUI hanya akan ditampilkan jika perangkat lunak sudah membuka \textit{file} permainan. Jika \textit{file} permainan ditutup, maka GUI juga akan ditutup.
+
+Gambar~\ref{fig:perancangangui1} menunjukkan perancangan GUI sebelum \textit{file} permainan dibuka. Gambar~\ref{fig:perancangangui2} menunjukkan perancangan GUI sesudah \textit{file} permainan dibuka. Gambar~\ref{fig:perancangangui3} menunjukkan perancangan GUI sesudah permainan berdasarkan \textit{file} permainan yang dibuka diselesaikan.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/PerancanganGUI1.png}
+\caption[Perancangan GUI sebelum \textit{file} permainan dibuka.]{Perancangan GUI sebelum membuka \textit{file} permainan}
+\label{fig:perancangangui1}
+\end{figure}
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/PerancanganGUI2.png}
+\caption[Perancangan GUI sesudah \textit{file} permainan dibuka.]{Perancangan GUI sesudah membuka \textit{file} permainan}
+\label{fig:perancangangui2}
+\end{figure}
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/PerancanganGUI3.png}
+\caption[Perancangan GUI sesudah permainan berdasarkan \textit{file} permainan yang dibuka diselesaikan.]{Perancangan GUI sesudah permainan berdasarkan \textit{file} permainan yang dibuka diselesaikan.}
+\label{fig:perancangangui3}
+\end{figure}
+
+Menu \textit{bar} untuk perangkat lunak ini terdiri dari dua menu, yaitu:
+\begin{enumerate}
+\item \textit{File}, yaitu menu yang berisi \textit{item-item} menu yang terkait dengan \textit{file} permainan.
+\item \textit{Solve}, yaitu menu yang berisi \textit{item-item} menu yang terkait dengan \textit{solver}.
+\end{enumerate}
+
+
+Menu \textit{File} mempunyai beberapa menu \textit{item}, yaitu:
+\begin{enumerate}
+\item \textit{Load Puzzle File}, yaitu menu \textit{item} untuk membuka \textit{file} permainan.
+\item \textit{Reset Puzzle}, yaitu menu \textit{item} untuk me-\textit{reset} permainan.
+\item \textit{Close Puzzle File}, yaitu menu \textit{item} untuk menutup \textit{file} permainan.
+\item \textit{Check Puzzle}, yaitu menu \textit{item} untuk memeriksa permainan jika ada masukan yang salah di dalam \textit{grid}.
+\item \textit{Exit}, yaitu menu \textit{item} untuk menutup perangkat lunak.
+\end{enumerate}
+
+Gambar~\ref{fig:perancanganguimenufile} menunjukkan isi dari menu \textit{File}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/PerancanganGUIMenuFile.png}
+\caption[Menu \textit{File}]{Menu \textit{File}}
+\label{fig:perancanganguimenufile}
+\end{figure}
+
+Menu \textit{Solve} mempunyai beberapa menu \textit{item}, yaitu:
+\begin{enumerate}
+\item \textit{Backtracking}, yaitu menu \textit{item} untuk menyelesaikan permainan berdasarkan \textit{file} permainan yang dibuka dengan algoritma \textit{backtracking}.
+\item \textit{Hybrid Genetic}, yaitu menu \textit{item} untuk menyelesaikan permainan berdasarkan \textit{file} permainan yang dibuka dengan algoritma \textit{hybrid genetic}.
+\item \textit{Set Genetic Algorithm Parameters}, yaitu menu \textit{item} untuk mengatur nilai dari parameter-parameter untuk algoritma genetik.
+\end{enumerate}
+
+Gambar~\ref{fig:perancanganguimenusolve} menunjukkan isi dari menu \textit{Solve}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/PerancanganGUIMenuSolve.png}
+\caption[Menu \textit{Solve}]{Menu \textit{Solve}}
+\label{fig:perancanganguimenusolve}
+\end{figure}
 
 \section{Diagram Kelas}
 \label{sec:diagramkelas}
@@ -276,7 +349,7 @@ Kelas SolverHybridGenetic mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
 \item SolverHybridGenetic(Grid grid,  Integer generations, Integer populationSize, Double elitismRate, Double crossoverRate, Double mutationRate), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}, dan parameter-parameter algoritma genetik, yaitu jumlah generasi, jumlah populasi dalam sebuah generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi.
-\item getGrid(), yaitu \textit{method} untuk mendapatkan \textit{grid} yang akan diselesaikan oleh \texit{solver} dengan algoritma \textit{hybrid genetic}.
+\item getGrid(), yaitu \textit{method} untuk mendapatkan \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}.
 \item getSolution(), yaitu \textit{method} untuk mendapatkan \textit{grid} yang sudah diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}.
 \item solve(), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{hybrid genetic}. \textit{Method} ini akan memanggil solver algoritma \textit{rule based}. Jika algoritma \textit{rule based} gagal dalam menyelesaikan teka-teki Calcudoku, maka \textit{method} akan memanggil solver algoritma genetik. \textit{Method} ini menghasilkan keluaran apakah \textit{solver} berhasil menyelesaikan teka-teki Calcudoku atau tidak.
 \item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar. \textit{Method} ini menerima masukan berupa \textit{grid} yang akan dicetak isinya ke layar.
@@ -288,7 +361,7 @@ Diagram kelas SolverHybridGenetic dapat dilihat pada Gambar~\ref{fig:diagramkela
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramKelasSolverHybridGenetic.png}
+\includegraphics[scale=0.3]{Gambar/Perancangan/DiagramKelasSolverHybridGenetic.png}
 \caption[Diagram kelas SolverHybridGenetic.]{Diagram kelas SolverHybridGenetic.}
 \label{fig:diagramkelassolverhg}
 \end{figure}
@@ -416,7 +489,7 @@ Diagram kelas SolverGenetic dapat dilihat pada Gambar~\ref{fig:diagramkelassolve
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.4]{Gambar/Perancangan/DiagramKelasSolverGenetic.png}
+\includegraphics[scale=0.3]{Gambar/Perancangan/DiagramKelasSolverGenetic.png}
 \caption[Diagram kelas SolverGenetic.]{Diagram kelas SolverGenetic.}
 \label{fig:diagramkelassolvergenetic}
 \end{figure}
@@ -549,12 +622,22 @@ Kelas Calcudoku mempunyai beberapa \textit{method}, yaitu:
 \item menuItemExitActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika menu "\textit{Exit}" dipilih. \textit{Method} ini akan mengeluarkan kotak dialog "\textit{Are you sure you want to exit this application}", jika pengguna memilih "\textit{Yes}", maka perangkat lunak akan ditutup.
 \item menuItemBacktrackingActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika menu "\textit{Backtracking}" dijalankan. \textit{Method} ini akan mencoba menyelesaikan permainan berdasarkan \textit{file} permainan yang dibuka dengan algoritma \textit{backtracking}. Jika perangkat lunak tidak sedang membuka \textit{file} permainan, maka akan keluar pesan peringatan "\textit{Puzzle file not loaded}".
 \item menuItemHybridGeneticActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika menu "\textit{Hybrid Genetic}" dijalankan. \textit{Method} ini akan mencoba menyelesaikan permainan berdasarkan \textit{file} permainan yang dibuka dengan algoritma \textit{hybrid genetic}. Jika perangkat lunak tidak sedang membuka \textit{file} permainan, maka akan keluar pesan peringatan "\textit{Puzzle file not loaded}".
-\item menuItemHybridGeneticActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika menu "\textit{Set Genetic Algorithm Parameters}" dijalankan. \textit{Method} ini akan menampilkan \textit{window} baru dimana pengguna bisa mengatur parameter-parameter untuk algoritma genetik dengan mengisi \textit{form} yang disediakan pada \textit{window} tersebut. Jika perangkat lunak tidak sedang membuka \textit{file} permainan, maka akan keluar pesan peringatan "\textit{Puzzle file not loaded}".
+\item menuItemGeneticParametersActionPerformed(ActionEvent evt), yaitu \textit{method} yang akan dijalankan jika menu "\textit{Set Genetic Algorithm Parameters}" dijalankan. \textit{Method} ini akan menampilkan \textit{window} baru dimana pengguna bisa mengatur parameter-parameter untuk algoritma genetik dengan mengisi \textit{form} yang disediakan pada \textit{window} tersebut. Jika perangkat lunak tidak sedang membuka \textit{file} permainan, maka akan keluar pesan peringatan "\textit{Puzzle file not loaded}".
 \item loadPuzzleFile(File puzzleFile), yaitu \textit{method} yang menginisialisasi sebuah instansiasi dari kelas GUI berdasarkan \textit{file} permainan yang dibuka. \textit{Method} ini menerima masukan berupa sebuah \textit{file} permainan. Jika perangkat lunak gagal dalam membuka \textit{file} permainan, maka akan keluar pesan peringatan "\textit{Invalid puzzle file}".
 \item resetFrame(), yaitu \textit{method} untuk me-\textit{reset frame} setelah menutup \textit{file} permainan. \textit{Method} ini akan menutup instansiasi kelas GUI dan menghapus isi dari variabel c dalam \textit{frame}.
 \item clearVariables(), yaitu \textit{method} untuk menghapus nilai dari variabel-variabel puzzleFile, size, cageCells, numberOfCages, dan cageObjectives dalam \textit{frame}.
 \item destroyFrame(), yaitu \textit{method} untuk menutup \textit{frame} saat menutup perangkat lunak. \textit{Method} ini juga akan me-\textit{reset frame} dan menghapus nilai dari semua variabel dalam \textit{frame}.
 \end{enumerate}
+
+Diagram kelas Calcudoku dapat dilihat pada Gambar~\ref{fig:diagramkelascalcudoku}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramKelasCalcudoku.png}
+\caption[Diagram kelas Calcudoku.]{Diagram kelas Calcudoku.}
+\label{fig:diagramkelascalcudoku}
+\end{figure}
 
 \subsection{Kelas WindowListener}
 \label{sec:kelaswindowlistener}
@@ -567,6 +650,16 @@ Kelas WindowListener hanya mempunyai satu atribut, yaitu frame. frame adalah seb
 \item windowClosed(WindowEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas WindowAdapter. \textit{Method} ini berfungsi untuk menutup perangkat lunak setelah semua komponen GUI ditutup.
 \end{enumerate}
 
+Diagram kelas WindowListener dapat dilihat pada Gambar~\ref{fig:diagramkelaswindowlistener}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramKelasWindowListener.png}
+\caption[Diagram kelas WindowListener.]{Diagram kelas WindowListener.}
+\label{fig:diagramkelaswindowlistener}
+\end{figure}
+
 \subsection{Kelas PuzzleFileFilter}
 \label{sec:kelaspuzzlefilefilter}
 
@@ -576,6 +669,16 @@ Kelas PuzzleFileFilter tidak mempunyai atribut, tetapi memiliki beberapa \textit
 \item accept(File puzzleFile), yaitu \textit{method} yang meng-\textit{override method} dari kelas FileFilter. \textit{Method} ini berfungsi untuk memeriksa apakah \textit{file} yang akan dibuka memenuhi syarat atau tidak. \textit{File} yang memenuhi syarat adalah \textit{file} teks.
 \item getDescription(), yaitu \textit{method} yang meng-\textit{override method} dari kelas FileFilter. \textit{Method} ini berfungsi untuk menampilkan deskripsi \textit{file} yang memenuhi syarat.
 \end{enumerate}
+
+Diagram kelas PuzzleFileFilter dapat dilihat pada Gambar~\ref{fig:diagramkelaspuzzlefilefilter}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramKelasPuzzleFileFilter.png}
+\caption[Diagram kelas PuzzleFileFilter.]{Diagram kelas PuzzleFileFilter.}
+\label{fig:diagramkelaspuzzlefilefilter}
+\end{figure}
 
 \subsection{Kelas GUI}
 \label{sec:kelasgui}
@@ -627,6 +730,16 @@ Kelas GUI mempunyai beberapa \textit{method}, yaitu:
 \item moveCursor(JTextField textField), yaitu \textit{method} yang berfungsi untuk pindah dari sebuah \textit{text field} ke \textit{text field} di sebelahnya dengan menggunakan tombol-tombol panah. \textit{Method} ini menerima masukan berupa sebuah \textit{text field}.
 \end{enumerate}
 
+Diagram kelas GUI dapat dilihat pada Gambar~\ref{fig:diagramkelasgui}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.3]{Gambar/Perancangan/DiagramKelasGUI.png}
+\caption[Diagram kelas GUI.]{Diagram kelas GUI.}
+\label{fig:diagramkelasgui}
+\end{figure}
+
 \subsection{Kelas CellKeyListener}
 \label{sec:kelascellkeylistener}
 
@@ -638,6 +751,16 @@ Kelas CellKeyListener hanya mempunyai satu atribut, yaitu gui. gui adalah sebuah
 \item keyTyped(keyEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas KeyListener. \textit{Method} ini berfungsi agar \textit{text field} hanya bisa diisi oleh sebuah angka.
 \item keyReleased(keyEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas KeyListener. \textit{Method} ini kosong.
 \end{enumerate}
+
+Diagram kelas CellKeyListener dapat dilihat pada Gambar~\ref{fig:diagramkelascellkeylistener}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramKelasCellKeyListener.png}
+\caption[Diagram kelas CellKeyListener.]{Diagram kelas CellKeyListener.}
+\label{fig:diagramkelascellkeylistener}
+\end{figure}
 
 \subsection{Kelas PopupMenuListener}
 \label{sec:kelaspopupmenulistener}
@@ -655,6 +778,16 @@ Kelas PopupMenuListener mempunyai beberapa \textit{method}, yaitu:
 \item PopupMenuListener(JTextField textField, int number), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa sebuah \textit{text field} dan sebuah angka.
 \item actionPerformed(ActionEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas ActionListener. \textit{Method} ini berfungsi untuk mengisi sebuah \textit{text field} dengan angka yang dipilih.
 \end{enumerate}
+
+Diagram kelas PopupMenuListener dapat dilihat pada Gambar~\ref{fig:diagramkelaspopupmenulistener}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramKelasPopupMenuListener.png}
+\caption[Diagram kelas PopupMenuListener.]{Diagram kelas PopupMenuListener.}
+\label{fig:diagramkelaspopupmenulistener}
+\end{figure}
 
 \subsection{Kelas CellTextFieldListener}
 \label{sec:kelascelltextfieldlistener}
@@ -676,6 +809,16 @@ Kelas CellTextFieldListener mempunyai beberapa \textit{method}, yaitu:
 \item removeUpdate(DocumentEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas DocumentEvent. \textit{Method} ini berfungsi untuk menghapus isi sebuah sel pada kelas Grid jika angka dalam sel pada GUI dihapus.
 \item changeUpdate(DocumentEvent e), yaitu \textit{method} yang meng-\textit{override method} dari kelas DocumentEvent. \textit{Method} ini berfungsi untuk menghapus isi sebuah sel pada kelas Grid dan mengisi sebuah sel pada kelas Grid dengan angka yang baru yang diisikan ke dalam sel pada GUI jika terjadi perubahan angka yang diisikan ke dalam sel pada GUI.
 \end{enumerate}
+
+Diagram kelas CellTextFieldListener dapat dilihat pada Gambar~\ref{fig:diagramkelascelltextfieldlistener}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramKelasCellTextFieldListener.png}
+\caption[Diagram kelas CellTextFieldListener.]{Diagram kelas CellTextFieldListner.}
+\label{fig:diagramkelascelltextfieldlistener}
+\end{figure}
 
 \subsection{Kelas GeneticParameters}
 \label{sec:kelasgeneticparamater}
@@ -710,3 +853,13 @@ Kelas GeneticParameters mempunyai beberapa \textit{method}, yaitu:
 \item buttonCancelActionPerformed(ActionEventevt), yaitu \textit{method} yang akan dijalankan jika tombol "\textit{Cancel}" ditekan. \textit{Method} ini akan membatalkan perubahan nilai-nilai parameter untuk algoritma genetik.
 \item destroyFrame(), yaitu \textit{method} untuk menutup \textit{form}.
 \end{enumerate}
+
+Diagram kelas GeneticParameters dapat dilihat pada Gambar~\ref{fig:diagramkelasgeneticparameters}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/Perancangan/DiagramKelasGeneticParameters.png}
+\caption[Diagram kelas GeneticParameters.]{Diagram kelas GeneticParameters.}
+\label{fig:diagramkelasgeneticparameters}
+\end{figure}
