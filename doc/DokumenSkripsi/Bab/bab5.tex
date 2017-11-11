@@ -141,9 +141,9 @@ Jika salah satu dari menu \textit{item} tersebut dipilih sebelum membuka \textit
 \label{fig:puzzlefilenotloaded}
 \end{figure}
 
-\item Memilih menu \textit{item} "\textit{Load Puzzle File}".
+\item Membuka \textit{file} permainan
 
-Jika menu tersebut dipilih maka akan keluar kotak pemilihan \textit{file} permainan, seperti dapat dilihat pada Gambar~\ref{fig:filechooser}. Pilihlah sebuah \textit{file} permainan yang ingin dibuka. Tekan tombol "OK" untuk membuka \textit{file} permainan tersebut, atau tekan tombol "\textit{Cancel}" untuk membatalkan proses membuka \textit{file} permainan.
+Pemain dapat membuka \textit{file} permainan pengan memilih menu \textit{item} "\textit{Load Puzzle File}" dalam menu "\textit{File}". Jika menu tersebut dipilih maka akan keluar kotak pemilihan \textit{file} permainan, seperti dapat dilihat pada Gambar~\ref{fig:filechooser}. Pilihlah sebuah \textit{file} permainan yang ingin dibuka. Tekan tombol "OK" untuk membuka \textit{file} permainan tersebut, atau tekan tombol "\textit{Cancel}" untuk membatalkan proses membuka \textit{file} permainan.
 
 \begin{figure}
 \centering
@@ -213,7 +213,7 @@ Jika pemain berhasil menyelesaikan permainan dengan usahanya sendiri, maka kotak
 
 \item Me-\textit{reset} permainan
 
-Pemain me-\textit{reset} permainan dengan memilih menu \textit{item} "\textit{Reset Puzzle}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to reset this puzzle?}, seperti dapat dilihat pada Gambar~\ref{fig:resetpuzzle}. Tekan tombol "\textit{Yes}" untuk me-\textit{reset} permainan, atau tekan tombol "\textit{No}" untuk membatalkan proses \textit{reset} permainan.
+Pemain dapat me-\textit{reset} permainan dengan memilih menu \textit{item} "\textit{Reset Puzzle}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to reset this puzzle?}, seperti dapat dilihat pada Gambar~\ref{fig:resetpuzzle}. Tekan tombol "\textit{Yes}" untuk me-\textit{reset} permainan, atau tekan tombol "\textit{No}" untuk membatalkan proses \textit{reset} permainan.
 
 \begin{figure}
 \centering
@@ -257,7 +257,7 @@ Jika nilai-nilai dalam sebuah \textit{cage} tidak mencapai nilai tujuan yang tel
 \label{fig:cagedonotreachtargetnumber}
 \end{figure}
 
-Tetapi, pemain juga dapat meminta perangkat lunak untuk memeriksa permainan jika ada nilai yang salah di dalam \textit{grid} secara manual, dengan memilih menu \textit{item} "\textit{Check Puzzle}" dalam menu "\textit{File}".
+Pemain juga dapat meminta perangkat lunak untuk memeriksa permainan jika ada nilai yang salah di dalam \textit{grid} secara manual, dengan memilih menu \textit{item} "\textit{Check Puzzle}" dalam menu "\textit{File}".
 
 Jika menu \textit{item} ini dijalankan, dan ternyata ada nilai yang salah di dalam \textit{grid}, maka akan muncul kotak informasi "\textit{There are cells with incorrect values in the grid}", seperti dapat dilihat pada Gambar~\ref{fig:incorrectvalues}.
 
@@ -279,38 +279,484 @@ Jika menu \textit{item} ini dijalankan dan ternyata ada sel yang masih kosong, m
 \label{fig:emptycells}
 \end{figure}
 
+\item Menyelesaikan permainan dengan menggunakan algoritma \textit{backtracking}
+
+Pemain dapat meminta perangkat lunak untuk menyelesaikan permainan dengan salah satu dari dua \textit{solver} yang disediakan. Salah satu dari kedua \textit{solver} tersebut adalah \textit{solver} dengan algoritma \textit{backtracking}. Untuk menggunakan \textit{solver} ini, pemain memilih menu \textit{item} "\textit{Backtracking}" dalam menu "\textit{Solve}".
+
+Jika \textit{solver} ini berhasil dalam menyelesaikan permainan, maka akan muncul kotak informasi "\textit{The backtracking algorithm has successfully solved the puzzle}", dan waktu yang dibutuhkan oleh \textit{solver} untuk menyelesaikan permainan tersebut, seperti dapat dilihat pada Gambar~\ref{fig:backtrackingsuccess}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/BacktrackingSuccess.png}
+\caption[Pesan informasi "\textit{The backtracking algorithm has successfully solved the puzzle}"]{Pesan informasi "\textit{The backtracking algorithm has successfully solved the puzzle}"}
+\label{fig:backtrackingsuccess}
+\end{figure}
+
+Jika gagal, maka akan muncul kotak informasi "\textit{The backtracking algorithm has failed to solve the puzzle}", dan waktu yang dibutuhkan oleh \textit{solver} untuk menemukan bahwa tidak ada solusi untuk permainan tersebut, seperti dapat dilihat pada Gambar~\ref{fig:backtrackingfail}
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/BacktrackingFail.png}
+\caption[Pesan informasi "\textit{The backtracking algorithm has failed to solve the puzzle}"]{Pesan informasi "\textit{The backtracking algorithm has failed to solve the puzzle}"}
+\label{fig:backtrackingfail}
+\end{figure}
+
+\clearpage
+
+\item Menyelesaikan permainan dengan menggunakan algoritma \textit{hybrid genetic}
+
+Pemain dapat meminta perangkat lunak untuk menyelesaikan permainan dengan salah satu dari dua \textit{solver} yang disediakan. Salah satu dari kedua \textit{solver} tersebut adalah \textit{solver} dengan algoritma \textit{hybrid genetic}. Untuk menggunakan \textit{solver} ini, pemain memilih menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}". Jika nilai untuk parameter-parameter algoritma genetik belum ditentukan, maka akan keluar pesan error "\textit{Genetic algorithm parameters have not been set}", seperti dapat dilihat pada Gambar~\ref{fig:gaparametershavenotbeenset}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/GAParametersHaveNotBeenSet.png}
+\caption[Pesan informasi "\textit{Genetic algorithm parameters have not been set}"]{Pesan informasi "\textit{Genetic algorithm parameters have not been set}"}
+\label{fig:gaparametershavenotbeenset}
+\end{figure}
+
+Jika \textit{solver} ini berhasil dalam menyelesaikan permainan, maka akan muncul kotak informasi "\textit{The hybrid genetic algorithm has successfully solved the puzzle}", dan waktu yang dibutuhkan oleh \textit{solver} untuk menyelesaikan permainan tersebut, seperti dapat dilihat pada Gambar~\ref{fig:hybridgeneticsuccess}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/HybridGeneticSuccess.png}
+\caption[Pesan informasi "\textit{The hybrid genetic algorithm has successfully solved the puzzle}"]{Pesan informasi "\textit{The hybrid genetic algorithm has successfully solved the puzzle}"}
+\label{fig:hybridgeneticsuccess}
+\end{figure}
+
+Jika gagal, maka akan muncul kotak informasi "\textit{The hybrid genetic algorithm has failed to solve the puzzle}", dan waktu yang dibutuhkan oleh \textit{solver} untuk menemukan bahwa tidak ada solusi untuk permainan tersebut, seperti dapat dilihat pada Gambar~\ref{fig:hybridgeneticfail}
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/HybridGeneticFail.png}
+\caption[Pesan informasi "\textit{The hybrid genetic algorithm has failed to solve the puzzle}"]{Pesan informasi "\textit{The hybrid genetic algorithm has failed to solve the puzzle}"}
+\label{fig:hybridgeneticfail}
+\end{figure}
+
 \item Mengatur nilai untuk parameter-parameter algoritma genetik
+
+Pemain dapat mengatur sendiri nilai untuk parameter-parameter algoritma genetik dengan memilih menu \textit{item} "\textit{Set Genetic Algorithm Parameters}" dalam menu "\textit{Solve}". Akan muncul sebuah \textit{form} seperti dapat dilihat pada Gambar~\ref{fig:setgaparameters}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/SetGAParameters.png}
+\caption[\textit{Form} untuk mengatur nilai untuk parameter-parameter algoritma genetik]{\textit{Form} untuk mengatur nilai untuk parameter-parameter algoritma genetik}
+\label{fig:setgaparameters}
+\end{figure}
+
+Isilah \textit{form} tersebut dengan nilai yang diinginkan untuk setiap parameter algoritma genetik. Tekan tombol "\textit{OK}" untuk menyimpan nilai-nilai telah diisikan ke dalam \textit{form}, atau tekan tombol "\textit{Cancel}" untuk membatalkan proses mengatur nilai untuk parameter-parameter genetik. Jika angka yang dimasukkan ke dalam \textit{form} tidak \textit{valid}, maka akan muncul pesan error "\textit{Invalid number format}", seperti dapat dilihat pada Gambar~\ref{fig:invalidnumberformat}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/InvalidNumberFormat.png}
+\caption[Pesan error "\textit{Invalid number format}"]{Pesan error "\textit{Invalid number format}"}
+\label{fig:invalidnumberformat}
+\end{figure}
+
+Jika jumlah dari tingkat \textit{elitism}, tingkat mutasi, dan tingkat kawin silang kurang dari 100\%, maka beberapa kromosom dari generasi sebelumnya akan diambil secara acak dan dimasukkan ke dalam generasi berikutnya sehingga jumlah kromosom dalam generasi berikutnya tetap sama. Jika jumlah dari tingkat \textit{elitism}, tingkat mutasi, dan tingkat kawin silang lebih dari 100\%, maka beberapa kromosom dari generasi berikutnya akan dibuang secara acak sehingga jumlah kromosom dalam generasi berikutnya tetap sama. 
+
+\item Menutup \textit{file} permainan
+
+Pemain dapat menutup \textit{file} permainan dengan memilih menu \textit{item} "\textit{Close Puzzle File}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to close this puzzle file?}, seperti dapat dilihat pada Gambar~\ref{fig:closepuzzlefile}. Tekan tombol "\textit{Yes}" untuk menutup \textit{file} permainan, atau tekan tombol "\textit{No}" untuk membatalkan proses menutup \textit{file} permainan.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/ClosePuzzleFile.png}
+\caption[Kotak dialog "\textit{Are you sure you want to close this puzzle file?}"]{Kotak dialog "\textit{Are you sure you want to close this puzzle file?}"}
+\label{fig:closepuzzlefile}
+\end{figure}
+
+\item Menutup perangkat lunak
+
+Pemain dapat menutup perangkat lunak dengan memilih menu \textit{item} "\textit{Exit}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to exit the application?}, seperti dapat dilihat pada Gambar~\ref{fig:exitapplication}. Tekan tombol "\textit{Yes}" untuk menutup perangkat lunak, atau tekan tombol "\textit{No}" untuk membatalkan proses menutup perangkat lunak.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/Exit.png}
+\caption[Kotak dialog "\textit{Are you sure you want to exit the application?}"]{Kotak dialog "\textit{Are you sure you want to exit the application?}"}
+\label{fig:exitapplication}
+\end{figure}
 
 \end{enumerate}
 
 \section{Pengujian Keakuratan}
 \label{sec:pengujiankeakuratan}
 
-Pengujian keakuratan dilakukan untuk memastikan bahwa permainan yang ditampilkan oleh perangkat lunak sesuai dengan \textit{file} permainan yang dibuka.
+Pengujian keakuratan dilakukan untuk memastikan bahwa permainan yang ditampilkan oleh perangkat lunak sesuai dengan \textit{file} permainan yang dibuka. Skenario-skenario yang akan dilakukan dalam pengujian keakuratan untuk perangkat lunak ini adalah:
 
-\section{Pengujian Eksperimental}
-\label{sec:pengujianeksperimental}
+\begin{enumerate}
 
-Dalam kasus ini, pengujian eksperimental dilakukan dengan melakukan pengujian keberhasilan dan kecepatan dari \textit{solver} dengan algoritma \textit{hybrid genetic} jika nilai parameter-parameter dari algoritma genetik diubah dari nilai \textit{default}-nya. Tabel~\ref{tab:nilaidefaultparameterga} menunjukkan nilai \textit{default} dari parameter-parameter algoritma genetik.
+\item Keakuratan dalam menerjemahkan isi \textit{file} masukan menjadi keluaran berupa GUI
+
+Untuk menguji keakuratan perangkat lunak dalam menerjemahkan isi \textit{file} masukan menjadi keluaran berupa GUI, maka perangkat lunak akan diuji dengan membuka sebuah \textit{file} masukan, dan melihat apakah keluarannya, yaitu GUI-nya sesuai dengan \textit{file} masukan yang dibuka. 
+
+Dalam kasus ini, perangkat lunak akan membuka \textit{file} masukan yang isinya dapat dilihat pada Gambar~\ref{fig:keakurataninput}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=1]{Gambar/ImplementasiPengujian/Input.png}
+\caption[\textit{File} masukan untuk pengujian keakuratan]{\textit{File} masukan untuk pengujian keakuratan}
+\label{fig:keakurataninput}
+\end{figure}
+
+Perangkat lunak ini lalu menerjemahkan isi \textit{file} masukan menjadi keluaran berupa GUI yang dapat dilihat pada Gambar~\ref{fig:keakuratanoutput}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/Output1.png}
+\caption[GUI permainan berdasarkan \textit{file} masukan yang dapat dilihat pada Gambar~\ref{fig:keakurataninput}]{GUI permainan berdasarkan \textit{file} masukan yang dapat dilihat pada Gambar~\ref{fig:keakurataninput}}
+\label{fig:keakuratanoutput}
+\end{figure}
+
+Pada GUI ini, petunjuk, yaitu angka tujuan dan operasi matematika yang ditentukan untuk sebuah \textit{cage}, ditampilkan sebagai \textit{tooltip} yang akan muncul saat sel-sel yang berada di dalam sebuah \textit{cage} di-\textit{hover}. Setiap sel memilki \textit{tooltip} yang berisi petunjuk sesuai dengan \textit{cage} tempat sel tersebut berada. 
+
+Dalam perangkat lunak ini, setiap sel sudah memiliki \textit{tooltip} sesuai dengan \textit{cage} tempat sel tersebut berada. 
+
+Sel-sel dalam \textit{cage} 1, yaitu sel pada baris ke-1 dan kolom ke-1, dan sel pada baris ke-2 dan kolom ke-1, memiliki \textit{tooltip} "3+". Sel dalam \textit{cage} 2, yaitu sel pada baris ke-1 dan kolom ke-2, memiliki \textit{tooltip} "1=". Sel-sel dalam \textit{cage} 3, yaitu sel pada baris ke-1 dan kolom ke-3, sel pada baris ke-2 dan kolom ke-2, dan sel pada baris ke-2 dan kolom ke-3, memiliki \textit{tooltip} "8+". Sel dalam \textit{cage} 4, yaitu sel pada baris ke-3 dan kolom ke-1, memiliki \textit{tooltip} "3=". Sel-sel dalam \textit{cage} 5, yaitu sel pada baris ke-3 dan kolom ke-2, dan sel pada baris ke-3 dan kolom ke-3, memiliki \textit{tooltip} "3+".
+
+\textit{Grid} dibatasi oleh garis tebal, setiap \textit{cage} dibatasi oleh garis tebal, dua sel yang berada di dalam dua \textit{cage} yang berbeda dibatasi oleh garis tebal, dan dua sel yang berada di dalam \textit{cage} yang sama dibatasi oleh garis tipis. 
+
+Dalam perangkat lunak ini, \textit{grid} dan setiap sel sudah memiliki garis pembatas yang tepat. \textit{Grid} dibatasi oleh garis tebal.
+
+Pada baris ke-1, sel pada kolom ke-1 dan kolom ke-2 dibatasi oleh garis tebal karena kedua sel tersebut berada dalam dua \textit{cage} yang berbeda, sel pada kolom ke-2 dan kolom ke-3 dibatasi oleh garis tebal karena kedua sel tersebut berada dalam dua \textit{cage} yang berbeda. Pada baris ke-2, sel pada kolom ke-1 dan kolom ke-2 dibatasi oleh garis tebal karena kedua sel tersebut berada dalam dua \textit{cage} yang berbeda, sel pada kolom ke-2 dan kolom ke-3 dibatasi oleh garis tipis karena kedua sel tersebut berada dalam dua \textit{cage} yang sama. Pada baris ke-3, sel pada kolom ke-1 dan kolom ke-2 dibatasi oleh garis tebal karena kedua sel tersebut berada dalam dua \textit{cage} yang berbeda, sel pada kolom ke-2 dan kolom ke-3 dibatasi oleh garis tipis karena kedua sel tersebut berada dalam dua \textit{cage} yang sama.
+
+Pada kolom ke-1, sel pada baris ke-1 dan baris ke-2 dibatasi oleh garis tips karena kedua sel tersebut berada dalam dua \textit{cage} yang sama, sel pada baris ke-2 dan baris ke-3 dibatasi oleh garis tebal karena kedua sel tersebut berada dalam dua \textit{cage} yang berbeda.Pada kolom ke-2, sel pada baris ke-1 dan baris ke-2 dibatasi oleh garis tebal karena kedua sel tersebut berada dalam dua \textit{cage} yang berbeda, sel pada baris ke-2 dan baris ke-3 dibatasi oleh garis tebal karena kedua sel tersebut berada dalam dua \textit{cage} yang berbeda. Pada kolom ke-3, sel pada baris ke-1 dan baris ke-2 dibatasi oleh garis tipis karena kedua sel tersebut berada dalam dua \textit{cage} yang sama, sel pada baris ke-2 dan baris ke-3 dibatasi oleh garis tebal karena kedua sel tersebut berada dalam dua \textit{cage} yang berbeda.
+
+\item Keakuratan dalam menampilkan pesan informasi pada waktunya.
+
+Untuk menguji keakuratan perangkat lunak dalam menampilkan pesan informasi pada waktunya, maka perangkat lunak harus diuji dengan menyelesaikan sebuah permainan, dan melihat apa kotak informasi ditampilkan pada waktunya atau tidak.
+
+Dalam kasus ini, permainan berdasarkan \textit{file} yang isinya ditampilkan pada Gambar~\ref{fig:keakurataninput} akan diselesaikan.
+
+\textit{Cage} 2, yang hanya berukuran satu sel yang terletak pada baris ke-1 dan kolom ke-2, dan memiliki petunjuk "1\begin{math}=\end{math}". Isilah sel tersebut dengan angka 2. Karena 2 bukan angka tujuan dari \textit{cage} tersebut, maka pesan informasi "\textit{Values of cells in the cage do not reach the target number}" seperti yang dapat dilihat pada Gambar~\ref{fig:cagedonotreachtargetnumber} akan muncul. Hapuslah angka 2 dari sel tersebut, dan isilah dengan angka 1, yang merupakan angka tujuan dari \textit{cage} tersebut. 
+
+Isilah sel pada baris ke-1 dan kolom ke-1 dengan angka 1. Karena ada angka yang berulang dalam satu baris, maka pesan informasi "\textit{Row has duplicate numbers}" seperti yang dapat dilihat pada Gambar~\ref{fig:rowduplicate} akan muncul. Hapuslah angka 1 dari sel tersebut. Sekarang isilah sel pada baris ke-1 dan kolom ke-1 dengan angka 1. Karena ada angka yang berulang dalam satu baris, maka pesan informasi "\textit{Row has duplicate numbers}" seperti yang dapat dilihat pada Gambar~\ref{fig:rowduplicate} akan muncul. Hapuslah angka 1 dari sel tersebut.
+
+Isilah sel pada baris ke-2 dan kolom ke-2 dengan angka 1. Karena ada angka yang berulang dalam satu kolom, maka pesan informasi "\textit{Column has duplicate numbers}" seperti yang dapat dilihat pada Gambar~\ref{fig:columnduplicate} akan muncul. Hapuslah angka 1 dari sel tersebut.
+
+Selesaikan permainan ini dengan mengisi sel-sel lainnya dengan angka yang benar. Solusi dari permainan ini dapat dilihat pada Gambar~\ref{fig:keakuratansolusi}.
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.5]{Gambar/ImplementasiPengujian/Output2.png}
+\caption[Solusi untuk permainan berdasarkan \textit{file} masukan yang dapat dilihat pada Gambar~\ref{fig:keakurataninput}]{Solusi untuk permainan berdasarkan \textit{file} masukan yang dapat dilihat pada Gambar~\ref{fig:keakurataninput}}
+\label{fig:keakuratansolusi}
+\end{figure}
+
+Setelah mengisi seluruh sel di dalam \textit{grid} sesuai dengan solusi tersebut, maka pesan informasi "\textit{Congratulations, you have successfully solved the puzzle}" seperti yang dapat dilihat pada Gambar~\ref{fig:congratulations} akan muncul.
+
+Perangkat lunak ini telah berhasil memunculkan pesan informasi pada waktunya.
+
+\end{enumerate}
+
+\section{Pengujian Algoritma \textit{Backtracking}}
+\label{sec:pengujianbacktracking}
+
+Pengujian algoritma \textit{backtracking} untuk Calcudoku dilakukan untuk mengetahui keberhasilan dan kecepatan algoritma \textit{backtracking} dalam menyelesaikan permainan Calcudoku.
 
 \begin{table}
 \centering
 \captionsetup{justification=centering}
-\caption[Nilai \textit{default} dari parameter-parameter algoritma genetik]{Nilai \textit{default} dari parameter-parameter algoritma genetik}
-\begin{tabular}{| l | l |}
+\caption[Hasil pengujian algoritma \textit{backtracking} untuk Calcudoku]{Hasil pengujian algoritma \textit{backtracking} untuk Calcudoku}
+\begin{tabular}{| l | l | l |}
 \hline
-Parameter & Nilai \\
+Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
 \hline \hline
-Generasi & 1000 \\
+\begin{math}4 \times 4\end{math} & 100\% & 0.067 detik \\
 \hline
-Populasi & 1000 \\
+\begin{math}5 \times 5\end{math} & 100\% & 0.701 detik \\
 \hline
-Tingkat \textit{Elitism} & 5\% \\
+\begin{math}6 \times 6\end{math} & 100\% & 13.84 detik \\
 \hline
-Tingkat Kawin Silang & 90\% \\
+\begin{math}7 \times 7\end{math} & 100\% & 482.653 detik \\
 \hline
-Tingkat Mutasi & 5\% \\
+\begin{math}8 \times 8\end{math} & 100\% & 2134.655 detik \\
 \hline
 \end{tabular}
-\label{tab:nilaidefaultparameterga}
+\label{tab:pengujianbt}
 \end{table}
+
+Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianbt}, algoritma \textit{backtracking} dapat menyelesaikan semua permainan yang diujikan. Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan untuk algoritma \textit{backtracking} untuk menyelesaikan permainan semakin lama.
+
+\section{Pengujian dan Eksperimen Algoritma \textit{Hybrid Genetic}}
+\label{sec:pengujianhybridgenetic}
+
+Pengujian algoritma \textit{hybrid genetic} untuk Calcudoku dilakukan untuk mengetahui keberhasilan dan kecepatan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan Calcudoku.
+
+Pada algoritma \textit{backtracking} tidak ada parameter yang nilainya dapat diubah, sedangkan pada algoritma \textit{hybrid genetic}, nilai dari parameter-parameter untuk algoritma genetik dapat diubah. Tidak ada nilai \textit{default} untuk parameter-parameter dari algoritma genetik ini. Nilai dari parameter-parameter tersebut harus diisi sendiri oleh pemain.
+
+Dalam kasus ini, pengujian eksperimental dilakukan dengan melakukan pengujian keberhasilan dan kecepatan dari \textit{solver} dengan algoritma \textit{hybrid genetic} dengan mengatur nilai dari parameter-parameter dari algoritma genetik dengan nilai yang berbeda-beda untuk setiap percobaan.
+
+Terdapat 16 skenario yang dilakukan untuk percobaan ini. Nilai untuk parameter-parameter untuk algoritma genetik untuk setiap percobaan yang dilakukan dapat dilihat pada Tabel~\ref{tab:nilaiparameterhg}.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Nilai untuk parameter-parameter algoritma genetik untuk setiap percobaan yang dilakukan]{Nilai untuk parameter-parameter algoritma genetik untuk setiap percobaan yang dilakukan}
+\begin{tabular}{| l | l | l | l | l | l |}
+\hline
+Skenario & Populasi & Generasi & \textit{Elitism} & Mutasi & Kawin Silang  \\
+\hline \hline
+1 & 1000 & 100 & 10\% & 10\% & 80\% \\
+\hline
+2 & 1000 & 100 & 5\% & 10\% & 85\% \\
+\hline
+3 & 1000 & 100 & 10\% & 5\% & 85\% \\
+\hline
+4 & 1000 & 100  & 5\% & 5\% & 90\% \\
+\hline
+5 & 100 & 100 & 10\% & 10\% & 80\% \\
+\hline
+6 & 100 & 100 & 5\% & 10\% & 85\% \\
+\hline
+7 & 100 & 100 & 10\% & 5\% & 85\% \\
+\hline
+8 & 100 & 100 & 5\% & 5\% & 90\% \\
+\hline
+9 & 1000 & 10 & 10\% & 10\% & 80\% \\
+\hline
+10 & 1000 & 10 & 5\% & 10\% & 85\% \\
+\hline
+11 & 1000 & 10 & 10\% & 5\% & 85\% \\
+\hline
+12 & 1000 & 10  & 5\% & 5\% & 90\% \\
+\hline
+13 & 100 & 10 & 10\% & 10\% & 80\% \\
+\hline
+14 & 100 & 10 & 5\% & 10\% & 85\% \\
+\hline
+15 & 100 & 10 & 10\% & 5\% & 85\% \\
+\hline
+16 & 100 & 10 & 5\% & 5\% & 90\% \\
+\hline
+\end{tabular}
+\label{tab:nilaiparameterhg}
+\end{table}
+
+\subsection{Skenario 1}
+\label{sec:skenario1}
+
+Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianhg1}, algoritma \textit{hybrid genetic} berhasil menyelesaikan semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}4 \times 4\end{math}, 42\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}5 \times 5\end{math}, tetapi gagal dalam menyelsaikan permainan yang diujikan dengan ukuran \textit{grid} yang lebih besar daripada \begin{math}5 \times 5\end{math}. Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan untuk algoritma \textit{backtracking} untuk menyelesaikan permainan semakin lama.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 1)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 1)}
+\begin{tabular}{| l | l | l |}
+\hline
+Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 100\% & 3.579 detik \\
+\hline
+\begin{math}5 \times 5\end{math} & 42\% & 8.389 detik \\
+\hline
+\begin{math}6 \times 6\end{math} & 0\% & - \\
+\hline
+\begin{math}7 \times 7\end{math} & 0\% & - \\
+\hline
+\begin{math}8 \times 8\end{math} & 0\% & - \\
+\hline
+\end{tabular}
+\label{tab:pengujianhg1}
+\end{table}
+
+\subsection{Skenario 2}
+\label{sec:skenario2}
+
+Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianhg2}, algoritma \textit{hybrid genetic} berhasil menyelesaikan semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}4 \times 4\end{math}, 42\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}5 \times 5\end{math}, tetapi gagal dalam menyelsaikan permainan yang diujikan dengan ukuran \textit{grid} yang lebih besar daripada \begin{math}5 \times 5\end{math}. Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan untuk algoritma \textit{backtracking} untuk menyelesaikan permainan semakin lama.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 2)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 2)}
+\begin{tabular}{| l | l | l |}
+\hline
+Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 100\% & 4.002 detik \\
+\hline
+\begin{math}5 \times 5\end{math} & 42\% & 9.258 detik \\
+\hline
+\begin{math}6 \times 6\end{math} & 0\% & - \\
+\hline
+\begin{math}7 \times 7\end{math} & 0\% & - \\
+\hline
+\begin{math}8 \times 8\end{math} & 0\% & - \\
+\hline
+\end{tabular}
+\label{tab:pengujianhg2}
+\end{table}
+
+\subsection{Skenario 3}
+\label{sec:skenario3}
+
+Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianhg3}, algoritma \textit{hybrid genetic} berhasil menyelesaikan semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}4 \times 4\end{math}, 42\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}5 \times 5\end{math}, tetapi gagal dalam menyelsaikan permainan yang diujikan dengan ukuran \textit{grid} yang lebih besar daripada \begin{math}5 \times 5\end{math}. Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan untuk algoritma \textit{backtracking} untuk menyelesaikan permainan semakin lama.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 3)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 3)}
+\begin{tabular}{| l | l | l |}
+\hline
+Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 100\% & 3.751 detik \\
+\hline
+\begin{math}5 \times 5\end{math} & 42\% & 8.806 detik \\
+\hline
+\begin{math}6 \times 6\end{math} & 0\% & - \\
+\hline
+\begin{math}7 \times 7\end{math} & 0\% & - \\
+\hline
+\begin{math}8 \times 8\end{math} & 0\% & - \\
+\hline
+\end{tabular}
+\label{tab:pengujianhg3}
+\end{table}
+
+\subsection{Skenario 4}
+\label{sec:skenario4}
+
+Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianhg4}, algoritma \textit{hybrid genetic} berhasil menyelesaikan semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}4 \times 4\end{math}, 42\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}5 \times 5\end{math}, tetapi gagal dalam menyelsaikan permainan yang diujikan dengan ukuran \textit{grid} yang lebih besar daripada \begin{math}5 \times 5\end{math}. Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan untuk algoritma \textit{backtracking} untuk menyelesaikan permainan semakin lama.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 4)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 4)}
+\begin{tabular}{| l | l | l |}
+\hline
+Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 100\% & 3.751 detik \\
+\hline
+\begin{math}5 \times 5\end{math} & 42\% & 9.676 detik \\
+\hline
+\begin{math}6 \times 6\end{math} & 0\% & - \\
+\hline
+\begin{math}7 \times 7\end{math} & 0\% & - \\
+\hline
+\begin{math}8 \times 8\end{math} & 0\% & - \\
+\hline
+\end{tabular}
+\label{tab:pengujianhg4}
+\end{table}
+
+\subsection{Skenario 5}
+\label{sec:skenario5}
+
+Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianhg5}, algoritma \textit{hybrid genetic} berhasil menyelesaikan 62\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}4 \times 4\end{math}, 19\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}5 \times 5\end{math}, tetapi gagal dalam menyelsaikan permainan yang diujikan dengan ukuran \textit{grid} yang lebih besar daripada \begin{math}5 \times 5\end{math}. Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan untuk algoritma \textit{backtracking} untuk menyelesaikan permainan semakin lama.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 5)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 5)}
+\begin{tabular}{| l | l | l |}
+\hline
+Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 62\% & 0.59 detik \\
+\hline
+\begin{math}5 \times 5\end{math} & 19\% & 0.311 detik \\
+\hline
+\begin{math}6 \times 6\end{math} & 0\% & - \\
+\hline
+\begin{math}7 \times 7\end{math} & 0\% & - \\
+\hline
+\begin{math}8 \times 8\end{math} & 0\% & - \\
+\hline
+\end{tabular}
+\label{tab:pengujianhg5}
+\end{table}
+
+\subsection{Skenario 6}
+\label{sec:skenario6}
+
+Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianhg6}, algoritma \textit{hybrid genetic} berhasil menyelesaikan 62\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}4 \times 4\end{math}, 19\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}5 \times 5\end{math}, tetapi gagal dalam menyelsaikan permainan yang diujikan dengan ukuran \textit{grid} yang lebih besar daripada \begin{math}5 \times 5\end{math}. Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan untuk algoritma \textit{backtracking} untuk menyelesaikan permainan semakin lama.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 6)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 6)}
+\begin{tabular}{| l | l | l |}
+\hline
+Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 62\% & 0.622 detik \\
+\hline
+\begin{math}5 \times 5\end{math} & 19\% & 0.339 detik \\
+\hline
+\begin{math}6 \times 6\end{math} & 0\% & - \\
+\hline
+\begin{math}7 \times 7\end{math} & 0\% & - \\
+\hline
+\begin{math}8 \times 8\end{math} & 0\% & - \\
+\hline
+\end{tabular}
+\label{tab:pengujianhg6}
+\end{table}
+
+\subsection{Skenario 7}
+\label{sec:skenario7}
+
+Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianhg7}, algoritma \textit{hybrid genetic} berhasil menyelesaikan 62\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}4 \times 4\end{math}, 19\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}5 \times 5\end{math}, tetapi gagal dalam menyelsaikan permainan yang diujikan dengan ukuran \textit{grid} yang lebih besar daripada \begin{math}5 \times 5\end{math}. Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan untuk algoritma \textit{backtracking} untuk menyelesaikan permainan semakin lama.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 7)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 7)}
+\begin{tabular}{| l | l | l |}
+\hline
+Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 62\% & 0.605 detik \\
+\hline
+\begin{math}5 \times 5\end{math} & 19\% & 0.325 detik \\
+\hline
+\begin{math}6 \times 6\end{math} & 0\% & - \\
+\hline
+\begin{math}7 \times 7\end{math} & 0\% & - \\
+\hline
+\begin{math}8 \times 8\end{math} & 0\% & - \\
+\hline
+\end{tabular}
+\label{tab:pengujianhg7}
+\end{table}
+
+\subsection{Skenario 8}
+\label{sec:skenario8}
+
+Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianhg8}, algoritma \textit{hybrid genetic} berhasil menyelesaikan 62\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}4 \times 4\end{math}, 19\% dari semua permainan yang diujikan dengan ukuran \textit{grid} \begin{math}5 \times 5\end{math}, tetapi gagal dalam menyelsaikan permainan yang diujikan dengan ukuran \textit{grid} yang lebih besar daripada \begin{math}5 \times 5\end{math}. Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan untuk algoritma \textit{backtracking} untuk menyelesaikan permainan semakin lama.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 8)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 8)}
+\begin{tabular}{| l | l | l |}
+\hline
+Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 62\% & 0.637 detik \\
+\hline
+\begin{math}5 \times 5\end{math} & 19\% & 0.352 detik \\
+\hline
+\begin{math}6 \times 6\end{math} & 0\% & - \\
+\hline
+\begin{math}7 \times 7\end{math} & 0\% & - \\
+\hline
+\begin{math}8 \times 8\end{math} & 0\% & - \\
+\hline
+\end{tabular}
+\label{tab:pengujianhg8}
+\end{table}
+

@@ -76,7 +76,6 @@ public class SolverRuleBased
         nakedSingle();
         nakedDouble();
         hiddenSingle();
-        evilTwin();
         return getGridArrayList();
     }
     
@@ -1105,72 +1104,6 @@ public class SolverRuleBased
                 throw new IllegalStateException("Invalid operator.");
         }
         return array;
-    }
-    
-    private void evilTwin()
-    {
-        for (int i = 0; i < grid.getNumberOfCages(); i++)
-        {
-            evilTwin(i);
-        }
-    }
-    
-    private void evilTwin(int cageID)
-    {
-        Cage cage = grid.getCages()[cageID];
-        int targetNumber = cage.getTargetNumber();
-        char operator = cage.getOperator();
-        ArrayList<Integer> filledCells = new ArrayList();
-        ArrayList<Integer> nullCells = new ArrayList();
-        ArrayList<Integer> nullCellsRowIndexes = new ArrayList();
-        ArrayList<Integer> nullCellsColumnIndexes = new ArrayList();
-        int value = targetNumber;
-        if (cage.getSize() >= 2)
-        {
-            for (int i = 0; i < cage.getSize(); i++)
-            {
-                if (cage.getCells().get(i).getValue() == null)
-                {
-                    nullCells.add(cage.getCells().get(i).getValue());
-                    nullCellsRowIndexes.add(cage.getCells().get(i).getRow());
-                    nullCellsColumnIndexes.add(
-                            cage.getCells().get(i).getColumn());
-                }
-                else
-                {
-                    filledCells.add(cage.getCells().get(i).getValue());
-                }
-            }
-            if (nullCells.size() == 1)
-            {
-                for (int i = 0; i < filledCells.size(); i++)
-                {
-                    switch (operator)
-                    {
-                        case '+' :
-                            value -= filledCells.get(i);
-                            break;
-                        case '-' :
-                            break;
-                        case '*' :
-                            value /= filledCells.get(i);
-                            break;
-                        case '/' :
-                            break;
-                        default :
-                            JOptionPane.showMessageDialog(null, 
-                                    "Invalid operator.", "Error", 
-                                    JOptionPane.ERROR_MESSAGE);
-                        throw new IllegalStateException("Invalid operator.");
-                    }
-                    if (operator == '+' || operator == '*')
-                    {
-                        setCellValue(nullCellsRowIndexes.get(0), 
-                                nullCellsColumnIndexes.get(0), value);
-                    }
-                }
-            }
-        }
     }
     
     private void nakedSingle()
