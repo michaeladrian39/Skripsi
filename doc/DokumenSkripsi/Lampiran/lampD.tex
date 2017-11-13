@@ -1,4 +1,4145 @@
 \chapter{Kode Program}
 \label{chap:kodeprogram}
 
-Lorem Ipsum
+Lampiran ini berisi kode program dari perangkat lunak permainan Calcudoku ini.
+
+\singlespacing 
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=Grid.java]
+package model;
+
+import java.util.ArrayList;
+import java.util.Objects;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class Grid
+{
+    
+    private final Integer size;
+    private final Integer numberOfCages;
+    private final Integer[][] cageCells;
+    private final String[] cageObjectives;
+    private final Cell[][] grid;
+    private final Cage[] cages;
+    
+    public Grid(Integer size, Integer numberOfCages, Integer[][] cageCells, 
+            String[] cageObjectives)
+    {
+        this.size = size;
+        this.numberOfCages = numberOfCages;
+        if (isCageCellsSizeValid(cageCells))
+        {
+            this.cageCells = cageCells;
+        }
+        else
+        { 
+            JOptionPane.showMessageDialog(null, "Invalid array size.", "Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Invalid array size.");
+        }
+        if (isCageObjectivesSizeValid(cageObjectives))
+        {
+            this.cageObjectives = cageObjectives;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Invalid array size.", "Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Invalid array size.");
+        }
+        this.grid = new Cell[size][size];
+        this.cages = new Cage[numberOfCages];
+        generateCages(cages);
+        for (int i = 0; i < cages.length; i++)
+        {
+            Integer[][] array = new Integer[size][size];
+            for (int j = 0; j < cageCells.length; j++)
+            {
+                for (int k = 0; k < cageCells[j].length; k++)
+                {
+                    if (cageCells[j][k] == i + 1)
+                    {
+                        array[j][k] = 1;
+                    }
+                    else
+                    {
+                        array[j][k] = 0;
+                    }
+                }
+            }
+            if (!isCageAssignmentValid(array))
+            { 
+                JOptionPane.showMessageDialog(null, "Invalid cage assignment.",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid cage assignment.");
+            }
+        }
+        generateGrid(grid, cages);
+        if (!isCagesValid(cages))
+        {
+            JOptionPane.showMessageDialog(null, "Invalid cages.", "Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Invalid cages.");
+        }
+    }
+    
+    private int countAreas(Integer[][] array)
+    {
+        boolean[][] checked = new boolean[size][size];
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                checked[i][j] = false;
+            }
+        }
+        return countAreas(array, checked);
+    }
+
+    private int countAreas(Integer[][] array, boolean[][] checked)
+    {
+        int areas = 0;
+        for (int i = 0; i < array.length; i++)
+        {
+            for (int j = 0; j < array.length; j++)
+            {
+                if (checked[i][j])
+                {
+                    continue;
+                }
+                if (array[i][j] == 0)
+                {
+                    checked[i][j] = true;
+                    continue;
+                }
+                areas++;
+                floodFill(i, j, array, checked); 
+            }
+        }
+        return areas;
+    }
+
+    private void floodFill(int i, int j, Integer[][] array, 
+            boolean[][] checked)
+    {
+        if (array[i][j] == 0 || checked[i][j])
+        {
+            return;
+        }
+        checked[i][j] = true;
+        if (j < array.length - 1)
+        {
+            floodFill(i, j + 1, array, checked);
+        }
+        if (i < array.length - 1)
+        {
+            floodFill(i + 1, j, array, checked);
+        }
+        if (j > 0)
+        {
+            floodFill(i, j - 1, array, checked);
+        }
+        if (i > 0)
+        {
+            floodFill(i - 1, j, array, checked);
+        }
+    }
+    
+    private boolean isCageCellsSizeValid(Integer[][] cageCells)
+    {
+        if (cageCells.length == size)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                if (cageCells[i].length != size)
+                {
+                    return false;
+                }
+            }
+        }
+        else
+        {
+            return false;
+        }
+        return true;
+    }
+    
+    private boolean isCageObjectivesSizeValid(String[] cageObjectives)
+    {
+        return cageCells.length == size;
+    }
+    
+    private boolean isCageAssignmentValid(Integer[][] array)
+    {
+        return countAreas(array) == 1;
+    }
+    
+    private boolean isCagesValid(Cage[] cages)
+    {
+        for (Cage c : cages)
+        {
+            if (c.getOperator() == '=' && c.getSize() != 1)
+            {
+                return false;
+            }
+            if ((c.getOperator() == '-' || c.getOperator() == '/') 
+                    && c.getSize() != 2)
+            {
+                return false;
+            }
+            if ((c.getOperator() == '+' || c.getOperator() == '*') 
+                    && c.getSize() < 2)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    private void generateCages(Cage[] cages)
+    {
+        for (int i = 0; i < cages.length; i++)
+        {
+            cages[i] = new Cage(i, cageObjectives[i]);
+        }
+    }
+    
+    private void generateGrid(Cell[][] grid, Cage[] cages)
+    {
+        for (int i = 0; i < cageCells.length; i++)
+        {
+            for (int j = 0; j < cageCells[i].length; j++)
+            {
+                grid[i][j] = new Cell((i * size) + j, i, j, 
+                        (cageCells[i][j] - 1));
+                cages[cageCells[i][j] - 1].addCell(grid[i][j]);
+            }
+        }
+    }
+    
+    public ArrayList<Integer> getRow(int rowNumber)
+    {
+        ArrayList<Integer> row = new ArrayList<>();
+        for (int i = 0; i < grid.length; i++)
+        {
+            if (grid[rowNumber][i].getValue() != null)
+            {
+                row.add(grid[rowNumber][i].getValue());
+            }
+        }
+        return row;
+    }
+    
+    public ArrayList<Integer> getColumn(int columnNumber)
+    {
+        ArrayList<Integer> column = new ArrayList<>();
+        for (Cell[] row : grid) {
+            if (row[columnNumber].getValue() != null) {
+                column.add(row[columnNumber].getValue());
+            }
+        }
+        return column;
+    }
+    
+    public ArrayList<Integer> getCageValues(int cageNumber)
+    {
+        ArrayList<Integer> cage = new ArrayList<>();
+        for (int i = 0; i < cages[cageNumber].getSize(); i++)
+        {
+            if (cages[cageNumber].getCells().get(i).getValue() != null)
+            {
+                cage.add(cages[cageNumber].getCells().get(i).getValue());
+            }
+        }
+        return cage;
+    }
+    
+    private boolean isArrayValid(ArrayList<Integer> array)
+    {
+        for (int i = 0; i < array.size(); i++)
+        {
+            for (int j = 0; j < array.size(); j++)
+            {
+                if (Objects.equals(array.get(i), array.get(j)) && (i != j))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    private boolean isRowValid(int row)
+    {
+        ArrayList<Integer> array = getRow(row);
+        if (!isArrayValid(array))
+        {
+            JOptionPane.showMessageDialog(null, 
+                "Row " + row + " has duplicate numbers.",
+                "Information", JOptionPane.INFORMATION_MESSAGE);
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    
+    private boolean solverIsRowValid(int row)
+    {
+        ArrayList<Integer> array = getRow(row);
+        return isArrayValid(array);
+    }
+    
+    private boolean isColumnValid(int column)
+    {
+        ArrayList<Integer> array = getColumn(column);
+        if (!isArrayValid(array))
+        {
+            JOptionPane.showMessageDialog(null, 
+                "Column " + column + " has duplicate numbers.",
+                "Information", JOptionPane.INFORMATION_MESSAGE);
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    
+    private boolean solverIsColumnValid(int column)
+    {
+        ArrayList<Integer> array = getColumn(column);
+        return isArrayValid(array);
+    }
+    
+    private Boolean isCageValuesValid(int cageNumber)
+    {
+        if (cages[cageNumber].isCageValuesValid() == null)
+        {
+            return true;
+        }
+        else
+        {
+            return cages[cageNumber].isCageValuesValid();
+        }
+    }
+    
+    private boolean isCageValid(int row, int column)
+    {
+        ArrayList<Integer> cage = 
+                getCageValues(getGridContents()[row][column].getCageID());
+        if (isCageValuesValid(
+                getGridContents()[row][column].getCageID()) == false)
+        {
+            JOptionPane.showMessageDialog(null, 
+                "Values of cells in the cage do not reach the target number.",
+                "Information", JOptionPane.INFORMATION_MESSAGE);
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    
+    private boolean solverIsCageValid(int row, int column)
+    {
+        ArrayList<Integer> cage = 
+                getCageValues(getGridContents()[row][column].getCageID());
+        return isCageValuesValid(
+                getGridContents()[row][column].getCageID()) == true;
+    }
+    
+    public boolean isCellValueValid(int row, int column)
+    {
+        return (isRowValid(row) && isColumnValid(column) 
+                    && isCageValid(row, column));
+    }
+    
+    public boolean solverIsCellValueValid(int row, int column)
+    {
+        return (solverIsRowValid(row) && solverIsColumnValid(column) 
+                    && solverIsCageValid(row, column));
+    }
+    
+    public boolean setCellValue(int row, int column, Integer value)
+    {
+        if (value > 0 && value <= size)
+        {
+            getGridContents()[row][column].setValue(value);
+            isWin();
+            return isCellValueValid(row, column);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, 
+                    "Cell value must be between 1 and " + size + ".",
+                    "Information", JOptionPane.INFORMATION_MESSAGE);
+            return false;
+        }   
+    }
+    
+    public boolean solverSetCellValue(int row, int column, Integer value)
+    {
+        if (value > 0 && value <= size)
+        {
+            getGridContents()[row][column].setValue(value);
+            return (solverIsRowValid(row) && solverIsColumnValid(column) 
+                    && solverIsCageValid(row, column));
+        }
+        else
+        {
+            return false;
+        }   
+    }
+    
+    public void unsetCellValue(int row, int column)
+    {
+        getGridContents()[row][column].setValue(null);
+    }
+    
+    public Boolean isWin()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (getGridContents()[i][j].getValue() == null)
+                {
+                    return null;
+                }
+                if (isCellValueValid(i, j) == false)
+                {
+                    return false;
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(null, 
+                "Congratulations, you have successfully solved the puzzle!", 
+                "Information", JOptionPane.INFORMATION_MESSAGE);
+        return true;
+    }
+    
+    public Boolean checkGrid()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (getGridContents()[i][j].getValue() == null)
+                {
+                    JOptionPane.showMessageDialog(null, 
+                            "There are empty cells in the grid.", 
+                            "Information", JOptionPane.INFORMATION_MESSAGE);
+                    return null;
+                }
+                if (solverIsCellValueValid(i, j) == false)
+                {
+                    JOptionPane.showMessageDialog(null,
+                            "There are cells with incorrect values in the " 
+                                    + "grid.", "Information", 
+                                    JOptionPane.INFORMATION_MESSAGE);
+                    return false;
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(null, 
+                "Congratulations, you have successfully solved the puzzle!", 
+                "Information", JOptionPane.INFORMATION_MESSAGE);
+        return true;
+    }
+    
+    public boolean isFilled()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (getGridContents()[i][j].getValue() == null)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public Integer getCellValue(int row, int column)
+    {
+        return getGridContents()[row][column].getValue();
+    }
+        
+    public Integer getSize()
+    {
+        return size;
+    }
+    
+    public Integer getNumberOfCages()
+    {
+        return numberOfCages;
+    }
+    
+    public Integer[][] getCageCells()
+    {
+        return cageCells;
+    } 
+    
+    public String[] getCageObjectives()
+    {
+        return cageObjectives;
+    }
+    
+    public Cell[][] getGridContents()
+    {
+        return grid;
+    }
+    
+    public Cage[] getCages()
+    {
+        return cages;
+    }
+    
+    public Grid getGame()
+    {
+        return this;
+    }
+    
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=Cell.java]
+package model;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class Cell
+{
+    
+    private final int cellID;
+    private final int row;
+    private final int column;
+    private final int cageID;
+    private Integer value;
+    
+    public Cell(int cellID, int row, int column, int cageID)
+    {
+        this.cellID = cellID;
+        this.row = row;
+        this.column = column;
+        this.cageID = cageID;
+    }
+    
+    public void setValue(Integer value)
+    {
+        this.value = value;
+    }
+    
+    public Integer getValue()
+    {
+        return value;
+    }
+    
+    public int getRow()
+    {
+        return row;
+    }
+     
+    public int getColumn()
+    {
+        return column;
+    }
+    
+    public int getCageID()
+    {
+        return cageID;
+    }
+    
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=Cage.java]
+package model;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class Cage
+{
+    
+    private final int cageID;
+    private final String objective;
+    private final int targetNumber;
+    private final char operator;
+    private final ArrayList<Cell> cells;
+    
+    public Cage(int cageID, String objective)
+    {
+        this.cageID = cageID;
+        if (isCageObjectiveValid(objective))
+        {
+            this.objective = objective;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Invalid cage objectives.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Invalid cage objectives.");
+        }
+        this.targetNumber = generateTargetNumber(this.objective);
+        this.operator = generateOperator(this.objective);
+        this.cells = new ArrayList<>();
+    }
+    
+    private boolean isCageObjectiveValid(String cageObjective)
+    {
+        return cageObjective.matches("\\d+[*+-/=]");
+    }
+    
+    private int generateTargetNumber(String objective)
+    {
+        return Integer.parseInt(objective.substring(0, 
+                objective.length() - 1));
+    }
+    
+    private char generateOperator(String objective)
+    {
+        return objective.charAt(objective.length() - 1);
+    }
+    
+    public void addCell(Cell c)
+    {
+        cells.add(c);
+    }
+    
+    public boolean isCageContainsNull()
+    {
+        for (int i = 0; i < cells.size(); i++)
+        {
+            if (cells.get(i).getValue() == null)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public Boolean isCageValuesValid()
+    {
+        if (countValue() == null)
+        {
+            return null;
+        }
+        else
+        {
+            return (countValue() == getTargetNumber());
+        }
+    }
+    
+    private Integer countValue()
+    {
+        Integer value = null;
+        if (isCageContainsNull() == true)
+        {
+            value = null;
+        }
+        else
+        {
+            switch (getOperator())
+            {
+                case '+':
+                    value = 0;
+                    for (int i = 0; i < cells.size(); i++)
+                    {
+                        value += cells.get(i).getValue();
+                    }
+                    break;
+                case '-':
+                    if (cells.get(0).getValue() > cells.get(1).getValue())
+                    {
+                        value = cells.get(0).getValue() 
+                                - cells.get(1).getValue();
+                    }
+                    else if (cells.get(1).getValue() > cells.get(0).getValue())
+                    {
+                        value = cells.get(1).getValue() 
+                                - cells.get(0).getValue();
+                    }
+                    else
+                    {
+                        value = 0;
+                    }
+                    break;
+                case '*':
+                    value = 1;
+                    for (int i = 0; i < cells.size(); i++)
+                    {
+                        value *= cells.get(i).getValue();
+                    }
+                    break;
+                case '/':
+                    if (cells.get(0).getValue() > cells.get(1).getValue())
+                    {
+                        if (cells.get(0).getValue() 
+                                % cells.get(1).getValue() == 0)
+                        {
+                            value = cells.get(0).getValue() 
+                                    / cells.get(1).getValue();
+                        }
+                        else
+                        {
+                            value = 0;
+                        }
+                    }
+                    else if(cells.get(1).getValue() > cells.get(0).getValue())
+                    {
+                        if (cells.get(1).getValue() 
+                                % cells.get(0).getValue() == 0)
+                        {
+                            value = cells.get(1).getValue() 
+                                    / cells.get(0).getValue();
+                        }
+                        else
+                        {
+                            value = 0;
+                        }
+                    }
+                    else
+                    {
+                        value = 0;
+                    }
+                    break;
+                case '=':
+                    value = cells.get(0).getValue();
+                    break;
+                default :
+                    value = null;
+            }
+        }
+        return value;
+    }
+    
+    public String getObjective()
+    {
+        return objective;
+    }
+    
+    public int getTargetNumber()
+    {
+        return targetNumber;
+    }
+    
+    public char getOperator()
+    {
+        return operator;
+    }
+
+    public ArrayList<Cell> getCells()
+    {
+        return cells;
+    }
+    
+    public int getSize()
+    {
+        return cells.size();
+    }
+             
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=SolverBacktracking.java]
+package model;
+
+/**
+ *
+ * @author apple
+ */
+public class SolverBacktracking
+{
+    
+    private final Grid grid;
+    private final Integer size;
+    private Grid solution;
+    
+    public SolverBacktracking(Grid grid)
+    {
+        this.grid = grid;
+        this.size = grid.getSize();     
+    }
+    
+    public boolean solve()
+    {
+        if (solve(0, 0) == true)
+        {
+            this.solution = grid;
+            printGrid(solution.getGridContents());
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    private boolean solve(int row, int column)
+    {
+        if (column >= size)
+        {
+            column = 0;
+            row++;
+            if (row >= size)
+            {
+                printGrid(grid.getGridContents());
+                return true;
+            }
+        }
+        for (int value = 1; value <= size; value++)
+        {
+            printGrid(grid.getGridContents());
+            if (grid.solverSetCellValue(row, column, value))
+            {
+                if (solve(row, column + 1))
+                {
+                    return true;
+                }
+            }
+        }
+        printGrid(grid.getGridContents());
+        grid.unsetCellValue(row, column);
+        return false;
+    }
+    
+    public Grid getGrid()
+    {
+        return grid;
+    }
+    
+    public Grid getSolution()
+    {
+        return solution;
+    }
+    
+    private void printGrid(Cell[][] cells)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                System.out.print(cells[i][j].getValue() + " ");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+    
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=SolverHybridGenetic.java]
+package model;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class SolverHybridGenetic
+{
+    
+    private final Grid grid;
+    private Grid gridRuleBased;
+    private final Integer size;
+    private Grid solution;
+    private final Integer generations;
+    private final Integer populationSize;
+    private final Double elitismRate;
+    private final Double mutationRate;
+    private final Double crossoverRate;
+    
+    public SolverHybridGenetic(Grid grid, Integer generations, 
+            Integer populationSize, Double elitismRate, Double crossoverRate, 
+            Double mutationRate)
+    {
+        this.grid = grid;
+        this.size = grid.getSize();
+        this.generations = generations;
+        this.populationSize = populationSize;
+        this.elitismRate = elitismRate;
+        this.crossoverRate = crossoverRate;
+        this.mutationRate = mutationRate;
+    }
+    
+    public boolean solve()
+    {
+        SolverRuleBased srb = new SolverRuleBased(grid);
+        boolean isFilled = srb.solve();
+        this.gridRuleBased = srb.getGrid();
+        if (isFilled)
+        {
+            this.solution = srb.getSolution();
+            printGrid(solution.getGridContents());
+            return true;
+        }
+        else
+        {
+            SolverGenetic sg = new SolverGenetic(gridRuleBased, generations, 
+                    populationSize, elitismRate, crossoverRate, mutationRate);
+            if (sg.solve() == true)
+            {
+                this.solution = sg.getSolution();
+                printGrid(solution.getGridContents());
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public Grid getGrid()
+    {
+        return grid;
+    }
+
+    public Grid getSolution()
+    {
+        return solution;
+    }
+    
+    private void printGrid(Cell[][] cells)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                System.out.print(cells[i][j].getValue() + " ");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+    
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=SolverRuleBased.java]
+package model;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class SolverRuleBased
+{
+    
+    private final Grid grid;
+    private final Integer size;
+    private Grid solution;
+    private ArrayList<Integer>[][] possibleValues;
+    
+    public SolverRuleBased(Grid grid)
+    {
+        this.grid = grid;
+        this.size = grid.getSize();
+        this.possibleValues = generatePossibleValuesArray();
+    }
+    
+    private ArrayList<Integer>[][] generatePossibleValuesArray()
+    {
+        possibleValues = new ArrayList[size][size];
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                possibleValues[i][j] = new ArrayList<Integer>();
+            }
+        }
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                for (int k = 1; k <= size; k++)
+                {
+                    possibleValues[i][j].add(k);
+                }
+            }
+        }
+        return possibleValues;
+    }
+    
+    public boolean solve()
+    {
+        singleSquare();
+        killerCombination();;
+        ArrayList<ArrayList<Integer>> currentGridArrayList 
+                = getGridArrayList();
+        ArrayList<ArrayList<Integer>> newGridArrayList = solveLoop();
+        while(!currentGridArrayList.equals(newGridArrayList))
+        {
+            printGrid();
+            printPossibleValues();
+            currentGridArrayList = newGridArrayList;
+            newGridArrayList = solveLoop();
+        }
+        if (grid.isFilled())
+        {
+            this.solution = grid;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    private ArrayList<ArrayList<Integer>> solveLoop()
+    {
+        nakedSingle();
+        nakedDouble();
+        hiddenSingle();
+        return getGridArrayList();
+    }
+    
+    public ArrayList<Integer>[] getRowPossibleValues(int row)
+    {
+        ArrayList<Integer>[] array;
+        array = new ArrayList[size];
+        for (int i = 0; i < size; i++)
+        {
+            array[i] = possibleValues[row][i];
+        }
+        return array;
+    }
+    
+    public ArrayList<Integer>[] getColumnPossibleValues(int column)
+    {
+        ArrayList<Integer>[] array;
+        array = new ArrayList[size];
+        for (int i = 0; i < size; i++)
+        {
+            array[i] = possibleValues[i][column];
+        }
+        return array;
+    }
+    
+    private void singleSquare()
+    {
+        for (Cage c : grid.getCages())
+        {
+            if (c.getSize() == 1)
+            {
+                setCellValue(c.getCells().get(0).getRow(), 
+                        c.getCells().get(0).getColumn(), c.getTargetNumber());
+            }
+        }
+    }
+    
+    private void killerCombination()
+    {
+        int cageSize;
+        ArrayList<Integer> array = new ArrayList();
+        for (Cage c : grid.getCages())
+        {
+            cageSize = c.getSize();
+            switch (cageSize)
+            {
+                case 2:
+                    killerCombinationCageSize2(c);
+                    break;
+                default:
+                    array = createRetainAllArray();
+                    removeImpossibleValuesCage(c, array);
+                    break;
+            }
+        }
+    }
+    
+    private void killerCombinationCageSize2(Cage cage)
+    {
+        int gridSize = size;
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch (gridSize)
+        {
+            case 3 :
+                array = killerCombinationCageSize2GridSize3(cage);
+                break;
+            case 4 :
+                array = killerCombinationCageSize2GridSize4(cage);
+                break;
+            case 5 :
+                array = killerCombinationCageSize2GridSize5(cage);
+                break;
+            case 6 :
+                array = killerCombinationCageSize2GridSize6(cage);
+                break;
+            case 7 :
+                array = killerCombinationCageSize2GridSize7(cage);
+                break;
+            case 8 :
+                array = killerCombinationCageSize2GridSize8(cage);
+                break;
+            case 9 :
+                array = killerCombinationCageSize2GridSize9(cage);
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, "Invalid grid size.", 
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid grid size.");
+        }
+        removeImpossibleValuesCage(cage, array);
+    }
+
+    private ArrayList<Integer> killerCombinationCageSize2GridSize3(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch (cageOperator)
+        {
+            case '+' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 5 :
+                        array.add(2);
+                        array.add(3);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch (cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch (cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 6 :
+                        array.add(2);
+                        array.add(3);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch (cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize4(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch (cageOperator)
+        {
+            case '+' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 6 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 7 :
+                        array.add(3);
+                        array.add(4);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch (cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 6 :
+                        array.add(2);
+                        array.add(3);
+                        break;
+                    case 8 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 12 :
+                        array.add(3);
+                        array.add(4);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize5(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch (cageOperator)
+        {
+            case '+' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 8 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 9 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch (cageTargetNumber)
+                {
+                    case 4 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch (cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(2);
+                        array.add(3);
+                        break;
+                    case 8 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 12 :
+                        array.add(3);
+                        array.add(4);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize6(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch (cageOperator)
+        {
+            case '+' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 10 :
+                        array.add(4);
+                        array.add(6);
+                        break;
+                    case 11 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch (cageTargetNumber)
+                {
+                    case 5 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch (cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 8 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 18 :
+                        array.add(3);
+                        array.add(6);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    case 24 :
+                        array.add(4);
+                        array.add(6);
+                        break;
+                    case 30 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch (cageTargetNumber)
+                {
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize7(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch (cageOperator)
+        {
+            case '+' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 12 :
+                        array.add(5);
+                        array.add(7);
+                        break;
+                    case 13 :
+                        array.add(6);
+                        array.add(7);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch (cageTargetNumber)
+                {
+                    case 6 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch (cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 8 :
+                        array.add(2);
+                        array.add(4);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 14 :
+                        array.add(2);
+                        array.add(7);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 18 :
+                        array.add(3);
+                        array.add(6);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    case 21 :
+                        array.add(3);
+                        array.add(7);
+                        break;
+                    case 24 :
+                        array.add(4);
+                        array.add(6);
+                        break;
+                    case 28 :
+                        array.add(4);
+                        array.add(7);
+                        break;
+                    case 30 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    case 35 :
+                        array.add(5);
+                        array.add(7);
+                        break;
+                    case 42 :
+                        array.add(6);
+                        array.add(7);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch (cageTargetNumber)
+                {
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize8(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch (cageOperator)
+        {
+            case '+' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 14 :
+                        array.add(6);
+                        array.add(8);
+                        break;
+                    case 15 :
+                        array.add(7);
+                        array.add(8);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch (cageTargetNumber)
+                {
+                    case 7 :
+                        array.add(1);
+                        array.add(8);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch (cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 14 :
+                        array.add(2);
+                        array.add(7);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 16 :
+                        array.add(2);
+                        array.add(8);
+                        break;
+                    case 18 :
+                        array.add(3);
+                        array.add(6);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    case 21 :
+                        array.add(3);
+                        array.add(7);
+                        break;
+                    case 28 :
+                        array.add(4);
+                        array.add(7);
+                        break;
+                    case 30 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    case 32 :
+                        array.add(4);
+                        array.add(8);
+                        break;
+                    case 35 :
+                        array.add(5);
+                        array.add(7);
+                        break;
+                    case 40 :
+                        array.add(5);
+                        array.add(8);
+                        break;
+                    case 42 :
+                        array.add(6);
+                        array.add(7);
+                        break;
+                    case 48 :
+                        array.add(6);
+                        array.add(8);
+                        break;
+                    case 56 :
+                        array.add(7);
+                        array.add(8);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch (cageTargetNumber)
+                {
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 8 :
+                        array.add(1);
+                        array.add(8);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private ArrayList<Integer> killerCombinationCageSize2GridSize9(Cage cage)
+    {
+        char cageOperator = cage.getOperator();
+        int cageTargetNumber = cage.getTargetNumber();
+        ArrayList<Integer> array = new ArrayList();
+        switch (cageOperator)
+        {
+            case '+' :
+                switch (cageTargetNumber)
+                {
+                    case 3 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 4 :  
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 16 :
+                        array.add(7);
+                        array.add(9);
+                        break;
+                    case 17 :
+                        array.add(8);
+                        array.add(9);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '-' :
+                switch (cageTargetNumber)
+                {
+                    case 8 :
+                        array.add(1);
+                        array.add(9);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '*' :
+               switch (cageTargetNumber)
+                {
+                    case 2 :
+                        array.add(1);
+                        array.add(2);
+                        break;
+                    case 3 :
+                        array.add(1);
+                        array.add(3);
+                        break;
+                    case 4 :
+                        array.add(1);
+                        array.add(4);
+                        break;
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 9 :
+                        array.add(1);
+                        array.add(9);
+                        break;
+                    case 10 :
+                        array.add(2);
+                        array.add(5);
+                        break;
+                    case 14 :
+                        array.add(2);
+                        array.add(7);
+                        break;
+                    case 15 :
+                        array.add(3);
+                        array.add(5);
+                        break;
+                    case 16 :
+                        array.add(2);
+                        array.add(8);
+                        break;
+                    case 20 :
+                        array.add(4);
+                        array.add(5);
+                        break;
+                    case 21 :
+                        array.add(3);
+                        array.add(7);
+                        break;
+                    case 27 :
+                        array.add(3);
+                        array.add(9);
+                        break;
+                    case 28 :
+                        array.add(4);
+                        array.add(7);
+                        break;
+                    case 30 :
+                        array.add(5);
+                        array.add(6);
+                        break;
+                    case 32 :
+                        array.add(4);
+                        array.add(8);
+                        break;
+                    case 35 :
+                        array.add(5);
+                        array.add(7);
+                        break;
+                    case 36 :
+                        array.add(4);
+                        array.add(9);
+                        break;
+                    case 40 :
+                        array.add(5);
+                        array.add(8);
+                        break;
+                    case 42 :
+                        array.add(6);
+                        array.add(7);
+                        break;
+                    case 45 :
+                        array.add(5);
+                        array.add(9);
+                        break;
+                    case 48 :
+                        array.add(6);
+                        array.add(8);
+                        break;
+                    case 54 :
+                        array.add(6);
+                        array.add(9);
+                        break;
+                    case 56 :
+                        array.add(7);
+                        array.add(8);
+                        break;
+                    case 63 :
+                        array.add(7);
+                        array.add(9);
+                        break;
+                    case 72 :
+                        array.add(8);
+                        array.add(9);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            case '/' :
+                switch (cageTargetNumber)
+                {
+                    case 5 :
+                        array.add(1);
+                        array.add(5);
+                        break;
+                    case 6 :
+                        array.add(1);
+                        array.add(6);
+                        break;
+                    case 7 :
+                        array.add(1);
+                        array.add(7);
+                        break;
+                    case 8 :
+                        array.add(1);
+                        array.add(8);
+                        break;
+                    case 9 :
+                        array.add(1);
+                        array.add(9);
+                        break;
+                    default :
+                        array = createRetainAllArray();
+                        break;
+                }
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, 
+                        "Invalid operator.", "Error", 
+                        JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid operator.");
+        }
+        return array;
+    }
+    
+    private void nakedSingle()
+    {
+        nakedSingleRow();
+        nakedSingleColumn();
+    }
+    
+    private void nakedSingleRow()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            nakedSingleRow(i);
+        }
+    }
+    
+    private void nakedSingleRow(int row)
+    {
+        ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
+        for (int i = 0; i < rowPossibleValues.length; i++)
+        {
+            if (rowPossibleValues[i].size() == 1)
+            {
+                nakedSingle(row, i);
+            }
+        }
+    }
+    
+    private void nakedSingleColumn()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            nakedSingleColumn(i);
+        }
+    }
+    
+    private void nakedSingleColumn(int column)
+    {
+        ArrayList<Integer>[] columnPossibleValues = 
+                getColumnPossibleValues(column);
+        for (int i = 0; i < columnPossibleValues.length; i++)
+        {
+            if (columnPossibleValues[i].size() == 1)
+            {
+                nakedSingle(i, column);
+            }
+        }
+    }
+    
+    private void nakedSingle(int row, int column)
+    {
+        int value = possibleValues[row][column].get(0);
+        setCellValue(row, column, value);
+    }
+    
+    private void nakedDouble()
+    {
+        nakedDoubleRow();
+        nakedDoubleColumn();
+    }
+    
+    private void nakedDoubleRow()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            nakedDoubleRow(i);
+        }
+    }
+    
+    private void nakedDoubleRow(int row)
+    {
+        ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
+        ArrayList<Integer> column2PossibleIndexes = new ArrayList();
+        ArrayList<ArrayList<Integer>> column2PossibleValues = new ArrayList();
+        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList();
+        ArrayList<Integer> uniquePossibleValuesFrequency = new ArrayList();
+        for (int i = 0; i < rowPossibleValues.length; i++)
+        {
+            if (rowPossibleValues[i].size() == 2)
+            {
+                column2PossibleIndexes.add(i);
+                column2PossibleValues.add(rowPossibleValues[i]);
+            }
+        }
+        if (column2PossibleIndexes.size() >= 2
+                && column2PossibleValues.size() >= 2)
+        {
+            for (int i = 0; i < column2PossibleValues.size(); i++)
+            {
+                if (!uniquePossibleValues.contains(
+                        column2PossibleValues.get(i)))
+                {
+                    uniquePossibleValues.add(column2PossibleValues.get(i));
+                }
+            }
+            for (int i = 0; i < uniquePossibleValues.size(); i++)
+            {
+                uniquePossibleValuesFrequency.add(Collections.frequency(
+                        column2PossibleValues, uniquePossibleValues.get(i)));
+            }
+            for (int i = 0; i < uniquePossibleValuesFrequency.size(); i++)
+            {
+                if (uniquePossibleValuesFrequency.get(i) == 2)
+                {
+                    ArrayList<Integer> doublePossibleValues = 
+                            uniquePossibleValues.get(i);
+                    ArrayList<Integer> doublePossibleIndexes = 
+                            new ArrayList();
+                    for (int j = 0; j < column2PossibleValues.size(); j++)
+                    {
+                        if (column2PossibleValues.get(j).equals(
+                                uniquePossibleValues.get(i)))
+                        {
+                            doublePossibleIndexes.add(
+                                    column2PossibleIndexes.get(j));
+                        }
+                    }
+                    nakedDoubleRow(row, doublePossibleValues, 
+                            doublePossibleIndexes);
+                }
+            }
+        }
+    }
+    
+    private void nakedDoubleRow(int row, 
+            ArrayList<Integer> doublePossibleValues, 
+            ArrayList<Integer> doublePossibleIndexes)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (!doublePossibleIndexes.contains(i))
+            {
+                possibleValues[row][i].removeAll(doublePossibleValues);
+            }
+        }
+    }
+    
+    private void nakedDoubleColumn()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            nakedDoubleColumn(i);
+        }
+    }
+    
+    private void nakedDoubleColumn(int column)
+    {
+        ArrayList<Integer>[] columnPossibleValues = 
+                getColumnPossibleValues(column);
+        ArrayList<Integer> row2PossibleIndexes = new ArrayList();
+        ArrayList<ArrayList<Integer>> row2PossibleValues = new ArrayList();
+        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList();
+        ArrayList<Integer> uniquePossibleValuesFrequency = new ArrayList();
+        for (int i = 0; i < columnPossibleValues.length; i++)
+        {
+            if (columnPossibleValues[i].size() == 2)
+            {
+                row2PossibleIndexes.add(i);
+                row2PossibleValues.add(columnPossibleValues[i]);
+            }
+        }
+        if (row2PossibleIndexes.size() >= 2 
+                && row2PossibleValues.size() >= 2)
+        {
+            for (int i = 0; i < row2PossibleValues.size(); i++)
+            {
+                if (!uniquePossibleValues.contains(
+                        row2PossibleValues.get(i)))
+                {
+                    uniquePossibleValues.add(row2PossibleValues.get(i));
+                }
+            }
+            for (int i = 0; i < uniquePossibleValues.size(); i++)
+            {
+                uniquePossibleValuesFrequency.add(Collections.frequency(
+                        row2PossibleValues, uniquePossibleValues.get(i)));
+            }
+            for (int i = 0; i < uniquePossibleValuesFrequency.size(); i++)
+            {
+                if (uniquePossibleValuesFrequency.get(i) == 2)
+                {
+                    ArrayList<Integer> doublePossibleValues = 
+                            uniquePossibleValues.get(i);
+                    ArrayList<Integer> doublePossibleIndexes = 
+                            new ArrayList();
+                    for (int j = 0; j < row2PossibleValues.size(); j++)
+                    {
+                        if (row2PossibleValues.get(j).equals(
+                                uniquePossibleValues.get(i)))
+                        {
+                            doublePossibleIndexes.add(
+                                    row2PossibleIndexes.get(j));
+                        }
+                    }
+                    nakedDoubleColumn(column, doublePossibleValues,
+                            doublePossibleIndexes);
+                }
+            }
+        }
+    }
+    
+    private void nakedDoubleColumn(int column,
+            ArrayList<Integer> doublePossibleValues, 
+            ArrayList<Integer> doublePossibleIndexes)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (!doublePossibleIndexes.contains(i))
+            {
+                possibleValues[i][column].removeAll(doublePossibleValues);
+            }
+        }
+    }
+    
+    private void hiddenSingle()
+    {
+        hiddenSingleRow();
+        hiddenSingleColumn();
+    }
+    
+    private void hiddenSingleRow()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            hiddenSingleRow(i);
+        }
+    }
+    
+    private void hiddenSingleRow(int row)
+    {
+        ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
+        int[] possibleValuesFrequency = new int[size];
+        ArrayList<Integer> columnValues = new ArrayList();
+        ArrayList<Integer> columnIndexes = new ArrayList();
+        for (ArrayList<Integer> rowPossibleValue : rowPossibleValues)
+        {
+            for (int i = 1; i <= possibleValuesFrequency.length; i++)
+            {
+                if (rowPossibleValue.contains(i))
+                {
+                    possibleValuesFrequency[i - 1]++;
+                }
+            }
+        }
+        for (int i = 0; i < possibleValuesFrequency.length; i++)
+        {
+            if (possibleValuesFrequency[i] == 1)
+            {
+                columnValues.add(i + 1);
+            }
+        }
+        for (int i = 0; i < columnValues.size(); i++)
+        {
+            for (int j = 0; j < rowPossibleValues.length; j++)
+            {
+                if (rowPossibleValues[j].contains(columnValues.get(i)))
+                {
+                    columnIndexes.add(j);
+                }
+            }
+        }
+        for (int i = 0; i < columnValues.size(); i++)
+        {
+            if (rowPossibleValues[columnIndexes.get(i)].size() >= 2)
+            {
+                hiddenSingle(row, columnIndexes.get(i), columnValues.get(i));
+            }
+        }
+    }
+    
+    private void hiddenSingleColumn()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            hiddenSingleColumn(i);
+        }
+    }
+    
+    private void hiddenSingleColumn(int column)
+    {
+        ArrayList<Integer>[] columnPossibleValues 
+                = getColumnPossibleValues(column);
+        int[] possibleValuesFrequency = new int[size];
+        ArrayList<Integer> rowValues = new ArrayList();
+        ArrayList<Integer> rowIndexes = new ArrayList();
+        for (ArrayList<Integer> columnPossibleValue : columnPossibleValues)
+        {
+            for (int i = 1; i <= possibleValuesFrequency.length; i++)
+            {
+                if (columnPossibleValue.contains(i))
+                {
+                    possibleValuesFrequency[i - 1]++;
+                }
+            }
+        }
+        for (int i = 0; i < possibleValuesFrequency.length; i++)
+        {
+            if (possibleValuesFrequency[i] == 1)
+            {
+                rowValues.add(i + 1);
+            }
+        }
+        for (int i = 0; i < rowValues.size(); i++)
+        {
+            for (int j = 0; j < columnPossibleValues.length; j++)
+            {
+                if (columnPossibleValues[j].contains(rowValues.get(i)))
+                {
+                    rowIndexes.add(j);
+                }
+            }
+        }
+        for (int i = 0; i < rowValues.size(); i++)
+        {
+            if (columnPossibleValues[rowIndexes.get(i)].size() >= 2)
+            {
+                hiddenSingle(rowIndexes.get(i), column, rowValues.get(i));
+            }
+        }
+    }
+    
+    private void hiddenSingle(int row, int column, int value)
+    {
+        setCellValue(row, column, value);
+    }
+    
+    private void setCellValue(int row, int column, int value)
+    {
+        grid.solverSetCellValue(row, column, value);
+        removePossibleValues(row, column, value);
+    }
+    
+    private void removePossibleValues(int row, int column, int value)
+    {
+        possibleValues[row][column].clear();
+        for (int i = 0; i < size; i++)
+        {
+            if (possibleValues[i][column].contains(value))
+            {
+                possibleValues[i][column].remove(
+                        possibleValues[i][column].indexOf(value));
+            }
+        }
+        for (int i = 0; i < size; i++)
+        {
+            if (possibleValues[row][i].contains(value))
+            {
+                possibleValues[row][i].remove(
+                        possibleValues[row][i].indexOf(value));
+            }
+        }
+    }
+    
+    private void removeImpossibleValuesCage(Cage cage, 
+            ArrayList<Integer> values)
+    {
+        for (int i = 0; i < cage.getSize(); i++)
+        {
+            removeImpossibleValuesCell(cage.getCells().get(i).getRow(), 
+                cage.getCells().get(i).getColumn(), values);
+        }
+    }
+    
+    private void removeImpossibleValuesCell(int row, int column, 
+            ArrayList<Integer> values)
+    {
+        possibleValues[row][column].retainAll(values);
+    }
+    
+    private ArrayList<Integer> createRetainAllArray()
+    {
+        ArrayList<Integer> array = new ArrayList();
+        for (int i = 1; i <= size; i++)
+        {
+            array.add(i);
+        }
+        return array;
+    }
+    
+    private ArrayList<ArrayList<Integer>> getGridArrayList()
+    {
+        ArrayList<ArrayList<Integer>> gridArrayList = new ArrayList();
+        for (int i = 0; i < size; i++)
+        {
+            ArrayList<Integer> gridArrayListRow = new ArrayList();
+            for (int j = 0; j < size; j++)
+            {
+                gridArrayListRow.add(grid.getCellValue(i, j));
+            }
+            gridArrayList.add(gridArrayListRow);
+        }
+        return gridArrayList;
+    }
+    
+    public Grid getGrid()
+    {
+        return grid;
+    }
+    
+    public Grid getSolution()
+    {
+        return solution;
+    }
+    
+    private ArrayList<Integer>[][] getPossibleValues()
+    {
+        return possibleValues;
+    }
+    
+    private void printGrid()
+    {
+        Cell[][] cells = grid.getGridContents();
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                System.out.print(cells[i][j].getValue() + " ");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+    
+    private void printPossibleValues()
+    {
+        for (int i = 0; i < possibleValues.length; i++)
+        {
+            for (int j = 0; j < possibleValues[i].length; j++)
+            {
+                System.out.println("Row " + i + ", Column " + j);
+                for (int k = 0; k < possibleValues[i][j].size(); k++)
+                {
+                    System.out.print(possibleValues[i][j].get(k) + " ");
+                }
+                System.out.println("");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+    
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=SolverGenetic.java]
+package model;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class Cage
+{
+    
+    private final int cageID;
+    private final String objective;
+    private final int targetNumber;
+    private final char operator;
+    private final ArrayList<Cell> cells;
+    
+    public Cage(int cageID, String objective)
+    {
+        this.cageID = cageID;
+        if (isCageObjectiveValid(objective))
+        {
+            this.objective = objective;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Invalid cage objectives.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Invalid cage objectives.");
+        }
+        this.targetNumber = generateTargetNumber(this.objective);
+        this.operator = generateOperator(this.objective);
+        this.cells = new ArrayList<>();
+    }
+    
+    private boolean isCageObjectiveValid(String cageObjective)
+    {
+        return cageObjective.matches("\\d+[*+-/=]");
+    }
+    
+    private int generateTargetNumber(String objective)
+    {
+        return Integer.parseInt(objective.substring(0, 
+                objective.length() - 1));
+    }
+    
+    private char generateOperator(String objective)
+    {
+        return objective.charAt(objective.length() - 1);
+    }
+    
+    public void addCell(Cell c)
+    {
+        cells.add(c);
+    }
+    
+    public boolean isCageContainsNull()
+    {
+        for (int i = 0; i < cells.size(); i++)
+        {
+            if (cells.get(i).getValue() == null)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public Boolean isCageValuesValid()
+    {
+        if (countValue() == null)
+        {
+            return null;
+        }
+        else
+        {
+            return (countValue() == getTargetNumber());
+        }
+    }
+    
+    private Integer countValue()
+    {
+        Integer value = null;
+        if (isCageContainsNull() == true)
+        {
+            value = null;
+        }
+        else
+        {
+            switch (getOperator())
+            {
+                case '+':
+                    value = 0;
+                    for (int i = 0; i < cells.size(); i++)
+                    {
+                        value += cells.get(i).getValue();
+                    }
+                    break;
+                case '-':
+                    if (cells.get(0).getValue() > cells.get(1).getValue())
+                    {
+                        value = cells.get(0).getValue() 
+                                - cells.get(1).getValue();
+                    }
+                    else if (cells.get(1).getValue() > cells.get(0).getValue())
+                    {
+                        value = cells.get(1).getValue() 
+                                - cells.get(0).getValue();
+                    }
+                    else
+                    {
+                        value = 0;
+                    }
+                    break;
+                case '*':
+                    value = 1;
+                    for (int i = 0; i < cells.size(); i++)
+                    {
+                        value *= cells.get(i).getValue();
+                    }
+                    break;
+                case '/':
+                    if (cells.get(0).getValue() > cells.get(1).getValue())
+                    {
+                        if (cells.get(0).getValue() 
+                                % cells.get(1).getValue() == 0)
+                        {
+                            value = cells.get(0).getValue() 
+                                    / cells.get(1).getValue();
+                        }
+                        else
+                        {
+                            value = 0;
+                        }
+                    }
+                    else if(cells.get(1).getValue() > cells.get(0).getValue())
+                    {
+                        if (cells.get(1).getValue() 
+                                % cells.get(0).getValue() == 0)
+                        {
+                            value = cells.get(1).getValue() 
+                                    / cells.get(0).getValue();
+                        }
+                        else
+                        {
+                            value = 0;
+                        }
+                    }
+                    else
+                    {
+                        value = 0;
+                    }
+                    break;
+                case '=':
+                    value = cells.get(0).getValue();
+                    break;
+                default :
+                    value = null;
+            }
+        }
+        return value;
+    }
+    
+    public String getObjective()
+    {
+        return objective;
+    }
+    
+    public int getTargetNumber()
+    {
+        return targetNumber;
+    }
+    
+    public char getOperator()
+    {
+        return operator;
+    }
+
+    public ArrayList<Cell> getCells()
+    {
+        return cells;
+    }
+    
+    public int getSize()
+    {
+        return cells.size();
+    }
+             
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=Chromosome.java]
+package model;
+
+import java.util.Comparator;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class Chromosome
+{
+    
+    private final Grid grid;
+    private final int size;
+    private final double fitness;
+    
+    public Chromosome(Grid grid)
+    {
+        this.grid = grid;
+        this.size = grid.getSize();
+        this.fitness = setFitness();
+    }
+    
+    private double setFitness()
+    {
+        double numberOfValidCells = 0;
+        double numberOfCells = size * size;
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (grid.solverIsCellValueValid(i, j) == true)
+                {
+                    numberOfValidCells++;
+                }
+            }
+        }
+        double value = numberOfValidCells / numberOfCells;
+        return value;
+    }
+    
+    public double getFitness()
+    {
+        return fitness;
+    }
+    
+    public Grid getGrid()
+    {
+        return grid;
+    }
+
+    private void printGrid()
+    {
+        Cell[][] cells = grid.getGridContents();
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                System.out.print(cells[i][j].getValue() + " ");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+    
+}
+
+class ChromosomeComparator implements Comparator<Chromosome>
+{
+
+    @Override
+    public int compare(Chromosome c1, Chromosome c2)
+    {
+        if (c1.getFitness() - c2.getFitness() > 0)
+        {
+            return 1;
+        }
+        else if (c1.getFitness() - c2.getFitness() < 0)
+        {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=Controller.java]
+package controller;
+
+import model.Grid;
+import model.Cage;
+import model.Cell;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class Controller
+{
+    
+    private Integer size;
+    private Integer numberOfCages;
+    private Integer[][] cageCells;
+    private String[] cageObjectives;
+    private Grid g;
+    
+    public Controller(Integer size, Integer numberOfCages, 
+            Integer[][] cageCells, String[] cageObjectives)
+    {
+        this.size = size;
+        this.numberOfCages = numberOfCages;
+        this.cageCells = cageCells;
+        this.cageObjectives = cageObjectives;
+        g = new Grid(size, numberOfCages, cageCells, cageObjectives);
+    }
+    
+    public boolean setCellValue(int row, int column, int value)
+    {
+        return g.setCellValue(row, column, value);
+    }
+    
+    public void unsetCellValue(int row, int column)
+    {
+        g.unsetCellValue(row, column);
+    }
+    
+    public Boolean checkGrid()
+    {
+        return g.checkGrid();
+    }
+    
+    public Integer getCellValue(int row, int column)
+    {
+        return g.getCellValue(row, column);
+    }
+    
+    public Integer getSize()
+    {
+        return g.getSize();
+    }
+    
+    public Integer getNumberOfCages()
+    {
+        return g.getNumberOfCages();
+    }
+    
+    public Integer[][] getCageCells()
+    {
+        return g.getCageCells();
+    } 
+    
+    public String[] getCageObjectives()
+    {
+        return g.getCageObjectives();
+    }
+    
+    public int getCageTargetNumber(int cageID)
+    {
+        return g.getCages()[cageID].getTargetNumber();
+    }
+    
+    public char getCageOperator(int cageID)
+    {
+        return g.getCages()[cageID].getOperator();
+    }
+    
+    public Cell[][] getGrid()
+    {
+        return g.getGridContents();
+    }
+    
+    public Cage[] getCages()
+    {
+        return g.getCages();
+    }
+
+    public Grid getGame()
+    {
+        return g.getGame();
+    }
+    
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=Calcudoku.java]
+package view;
+
+import controller.Controller;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileFilter;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class Calcudoku extends JFrame
+{
+    
+    private File puzzleFile;
+    private Integer size;
+    private Integer numberOfCages;
+    private Integer[][] cageCells;
+    private String[] cageObjectives;
+    private Controller c;
+    private final JMenuBar menuBar;
+    private final JMenu menuFile;
+    private final JMenu menuSolve;
+    private final JMenuItem menuItemLoad;
+    private final JMenuItem menuItemReset;
+    private final JMenuItem menuItemClose;
+    private final JMenuItem menuItemCheck;
+    private final JMenuItem menuItemExit;
+    private final JMenuItem menuItemBacktracking;
+    private final JMenuItem menuItemHybridGenetic;
+    private final JMenuItem menuItemGeneticParameters;
+    private final JFileChooser fileChooser;
+    private GUI gui;
+    
+    public Calcudoku()
+    {        
+        this.menuBar = new JMenuBar();
+        this.menuFile = new JMenu();
+        this.menuSolve = new JMenu();
+        this.menuItemLoad = new JMenuItem();
+        this.menuItemReset = new JMenuItem();
+        this.menuItemClose = new JMenuItem();
+        this.menuItemCheck = new JMenuItem();
+        this.menuItemExit = new JMenuItem();
+        this.menuItemBacktracking = new JMenuItem();
+        this.menuItemHybridGenetic = new JMenuItem();
+        this.menuItemGeneticParameters = new JMenuItem();
+        this.fileChooser = new JFileChooser();
+        initComponents();
+    }
+    
+    public static void main(String args[])
+    {
+        EventQueue.invokeLater(() ->
+        {
+            new Calcudoku().setVisible(true);
+        });
+    }
+    
+    private void initComponents()
+    { 
+        this.setTitle("Calcudoku");
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.setMinimumSize(new Dimension(216, 216));
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        initWindowListener();
+        initActionListeners();
+        initMenu();
+        initMenuBar();
+        this.validate();
+        this.revalidate();
+        this.pack();
+    }
+
+    private void initWindowListener()
+    {
+        this.addWindowListener(new WindowListener(this));
+    }
+    
+    private void initActionListeners()
+    {
+        this.fileChooser.setFileFilter(new PuzzleFileFilter());      
+        this.menuItemLoad.addActionListener(this::menuItemLoadActionPerformed);
+        this.menuItemReset.addActionListener(
+                this::menuItemResetActionPerformed);
+        this.menuItemCheck.addActionListener(
+                this::menuItemCheckActionPerformed);
+        this.menuItemClose.addActionListener(
+                this::menuItemCloseActionPerformed);
+        this.menuItemExit.addActionListener(this::menuItemExitActionPerformed);
+        this.menuItemBacktracking.addActionListener(
+                this::menuItemBacktrackingActionPerformed);
+        this.menuItemHybridGenetic.addActionListener(
+                this::menuItemHybridGeneticActionPerformed);
+        this.menuItemGeneticParameters.addActionListener(
+                this::menuItemGeneticParametersActionPerformed);
+    }
+    
+    private void initMenu()
+    {
+        File directory = new File(System.getProperty("user.dir"));
+        this.menuFile.setText("File");
+        this.menuSolve.setText("Solve");
+        this.menuItemLoad.setText("Load Puzzle File");
+        this.menuItemReset.setText("Reset Puzzle");
+        this.menuItemClose.setText("Close Puzzle File");
+        this.menuItemCheck.setText("Check Puzzle");
+        this.menuItemExit.setText("Exit");
+        this.menuItemBacktracking.setText("Backtracking");
+        this.menuItemHybridGenetic.setText("Hybrid Genetic");
+        this.menuItemGeneticParameters.setText(
+                "Set Genetic Algorithm Parameters");
+        this.fileChooser.setDialogTitle("Load Puzzle File");
+        fileChooser.setCurrentDirectory(directory);
+    }
+    
+    private void initMenuBar()
+    {
+        this.menuFile.add(menuItemLoad);
+        this.menuFile.add(menuItemReset);
+        this.menuFile.add(menuItemClose);
+        this.menuFile.addSeparator();
+        this.menuFile.add(menuItemCheck);
+        this.menuFile.addSeparator();
+        this.menuFile.add(menuItemExit);
+        this.menuBar.add(menuFile);
+        this.menuSolve.add(menuItemBacktracking);
+        this.menuSolve.add(menuItemHybridGenetic);
+        this.menuSolve.addSeparator();
+        this.menuSolve.add(menuItemGeneticParameters);
+        this.menuBar.add(menuSolve);
+        this.setJMenuBar(menuBar);
+    }
+    
+    private void menuItemLoadActionPerformed(ActionEvent evt)
+    {
+        if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION)
+        {
+            if (c != null && gui != null)
+            {
+                if (JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to load another puzzle file?", 
+                    "Load Puzzle File", JOptionPane.YES_NO_OPTION) 
+                        == JOptionPane.YES_OPTION)
+                {
+                    selectPuzzleFile();
+                }
+            }
+            else
+            {
+                selectPuzzleFile();
+            }
+        }
+    }
+    
+    private void selectPuzzleFile()
+    {
+        this.puzzleFile = fileChooser.getSelectedFile();
+        try
+        {
+            if (puzzleFile.getAbsolutePath().endsWith(".txt"))
+            {
+                try
+                {
+                    loadPuzzleFile(puzzleFile);
+                }
+                catch (IllegalStateException ise)
+                {
+                    resetFrame();
+                    clearVariables();
+                    JOptionPane.showMessageDialog(null, 
+                            "Error in loading puzzle file.", "Error", 
+                            JOptionPane.ERROR_MESSAGE);
+                    throw new IllegalStateException("Error in loading " 
+                            + "puzzle file.");
+                }
+            }
+            else
+            {
+                resetFrame();
+                clearVariables();
+                JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                throw new IllegalStateException("Invalid puzzle file.");
+            }
+        }
+        catch (FileNotFoundException fnfe)
+        {                
+            resetFrame();
+            clearVariables();
+            JOptionPane.showMessageDialog(null, "Puzzle file not found.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not found.");
+        }
+    }
+
+    private void menuItemResetActionPerformed(ActionEvent evt)
+    {
+        if (c == null || gui == null)
+        {
+            resetFrame();
+            JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not loaded.");
+        }
+        else
+        {
+            if (JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to reset this puzzle?", "Reset Puzzle",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
+            {
+                resetFrame();
+                this.c = new Controller(size, numberOfCages, cageCells,
+                        cageObjectives);
+                this.gui = new GUI(c);
+                this.getContentPane().add(gui);
+                this.validate();
+                this.revalidate();
+                this.pack();
+                this.setLocationRelativeTo(null);
+                this.setTitle("Calcudoku (" + puzzleFile.getName() + ")");
+            }
+        }
+    }
+    
+    private void menuItemCheckActionPerformed(ActionEvent evt)
+    {
+        if (c == null || gui == null)
+        {
+            JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not loaded.");
+        }
+        else
+        {
+            c.checkGrid();
+        }
+    }
+    
+    private void menuItemCloseActionPerformed(ActionEvent evt)
+    {
+        if (c == null || gui == null)
+        {
+            JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not loaded.");
+        }
+        else
+        {
+            if (JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to close this puzzle file?", 
+                "Close Puzzle File", JOptionPane.YES_NO_OPTION) 
+                    == JOptionPane.YES_OPTION)
+            {
+                resetFrame();
+                clearVariables();
+            }
+        }
+    }
+
+    private void menuItemExitActionPerformed(ActionEvent evt)
+    {
+        if (JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to exit this application?", "Exit",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
+        {
+            destroyFrame();
+        }
+    }
+
+    private void menuItemBacktrackingActionPerformed(ActionEvent evt)
+    {
+        if (c == null || gui == null)
+        {
+            JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not loaded.");
+        }
+        else
+        {
+            gui.solveBacktracking();
+        }
+    }
+
+    private void menuItemHybridGeneticActionPerformed(ActionEvent evt)
+    {
+        if (c == null || gui == null)
+        {
+            JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not loaded.");
+        }
+        else
+        {
+            gui.solveHybridGenetic();
+        }
+    }
+    
+    private void menuItemGeneticParametersActionPerformed(ActionEvent evt)
+    {
+        if (c == null || gui == null)
+        {
+            JOptionPane.showMessageDialog(null,  "Puzzle file not loaded.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Puzzle file not loaded.");
+        }
+        else
+        {
+            GeneticParameters gp = new GeneticParameters(gui);
+            gp.setVisible(true);
+        }
+    }
+
+    private void loadPuzzleFile(File puzzleFile) throws FileNotFoundException
+    {
+        resetFrame();
+        clearVariables();
+        try
+        {
+            try (Scanner sc = new Scanner(puzzleFile))
+            {
+                this.size = sc.nextInt();
+                this.cageCells = new Integer[size][size];
+                this.numberOfCages = sc.nextInt();
+                this.cageObjectives = new String[numberOfCages];
+                for (int i = 0; i < size; i++)
+                {
+                    for (int j = 0; j < size; j++)
+                    {
+                        this.cageCells[i][j] = sc.nextInt();
+                    }
+                }
+                for (int i = 0; i < numberOfCages; i++)
+                {
+                    this.cageObjectives[i] = sc.next();
+                }
+                if (sc.hasNext())
+                {
+                    JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                    throw new IllegalStateException("Invalid puzzle file.");
+                }
+                sc.close();
+            }
+            this.c = new Controller(size, numberOfCages, cageCells,
+                    cageObjectives);
+            this.gui = new GUI(c);
+            this.getContentPane().add(gui);
+            this.validate();
+            this.revalidate();
+            this.pack();
+            this.setLocationRelativeTo(null);
+            this.puzzleFile = puzzleFile;
+            this.setTitle("Calcudoku (" + puzzleFile.getName() + ")");
+        }
+        catch (NoSuchElementException nsee)
+        {
+            resetFrame();
+            clearVariables();
+            JOptionPane.showMessageDialog(null, "Invalid puzzle file.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Invalid puzzle file.");
+        }
+    }
+    
+    private void resetFrame()
+    {
+        this.getContentPane().removeAll();
+        this.c = null;
+        this.setTitle("Calcudoku");
+        this.validate();
+        this.revalidate();
+        this.pack();
+        this.setLocationRelativeTo(null);
+    }
+    
+    private void clearVariables()
+    {
+        this.puzzleFile = null;
+        this.size = null;
+        this.cageCells = null;
+        this.numberOfCages = null;
+        this.cageObjectives = null;
+    }
+    
+    public void destroyFrame()
+    {
+        resetFrame();
+        clearVariables();
+        this.dispose();
+    }
+    
+}
+
+class WindowListener extends WindowAdapter
+{
+
+    private final Calcudoku frame;
+    
+    public WindowListener(Calcudoku frame)
+    {
+        this.frame = frame;
+    }
+    
+    @Override
+    public void windowClosing(WindowEvent e)
+    {
+        if (JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to exit the application?", "Exit", 
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
+        {
+            frame.destroyFrame();
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e)
+    {
+        System.exit(0);
+    }
+
+}
+
+class PuzzleFileFilter extends FileFilter
+{
+
+    @Override
+    public boolean accept(File puzzleFile)
+    {
+        return puzzleFile.isDirectory() 
+                || puzzleFile.getAbsolutePath().endsWith(".txt");
+    }
+
+    @Override
+    public String getDescription()
+    {
+        return "Text documents (*.txt)";
+    }
+
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=GUI.java]
+package view;
+
+import controller.Controller;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import javax.swing.BorderFactory;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import model.Cage;
+import model.Cell;
+import model.Grid;
+import model.SolverBacktracking;
+import model.SolverHybridGenetic;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class GUI extends JPanel
+{
+    
+    private final Controller c;
+    private final Grid game;
+    private final Integer size;
+    private final Integer numberOfCages;
+    private final Integer[][] cageCells;
+    private final String[] cageObjectives;
+    private final Cell[][] grid;
+    private final Cage[] cages;
+    private final JTextField[][] textFields;
+    private final Map<JTextField, Point> textFieldCoordinates;
+    private final CellTextFieldListener[][] cellTextFieldListeners;
+    private final Font font;
+    private final int cellSize;
+    private final int cellBorderWidth;
+    private final int cageBorderWidth;
+    private Integer generations;
+    private Integer populationSize;
+    private Double elitismRate;
+    private Double crossoverRate;
+    private Double mutationRate;
+    
+    public GUI(Controller c)
+    {
+        this.c = c;
+        this.game = c.getGame();
+        this.size = c.getSize();
+        this.cageCells = c.getCageCells();
+        this.numberOfCages = c.getNumberOfCages();
+        this.cageObjectives = c.getCageObjectives();
+        this.grid = c.getGrid();
+        this.cages = c.getCages();
+        this.textFields = new JTextField[size][size];
+        this.textFieldCoordinates = new HashMap<>();
+        this.cellTextFieldListeners = new CellTextFieldListener[size][size];
+        this.font = new Font("Courier New", Font.CENTER_BASELINE, 36);
+        this.cellSize = 72;
+        this.cellBorderWidth = 1;
+        this.cageBorderWidth = 3;
+        initComponents();
+    }
+    
+    private void initComponents()
+    {
+        this.setPreferredSize(new Dimension(cellSize * size, cellSize * size));
+        this.setLayout(new GridLayout(size, size));
+        initTextFields();
+    }
+    
+    public Controller getController()
+    {
+        return c;
+    }
+    
+    public Integer getGridSize()
+    {
+        return size;
+    }
+    
+    public Integer getNumberOfCages()
+    {
+        return numberOfCages;
+    }
+    
+    public Integer[][] getCageCells()
+    {
+        return cageCells;
+    }
+    
+    public String[] getCageObjectives()
+    {
+        return cageObjectives;
+    }
+    
+    public Cell[][] getGrid()
+    {
+        return grid;
+    }
+    
+    public Cage[] getCages()
+    {
+        return cages;
+    }
+    
+    public void setGeneticAlgorithmParameters(Integer generations, 
+            Integer populationSize, Double elitismRate, Double crossoverRate, 
+            Double mutationRate)
+    {
+        this.generations = generations;
+        this.populationSize = populationSize;
+        this.elitismRate = elitismRate;
+        this.crossoverRate = crossoverRate;
+        this.mutationRate = mutationRate;
+    }
+    
+    private void initTextFields()
+    {
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                JTextField textField = new JTextField();
+                textField.addKeyListener(new CellKeyListener(this));
+                cellTextFieldListeners[y][x] = new CellTextFieldListener(c, 
+                        textField, y, x);
+                textField.getDocument().addDocumentListener(
+                        cellTextFieldListeners[y][x]);
+                textFieldCoordinates.put(textField, new Point(x, y));
+                textFields[y][x] = textField;
+            }   
+        }
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                JTextField textField = textFields[y][x];
+                int cageID;
+                int topBorderWidth;
+                int leftBorderWidth;
+                int bottomBorderWidth;
+                int rightBorderWidth;
+                if (y == 0)
+                {
+                    topBorderWidth = cageBorderWidth;
+                    if (Objects.equals(cageCells[y][x], cageCells[y + 1][x]))
+                    {
+                        bottomBorderWidth = cellBorderWidth;
+                    }
+                    else
+                    {
+                        bottomBorderWidth = cageBorderWidth;
+                    }
+                }
+                else if (y == size - 1)
+                {
+                    bottomBorderWidth = cageBorderWidth;
+                    if (Objects.equals(cageCells[y][x], cageCells[y - 1][x]))
+                    {
+                        topBorderWidth = cellBorderWidth;
+                    }
+                    else
+                    {
+                        topBorderWidth = cageBorderWidth;
+                    }
+                }
+                else
+                {
+                    if (Objects.equals(cageCells[y][x], cageCells[y + 1][x]))
+                    {
+                        bottomBorderWidth = cellBorderWidth;
+                    }
+                    else
+                    {
+                        bottomBorderWidth = cageBorderWidth;
+                    }
+                    if (Objects.equals(cageCells[y][x], cageCells[y - 1][x]))
+                    {
+                        topBorderWidth = cellBorderWidth;
+                    }
+                    else
+                    {
+                        topBorderWidth = cageBorderWidth;
+                    }
+                }
+                if (x == 0)
+                {
+                    leftBorderWidth = cageBorderWidth;
+                    if (Objects.equals(cageCells[y][x], cageCells[y][x + 1]))
+                    {
+                        rightBorderWidth = cellBorderWidth;
+                    }
+                    else
+                    {
+                        rightBorderWidth = cageBorderWidth;
+                    }
+                }
+                else if (x == size - 1)
+                {
+                    rightBorderWidth = cageBorderWidth;
+                    if (Objects.equals(cageCells[y][x], cageCells[y][x - 1]))
+                    {
+                        leftBorderWidth = cellBorderWidth;
+                    }
+                    else
+                    {
+                        leftBorderWidth = cageBorderWidth;
+                    }
+                }
+                else
+                {
+                    if (Objects.equals(cageCells[y][x], cageCells[y][x + 1]))
+                    {
+                        rightBorderWidth = cellBorderWidth;
+                    }
+                    else
+                    {
+                        rightBorderWidth = cageBorderWidth;
+                    }
+                    if (Objects.equals(cageCells[y][x], cageCells[y][x - 1]))
+                    {
+                        leftBorderWidth = cellBorderWidth;
+                    }
+                    else
+                    {
+                        leftBorderWidth = cageBorderWidth;
+                    }
+                }
+                cageID = grid[y][x].getCageID();
+                textField.setToolTipText(cages[cageID].getObjective());
+                textField.setBorder(BorderFactory.createMatteBorder(
+                        topBorderWidth, leftBorderWidth, bottomBorderWidth, 
+                        rightBorderWidth, Color.BLACK));
+                textField.setFont(font);
+                textField.setHorizontalAlignment(JTextField.CENTER);
+                textField.setPreferredSize(new Dimension(cellSize, cellSize));                
+                JPopupMenu popupMenu = new JPopupMenu();                
+                for (int i = 1; i <= size; i++)
+                {
+                    JMenuItem menuItem = new JMenuItem("" + i);
+                    popupMenu.add(menuItem);
+                    menuItem.addActionListener(new PopupMenuListener(textField, 
+                            i));
+                }                
+                textField.add(popupMenu);
+                textField.setComponentPopupMenu(popupMenu);
+            }
+        }
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                this.add(textFields[y][x]);
+            }
+        }
+    }
+    
+    public void solveBacktracking()
+    {
+        removeCellTextFieldListeners();
+        clearGrid();
+        Cell[][] solution;
+        float startTime = System.nanoTime();
+        float endTime;
+        float duration;
+        SolverBacktracking sb = new SolverBacktracking(game);
+        if (sb.solve() == true)
+        {
+            solution = sb.getSolution().getGridContents();
+            printGridToScreen(solution);
+            endTime = System.nanoTime();
+            duration = (endTime - startTime) / 1000000000;
+            System.out.println("The backtracking algorithm has successfully "
+                    + "solved the puzzle." + "\nTime elapsed: " + duration 
+                    + " seconds");
+            JOptionPane.showMessageDialog(null, 
+                    "The backtracking algorithm has successfully solved the " 
+                            + "puzzle." + "\nTime elapsed: " + duration 
+                            + " seconds", "Information", 
+                            JOptionPane.INFORMATION_MESSAGE);
+        }
+        else
+        {
+            endTime = System.nanoTime();
+            duration = (endTime - startTime) / 1000000000;
+            System.out.println("The backtracking algorithm has failed to solve "
+                    + "the puzzle." + "\nTime elapsed: " + duration 
+                    + " seconds");
+            JOptionPane.showMessageDialog(null, 
+                    "The backtracking algorithm has failed to solve the " 
+                            + "puzzle." + "\nTime elapsed: " + duration 
+                            + " seconds", "Information", 
+                            JOptionPane.INFORMATION_MESSAGE);
+        }
+        addCellTextFieldListeners();
+    }
+    
+    public void solveHybridGenetic()
+    {
+        if (generations == null || populationSize == null 
+                || elitismRate == null || crossoverRate == null 
+                || mutationRate == null)
+        {
+            JOptionPane.showMessageDialog(null,
+                    "Genetic algorithm parameters have not been set.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException(
+                    "Genetic algorithm parameters have not been set.");
+        }
+        else
+        {
+            removeCellTextFieldListeners();
+            clearGrid();
+            Cell[][] solution;
+            float startTime = System.nanoTime();
+            float endTime;
+            float duration;
+            SolverHybridGenetic shg = new SolverHybridGenetic(game, generations, 
+                    populationSize, elitismRate, crossoverRate, mutationRate);
+            if (shg.solve() == true)
+            {
+                solution = shg.getSolution().getGridContents();
+                printGridToScreen(solution);
+                endTime = System.nanoTime();
+                duration = (endTime - startTime) / 1000000000;
+                System.out.println("The hybrid genetic algorithm has successfully "
+                        + "solved the puzzle." + "\nTime elapsed: " + duration 
+                        + " seconds");
+                JOptionPane.showMessageDialog(null, 
+                        "The hybrid genetic algorithm has successfully solved the " 
+                                + "puzzle." + "\nTime elapsed: " + duration 
+                                + " seconds", "Information", 
+                                JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                endTime = System.nanoTime();
+                duration = (endTime - startTime) / 1000000000;
+                System.out.println("The hybrid genetic algorithm has failed to "
+                        + "solve the puzzle." + "\nTime elapsed: " + duration 
+                        + " seconds");
+                JOptionPane.showMessageDialog(null, 
+                        "The hybrid genetic algorithm has failed to solve the " + 
+                                "puzzle." + "\nTime elapsed: " + duration 
+                                + " seconds", "Information", 
+                                JOptionPane.INFORMATION_MESSAGE);
+            }
+            addCellTextFieldListeners();
+        }
+    }
+    
+    private void printGridToScreen(Cell[][] grid)
+    {
+        for (int x = 0; x < size; x++)
+        {
+            for (int y = 0; y < size; y++)
+            {
+                String value = Integer.toString(grid[x][y].getValue());
+                textFields[x][y].setText(value);
+            }
+        }
+    }
+    
+    private void clearGrid()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                c.unsetCellValue(i, j);
+            }
+        }
+    }
+    
+    private void addCellTextFieldListeners()
+    {
+        for (int x = 0; x < size; x++)
+        {
+            for (int y = 0; y < size; y++)
+            {
+                textFields[x][y].getDocument().addDocumentListener(
+                        cellTextFieldListeners[x][y]);
+            }
+        }
+    }
+    
+    private void removeCellTextFieldListeners()
+    {
+        for (int x = 0; x < size; x++)
+        {
+            for (int y = 0; y < size; y++)
+            {
+                textFields[x][y].getDocument().removeDocumentListener(
+                        cellTextFieldListeners[x][y]);
+            }
+        }
+    }
+    
+    public void moveCursor(JTextField textField, int keyCode)
+    {
+        Point coordinates = textFieldCoordinates.get(textField);
+        switch (keyCode)
+        {
+            case KeyEvent.VK_LEFT:
+                if (coordinates.x > 0)
+                {
+                    textFields[coordinates.y][coordinates.x - 1].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_KP_LEFT:
+                if (coordinates.x > 0)
+                {
+                    textFields[coordinates.y][coordinates.x - 1].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_UP:
+                if (coordinates.y > 0)
+                {
+                    textFields[coordinates.y - 1][coordinates.x].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_KP_UP:
+                if (coordinates.y > 0)
+                {
+                    textFields[coordinates.y - 1][coordinates.x].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_RIGHT:
+                if (coordinates.x < size - 1)
+                {
+                    textFields[coordinates.y][coordinates.x + 1].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_KP_RIGHT:
+                if (coordinates.x < size - 1)
+                {
+                    textFields[coordinates.y][coordinates.x + 1].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_DOWN:
+                if (coordinates.y < size - 1)
+                {
+                    textFields[coordinates.y + 1][coordinates.x].requestFocus();
+                }
+                break;
+            case KeyEvent.VK_KP_DOWN:
+                if (coordinates.y < size - 1)
+                {
+                    textFields[coordinates.y + 1][coordinates.x].requestFocus();
+                }
+                break;
+        }
+    }
+    
+}
+
+class CellKeyListener implements KeyListener
+{
+
+    private final GUI gui;
+
+    CellKeyListener(GUI gui)
+    {
+        this.gui = gui;
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e)
+    {
+        int keyCode = e.getKeyCode();
+        JTextField textField = (JTextField) e.getSource();        
+        switch (keyCode)
+        {
+            case KeyEvent.VK_LEFT :
+                e.consume();
+                gui.moveCursor(textField, KeyEvent.VK_LEFT);
+                break;
+            case KeyEvent.VK_UP :
+                e.consume();
+                gui.moveCursor(textField, KeyEvent.VK_UP);
+                break;
+            case KeyEvent.VK_RIGHT :
+                e.consume();
+                gui.moveCursor(textField, KeyEvent.VK_RIGHT);
+                break;
+            case KeyEvent.VK_DOWN :
+                e.consume();
+                gui.moveCursor(textField, KeyEvent.VK_DOWN);
+                break;
+            case KeyEvent.VK_KP_LEFT :
+                e.consume();
+                gui.moveCursor(textField, KeyEvent.VK_KP_LEFT);
+                break;
+            case KeyEvent.VK_KP_UP :
+                e.consume();
+                gui.moveCursor(textField, KeyEvent.VK_KP_UP);
+                break;
+            case KeyEvent.VK_KP_RIGHT :
+                e.consume();
+                gui.moveCursor(textField, KeyEvent.VK_KP_RIGHT);
+                break;
+            case KeyEvent.VK_KP_DOWN :
+                e.consume();
+                gui.moveCursor(textField, KeyEvent.VK_KP_DOWN);
+                break;
+        }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e)
+    {
+        JTextField textField = (JTextField) e.getSource();
+        char c = e.getKeyChar();
+        if (!Character.isDigit(c))
+        {
+            e.consume();
+        }
+        String gridSize = "" + gui.getGridSize();
+        int gridSizeDigits = gridSize.length();
+        if (textField.getText().length() >= gridSizeDigits)
+        {
+            e.consume();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e)
+    {
+        
+    }
+    
+}
+
+class PopupMenuListener implements ActionListener
+{
+
+    private final JTextField textField;
+    private final int number;
+
+    PopupMenuListener(JTextField textField, int number)
+    {
+        this.textField  = textField;
+        this.number = number; 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        textField.setText(number + "");
+    }
+    
+}
+
+class CellTextFieldListener implements DocumentListener
+{
+
+    private final Controller c;
+    private final JTextField textField;
+    private final int x;
+    private final int y;
+    
+    public CellTextFieldListener(Controller c, JTextField textField, int x, 
+            int y)
+    {
+        this.c = c;
+        this.textField = textField;
+        this.x = x;
+        this.y = y;
+    }
+    
+    @Override
+    public void insertUpdate(DocumentEvent e)
+    {
+        Integer value = Integer.parseInt(textField.getText());
+        c.setCellValue(x, y, value);
+    }
+
+    @Override
+    public void removeUpdate(DocumentEvent e)
+    {
+        c.unsetCellValue(x, y);
+    }
+
+    @Override
+    public void changedUpdate(DocumentEvent e)
+    {
+        Integer value = Integer.parseInt(textField.getText());
+        c.unsetCellValue(x, y);
+        c.setCellValue(x, y, value);
+    }
+    
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=GeneticParameters.java]
+package view;
+
+import java.awt.event.ActionEvent;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
+
+/**
+ *
+ * @author michaeladrian39
+ */
+public class GeneticParameters extends JFrame
+{
+
+    private final GUI gui;
+    private final JLabel labelGenerations;
+    private final JLabel labelPopulation;
+    private final JLabel labelElitism;
+    private final JLabel labelCrossover;
+    private final JLabel labelMutation;
+    private final JTextField textFieldGenerations;
+    private final JTextField textFieldPopulation;
+    private final JTextField textFieldElitism;
+    private final JTextField textFieldCrossover;
+    private final JTextField textFieldMutation;
+    private final JButton buttonOK;
+    private final JButton buttonCancel;
+
+    /**
+     * Creates new form Test
+     */
+    public GeneticParameters(GUI gui)
+    {
+        this.gui = gui;
+        labelGenerations = new JLabel();
+        labelPopulation = new JLabel();
+        labelElitism = new JLabel();
+        labelCrossover = new JLabel();
+        labelMutation = new JLabel();
+        textFieldGenerations = new JTextField();
+        textFieldPopulation = new JTextField();
+        textFieldElitism = new JTextField();
+        textFieldCrossover = new JTextField();
+        textFieldMutation = new JTextField();
+        buttonOK = new JButton();
+        buttonCancel = new JButton();
+        initComponents();
+        this.setVisible(true);
+    }
+
+    private void initComponents()
+    {
+        this.setTitle("Set Genetic Algorithm Parameters");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        labelGenerations.setText("Generations");
+        labelPopulation.setText("Population Size");
+        labelElitism.setText("Elitism Rate");
+        labelCrossover.setText("Crossover Rate");
+        labelMutation.setText("Mutation Rate");
+        buttonOK.setText("OK");
+        buttonCancel.setText("Cancel");
+        initGUI();
+        initActionListeners();
+    }
+    
+    private void initActionListeners()
+    {   
+        this.buttonOK.addActionListener(this::buttonOKActionPerformed);
+        this.buttonCancel.addActionListener(this::buttonCancelActionPerformed);
+    }
+
+    private void initGUI()
+    {
+        GroupLayout layout = new GroupLayout(this.getContentPane());
+        this.getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.LEADING)
+                                        .addComponent(labelGenerations)
+                                        .addComponent(labelPopulation)
+                                        .addComponent(labelElitism)
+                                        .addComponent(labelCrossover)
+                                        .addComponent(labelMutation)
+                                        .addComponent(buttonOK))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.LEADING)
+                                        .addComponent(textFieldGenerations, 
+                                                GroupLayout.PREFERRED_SIZE, 
+                                                100, 
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textFieldPopulation,
+                                                GroupLayout.PREFERRED_SIZE, 
+                                                100, 
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textFieldElitism,
+                                                GroupLayout.PREFERRED_SIZE, 
+                                                100, 
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textFieldCrossover,  
+                                                GroupLayout.PREFERRED_SIZE, 
+                                                100, 
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textFieldMutation, 
+                                                 GroupLayout.PREFERRED_SIZE, 
+                                                100, 
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(buttonCancel))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE,
+                                        Short.MAX_VALUE)));
+        layout.linkSize(SwingConstants.HORIZONTAL, buttonOK, buttonCancel);
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.BASELINE)
+                                        .addComponent(textFieldGenerations,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.DEFAULT_SIZE,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelGenerations))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.BASELINE)
+                                        .addComponent(labelPopulation)
+                                        .addComponent(textFieldPopulation,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.DEFAULT_SIZE,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.BASELINE)
+                                        .addComponent(labelElitism)
+                                        .addComponent(textFieldElitism,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.DEFAULT_SIZE,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.BASELINE)
+                                        .addComponent(labelCrossover)
+                                        .addComponent(textFieldCrossover,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.DEFAULT_SIZE,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.BASELINE)
+                                        .addComponent(labelMutation)
+                                        .addComponent(textFieldMutation,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.DEFAULT_SIZE,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.BASELINE)
+                                        .addComponent(buttonOK)
+                                        .addComponent(buttonCancel))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE,
+                                        Short.MAX_VALUE)));
+        this.validate();
+        this.revalidate();
+        this.pack();
+        this.setLocationRelativeTo(null);
+    }
+    
+    private void buttonOKActionPerformed(ActionEvent evt)
+    {
+        try
+        {
+            Integer generations = Integer.parseInt(textFieldGenerations.getText());
+            Integer population = Integer.parseInt(textFieldPopulation.getText());
+            Double elitism = Double.parseDouble(textFieldElitism.getText());
+            Double crossover = Double.parseDouble(textFieldCrossover.getText());
+            Double mutation = Double.parseDouble(textFieldMutation.getText());
+            gui.setGeneticAlgorithmParameters(generations, population, elitism, 
+                crossover, mutation);
+            destroyFrame();
+        }
+        catch (NumberFormatException nfe)
+        {
+            JOptionPane.showMessageDialog(null, "Invalid number format.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalStateException("Invalid number format.");
+        }
+    }
+    
+    private void buttonCancelActionPerformed(ActionEvent evt)
+    {
+        destroyFrame();
+    }
+    
+    private void destroyFrame()
+    {
+        this.getContentPane().removeAll();
+        this.validate();
+        this.revalidate();
+        this.pack();
+        this.setLocationRelativeTo(null);
+        this.dispose();
+    }
+    
+}
+\end{lstlisting}
