@@ -11,19 +11,11 @@ import model.Cell;
 public class Controller
 {
     
-    private Integer size;
-    private Integer numberOfCages;
-    private Integer[][] cageCells;
-    private String[] cageObjectives;
     private Grid g;
     
     public Controller(Integer size, Integer numberOfCages, 
             Integer[][] cageCells, String[] cageObjectives)
     {
-        this.size = size;
-        this.numberOfCages = numberOfCages;
-        this.cageCells = cageCells;
-        this.cageObjectives = cageObjectives;
         g = new Grid(size, numberOfCages, cageCells, cageObjectives);
     }
     

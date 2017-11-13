@@ -128,7 +128,6 @@ Perangkat lunak teka-teki Calcudoku ini terdiri dari beberapa kelas, yang dikelo
 	\item SolverGenetic, yaitu kelas \textit{solver} untuk teka-teki Calcudoku menggunakan algoritma genetik. Dalam algoritma \textit{hybrid genetic}, algoritma genetik baru akan dijalankan jika algoritma \textit{rule based} gagal dalam menyelesaikan teka-teki Calcudoku.
 	\item Chromosome, yaitu kelas yang merepresentasikan sebuah kromosom untuk algoritma genetik dalam solver \textit{hybrid genetic}.
 	\item ChromosomeComparator, yaitu kelas pembanding \textit{custom} (\textit{custom comparator}) yang berfungsi untuk mengurutkan kromosom berdasarkan nilai kelayakkannya (\textit{fitness value}).	
-	\item SolverGenetic, yaitu kelas \textit{solver} untuk teka-teki Calcudoku menggunakan algoritma genetik. Dalam algoritma \textit{hybrid genetic}, algoritma genetik baru akan dijalankan jika algoritma \textit{rule based} gagal dalam menyelesaikan teka-teki Calcudoku.
 	\end{enumerate}
 \item View, yaitu GUI dari perangkat lunak ini. Package ini memiliki beberapa kelas, yaitu:
 	\begin{enumerate}
@@ -228,7 +227,6 @@ Diagram kelas Grid dapat dilihat pada Gambar~\ref{fig:diagramkelasgrid}.
 Kelas Cage mempunyai beberapa atribut, yaitu:
 
 \begin{enumerate}
-\item cageID, yaitu nomor dari \textit{cage} tersebut.
 \item objective, yaitu angka tujuan dan operator yang ditentukan untuk \textit{cage} tersebut.
 \item targetNumber, yaitu angka tujuan dari \textit{cage} tersebut.
 \item operator, yaitu operator yang ditentukan untuk \textit{cage} tersebut.
@@ -238,7 +236,7 @@ Kelas Cage mempunyai beberapa atribut, yaitu:
 Kelas Cage mempunyai \textit{method-method} berikut:
 
 \begin{enumerate}
-\item Cage(int cageID, String objectives), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa nomor dan \textit{cage objectives} dari \textit{cage} tersebut.
+\item Cage(String objectives), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{cage objectives} dari \textit{cage} tersebut.
 \item isCageObjectiveValid(String cageObjective), yaitu \textit{method} yang memeriksa apakah \textit{cage objective} dari \textit{cage} tersebut \textit{valid} atau tidak. \textit{Method} ini menerima masukan berupa String yang berisi \textit{cage objective} dan menghasilkan keluaran apakah String tersebut valid atau tidak. \textit{Cage objective valid} jika isi dari \textit{cage objective} tersebut adalah satu angka tujuan dari \textit{cage} tersebut dan diikuti oleh satu operator yang telah ditentukan untuk \textit{cage} tersebut.
 \item generateTargetNumber(String objective), yaitu \textit{method} yang membangkitkan angka tujuan dari sebuah \textit{cage} dari \textit{cage objective} yang diberikan. \textit{Method} ini menerima masukan berupa String yang berisi \textit{cage objective} dari sebuah \textit{cage} dan menghasilkan keluaran berupa angka tujuan dari \textit{cage} tersebut.
 \item generateOperator(String objective), yaitu \textit{method} yang membangkitkan operator yang telah ditentukan untuk sebuah \textit{cage} dari \textit{cage objective} yang diberikan. \textit{Method} ini menerima masukan berupa String yang berisi \textit{cage objective} dari sebuah \textit{cage} dan menghasilkan keluaran berupa operator yang telah ditentukan untuk \textit{cage} tersebut.
@@ -268,7 +266,6 @@ Diagram kelas Cage dapat dilihat pada Gambar~\ref{fig:diagramkelascage}.
 Kelas Cell mempunyai beberapa atribut, yaitu:
 
 \begin{enumerate}
-\item cellID, yaitu nomor dari sel tersebut.
 \item row, yaitu posisi baris dari sel tersebut.
 \item column, yaitu posisi kolom dari sel tersebut.
 \item cageID, yaitu nomor \textit{cage} yang berisi sel tersebut.
@@ -278,7 +275,7 @@ Kelas Cell mempunyai beberapa atribut, yaitu:
 Kelas Cell mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item Cell(int CellID, int row, int column, int cageID), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa nomor sel, nomor baris, dan nomor kolom dari sel tersebut, dan nomor \textit{cage} yang berisi sel tersebut.
+\item Cell(int row, int column, int cageID), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa nomor baris, dan nomor kolom dari sel tersebut, dan nomor \textit{cage} yang berisi sel tersebut.
 \item setValue(Integer value), yaitu \textit{method} untuk mengisi sebuah sel tersebut dengan nilai yang telah ditentukan. \textit{Method} ini menerima masukan berupa nilai yang akan diisikan ke dalam sel tersebut.
 \item getValue(), yaitu \textit{method} untuk mendapatkan nilai dari sel tersebut. \textit{Method} ini menghasilkan keluaran berupa nilai dari sel tersebut.
 \item getRow(), yaitu \textit{method} untuk mendapatkan nomor baris dari sebuah sel. \textit{Method} ini menghasilkan keluaran berupa nomor baris dari sel tersebut.
@@ -424,7 +421,6 @@ Kelas SolverRuleBased mempunyai \textit{method-method} berikut:
 \item getGridArrayList(), yaitu \textit{method} untuk mendapatkan isi dari \textit{grid} dalam bentuk ArrayList. Method ini menghasilkan keluaran berupa isi dari \textit{grid} dalam bentuk ArrayList.
 \item getGrid, yaitu \textit{method} untuk mendapatkan \textit{grid}. Method ini menghasilkan keluaran berupa \textit{grid}.
 \item getSolution, yaitu \textit{method} untuk mendapatkan \textit{grid} yang sudah diselesaikan oleh algoritma \textit{rule based}. \textit{Method} ini menghasilkan keluaran berupa \textit{grid} yang sudah diselesaikan oleh algoritma \textit{rule based}.
-\item getPossibleValues, yaitu \textit{method} untuk mendapatkan kemungkinan angka-angka yang mungkin untuk setiap sel di dalam \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa matriks dari \textit{array} yang berisi kemungkinan angka-angka yang mungkin untuk setiap sel di dalam \textit{grid}.
 \item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar.
 \item printPossibleValues(), yaitu \textit{method} untuk mencetak kemungkinan angka-angka yang valid untuk setiap sel di dalam \textit{grid} ke layar.
 \end{enumerate}
@@ -467,18 +463,16 @@ Kelas SolverGenetic mempunyai \textit{method-method} berikut:
 \item solveLoop(), yaitu \textit{method} yang membangkitkan generasi berikutnya dari generasi sebelumnya menggunakan operator algoritma genetik, yaitu \textit{elitism}, mutasi, dan kawin silang.
 \item setParameters(int generations, int populationSize, double elitismRate, double crossoverRate, double mutationRate), yaitu \textit{method} untuk menentukan jumlah generasi maksimum, jumlah kromosom dalam satu generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi untuk algoritma genetik. Method ini menerima masukan berupa jumlah generasi maksimum, jumlah kromosom dalam satu generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi untuk algoritma genetik.
 \item generateIsCellFixedArray(), yaitu \textit{method} yang membangkitkan matriks yang berisi apakah sel tersebut sudah diisi oleh algoritma \textit{rule based} atau tidak. \textit{Method} ini menghasilkan keluaran berupa sebuah matriks yang berisi apakah sel tersebut sudah diisi oleh algoritma \textit{rule based} atau tidak.
-\item genereatePopulation(), yaitu \textit{method} yang membangkitkan populasi kromosom awal.
+\item generatePopulation(), yaitu \textit{method} yang membangkitkan populasi kromosom awal.
 \item generateChromosome(), yaitu \textit{method} yang membangkitkan sebuah kromosom. \textit{Method} ini menghasilkan keluaran berupa sebuah kromosom.
 \item sortChromosomes(), yaitu \textit{method} yang mengurutkan kromosom-kromosom dalam generasi saat ini berdasarkan nilai kelayakannya.
-\item randomSelection(ArrayList<Chromosome> chromosomes), yaitu \textit{method} untuk memilih sebuah kromosom dari sebuah populasi kromosom secara acak. \textit{Method} ini menerima masukan berupa ArrayList yang berisi sekumpulan kromosom dan menghasilkan keluaran berupa sebuah kromosom yang terpilih.
-\item tournamentSelection(ArrayList<Chromosome> chromosomes), yaitu \textit{method} untuk memilih sebuah kromosom dari sebuah populasi kromosom menggunakan metode \textit{tournament selection}. \textit{Method} ini menerima masukan berupa sebuah ArrayList yang berisi sekumpulan kromosom dan menghasilkan keluaran berupa sebuah kromosom yang terpilih.
+\item randomSelection(ArrayList<Chromosome> chromosomes), yaitu \textit{method} untuk memilih sebuah kromosom dari sebuah populasi kromosom secara acak. \textit{Method} ini menerima masukan berupa ArrayList yang berisi sekumpulan kromosom dan menghasilkan keluaran berupa sebuah kromosom yang terpilih. Kromosom untuk proses kawin silang dan proses mutasi dipilih secara acak menggunakan \textit{method} ini.
 \item cloneChromosome(Chromosome c), yaitu \textit{method} untuk mengkopi sebuah kromosom. Method ini menerima masukan berupa kromsom yang akan dikopi dan menghasilkan keluaran berupa kromosom baru hasil kopian dari kromosom yang dikopi tersebut.
 \item crossover(Chromosome parent1, Chromosome parent2), yaitu \textit{method} yang mengaplikasikan operator kawin silang kepada dua kromosom. \textit{Method} ini menerima masukan berupa dua kromosom yang akan dikawinsilangkan dan menghasilkan keluaran berupa sebuah ArrayList yang berisi dua kromosom hasil kawin silang.
 \item mutation(Chromosome parent), yaitu \textit{method} yang mengaplikasikan operator mutasi kepada sebuah kromosom. \textit{Method} ini menerima masukan berupa kromosom yang akan dimutasi dan menghasilkan keluaran berupa sebuah kromosom hasil mutasi.
 \item getGrid, yaitu \textit{method} untuk mendapatkan \textit{grid}. Method ini menghasilkan keluaran berupa \textit{grid}.
 \item getSolution, yaitu \textit{method} untuk mendapatkan \textit{grid} yang sudah diselesaikan oleh algoritma genetik. \textit{Method} ini menghasilkan keluaran berupa \textit{grid} yang sudah diselesaikan oleh algoritma genetik.
 \item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar.
-\item printPossibleValues(), yaitu \textit{method} untuk mencetak kemungkinan angka-angka yang valid untuk setiap sel di dalam \textit{grid} ke layar. \textit{Method} ini menerima masukan berupa sebuah \textit{array list} yang berisi kemungan angka-angka yang valid untuk setiap sel di dalam \textit{grid}.
 \end{enumerate}
 
 Diagram kelas SolverGenetic dapat dilihat pada Gambar~\ref{fig:diagramkelassolvergenetic}.
@@ -509,7 +503,6 @@ Kelas Chromosome mempunyai beberapa \textit{method}, yaitu:
 \item setFitness(), yaitu \textit{method} yang menghitung nilai kelayakan untuk sebuah \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa nilai kelayakan untuk \textit{grid} tersebut.
 \item getFitness(), yaitu \textit{method} untuk mendapatkan nilai kelayakan untuk sebuah \textit{grid}. \textit{Method} ini menghasilkan keluaran berupa nilai kelayakan untuk \textit{grid} tersebut.
 \item getGrid, yaitu \textit{method} untuk mendapatkan \textit{grid}. Method ini menghasilkan keluaran berupa \textit{grid}.
-\item printGrid(), yaitu \textit{method} untuk mencetak isi \textit{grid} ke layar.
 \end{enumerate}
 
 Diagram kelas Chromosome dapat dilihat pada Gambar~\ref{fig:diagramkelaschromosome}.
@@ -538,15 +531,7 @@ Kelas ChromosomeComparator tidak mempunyai variabel, tetapi kelas ini mempunyai 
 \subsection{Kelas Controller}
 \label{sec:kelascontroller}
 
-Kelas Controller mempunyai beberapa atribut, yaitu:
-
-\begin{enumerate}
-\item size, yaitu ukuran dari matriks \textit{grid}.
-\item numberOfCages, yaitu banyaknya \textit{cage} yang terdapat dalam \textit{grid}.
-\item cageCells, yaitu sebuah matriks \textit{cage assignment}. Matriks ini merepresentasikan posisi dari setiap \textit{cage} dalam \textit{grid}.
-\item cageObjectives, yaitu sebuah \textit{array} yang berisi \textit{cage objectives} untuk setiap \textit{cage}. \textit{Cage objectives} berisikan angka tujuan dan operasi matematika yang telah ditentukan.
-\item g, yaitu representasi dari \textit{grid} dalam teka-teki Calcudoku. grid adalah sebuah matriks yang berisi sel-sel. Matriks ini berukuran \begin{math} n \times n\end{math}.
-\end{enumerate}
+Kelas Controller mempunyai beberapa satu atribut, yaitu g. g adalah representasi dari \textit{grid} dalam teka-teki Calcudoku. grid adalah sebuah matriks yang berisi sel-sel. Matriks ini berukuran \begin{math} n \times n\end{math}.
 
 Kelas Controller mempunyai beberapa \textit{method}, yaitu:
 

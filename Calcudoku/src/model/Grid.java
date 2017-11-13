@@ -196,7 +196,7 @@ public class Grid
     {
         for (int i = 0; i < cages.length; i++)
         {
-            cages[i] = new Cage(i, cageObjectives[i]);
+            cages[i] = new Cage(cageObjectives[i]);
         }
     }
     
@@ -206,8 +206,7 @@ public class Grid
         {
             for (int j = 0; j < cageCells[i].length; j++)
             {
-                grid[i][j] = new Cell((i * size) + j, i, j, 
-                        (cageCells[i][j] - 1));
+                grid[i][j] = new Cell(i, j, (cageCells[i][j] - 1));
                 cages[cageCells[i][j] - 1].addCell(grid[i][j]);
             }
         }
@@ -323,8 +322,6 @@ public class Grid
     
     private boolean isCageValid(int row, int column)
     {
-        ArrayList<Integer> cage = 
-                getCageValues(getGridContents()[row][column].getCageID());
         if (isCageValuesValid(
                 getGridContents()[row][column].getCageID()) == false)
         {
@@ -341,8 +338,6 @@ public class Grid
     
     private boolean solverIsCageValid(int row, int column)
     {
-        ArrayList<Integer> cage = 
-                getCageValues(getGridContents()[row][column].getCageID());
         return isCageValuesValid(
                 getGridContents()[row][column].getCageID()) == true;
     }

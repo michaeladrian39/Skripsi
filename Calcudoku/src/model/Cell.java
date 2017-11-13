@@ -7,15 +7,13 @@ package model;
 public class Cell
 {
     
-    private final int cellID;
     private final int row;
     private final int column;
     private final int cageID;
     private Integer value;
     
-    public Cell(int cellID, int row, int column, int cageID)
+    public Cell(int row, int column, int cageID)
     {
-        this.cellID = cellID;
         this.row = row;
         this.column = column;
         this.cageID = cageID;

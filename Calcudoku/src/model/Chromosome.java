@@ -47,20 +47,6 @@ public class Chromosome
     {
         return grid;
     }
-
-    private void printGrid()
-    {
-        Cell[][] cells = grid.getGridContents();
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size; j++)
-            {
-                System.out.print(cells[i][j].getValue() + " ");
-            }
-            System.out.println("");
-        }
-        System.out.println("");
-    }
     
 }
 

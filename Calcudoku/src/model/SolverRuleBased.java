@@ -23,7 +23,8 @@ public class SolverRuleBased
         this.possibleValues = generatePossibleValuesArray();
     }
     
-    private ArrayList<Integer>[][] generatePossibleValuesArray()
+    @SuppressWarnings("unchecked")
+	private ArrayList<Integer>[][] generatePossibleValuesArray()
     {
         possibleValues = new ArrayList[size][size];
         for (int i = 0; i < size; i++)
@@ -79,7 +80,8 @@ public class SolverRuleBased
         return getGridArrayList();
     }
     
-    public ArrayList<Integer>[] getRowPossibleValues(int row)
+    @SuppressWarnings("unchecked")
+	public ArrayList<Integer>[] getRowPossibleValues(int row)
     {
         ArrayList<Integer>[] array;
         array = new ArrayList[size];
@@ -90,7 +92,8 @@ public class SolverRuleBased
         return array;
     }
     
-    public ArrayList<Integer>[] getColumnPossibleValues(int column)
+    @SuppressWarnings("unchecked")
+	public ArrayList<Integer>[] getColumnPossibleValues(int column)
     {
         ArrayList<Integer>[] array;
         array = new ArrayList[size];
@@ -116,7 +119,7 @@ public class SolverRuleBased
     private void killerCombination()
     {
         int cageSize;
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         for (Cage c : grid.getCages())
         {
             cageSize = c.getSize();
@@ -136,9 +139,7 @@ public class SolverRuleBased
     private void killerCombinationCageSize2(Cage cage)
     {
         int gridSize = size;
-        char cageOperator = cage.getOperator();
-        int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (gridSize)
         {
             case 3 :
@@ -174,7 +175,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -258,7 +259,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -358,7 +359,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -478,7 +479,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -602,7 +603,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -754,7 +755,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -918,7 +919,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -1176,10 +1177,12 @@ public class SolverRuleBased
     private void nakedDoubleRow(int row)
     {
         ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
-        ArrayList<Integer> column2PossibleIndexes = new ArrayList();
-        ArrayList<ArrayList<Integer>> column2PossibleValues = new ArrayList();
-        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList();
-        ArrayList<Integer> uniquePossibleValuesFrequency = new ArrayList();
+        ArrayList<Integer> column2PossibleIndexes = new ArrayList<Integer>();
+        ArrayList<ArrayList<Integer>> column2PossibleValues = 
+                new ArrayList<>();
+        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList<>();
+        ArrayList<Integer> uniquePossibleValuesFrequency = 
+                new ArrayList<Integer>();
         for (int i = 0; i < rowPossibleValues.length; i++)
         {
             if (rowPossibleValues[i].size() == 2)
@@ -1211,7 +1214,7 @@ public class SolverRuleBased
                     ArrayList<Integer> doublePossibleValues = 
                             uniquePossibleValues.get(i);
                     ArrayList<Integer> doublePossibleIndexes = 
-                            new ArrayList();
+                            new ArrayList<Integer>();
                     for (int j = 0; j < column2PossibleValues.size(); j++)
                     {
                         if (column2PossibleValues.get(j).equals(
@@ -1253,10 +1256,11 @@ public class SolverRuleBased
     {
         ArrayList<Integer>[] columnPossibleValues = 
                 getColumnPossibleValues(column);
-        ArrayList<Integer> row2PossibleIndexes = new ArrayList();
-        ArrayList<ArrayList<Integer>> row2PossibleValues = new ArrayList();
-        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList();
-        ArrayList<Integer> uniquePossibleValuesFrequency = new ArrayList();
+        ArrayList<Integer> row2PossibleIndexes = new ArrayList<Integer>();
+        ArrayList<ArrayList<Integer>> row2PossibleValues = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList<>();
+        ArrayList<Integer> uniquePossibleValuesFrequency = 
+                new ArrayList<Integer>();
         for (int i = 0; i < columnPossibleValues.length; i++)
         {
             if (columnPossibleValues[i].size() == 2)
@@ -1288,7 +1292,7 @@ public class SolverRuleBased
                     ArrayList<Integer> doublePossibleValues = 
                             uniquePossibleValues.get(i);
                     ArrayList<Integer> doublePossibleIndexes = 
-                            new ArrayList();
+                            new ArrayList<Integer>();
                     for (int j = 0; j < row2PossibleValues.size(); j++)
                     {
                         if (row2PossibleValues.get(j).equals(
@@ -1336,8 +1340,8 @@ public class SolverRuleBased
     {
         ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
         int[] possibleValuesFrequency = new int[size];
-        ArrayList<Integer> columnValues = new ArrayList();
-        ArrayList<Integer> columnIndexes = new ArrayList();
+        ArrayList<Integer> columnValues = new ArrayList<Integer>();
+        ArrayList<Integer> columnIndexes = new ArrayList<Integer>();
         for (ArrayList<Integer> rowPossibleValue : rowPossibleValues)
         {
             for (int i = 1; i <= possibleValuesFrequency.length; i++)
@@ -1387,8 +1391,8 @@ public class SolverRuleBased
         ArrayList<Integer>[] columnPossibleValues 
                 = getColumnPossibleValues(column);
         int[] possibleValuesFrequency = new int[size];
-        ArrayList<Integer> rowValues = new ArrayList();
-        ArrayList<Integer> rowIndexes = new ArrayList();
+        ArrayList<Integer> rowValues = new ArrayList<Integer>();
+        ArrayList<Integer> rowIndexes = new ArrayList<Integer>();
         for (ArrayList<Integer> columnPossibleValue : columnPossibleValues)
         {
             for (int i = 1; i <= possibleValuesFrequency.length; i++)
@@ -1475,7 +1479,7 @@ public class SolverRuleBased
     
     private ArrayList<Integer> createRetainAllArray()
     {
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         for (int i = 1; i <= size; i++)
         {
             array.add(i);
@@ -1483,12 +1487,12 @@ public class SolverRuleBased
         return array;
     }
     
-    private ArrayList<ArrayList<Integer>> getGridArrayList()
+    public ArrayList<ArrayList<Integer>> getGridArrayList()
     {
-        ArrayList<ArrayList<Integer>> gridArrayList = new ArrayList();
+        ArrayList<ArrayList<Integer>> gridArrayList = new ArrayList<>();
         for (int i = 0; i < size; i++)
         {
-            ArrayList<Integer> gridArrayListRow = new ArrayList();
+            ArrayList<Integer> gridArrayListRow = new ArrayList<Integer>();
             for (int j = 0; j < size; j++)
             {
                 gridArrayListRow.add(grid.getCellValue(i, j));
@@ -1506,11 +1510,6 @@ public class SolverRuleBased
     public Grid getSolution()
     {
         return solution;
-    }
-    
-    private ArrayList<Integer>[][] getPossibleValues()
-    {
-        return possibleValues;
     }
     
     private void printGrid()

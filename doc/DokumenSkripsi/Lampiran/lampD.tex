@@ -1,7 +1,7 @@
 \chapter{Kode Program}
 \label{chap:kodeprogram}
 
-Lampiran ini berisi kode program dari perangkat lunak permainan Calcudoku ini.
+Lampiran ini berisi kode program dari perangkat lunak Calcudoku ini.
 
 \singlespacing 
 
@@ -12,10 +12,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author michaeladrian39
- */
 public class Grid
 {
     
@@ -204,7 +200,7 @@ public class Grid
     {
         for (int i = 0; i < cages.length; i++)
         {
-            cages[i] = new Cage(i, cageObjectives[i]);
+            cages[i] = new Cage(cageObjectives[i]);
         }
     }
     
@@ -214,8 +210,7 @@ public class Grid
         {
             for (int j = 0; j < cageCells[i].length; j++)
             {
-                grid[i][j] = new Cell((i * size) + j, i, j, 
-                        (cageCells[i][j] - 1));
+                grid[i][j] = new Cell(i, j, (cageCells[i][j] - 1));
                 cages[cageCells[i][j] - 1].addCell(grid[i][j]);
             }
         }
@@ -331,8 +326,6 @@ public class Grid
     
     private boolean isCageValid(int row, int column)
     {
-        ArrayList<Integer> cage = 
-                getCageValues(getGridContents()[row][column].getCageID());
         if (isCageValuesValid(
                 getGridContents()[row][column].getCageID()) == false)
         {
@@ -349,8 +342,6 @@ public class Grid
     
     private boolean solverIsCageValid(int row, int column)
     {
-        ArrayList<Integer> cage = 
-                getCageValues(getGridContents()[row][column].getCageID());
         return isCageValuesValid(
                 getGridContents()[row][column].getCageID()) == true;
     }
@@ -515,22 +506,16 @@ public class Grid
 \begin{lstlisting}[language=Java,basicstyle=\tiny,caption=Cell.java]
 package model;
 
-/**
- *
- * @author michaeladrian39
- */
 public class Cell
 {
     
-    private final int cellID;
     private final int row;
     private final int column;
     private final int cageID;
     private Integer value;
     
-    public Cell(int cellID, int row, int column, int cageID)
+    public Cell(int row, int column, int cageID)
     {
-        this.cellID = cellID;
         this.row = row;
         this.column = column;
         this.cageID = cageID;
@@ -570,22 +555,16 @@ package model;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author michaeladrian39
- */
 public class Cage
 {
     
-    private final int cageID;
     private final String objective;
     private final int targetNumber;
     private final char operator;
     private final ArrayList<Cell> cells;
     
-    public Cage(int cageID, String objective)
+    public Cage(String objective)
     {
-        this.cageID = cageID;
         if (isCageObjectiveValid(objective))
         {
             this.objective = objective;
@@ -760,10 +739,6 @@ public class Cage
 \begin{lstlisting}[language=Java,basicstyle=\tiny,caption=SolverBacktracking.java]
 package model;
 
-/**
- *
- * @author apple
- */
 public class SolverBacktracking
 {
     
@@ -848,10 +823,6 @@ public class SolverBacktracking
 \begin{lstlisting}[language=Java,basicstyle=\tiny,caption=SolverHybridGenetic.java]
 package model;
 
-/**
- *
- * @author michaeladrian39
- */
 public class SolverHybridGenetic
 {
     
@@ -936,10 +907,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author michaeladrian39
- */
 public class SolverRuleBased
 {
     
@@ -955,7 +922,8 @@ public class SolverRuleBased
         this.possibleValues = generatePossibleValuesArray();
     }
     
-    private ArrayList<Integer>[][] generatePossibleValuesArray()
+    @SuppressWarnings("unchecked")
+	private ArrayList<Integer>[][] generatePossibleValuesArray()
     {
         possibleValues = new ArrayList[size][size];
         for (int i = 0; i < size; i++)
@@ -1011,7 +979,8 @@ public class SolverRuleBased
         return getGridArrayList();
     }
     
-    public ArrayList<Integer>[] getRowPossibleValues(int row)
+    @SuppressWarnings("unchecked")
+	public ArrayList<Integer>[] getRowPossibleValues(int row)
     {
         ArrayList<Integer>[] array;
         array = new ArrayList[size];
@@ -1022,7 +991,8 @@ public class SolverRuleBased
         return array;
     }
     
-    public ArrayList<Integer>[] getColumnPossibleValues(int column)
+    @SuppressWarnings("unchecked")
+	public ArrayList<Integer>[] getColumnPossibleValues(int column)
     {
         ArrayList<Integer>[] array;
         array = new ArrayList[size];
@@ -1048,7 +1018,7 @@ public class SolverRuleBased
     private void killerCombination()
     {
         int cageSize;
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         for (Cage c : grid.getCages())
         {
             cageSize = c.getSize();
@@ -1068,9 +1038,7 @@ public class SolverRuleBased
     private void killerCombinationCageSize2(Cage cage)
     {
         int gridSize = size;
-        char cageOperator = cage.getOperator();
-        int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (gridSize)
         {
             case 3 :
@@ -1106,7 +1074,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -1190,7 +1158,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -1290,7 +1258,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -1410,7 +1378,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -1534,7 +1502,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -1686,7 +1654,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -1850,7 +1818,7 @@ public class SolverRuleBased
     {
         char cageOperator = cage.getOperator();
         int cageTargetNumber = cage.getTargetNumber();
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         switch (cageOperator)
         {
             case '+' :
@@ -2108,10 +2076,12 @@ public class SolverRuleBased
     private void nakedDoubleRow(int row)
     {
         ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
-        ArrayList<Integer> column2PossibleIndexes = new ArrayList();
-        ArrayList<ArrayList<Integer>> column2PossibleValues = new ArrayList();
-        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList();
-        ArrayList<Integer> uniquePossibleValuesFrequency = new ArrayList();
+        ArrayList<Integer> column2PossibleIndexes = new ArrayList<Integer>();
+        ArrayList<ArrayList<Integer>> column2PossibleValues = 
+                new ArrayList<>();
+        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList<>();
+        ArrayList<Integer> uniquePossibleValuesFrequency = 
+                new ArrayList<Integer>();
         for (int i = 0; i < rowPossibleValues.length; i++)
         {
             if (rowPossibleValues[i].size() == 2)
@@ -2143,7 +2113,7 @@ public class SolverRuleBased
                     ArrayList<Integer> doublePossibleValues = 
                             uniquePossibleValues.get(i);
                     ArrayList<Integer> doublePossibleIndexes = 
-                            new ArrayList();
+                            new ArrayList<Integer>();
                     for (int j = 0; j < column2PossibleValues.size(); j++)
                     {
                         if (column2PossibleValues.get(j).equals(
@@ -2185,10 +2155,11 @@ public class SolverRuleBased
     {
         ArrayList<Integer>[] columnPossibleValues = 
                 getColumnPossibleValues(column);
-        ArrayList<Integer> row2PossibleIndexes = new ArrayList();
-        ArrayList<ArrayList<Integer>> row2PossibleValues = new ArrayList();
-        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList();
-        ArrayList<Integer> uniquePossibleValuesFrequency = new ArrayList();
+        ArrayList<Integer> row2PossibleIndexes = new ArrayList<Integer>();
+        ArrayList<ArrayList<Integer>> row2PossibleValues = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> uniquePossibleValues = new ArrayList<>();
+        ArrayList<Integer> uniquePossibleValuesFrequency = 
+                new ArrayList<Integer>();
         for (int i = 0; i < columnPossibleValues.length; i++)
         {
             if (columnPossibleValues[i].size() == 2)
@@ -2220,7 +2191,7 @@ public class SolverRuleBased
                     ArrayList<Integer> doublePossibleValues = 
                             uniquePossibleValues.get(i);
                     ArrayList<Integer> doublePossibleIndexes = 
-                            new ArrayList();
+                            new ArrayList<Integer>();
                     for (int j = 0; j < row2PossibleValues.size(); j++)
                     {
                         if (row2PossibleValues.get(j).equals(
@@ -2268,8 +2239,8 @@ public class SolverRuleBased
     {
         ArrayList<Integer>[] rowPossibleValues = getRowPossibleValues(row);
         int[] possibleValuesFrequency = new int[size];
-        ArrayList<Integer> columnValues = new ArrayList();
-        ArrayList<Integer> columnIndexes = new ArrayList();
+        ArrayList<Integer> columnValues = new ArrayList<Integer>();
+        ArrayList<Integer> columnIndexes = new ArrayList<Integer>();
         for (ArrayList<Integer> rowPossibleValue : rowPossibleValues)
         {
             for (int i = 1; i <= possibleValuesFrequency.length; i++)
@@ -2319,8 +2290,8 @@ public class SolverRuleBased
         ArrayList<Integer>[] columnPossibleValues 
                 = getColumnPossibleValues(column);
         int[] possibleValuesFrequency = new int[size];
-        ArrayList<Integer> rowValues = new ArrayList();
-        ArrayList<Integer> rowIndexes = new ArrayList();
+        ArrayList<Integer> rowValues = new ArrayList<Integer>();
+        ArrayList<Integer> rowIndexes = new ArrayList<Integer>();
         for (ArrayList<Integer> columnPossibleValue : columnPossibleValues)
         {
             for (int i = 1; i <= possibleValuesFrequency.length; i++)
@@ -2407,7 +2378,7 @@ public class SolverRuleBased
     
     private ArrayList<Integer> createRetainAllArray()
     {
-        ArrayList<Integer> array = new ArrayList();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         for (int i = 1; i <= size; i++)
         {
             array.add(i);
@@ -2415,12 +2386,12 @@ public class SolverRuleBased
         return array;
     }
     
-    private ArrayList<ArrayList<Integer>> getGridArrayList()
+    public ArrayList<ArrayList<Integer>> getGridArrayList()
     {
-        ArrayList<ArrayList<Integer>> gridArrayList = new ArrayList();
+        ArrayList<ArrayList<Integer>> gridArrayList = new ArrayList<>();
         for (int i = 0; i < size; i++)
         {
-            ArrayList<Integer> gridArrayListRow = new ArrayList();
+            ArrayList<Integer> gridArrayListRow = new ArrayList<Integer>();
             for (int j = 0; j < size; j++)
             {
                 gridArrayListRow.add(grid.getCellValue(i, j));
@@ -2438,11 +2409,6 @@ public class SolverRuleBased
     public Grid getSolution()
     {
         return solution;
-    }
-    
-    private ArrayList<Integer>[][] getPossibleValues()
-    {
-        return possibleValues;
     }
     
     private void printGrid()
@@ -2484,192 +2450,302 @@ public class SolverRuleBased
 package model;
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
+import java.util.Collections;
+import java.util.Random;
 
-/**
- *
- * @author michaeladrian39
- */
-public class Cage
+public class SolverGenetic
 {
     
-    private final int cageID;
-    private final String objective;
-    private final int targetNumber;
-    private final char operator;
-    private final ArrayList<Cell> cells;
+    private final Grid grid;
+    private final Integer size;
+    private final boolean[][] isCellFixed;
+    private final Random randomGenerator;
+    private final Integer generations;
+    private final Integer populationSize;
+    private final Double elitismRate;
+    private final Double mutationRate;
+    private final Double crossoverRate;
+    private Grid solution;
+    private ArrayList<Chromosome> currentGeneration = 
+            new ArrayList<Chromosome>();
+    private ArrayList<Chromosome> nextGeneration = new ArrayList<Chromosome>();
     
-    public Cage(int cageID, String objective)
+    public SolverGenetic(Grid grid, Integer generations, 
+            Integer populationSize, double elitismRate, double crossoverRate, 
+            double mutationRate)
     {
-        this.cageID = cageID;
-        if (isCageObjectiveValid(objective))
+        this.grid = grid;
+        this.size = grid.getSize();
+        this.generations = generations;
+        this.populationSize = populationSize;
+        this.elitismRate = elitismRate;
+        this.crossoverRate = crossoverRate;
+        this.mutationRate = mutationRate;
+        this.isCellFixed = generateIsCellFixedArray();
+        this.randomGenerator = new Random(); 
+        generatePopulation();
+        for (int i = 0; i < currentGeneration.size(); i++)
         {
-            this.objective = objective;
+            printGrid(currentGeneration.get(i).getGrid().getGridContents());
+            System.out.println(currentGeneration.get(i).getFitness());
         }
-        else
+    }
+    
+    public boolean solve()
+    {
+        for (int i = 0; i < generations; i++)
         {
-            JOptionPane.showMessageDialog(null, "Invalid cage objectives.", 
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            throw new IllegalStateException("Invalid cage objectives.");
-        }
-        this.targetNumber = generateTargetNumber(this.objective);
-        this.operator = generateOperator(this.objective);
-        this.cells = new ArrayList<>();
-    }
-    
-    private boolean isCageObjectiveValid(String cageObjective)
-    {
-        return cageObjective.matches("\\d+[*+-/=]");
-    }
-    
-    private int generateTargetNumber(String objective)
-    {
-        return Integer.parseInt(objective.substring(0, 
-                objective.length() - 1));
-    }
-    
-    private char generateOperator(String objective)
-    {
-        return objective.charAt(objective.length() - 1);
-    }
-    
-    public void addCell(Cell c)
-    {
-        cells.add(c);
-    }
-    
-    public boolean isCageContainsNull()
-    {
-        for (int i = 0; i < cells.size(); i++)
-        {
-            if (cells.get(i).getValue() == null)
+            solveLoop();
+            sortChromosomes();
+            for (int j = 0; j < populationSize; j++)
             {
-                return true;
+                printGrid(
+                        currentGeneration.get(j).getGrid().getGridContents());
+                System.out.println(currentGeneration.get(j).getFitness());
+                if (currentGeneration.get(j).getFitness() == 1.0)
+                {
+                    this.solution = currentGeneration.get(j).getGrid();
+                    return true;
+                }
             }
         }
         return false;
     }
-    
-    public Boolean isCageValuesValid()
-    {
-        if (countValue() == null)
+
+    private void solveLoop()
+    {      
+        int elitismNumber = (int) Math.round(populationSize * elitismRate);
+        int mutationNumber = (int) Math.round(populationSize * mutationRate);
+        int crossoverNumber
+                =  (int) Math.round((populationSize * crossoverRate) / 2);
+        sortChromosomes();
+        for (int i = 0; i < populationSize; i++)
         {
-            return null;
+            printGrid(currentGeneration.get(i).getGrid().getGridContents());
+            System.out.println(currentGeneration.get(i).getFitness());
         }
-        else
+        for (int i = 0; i < elitismNumber; i++)
         {
-            return (countValue() == getTargetNumber());
-        }
-    }
-    
-    private Integer countValue()
-    {
-        Integer value = null;
-        if (isCageContainsNull() == true)
-        {
-            value = null;
-        }
-        else
-        {
-            switch (getOperator())
+            if (!nextGeneration.contains(currentGeneration.get(i)))
             {
-                case '+':
-                    value = 0;
-                    for (int i = 0; i < cells.size(); i++)
-                    {
-                        value += cells.get(i).getValue();
-                    }
-                    break;
-                case '-':
-                    if (cells.get(0).getValue() > cells.get(1).getValue())
-                    {
-                        value = cells.get(0).getValue() 
-                                - cells.get(1).getValue();
-                    }
-                    else if (cells.get(1).getValue() > cells.get(0).getValue())
-                    {
-                        value = cells.get(1).getValue() 
-                                - cells.get(0).getValue();
-                    }
-                    else
-                    {
-                        value = 0;
-                    }
-                    break;
-                case '*':
-                    value = 1;
-                    for (int i = 0; i < cells.size(); i++)
-                    {
-                        value *= cells.get(i).getValue();
-                    }
-                    break;
-                case '/':
-                    if (cells.get(0).getValue() > cells.get(1).getValue())
-                    {
-                        if (cells.get(0).getValue() 
-                                % cells.get(1).getValue() == 0)
-                        {
-                            value = cells.get(0).getValue() 
-                                    / cells.get(1).getValue();
-                        }
-                        else
-                        {
-                            value = 0;
-                        }
-                    }
-                    else if(cells.get(1).getValue() > cells.get(0).getValue())
-                    {
-                        if (cells.get(1).getValue() 
-                                % cells.get(0).getValue() == 0)
-                        {
-                            value = cells.get(1).getValue() 
-                                    / cells.get(0).getValue();
-                        }
-                        else
-                        {
-                            value = 0;
-                        }
-                    }
-                    else
-                    {
-                        value = 0;
-                    }
-                    break;
-                case '=':
-                    value = cells.get(0).getValue();
-                    break;
-                default :
-                    value = null;
+                nextGeneration.add(cloneChromosome(currentGeneration.get(i)));
             }
         }
-        return value;
+        for (int i = 0; i < mutationNumber; i++)
+        {
+            Chromosome parent = randomSelection(currentGeneration);
+            nextGeneration.add(mutation(parent));
+        }
+        for (int i = 0; i < crossoverNumber; i++)
+        {
+            nextGeneration.addAll(crossover(randomSelection(currentGeneration),
+                    randomSelection(currentGeneration)));
+        }
+        if (nextGeneration.size() < populationSize)
+        {
+            while (nextGeneration.size() < populationSize)
+            {
+                nextGeneration.add(randomSelection(currentGeneration));
+            }
+        }
+        if (nextGeneration.size() > populationSize)
+        {
+            int extraChromosomes = nextGeneration.size() - populationSize;
+            for (int i = 0; i < extraChromosomes; i++)
+            {
+                int index = randomGenerator.nextInt(nextGeneration.size());
+                nextGeneration.remove(index);
+            }
+        }
+        currentGeneration = nextGeneration;
+        nextGeneration = new ArrayList<Chromosome>();
     }
     
-    public String getObjective()
+    private boolean[][] generateIsCellFixedArray()
     {
-        return objective;
+        boolean[][] array = new boolean[size][size];
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                array[i][j] = grid.getCellValue(i, j) != null;
+            }
+        }
+        return array;
     }
     
-    public int getTargetNumber()
+    private void generatePopulation()
     {
-        return targetNumber;
+        for (int i = 0; i < populationSize; i++)
+        {
+            currentGeneration.add(generateChromosome());
+        }
     }
     
-    public char getOperator()
+    private Chromosome generateChromosome()
     {
-        return operator;
-    }
-
-    public ArrayList<Cell> getCells()
-    {
-        return cells;
+        Grid chromosomeGrid = new Grid(size, grid.getNumberOfCages(), 
+                grid.getCageCells(), grid.getCageObjectives());
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (grid.getCellValue(i, j) != null)
+                {
+                    chromosomeGrid.solverSetCellValue(i, j, 
+                            grid.getCellValue(i, j));
+                }
+            }
+        }
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (!grid.getRow(i).contains(j + 1))
+                {
+                    int index = randomGenerator.nextInt(size);
+                    while (chromosomeGrid.getCellValue(i, index) != null)
+                    {
+                        index = randomGenerator.nextInt(size);
+                    }
+                    chromosomeGrid.solverSetCellValue(i, index, j + 1);
+                }
+            }
+        }
+        Chromosome c = new Chromosome(chromosomeGrid);
+        return c;
     }
     
-    public int getSize()
+    private void sortChromosomes()
     {
-        return cells.size();
+        Collections.sort(currentGeneration, 
+                new ChromosomeComparator().reversed());
     }
-             
+    
+    private Chromosome randomSelection(ArrayList<Chromosome> chromosomes)
+    {
+        int randomIndex = randomGenerator.nextInt(chromosomes.size());
+        Chromosome c = cloneChromosome(chromosomes.get(randomIndex));
+        return c;
+    }
+    
+    private Chromosome cloneChromosome(Chromosome c)
+    {
+        Grid gridClone = new Grid(size, grid.getNumberOfCages(), 
+                grid.getCageCells(), grid.getCageObjectives());
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                gridClone.solverSetCellValue(i, j, 
+                        c.getGrid().getCellValue(i, j));
+            }
+        }
+        Chromosome chromosomeClone = new Chromosome(gridClone);
+        return chromosomeClone;
+    }
+    
+    private ArrayList<Chromosome> crossover(Chromosome parent1, 
+            Chromosome parent2)
+    {
+        while (parent1 == parent2 || parent1.equals(parent2))
+        {
+            parent1 = randomSelection(currentGeneration);
+            parent2 = randomSelection(currentGeneration);
+        }
+        Grid childGrid1 = new Grid(size, grid.getNumberOfCages(), 
+                grid.getCageCells(), grid.getCageObjectives());
+        Grid childGrid2 = new Grid(size, grid.getNumberOfCages(), 
+                grid.getCageCells(), grid.getCageObjectives());
+        for (int i = 0; i < size; i++)
+        {
+            int randomIndex = randomGenerator.nextInt(2);
+            for (int j = 0; j < size; j++)
+            {
+                if (randomIndex == 0)
+                {
+                    childGrid1.solverSetCellValue(i, j, 
+                            parent1.getGrid().getCellValue(i, j));
+                    childGrid2.solverSetCellValue(i, j, 
+                            parent2.getGrid().getCellValue(i, j));
+                }
+                else
+                {
+                    childGrid1.solverSetCellValue(i, j, 
+                            parent2.getGrid().getCellValue(i, j));
+                    childGrid2.solverSetCellValue(i, j, 
+                            parent1.getGrid().getCellValue(i, j));
+                }
+            }
+        }
+        ArrayList<Chromosome> childChromosomes = new ArrayList<Chromosome>();
+        Chromosome child1 = new Chromosome(childGrid1);
+        Chromosome child2 = new Chromosome(childGrid2);
+        childChromosomes.add(child1);
+        childChromosomes.add(child2);
+        return childChromosomes;
+    }
+    
+    private Chromosome mutation(Chromosome parent)
+    {
+        Grid childGrid = new Grid(size, grid.getNumberOfCages(), 
+                grid.getCageCells(), grid.getCageObjectives());
+        int randomRow = randomGenerator.nextInt(size);
+        int randomColumn1 = randomGenerator.nextInt(size);
+        int randomColumn2 = randomGenerator.nextInt(size);
+        while (isCellFixed[randomRow][randomColumn1] == true 
+                || isCellFixed[randomRow][randomColumn2] == true 
+                || randomColumn1 == randomColumn2)
+        {
+            randomRow = randomGenerator.nextInt(size);
+            randomColumn1 = randomGenerator.nextInt(size);
+            randomColumn2 = randomGenerator.nextInt(size);
+        }
+        for (int i = 0; i < size; i++)
+        {
+            if (i == randomRow)
+            {
+                childGrid.solverSetCellValue(i, randomColumn1, 
+                        parent.getGrid().getCellValue(i, randomColumn2));
+                childGrid.solverSetCellValue(i, randomColumn2, 
+                        parent.getGrid().getCellValue(i, randomColumn1));
+            }
+            for (int j = 0; j < size; j++)
+            {
+                if (childGrid.getCellValue(i, j) == null)
+                {
+                    childGrid.solverSetCellValue(i, j, 
+                        parent.getGrid().getCellValue(i, j));
+                }
+            }
+        }
+        Chromosome child = new Chromosome(childGrid);
+        return child;
+    }
+    
+    public Grid getGrid()
+    {
+        return grid;
+    }
+    
+    public Grid getSolution()
+    {
+        return solution;
+    }
+    
+    private void printGrid(Cell[][] cells)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                System.out.print(cells[i][j].getValue() + " ");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+    
 }
 \end{lstlisting}
 
@@ -2678,10 +2754,6 @@ package model;
 
 import java.util.Comparator;
 
-/**
- *
- * @author michaeladrian39
- */
 public class Chromosome
 {
     
@@ -2723,20 +2795,6 @@ public class Chromosome
     {
         return grid;
     }
-
-    private void printGrid()
-    {
-        Cell[][] cells = grid.getGridContents();
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size; j++)
-            {
-                System.out.print(cells[i][j].getValue() + " ");
-            }
-            System.out.println("");
-        }
-        System.out.println("");
-    }
     
 }
 
@@ -2770,26 +2828,14 @@ import model.Grid;
 import model.Cage;
 import model.Cell;
 
-/**
- *
- * @author michaeladrian39
- */
 public class Controller
 {
     
-    private Integer size;
-    private Integer numberOfCages;
-    private Integer[][] cageCells;
-    private String[] cageObjectives;
     private Grid g;
     
     public Controller(Integer size, Integer numberOfCages, 
             Integer[][] cageCells, String[] cageObjectives)
     {
-        this.size = size;
-        this.numberOfCages = numberOfCages;
-        this.cageCells = cageCells;
-        this.cageObjectives = cageObjectives;
         g = new Grid(size, numberOfCages, cageCells, cageObjectives);
     }
     
@@ -2882,10 +2928,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 
-/**
- *
- * @author michaeladrian39
- */
 public class Calcudoku extends JFrame
 {
     
@@ -3348,10 +3390,6 @@ import model.Grid;
 import model.SolverBacktracking;
 import model.SolverHybridGenetic;
 
-/**
- *
- * @author michaeladrian39
- */
 public class GUI extends JPanel
 {
     
@@ -3940,10 +3978,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-/**
- *
- * @author michaeladrian39
- */
 public class GeneticParameters extends JFrame
 {
 

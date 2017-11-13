@@ -10,15 +10,13 @@ import javax.swing.JOptionPane;
 public class Cage
 {
     
-    private final int cageID;
     private final String objective;
     private final int targetNumber;
     private final char operator;
     private final ArrayList<Cell> cells;
     
-    public Cage(int cageID, String objective)
+    public Cage(String objective)
     {
-        this.cageID = cageID;
         if (isCageObjectiveValid(objective))
         {
             this.objective = objective;

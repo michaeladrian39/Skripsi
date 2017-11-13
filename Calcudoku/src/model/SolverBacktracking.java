@@ -2,7 +2,7 @@ package model;
 
 /**
  *
- * @author apple
+ * @author michaeladrian39
  */
 public class SolverBacktracking
 {
