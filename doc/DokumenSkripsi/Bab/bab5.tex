@@ -21,11 +21,11 @@ Ada dua jenis lingkungan untuk pengujian perangkat lunak ini, yaitu:
 \hline
 Parameter & Nilai \\
 \hline \hline
-\textit{Processor} & Lorem Ipsum \\
+\textit{Processor} & Intel Core i3-4130 CPU @ 3.40 GHz  \\
 \hline
-\textit{RAM (Random Access Memory)} & Lorem Ipsum \\
+\textit{RAM (Random Access Memory)} & 6.00 GB \\
 \hline
-\textit{VGA (Video Graphics Array)} & Lorem Ipsum \\
+\textit{VGA (Video Graphics Array)} & Intel HD Graphics 4400 dan NVIDIA GeForce GT 630 \\
 \hline
 \end{tabular}
 \label{tab:lingkunganpk}
@@ -41,15 +41,15 @@ Parameter & Nilai \\
 \hline
 Parameter & Nilai \\
 \hline \hline
-Sistem Operasi & Lorem Ipsum \\
+Sistem Operasi & Windows 10 \\
 \hline
 Bahasa Pemrograman & Java \\
 \hline
 \textit{IDE (Integrated Development Environment)} & NetBeans IDE 8.2 \\
 \hline
-\textit{Library Java} & JDK (\textit{Java Development Kit}) 1.8 \\
+\textit{Library Java} & JDK (Java \textit{Development Kit}) 1.8 \\
 \hline
-\textit{JVM (Java Virtual Machine)} & Java Version 8 Update Lorem Ipsum \\
+\textit{JVM (Java Virtual Machine)} & Java \textit{Version} 8 \textit{Update} 141 \\
 \hline
 \end{tabular}
 \label{tab:lingkunganpl}
@@ -418,7 +418,7 @@ Perangkat lunak ini lalu menerjemahkan isi \textit{file} masukan menjadi keluara
 \label{fig:keakuratanoutput}
 \end{figure}
 
-Pada GUI ini, petunjuk, yaitu angka tujuan dan operasi matematika yang ditentukan untuk sebuah \textit{cage}, ditampilkan sebagai \textit{tooltip} yang akan muncul saat sel-sel yang berada di dalam sebuah \textit{cage} di-\textit{hover}. Setiap sel memilki \textit{tooltip} yang berisi petunjuk sesuai dengan \textit{cage} tempat sel tersebut berada. 
+Seharusnya, petunjuk, yaitu angka tujuan dan operasi matematika yang ditentukan untuk sebuah \textit{cage}, ditampilkan pada sudut kiri atas dari sel yang paling atas atau yang paling kiri dalam \textit{cage} tersebut. Tetapi, karena dalam perangkat lunak ini sebuah sel adalah sebuah \textit{text field}, dan sebuah \textit{text field} tidak dapat diisi dengan dua teks yang berbeda (petunjuk untuk sel tersebut dan isi dari sel tersebut), maka petunjuk ditampilkan sebagai \textit{tooltip} yang akan muncul saat sel-sel yang berada di dalam sebuah \textit{cage} di-\textit{hover}. Setiap sel memilki \textit{tooltip} yang berisi petunjuk sesuai dengan \textit{cage} tempat sel tersebut berada. 
 
 Dalam perangkat lunak ini, setiap sel sudah memiliki \textit{tooltip} sesuai dengan \textit{cage} tempat sel tersebut berada. 
 
@@ -995,7 +995,7 @@ Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 Berdasarkan hasil pengujian yang telah dilakukan, ada beberapa hal yang dapat dilihat, yaitu:
 
 \begin{enumerate}
-\item Ada kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan Calcudoku karena sifat acak dari algoritma \textit{hybrid genetic} ini. Semakin besar ukuran \textit{grid}, maka kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan semakin besar. Algoritma \textit{hybrid genetic} ini gagal dalam menyelesaikan permainan Calcudoku dengan ukuran \textit{grid} \begin{math}6 \times 6\end{math} ke atas.
+\item Ada kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan karena sifat acak dari algoritma \textit{hybrid genetic} ini. Semakin besar ukuran \textit{grid}, maka kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan semakin besar. Algoritma \textit{hybrid genetic} ini gagal dalam menyelesaikan permainan Calcudoku dengan ukuran \textit{grid} \begin{math}6 \times 6\end{math} ke atas.
 \item Semakin besar ukuran \textit{grid}, maka waktu yang dibutuhkan oleh algoritma \textit{hybrid genetic} untuk menyelesaikan semakin lama. Pada ukuran \textit{grid} yang kecil, algoritma \textit{hybrid genetic} cenderung menyelesaikan permainan lebih lambat daripada algoritma \textit{backtracking}. Tetapi, pada ukuran \textit{grid} yang besar, algoritma \textit{hybrid genetic} mungkin mampu menyelesaikan permainan lebih cepat daripada algoritma \textit{backtracking}, tetapi hal ini tidak dapat dibuktikan karena algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan dengan ukuran \textit{grid} yang besar.
 \item Semakin banyak sel yang diisi dalam tahap algoritma \textit{rule based}, semakin besar juga kemungkinan algoritma genetik untuk berhasil dalam menyelesaikan permainan dan semakin cepat algoritma genetik dalam menyelesaikan permainan.
 \item Nilai untuk parameter-parameter algoritma genetik mempengaruhi kecepatan dan tingkat keberhasilan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan. Semakin besar populasi dalam sebuah generasi sampai ke titik tertentu, dan semakin banyak generasi sampai ke titik tertentu, maka semakin besar juga kemungkinan algoritma \textit{hybrid genetic} berhasil dalam menyelesaikan permainan. Semakin besar tingkat \textit{elitism} dan tingkat mutasi sampai ke titik tertentu, maka semakin cepat juga algoritma \textit{hybrid genetic} dalam menyelesaikan permainan.

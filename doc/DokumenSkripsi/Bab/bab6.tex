@@ -9,12 +9,22 @@ Bab ini membahas tentang simpulan berdasarkan hasil dari analisis, implementasi,
 Berdasarkan hasil dari analisis, implementasi, dan pengujian perangkat lunak Calcudoku yang telah dibuat, maka dapat diambil simpulan sebagai berkut:
 
 \begin{enumerate}
+\item Perangkat lunak permainan teka-teki Calcudoku dengan dua \textit{solver}, yaitu \textit{solver} dengan algoritma \textit{backtracking} dan \textit{solver} dengan algoritma \textit{hybrid genetic}, berhasil dibuat.
+
+Perangkat lunak ini menerima input berupa soal teka-teki dan mampu menyelesaikan soal teka-teki tersebut menggunakan algoritma \textit{backtracking} dan \textit{hybrid genetic}.
+
 \item Algoritma \textit{backtracking} dapat menyelesaikan semua permainan yang diujikan. Pada ukuran \textit{grid} yang besar, algoritma \textit{backtracking} sangat lambat dalam menyelesaikan permainan.
-\item Ada kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan Calcudoku karena sifat acak dari algoritma \textit{hybrid genetic} ini. Semakin besar ukuran \textit{grid}, maka kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan semakin besar.
-\item Pada ukuran \textit{grid} yang kecil, algoritma \textit{hybrid genetic} cenderung menyelesaikan permainan lebih lambat daripada algoritma \textit{backtracking}. Tetapi, pada ukuran \textit{grid} yang besar, algoritma \textit{hybrid genetic} mungkin mampu menyelesaikan permainan lebih cepat daripada algoritma \textit{backtracking}, tetapi hal ini tidak dapat dibuktikan karena algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan dengan ukuran \textit{grid} yang besar.
-\item Semakin banyak sel yang diisi dalam tahap algoritma \textit{rule based}, semakin besar juga kemungkinan algoritma genetik untuk berhasil dalam menyelesaikan permainan dan semakin cepat algoritma genetik dalam menyelesaikan permainan.
-\item Nilai untuk parameter-parameter algoritma genetik mempengaruhi kecepatan dan tingkat keberhasilan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan. Semakin besar populasi dalam sebuah generasi sampai ke titik tertentu, dan semakin banyak generasi sampai ke titik tertentu, maka semakin besar juga kemungkinan algoritma \textit{hybrid genetic} berhasil dalam menyelesaikan permainan. Semakin besar tingkat \textit{elitism} dan tingkat mutasi sampai ke titik tertentu, maka semakin cepat juga algoritma \textit{hybrid genetic} dalam menyelesaikan permainan.
+
+Ada kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan karena sifat acak dari algoritma \textit{hybrid genetic} ini. Semakin besar ukuran \textit{grid}, maka kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan semakin besar.
+
+Pada ukuran \textit{grid} yang kecil, algoritma \textit{hybrid genetic} cenderung menyelesaikan permainan lebih lambat daripada algoritma \textit{backtracking}. Tetapi, pada ukuran \textit{grid} yang besar, algoritma \textit{hybrid genetic} mungkin mampu menyelesaikan permainan lebih cepat daripada algoritma \textit{backtracking}, tetapi hal ini tidak dapat dibuktikan karena algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan dengan ukuran \textit{grid} yang besar.
+
+Semakin banyak sel yang diisi dalam tahap algoritma \textit{rule based}, semakin besar juga kemungkinan algoritma genetik untuk berhasil dalam menyelesaikan permainan dan semakin cepat algoritma genetik dalam menyelesaikan permainan.
+
+Nilai untuk parameter-parameter algoritma genetik mempengaruhi kecepatan dan tingkat keberhasilan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan. Semakin besar populasi dalam sebuah generasi sampai ke titik tertentu, dan semakin banyak generasi sampai ke titik tertentu, maka semakin besar juga kemungkinan algoritma \textit{hybrid genetic} berhasil dalam menyelesaikan permainan. Semakin besar tingkat \textit{elitism} dan tingkat mutasi sampai ke titik tertentu, maka semakin cepat juga algoritma \textit{hybrid genetic} dalam menyelesaikan permainan.
 \end{enumerate}
+
+\clearpage
 
 \section{Saran}
 \label{sec:saran}
@@ -22,6 +32,7 @@ Berdasarkan hasil dari analisis, implementasi, dan pengujian perangkat lunak Cal
 Saran-saran yang dapat diberikan untuk mengembangkan penelitian ini adalah:
 
 \begin{enumerate}
+\item Memperbaiki GUI dari perangkat lunak ini agar petunjuk, yaitu angka tujuan dan operasi matematika yang ditentukan untuk sebuah \textit{cage}, dapat ditampilkan sebagaimana mestinya, yaitu pada di sudut kiri atas sel yang paling atas dan yang paling kiri dalam \textit{cage} tersebut.
 \item Menambah aturan-aturan logika untuk algoritma \textit{rule based}, misalnya aturan \textit{naked subset} untuk \textit{cage} yang berukuran lebih besar dari 3 sel, aturan \textit{hidden subset} untuk \textit{cage} yang berukuran lebih besar dari 2 sel, aturan \textit{killer} combination untuk \textit{cage} yang berukuran lebih besar dari 2 sel, dan aturan \textit{evil twin} untuk \textit{cage} yang berukuran minimal 2 sel. Dengan menambah aturan-aturan logika untuk algoritma \textit{rule based}. Diharapkan, dengan menambah aturan-aturan logika untuk algoritma \textit{rule based}, maka tingkat kesuksesan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan Calcudoku dapat meningkat.
 \item Memperbaiki algoritma genetik, misalnya proses pemberian nilai kelayakan untuk kromosom, proses pemilihan kromosom untuk kawin silang dan mutasi, proses \textit{elitism}, proses kawin silang, dan proses mutasi, sehingga tingkat kesuksesan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan Calcudoku dapat meningkat.
 \end{enumerate}

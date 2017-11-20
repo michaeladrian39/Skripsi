@@ -63,8 +63,8 @@
 % \mode{kosong}
 % \mode{cover}
 % \mode{sidang}
-% \mode{sidang_akhir}
- \mode{final} 
+ \mode{sidang_akhir}
+% \mode{final} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -76,7 +76,7 @@
 % - yes: setiap baris diberi nomor
 % - no : baris tidak diberi nomor, otomatis untuk mode final
 %=============================================================================
-\linenumber{no}
+\linenumber{yes}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -92,8 +92,8 @@
 % - double 	: jarak yang lebih lebar lagi, jika pembimbing berniat memberi 
 %             catatan yg banyak di antara baris (dianjurkan untuk bimbingan)
 %=============================================================================
-\linespacing{single}
-%\linespacing{onehalf}
+%\linespacing{single}
+\linespacing{onehalf}
 %\linespacing{double}
 %=============================================================================
 
@@ -204,7 +204,8 @@ Algoritma \textit{backtracking} adalah sebuah algoritma umum yang mencari solusi
 
 Algoritma \textit{hybrid genetic} dalam kasus ini adalah gabungan dari algoritma \textit{rule based} dan algoritma genetik. Algoritma \textit{rule based} adalah sebuah algoritma berbasis aturan logika untuk menyelesaikan Calcudoku. Algoritma genetik adalah salah satu teknik heuristik \textit{Generate and Test} yang terinspirasi oleh sistem seleksi alam yang mencari solusi dengan menggunakan operator-operator genetik seperti mutasi, kawin silang, dan \textit{elitism}.
 
-Penelitian ini bertujuan untuk membandingkan performansi algoritma \textit{backtracking} dengan algoritma \textit{hybrid genetic} dalam menyelesaikan Calcudoku dalam kecepatan dan tingkat keberhasilan.}
+Hasil dari penelitian ini adalah perangkat lunak algoritma \textit{backtracking} dapat menyelesaikan semua permainan yang diujikan, tetapi pada ukuran \textit{grid} yang besar, algoritma \textit{backtracking} sangat lambat dalam menyelesaikan permainan, ada kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan karena sifat acak dari algoritma \textit{hybrid genetic} ini, semakin besar ukuran \textit{grid}, maka kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan semakin besar, pada ukuran \textit{grid} yang kecil, algoritma \textit{hybrid genetic} cenderung menyelesaikan permainan lebih lambat daripada algoritma \textit{backtracking}, tetapi pada ukuran \textit{grid} yang besar, algoritma \textit{hybrid genetic} mungkin mampu menyelesaikan permainan lebih cepat daripada algoritma \textit{backtracking}, tetapi hal ini tidak dapat dibuktikan karena algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan dengan ukuran \textit{grid} yang besar, dan nilai untuk parameter-parameter algoritma genetik mempengaruhi kecepatan dan tingkat keberhasilan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan.
+}
 \abstrakENG
 {Calcudoku is a number puzzle game. The goal of this puzzle is to fill each cell in the grid with the numbers from 1 to n without repetitions of the numbers in each column and row for grid with the size of n x n. The grid is divided into a number of cages, with each cage contains a variable number of cells. Each cage is bordered with a thicker line than cell border line. Numbers in the same cage must produced the predetermined target number if calculated using the predetermined mathematical operatin. Numbers in a cage can be repeated, as long as the repetitions do not occur in the same column or row.
 
@@ -214,7 +215,7 @@ The backtracking algorithm is a general algorithm with finds a solution by tryin
 
 In this case, the hybrid genetic algorithm is a combination of the rule based algorithm and the genetic algorithm. Rule based algorithm uses logical rules to solve Calcudoku. Genetic algorithm is a heuristic technique inspired by the process of natural selection, which tries to find a solution by relying on genetic operators such as mutation, crossover, and elitism.
 
-The goal of this research is to compare the backtracking algorithm and the hybrid genetic in solving Calcudoku in speed and success rate.}
+The result of this research is that the backtracking algorithm solved all puzzles, but on large grids, the algorithm is very slow in solving the puzzle, there is a chance that the hybrid genetic algorithm failed in solving the puzzle due to the random nature of the algorithm, the larger the grid, the higher the chance that the algorithm will fail in solving the puzzle, on small grids, the hybrid genetic algorithm tends to solve the puzzle slower than the backtracking algorithm, but on larger grids, the hybrid genetic algorithm may be able to solve the puzzle faster than the backtracking algorithm, but this cannot be proven because the hybrid genetic algorithm failed in solving puzzles with large grids, and the values of the genetic algorithm parameters influences the speed and the success rate of the hybrid genetic algorithm in solving the puzzle.}
 %=============================================================================
 
 %_____________________________________________________________________________
