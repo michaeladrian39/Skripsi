@@ -12,7 +12,7 @@ Untuk mengilustrasikan cara kerja algoritma \textit{backtracking}, akan digunaka
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.333]{Gambar/backtracking/State1}
-\caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan, seperti yang digambarkan pada Gambar~\ref{fig:backtracking1}.  ~\cite{fahda:16:backtracking}]{Contoh permainan teka-teki dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan, seperti yang digambarkan pada Gambar~\ref{fig:backtracking1}.  ~\cite{fahda:16:backtracking}}
+\caption[Contoh permainan teka-teki Calcudoku dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan, seperti yang digambarkan pada Gambar~\ref{fig:backtracking1}. ~\cite{fahda:16:backtracking}]{Contoh permainan teka-teki dengan ukuran \textit{grid} 4 x 4 yang belum diselesaikan, seperti yang digambarkan pada Gambar~\ref{fig:backtracking1}. ~\cite{fahda:16:backtracking}}
 \label{fig:analisisbt1}
 \end{figure}
 
@@ -46,7 +46,7 @@ Untuk mengilustrasikan cara kerja algoritma \textit{backtracking}, akan digunaka
 \label{fig:analisisbt3}
 \end{figure}
 
-\item Karena semua kemungkinan angka untuk baris ke-1 dan kolom ke-4 telah dicoba dan gagal, maka algoritma harus mundur kembali ke (\textit{state} 7). Algoritma mencoba kemungkinan angka berikutnya, yaitu angka 3  (\textit{state} 12), seperti dapat dilihat pada Gambar~\ref{fig:analisisbt4}, tetapi angka 3 sudah pernah digunakan dalam baris tersebut.
+\item Karena semua kemungkinan angka untuk baris ke-1 dan kolom ke-4 telah dicoba dan gagal, maka algoritma harus mundur kembali ke (\textit{state} 7). Algoritma mencoba kemungkinan angka berikutnya, yaitu angka 3 (\textit{state} 12), seperti dapat dilihat pada Gambar~\ref{fig:analisisbt4}, tetapi angka 3 sudah pernah digunakan dalam baris tersebut.
 
 \begin{figure}
 \centering
@@ -70,7 +70,7 @@ Untuk mengilustrasikan cara kerja algoritma \textit{backtracking}, akan digunaka
 \label{fig:analisisbt5}
 \end{figure}
 
-\item Karena semua kemungkinan angka untuk baris ke-1 dan kolom ke-3 dan ke-4 telah dicoba dan gagal, maka algoritma harus mundur kembali ke (\textit{state} 5). Algoritma mencoba kemungkinan angka berikutnya, yaitu angka 2  (\textit{state} 18), seperti dapat dilihat pada Gambar~\ref{fig:analisisbt6}. Algoritma lalu maju ke sel berikutnya.
+\item Karena semua kemungkinan angka untuk baris ke-1 dan kolom ke-3 dan ke-4 telah dicoba dan gagal, maka algoritma harus mundur kembali ke (\textit{state} 5). Algoritma mencoba kemungkinan angka berikutnya, yaitu angka 2 (\textit{state} 18), seperti dapat dilihat pada Gambar~\ref{fig:analisisbt6}. Algoritma lalu maju ke sel berikutnya.
 
 \begin{figure}
 \centering
@@ -620,7 +620,7 @@ Berdasarkan landasan teori dan analisis algoritma \textit{backtracking} dan \tex
 \item Matriks \textit{cage objectives}, yang berisikan angka tujuan dan operasi matematika yang telah ditentukan untuk setiap \textit{cage}.
 \end{enumerate}
 
-Perangkat lunak ini akan menghasilkan keluaran berupa antarmuka grafis permainan teka-teki Calcudoku berdasarkan isi \textit{file}  yang di-\textit{load} oleh pengguna. Permainan ini dapat diselesaikan oleh pengguna dengan usahanya sendiri, atau menggunakan salah satu dari dua \textit{solver} yang disediakan.  Kedua \textit{solver} tersebut yaitu:
+Perangkat lunak ini akan menghasilkan keluaran berupa antarmuka grafis permainan teka-teki Calcudoku berdasarkan isi \textit{file} yang di-\textit{load} oleh pengguna. Permainan ini dapat diselesaikan oleh pengguna dengan usahanya sendiri, atau menggunakan salah satu dari dua \textit{solver} yang disediakan. Kedua \textit{solver} tersebut yaitu:
 
 \begin{enumerate}
 \item Algoritma \textit{backtracking}, dan
@@ -656,7 +656,9 @@ Diagram \textit{use case} untuk perangkat lunak permainan teka-teki Calcudoku da
 \label{fig:analisisusecase}
 \end{figure}
 
-Berdasarkan diagram \textit{use case} yang dapat dilihat pada Gambar~\ref{fig:analisisusecase}, skenario-skenario yang dapat dilakukan oleh pengguna adalah:
+\clearpage
+
+Berdasarkan diagram \textit{use case} tersebut, skenario-skenario yang dapat dilakukan oleh pengguna adalah:
 
 \begin{enumerate}
 \item Membuka {file} masukan. Penjelasan untuk skenario ini dapat dilihat pada Tabel~\ref{tab:analisisload}.
@@ -677,7 +679,7 @@ Kondisi Awal & Perangkat lunak belum membuka {file} masukan. \\
 \hline
 Kondisi Akhir & Perangkat lunak sudah membuka {file} masukan .\\
 \hline
-Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{File}", lalu memilih menu \textit{item} "\textit{Load} \\ \textit{Puzzle File}", lalu memilih \textit{file} masukan yang akan dibuka, dan mengklik \\ tombol "OK". Jika perangkat lunak sudah membuka {file} masukan, dan ingin \\ membuka {file} masukan yang baru, akan keluar kotak dialog "\textit{Are you sure} \\  \textit{you want to load another puzzle file}?", klik tombol "\textit{Yes}" untuk membuka {file} \\ masukan baru, atau klik tombol "\textit{No}" untuk membatalkan.} \\
+Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{File}", lalu memilih menu \textit{item} "\textit{Load} \\ \textit{Puzzle File}", lalu memilih \textit{file} masukan yang akan dibuka, dan mengklik \\ tombol "OK". Jika perangkat lunak sudah membuka {file} masukan, dan ingin \\ membuka {file} masukan yang baru, akan keluar kotak dialog "\textit{Are you sure} \\ \textit{you want to load another puzzle file}?", klik tombol "\textit{Yes}" untuk membuka {file} \\ masukan baru, atau klik tombol "\textit{No}" untuk membatalkan.} \\
 \hline
 \end{tabular}
 \label{tab:analisisload}
@@ -829,6 +831,8 @@ Skenario Utama & \makecell[l]{Pemain mengisikan \textit{form} yang telah disedia
 
 \end{enumerate}
 
+\clearpage
+
 \subsection{Diagram Kelas}
 \label{sec:analisiskelas}
 
@@ -862,7 +866,7 @@ Berdasarkan diagram kelas tersebut, kelas-kelas yang digunakan dalam perangkat l
 	\item Kelas GUI, yaitu kelas yang merepresentasikan \textit{grid} untuk permainan Calcudoku.
 	\item Kelas GeneticParameters, yaitu kelas yang berisi \textit{form} untuk mengatur nilai dari parameter-parameter untuk algoritma genetik.
 	\end{enumerate}
-\item \textit{Package} controller, yaitu penghubung antara kelas-kelas yang ada di dalam \textit{package} model dengan kelas-kelas yang ada di dalam \textit{package} view. \textit{Package} ini terdiri dari 1 kelas, yaitu kelas Controller. Kelas ini menghubungkan kelas-kelas yang ada di dalam  \textit{package} model dengan kelas-kelas yang ada di dalam \textit{package} view.
+\item \textit{Package} controller, yaitu penghubung antara kelas-kelas yang ada di dalam \textit{package} model dengan kelas-kelas yang ada di dalam \textit{package} view. \textit{Package} ini terdiri dari 1 kelas, yaitu kelas Controller. Kelas ini menghubungkan kelas-kelas yang ada di dalam \textit{package} model dengan kelas-kelas yang ada di dalam \textit{package} view.
 \end{enumerate}
 
 Penjelasan tentang variabel-variabel dan \textit{method-method} yang ada di dalam kelas-kelas di atas akan dijelaskan di dalam bab Perancangan.

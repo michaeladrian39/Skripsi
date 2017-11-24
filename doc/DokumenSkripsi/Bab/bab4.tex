@@ -68,12 +68,13 @@ Gambar~\ref{fig:perancangangui1} menunjukkan perancangan GUI sebelum \textit{fil
 \label{fig:perancangangui3}
 \end{figure}
 
+\clearpage
+
 Menu \textit{bar} untuk perangkat lunak ini terdiri dari dua menu, yaitu:
 \begin{enumerate}
 \item \textit{File}, yaitu menu yang berisi \textit{item-item} menu yang terkait dengan \textit{file} permainan.
 \item \textit{Solve}, yaitu menu yang berisi \textit{item-item} menu yang terkait dengan \textit{solver}.
 \end{enumerate}
-
 
 Menu \textit{File} mempunyai beberapa menu \textit{item}, yaitu:
 \begin{enumerate}
@@ -345,7 +346,7 @@ Kelas SolverHybridGenetic mempunyai beberapa atribut, yaitu:
 Kelas SolverHybridGenetic mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
-\item SolverHybridGenetic(Grid grid,  Integer generations, Integer populationSize, Double elitismRate, Double crossoverRate, Double mutationRate), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}, dan parameter-parameter algoritma genetik, yaitu jumlah generasi, jumlah populasi dalam sebuah generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi.
+\item SolverHybridGenetic(Grid grid, Integer generations, Integer populationSize, Double elitismRate, Double crossoverRate, Double mutationRate), yaitu konstruktor dari kelas ini. Konstruktor ini menerima masukan berupa \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}, dan parameter-parameter algoritma genetik, yaitu jumlah generasi, jumlah populasi dalam sebuah generasi, tingkat \textit{elitism}, tingkat kawin silang, dan tingkat mutasi.
 \item getGrid(), yaitu \textit{method} untuk mendapatkan \textit{grid} yang akan diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}.
 \item getSolution(), yaitu \textit{method} untuk mendapatkan \textit{grid} yang sudah diselesaikan oleh \textit{solver} dengan algoritma \textit{hybrid genetic}.
 \item solve(), yaitu \textit{method} yang mencoba untuk menyelesaikan teka-teki Calcudoku menggunakan algoritma \textit{hybrid genetic}. \textit{Method} ini akan memanggil solver algoritma \textit{rule based}. Jika algoritma \textit{rule based} gagal dalam menyelesaikan teka-teki Calcudoku, maka \textit{method} akan memanggil solver algoritma genetik. \textit{Method} ini menghasilkan keluaran apakah \textit{solver} berhasil menyelesaikan teka-teki Calcudoku atau tidak.
@@ -752,6 +753,8 @@ Kelas PopupMenuListener mempunyai beberapa atribut, yaitu:
 \item textField, yaitu sebuah \textit{text field} yang merepresentasikan sebuah sel yang berada di dalam \textit{grid}.
 \item number, yaitu sebuah angka.
 \end{enumerate}
+
+\clearpage
 
 Kelas PopupMenuListener mempunyai beberapa \textit{method}, yaitu:
 

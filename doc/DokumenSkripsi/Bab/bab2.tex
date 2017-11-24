@@ -302,6 +302,8 @@ Cara kerja algoritma genetik adalah sebagai berikut ~\cite{johanna:12:hybrid}:
 \end{enumerate}
 Langkah-langkah utama dalam penggunaan algoritma genetik adalah membangkitkan populasi kemungkinan jawaban, mencari fungsi objektif dan fungsi kelayakan, dan penggunaan operator genetik.
 
+\clearpage
+
 \subsection{Algoritma \textit{Hybrid Genetic}}
 \label{sec:subhybrid}
 
@@ -315,7 +317,11 @@ Pencarian \textit{rule based} dimulai dengan mengasumsikan semua nilai sel yang 
 \item \begin{math}|P(C_{b1,k})| = |P(C_{b2,k})| = 2 \land P(C_{b1,k}) = P(C_{b2,k}) \rightarrow P(C_{p,k}) = P(C_{p,k}) - P(C_{b1,k})\end{math}, artinya jika ada dua sel dalam satu kolom yang hanya bisa diisi oleh dua kemungkinan angka, maka kedua angka tersebut dihapus dari kemungkinan angka-angka yang bisa digunakan untuk mengisi sel-sel lain pada kolom tersebut.
 \end{enumerate}
 
-Algoritma genetik digunakan saat teka-teki masih tidak bisa diselesaikan setelah mengerjakan semua aturan logika secara berulang-ulang. Algoritma ini dimulai dengan meng-\textit{encode} kromosom. Satu kromosom terdiri dari \begin{math}k\end{math} segmen, dengan \begin{math}m \leq n\end{math}. Satu segmen berisikan sekumpulan gen yang belum diselesaikan yang berada di dalam segmen tersebut. Sebuah segmen merepresentasikan sebuah baris atau kolom. Dalam sebuah kromosom, segmen diurutkan dari baris yang paling atas ke baris yang paling bawah atau dari kolom yang paling kiri ke kolom yang paling kanan. Contoh, salah satu kromosom dari permainan teka-teki Calcudoku pada Gambar~\ref{fig:hybrid8} adalah \begin{math}34 \ 35 \ | \ 28 \ 29 \ 24 \ 25 \ | \ 0 \ 4 \ 5 \ 1 \ 2 \ 3 \ | \ 11 \ 6 \ 9 \ 7 \ 8 \ 10 \ | \ 12 \ 14 \ 15 \ 17 \ 16 \ 13 \ | \ 20 \ 18 \ 19 \ 23 \ 21 \ 22\end{math}. Setiap segmen dalam contoh kromosom ini merepresentasikan sebuah baris yang belum terselesaikan.
+Algoritma genetik digunakan saat teka-teki masih tidak bisa diselesaikan setelah mengerjakan semua aturan logika secara berulang-ulang. Algoritma ini dimulai dengan meng-\textit{encode} kromosom. Satu kromosom terdiri dari \begin{math}k\end{math} segmen, dengan \begin{math}m \leq n\end{math}. Satu segmen berisikan sekumpulan gen yang belum diselesaikan yang berada di dalam segmen tersebut. Sebuah segmen merepresentasikan sebuah baris atau kolom. Dalam sebuah kromosom, segmen diurutkan dari baris yang paling atas ke baris yang paling bawah atau dari kolom yang paling kiri ke kolom yang paling kanan. Contoh, salah satu kromosom dari permainan teka-teki Calcudoku pada Gambar~\ref{fig:hybrid8} adalah:
+
+\begin{math}34 \ 35 \ | \ 28 \ 29 \ 24 \ 25 \ | \ 0 \ 4 \ 5 \ 1 \ 2 \ 3 \ | \ 11 \ 6 \ 9 \ 7 \ 8 \ 10 \ | \ 12 \ 14 \ 15 \ 17 \ 16 \ 13 \ | \ 20 \ 18 \ 19 \ 23 \ 21 \ 22\end{math}
+
+Setiap segmen dalam contoh kromosom ini merepresentasikan sebuah baris yang belum terselesaikan.
 
 \begin{figure}
 \centering
