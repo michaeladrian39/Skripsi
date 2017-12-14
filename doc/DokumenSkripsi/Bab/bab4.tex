@@ -27,7 +27,7 @@ Adapun rincian dari \textit{file} teks masukan tersebut adalah sebagai berikut:
 \section{Perancangan Keluaran}
 \label{sec:perancangankeluaran}
 
-Keluaran untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah matriks yang berisi solusi dari teka-teki Calcudoku yang sudah diselesaikan oleh program, seperti dapat dilihat pada Gambar~\ref{fig:perancangankeluaran}.
+Keluaran untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah matriks yang berisi solusi dari teka-teki Calcudoku yang sudah diselesaikan oleh perangkat lunak ini, seperti dapat dilihat pada Gambar~\ref{fig:perancangankeluaran}.
 
 \begin{figure}
 \centering
@@ -118,7 +118,7 @@ Gambar~\ref{fig:perancanganguimenusolve} menunjukkan isi dari menu \textit{Solve
 Perangkat lunak teka-teki Calcudoku ini terdiri dari beberapa kelas, yang dikelompokkan dalam tiga package, yaitu:
 
 \begin{enumerate}
-\item Model, yaitu \textit{engine} dari perangkat lunak ini. Package ini memiliki beberapa kelas, yaitu:
+\item Model, yaitu \textit{engine} dari perangkat lunak ini. \textit{Package} ini memiliki beberapa kelas, yaitu:
 	\begin{enumerate}
 	\item Grid, yaitu kelas yang merepresentasikan \textit{grid} dalam teka-teki Calcudoku.
 	\item Cell, yaitu kelas yang merepresentasikan sel dalam teka-teki Calcudoku.
@@ -130,7 +130,7 @@ Perangkat lunak teka-teki Calcudoku ini terdiri dari beberapa kelas, yang dikelo
 	\item Chromosome, yaitu kelas yang merepresentasikan sebuah kromosom untuk algoritma genetik dalam solver \textit{hybrid genetic}.
 	\item ChromosomeComparator, yaitu kelas pembanding \textit{custom} (\textit{custom comparator}) yang berfungsi untuk mengurutkan kromosom berdasarkan nilai kelayakkannya (\textit{fitness value}).	
 	\end{enumerate}
-\item View, yaitu GUI dari perangkat lunak ini. Package ini memiliki beberapa kelas, yaitu:
+\item View, yaitu GUI dari perangkat lunak ini. \textit{Package} ini memiliki beberapa kelas, yaitu:
 	\begin{enumerate}
 	\item Calcudoku, yaitu kelas \textit{frame} yang berisi menu \textit{bar} dan instansiasi kelas panel GUI.
 	\item WindowListener, yaitu kelas \textit{listener} untuk kelas Calcudoku. \textit{Listener} ini berfungsi untuk menambahkan pesan peringatan saat akan menutup perangkat lunak.
@@ -139,9 +139,9 @@ Perangkat lunak teka-teki Calcudoku ini terdiri dari beberapa kelas, yang dikelo
 	\item CellKeyListener, yaitu kelas \textit{listener} untuk kelas GUI. \textit{Listener} ini berfungsi untuk menggerakkan kursor dari sebuah sel ke sel di sebelahnya menggunakan tombol-tombol panah ke kiri, ke atas, ke bawah, dan ke kanan. Listener ini juga berfungsi untuk membatasi agar sel hanya bisa diisi oleh satu angka.
 	\item PopupMenuListener, yaitu kelas \textit{listener} untuk kelas GUI. \textit{Listener} ini berfungsi untuk mengisi sel dengan angka menggunakan menu \textit{pop up}, sel akan diisi dengan angka yang dipilih.
 	\item CellTextFieldListener, yaitu kelas \textit{listener} untuk kelas GUI. \textit{Listener} ini berfungsi untuk mengisikan sel dalam kelas Grid dengan angka yang diisikan ke dalam sel dalam GUI.
-	\item GeneticParameterss, yaitu kelas yang berisi \textit{form} untuk mengatur nilai dari parameter-parameter untuk algoritma genetik.
+	\item GeneticParameters, yaitu kelas yang berisi \textit{form} untuk mengatur nilai dari parameter-parameter untuk algoritma genetik.
 	\end{enumerate}
-\item Controller, yaitu penghubung antara \textit{package} model dan \textit{package} view. Package ini hanya berisi satu kelas, yaitu kelas Controller.
+\item Controller, yaitu penghubung antara \textit{package} model dan \textit{package} view. \textit{Package} ini hanya berisi satu kelas, yaitu kelas Controller.
 \end{enumerate}
 
 Diagram kelas untuk perangkat lunak ini dapat dilihat pada Gambar~\ref{fig:diagramkelas}.

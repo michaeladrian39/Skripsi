@@ -11,7 +11,16 @@ Pengujian perangkat lunak ini dilakukan di Lab Komputasi FTIS Unpar ruang 9018. 
 Ada dua jenis lingkungan untuk pengujian perangkat lunak ini, yaitu:
 
 \begin{enumerate}
-\item Lingkungan perangkat keras, yaitu lingkungandigunakan untuk pengujian perangkat lunak ini memiliki spesifikasi berikut:
+\item Lingkungan perangkat keras.
+\item Lingkungan perangkat lunak.
+\end{enumerate}
+
+Kedua lingkungan tersebut akan dijelaskan lebih lanjut dibawah ini.
+
+\subsection{Lingkungan Perangkat Keras}
+\label{sec:lingkungankeras}
+
+Spesifikasi dari lingkungan ini dapat dilihat pada Tabel~\ref{tab:lingkunganpk}.
 
 \begin{table}
 \centering
@@ -31,7 +40,10 @@ Parameter & Nilai \\
 \label{tab:lingkunganpk}
 \end{table}
 
-\item Lingkungan perangkat lunak, yaitu lingkungan yang digunakan untuk pengujian perangkat lunak ini memiliki spesifikasi berikut:
+\subsection{Lingkungan Perangkat Lunak}
+\label{sec:lingkunganlunak}
+
+Spesifikasi dari lingkungan ini dapat dilihat pada Tabel~\ref{tab:lingkunganpl}.
 
 \begin{table}
 \centering
@@ -54,8 +66,6 @@ Bahasa Pemrograman & Java \\
 \end{tabular}
 \label{tab:lingkunganpl}
 \end{table}
-
-\end{enumerate}
 
 \section{Implementasi}
 \label{sec:implementasi}
@@ -473,7 +483,7 @@ Pengujian algoritma \textit{backtracking} untuk Calcudoku dilakukan untuk menget
 \caption[Hasil pengujian algoritma \textit{backtracking} untuk Calcudoku]{Hasil pengujian algoritma \textit{backtracking} untuk Calcudoku}
 \begin{tabular}{| l | l | l |}
 \hline
-Ukuran \textit{Grid} & Tingkat Keberhasilan & Kecepatan \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} \\
 \hline \hline
 \begin{math}4 \times 4\end{math} & 100\% & 0.067 detik \\
 \hline
@@ -559,9 +569,9 @@ Hasil pengujian Skenario 1 dapat dilihat pada Tabel~\ref{tab:pengujianhg1}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 1)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 1)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 100\% & 3.579 detik & 3 \\
+\begin{math}4 \times 4\end{math} & 100\% & 3.735 detik & 3 \\
 \hline
 \begin{math}5 \times 5\end{math} & 42.308\% & 8.389 detik & 9 \\
 \hline
@@ -588,9 +598,9 @@ Hasil pengujian Skenario 2 dapat dilihat pada Tabel~\ref{tab:pengujianhg2}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 2)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 2)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 100\% & 4.002 detik & 3 \\
+\begin{math}4 \times 4\end{math} & 100\% & 4.183 detik & 3 \\
 \hline
 \begin{math}5 \times 5\end{math} & 42.308\% & 9.258 detik & 9 \\
 \hline
@@ -615,9 +625,9 @@ Hasil pengujian Skenario 3 dapat dilihat pada Tabel~\ref{tab:pengujianhg3}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 3)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 3)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 100\% & 3.751 detik & 3 \\
+\begin{math}4 \times 4\end{math} & 100\% & 3.924 detik & 3 \\
 \hline
 \begin{math}5 \times 5\end{math} & 42.308\% & 8.806 detik & 9 \\
 \hline
@@ -642,9 +652,9 @@ Hasil pengujian Skenario 4 dapat dilihat pada Tabel~\ref{tab:pengujianhg4}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 4)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 4)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 100\% & 4.175 detik & 3 \\
+\begin{math}4 \times 4\end{math} & 100\% & 4.371 detik & 3 \\
 \hline
 \begin{math}5 \times 5\end{math} & 42.308\% & 9.676 detik & 9 \\
 \hline
@@ -671,9 +681,9 @@ Hasil pengujian Skenario 5 dapat dilihat pada Tabel~\ref{tab:pengujianhg5}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 5)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 5)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 61.538\% & 0.498 detik & 5 \\
+\begin{math}4 \times 4\end{math} & 56.41\% & 0.48 detik & 5 \\
 \hline
 \begin{math}5 \times 5\end{math} & 19.231\% & 0.311 detik & 14 \\
 \hline
@@ -698,9 +708,9 @@ Hasil pengujian Skenario 6 dapat dilihat pada Tabel~\ref{tab:pengujianhg5}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 6)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 6)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 61.538\% & 0.553 detik & 5 \\
+\begin{math}4 \times 4\end{math} & 56.41\% & 0.532 detik & 5 \\
 \hline
 \begin{math}5 \times 5\end{math} & 19.231\% & 0.339 detik & 14 \\
 \hline
@@ -725,9 +735,9 @@ Hasil pengujian Skenario 7 dapat dilihat pada Tabel~\ref{tab:pengujianhg7}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 7)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 7)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 61.538\% & 0.524 detik & 5 \\
+\begin{math}4 \times 4\end{math} & 56.41\% & 0.505 detik & 5 \\
 \hline
 \begin{math}5 \times 5\end{math} & 19.231\% & 0.325 detik & 14 \\
 \hline
@@ -754,9 +764,9 @@ Hasil pengujian Skenario 8 dapat dilihat pada Tabel~\ref{tab:pengujianhg8}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 8)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 8)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 61.538\% & 0.579 detik & 5 \\
+\begin{math}4 \times 4\end{math} & 56.41\% & 0.557 detik & 5 \\
 \hline
 \begin{math}5 \times 5\end{math} & 19.231\% & 0.352 detik & 14 \\
 \hline
@@ -781,9 +791,9 @@ Hasil pengujian Skenario 9 dapat dilihat pada Tabel~\ref{tab:pengujianhg9}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 9)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 9)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 35.897\% & 0.511 detik & 7 \\
+\begin{math}4 \times 4\end{math} & 33.333\% & 0.457 detik & 7 \\
 \hline
 \begin{math}5 \times 5\end{math} & 15.385\% & 0.487 detik & 15 \\
 \hline
@@ -808,9 +818,9 @@ Hasil pengujian Skenario 10 dapat dilihat pada Tabel~\ref{tab:pengujianhg10}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 10)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 10)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 35.897\% & 0.511 detik & 7 \\
+\begin{math}4 \times 4\end{math} & 33.333\% & 0.457 detik & 7 \\
 \hline
 \begin{math}5 \times 5\end{math} & 15.385\% & 0.487 detik & 15 \\
 \hline
@@ -837,9 +847,9 @@ Hasil pengujian Skenario 11 dapat dilihat pada Tabel~\ref{tab:pengujianhg11}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 11)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 11)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 35.897\% & 0.511 detik & 7 \\
+\begin{math}4 \times 4\end{math} & 33.333\% & 0.457 detik & 7 \\
 \hline
 \begin{math}5 \times 5\end{math} & 15.385\% & 0.487 detik & 15 \\
 \hline
@@ -864,9 +874,9 @@ Hasil pengujian Skenario 12 dapat dilihat pada Tabel~\ref{tab:pengujianhg12}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 12)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 12)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 35.897\% & 0.511 detik & 7 \\
+\begin{math}4 \times 4\end{math} & 33.333\% & 0.457 detik & 7 \\
 \hline
 \begin{math}5 \times 5\end{math} & 15.385\% & 0.487 detik & 15 \\
 \hline
@@ -891,9 +901,9 @@ Hasil pengujian Skenario 13 dapat dilihat pada Tabel~\ref{tab:pengujianhg13}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 13)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 13)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 23.077\% & 0.054 detik & 9 \\
+\begin{math}4 \times 4\end{math} & 23.077\% & 0.048 detik & 9 \\
 \hline
 \begin{math}5 \times 5\end{math} & 15.385\% & 0.077 detik & 15 \\
 \hline
@@ -920,9 +930,9 @@ Hasil pengujian Skenario 14 dapat dilihat pada Tabel~\ref{tab:pengujianhg14}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 14)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 14)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 23.077\% & 0.054 detik & 9 \\
+\begin{math}4 \times 4\end{math} & 23.077\% & 0.048 detik & 9 \\
 \hline
 \begin{math}5 \times 5\end{math} & 15.385\% & 0.077 detik & 15 \\
 \hline
@@ -947,9 +957,9 @@ Hasil pengujian Skenario 15 dapat dilihat pada Tabel~\ref{tab:pengujianhg15}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 15)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 15)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 23.077\% & 0.054 detik & 9 \\
+\begin{math}4 \times 4\end{math} & 23.077\% & 0.048 detik & 9 \\
 \hline
 \begin{math}5 \times 5\end{math} & 15.385\% & 0.077 detik & 15 \\
 \hline
@@ -974,9 +984,9 @@ Hasil pengujian Skenario 16 dapat dilihat pada Tabel~\ref{tab:pengujianhg16}.
 \caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 16)]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku (Skenario 16)}
 \begin{tabular}{| l | l | l | l |}
 \hline
-Ukuran \textit{Grid} & \makecell[l]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[l]{Rata-Rata \\ Kecepatan} & \makecell[l]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
 \hline \hline
-\begin{math}4 \times 4\end{math} & 23.077\% & 0.054 detik & 9 \\
+\begin{math}4 \times 4\end{math} & 23.077\% & 0.048 detik & 9 \\
 \hline
 \begin{math}5 \times 5\end{math} & 15.385\% & 0.077 detik & 15 \\
 \hline

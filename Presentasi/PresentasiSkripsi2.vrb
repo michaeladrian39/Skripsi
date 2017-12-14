@@ -1,0 +1,30 @@
+\frametitle{Kode Program - Algoritma Genetik}
+\begin{itemize}
+\item Generasi berikutnya dibangkitkan dari generasi sebelumnya menggunakan operator-operator algoritma genetik, seperti \textit{elitism}, kawin silang, dan mutasi.
+\end{itemize}
+\begin{lstlisting}[basicstyle=\tiny]
+	...
+        for (int i = 0; i < elitismNumber; i++)
+        {
+            if (!nextGeneration.contains(currentGeneration.get(i)))
+            {
+                nextGeneration.add(cloneChromosome(
+                        currentGeneration.get(i)));
+            }
+        }
+        for (int i = 0; i < mutationNumber; i++)
+        {
+            Chromosome parent = randomSelection(currentGeneration);
+            nextGeneration.add(mutation(parent));
+        }
+        for (int i = 0; i < crossoverNumber; i++)
+        {
+            nextGeneration.addAll(crossover(
+                    randomSelection(currentGeneration),
+                    randomSelection(currentGeneration)));
+        }
+        ...
+        currentGeneration = nextGeneration;
+        nextGeneration = new ArrayList<Chromosome>();
+    }
+\end{lstlisting}
