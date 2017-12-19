@@ -38,6 +38,7 @@ public class SolverGenetic
         this.mutationRate = mutationRate;
         this.isCellFixed = generateIsCellFixedArray();
         this.randomGenerator = new Random();
+        
         // Algoritma genetik dimulai dengan membangkitkan generasi awal secara 
         // acak.
         generatePopulation();
