@@ -20,7 +20,8 @@ public class SolverBacktracking
     public boolean solve()
     {
         // Isilah mulai dari sel pada sudut kiri atas.
-        // Algoritma backtracking selesai jika semua sel sudah terisi dengan benar.
+        // Algoritma backtracking selesai jika semua sel sudah terisi dengan 
+        // benar.
         if (solve(0, 0) == true)
         {
             this.solution = grid;
