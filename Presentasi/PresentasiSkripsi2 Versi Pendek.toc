@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Pendahuluan}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Calcudoku}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Algoritma \textit {Backtracking}}{7}{0}{1}
+\beamer@subsectionintoc {1}{3}{Algoritma \textit {Hybrid Genetic}}{8}{0}{1}
+\beamer@sectionintoc {2}{Analisis}{12}{0}{2}
+\beamer@sectionintoc {3}{Perancangan}{14}{0}{3}
+\beamer@sectionintoc {4}{Kode Program}{17}{0}{4}
+\beamer@sectionintoc {5}{Implementasi dan Pengujian}{18}{0}{5}
+\beamer@sectionintoc {6}{Simpulan dan Saran}{24}{0}{6}
+\beamer@sectionintoc {7}{Daftar Pustaka}{27}{0}{7}
+\beamer@sectionintoc {8}{Thank You}{28}{0}{8}

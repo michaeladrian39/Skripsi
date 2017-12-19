@@ -37,7 +37,9 @@ public class SolverGenetic
         this.crossoverRate = crossoverRate;
         this.mutationRate = mutationRate;
         this.isCellFixed = generateIsCellFixedArray();
-        this.randomGenerator = new Random(); 
+        this.randomGenerator = new Random();
+        // Algoritma genetik dimulai dengan membangkitkan generasi awal secara 
+        // acak.
         generatePopulation();
         for (int i = 0; i < currentGeneration.size(); i++)
         {
@@ -48,6 +50,8 @@ public class SolverGenetic
     
     public boolean solve()
     {
+        // Algoritma selesai jika solusi ditemukan.
+        // Solusi adalah kromosom dengan nilai kelayakan 1.
         for (int i = 0; i < generations; i++)
         {
             solveLoop();
@@ -69,16 +73,23 @@ public class SolverGenetic
 
     private void solveLoop()
     {      
+        // Jika solusi tidak ditemukan, maka algoritma genetik akan 
+        // membangkitkan generasi berikutnya, sampai solusi ditemukan.
         int elitismNumber = (int) Math.round(populationSize * elitismRate);
         int mutationNumber = (int) Math.round(populationSize * mutationRate);
         int crossoverNumber
                 =  (int) Math.round((populationSize * crossoverRate) / 2);
         sortChromosomes();
+        
         for (int i = 0; i < populationSize; i++)
         {
             printGrid(currentGeneration.get(i).getGrid().getGridContents());
             System.out.println(currentGeneration.get(i).getFitness());
         }
+        
+        // Generasi berikutnya dibangkitkan dari generasi sebelumnya 
+        // menggunakan operator-operator algoritma genetik, seperti elitism, 
+        // kawin silang, dan mutasi.
         for (int i = 0; i < elitismNumber; i++)
         {
             if (!nextGeneration.contains(currentGeneration.get(i)))
@@ -96,6 +107,7 @@ public class SolverGenetic
             nextGeneration.addAll(crossover(randomSelection(currentGeneration),
                     randomSelection(currentGeneration)));
         }
+        
         if (nextGeneration.size() < populationSize)
         {
             while (nextGeneration.size() < populationSize)

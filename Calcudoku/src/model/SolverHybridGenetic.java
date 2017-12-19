@@ -32,6 +32,8 @@ public class SolverHybridGenetic
     
     public boolean solve()
     {
+        // Solver akan mencoba menyelesaikan permainan dengan algoritma rule 
+        // based.
         SolverRuleBased srb = new SolverRuleBased(grid);
         boolean isFilled = srb.solve();
         this.gridRuleBased = srb.getGrid();
@@ -41,6 +43,10 @@ public class SolverHybridGenetic
             printGrid(solution.getGridContents());
             return true;
         }
+        
+        // Jika algoritma rule based tidak berhasil mengisi semua sel dalam 
+        // grid dengan benar, maka solver akan mencoba menyelesaikan permainan 
+        // dengan algoritma genetik.
         else
         {
             SolverGenetic sg = new SolverGenetic(gridRuleBased, generations, 

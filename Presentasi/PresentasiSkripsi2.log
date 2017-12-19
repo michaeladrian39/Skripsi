@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  15 DEC 2017 01:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  19 DEC 2017 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1139,13 +1139,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation10}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.194 \end{frame}
+l.197 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.10}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.194 \end{frame}
+l.197 \end{frame}
                  
 
 
@@ -1158,13 +1158,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation11}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.212 \end{frame}
+l.216 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.11}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.212 \end{frame}
+l.216 \end{frame}
                  
 
 
@@ -1177,33 +1177,33 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation12}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.239 \end{frame}
+l.243 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.12}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.239 \end{frame}
+l.243 \end{frame}
                  
 
 
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex: pop empty color page stack 0
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 252
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 256
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 252.
+LaTeX Font Info:    No file OMScmss.fd. on input line 256.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 252.
+(Font)              for symbol `textbullet' on input line 256.
 
 <Gambar/HybridGenetic7.jpg, id=522, 451.6875pt x 173.89969pt>
 File: Gambar/HybridGenetic7.jpg Graphic file (type jpg)
 
 <use Gambar/HybridGenetic7.jpg>
-Package pdftex.def Info: Gambar/HybridGenetic7.jpg used on input line 266.
+Package pdftex.def Info: Gambar/HybridGenetic7.jpg used on input line 270.
 (pdftex.def)             Requested size: 225.84319pt x 86.94962pt.
  [14
 
@@ -1212,13 +1212,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation13}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.266 \end{frame}
+l.270 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.13}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.266 \end{frame}
+l.270 \end{frame}
                  
 
 
@@ -1231,13 +1231,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation14}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.291 \end{frame}
+l.295 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.14}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.291 \end{frame}
+l.295 \end{frame}
                  
 
 
@@ -1250,13 +1250,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation15}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.329 \end{frame}
+l.333 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.15}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.329 \end{frame}
+l.333 \end{frame}
                  
 
 
@@ -1267,10 +1267,10 @@ File: Gambar/Analisis/DiagramUseCase.jpg Graphic file (type jpg)
 
 <use Gambar/Analisis/DiagramUseCase.jpg>
 Package pdftex.def Info: Gambar/Analisis/DiagramUseCase.jpg used on input line 
-358.
+362.
 (pdftex.def)             Requested size: 195.52704pt x 204.96211pt.
 
-Overfull \vbox (9.689pt too high) detected at line 358
+Overfull \vbox (9.689pt too high) detected at line 362
  []
 
 [17
@@ -1280,13 +1280,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation16}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.358 \end{frame}
+l.362 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.16}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.358 \end{frame}
+l.362 \end{frame}
                  
 
 
@@ -1297,7 +1297,7 @@ File: Gambar/Perancangan/PerancanganInput.png Graphic file (type png)
 
 <use Gambar/Perancangan/PerancanganInput.png>
 Package pdftex.def Info: Gambar/Perancangan/PerancanganInput.png used on input 
-line 378.
+line 382.
 (pdftex.def)             Requested size: 38.39333pt x 145.29245pt.
  [18
 
@@ -1306,13 +1306,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation17}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.378 \end{frame}
+l.382 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.17}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.378 \end{frame}
+l.382 \end{frame}
                  
 
 
@@ -1325,13 +1325,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation18}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.394 \end{frame}
+l.398 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.18}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.394 \end{frame}
+l.398 \end{frame}
                  
 
 
@@ -1343,7 +1343,7 @@ File: Gambar/Perancangan/PerancanganOutput.png Graphic file (type png)
 
 <use Gambar/Perancangan/PerancanganOutput.png>
 Package pdftex.def Info: Gambar/Perancangan/PerancanganOutput.png used on input
- line 417.
+ line 421.
 (pdftex.def)             Requested size: 58.21735pt x 65.24358pt.
  [20
 
@@ -1352,13 +1352,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation19}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.417 \end{frame}
+l.421 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.19}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.417 \end{frame}
+l.421 \end{frame}
                  
 
 
@@ -1371,13 +1371,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation20}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.434 \end{frame}
+l.438 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.20}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.434 \end{frame}
+l.438 \end{frame}
                  
 
 
@@ -1389,7 +1389,7 @@ File: Gambar/Perancangan/PerancanganGUI1.png Graphic file (type png)
 
 <use Gambar/Perancangan/PerancanganGUI1.png>
 Package pdftex.def Info: Gambar/Perancangan/PerancanganGUI1.png used on input l
-ine 458.
+ine 462.
 (pdftex.def)             Requested size: 121.25084pt x 146.94638pt.
  [22
 
@@ -1398,13 +1398,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation21}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.458 \end{frame}
+l.462 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.21}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.458 \end{frame}
+l.462 \end{frame}
                  
 
 
@@ -1415,7 +1415,7 @@ File: Gambar/Perancangan/PerancanganGUI2.png Graphic file (type png)
 
 <use Gambar/Perancangan/PerancanganGUI2.png>
 Package pdftex.def Info: Gambar/Perancangan/PerancanganGUI2.png used on input l
-ine 476.
+ine 480.
 (pdftex.def)             Requested size: 121.25084pt x 146.94638pt.
  [23
 
@@ -1424,13 +1424,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation22}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.476 \end{frame}
+l.480 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.22}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.476 \end{frame}
+l.480 \end{frame}
                  
 
 
@@ -1442,7 +1442,7 @@ File: Gambar/Perancangan/PerancanganGUI3.png Graphic file (type png)
 
 <use Gambar/Perancangan/PerancanganGUI3.png>
 Package pdftex.def Info: Gambar/Perancangan/PerancanganGUI3.png used on input l
-ine 494.
+ine 498.
 (pdftex.def)             Requested size: 121.25084pt x 146.94638pt.
  [24
 
@@ -1451,13 +1451,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation23}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.494 \end{frame}
+l.498 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.23}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.494 \end{frame}
+l.498 \end{frame}
                  
 
 
@@ -1469,7 +1469,7 @@ File: Gambar/Perancangan/PerancanganGUIMenuFile.png Graphic file (type png)
 
 <use Gambar/Perancangan/PerancanganGUIMenuFile.png>
 Package pdftex.def Info: Gambar/Perancangan/PerancanganGUIMenuFile.png used on 
-input line 520.
+input line 524.
 (pdftex.def)             Requested size: 90.33727pt x 80.29979pt.
  [25
 
@@ -1478,13 +1478,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation24}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.520 \end{frame}
+l.524 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.24}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.520 \end{frame}
+l.524 \end{frame}
                  
 
 
@@ -1496,7 +1496,7 @@ t>
 File: Gambar/Perancangan/PerancanganGUIMenuSolve.png Graphic file (type png)
  <use Gambar/Perancangan/PerancanganGUIMenuSolve.png>
 Package pdftex.def Info: Gambar/Perancangan/PerancanganGUIMenuSolve.png used on
- input line 552.
+ input line 556.
 (pdftex.def)             Requested size: 175.6558pt x 47.678pt.
  [26
 
@@ -1505,13 +1505,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation25}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.552 \end{frame}
+l.556 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.25}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.552 \end{frame}
+l.556 \end{frame}
                  
 
 
@@ -1524,13 +1524,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation26}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.575 \end{frame}
+l.579 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.26}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.575 \end{frame}
+l.579 \end{frame}
                  
 
 
@@ -1542,7 +1542,7 @@ File: Gambar/Perancangan/DiagramKelas.jpg Graphic file (type jpg)
 
 <use Gambar/Perancangan/DiagramKelas.jpg>
 Package pdftex.def Info: Gambar/Perancangan/DiagramKelas.jpg used on input line
- 596.
+ 600.
 (pdftex.def)             Requested size: 180.92549pt x 199.99669pt.
  [28
 
@@ -1551,13 +1551,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation27}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.596 \end{frame}
+l.600 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.27}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.596 \end{frame}
+l.600 \end{frame}
                  
 
 
@@ -1570,13 +1570,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation28}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.615 \end{frame}
+l.619 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.28}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.615 \end{frame}
+l.619 \end{frame}
                  
 
 
@@ -1589,13 +1589,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation29}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.640 \end{frame}
+l.644 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.29}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.640 \end{frame}
+l.644 \end{frame}
                  
 
 
@@ -1608,20 +1608,20 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation30}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.666 \end{frame}
+l.670 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.30}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.666 \end{frame}
+l.670 \end{frame}
                  
 
 
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex: pop empty color page stack 0
 ]
-Overfull \vbox (14.32062pt too high) detected at line 680
+Overfull \vbox (14.32062pt too high) detected at line 684
  []
 
 \openout4 = `PresentasiSkripsi2.vrb'.
@@ -1633,13 +1633,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation31}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.705 \end{frame}
+l.709 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.31}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.705 \end{frame}
+l.709 \end{frame}
                  
 
 
@@ -1664,13 +1664,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation32}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.731 \end{frame}
+l.735 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.32}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.731 \end{frame}
+l.735 \end{frame}
                  
 
 
@@ -1686,13 +1686,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation33}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.761 \end{frame}
+l.765 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.33}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.761 \end{frame}
+l.765 \end{frame}
                  
 
 
@@ -1708,13 +1708,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation34}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.786 \end{frame}
+l.790 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.34}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.786 \end{frame}
+l.790 \end{frame}
                  
 
 
@@ -1730,13 +1730,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation35}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.814 \end{frame}
+l.818 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.35}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.814 \end{frame}
+l.818 \end{frame}
                  
 
 
@@ -1752,13 +1752,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation36}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.833 \end{frame}
+l.837 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.36}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.833 \end{frame}
+l.837 \end{frame}
                  
 
 
@@ -1774,13 +1774,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation37}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.859 \end{frame}
+l.863 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.37}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.859 \end{frame}
+l.863 \end{frame}
                  
 
 
@@ -1796,13 +1796,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation38}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.885 \end{frame}
+l.889 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.38}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.885 \end{frame}
+l.889 \end{frame}
                  
 
 
@@ -1818,13 +1818,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation39}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.904 \end{frame}
+l.908 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.39}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.904 \end{frame}
+l.908 \end{frame}
                  
 
 
@@ -1840,13 +1840,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation40}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.935 \end{frame}
+l.939 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.40}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.935 \end{frame}
+l.939 \end{frame}
                  
 
 
@@ -1862,13 +1862,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation41}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.968 \end{frame}
+l.972 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.41}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.968 \end{frame}
+l.972 \end{frame}
                  
 
 
@@ -1889,13 +1889,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation42}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.992 \end{frame}
+l.996 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.42}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.992 \end{frame}
+l.996 \end{frame}
                  
 
 
@@ -1911,13 +1911,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation43}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1029 \end{frame}
+l.1033 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.43}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1029 \end{frame}
+l.1033 \end{frame}
                   
 
 
@@ -1930,13 +1930,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation44}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1065 \end{frame}
+l.1069 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.44}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1065 \end{frame}
+l.1069 \end{frame}
                   
 
 
@@ -1949,13 +1949,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation45}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1079 \end{frame}
+l.1083 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.45}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1079 \end{frame}
+l.1083 \end{frame}
                   
 
 
@@ -1968,13 +1968,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation46}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1132 \end{frame}
+l.1136 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.46}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1132 \end{frame}
+l.1136 \end{frame}
                   
 
 
@@ -1987,13 +1987,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation47}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1165 \end{frame}
+l.1169 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.47}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1165 \end{frame}
+l.1169 \end{frame}
                   
 
 
@@ -2006,13 +2006,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation48}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1198 \end{frame}
+l.1202 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.48}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1198 \end{frame}
+l.1202 \end{frame}
                   
 
 
@@ -2025,13 +2025,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation49}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1231 \end{frame}
+l.1235 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.49}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1231 \end{frame}
+l.1235 \end{frame}
                   
 
 
@@ -2044,13 +2044,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation50}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1264 \end{frame}
+l.1268 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.50}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1264 \end{frame}
+l.1268 \end{frame}
                   
 
 
@@ -2063,13 +2063,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation51}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1297 \end{frame}
+l.1301 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.51}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1297 \end{frame}
+l.1301 \end{frame}
                   
 
 
@@ -2082,13 +2082,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation52}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1330 \end{frame}
+l.1334 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.52}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1330 \end{frame}
+l.1334 \end{frame}
                   
 
 
@@ -2101,13 +2101,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation53}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1363 \end{frame}
+l.1367 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.53}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1363 \end{frame}
+l.1367 \end{frame}
                   
 
 
@@ -2120,13 +2120,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation54}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1396 \end{frame}
+l.1400 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.54}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1396 \end{frame}
+l.1400 \end{frame}
                   
 
 
@@ -2139,13 +2139,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation55}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1429 \end{frame}
+l.1433 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.55}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1429 \end{frame}
+l.1433 \end{frame}
                   
 
 
@@ -2158,13 +2158,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation56}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1462 \end{frame}
+l.1466 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.56}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1462 \end{frame}
+l.1466 \end{frame}
                   
 
 
@@ -2177,13 +2177,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation57}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1495 \end{frame}
+l.1499 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.57}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1495 \end{frame}
+l.1499 \end{frame}
                   
 
 
@@ -2196,13 +2196,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation58}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1528 \end{frame}
+l.1532 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.58}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1528 \end{frame}
+l.1532 \end{frame}
                   
 
 
@@ -2215,13 +2215,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation59}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1561 \end{frame}
+l.1565 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.59}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1561 \end{frame}
+l.1565 \end{frame}
                   
 
 
@@ -2234,13 +2234,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation60}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1594 \end{frame}
+l.1598 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.60}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1594 \end{frame}
+l.1598 \end{frame}
                   
 
 
@@ -2253,13 +2253,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation61}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1627 \end{frame}
+l.1631 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.61}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1627 \end{frame}
+l.1631 \end{frame}
                   
 
 
@@ -2272,13 +2272,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation62}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1660 \end{frame}
+l.1664 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.62}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1660 \end{frame}
+l.1664 \end{frame}
                   
 
 
@@ -2291,13 +2291,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation63}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1668 \end{frame}
+l.1672 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.63}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1668 \end{frame}
+l.1672 \end{frame}
                   
 
 
@@ -2310,13 +2310,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation64}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1683 \end{frame}
+l.1687 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.64}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1683 \end{frame}
+l.1687 \end{frame}
                   
 
 
@@ -2329,13 +2329,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation65}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1701 \end{frame}
+l.1705 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.65}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1701 \end{frame}
+l.1705 \end{frame}
                   
 
 
@@ -2348,13 +2348,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation66}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1721 \end{frame}
+l.1725 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.66}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1721 \end{frame}
+l.1725 \end{frame}
                   
 
 
@@ -2367,13 +2367,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation67}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1751 \end{frame}
+l.1755 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.67}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1751 \end{frame}
+l.1755 \end{frame}
                   
 
 
@@ -2386,13 +2386,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation68}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1764 \end{frame}
+l.1768 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{page.68}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1764 \end{frame}
+l.1768 \end{frame}
                   
 
 
@@ -2416,24 +2416,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation69}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1770 \end{document}
+l.1774 \end{document}
                      pdfTeX warning (ext4): destination with the same identifie
 r (name{page.69}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.1770 \end{document}
+l.1774 \end{document}
                      
 
 
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex: pop empty color page stack 0
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1770.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1770.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1774.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1774.
  (./PresentasiSkripsi2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1770.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1770.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1774.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1774.
 
 Package rerunfilecheck Info: File `PresentasiSkripsi2.out' has not changed.
 (rerunfilecheck)             Checksum: 65C25E4743DDF36DAAC28388C9295C40;593.
@@ -2447,13 +2447,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 20258 strings out of 492995
- 381453 string characters out of 6132703
- 507678 words of memory out of 5000000
- 23147 multiletter control sequences out of 15000+600000
+ 20260 strings out of 492995
+ 381471 string characters out of 6132703
+ 507715 words of memory out of 5000000
+ 23149 multiletter control sequences out of 15000+600000
  16438 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,14n,58p,859b,1185s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,14n,58p,1049b,1185s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></
@@ -2466,7 +2466,7 @@ ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/loca
 l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on PresentasiSkripsi2.pdf (69 pages, 618090 bytes).
+Output written on PresentasiSkripsi2.pdf (69 pages, 619003 bytes).
 PDF statistics:
  2512 PDF objects out of 2984 (max. 8388607)
  2078 compressed objects within 21 object streams
