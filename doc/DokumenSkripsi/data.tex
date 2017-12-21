@@ -1,11 +1,14 @@
 %_____________________________________________________________________________
 %=============================================================================
-% data.tex v8 (02-10-2016) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% data.tex v10 (22-01-2017) dibuat oleh Lionov - T. Informatika FTIS UNPAR
 %
-% Perubahan pada versi 8 (02-10-2016)
-%	- Perubahan keterangan pada spacing: Otomatis spasi 1 untuk buku skripsi 
-%	  final dan 1.5 untuk buku sidang
-%	- Penggunaan kantlipsum
+% Perubahan pada versi 10 (22-01-2017)
+%	- Penambahan overfullrule untuk memeriksa warning
+%  	- perubahan mode buku menjadi 4: bimbingan, sidang(1), sidang akhir dan 
+%     buku final
+%	- perbaikan perintah pada beberapa bagian
+%  	- perubahan pengisian tulisan "daftar isi" yang error
+%  	- penghilangan lipsum dari file ini
 %_____________________________________________________________________________
 %=============================================================================
 
@@ -23,11 +26,13 @@
 %=============================================================================
 % 								BAGIAN 0
 %=============================================================================
-% PERHATIAN!! PERHATIAN!! Bagian ini hanya ada untuk sementara saja
-% Jika "DAFTAR ISI" tidak bisa berada di bagian tengah halaman, isi dengan XXX
-% jika sudah benar posisinya, biarkan kosong (i.e. \daftarIsiError{ })
+% Entri untuk memperbaiki posisi "DAFTAR ISI" jika tidak berada di bagian 
+% tengah halaman. Sayangnya setiap sistem menghasilkan posisi yang berbeda.
+% Isilah dengan 0 atau 1 (e.g. \daftarIsiError{1}). 
+% Pemilihan 0 atau 1 silahkan disesuaikan dengan hasil PDF yang dihasilkan.
 %=============================================================================
-\daftarIsiError{ }
+\daftarIsiError{0}   
+%\daftarIsiError{1}   
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -37,12 +42,12 @@
 % Tambahkan package2 lain yang anda butuhkan di sini
 %=============================================================================
 \usepackage{booktabs} 
-\usepackage[table]{xcolor}
 \usepackage{longtable}
 \usepackage{amssymb}
 \usepackage{todo}
-\usepackage{verbatim} 		%multilne comment
+\usepackage{verbatim} 		%multiline comment
 \usepackage{pgfplots}
+%\overfullrule=3mm % memperlihatkan overfull 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -51,32 +56,46 @@
 %=============================================================================
 % Mode dokumen: menetukan halaman depan dari dokumen, apakah harus mengandung 
 % prakata/pernyataan/abstrak dll (termasuk daftar gambar/tabel/isi) ?
-% - kosong : tidak ada halaman depan sama sekali (untuk dokumen yang 
-%            dipergunakan pada proses bimbingan)
-% - cover : cover saja tanpa daftar isi, gambar dan tabel
-% - sidang : cover, daftar isi, gambar, tabel 
-% - sidang_akhir : mode sidang + abstrak + abstract
-% - final : seluruh halaman awal dokumen (untuk cetak final)
-% Jika tidak ingin mencetak daftar tabel/gambar (misalkan karena tidak ada 
-% isinya), edit manual di baris 439 dan 440 pada file main.tex
+% - final 		: hanya untuk buku skripsi, dicetak lengkap: judul ina/eng, 
+%   			  pengesahan, pernyataan, abstrak ina/eng, untuk, kata 
+%				  pengantar, daftar isi (daftar tabel dan gambar tetap 
+%				  opsional dan dapat diatur), seluruh bab dan lampiran.
+%				  Otomatis tidak ada nomor baris dan singlespacing
+% - sidangakhir	: buku sidang akhir = buku final - (pengesahan + pernyataan +
+%   			  untuk + kata pengantar)
+%				  Otomatis ada nomor baris dan onehalfspacing 
+% - sidang 		: untuk sidang 1, buku sidang = buku sidang akhir - (judul 
+%				  eng + abstrak ina/eng)
+%				  Otomatis ada nomor baris dan onehalfspacing
+% - bimbingan	: untuk keperluan bimbingan, hanya terdapat bab dan lampiran
+%   			  saja, bab dan lampiran yang hendak dicetak dapat ditentukan 
+%				  sendiri (nomor baris dan spacing dapat diatur sendiri)
+% Mode default adalah 'template' yang menghasilkan isian berwarna merah, 
+% aktifkan salah satu mode di bawah ini :
 %=============================================================================
-% \mode{kosong}
-% \mode{cover}
-% \mode{sidang}
-% \mode{sidang_akhir}
- \mode{final} 
+%\mode{bimbingan} 		% untuk keperluan bimbingan
+%\mode{sidang} 			% untuk sidang 1
+%\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
+\mode{final} 			% untuk mencetak buku skripsi 
 %=============================================================================
 
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN III
 %=============================================================================
-% Line numbering: penomoran setiap baris, otomatis di-reset setiap berganti
-% halaman
-% - yes: setiap baris diberi nomor
-% - no : baris tidak diberi nomor, otomatis untuk mode final
+% Line numbering: penomoran setiap baris, nomor baris otomatis di-reset ke 1
+% setiap berganti halaman.
+% Sudah dikonfigurasi otomatis untuk mode final (tidak ada), mode sidang (ada)
+% dan mode sidangakhir (ada).
+% Untuk mode bimbingan, defaultnya ada (\linenumber{yes}), jika ingin 
+% dihilangkan, isi dengan "no" (i.e.: \linenumber{no})
+% Catatan:
+% - jika nomor baris tidak kembali ke 1 di halaman berikutnya, compile kembali
+%   dokumen latex anda
+% - bagian ini hanya bisa diatur di mode bimbingan
 %=============================================================================
-\linenumber{no}
+\linenumber{no} 
+%\linenumber{yes}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -84,13 +103,13 @@
 % 								BAGIAN IV
 %=============================================================================
 % Linespacing: jarak antara baris 
-% - single	: wajib (dan otomatis jika ingin mencetak buku skripsi, opsi yang 
-%			  disediakan untuk bimbingan, jika pembimbing tidak keberatan 
-%			  (untuk menghemat kertas)
-% - onehalf	: default dan wajib (dan otomatis) jika ingin mencetak dokumen
-%             untuk sidang.
+% - single	: otomatis jika ingin mencetak buku skripsi, opsi yang 
+%			     disediakan untuk bimbingan, jika pembimbing tidak keberatan 
+%			     (untuk menghemat kertas)
+% - onehalf	: otomatis jika ingin mencetak dokumen untuk sidang
 % - double 	: jarak yang lebih lebar lagi, jika pembimbing berniat memberi 
 %             catatan yg banyak di antara baris (dianjurkan untuk bimbingan)
+% Catatan: bagian ini hanya bisa diatur di mode bimbingan
 %=============================================================================
 \linespacing{single}
 %\linespacing{onehalf}
@@ -101,46 +120,57 @@
 %=============================================================================
 % 								BAGIAN V
 %=============================================================================
-% Tidak semua skripsi memuat gambar dan/atau tabel. Untuk skripsi yang seperti
-% itu, tidak diperlukan Daftar Gambar dan Daftar Tabel. Sayangnya hal ini 
-% sulit dilakukan secara manual karena membutuhkan kedisiplinan pengguna 
-% template.  
-% Jika tidak akan menampilkan Daftar Gambar/Tabel, isi dengan NO. Jika ingin
-% menampilkan, kosongkan parameter (i.e. \gambar{ }, \tabel{ })
+% Tidak semua skripsi memuat gambar dan/atau tabel. Untuk skripsi yang tidak 
+% memiliki gambar dan/atau tabel, maka tidak diperlukan Daftar Gambar dan/atau 
+% Daftar Tabel. Sayangnya hal tsb sulit dilakukan secara manual karena 
+% membutuhkan kedisiplinan pengguna template.  
+% Jika tidak ingin menampilkan Daftar Gambar dan/atau Daftar Tabel, karena 
+% tidak ada gambar atau tabel atau karena dokumen dicetak hanya untuk 
+% bimbingan, isi dengan "no" (e.g. \gambar{no})
 %=============================================================================
-\gambar{ }
-\tabel{ }
+\gambar{yes}
+%\gambar{no}
+\tabel{yes}
+%\tabel{no}  
 %=============================================================================
 
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN VI
 %=============================================================================
-% Bab yang akan dicetak: isi dengan angka 1,2,3 s.d 9, sehingga bisa digunakan
-% untuk mencetak hanya 1 atau beberapa bab saja
-% Jika lebih dari 1 bab, pisahkan dengan ',', bab akan dicetak terurut sesuai 
-% urutan bab (e.g. \bab{1,2,3}).
-% Untuk mencetak seluruh bab, kosongkan parameter (i.e. \bab{ })  
-% Catatan: Jika ingin menambahkan bab ke-10 dan seterusnya, harus dilakukan 
-% secara manual
+% Pada mode final, sidang da sidangkahir, seluruh bab yang ada di folder "Bab"
+% dengan nama file bab1.tex, bab2.tex s.d. bab9.tex akan dicetak terurut, 
+% apapun isi dari perintah \bab.
+% Pada mode bimbingan, jika ingin:
+% - mencetak seluruh bab, isi dengan 'all' (i.e. \bab{all})
+% - mencetak beberapa bab saja, isi dengan angka, pisahkan dengan ',' 
+%   dan bab akan dicetak terurut sesuai urutan penulisan (e.g. \bab{1,3,2}). 
+% Catatan: Jika ingin menambahkan bab ke-3 s.d. ke-9, tambahkan file 
+% bab3.tex, bab4.tex, dst di folder "Bab". Untuk bab ke-10 dan 
+% seterusnya, harus dilakukan secara manual dengan mengubah file skripsi.tex
+% Catatan: bagian ini hanya bisa diatur di mode bimbingan
 %=============================================================================
-\bab{ }
+\bab{all}
 %=============================================================================
 
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN VII
 %=============================================================================
-% Lampiran yang akan dicetak: isi dengan huruf A,B,C s.d I, sehingga bisa 
-% digunakan untuk mencetak hanya 1 atau beberapa lampiran saja
-% Jika lebih dari 1 lampiran, pisahkan dengan ',', lampiran akan dicetak 
-% terurut sesuai urutan lampiran (e.g. \bab{A,B,C}).
-% Jika tidak ingin mencetak lampiran apapun, isi dengan -1 (i.e. \lampiran{-1})
-% Untuk mencetak seluruh mapiran, kosongkan parameter (i.e. \lampiran{ })  
-% Catatan: Jika ingin menambahkan lampiran ke-J dan seterusnya, harus 
-% dilakukan secara manual
+% Pada mode final, sidang dan sidangkhir, seluruh lampiran yang ada di folder 
+% "Lampiran" dengan nama file lampA.tex, lampB.tex s.d. lampJ.tex akan dicetak 
+% terurut, apapun isi dari perintah \lampiran.
+% Pada mode bimbingan, jika ingin:
+% - mencetak seluruh lampiran, isi dengan 'all' (i.e. \lampiran{all})
+% - mencetak beberapa lampiran saja, isi dengan huruf, pisahkan dengan ',' 
+%   dan lampiran akan dicetak terurut sesuai urutan (e.g. \lampiran{A,E,C}). 
+% - tidak mencetak lampiran apapun, isi dengan "none" (i.e. \lampiran{none})
+% Catatan: Jika ingin menambahkan lampiran ke-C s.d. ke-I, tambahkan file 
+% lampC.tex, lampD.tex, dst di folder Lampiran. Untuk lampiran ke-J dan 
+% seterusnya, harus dilakukan secara manual dengan mengubah file skripsi.tex
+% Catatan: bagian ini hanya bisa diatur di mode bimbingan
 %=============================================================================
-\lampiran{ }
+\lampiran{all}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -148,26 +178,27 @@
 % 								BAGIAN VIII
 %=============================================================================
 % Data diri dan skripsi/tugas akhir
-% - namanpm: Nama dan NPM anda, penggunaan huruf besar untuk nama harus benar
-%			 dan gunakan 10 digit npm UNPAR, PASTIKAN BAHWA BENAR !!!
-%			 (e.g. \namanpm{Jane Doe}{1992710001}
-% - judul : Dalam bahasa Indonesia, perhatikan penggunaan huruf besar, judul
-%			tidak menggunakan huruf besar seluruhnya !!! 
-% - tanggal : isi dengan {tangga}{bulan}{tahun} dalam angka numerik, jangan 
-%			  menuliskan kata (e.g. AGUSTUS) dalam isian bulan
-%			  Tanggal ini adalah tanggal dimana anda akan melaksanakan sidang 
-%			  ujian akhir skripsi/tugas akhir
-% - pembimbing: isi dengan pembimbing anda, lihat daftar dosen di file dosen.tex
-%				jika pembimbing hanya 1, kosongkan parameter kedua 
-%				(e.g. \pembimbing{\JND}{  } ) , \JND adalah kode dosen
-% - penguji : isi dengan para penguji anda, lihat daftar dosen di file dosen.tex
-%				(e.g. \penguji{\JHD}{\JCD} ) , \JND dan \JCD adalah kode dosen
-% !!Lihat singkatan pembimbing dan penguji anda di file dosen.tex
+% - namanpm		: Nama dan NPM anda, penggunaan huruf besar untuk nama harus 
+%				  benar dan gunakan 10 digit npm UNPAR, PASTIKAN BAHWA 
+%				  BENAR !!! (e.g. \namanpm{Jane Doe}{1992710001}
+% - judul 		: Dalam bahasa Indonesia, perhatikan penggunaan huruf besar, 
+%				  judul tidak menggunakan huruf besar seluruhnya !!! 
+% - tanggal 	: isi dengan {tangga}{bulan}{tahun} dalam angka numerik, 
+%				  jangan menuliskan kata (e.g. AGUSTUS) dalam isian bulan.
+%			  	  Tanggal ini adalah tanggal dimana anda akan melaksanakan 
+%				  sidang ujian akhir skripsi/tugas akhir
+% - pembimbing	: pembimbing anda, lihat daftar dosen di file dosen.tex
+%				  jika pembimbing hanya 1, kosongkan parameter kedua 
+%				  (e.g. \pembimbing{\JND}{} ), \JND adalah kode dosen
+% - penguji 	: para penguji anda, lihat daftar dosen di file dosen.tex
+%				  (e.g. \penguji{\JHD}{\JCD} )
+% !!Lihat singkatan pembimbing dan penguji anda di file dosen.tex!!
+% Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda
 %=============================================================================
-\namanpm{Michael Adrian}{2013730039}	%hilangkan tanda << & >>
-\tanggal{<<tanggal>>}{<<bulan>>}{2017}				%hilangkan tanda << & >>
-\pembimbing{\CEN}{<<pembimbing 2>>} %hilangkan tanda << & >>
-\penguji{<<penguji 1>>}{<<penguji 2>>} 				%hilangkan tanda << & >>
+\namanpm{MICHAEL ADRIAN}{2013730039}
+\tanggal{20}{12}{2017}
+\pembimbing{\CEN}{}    
+\penguji{\RDL}{\CLF} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -177,13 +208,13 @@
 % Judul dan title : judul bhs indonesia dan inggris
 % - judulINA: judul dalam bahasa indonesia
 % - judulENG: title in english
-% PERHATIAN: - langsung mulai setelah '{' awal, jangan mulai menulis di baris 
-%			   bawahnya
-%			 - Gunakan \texorpdfstring{\\}{} untuk pindah ke baris baru
-%			 - Judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
-%			 - Gunakan perintah \texorpdfstring{\\}{} untuk baris baru
+% Petunjuk: 
+% - hilangkan tanda << & >>, dan isi sesuai dengan data anda
+% - langsung mulai setelah '{' awal, jangan mulai menulis di baris bawahnya
+% - gunakan \texorpdfstring{\\}{} untuk pindah ke baris baru
+% - judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
 %=============================================================================
-\judulINA{Perbandingan Algoritma Backtracking dengan Algoritma Hybrid Genetic untuk Menyelesaikan Permainan Calcudoku}
+\judulINA{Perbandingan Algoritma \textit{Backtracking} dengan Algoritma \textit{Hybrid Genetic} untuk Menyelesaikan Permainan Calcudoku}
 \judulENG{Comparison of the Backtracking Algorithm and the Hybrid Genetic Algorithm to Solve the Calcudoku Puzzle}
 %_____________________________________________________________________________
 %=============================================================================
@@ -191,12 +222,12 @@
 %=============================================================================
 % Abstrak dan abstract : abstrak bhs indonesia dan inggris
 % - abstrakINA: abstrak bahasa indonesia
-% - abstrakENG: abstract in english
-% PERHATIAN: langsung mulai setelah '{' awal, jangan mulai menulis di baris 
-%			 bawahnya
+% - abstrakENG: abstract in english 
+% Petunjuk: 
+% - hilangkan tanda << & >>, dan isi sesuai dengan data anda
+% - langsung mulai setelah '{' awal, jangan mulai menulis di baris bawahnya
 %=============================================================================
-\abstrakINA
-{Calcudoku adalah sebuah permainan teka-teki angka. Tujuan dari teka-teki ini adalah mengisi setiap sel dalam \textit{grid} dengan angka 1 sampai \begin{math}n\end{math} tanpa pengulangan angka dalam setiap kolomnya dan barisnya untuk \textit{grid} berukuran \begin{math}n \times n\end{math}. \textit{Grid} ini dibagi menjadi sejumlah \textit{cage} dengan setiap \textit{cage} yang jumlah selnya bervariasi. Setiap \textit{cage} dibatasi oleh garis yang lebih tebal daripada garis pembatas antar sel. Angka-angka dalam satu \textit{cage} yang sama harus menghasilkan angka tujuan yang telah ditentukan jika dihitung menggunakan operasi matematika yang ditentukan. Angka-angka dalam satu \textit{cage} juga boleh berulang, selama pengulangan tidak terjadi dalam satu kolom atau baris yang sama.
+\abstrakINA{Calcudoku adalah sebuah permainan teka-teki angka. Tujuan dari teka-teki ini adalah mengisi setiap sel dalam \textit{grid} dengan angka 1 sampai \begin{math}n\end{math} tanpa pengulangan angka dalam setiap kolomnya dan barisnya untuk \textit{grid} berukuran \begin{math}n \times n\end{math}. \textit{Grid} ini dibagi menjadi sejumlah \textit{cage} dengan setiap \textit{cage} yang jumlah selnya bervariasi. Setiap \textit{cage} dibatasi oleh garis yang lebih tebal daripada garis pembatas antar sel. Angka-angka dalam satu \textit{cage} yang sama harus menghasilkan angka tujuan yang telah ditentukan jika dihitung menggunakan operasi matematika yang ditentukan. Angka-angka dalam satu \textit{cage} juga boleh berulang, selama pengulangan tidak terjadi dalam satu kolom atau baris yang sama.
 
 Dua algoritma telah terbukti berhasil dalam menyelesaikan Calcudoku, yaitu algoritma \textit{backtracking} dan algoritma \textit{hybrid genetic}.
 
@@ -204,10 +235,8 @@ Algoritma \textit{backtracking} adalah sebuah algoritma umum yang mencari solusi
 
 Algoritma \textit{hybrid genetic} dalam kasus ini adalah gabungan dari algoritma \textit{rule based} dan algoritma genetik. Algoritma \textit{rule based} adalah sebuah algoritma berbasis aturan logika untuk menyelesaikan Calcudoku. Algoritma genetik adalah salah satu teknik heuristik \textit{Generate and Test} yang terinspirasi oleh sistem seleksi alam yang mencari solusi dengan menggunakan operator-operator genetik seperti mutasi, kawin silang, dan \textit{elitism}.
 
-Hasil dari penelitian ini adalah perangkat lunak algoritma \textit{backtracking} dapat menyelesaikan semua permainan yang diujikan, tetapi pada ukuran \textit{grid} yang besar, algoritma \textit{backtracking} sangat lambat dalam menyelesaikan permainan, ada kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan karena sifat acak dari algoritma \textit{hybrid genetic} ini, semakin besar ukuran \textit{grid}, maka kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan semakin besar, pada ukuran \textit{grid} yang kecil, algoritma \textit{hybrid genetic} cenderung menyelesaikan permainan lebih lambat daripada algoritma \textit{backtracking}, tetapi pada ukuran \textit{grid} yang besar, algoritma \textit{hybrid genetic} mungkin mampu menyelesaikan permainan lebih cepat daripada algoritma \textit{backtracking}, tetapi hal ini tidak dapat dibuktikan karena algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan dengan ukuran \textit{grid} yang besar, dan nilai untuk parameter-parameter algoritma genetik mempengaruhi kecepatan dan tingkat keberhasilan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan.
-}
-\abstrakENG
-{Calcudoku is a number puzzle game. The goal of this puzzle is to fill each cell in the grid with the numbers from 1 to n without repetitions of the numbers in each column and row for grid with the size of n x n. The grid is divided into a number of cages, with each cage contains a variable number of cells. Each cage is bordered with a thicker line than cell border line. Numbers in the same cage must produced the predetermined target number if calculated using the predetermined mathematical operatin. Numbers in a cage can be repeated, as long as the repetitions do not occur in the same column or row.
+Perangkat lunak algoritma \textit{backtracking} dapat menyelesaikan semua permainan yang diujikan. Tetapi pada ukuran \textit{grid} yang besar, algoritma \textit{backtracking} sangat lambat dalam menyelesaikan permainan. Ada kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan karena sifat acak dari algoritma \textit{hybrid genetic} ini. Semakin besar ukuran \textit{grid}, maka kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan semakin besar. Pada ukuran \textit{grid} yang kecil, algoritma \textit{hybrid genetic} cenderung menyelesaikan permainan lebih lambat daripada algoritma \textit{backtracking}. Pada ukuran \textit{grid} yang besar, algoritma \textit{hybrid genetic} mungkin mampu menyelesaikan permainan lebih cepat daripada algoritma \textit{backtracking}. Tetapi hal ini tidak dapat dibuktikan karena algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan dengan ukuran \textit{grid} yang besar. Nilai untuk parameter-parameter algoritma genetik mempengaruhi kecepatan dan tingkat keberhasilan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan.}
+\abstrakENG{Calcudoku is a number puzzle game. The goal of this puzzle is to fill each cell in the grid with the numbers from 1 to n without repetitions of the numbers in each column and row for grid with the size of n x n. The grid is divided into a number of cages, with each cage contains a variable number of cells. Each cage is bordered with a thicker line than cell border line. Numbers in the same cage must produced the predetermined target number if calculated using the predetermined mathematical operatin. Numbers in a cage can be repeated, as long as the repetitions do not occur in the same column or row.
 
 Two algorithms have been proven to successfully solve Calcudoku. The two algorithms are the backtracking algorithm and the hybrid genetic algorithm.
 
@@ -215,7 +244,7 @@ The backtracking algorithm is a general algorithm with finds a solution by tryin
 
 In this case, the hybrid genetic algorithm is a combination of the rule based algorithm and the genetic algorithm. Rule based algorithm uses logical rules to solve Calcudoku. Genetic algorithm is a heuristic technique inspired by the process of natural selection, which tries to find a solution by relying on genetic operators such as mutation, crossover, and elitism.
 
-The result of this research is that the backtracking algorithm solved all puzzles, but on large grids, the algorithm is very slow in solving the puzzle, there is a chance that the hybrid genetic algorithm failed in solving the puzzle due to the random nature of the algorithm, the larger the grid, the higher the chance that the algorithm will fail in solving the puzzle, on small grids, the hybrid genetic algorithm tends to solve the puzzle slower than the backtracking algorithm, but on larger grids, the hybrid genetic algorithm may be able to solve the puzzle faster than the backtracking algorithm, but this cannot be proven because the hybrid genetic algorithm failed in solving puzzles with large grids, and the values of the genetic algorithm parameters influences the speed and the success rate of the hybrid genetic algorithm in solving the puzzle.}
+The backtracking algorithm successfully solved all puzzles. But on large grids, the algorithm is very slow in solving the puzzle. There is a chance that the hybrid genetic algorithm failed in solving the puzzle due to the random nature of the algorithm. The larger the grid, the higher the chance that the algorithm will fail in solving the puzzle. On small grids, the hybrid genetic algorithm tends to solve the puzzle slower than the backtracking algorithm. On larger grids, the hybrid genetic algorithm may be able to solve the puzzle faster than the backtracking algorithm. But this cannot be proven because the hybrid genetic algorithm failed in solving puzzles with large grids. The values of the genetic algorithm parameters influences the speed and the success rate of the hybrid genetic algorithm in solving the puzzle.} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -225,6 +254,7 @@ The result of this research is that the backtracking algorithm solved all puzzle
 % Kata-kata kunci dan keywords : diletakkan di bawah abstrak (ina dan eng)
 % - kunciINA: kata-kata kunci dalam bahasa indonesia
 % - kunciENG: keywords in english
+% Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
 \kunciINA{Calcudoku, algoritma \textit{backtracking}, algoritma \textit{hybrid genetic}, algoritma \textit{rule based}, \textit{algoritma genetik}}
 \kunciENG{Calcudoku, backtracking algorithm, hybrid genetic algorithm, rule based algorithm, genetic algorithm}
@@ -235,6 +265,7 @@ The result of this research is that the backtracking algorithm solved all puzzle
 % 								BAGIAN XII
 %=============================================================================
 % Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
+% Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
 \untuk{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
 %=============================================================================
@@ -245,9 +276,9 @@ The result of this research is that the backtracking algorithm solved all puzzle
 %=============================================================================
 % Kata Pengantar: tempat anda menuliskan kata pengantar dan ucapan terima 
 % kasih kepada yang telah membantu anda bla bla bla ....  
+% Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\prakata
-{Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam 
+\prakata{Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam 
 nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat 
 volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
 ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
@@ -271,7 +302,7 @@ veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
 occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-mollit anim id est laborum.}
+mollit anim id est laborum.} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -297,9 +328,9 @@ mollit anim id est laborum.}
 %=============================================================================
 % Tambahkan perintah yang anda buat sendiri di sini 
 %=============================================================================
-\newcommand{\vtemplateauthor}{lionov}
+\renewcommand{\vtemplateauthor}{lionov}
 \pgfplotsset{compat=newest}
-\usetikzlibrary{patterns}
+\usepackage{caption}
+\usepackage{makecell}
+\usepackage{pdflscape}
 %=============================================================================
-
-% Copyright \textcopyright [Lionov] [09-10-2016]. All rights reserved

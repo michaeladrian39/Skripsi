@@ -57,8 +57,8 @@ Berdasarkan latar belakang yang telah diuraikan di atas, dapat dirumuskan permas
 \label{sec:tujuan}
 Berdasarkan rumusan masalah yang telah dirumuskan, maka tujuan dari pembuatan skripsi ini adalah:
 \begin{enumerate}
-\item Membuat perangkat lunak permainan teka-teki Calcudoku yang menerima input berupa soal teka-teki dan mampu menyelesaikan soal teka-teki tersebut menggunakan algoritma \textit{backtracking} dan \textit{hybrid genetic}.
-\item Membandingkan performansi algoritma \textit{backtracking} dengan algoritma \textit{hybrid genetic} dalam hal kecepatan dan kesuksesan dalam menyelesaikan Calcudoku.
+\item Membuat perangkat lunak solusi permainan teka-teki Calcudoku yang menerima input berupa soal teka-teki dan mampu menyelesaikan soal teka-teki tersebut menggunakan algoritma \textit{backtracking} dan \textit{hybrid genetic}.
+\item Membandingkan performansi algoritma \textit{backtracking} dengan algoritma \textit{hybrid genetic} dalam hal kesuksesan dan (jika sukses) kecepatan dalam menyelesaikan Calcudoku.
 \end{enumerate}
 
 \clearpage
@@ -69,6 +69,11 @@ Ruang lingkup dari skripsi ini dibatasi oleh batasan-batasan masalah sebagai ber
 \begin{enumerate}
 \item Ukuran \textit{grid} untuk permainan teka-teki Calcudoku adalah antara \begin{math}4 \times 4\end{math} sampai dengan \begin{math}8 \times 8\end{math}. Pada awalnya, ukuran \textit{grid} direncanakan akan dibatasi dari \begin{math}3 \times 3\end{math} sampai dengan \begin{math}9 \times 9\end{math}, tetapi karena kurangnya contoh soal teka-teki Calcudoku dengan ukuran \begin{math}3 \times 3\end{math}, dan ada masalah saat pengujian (keluar pesan error "\textit{Memory full}" saat menguji \textit{solver} dengan algoritma \textit{backtracking} pada \textit{grid} yang berukuran \begin{math}9 \times 9\end{math}, maka ukuran \textit{grid} dibatasi dari \begin{math}4 \times 4\end{math} sampai dengan \begin{math}8 \times 8\end{math}.
 \item Pada algoritma \textit{rule based}, yang merupakan bagian dari algoritma \textit{hybrid genetic}, aturan-aturan logika yang digunakan dibatasi hanya pada aturan \textit{single square}, \textit{naked single}, \textit{naked double}, \textit{hidden single}, dan \textit{killer combination}.
+\item Soal-soal permainan teka-teki Calcudoku yang digunakan dalam pengujian diambil dari sumber-sumber berikut:
+	\begin{enumerate}
+	\item \url{https://iota.math.msu.edu/k12-outreach/kenken-puzzles/}
+	\item \url{http://thinkmath.edc.org/resource/kenken-puzzles}
+	\end{enumerate}
 \end{enumerate}
 
 \section{Metodologi Penelitian}
@@ -76,20 +81,24 @@ Ruang lingkup dari skripsi ini dibatasi oleh batasan-batasan masalah sebagai ber
 Langkah-langkah yang akan dilakukan dalam pembuatan skripsi ini adalah:
 \begin{enumerate}
 \item Studi literatur
-\begin{enumerate}
-\item Melakukan studi literatur tentang permainan teka-teki Calcudoku.
-\item Melakukan studi literatur tentang algoritma \textit{backtracking}.
-\item Melakukan studi literatur tentang algoritma \textit{rule based} dan algoritma genetik.
-\end{enumerate}
+	\begin{enumerate}
+	\item Melakukan studi literatur tentang permainan teka-teki Calcudoku.
+	\item Melakukan studi literatur tentang algoritma \textit{backtracking}.
+	\item Melakukan studi literatur tentang algoritma \textit{rule based} dan algoritma genetik.
+	\end{enumerate}
 \item Analisis, perancangan, dan pengembangan perangkat lunak
-\begin{enumerate}
-\item Melakukan analisis dan menentukan fitur-fitur yang diperlukan dalam perangkat lunak permainan teka-teki Calcudoku.
-\item Membuat perangkat lunak Calcudoku dengan fitur-fitur yang telah ditentukan. 
-\item Mengimplementasikan algoritma \textit{backtracking} untuk Calcudoku.
-\item Mengimplementasikan algoritma \textit{hybrid genetic} untuk Calcudoku.
+	\begin{enumerate}
+	\item Melakukan analisis dan menentukan fitur-fitur yang diperlukan dalam perangkat lunak permainan teka-teki Calcudoku.
+	\item Membuat perangkat lunak Calcudoku dengan fitur-fitur yang telah ditentukan. 
+	\item Mengimplementasikan algoritma \textit{backtracking} untuk Calcudoku.
+	\item Mengimplementasikan algoritma \textit{hybrid genetic} untuk Calcudoku.
+	\end{enumerate}
+\item Melakukan pengujian dan eksperimen terhadap perangkat lunak Calcudoku yang telah dibuat. Soal-soal permainan teka-teki Calcudoku yang digunakan dalam pengujian diambil dari sumber-sumber berikut:
+	\begin{enumerate}
+	\item \url{https://iota.math.msu.edu/k12-outreach/kenken-puzzles/}
+	\item \url{http://thinkmath.edc.org/resource/kenken-puzzles}
+	\end{enumerate}
 \item Membandingkan performansi algoritma \textit{backtracking} dengan algoritma \textit{hybrid genetic} dalam menyelesaikan Calcudoku.
-\end{enumerate}
-\item Melakukan pengujian dan eksperimen terhadap perangkat lunak Calcudoku yang telah dibuat.
 \item Membuat kesimpulan berdasarkan hasil pengujian perangkat lunak yang telah dibuat.
 \end{enumerate}
 
