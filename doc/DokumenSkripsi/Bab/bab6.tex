@@ -1,9 +1,9 @@
-\chapter{Simpulan dan Saran}
+\chapter{Kesimpulan dan Saran}
 \label{chap:simpulansaran}
 
 Bab ini membahas tentang simpulan berdasarkan hasil dari analisis, implementasi, dan pengujian perangkat lunak yang telah dibuat, dan saran-saran untuk penelitian dan pengembangan selanjutnya.
 
-\section{Simpulan}
+\section{Kesimpulan}
 \label{sec:simpulan}
 
 Berdasarkan hasil dari analisis, implementasi, dan pengujian perangkat lunak Calcudoku yang telah dibuat, maka dapat diambil simpulan sebagai berkut:
@@ -11,20 +11,18 @@ Berdasarkan hasil dari analisis, implementasi, dan pengujian perangkat lunak Cal
 \begin{enumerate}
 \item Perangkat lunak permainan teka-teki Calcudoku dengan dua \textit{solver}, yaitu \textit{solver} dengan algoritma \textit{backtracking} dan \textit{solver} dengan algoritma \textit{hybrid genetic}, berhasil dibuat.
 
-Perangkat lunak ini menerima input berupa soal teka-teki dan mampu menyelesaikan soal teka-teki tersebut menggunakan algoritma \textit{backtracking} dan \textit{hybrid genetic}.
+Perangkat lunak ini menerima input berupa soal teka-teki dan mampu menyelesaikan semua soal tersebut menggunakan algoritma \textit{backtracking}, dan sebagian soal tersebut dengan menggunakan algoritma \textit{hybrid genetic}.
 
 \item Algoritma \textit{backtracking} dapat menyelesaikan semua permainan yang diujikan. Pada ukuran \textit{grid} yang besar, algoritma \textit{backtracking} sangat lambat dalam menyelesaikan permainan.
 
 Ada kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan karena sifat acak dari algoritma \textit{hybrid genetic} ini. Semakin besar ukuran \textit{grid}, maka kemungkinan algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan semakin besar.
 
-Pada ukuran \textit{grid} yang kecil, algoritma \textit{hybrid genetic} cenderung menyelesaikan permainan lebih lambat daripada algoritma \textit{backtracking}. Pada ukuran \textit{grid} yang besar, algoritma \textit{hybrid genetic} mungkin mampu menyelesaikan permainan lebih cepat daripada algoritma \textit{backtracking}, tetapi hal ini tidak dapat dibuktikan karena algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan dengan ukuran \textit{grid} yang besar.
+Pada ukuran \textit{grid} yang kecil (\begin{math}4 \times 4\end{math} dan \begin{math}5 \times 5\end{math}), algoritma \textit{hybrid genetic} cenderung menyelesaikan permainan lebih lambat daripada algoritma \textit{backtracking}. Tetapi pada ukuran \textit{grid} yang besar (\begin{math}6 \times 6\end{math} ke atas), algoritma \textit{hybrid genetic} gagal dalam menyelesaikan permainan, sehingga performansinya tidak bisa dibandingkan dengan performansi algoritma \textit{backtracking}.
 
 Semakin banyak sel yang diisi dalam tahap algoritma \textit{rule based}, semakin besar juga kemungkinan algoritma genetik untuk berhasil dalam menyelesaikan permainan dan semakin cepat juga algoritma genetik dalam menyelesaikan permainan.
 
 Nilai dari parameter-parameter untuk algoritma genetik mempengaruhi kecepatan dan tingkat keberhasilan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan. Semakin besar populasi dalam sebuah generasi sampai ke titik tertentu, dan semakin banyak generasi sampai ke titik tertentu, maka semakin besar juga kemungkinan algoritma \textit{hybrid genetic} berhasil dalam menyelesaikan permainan. Semakin besar tingkat \textit{elitism} dan tingkat mutasi sampai ke titik tertentu, maka semakin cepat juga algoritma \textit{hybrid genetic} dalam menyelesaikan permainan.
 \end{enumerate}
-
-\clearpage
 
 \section{Saran}
 \label{sec:saran}

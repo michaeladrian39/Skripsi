@@ -6,7 +6,7 @@ Bab ini membahas tentang perancangan perangkat lunak yang dibuat. Bab ini juga a
 \section{Perancangan Masukan}
 \label{sec:perancanganmasukan}
 
-Masukan untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah \textit{file} teks, seperti yang ditunjukkan pada Gambar~\ref{fig:perancanganmasukan}.
+Masukan untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah \textit{file} teks (.txt), seperti yang ditunjukkan pada Gambar~\ref{fig:perancanganmasukan}.
 
 \begin{figure}
 \centering
@@ -27,15 +27,7 @@ Adapun rincian dari \textit{file} teks masukan tersebut adalah sebagai berikut:
 \section{Perancangan Keluaran}
 \label{sec:perancangankeluaran}
 
-Keluaran untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah matriks yang berisi solusi dari teka-teki Calcudoku yang sudah diselesaikan oleh perangkat lunak ini, seperti dapat dilihat pada Gambar~\ref{fig:perancangankeluaran}.
-
-\begin{figure}
-\centering
-\captionsetup{justification=centering}
-\includegraphics[scale=1]{Gambar/Perancangan/PerancanganOutput.png}
-\caption[Contoh keluaran.]{Contoh keluaran.}
-\label{fig:perancangankeluaran}
-\end{figure}
+Keluaran untuk perangkat lunak permainan teka-teki Calcudoku ini berupa sebuah matriks yang berisi solusi dari teka-teki Calcudoku yang sudah diselesaikan oleh perangkat lunak ini. Matriks ini langsung ditampilkan ke layar.
 
 \section{Perancangan Antarmuka}
 \label{sec:perancanganantarmuka}
@@ -67,8 +59,6 @@ Gambar~\ref{fig:perancangangui1} menunjukkan perancangan GUI sebelum \textit{fil
 \caption[Perancangan GUI sesudah permainan berdasarkan \textit{file} permainan yang dibuka diselesaikan.]{Perancangan GUI sesudah permainan berdasarkan \textit{file} permainan yang dibuka diselesaikan.}
 \label{fig:perancangangui3}
 \end{figure}
-
-\clearpage
 
 Menu \textit{bar} untuk perangkat lunak ini terdiri dari dua menu, yaitu:
 \begin{enumerate}
@@ -273,6 +263,8 @@ Kelas Cell mempunyai beberapa atribut, yaitu:
 \item value, yaitu nilai dari sel tersebut.
 \end{enumerate}
 
+\clearpage
+
 Kelas Cell mempunyai beberapa \textit{method}, yaitu:
 
 \begin{enumerate}
@@ -359,7 +351,7 @@ Diagram kelas SolverHybridGenetic dapat dilihat pada Gambar~\ref{fig:diagramkela
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.3]{Gambar/Perancangan/DiagramKelasSolverHybridGenetic.png}
+\includegraphics[scale=0.333]{Gambar/Perancangan/DiagramKelasSolverHybridGenetic.png}
 \caption[Diagram kelas SolverHybridGenetic.]{Diagram kelas SolverHybridGenetic.}
 \label{fig:diagramkelassolverhg}
 \end{figure}
@@ -375,6 +367,8 @@ Kelas SolverRuleBased mempunyai beberapa atribut, yaitu:
 \item solution, yaitu \textit{grid} yang sudah diselesaikan oleh \textit{solver} dengan algoritma \textit{rule based}.
 \item possibleValues, yaitu sebuah \textit{array} yang menampung semua kemungkinan angka yang mungkin untuk setiap sel yang ada di dalam \textit{grid}
 \end{enumerate}
+
+\clearpage
 
 Kelas SolverRuleBased mempunyai \textit{method-method} berikut:
 
@@ -481,7 +475,7 @@ Diagram kelas SolverGenetic dapat dilihat pada Gambar~\ref{fig:diagramkelassolve
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.3]{Gambar/Perancangan/DiagramKelasSolverGenetic.png}
+\includegraphics[scale=0.333]{Gambar/Perancangan/DiagramKelasSolverGenetic.png}
 \caption[Diagram kelas SolverGenetic.]{Diagram kelas SolverGenetic.}
 \label{fig:diagramkelassolvergenetic}
 \end{figure}
@@ -717,7 +711,7 @@ Diagram kelas GUI dapat dilihat pada Gambar~\ref{fig:diagramkelasgui}.
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.3]{Gambar/Perancangan/DiagramKelasGUI.png}
+\includegraphics[scale=0.333]{Gambar/Perancangan/DiagramKelasGUI.png}
 \caption[Diagram kelas GUI.]{Diagram kelas GUI.}
 \label{fig:diagramkelasgui}
 \end{figure}
@@ -753,8 +747,6 @@ Kelas PopupMenuListener mempunyai beberapa atribut, yaitu:
 \item textField, yaitu sebuah \textit{text field} yang merepresentasikan sebuah sel yang berada di dalam \textit{grid}.
 \item number, yaitu sebuah angka.
 \end{enumerate}
-
-\clearpage
 
 Kelas PopupMenuListener mempunyai beberapa \textit{method}, yaitu:
 

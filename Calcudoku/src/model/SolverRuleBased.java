@@ -49,18 +49,8 @@ public class SolverRuleBased
     
     public boolean solve()
     {
-        // Algoritma rule based dimulai dengan mengaplikasikan aturan logika 
-        // single square dan aturan logika killer combination.
-        // Kedua aturan logika ini hanya diaplikasikan sekali, yaitu di awal 
-        // algoritma.
         singleSquare();
         killerCombination();
-        
-        // Algoritma lalu mengaplikasikan aturan logika naked subset dan aturan 
-        // logika hidden single.
-        // Kedua aturan logika ini diulang sampai algoritma tidak bisa lagi 
-        // mengisi sel-sel dalam grid atau sampai semua sel dalam grid sudah 
-        // terisi dengan benar.
         ArrayList<ArrayList<Integer>> currentGridArrayList 
                 = getGridArrayList();
         ArrayList<ArrayList<Integer>> newGridArrayList = solveLoop();
@@ -71,11 +61,6 @@ public class SolverRuleBased
             currentGridArrayList = newGridArrayList;
             newGridArrayList = solveLoop();
         }
-        
-        // Algoritma hybrid genetic selesai jika semua sel dalam grid sudah 
-        // terisi dengan benar.
-        // Algoritma genetik akan dimulai jika ada sel-sel di dalam grid yang 
-        // masih kosong.
         if (grid.isFilled())
         {
             this.solution = grid;

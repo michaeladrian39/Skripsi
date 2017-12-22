@@ -22,10 +22,6 @@ public class Chromosome
     
     private double setFitness()
     {
-        // Setiap kromosom dalam sebuah generasi dihitung nilai kelayakannya.
-        // Nilai kelayakan untuk sebuah kromosom adalah jumlah sel yang sudah 
-        // diisi dengan benar dibagi dengan jumlah semua sel yang ada di dalam 
-        // grid.
         double numberOfValidCells = 0;
         double numberOfCells = size * size;
         for (int i = 0; i < size; i++)

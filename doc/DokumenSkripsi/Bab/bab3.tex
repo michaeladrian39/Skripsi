@@ -6,7 +6,17 @@ Bab ini membahas tentang analisis cara kerja algoritma \textit{backtracking} dan
 \section{Analisis Algoritma \textit{Backtracking}}
 \label{sec:analisisbt}
 
-Untuk mengilustrasikan cara kerja algoritma \textit{backtracking}, akan digunakan permainan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:analisisbt1} sebagai contoh.
+Langkah-langkah penyelesaian permainan teka-teki Calcudoku dengan menggunakan algoritma \textit{backtracking} secara umum adalah sebagai berikut:
+
+\begin{enumerate}
+\item Isilah \textit{grid} mulai dari sel pada sudut kiri atas.
+\item Setelah mengisi sebuah sel, isilah sel di sebelah kanannya.
+\item Jika sudah mengisi sel yang paling kanan, isilah sel yang paling kiri pada baris berikutnya.
+\item Jika semua kemungkinan gagal, mundur ke langkah sebelumnya, dan cobalah kemungkinan berikutnya.
+\item Algoritma \textit{backtracking} selesai jika semua sel sudah terisi dengan benar.
+\end{enumerate}
+
+Untuk mengilustrasikan cara kerja algoritma \textit{backtracking}, akan digunakan permainan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:analisisbt1} sebagai contoh. \textit{State space tree} seperti yang dijelaskan pada Bab~\ref{sec:backtracking} akan dibangkitkan.
 
 \begin{figure}
 \centering
@@ -130,6 +140,25 @@ Algoritma ini mencapai solusinya pada state 93, seperti pada \textit{state space
 \section{Analisis Algoritma \textit{Hybrid Genetic}}
 \label{sec:analisishg}
 
+Langkah-langkah penyelesaian permainan teka-teki Calcudoku dengan menggunakan algoritma \textit{backtracking} secara umum adalah sebagai berikut:
+
+\begin{enumerate}
+\item \textit{Solver} akan mencoba menyelesaikan permainan dengan algoritma \textit{rule based}.
+	\begin{enumerate}
+	\item Algoritma \textit{rule based} dimulai dengan mengaplikasikan aturan logika \textit{single square} dan aturan logika \textit{killer combination}. Kedua aturan logika ini hanya diaplikasikan sekali, yaitu di awal algoritma.
+	\item Algoritma lalu mengaplikasikan aturan logika naked subset dan aturan logika \textit{hidden single}. Kedua aturan logika ini diulang sampai algoritma tidak bisa lagi mengisi sel-sel dalam \textit{grid} atau sampai semua sel dalam \textit{grid} sudah terisi dengan benar.
+	\item Algoritma \textit{hybrid genetic} selesai jika semua sel dalam \textit{grid} sudah terisi dengan benar.
+        \item Algoritma genetik akan dimulai jika ada sel-sel di dalam \textit{grid} yang masih kosong.
+	\end{enumerate}
+\item Jika algoritma \textit{rule based} tidak berhasil mengisi semua sel dalam \textit{grid} dengan benar, maka \textit{solver} akan mencoba menyelesaikan permainan dengan algoritma genetik.
+	\begin{enumerate}
+	\item Algoritma genetik dimulai dengan membangkitkan generasi awal secara acak.
+	\item Setiap kromosom dalam sebuah generasi dihitung nilai kelayakannya. Nilai kelayakan untuk sebuah kromosom adalah jumlah sel yang sudah diisi dengan benar dibagi dengan jumlah semua sel yang ada di dalam \textit{grid}.
+	\item Algoritma selesai jika solusi ditemukan. Solusi adalah kromosom dengan nilai kelayakan 1.
+	\item Jika solusi tidak ditemukan, maka algoritma genetik akan membangkitkan generasi berikutnya, sampai solusi ditemukan. Generasi berikutnya dibangkitkan dari generasi sebelumnya menggunakan operator-operator algoritma genetik, seperti \textit{elitism}, kawin silang, dan mutasi.
+	\end{enumerate}
+\end{enumerate}
+
 Untuk mengilustrasikan cara kerja algoritma \textit{hybrid genetic}, akan digunakan permainan teka-teki Calcudoku yang digambarkan pada Gambar~\ref{fig:analisishg1} sebagai contoh. Algoritma \textit{hybrid genetic} dimulai dengan mencoba menyelesaikan permainan teka-teki Calcudoku dengan algoritma \textit{rule based}.
 
 \begin{figure}
@@ -160,6 +189,8 @@ Sayangnya, algoritma \textit{rule based} gagal dalam mengisi sel-sel lainnya ber
 
 Dalam contoh ini, parameter-parameter untuk algoritma genetik yang akan digunakan untuk teka-teki Calcudoku ini ditunjukkan pada Tabel~\ref{tab:analisishg1}. Dalam kasus ini, parameter ditentukan oleh pembuat program (penulis). Setiap generasi terdiri dari 12 kromosom. \begin{math}40\% \times 12 \approx 5\end{math} kromosom diambil dari generasi sebelumnya (\textit{elitism}). \begin{math}50\% \times 12 \approx 6\end{math} kromosom adalah hasil dari pembentukan kromosom-kromosom baru dengan operasi kawin silang, dan \begin{math}10\% \times 12 \approx 1\end{math} kromosom adalah hasil dari pembentukan kromosom-kromosom baru dengan operasi mutasi. Untuk mengilustrasikan cara kerja algoritma genetik, hanya 3 generasi pertama yang akan dibahas.
 
+Untuk menjaga agar jumlah populasi dalam sebuah generasi tetap konsisten, maka sebaiknya total nilai probabilitas \textit{elitism}, nilai probabilitas kawin silang, dan nilai probabilitas mutasi sama dengan 100\%. Jika kurang dari 100\%, maka beberapa kromosom dari generasi sebelumnya akan ditambahkan ke generasi berikutnya secara acak. Jika lebih dari 100\%, maka beberapa kromosom dari generasi berikutnya akan dibuang secara acak. 
+
 Setiap sel mempunyai nilai kelayakan. Nilai kelayakan dari sebuah sel akan bernilai 1 jika nilai dari semua sel yang merupakan bagian dari \textit{cage} yang salah satu selnya adalah sel tersebut menghasilkan nilai tujuan setelah dihitung menggunakan operator yang telah ditentukan dan tidak ada pengulangan angka di dalam baris tersebut maupun kolom tersebut, dan bernilai 0 jika nilai dari semua sel yang merupakan bagian dari \textit{cage} yang salah satu selnya adalah sel tersebut tidak menghasilkan nilai tujuan setelah dihitung menggunakan operator yang telah ditentukan atau ada pengulangan angka di dalam baris tersebut maupun kolom tersebut. Nilai kelayakan sel untuk setiap sel dalam sebuah baris dijumlahkan, lalu dibagi dengan jumlah kolom dalam baris tersebut, dan hasilnya adalah nilai kelayakan baris. Nilai kelayakan baris untuk setiap baris dalam sebuah teka-teki dijumlahkan, lalu dibagi dengan jumlah baris dalam teka-teki tersebut, dan hasilnya adalah nilai kelayakan teka-teki.
 
 \begin{table}
@@ -182,7 +213,68 @@ Probabilitas Mutasi & 10\% \\
 \label{tab:analisishg1}
 \end{table}
 
-Algoritma genetik dimulai dengan membangkitkan kromosom-kromosom baru sebanyak ukuran populasi yang telah ditentukan. Dalam contoh ini, ukuran populasi adalah 12, maka algoritma akan membangkitkan 12 kromosom baru. Ke-12 kromosom awal ini adalah bagian dari generasi pertama. Gambar~\ref{fig:analisisg1k1} menggambarkan Kromosom 1, gambar~\ref{fig:analisisg1k2} menggambarkan Kromosom 2, gambar~\ref{fig:analisisg1k3} menggambarkan Kromosom 3, gambar~\ref{fig:analisisg1k4} menggambarkan Kromosom 4, gambar~\ref{fig:analisisg1k5} menggambarkan Kromosom 5, gambar~\ref{fig:analisisg1k6} menggambarkan Kromosom 6, gambar~\ref{fig:analisisg1k7} menggambarkan Kromosom 7, gambar~\ref{fig:analisisg1k8} menggambarkan Kromosom 8, gambar~\ref{fig:analisisg1k9} menggambarkan Kromosom 9, gambar~\ref{fig:analisisg1k10} menggambarkan Kromosom 10, gambar~\ref{fig:analisisg1k11} menggambarkan Kromosom 11, dan gambar~\ref{fig:analisisg1k12} menggambarkan Kromosom 12.
+Algoritma genetik dimulai dengan membangkitkan kromosom-kromosom baru sebanyak ukuran populasi yang telah ditentukan. Dalam contoh ini, ukuran populasi adalah 12, maka algoritma akan membangkitkan 12 kromosom baru. Ke-12 kromosom awal ini adalah bagian dari generasi pertama. 
+\begin{enumerate}
+\item Gambar~\ref{fig:analisisg1k1} menggambarkan Kromosom 1.
+\item Gambar~\ref{fig:analisisg1k2} menggambarkan Kromosom 2.
+\item Gambar~\ref{fig:analisisg1k3} menggambarkan Kromosom 3.
+\item Gambar~\ref{fig:analisisg1k4} menggambarkan Kromosom 4.
+\item Gambar~\ref{fig:analisisg1k5} menggambarkan Kromosom 5.
+\item Gambar~\ref{fig:analisisg1k6} menggambarkan Kromosom 6.
+\item Gambar~\ref{fig:analisisg1k7} menggambarkan Kromosom 7.
+\item Gambar~\ref{fig:analisisg1k8} menggambarkan Kromosom 8.
+\item Gambar~\ref{fig:analisisg1k9} menggambarkan Kromosom 9.
+\item Gambar~\ref{fig:analisisg1k10} menggambarkan Kromosom 10.
+\item Gambar~\ref{fig:analisisg1k11} menggambarkan Kromosom 11.
+\item Gambar~\ref{fig:analisisg1k12} menggambarkan Kromosom 12.
+\end{enumerate}
+
+\clearpage
+
+Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-1 yang ditampilkan pada Tabel~\ref{tab:analisishg2}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-2. Ke-5 kromosom yang terpilih adalah:
+\begin{enumerate}
+\item Kromosom 12
+\item Kromosom 5
+\item Kromosom 7
+\item Kromosom 11
+\item Kromosom 1
+\end{enumerate}
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1]{Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1}
+\begin{tabular}{| l | l |}
+\hline
+Nomor Kromosom & Nilai Kelayakan \\
+\hline \hline
+1 & 0,3333 \\
+\hline
+2 & 0,3056 \\
+\hline
+3 & 0,25 \\
+\hline
+4 & 0,2222 \\
+\hline
+5 & 0,4444 \\
+\hline
+6 & 0,1389 \\
+\hline
+7 & 0,3889 \\
+\hline
+8 & 0,25 \\
+\hline
+9 & 0,1389 \\
+\hline
+10 & 0,3056 \\
+\hline
+11 & 0,3889 \\
+\hline
+12 & 0,5556 \\
+\hline
+\end{tabular}
+\label{tab:analisishg2}
+\end{table}
 
 \clearpage
 
@@ -284,47 +376,69 @@ Algoritma genetik dimulai dengan membangkitkan kromosom-kromosom baru sebanyak u
 
 \clearpage
 
-Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-1 yang ditampilkan pada Tabel~\ref{tab:analisishg2}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-2. Ke-5 kromosom yang terpilih adalah Kromosom 12, Kromosom 5, Kromosom 7, Kromosom 11, dan Kromosom 1.
+Untuk Generasi ke-2, 5 kromosom adalah 5 kromosom terbaik dari Generasi ke-1, 6 kromosom adalah hasil kawin silang dari 2 kromosom dari Generasi ke-1, dan 1 kromosom adalah hasil mutasi dari 1 kromosom dari Generasi ke-1.
+
+\begin{enumerate}
+\item Gambar~\ref{fig:analisisg2k1} menggambarkan Kromosom 1, yaitu Kromosom 12 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k2} menggambarkan Kromosom 2, yaitu Kromosom 5 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k3} menggambarkan Kromosom 3, yaitu Kromosom 7 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k4} menggambarkan Kromosom 4, yaitu Kromosom 11 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k5} menggambarkan Kromosom 5, yaitu Kromosom 1 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k6} menggambarkan Kromosom 6, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 12 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k7} menggambarkan Kromosom 7, yaitu hasil kawin silang dari Kromosom 3 dan Kromosom 8 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k8} menggambarkan Kromosom 8, yaitu hasil kawin silang dari Kromosom 7 dan Kromosom 10 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k9} menggambarkan Kromosom 9, yaitu hasil kawin silang dari Kromosom 7 dan Kromosom 10 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k10} menggambarkan Kromosom 10, yaitu hasil kawin silang dari Kromosom 2 dan Kromosom 5 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k11} menggambarkan Kromosom 11, yaitu hasil kawin silang dari Kromosom 2 dan Kromosom 5 dari Generasi ke-1.
+\item Gambar~\ref{fig:analisisg2k12} menggambarkan Kromosom 12, yaitu hasil mutasi dari Kromosom 12 dari Generasi ke-1.
+\end{enumerate}
+
+\clearpage
+
+Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-2 yang ditampilkan pada Tabel~\ref{tab:analisishg3}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-3. Ke-5 kromosom yang terpilih adalah:
+\begin{enumerate}
+\item Kromosom 1
+\item Kromosom 12
+\item Kromosom 2
+\item Kromosom 3
+\item Kromosom 4
+\end{enumerate}
 
 \begin{table}
 \centering
 \captionsetup{justification=centering}
-\caption[Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1]{Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1}
+\caption[Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1]{Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-2}
 \begin{tabular}{| l | l |}
 \hline
 Nomor Kromosom & Nilai Kelayakan \\
 \hline \hline
-1 & 0,3333 \\
+1 & 0,5556 \\
 \hline
-2 & 0,3056 \\
+2 & 0,4444 \\
 \hline
-3 & 0,25 \\
+3 & 0,3889 \\
 \hline
-4 & 0,2222 \\
+4 & 0,3889 \\
 \hline
-5 & 0,4444 \\
+5 & 0,3333 \\
 \hline
-6 & 0,1389 \\
+6 & 0,1944 \\
 \hline
-7 & 0,3889 \\
+7 & 0,1389 \\
 \hline
-8 & 0,25 \\
+8 & 0,0833 \\
 \hline
-9 & 0,1389 \\
+9 & 0,25 \\
 \hline
-10 & 0,3056 \\
+10 & 0,1944 \\
 \hline
-11 & 0,3889 \\
+11 & 0,1944 \\
 \hline
-12 & 0,5556 \\
+12 & 0,5 \\
 \hline
 \end{tabular}
-\label{tab:analisishg2}
+\label{tab:analisishg3}
 \end{table}
-
-Untuk Generasi ke-2, 5 kromosom adalah 5 kromosom terbaik dari Generasi ke-1, 6 kromosom adalah hasil kawin silang dari 2 kromosom dari Generasi ke-1, dan 1 kromosom adalah hasil mutasi dari 1 kromosom dari Generasi ke-1.
-
-Gambar~\ref{fig:analisisg2k1} menggambarkan Kromosom 1, yaitu Kromosom 12 dari Generasi ke-1, gambar~\ref{fig:analisisg2k2} menggambarkan Kromosom 2, yaitu Kromosom 5 dari Generasi ke-1, gambar~\ref{fig:analisisg2k3} menggambarkan Kromosom 3, yaitu Kromosom 7 dari Generasi ke-1, gambar~\ref{fig:analisisg2k4} menggambarkan Kromosom 4, yaitu Kromosom 11 dari Generasi ke-1, gambar~\ref{fig:analisisg2k5} menggambarkan Kromosom 5, yaitu Kromosom 1 dari Generasi ke-1, gambar~\ref{fig:analisisg2k6} menggambarkan Kromosom 6, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 12 dari Generasi ke-1, gambar~\ref{fig:analisisg2k7} menggambarkan Kromosom 7, yaitu hasil kawin silang dari Kromosom 3 dan Kromosom 8 dari Generasi ke-1, gambar~\ref{fig:analisisg2k8} menggambarkan Kromosom 8, yaitu hasil kawin silang dari Kromosom 7 dan Kromosom 10 dari Generasi ke-1, gambar~\ref{fig:analisisg2k9} menggambarkan Kromosom 9, yaitu hasil kawin silang dari Kromosom 7 dan Kromosom 10 dari Generasi ke-1, gambar~\ref{fig:analisisg2k10} menggambarkan Kromosom 10, yaitu hasil kawin silang dari Kromosom 2 dan Kromosom 5 dari Generasi ke-1, gambar~\ref{fig:analisisg2k11} menggambarkan Kromosom 11, yaitu hasil kawin silang dari Kromosom 2 dan Kromosom 5 dari Generasi ke-1, dan gambar~\ref{fig:analisisg2k12} menggambarkan Kromosom 12, yaitu hasil mutasi dari Kromosom 12 dari Generasi ke-1.
 
 \clearpage
 
@@ -426,47 +540,71 @@ Gambar~\ref{fig:analisisg2k1} menggambarkan Kromosom 1, yaitu Kromosom 12 dari G
 
 \clearpage
 
-Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-2 yang ditampilkan pada Tabel~\ref{tab:analisishg3}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-3. Ke-5 kromosom yang terpilih adalah Kromosom 1, Kromosom 12, Kromosom 2, Kromosom 3, dan Kromosom 4.
+Untuk Generasi ke-3, 5 kromosom adalah 5 kromosom terbaik dari Generasi ke-2, 6 kromosom adalah hasil kawin silang dari 2 kromosom dari Generasi ke-2, dan 1 kromosom adalah hasil mutasi dari 1 kromosom dari Generasi ke-2.
+
+\begin{enumerate}
+\item Gambar~\ref{fig:analisisg3k1} menggambarkan Kromosom 1, yaitu Kromosom 1 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k2} menggambarkan Kromosom 2, yaitu Kromosom 12 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k3} menggambarkan Kromosom 3, yaitu Kromosom 2 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k4} menggambarkan Kromosom 4, yaitu Kromosom 3 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k5} menggambarkan Kromosom 5, yaitu Kromosom 4 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k6} menggambarkan Kromosom 6, yaitu hasil kawin silang dari Kromosom 2 dan Kromosom 12 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k7} menggambarkan Kromosom 7, yaitu hasil kawin silang dari Kromosom 2 dan Kromosom 12 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k8} menggambarkan Kromosom 8, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 9 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k9} menggambarkan Kromosom 9, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 9 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k10} menggambarkan Kromosom 10, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 6 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k11} menggambarkan Kromosom 11, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 6 dari Generasi ke-2.
+\item Gambar~\ref{fig:analisisg3k12} menggambarkan Kromosom 12, yaitu hasil mutasi dari Kromosom 2 dari Generasi ke-2.
+\end{enumerate}
+
+\clearpage
+
+Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-3 yang ditampilkan pada Tabel~\ref{tab:analisishg4}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-4. Ke-5 kromosom yang terpilih adalah:
+\begin{enumerate}
+\item Kromosom 1
+\item Kromosom 2
+\item Kromosom 3
+\item Kromosom 4
+\item Kromosom 12
+\end{enumerate}
 
 \begin{table}
 \centering
 \captionsetup{justification=centering}
-\caption[Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-1]{Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-2}
+\caption[Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-3]{Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-3}
 \begin{tabular}{| l | l |}
 \hline
 Nomor Kromosom & Nilai Kelayakan \\
 \hline \hline
 1 & 0,5556 \\
 \hline
-2 & 0,4444 \\
+2 & 0,5 \\
 \hline
-3 & 0,3889 \\
+3 & 0,4444 \\
 \hline
 4 & 0,3889 \\
 \hline
-5 & 0,3333 \\
+5 & 0,3889 \\
 \hline
-6 & 0,1944 \\
+6 & 0,2778 \\
 \hline
 7 & 0,1389 \\
 \hline
-8 & 0,0833 \\
+8 & 0,1389 \\
 \hline
-9 & 0,25 \\
+9 & 0,1389 \\
 \hline
-10 & 0,1944 \\
+10 & 0,1389 \\
 \hline
 11 & 0,1944 \\
 \hline
-12 & 0,5 \\
+12 & 0,3889 \\
 \hline
 \end{tabular}
-\label{tab:analisishg3}
+\label{tab:analisishg4}
 \end{table}
 
-Untuk Generasi ke-3, 5 kromosom adalah 5 kromosom terbaik dari Generasi ke-2, 6 kromosom adalah hasil kawin silang dari 2 kromosom dari Generasi ke-2, dan 1 kromosom adalah hasil mutasi dari 1 kromosom dari Generasi ke-2.
-
-Gambar~\ref{fig:analisisg3k1} menggambarkan Kromosom 1, yaitu Kromosom 1 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k2} menggambarkan Kromosom 2, yaitu Kromosom 12 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k3} menggambarkan Kromosom 3, yaitu Kromosom 2 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k4} menggambarkan Kromosom 4, yaitu Kromosom 3 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k5} menggambarkan Kromosom 5, yaitu Kromosom 4 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k6} menggambarkan Kromosom 6, yaitu hasil kawin silang dari Kromosom 2 dan Kromosom 12 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k7} menggambarkan Kromosom 7, yaitu hasil kawin silang dari Kromosom 2 dan Kromosom 12 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k8} menggambarkan Kromosom 8, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 9 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k9} menggambarkan Kromosom 9, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 9 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k10} menggambarkan Kromosom 10, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 6 dari Generasi ke-2, Gambar~\ref{fig:analisisg3k11} menggambarkan Kromosom 11, yaitu hasil kawin silang dari Kromosom 5 dan Kromosom 6 dari Generasi ke-2, dan Gambar~\ref{fig:analisisg3k12} menggambarkan Kromosom 12, yaitu hasil mutasi dari Kromosom 2 dari Generasi ke-2.
+Proses ini diulang untuk menghasilkan generasi-generasi berikutnya, sampai algoritma genetik dapat menemukan solusi dari teka-teki Calcudoku tersebut.
 
 \clearpage
 
@@ -568,46 +706,6 @@ Gambar~\ref{fig:analisisg3k1} menggambarkan Kromosom 1, yaitu Kromosom 1 dari Ge
 
 \clearpage
 
-Berdasarkan nilai kelayakan untuk kromosom-kromosom pada Generasi ke-3 yang ditampilkan pada Tabel~\ref{tab:analisishg4}, 5 kromosom terbaik akan diambil untuk menjadi bagian dari Generasi ke-4. Ke-5 kromosom yang terpilih adalah Kromosom 1, Kromosom 2, Kromosom 3, Kromosom 4, dan Kromosom 12.
-
-\begin{table}
-\centering
-\captionsetup{justification=centering}
-\caption[Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-3]{Tabel nilai kelayakan untuk kromosom-kromsom pada Generasi ke-3}
-\begin{tabular}{| l | l |}
-\hline
-Nomor Kromosom & Nilai Kelayakan \\
-\hline \hline
-1 & 0,5556 \\
-\hline
-2 & 0,5 \\
-\hline
-3 & 0,4444 \\
-\hline
-4 & 0,3889 \\
-\hline
-5 & 0,3889 \\
-\hline
-6 & 0,2778 \\
-\hline
-7 & 0,1389 \\
-\hline
-8 & 0,1389 \\
-\hline
-9 & 0,1389 \\
-\hline
-10 & 0,1389 \\
-\hline
-11 & 0,1944 \\
-\hline
-12 & 0,3889 \\
-\hline
-\end{tabular}
-\label{tab:analisishg4}
-\end{table}
-
-Proses ini diulang untuk menghasilkan generasi-generasi berikutnya, sampai algoritma genetik dapat menemukan solusi dari teka-teki Calcudoku tersebut.
-
 \section{Perangkat Lunak}
 \label{sec:analisispl}
 
@@ -619,6 +717,8 @@ Berdasarkan landasan teori dan analisis algoritma \textit{backtracking} dan \tex
 \item Matriks \textit{cage assignment}, yang merepresentasikan posisi dari setiap \textit{cage} dalam \textit{grid}.
 \item Matriks \textit{cage objectives}, yang berisikan angka tujuan dan operasi matematika yang telah ditentukan untuk setiap \textit{cage}.
 \end{enumerate}
+
+Umumnya, setiap soal hanya mempunyai satu solusi. Tetapi, ada juga soal yang tidak ada solusinya. Hal ini disebabkan karena kesalahan dalam merancang matriks \textit{cage assignment} dan matriks \textit{cage objectives}. Jika \textit{file} soal yang dibuka oleh perangkat lunak Calcudoku ternyata tidak ada solusinya, maka \textit{solver} akan selalu gagal dalam menyelesaikan permainan.
 
 Perangkat lunak ini akan menghasilkan keluaran berupa antarmuka grafis permainan teka-teki Calcudoku berdasarkan isi \textit{file} yang di-\textit{load} oleh pengguna. Permainan ini dapat diselesaikan oleh pengguna dengan usahanya sendiri, atau menggunakan salah satu dari dua \textit{solver} yang disediakan. Kedua \textit{solver} tersebut yaitu:
 
@@ -651,12 +751,10 @@ Diagram \textit{use case} untuk perangkat lunak permainan teka-teki Calcudoku da
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.4]{Gambar/Analisis/DiagramUseCase}
+\includegraphics[scale=0.5]{Gambar/Analisis/DiagramUseCase}
 \caption[Diagram \textit{use case} untuk perangkat lunak permainan teka-teki Calcudoku]{Diagram \textit{use case} untuk perangkat lunak permainan teka-teki Calcudoku}
 \label{fig:analisisusecase}
 \end{figure}
-
-\clearpage
 
 Berdasarkan diagram \textit{use case} tersebut, skenario-skenario yang dapat dilakukan oleh pengguna adalah:
 
@@ -679,7 +777,7 @@ Kondisi Awal & Perangkat lunak belum membuka {file} masukan. \\
 \hline
 Kondisi Akhir & Perangkat lunak sudah membuka {file} masukan .\\
 \hline
-Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{File}", lalu memilih menu \textit{item} "\textit{Load} \\ \textit{Puzzle File}", lalu memilih \textit{file} masukan yang akan dibuka, dan mengklik \\ tombol "OK". Jika perangkat lunak sudah membuka {file} masukan, dan ingin \\ membuka {file} masukan yang baru, akan keluar kotak dialog "\textit{Are you sure} \\ \textit{you want to load another puzzle file}?", klik tombol "\textit{Yes}" untuk membuka {file} \\ masukan baru, atau klik tombol "\textit{No}" untuk membatalkan.} \\
+Skenario Utama & \makecell[l]{Pengguna masuk ke dalam menu "\textit{File}", lalu memilih menu \textit{item} "\textit{Load} \\ \textit{Puzzle File}", lalu memilih \textit{file} masukan yang akan dibuka, dan mengklik \\ tombol "OK". Jika perangkat lunak sudah membuka {file} masukan, dan \\ ingin membuka {file} masukan yang baru, akan keluar kotak dialog "\textit{Are you} \\ \textit{sure you want to load another puzzle file}?", klik tombol "\textit{Yes}" untuk \\ membuka {file} masukan baru, atau klik tombol "\textit{No}" untuk membatalkan. \\ \textit{File} masukan yang akan dibuka harus \textit{file} teks.} \\
 \hline
 \end{tabular}
 \label{tab:analisisload}
@@ -823,7 +921,7 @@ Kondisi Awal & \makecell[l]{Parameter-parameter untuk algoritma genetik belum di
 \hline
 Kondisi Akhir & \makecell[l]{Parameter-parameter untuk algoritma genetik sudah diatur jika belum \\ diatur sebelumnya, atau sudah diubah jadi sudah diatur sebelumnya.} \\
 \hline
-Skenario Utama & \makecell[l]{Pemain mengisikan \textit{form} yang telah disediakan, lalu menekan tombol \\ "OK".} \\
+Skenario Utama & \makecell[l]{Pemain mengisikan \textit{form} yang telah disediakan, lalu menekan tombol \\ "OK". Nilai untuk parameter-parameter "\textit{Generations}" dan "\textit{Population} \\ \textit{Size}" harus bilangan bulat. Nilai untuk parameter-parameter "\textit{Elitism} \\ \textit{Rate}", "\textit{Crossover Rate}", dan "\textit{Mutation Rate}" harus bilangan desimal.}\\
 \hline
 \end{tabular}
 \label{tab:analisissetparameters}
@@ -886,24 +984,40 @@ Gambar~\ref{fig:sequenceconstructor} menunjukkan diagram \textit{sequence} saat 
 \label{fig:sequenceconstructor}
 \end{figure}
 
-Gambar~\ref{fig:sequenceload} menunjukkan diagram \textit{sequence} saat menu \textit{item} "\textit{Load Puzzle File}" dalam menu "\textit{File}" dipilih.
+Gambar~\ref{fig:sequenceload1} dan Gambar~\ref{fig:sequenceload2} menunjukkan diagram \textit{sequence} saat menu \textit{item} "\textit{Load Puzzle File}" dalam menu "\textit{File}" dipilih.
 
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.2]{Gambar/Analisis/SequenceDiagramLoad.png}
-\caption[Diagram \textit{sequence} saat menu \textit{item} "\textit{Load Puzzle File}" dalam menu "\textit{File}" dipilih]{Diagram \textit{sequence} saat menu \textit{item} "\textit{Load Puzzle File}" dalam menu "\textit{File}" dipilih}
-\label{fig:sequenceload}
+\includegraphics[scale=0.375]{Gambar/Analisis/SequenceDiagramLoad1.png}
+\caption[Diagram \textit{sequence} saat menu \textit{item} "\textit{Load Puzzle File}" dalam menu "\textit{File}" dipilih (1)]{Diagram \textit{sequence} saat menu \textit{item} "\textit{Load Puzzle File}" dalam menu "\textit{File}" dipilih (1)}
+\label{fig:sequenceload1}
 \end{figure}
 
-Gambar~\ref{fig:sequencefilechooser} menunjukkan diagram \textit{sequence} saat \textit{file} permainan yang ingin dibuka dalam \textit{file chooser} dipilih.
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.375]{Gambar/Analisis/SequenceDiagramLoad2.png}
+\caption[Diagram \textit{sequence} saat menu \textit{item} "\textit{Load Puzzle File}" dalam menu "\textit{File}" dipilih (2)]{Diagram \textit{sequence} saat menu \textit{item} "\textit{Load Puzzle File}" dalam menu "\textit{File}" dipilih (2)}
+\label{fig:sequenceload2}
+\end{figure}
+
+Gambar~\ref{fig:sequencefilechooser1} dan Gambar~\ref{fig:sequencefilechooser2} menunjukkan diagram \textit{sequence} saat \textit{file} permainan yang ingin dibuka dalam \textit{file chooser} dipilih.
 
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.3]{Gambar/Analisis/SequenceDiagramFileChooser.png}
-\caption[Diagram \textit{sequence} saat \textit{file} yang ingin dibuka dalam \textit{file chooser} dipilih]{Diagram \textit{sequence} saat \textit{file} yang ingin dibuka dalam \textit{file chooser} dipilih}
-\label{fig:sequencefilechooser}
+\includegraphics[scale=0.375]{Gambar/Analisis/SequenceDiagramFileChooser1.png}
+\caption[Diagram \textit{sequence} saat \textit{file} yang ingin dibuka dalam \textit{file chooser} dipilih (1)]{Diagram \textit{sequence} saat \textit{file} yang ingin dibuka dalam \textit{file chooser} dipilih (1)}
+\label{fig:sequencefilechooser1}
+\end{figure}
+
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.375]{Gambar/Analisis/SequenceDiagramFileChooser2.png}
+\caption[Diagram \textit{sequence} saat \textit{file} yang ingin dibuka dalam \textit{file chooser} dipilih (2)]{Diagram \textit{sequence} saat \textit{file} yang ingin dibuka dalam \textit{file chooser} dipilih (2)}
+\label{fig:sequencefilechooser2}
 \end{figure}
 
 Gambar~\ref{fig:sequenceloadpuzzlefile} menunjukkan diagram \textit{sequence} saat \textit{file} permainan yang sudah dipilih dibuka.
@@ -911,7 +1025,7 @@ Gambar~\ref{fig:sequenceloadpuzzlefile} menunjukkan diagram \textit{sequence} sa
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.4]{Gambar/Analisis/SequenceDiagramLoadPuzzleFile.png}
+\includegraphics[scale=0.375]{Gambar/Analisis/SequenceDiagramLoadPuzzleFile.png}
 \caption[Diagram \textit{sequence} saat \textit{file} permainan yang sudah dipilih dibuka]{Diagram \textit{sequence} saat \textit{file} permainan yang sudah dipilih dibuka}
 \label{fig:sequenceloadpuzzlefile}
 \end{figure}
@@ -921,12 +1035,10 @@ Gambar~\ref{fig:sequencereset} menunjukkan diagram \textit{sequence} saat menu \
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.4]{Gambar/Analisis/SequenceDiagramReset.png}
+\includegraphics[scale=0.375]{Gambar/Analisis/SequenceDiagramReset.png}
 \caption[Diagram \textit{sequence} saat menu \textit{item} "\textit{Reset Puzzle}" dalam menu "\textit{File}" dipilih]{Diagram \textit{sequence} saat menu \textit{item} "\textit{Reset Puzzle}" dalam menu "\textit{File}" dipilih}
 \label{fig:sequencereset}
 \end{figure}
-
-\clearpage
 
 Gambar~\ref{fig:sequenceclose} menunjukkan diagram \textit{sequence} saat menu \textit{item} "\textit{Close Puzzle File}" dalam menu "\textit{File}" dipilih.
 
@@ -953,22 +1065,29 @@ Gambar~\ref{fig:sequencebt} menunjukkan diagram \textit{sequence} saat menu \tex
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.4]{Gambar/Analisis/SequenceDiagramBacktracking.png}
+\includegraphics[scale=0.375]{Gambar/Analisis/SequenceDiagramBacktracking.png}
 \caption[Diagram \textit{sequence} saat menu \textit{item}" \textit{Backtracking}" dalam menu "\textit{Solve}" dipilih]{Diagram \textit{sequence} saat menu \textit{item}" \textit{Backtracking}" dalam menu "\textit{Solve}" dipilih}
 \label{fig:sequencebt}
 \end{figure}
 
-Gambar~\ref{fig:sequencehg} menunjukkan diagram \textit{sequence} saat menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}" dipilih.
+Gambar~\ref{fig:sequencehg1} dan Gambar~\ref{fig:sequencehg2} menunjukkan diagram \textit{sequence} saat menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}" dipilih.
 
 \begin{figure}
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.2]{Gambar/Analisis/SequenceDiagramHybridGenetic.png}
-\caption[Diagram \textit{sequence} saat menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}" dipilih]{Diagram \textit{sequence} saat menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}" dipilih}
-\label{fig:sequencehg}
+\includegraphics[scale=0.333]{Gambar/Analisis/SequenceDiagramHybridGenetic1.png}
+\caption[Diagram \textit{sequence} saat menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}" dipilih (1)]{Diagram \textit{sequence} saat menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}" dipilih (1)}
+\label{fig:sequencehg1}
 \end{figure}
 
-\clearpage
+\begin{figure}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.333]{Gambar/Analisis/SequenceDiagramHybridGenetic2.png}
+\caption[Diagram \textit{sequence} saat menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}" dipilih (2)]{Diagram \textit{sequence} saat menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}" dipilih (2)}
+\label{fig:sequencehg2}
+\end{figure}
+
 
 Gambar~\ref{fig:sequencegaparameters} menunjukkan diagram \textit{sequence} saat menu \textit{item} "\textit{Set Genetic Algorithm Parameters}" dalam menu "\textit{Solve}" dipilih.
 

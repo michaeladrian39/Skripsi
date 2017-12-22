@@ -19,9 +19,6 @@ public class SolverBacktracking
     
     public boolean solve()
     {
-        // Isilah mulai dari sel pada sudut kiri atas.
-        // Algoritma backtracking selesai jika semua sel sudah terisi dengan 
-        // benar.
         if (solve(0, 0) == true)
         {
             this.solution = grid;
@@ -36,8 +33,6 @@ public class SolverBacktracking
     
     private boolean solve(int row, int column)
     {
-        // Jika sudah mengisi sel yang paling kanan, isilah sel yang paling 
-        // kiri pada baris berikutnya.
         if (column >= size)
         {
             column = 0;
@@ -48,10 +43,6 @@ public class SolverBacktracking
                 return true;
             }
         }
-        
-        // Setelah mengisi sebuah sel, isilah sel di sebelah kanannya.
-        // Jika semua kemungkinan gagal, mundur ke tahap sebelumnya, dan 
-        // cobalah kemungkinan berikutnya.
         for (int value = 1; value <= size; value++)
         {
             printGrid(grid.getGridContents());

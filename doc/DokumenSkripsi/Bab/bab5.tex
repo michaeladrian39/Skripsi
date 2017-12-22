@@ -12,13 +12,6 @@ Ada dua jenis lingkungan untuk pengujian perangkat lunak ini, yaitu:
 
 \begin{enumerate}
 \item Lingkungan perangkat keras.
-\item Lingkungan perangkat lunak.
-\end{enumerate}
-
-Kedua lingkungan tersebut akan dijelaskan lebih lanjut dibawah ini.
-
-\subsection{Lingkungan Perangkat Keras}
-\label{sec:lingkungankeras}
 
 Spesifikasi dari lingkungan ini dapat dilihat pada Tabel~\ref{tab:lingkunganpk}.
 
@@ -40,8 +33,7 @@ Parameter & Nilai \\
 \label{tab:lingkunganpk}
 \end{table}
 
-\subsection{Lingkungan Perangkat Lunak}
-\label{sec:lingkunganlunak}
+\item Lingkungan perangkat lunak.
 
 Spesifikasi dari lingkungan ini dapat dilihat pada Tabel~\ref{tab:lingkunganpl}.
 
@@ -67,6 +59,8 @@ Bahasa Pemrograman & Java \\
 \label{tab:lingkunganpl}
 \end{table}
 
+\end{enumerate}
+
 \section{Implementasi}
 \label{sec:implementasi}
 
@@ -74,18 +68,10 @@ Hasil implementasi dari rancangan perangkat lunak yang sudah dibuat ini terdiri 
 
 \begin{enumerate}
 \item Kode program
+
+Kode program untuk perangkat lunak ini ditulis dalam bahasa pemrograman Java, berdasarkan dengan rancangan diagram kelas yang sudah dibuat, seperti dapat dilihat pada sub-bab~\ref{sec:diagramkelas}. Seluruh kode program untuk perangkat lunak ini dapat dilihat di bab Lampiran~\ref{chap:kodeprogram}
+
 \item Antarmuka perangkat lunak
-\end{enumerate}
-
-Kedua bagian tersebut akan dijelaskan lebih lanjut di bawah ini.
-
-\subsection{Kode Program}
-\label{sec:kodeprogram}
-
-Kode program untuk perangkat lunak ini ditulis dalam bahasa pemrograman Java, berdasarkan dengan rancangan diagram kelas yang sudah dibuat, seperti dapat dilihat pada sub-bab~\ref{sec:diagramkelas}. Seluruh kode program untuk perangkat lunak ini dapat dilihat di bab Lampiran~\ref{chap:kodeprogram}.
-
-\subsection{Antarmuka Perangkat Lunak}
-\label{sec:antarmukapl}
 
 Antarmuka untuk perangkat lunak ini dirancang berdasarkan rancangan yang sudah dibuat, seperti dapat dilihat pada sub-bab~\ref{sec:perancanganantarmuka}.
 
@@ -131,7 +117,7 @@ Gambar~\ref{fig:antarmukapl1} menunjukkan antarmuka perangkat lunak saat pertama
 \label{fig:antarmukapl5}
 \end{figure}
 
-\clearpage
+\end{enumerate}
 
 \section{Pengujian Fungsional}
 \label{sec:pengujianfungsional}
@@ -207,8 +193,6 @@ Jika salah satu dari kedua error tersebut terjadi, maka akan keluar pesan error 
 \label{fig:errorinloadingpuzzlefile}
 \end{figure}
 
-\clearpage
-
 \item Menyelesaikan permainan dengan usahanya sendiri
 
 Jika pemain berhasil menyelesaikan permainan dengan usahanya sendiri, maka kotak informasi "\textit{Congratulations, you have successfully solved the puzzle}" akan muncul, seperti dapat dilihat pada Gambar~\ref{fig:congratulations}.
@@ -223,7 +207,7 @@ Jika pemain berhasil menyelesaikan permainan dengan usahanya sendiri, maka kotak
 
 \item Me-\textit{reset} permainan
 
-Pemain dapat me-\textit{reset} permainan dengan memilih menu \textit{item} "\textit{Reset Puzzle}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to reset this puzzle?}, seperti dapat dilihat pada Gambar~\ref{fig:resetpuzzle}. Tekan tombol "\textit{Yes}" untuk me-\textit{reset} permainan, atau tekan tombol "\textit{No}" untuk membatalkan proses \textit{reset} permainan.
+Pemain dapat me-\textit{reset} permainan dengan memilih menu \textit{item} "\textit{Reset Puzzle}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to reset this puzzle?}", seperti dapat dilihat pada Gambar~\ref{fig:resetpuzzle}. Tekan tombol "\textit{Yes}" untuk me-\textit{reset} permainan, atau tekan tombol "\textit{No}" untuk membatalkan proses \textit{reset} permainan.
 
 \begin{figure}
 \centering
@@ -313,8 +297,6 @@ Jika gagal, maka akan muncul kotak informasi "\textit{The backtracking algorithm
 \label{fig:backtrackingfail}
 \end{figure}
 
-\clearpage
-
 \item Menyelesaikan permainan dengan menggunakan algoritma \textit{hybrid genetic}
 
 Pemain dapat meminta perangkat lunak untuk menyelesaikan permainan dengan salah satu dari dua \textit{solver} yang disediakan. Salah satu dari kedua \textit{solver} tersebut adalah \textit{solver} dengan algoritma \textit{hybrid genetic}. Untuk menggunakan \textit{solver} ini, pemain memilih menu \textit{item} "\textit{Hybrid Genetic}" dalam menu "\textit{Solve}". Jika nilai untuk parameter-parameter algoritma genetik belum ditentukan, maka akan keluar pesan error "\textit{Genetic algorithm parameters have not been set}", seperti dapat dilihat pada Gambar~\ref{fig:gaparametershavenotbeenset}.
@@ -373,7 +355,7 @@ Jika jumlah dari tingkat \textit{elitism}, tingkat mutasi, dan tingkat kawin sil
 
 \item Menutup \textit{file} permainan
 
-Pemain dapat menutup \textit{file} permainan dengan memilih menu \textit{item} "\textit{Close Puzzle File}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to close this puzzle file?}, seperti dapat dilihat pada Gambar~\ref{fig:closepuzzlefile}. Tekan tombol "\textit{Yes}" untuk menutup \textit{file} permainan, atau tekan tombol "\textit{No}" untuk membatalkan proses menutup \textit{file} permainan.
+Pemain dapat menutup \textit{file} permainan dengan memilih menu \textit{item} "\textit{Close Puzzle File}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to close this puzzle file?}", seperti dapat dilihat pada Gambar~\ref{fig:closepuzzlefile}. Tekan tombol "\textit{Yes}" untuk menutup \textit{file} permainan, atau tekan tombol "\textit{No}" untuk membatalkan proses menutup \textit{file} permainan.
 
 \begin{figure}
 \centering
@@ -383,9 +365,11 @@ Pemain dapat menutup \textit{file} permainan dengan memilih menu \textit{item} "
 \label{fig:closepuzzlefile}
 \end{figure}
 
+\clearpage
+
 \item Menutup perangkat lunak
 
-Pemain dapat menutup perangkat lunak dengan memilih menu \textit{item} "\textit{Exit}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to exit the application?}, seperti dapat dilihat pada Gambar~\ref{fig:exitapplication}. Tekan tombol "\textit{Yes}" untuk menutup perangkat lunak, atau tekan tombol "\textit{No}" untuk membatalkan proses menutup perangkat lunak.
+Pemain dapat menutup perangkat lunak dengan memilih menu \textit{item} "\textit{Exit}" dalam menu "\textit{File}". Jika menu \textit{item} ini dipilih, maka akan keluar kotak dialog "\textit{Are you sure you want to exit the application?}", seperti dapat dilihat pada Gambar~\ref{fig:exitapplication}. Tekan tombol "\textit{Yes}" untuk menutup perangkat lunak, atau tekan tombol "\textit{No}" untuk membatalkan proses menutup perangkat lunak.
 
 \begin{figure}
 \centering
@@ -396,8 +380,6 @@ Pemain dapat menutup perangkat lunak dengan memilih menu \textit{item} "\textit{
 \end{figure}
 
 \end{enumerate}
-
-\clearpage
 
 \section{Pengujian Keakuratan}
 \label{sec:pengujiankeakuratan}
@@ -472,7 +454,43 @@ Perangkat lunak ini telah berhasil memunculkan pesan informasi pada waktunya.
 
 \end{enumerate}
 
-\section{Pengujian Algoritma \textit{Backtracking}}
+\section{Pengujian Algoritma}
+\label{sec:pengujianalgoritma}
+
+Pengujian algoritma dilakukan untuk mengetahui keberhasilan dan kecepatan algoritma dalam menyelesaikan permainan Calcudoku. Ada dua algoritma yang akan diuji, yaitu:
+
+\begin{enumerate}
+\item Algoritma \textit{backtracking}
+\item Algoritma \textit{hybrid genetic}
+\end{enumerate}
+
+Terdapat 132 soal yang dipakai dalam pengujian algoritma. Soal-soal tersebut memiliki ukuran \textit{grid} antara \begin{math}4 \times 4\end{math} sampai dengan \begin{math}8 \times 8\end{math}. Jumlah soal berdasarkan ukuran \textit{grid} dapat dilihat pada Tabel~\ref{tab:jumlahsoal}.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Tabel jumlah soal permainan Calcudoku berdasarkan ukuran \textit{grid}]{Tabel jumlah soal permainan Calcudoku berdasarkan ukuran \textit{grid}}
+\begin{tabular}{| l | l |}
+\hline
+Ukuran \textit{Grid} & Banyak Soal \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 39 \\
+\hline
+\begin{math}5 \times 5\end{math} & 26 \\
+\hline
+\begin{math}6 \times 6\end{math} & 39 \\
+\hline
+\begin{math}7 \times 7\end{math} & 15 \\
+\hline
+\begin{math}8 \times 8\end{math} & 13 \\
+\hline
+\end{tabular}
+\label{tab:jumlahsoal}
+\end{table}
+
+Rata-rata tingkat keberhasilan adalah jumlah soal yang berhasil diselesaikan oleh algoritma untuk \textit{grid} yang berukuran \begin{math}n \times n\end{math} dibagi dengan jumlah semua soal untuk \textit{grid} yang berukuran \begin{math}n \times n\end{math}. Rata-rata kecepatan adalah jumlah dari kecepatan algoritma dalam menyelesaikan permainan untuk \textit{grid} yang berukuran \begin{math}n \times n\end{math} yang berhasil diselesaikan oleh algoritma dibagi dengan jumlah permainan untuk \textit{grid} yang berukuran \begin{math}n \times n\end{math} yang berhasil diselesaikan oleh algoritma.
+
+\subsection{Pengujian Algoritma \textit{Backtracking}}
 \label{sec:pengujianbacktracking}
 
 Pengujian algoritma \textit{backtracking} untuk Calcudoku dilakukan untuk mengetahui keberhasilan dan kecepatan algoritma \textit{backtracking} dalam menyelesaikan permainan Calcudoku.
@@ -503,14 +521,14 @@ Berdasarkan hasil pengujian yang dapat dilihat pada Tabel~\ref{tab:pengujianbt},
 
 Hasil pengujian selengkapnya dapat dilihat pada Lampiran~\ref{chap:hasilpengujian}.
 
-\section{Pengujian dan Eksperimen Algoritma \textit{Hybrid Genetic}}
+\subsection{Pengujian Algoritma \textit{Hybrid Genetic}}
 \label{sec:pengujianhybridgenetic}
 
 Pengujian algoritma \textit{hybrid genetic} untuk Calcudoku dilakukan untuk mengetahui keberhasilan dan kecepatan algoritma \textit{hybrid genetic} dalam menyelesaikan permainan Calcudoku.
 
 Pada algoritma \textit{backtracking} tidak ada parameter yang nilainya dapat diubah, sedangkan pada algoritma \textit{hybrid genetic}, nilai dari parameter-parameter untuk algoritma genetik dapat diubah. Tidak ada nilai \textit{default} untuk parameter-parameter dari algoritma genetik ini. Nilai dari parameter-parameter tersebut harus diisi sendiri oleh pemain.
 
-Dalam kasus ini, pengujian eksperimental dilakukan dengan melakukan pengujian keberhasilan dan kecepatan dari \textit{solver} dengan algoritma \textit{hybrid genetic} dengan mengatur nilai dari parameter-parameter dari algoritma genetik dengan nilai yang berbeda-beda untuk setiap percobaan.
+Dalam kasus ini, pengujian dilakukan dengan melakukan pengujian keberhasilan dan kecepatan dari \textit{solver} dengan algoritma \textit{hybrid genetic} dengan mengatur nilai dari parameter-parameter dari algoritma genetik dengan nilai yang berbeda-beda untuk setiap percobaan.
 
 Terdapat 16 skenario yang dilakukan untuk percobaan ini. Nilai untuk parameter-parameter untuk algoritma genetik untuk setiap percobaan yang dilakukan dapat dilihat pada Tabel~\ref{tab:nilaiparameterhg}.
 
@@ -558,8 +576,10 @@ Skenario & Populasi & Generasi & \textit{Elitism} & Mutasi & Kawin Silang \\
 \label{tab:nilaiparameterhg}
 \end{table}
 
-\subsection{Skenario 1}
-\label{sec:skenario1}
+Hasil pengujian dari ke-16 skenario tersebut adalah sebagai berikut:
+
+\begin{enumerate}
+\item Skenario 1
 
 Hasil pengujian Skenario 1 dapat dilihat pada Tabel~\ref{tab:pengujianhg1}.
 
@@ -585,10 +605,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg1}
 \end{table}
 
-\clearpage
-
-\subsection{Skenario 2}
-\label{sec:skenario2}
+\item Skenario 2
 
 Hasil pengujian Skenario 2 dapat dilihat pada Tabel~\ref{tab:pengujianhg2}.
 
@@ -614,8 +631,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg2}
 \end{table}
 
-\subsection{Skenario 3}
-\label{sec:skenario3}
+\item Skenario 3
 
 Hasil pengujian Skenario 3 dapat dilihat pada Tabel~\ref{tab:pengujianhg3}.
 
@@ -641,8 +657,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg3}
 \end{table}
 
-\subsection{Skenario 4}
-\label{sec:skenario4}
+\item Skenario 4
 
 Hasil pengujian Skenario 4 dapat dilihat pada Tabel~\ref{tab:pengujianhg4}.
 
@@ -668,10 +683,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg4}
 \end{table}
 
-\clearpage
-
-\subsection{Skenario 5}
-\label{sec:skenario5}
+\item Skenario 5
 
 Hasil pengujian Skenario 5 dapat dilihat pada Tabel~\ref{tab:pengujianhg5}.
 
@@ -697,10 +709,9 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg5}
 \end{table}
 
-\subsection{Skenario 6}
-\label{sec:skenario6}
+\item Skenario 6
 
-Hasil pengujian Skenario 6 dapat dilihat pada Tabel~\ref{tab:pengujianhg5}.
+Hasil pengujian Skenario 6 dapat dilihat pada Tabel~\ref{tab:pengujianhg6}.
 
 \begin{table}
 \centering
@@ -724,8 +735,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg6}
 \end{table}
 
-\subsection{Skenario 7}
-\label{sec:skenario7}
+\item Skenario 7
 
 Hasil pengujian Skenario 7 dapat dilihat pada Tabel~\ref{tab:pengujianhg7}.
 
@@ -751,10 +761,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg7}
 \end{table}
 
-\clearpage
-
-\subsection{Skenario 8}
-\label{sec:skenario8}
+\item Skenario 8
 
 Hasil pengujian Skenario 8 dapat dilihat pada Tabel~\ref{tab:pengujianhg8}.
 
@@ -780,8 +787,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg8}
 \end{table}
 
-\subsection{Skenario 9}
-\label{sec:skenario9}
+\item Skenario 9
 
 Hasil pengujian Skenario 9 dapat dilihat pada Tabel~\ref{tab:pengujianhg9}.
 
@@ -807,8 +813,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg9}
 \end{table}
 
-\subsection{Skenario 10}
-\label{sec:skenario10}
+\item Skenario 10
 
 Hasil pengujian Skenario 10 dapat dilihat pada Tabel~\ref{tab:pengujianhg10}.
 
@@ -834,10 +839,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg10}
 \end{table}
 
-\clearpage
-
-\subsection{Skenario 11}
-\label{sec:skenario11}
+\item Skenario 11
 
 Hasil pengujian Skenario 11 dapat dilihat pada Tabel~\ref{tab:pengujianhg11}.
 
@@ -863,8 +865,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg11}
 \end{table}
 
-\subsection{Skenario 12}
-\label{sec:skenario12}
+\item Skenario 12
 
 Hasil pengujian Skenario 12 dapat dilihat pada Tabel~\ref{tab:pengujianhg12}.
 
@@ -890,8 +891,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg12}
 \end{table}
 
-\subsection{Skenario 13}
-\label{sec:skenario13}
+\item Skenario 13
 
 Hasil pengujian Skenario 13 dapat dilihat pada Tabel~\ref{tab:pengujianhg13}.
 
@@ -917,10 +917,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg13}
 \end{table}
 
-\clearpage
-
-\subsection{Skenario 14}
-\label{sec:skenario14}
+\item Skenario 14
 
 Hasil pengujian Skenario 14 dapat dilihat pada Tabel~\ref{tab:pengujianhg14}.
 
@@ -946,8 +943,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg14}
 \end{table}
 
-\subsection{Skenario 15}
-\label{sec:skenario15}
+\item Skenario 15
 
 Hasil pengujian Skenario 15 dapat dilihat pada Tabel~\ref{tab:pengujianhg15}.
 
@@ -973,8 +969,7 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \label{tab:pengujianhg15}
 \end{table}
 
-\subsection{Skenario 16}
-\label{sec:skenario16}
+\item Skenario 16
 
 Hasil pengujian Skenario 16 dapat dilihat pada Tabel~\ref{tab:pengujianhg16}.
 
@@ -999,10 +994,34 @@ Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makece
 \end{tabular}
 \label{tab:pengujianhg16}
 \end{table}
-\clearpage
 
-\subsection{Hasil Eksperimen}
-\label{sec:hasileksperimen}
+\end{enumerate}
+
+Hasil pengujian algoritma \textit{hybrid genetic} sebanyak 16 skenario secara keseluruhan dapat dilihat pada Tabel~\ref{tab:pengujianhg}.
+
+\begin{table}
+\centering
+\captionsetup{justification=centering}
+\caption[Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku sebanyak 16 skenario secara keseluruhan]{Hasil pengujian algoritma \textit{hybrid genetic} untuk Calcudoku sebanyak 16 skenario secara keseluruhan}
+\begin{tabular}{| l | l | l | l |}
+\hline
+Ukuran \textit{Grid} & \makecell[c]{Rata-Rata \\ Tingkat Keberhasilan} & \makecell[c]{Rata-Rata \\ Kecepatan} & \makecell[c]{Rata-Rata \\ Jumlah Sel Diisi Algoritma \textit{Rule Based}} \\
+\hline \hline
+\begin{math}4 \times 4\end{math} & 53.205\% & 2.119 detik & 6 \\
+\hline
+\begin{math}5 \times 5\end{math} & 23.077\% & 4.303 detik & 13 \\
+\hline
+\begin{math}6 \times 6\end{math} & 0\% & - & - \\
+\hline
+\begin{math}7 \times 7\end{math} & 0\% & - & - \\
+\hline
+\begin{math}8 \times 8\end{math} & 0\% & - & - \\
+\hline
+\end{tabular}
+\label{tab:pengujianhg}
+\end{table}
+
+\clearpage
 
 Berdasarkan hasil pengujian yang telah dilakukan, ada beberapa hal yang dapat dilihat, yaitu:
 
