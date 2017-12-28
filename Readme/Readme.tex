@@ -1,0 +1,52 @@
+\documentclass[11pt,a4paper,twoside,openright]{article}
+
+\usepackage{hyperref}
+
+\title{Readme}
+\author{Michael Adrian}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Perangkat lunak Calcudoku ini terdiri dari:
+\begin{enumerate}
+\item \textit{File} "Calcudoku.jar", yaitu \textit{file executable} dari perangkat lunak Calcudoku ini.
+\item \textit{Folder} "\textit{Puzzle File}", yaitu sebuah \textit{folder} yang berisi \textit{file-file} permainan Calcudoku. \textit{File-file} tersebut adalah \textit{file} teks (.txt).
+\item \textit{File} "Readme.pdf", yaitu \textit{file} yang berisi informasi tentang tata cara penggunaan perangkat lunak Calcudoku ini.
+\end{enumerate}
+
+Untuk dapat menggunakan perangkat lunak Calcudoku ini, Anda harus men-\textit{download} \textit{Java Runtime Environment} (JRE). JRE dapat di-\textit{download} di \url{http://www.oracle.com/technetwork/java/javase/downloads/index.html}. Setelah men-\textit{download} dan meng-\textit{install} JRE, maka perangkat lunak ini dapat langsung dijalankan dengan membuka \textit{file} "Calcudoku.jar". Tata cara penggunaan perangkat lunak ini dapat dilihat pada \textit{file} "Readme.pdf".
+
+Perangkat lunak ini mempunyai dua menu, yaitu:
+\begin{enumerate}
+\item \textit{File}, yaitu menu yang berisi \textit{item-item} yang berhubungan dengan \textit{file} permainan Calcudoku.
+\item \textit{Solve}, yaitu menu yang berisi \textit{item-item} berhubungan dengan \textit{solver} untuk permainan Calcudoku.
+\end{enumerate}
+
+Menu "\textit{File}" berisi \textit{item-item} berikut:
+\begin{enumerate}
+\item \textit{Load Puzzle File}, yaitu menu \textit{item} untuk membuka \textit{file} permainan Calcudoku. Semua \textit{file} permainan Calcudoku terdapat di dalam folder "\textit{Puzzle Files}".
+\item \textit{Reset Puzzle}, yaitu menu \textit{item} untuk mengembalikan permainan Calcudoku ke keadaan awal saat \textit{file} permainan Calcudoku baru dibuka. Menu \textit{item} ini hanya bisa dijalankan jika perangkat lunak sudah membuka \textit{file} permainan Calcudoku.
+\item \textit{Close Puzzle File}, yaitu menu \textit{item} untuk menutup \textit{file} permainan Calcudoku yang sedang dibuka oleh perangkat lunak. Menu \textit{item} ini hanya bisa dijalankan jika perangkat lunak sudah membuka \textit{file} permainan Calcudoku.
+\item \textit{Check Puzzle}, yaitu menu \textit{item} untuk meminta perangkat lunak untuk memeriksa permainan Calcudoku jika ada kesalahan dalam pengisian sel di dalam \textit{grid}. Menu \textit{item} ini hanya bisa dijalankan jika perangkat lunak sudah membuka \textit{file} permainan Calcudoku.
+\item \textit{Exit}, yaitu menu \textit{item} untuk menutup perangkat lunak.
+\end{enumerate}
+
+Menu "\textit{Solve}" berisi \textit{item-item} berikut:
+\begin{enumerate}
+\item \textit{Backtracking}, yaitu menu \textit{item} untuk meminta perangkat lunak untuk menyelesaikan permainan Calcudoku dengan menggunakan algoritma \textit{backtracking}. Menu \textit{item} ini hanya bisa dijalankan jika perangkat lunak sudah membuka \textit{file} permainan Calcudoku.
+\item \textit{Hybrid Genetic}, yaitu menu \textit{item} untuk meminta perangkat lunak untuk menyelesaikan permainan Calcudoku dengan menggunakan algoritma \textit{hybrid genetic}. Menu \textit{item} ini hanya bisa dijalankan jika perangkat lunak sudah membuka \textit{file} permainan Calcudoku dan nilai dari parameter-parameter algoritma genetik sudah diatur.
+\item \textit{Set Genetic Algorithm Parameters}, yaitu menu \textit{item} untuk mengatur nilai dari parameter-parameter algoritma genetik.
+\end{enumerate}
+
+Aturan permainan Calcudoku adalah sebagai berikut:
+\begin{enumerate}
+\item Pemain diberikan sebuah \textit{grid} dengan ukuran \begin{math}n \times n\end{math}, dengan \begin{math}n\end{math} biasanya antara 3 sampai dengan 9.
+\item \textit{Grid} ini harus diisi dengan angka 1 sampai dengan \begin{math}n\end{math}. Dalam setiap baris dan kolom, setiap angka hanya boleh muncul sekali.
+\item \textit{Grid} dibagi ke dalam sejumlah \textit{cage}. \textit{Cage} adalah sekelompok sel yang dibatasi oleh garis yang lebih tebal daripada garis pembatas antar sel dengan angka tujuan dan operator yang telah ditentukan.
+\item Angka-angka dalam setiap \textit{cage} harus mencapai angka tujuan jika dihitung menggunakan operator yang telah ditentukan. Biasanya, angka tujuan dan operasi matematika yang telah ditentukan ditulis di sudut kiri atas \textit{cage}. Dalam perangkat lunak ini, angka tujuan dan operasi matematika tersebut ditulis sebagai \textit{tooltip} yang akan muncul jika sebuah sel di dalam \textit{cage} di-\textit{hover}.
+\end{enumerate}
+
+\end{document}
