@@ -47,6 +47,10 @@
 \usepackage{todo}
 \usepackage{verbatim} 		%multiline comment
 \usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{makecell}
+\usepackage{mathtools}
+\usepackage{pdflscape}
 %\overfullrule=3mm % memperlihatkan overfull 
 %=============================================================================
 
@@ -195,7 +199,7 @@
 % !!Lihat singkatan pembimbing dan penguji anda di file dosen.tex!!
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda
 %=============================================================================
-\namanpm{MICHAEL ADRIAN}{2013730039}
+\namanpm{Michael Adrian}{2013730039}
 \tanggal{20}{12}{2017}
 \pembimbing{\CEN}{}    
 \penguji{\RDL}{\CLF} 
@@ -268,7 +272,7 @@ The backtracking algorithm successfully solved all puzzles. But on large grids, 
 % Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\untuk{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+\untuk{Skripsi ini dipersembahkan untuk Tuhan Yesus Kristus, keluarga, teman-teman, dan dosen-dosen Informatika Unpar}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -279,31 +283,23 @@ The backtracking algorithm successfully solved all puzzles. But on large grids, 
 % kasih kepada yang telah membantu anda bla bla bla ....  
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\prakata{Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam 
-nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat 
-volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
-ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse 
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero 
-eros et accumsan et iusto odio dignissim qui blandit praesent luptatum 
-zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber 
-tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
-id quod mazim placerat facer possim assum. Typi non habent claritatem 
-insitam; est usus legentis in iis qui facit eorum claritatem. 
-Investigationes demonstraverunt lectores legere me lius quod ii legunt 
-saepius. Claritas est etiam processus dynamicus, qui sequitur 
-mutationem consuetudium lectorum. Mirum est notare quam littera 
-gothica, quam nunc putamus parum claram, anteposuerit litterarum formas 
-humanitatis per seacula quarta decima et quinta decima. Eodem modo 
-typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
+\prakata{Segala puji dan syukur penulis ucapkan kepada Tuhan Yesus Kristus yang telah selalu menyertai, memberkati, dan memberikan rahmat-Nya, sehingga penulis dapat menyelesaikan skripsi ini dengan baik dan lancar. Terima kasih juga kepada orang-orang yang telah memberikan bantuan, doa, motivasi, dan dukungan kepada penulis selama penyelesaian skripsi ini. Penulis ingin berterima kasih kepada:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-mollit anim id est laborum.} 
+\begin{enumerate}
+\item Tuhan Yesus Kristus, Tuhan yang sungguh luar biasa, karena Engkau saya akhirnya bisa lulus setelah 9 semester, penulis tidak akan mampu menyelesaikan skripsi ini tanpa Engkau.
+\item Keluargaku, Papa, Mama, dan kedua adikku Chelsea Steffie Adriana dan Sheren Stella Adriana, terima kasih karena selalu mendukung saya dalam doa dan memotivasi saya dalam menyelesaikan skripsi ini.
+\item Ibu Heni, sebagai pembimbing skripsi saya. Terima kasih banyak karena telah memberi bimbingan dan memberi banyak masukan dalam membuat skripsi ini.
+\item Ibu Rosa dan Pak Claudio, sebagai penguji skripsi saya. Terima kasih juga karena telah memberikan banyak masukan dalam membuat skripsi ini.
+\item Pak Husnul, sebagai dosen wali saya dari Semester 1 sampai dengan Semester 6.
+\item Dosen-dosen Informatika Unpar lainnya: Ibu Mariskha, Ibu Vero, Pak Anung, Pak Pascal, Ibu Vania, Pak Chandra, Ibu Lucy, Pak Lionov, dan Pak Gede. Terima kasih karena telah mengajar saya dari Semester 1 sampai dengan Semester 8.
+\item Warga Informatika Unpar yang sudah lulus dan sudah diwisuda sebelum saya lulus, terima kasih untuk saran-sarannya yang telah membantu penulis dan menulis skripsi ini.
+\item Warga Informatika Unpar yang sudah lulus dan akan diwisuda bersama-sama dengan saya, selamat untuk kalian semua!
+\item Warga Informatika Unpar yang lainnya, baik yang sedang berjuang menyelesaikan skripsi, maupun yang belum membuat skripsi. Semoga kalian juga berhasil menyelesaikan skripsi dan lulus!
+\item Teman-teman saya di kebaktian Soli Deo Worship GII Hok Im Tong, terima kasih karena telah mendukung saya dalam doa sehingga saya bisa berhasil menyelesaikan skripsi ini.
+\item Banyak pihak lainnya yang namanya tidak bisa disebutkan satu per satu.
+\end{enumerate}
+
+Penulis juga mohon maaf jika masih ada kekurangan dalam penulisan skripsi ini.} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -331,8 +327,4 @@ mollit anim id est laborum.}
 %=============================================================================
 \renewcommand{\vtemplateauthor}{lionov}
 \pgfplotsset{compat=newest}
-\usepackage{caption}
-\usepackage{makecell}
-\usepackage{mathtools}
-\usepackage{pdflscape}
 %=============================================================================
